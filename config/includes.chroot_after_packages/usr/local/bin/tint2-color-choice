@@ -1,0 +1,40 @@
+#! /bin/bash
+# tint2 battery color options options.
+# Made be sleekmason for Lilidog 4-13-2022
+
+noti=$(yad --width 310 --borders=12 --entry --title "Battery Text Color" --center --window-icon=applications-graphics \
+    --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
+    --button=gtk-close:1 \
+    --button="gtk-ok:0" \
+    "Please Select Battery Text Color" "Default - Light Sky" "Dark Sky" "Grey" "Bright Grey" "Green" "Black" "Red")
+
+case $noti in
+  Default*)
+     sed -i 's/^battery_font_color.*/battery_font_color = #96D2D9 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Dark*)
+     sed -i 's/^battery_font_color.*/battery_font_color = #88BABF 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Grey)
+     sed -i 's/^battery_font_color.*/battery_font_color = #BCD1D1 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Bright*)
+     sed -i 's/^battery_font_color.*/battery_font_color = #C8DEDE 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Green)
+     sed -i 's/^battery_font_color.*/battery_font_color = #11B850 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Black)
+     sed -i 's/^battery_font_color.*/battery_font_color = #000000 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+   Red)
+      sed -i 's/^battery_font_color.*/battery_font_color = #EB1313 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2 ;;
+        *) exit 1 ;;
+    esac

@@ -1,0 +1,32 @@
+#### Openbox autostart - Place your commands here to have programs 
+### activated on login. See 'man openbox' for more information.
+
+## For lxpanel or pcmanfm use as wallpaper setter. Allows for icons.
+# @lxpanel --profile LXDE &
+# pcmanfm --desktop --profile LXDE &
+
+### Items not in use.
+# @xscreensaver -no-splash &
+# monster-panel &
+# fbpanel-alsa &
+
+### Items currently activated.
+. $HOME/.fehbg &
+
+### Touchpad Settings
+## To use tap to click and the syndaemon for movement during keystrokes,
+## un-comment the below two lines and log out/in for settings to take affect.
+
+# synclient VertEdgeScroll=0 HorizEdgeScroll=0 TapButton1=1 2>/dev/null
+# syndaemon -i .5 -K -t -R -d &
+
+picom &
+tint2 &
+xfce4-power-manager &
+nm-applet &
+lxpolkit &
+xfsettingsd --daemon &
+pnmixer &
+conky -c ~/.config/conky/conky-shortcuts.conf &
+sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
+welcome.sh &

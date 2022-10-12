@@ -1,0 +1,25 @@
+#!/bin/bash
+
+yad --title "Terminal Colors" --escape-ok --borders=14 \
+--button=gtk-close:1 --form --center --width=400 --height=500 \
+--text="\n  Terminal Colors\n" --text-align=center \
+--window-icon=/usr/share/xfce4/terminal/icons/paw-denim.png \
+    --form --columns=2 \
+    --field="         Anolis!/usr/share/xfce4/terminal/icons/paw-anolis.png!":FBTN "xfce4-term-colors anolis" \
+    --field="   Conanolis!/usr/share/xfce4/terminal/icons/paw-conanolis.png!":FBTN "xfce4-term-colors conanolis" \
+    --field="          Neon!/usr/share/xfce4/terminal/icons/paw-neon.png!":FBTN "xfce4-term-colors lilidog-neon" \
+    --field="         Cobalt!/usr/share/xfce4/terminal/icons/paw-cobalt.png!":FBTN "xfce4-term-colors lilidog-cobalt" \
+    --field="      Crimson!/usr/share/xfce4/terminal/icons/paw-crimson.png!":FBTN "xfce4-term-colors crimson" \
+    --field=" Dark-Drow!/usr/share/xfce4/terminal/icons/paw-dark-drow.png!":FBTN "xfce4-term-colors dark-drow" \
+    --field="  Dark Earth!/usr/share/xfce4/terminal/icons/paw-dark-earth.png!":FBTN "xfce4-term-colors dark-earth" \
+    --field="          Earth!/usr/share/xfce4/terminal/icons/paw-earth.png!":FBTN "xfce4-term-colors lilidog-earth" \
+    --field="         Denim!/usr/share/xfce4/terminal/icons/paw-denim.png!":FBTN "xfce4-term-colors denim" \
+    --field="       Dragon!/usr/share/xfce4/terminal/icons/paw-dragon.png!":FBTN "xfce4-term-colors dragon" \
+    --field="       Oceanic!/usr/share/xfce4/terminal/icons/paw-oceanic.png!":FBTN "xfce4-term-colors oceanic" \
+    --field="          Taupe!/usr/share/xfce4/terminal/icons/paw-taupe.png!":FBTN "xfce4-term-colors lilidog-taupe" \
+    --field="            Slate!/usr/share/xfce4/terminal/icons/paw-slate.png!":FBTN "xfce4-term-colors lilidog-slate" \
+    --field="        Glacier!/usr/share/xfce4/terminal/icons/paw-glacier.png!":FBTN "xfce4-term-colors glacier" \
+    --field="             Clay!/usr/share/xfce4/terminal/icons/paw-clay.png!":FBTN "xfce4-term-colors lilidog-clay" \
+    --field="            Grey!/usr/share/xfce4/terminal/icons/paw-grey.png!":FBTN "xfce4-term-colors lilidog-grey" \
+    --field="           Light!/usr/share/xfce4/terminal/icons/paw-light.png!":FBTN "xfce4-term-colors lilidog-light" \
+    --field="         Bright!/usr/share/xfce4/terminal/icons/paw-bright.png!":FBTN "xfce4-term-colors lilidog-bright" \

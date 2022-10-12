@@ -1,0 +1,34 @@
+#!/bin/bash
+## Made by Sleekmason in 2020 to make dualboot changes easier!
+read -p "   Swapid! 
+
+   for the frequent dual installer, updates your fstab and
+   resume file with the proper uuid to use.
+   
+   This will open the two files in geany, and the terminal 
+   will show you the proper uuid number to use.
+   
+   Just replace the numbers in both files from the one in 
+   the terminal and then save & close the geany window(s).
+   
+   Afterwards, you will be prompted to update your initramfs
+   and grub.
+    
+   ---------------------------------------------------------
+   
+   Please press enter begin.
+   
+   ---------------------------------------------------------
+   
+   
+   Or close this terminal window to quit." ;
+echo ""
+sudo blkid -l -t TYPE=swap | awk '{printf $2}'
+sudo geany /etc/fstab /etc/initramfs-tools/conf.d/resume
+echo ""
+echo ""
+echo "-------------Everything Groovy?-------------"
+echo ""
+read -p "Hit return to update initramfs and grub:)" ;
+sudo update-initramfs -u -k all
+sudo update-grub

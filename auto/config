@@ -1,0 +1,28 @@
+#!/bin/sh
+
+lb config noauto \
+     --apt-recommends 'false' \
+     --apt-source-archives 'false' \
+     --apt-indices 'false' \
+     --archive-areas "main contrib non-free" \
+     --debian-installer 'live' \
+     --parent-debian-installer-distribution 'daily' \
+     --debian-installer-distribution 'bookworm' \
+     --distribution 'bookworm' \
+     --mirror-binary 'https://deb.debian.org/debian' \
+     --mirror-binary-security 'https://security.debian.org/debian-security' \
+     --mirror-bootstrap 'https://deb.debian.org/debian' \
+     --firmware-binary 'true' \
+     --firmware-chroot 'true' \
+     --security 'false' \
+     --memtest 'none' \
+     --image-name 'Lilidog-bookworm-22.10.08' \
+     --iso-application 'Lilidog-bookworm' \
+     --iso-publisher 'Lilidog-Sid GNU/Linux' \
+     --iso-volume 'LiliDog-Sid' \
+     --system 'live' \
+     --updates 'false' \
+     --win32-loader 'false' \
+     --zsync 'false' \
+     --quiet \
+     "${@}"

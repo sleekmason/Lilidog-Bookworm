@@ -1,0 +1,61 @@
+#!/bin/bash
+echo ""
+echo ""
+read -p "   [0;33mdk WM Installer.[0m
+
+   This is a script to build the dk window manager on your system. 
+   
+   This script will download, build, and install the dk window manager, 
+   adding the necessary configuration files to ~/.config/dk for use as 
+   well as adding a simple polybar for statusbar use.
+   
+   This script installs all necessary programs for dk, and then clones
+   the dk repo before building and installing. 
+
+   To uninstall, run: 'dk-uninstaller' in a terminal.
+   
+   Any files in ~/.config/dk and ~/.config/polybar will be overwritten.
+   Please backup these files if already installed and want to keep.
+   
+   For more information: 
+   https://bitbucket.org/natemaia/dk/src/master/
+   
+   [0;32m-------------------------------------------------------------
+   
+   Please press enter to build and install the dk window manager
+   
+   -------------------------------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+cd /tmp/ &&
+sudo apt update && sudo apt install sxhkd build-essential polybar libxcb-randr0-dev libxcb-util-dev libxcb-icccm4-dev libxcb-cursor-dev libxcb-keysyms1-dev &&
+# For the latest - possibly unstable, uncomment the below line and comment the curl line.
+#git clone https://bitbucket.org/natemaia/dk.git &&
+curl -fSL https://bitbucket.org/natemaia/dk/get/v1.7.zip -o dk.zip &&
+unzip dk.zip &&
+cd natemaia-dk-* &&
+make &&
+sudo make install &&
+cp -r /usr/share/lilidog/extras/dk ~/.config &&
+cp -r /usr/share/lilidog/extras/polybar ~/.config &&
+rm -r /tmp/natemaia-dk-*
+rm -r /tmp/dk.zip
+echo ""
+echo "----------------------------------------------------------------------"
+echo ""
+echo "[0;32mAll Finished!.
+New Login entry for 'dk' added. Logout and choose dk to change WM's.
+To uninstall, run: 'dk-uninstaller' in a terminal.[0m"
+echo "" 
+echo "----------------------------------------------------------------------"
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi

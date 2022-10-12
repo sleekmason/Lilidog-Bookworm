@@ -1,0 +1,32 @@
+#!/bin/bash
+read -p "
+                         [0;33mGrub Background Image Changer[0m
+                      
+
+   This script will change your Grub background to any images located in
+   $HOME/Pictures/Grub-bg. Cannot be used in a Live environment.
+  
+   Add any image of standard size to this directory to be included in 
+   the Grub image window. .png and .jpg images accepted.
+   
+   Example standard sizes: 1920x1080, 1440x900, 800x600, etc . . .
+   
+   [0;32m-------------------------------------------------------------------
+   
+   Please press enter to choose your new grub background from a window 
+   of available images. After selection, enter your sudo password in
+   the terminal prompt to continue.
+   
+   -------------------------------------------------------------------[0m
+     
+   Or close this terminal window to quit." ;
+echo "" 
+. copy-to-grub
+echo ""
+echo "[0;32m-----------------------------------------------------------"
+echo ""
+echo "All Finished!"
+echo ""
+echo "Enjoy your new Grub background." 
+echo "" 
+echo "-----------------------------------------------------------[0m"
