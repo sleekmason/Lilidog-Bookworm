@@ -28,9 +28,7 @@ dbus-x11
 debian-faq
 desktop-base
 dialog
-dns-root-data
 doc-debian
-dnsmasq-base
 dosfstools
 dunst
 e2fsprogs
@@ -96,7 +94,6 @@ gpicview
 gstreamer1.0-libav
 gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
-gstreamer1.0-pulseaudio
 gtk2-engines-murrine
 gtk2-engines-pixbuf
 gvfs
@@ -138,7 +135,6 @@ lxinput
 lxpolkit
 lxrandr
 mailcap
-mime-support
 manpages
 manpages-dev
 meld
@@ -148,6 +144,7 @@ mesa-utils
 mesa-va-drivers
 mesa-vulkan-drivers
 mesa-vdpau-drivers
+mime-support
 mobile-broadband-provider-info
 modemmanager
 mokutil
@@ -164,11 +161,11 @@ netpbm
 net-tools
 netcat-openbsd
 network-manager-gnome
-network-manager
 newsboat
 ntfs-3g
 obconf
 openbox
+os-prober
 oss-compat
 p11-kit
 p11-kit-modules
@@ -185,11 +182,8 @@ plymouth
 plymouth-themes
 pnmixer
 powermgmt-base
-ppp
 pragha
 publicsuffix
-pulseaudio
-pulseaudio-utils
 pycodestyle
 python3-distro
 python3-pyxattr
@@ -237,10 +231,12 @@ update-inetd
 usb-modeswitch
 usb.ids
 usbmuxd
+usbutils
 usermode
 user-setup
 uuid-runtime
 va-driver-all
+vdpau-driver-all
 volumeicon-alsa
 w3m
 w3m-img
@@ -250,6 +246,7 @@ wbar
 wireless-regdb
 wmctrl
 wpasupplicant
+wvdial
 x11-apps
 x11-common
 x11-session-utils
