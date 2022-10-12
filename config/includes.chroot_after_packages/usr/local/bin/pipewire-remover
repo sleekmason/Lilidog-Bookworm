@@ -1,0 +1,49 @@
+#!/bin/bash
+echo ""
+echo ""
+read -p "   [0;33mPipewire Remover[0m
+
+   If you are using Pipewire, and want to switch back to Pulseaudio.
+
+   After installation a Pnmixer error warning box SHOULD come up. Choose 
+   'yes' to re-initialize the audio connection.  If this warning doesn't 
+   appear, you may need to right-click on pnmixer and 'Reload Sound'.  
+
+   -------------------------------------------------
+   
+   [0;32mPlease press enter to Switch back to Pulseaudio.[0m
+   
+   -------------------------------------------------
+   
+   
+   Or close this terminal window to quit." ;
+echo "" 
+sudo apt remove pipewire pipewire-audio-client-libraries \
+libspa-0.2-bluetooth libspa-0.2-jack qjackctl &&
+sudo rm /etc/systemd/user/pipewire-pulse.* &&
+sudo rm /etc/alsa/conf.d/99-pipewire-default.conf &&
+sudo rm /etc/ld.so.conf.d/pipewire-jack-*.conf &&
+systemctl --user daemon-reload &&
+systemctl --user --now disable pipewire pipewire-pulse &&
+systemctl --user unmask pulseaudio &&
+systemctl --user --now enable pulseaudio.service pulseaudio.socket &&
+sleep 1
+sudo ldconfig
+echo ""
+echo ""
+echo "-----------------------------------------------------"
+echo ""
+LANG=C pactl info | grep '^Server Name'
+echo ""
+echo "-----------------------------------------------------"
+echo ""
+echo "[0;33mIf Pipewire has been sucessfully removed, you should see above:[0m"
+echo ""
+echo "[0;32m'Server Name: PulseAudio'[0m"
+echo ""
+echo "[0;31mRemember if no Pnmixer warning box appeared, right-click" 
+echo "on Pnmixer (sound icon) and 'Reload Sound'.[0m"
+echo ""
+echo "[0;32mAll Finished![0m"
+echo ""
+echo "-----------------------------------------------------"

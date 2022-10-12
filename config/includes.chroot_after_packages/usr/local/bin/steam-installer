@@ -1,0 +1,56 @@
+#!/bin/bash
+echo ""
+echo ""
+echo ""
+read -p "   [0;33mSteam Installer[0m
+
+   Steam is a proprietary content delivery and launcher application 
+   for video games, creative tools, and multimedia.
+
+   https://wiki.debian.org/Steam
+   
+   [0;31mWARNING*
+   This will enable multi-arch, adding the i386 architecture,
+   and install steam with --recommends enabled.[0m
+
+   https://wiki.debian.org/Multiarch/HOWTO
+   
+   ----------------------------------------------------------
+   
+   [0;32mPlease press enter to enable multi-arch and install Steam.[0m
+   
+   ----------------------------------------------------------
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+sudo dpkg --add-architecture i386 && sudo apt update && sudo apt install --install-recommends steam &&
+sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Steam,         steam,       steam/d' ~/.config/jgmenu/mymenu.csv && 
+sed -i '/tag(games)/a Steam,         steam,       steam' ~/.config/jgmenu/mymenu.csv &&
+killall jgmenu
+echo ""
+echo "------------------------------------------------------------------"
+echo ""
+echo ""
+echo ""
+echo "[0;32mAll Finished![0m"
+echo ""
+echo "[0;33mIf installed, You should find a new menu entry under 'Games'[0m"
+echo "" 
+echo "[0;32mMenu entries will need to be removed manually if uninstalled." 
+echo "See Jgmenu Conf under Configuration in the menu for directions.[0m"
+echo ""
+echo "------------------------------------------------------------------"
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi
