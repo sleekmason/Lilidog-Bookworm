@@ -16,12 +16,12 @@ lb config noauto \
      --firmware-chroot 'true' \
      --security 'false' \
      --memtest 'none' \
-     --image-name 'Lilidog-bookworm-22.10.08' \
-     --iso-application 'Lilidog-bookworm' \
-     --iso-publisher 'Lilidog-Sid GNU/Linux' \
-     --iso-volume 'LiliDog-Sid' \
+     --image-name 'Lilidog-Bookworm-22.10.08' \
+     --iso-application 'Lilidog-Bookworm' \
+     --iso-publisher 'Lilidog-bookworm GNU/Linux' \
+     --iso-volume 'LiliDog-Bookworm' \
      --system 'live' \
-     --updates 'false' \
+     --updates 'true' \
      --win32-loader 'false' \
      --zsync 'false' \
      --quiet \

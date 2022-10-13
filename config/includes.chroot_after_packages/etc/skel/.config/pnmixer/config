@@ -15,7 +15,7 @@ SystemTheme=true
 DrawVolMeter=true
 VolMeterPos=100
 VolMeterColor=0.25;0.66355932203389845;0.75;
-VolumeControlCommand=pavucontrol
+VolumeControlCommand=VolumeControlCommand=xfce4-terminal -e "alsamixer"
 EnableHotKeys=false
 VolMuteMods=0
 VolUpMods=0
