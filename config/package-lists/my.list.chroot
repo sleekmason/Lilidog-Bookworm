@@ -95,6 +95,7 @@ gparted
 gpick
 gpicview
 gstreamer1.0-libav
+gstreamer1.0-pipewire
 gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gtk2-engines-murrine
@@ -117,7 +118,7 @@ jp2a
 jq
 kbd
 krb5-locales
-libaslound2-plugins
+libasound2-plugins
 libavcodec-extra
 libc-devtools
 libexo-2-0
