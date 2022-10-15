@@ -96,6 +96,7 @@ gpick
 gpicview
 gstreamer1.0-libav
 gstreamer1.0-pipewire
+gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gtk2-engines-murrine
@@ -188,13 +189,14 @@ pciutils
 pcmciautils
 picom
 pipewire
-pipewire-bin
+pipewire-pulse
 plymouth
 plymouth-themes
 pnmixer
 powermgmt-base
 pragha
 publicsuffix
+pulseaudio-utils
 pycodestyle
 python3-distro
 python3-pyxattr
