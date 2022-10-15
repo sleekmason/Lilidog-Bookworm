@@ -14,7 +14,7 @@ lb config noauto \
      --mirror-bootstrap 'https://deb.debian.org/debian' \
      --firmware-binary 'true' \
      --firmware-chroot 'true' \
-     --security 'false' \
+     --security 'true' \
      --memtest 'none' \
      --image-name 'Lilidog-Bookworm-22.10.14' \
      --iso-application 'Lilidog-Bookworm' \
