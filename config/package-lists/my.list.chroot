@@ -188,7 +188,7 @@ pavucontrol
 pciutils
 pcmciautils
 picom
-pipewire
+pipewire-alsa
 pipewire-pulse
 plymouth
 plymouth-themes
