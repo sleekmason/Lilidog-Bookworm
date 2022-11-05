@@ -158,6 +158,7 @@ mesa-va-drivers
 mesa-vulkan-drivers
 mesa-vdpau-drivers
 mime-support
+nala
 mobile-broadband-provider-info
 modemmanager
 mokutil
