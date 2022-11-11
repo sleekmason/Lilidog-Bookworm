@@ -24,6 +24,8 @@ conky-all
 console-data
 console-setup
 cpio
+cryptsetup
+cryptsetup-initramfs
 curl
 dbus-user-session
 dbus-x11
