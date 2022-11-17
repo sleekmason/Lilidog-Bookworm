@@ -90,6 +90,7 @@ geany
 gettext-base
 gnome-icon-theme
 gnome-themes-extra
+gnome-system-tools
 gnupg
 gparted
 gpick
