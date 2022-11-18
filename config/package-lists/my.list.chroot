@@ -179,6 +179,7 @@ netcat-openbsd
 network-manager-gnome
 newsboat
 ntfs-3g
+ntp
 obconf
 openbox
 os-prober
@@ -228,7 +229,6 @@ sudo
 sxhkd
 synaptic
 syslinux-common
-systemd-timesyncd
 tasksel
 telnet
 tint2
