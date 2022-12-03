@@ -59,7 +59,6 @@ firmware-cavium
 firmware-iwlwifi
 firmware-ivtv
 firmware-ipw2x00
-firmware-intelwimax
 firmware-intel-sound
 firmware-linux-nonfree
 firmware-linux
