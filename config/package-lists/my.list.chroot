@@ -289,3 +289,9 @@ xz-utils
 yad
 youtube-dl
 zstd
+gstreamer1.0-plugins-bad
+libglib2.0-data
+p11-kit
+p11-kit-modules
+smartmontools
+wpasupplicant
