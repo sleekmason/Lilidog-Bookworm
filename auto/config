@@ -4,7 +4,7 @@ lb config noauto \
      --apt-recommends 'false' \
      --apt-source-archives 'false' \
      --apt-indices 'false' \
-     --archive-areas "main contrib non-free" \
+     --archive-areas "main contrib non-free non-free-firmware" \
      --debian-installer 'live' \
      --parent-debian-installer-distribution 'daily' \
      --debian-installer-distribution 'bookworm' \
