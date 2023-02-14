@@ -16,3 +16,5 @@
     Lilidog. Look in Menu - All Programs - System
     Install Lilidog. The debian installer is also
     available. Reboot for the installation menu.
+
+    Sudo password for the live session is 'live'.
