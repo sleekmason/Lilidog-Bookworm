@@ -15,6 +15,8 @@ bind9-dnsutils
 breeze-icon-theme
 btrfs-progs
 bzip2
+calamares
+calamares-settings-debian
 ca-certificates
 catfish
 conky-all
@@ -262,9 +264,3 @@ xz-utils
 yad
 youtube-dl
 zstd
-gstreamer1.0-plugins-bad
-libglib2.0-data
-p11-kit
-p11-kit-modules
-smartmontools
-wpasupplicant
