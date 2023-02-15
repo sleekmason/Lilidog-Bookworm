@@ -83,6 +83,7 @@ imagemagick
 intel-microcode
 inxi
 isc-dhcp-client
+isolinux
 iw
 jgmenu
 jq
@@ -125,6 +126,7 @@ mesa-va-drivers
 mesa-vulkan-drivers
 mesa-vdpau-drivers
 mime-support
+mtools
 nala
 mlocate
 mobile-broadband-provider-info
@@ -183,7 +185,10 @@ suckless-tools
 sudo
 sxhkd
 synaptic
+syslinux
 syslinux-common
+syslinux-efi
+syslinux-utils
 tasksel
 telnet
 tint2

@@ -11,4 +11,3 @@ Terminal=false
 Categories=Qt;System;
 StartupWMClass=calamares
 StartupNotify=True
-NoDisplay=true
