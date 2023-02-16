@@ -83,7 +83,6 @@ imagemagick
 intel-microcode
 inxi
 isc-dhcp-client
-isolinux
 iw
 jgmenu
 jq
@@ -126,7 +125,6 @@ mesa-va-drivers
 mesa-vulkan-drivers
 mesa-vdpau-drivers
 mime-support
-mtools
 nala
 mlocate
 mobile-broadband-provider-info
@@ -239,6 +237,7 @@ xfce4-power-manager
 xfce4-screenshooter
 xfce4-settings
 xfce4-terminal
+xfsprogs
 xinput
 xml-core
 xmlstarlet
