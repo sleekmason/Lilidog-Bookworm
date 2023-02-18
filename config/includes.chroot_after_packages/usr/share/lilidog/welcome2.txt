@@ -1,10 +1,10 @@
                        
-                      WELCOME!
+                 WELCOME TO LILIDOG!
                         
-    This Bookworm version is for testing purposes
-    in order to locate any problems before debian 
-    releases Bookworm later this summer. Join the  
-    Lilidog forum to report any issues you find.
+    This is the Lilidog Bookworm - debian 12 test
+    addition. There could still be minor bugs and
+    other issues until the full debian release of  
+    Bookworm occurs later this year. For issues:
 
     https://www.forum.lilidog.org/
     
@@ -12,9 +12,9 @@
     located in the Tint2 panel. Font size, themes
     wallpapers, and other options are available.
 
-    Calamares live installer is a new addition to
-    Lilidog. Look in Menu - All Programs - System
+    Calamares live installer is a new addition in
+    Lilidog! Look in Menu - All Programs - System
     Install Lilidog. The debian installer is also
-    available. Reboot for the installation menu.
+    still available. Reboot for the debian menu.
 
     Sudo password for the live session is 'live'.
