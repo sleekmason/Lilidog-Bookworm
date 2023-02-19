@@ -1,6 +1,6 @@
 ---
 componentName:   lilidog
-welcomeStyleCalamares: true
+welcomeStyleCalamares: false
 welcomeExpandingLogo: true
 windowExpanding: normal
 windowSize: 800px,520px
@@ -13,7 +13,7 @@ strings:
     shortVersion:        12
     versionedName:       Lilidog 12 (bookworm)
     shortVersionedName:  Lilidog 12
-    bootloaderEntryName: Lilidog
+    bootloaderEntryName: Lilidog 12
     productUrl:          https://lilidog.org
     supportUrl:          https://www.forum.lilidog.org/
     knownIssuesUrl:      https://www.forum.lilidog.org/
@@ -32,6 +32,6 @@ style:
    sidebarBackground:    "#1C2E42"
    sidebarText:          "#FFFFFF"
    sidebarTextSelect:    "#000000"
-   sidebarTextSelect:    "#000000"
+   sidebarTextHighlight: "#3A72AB"
 
 slideshowAPI: 2
