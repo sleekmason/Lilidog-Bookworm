@@ -1,8 +1,8 @@
                        
                  WELCOME TO LILIDOG!
                         
-    This is the Lilidog Bookworm - debian 12 test
-    addition. There could still be minor bugs and
+    This is the Lilidog Bookworm - Debian 12 Test
+    Addition. There could still be minor bugs and
     other issues until the full debian release of  
     Bookworm occurs later this year. For issues:
 
