@@ -123,6 +123,8 @@ _reboot() {
 
 _update
 _remove_packages
+_upgrade_kernel
+_add_backports
 _firmware
 _autologin
 _reboot

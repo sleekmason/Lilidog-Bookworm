@@ -2,10 +2,10 @@
 ## Made by Sleekmason 10 May 2022
 ## Simple script to add backports and install latest kernel, headers, and firmware.
 read -p "
-   [0;33mAdd Bullseye backport sources and install the latest kernel[0m
+   [0;33mAdd Bookworm backport sources and install the latest kernel[0m
      
-   This script will add the Bullseye Backports repository and install 
-   the Bullseye backports kernel, headers, and firmware if available.
+   This script will add the bookworm Backports repository and install 
+   the bookworm backports kernel, headers, and firmware if available.
    
    More backports info:
    [0;31mhttps://backports.debian.org/Instructions/[0m
@@ -21,18 +21,18 @@ read -p "
 echo ""
    echo ""
    echo ""
-   sudo echo 'deb http://deb.debian.org/debian bullseye-backports main' | sudo tee /etc/apt/sources.list.d/bullseye-backports.list &&
+   sudo echo 'deb http://deb.debian.org/debian bookworm-backports main' | sudo tee /etc/apt/sources.list.d/bookworm-backports.list &&
    sudo apt update
    echo ""
    echo ""
    echo ""
    echo "-------------------------------------------------------------------------------"
    echo "
-                     [0;33m---Bullseye Backports Enabled---[0m
+                     [0;33m---Bookworm Backports Enabled---[0m
          
-   [0;36mRepository added to /etc/apt/sources.list.d/bullseye-backports.list[0m"
+   [0;36mRepository added to /etc/apt/sources.list.d/bookworm-backports.list[0m"
    echo ""
-sudo apt install -t bullseye-backports linux-image-amd64 linux-headers-amd64 firmware-linux
+sudo apt install -t bookworm-backports linux-image-amd64 linux-headers-amd64 firmware-linux
    echo "-------------------------------------------------------------------------------"
    echo ""
    echo "[0;33mPlease reboot into your new kernel when able.[0m"
