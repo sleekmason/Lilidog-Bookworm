@@ -6,6 +6,7 @@ lb config noauto \
      --apt-indices 'false' \
      --archive-areas "main contrib non-free non-free-firmware" \
      --debian-installer 'live' \
+     --parent-debian-installer-distribution 'daily' \
      --debian-installer-distribution 'bookworm' \
      --distribution 'bookworm' \
      --mirror-binary 'https://deb.debian.org/debian' \
@@ -15,10 +16,10 @@ lb config noauto \
      --firmware-chroot 'true' \
      --security 'true' \
      --memtest 'none' \
-     --image-name 'Lilidog-Bookworm-23.03.08' \
+     --image-name 'Lilidog-Bookworm-23.03.09' \
      --iso-application 'Lilidog-Bookworm' \
      --iso-publisher 'Lilidog-bookworm GNU/Linux' \
-     --iso-volume 'LiliDog-Bookworm' \
+     --iso-volume 'Lilidog-Bookworm' \
      --system 'live' \
      --updates 'true' \
      --win32-loader 'false' \
