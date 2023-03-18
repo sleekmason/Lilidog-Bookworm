@@ -3,6 +3,9 @@
 # Made be sleekmason for Lilidog 4-13-2022
 
 FILE="$HOME/.config/tint2/tint2rc"
+# NOTIFY controls the tint2 apt notifier colors, matching these selections.
+NOTIFY="$HOME/.config/tint2/executors/notifier"
+
 noti=$(yad --width 310 --borders=12 --entry --title "Tint2 Icon Color" --center --window-icon=org.xfce.settings.color \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
     --button="gtk-cancel:1" --button="gtk-ok:0" \
@@ -12,66 +15,79 @@ case $noti in
   Base*)
   notify-send --urgency low 'Changing Tint2 icon color to Base Default' ;
        sed -i 's/coltint2.*\//coltint2base\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2base.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
   Light*)
   notify-send --urgency low 'Changing Tint2 icon color to Light Grey' ;
        sed -i 's/coltint2.*\//coltint2lightgrey\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2lightgrey.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
   Grey*)
     notify-send --urgency low 'Changing Tint2 icon color to Grey' ;
-          sed -i 's/coltint2.*\//coltint2grey\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2grey\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2grey.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    Dark*)
    notify-send --urgency low 'Changing Tint2 icon color to Dark Grey' ;
-         sed -i 's/coltint2.*\//coltint2darkgrey\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2darkgrey\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2darkgrey.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    Adobe)
    notify-send --urgency low 'Changing Tint2 icon color to Adobe' ;
-         sed -i 's/coltint2.*\//coltint2adobe\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2adobe\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2adobe.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
   Aqua*)
     notify-send --urgency low 'Changing Tint2 icon color to Aqua' ;
-        sed -i 's/coltint2.*\//coltint2aqua\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2aqua\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2aqua.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
   Blue)
     notify-send --urgency low 'Changing Tint2 icon color to Blue' ;
        sed -i 's/coltint2.*\//coltint2blue\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2blue.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
   Navy*)
   notify-send --urgency low 'Changing Tint2 icon color to Navy' ;
        sed -i 's/coltint2.*\//coltint2navy\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2navy.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    Indigo)
    notify-send --urgency low 'Changing Tint2 icon color to Indigo' ;
        sed -i 's/coltint2.*\//coltint2indigo\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2indigo.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    Violet)
    notify-send --urgency low 'Changing Tint2 icon color to Violet' ;
-         sed -i 's/coltint2.*\//coltint2violet\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2violet\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2violet.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    Magenta)
    notify-send --urgency low 'Changing Tint2 icon color to Magenta' ;
-        sed -i 's/coltint2.*\//coltint2magenta\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2magenta\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2magenta.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    Black)
    notify-send --urgency low 'Changing Tint2 icon color to Black' ;
-         sed -i 's/coltint2.*\//coltint2black\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2black\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2black.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2
 ;;
    White)
    notify-send --urgency low 'Changing Tint2 icon color to White' ;
-        sed -i 's/coltint2.*\//coltint2white\//g' "$FILE"
+       sed -i 's/coltint2.*\//coltint2white\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2white.png"/g' "$NOTIFY"
      killall -SIGUSR1 tint2 ;;
         *) exit 1 ;;
     esac

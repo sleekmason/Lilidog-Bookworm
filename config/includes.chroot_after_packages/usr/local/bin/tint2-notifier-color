@@ -1,0 +1,36 @@
+#!/bin/bash
+# tint2 apt notifier color options.
+# Made be sleekmason for Lilidog 17 Mar 2023
+
+FILE="$HOME/.config/tint2/executors/notifier"
+noti=$(yad --width 310 --borders=8 --entry --title "Icon Notifier Color" --center --window-icon=applications-graphics \
+    --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
+    --button="gtk-cancel:1" --button="gtk-ok:0" \
+    "Green" "Blue" "Magenta" "Yellow" "Orange" "Red")
+
+case $noti in
+  Green)
+     sed -i 's/^upgradecolor=.*/upgradecolor="upgrade-green.png"/g' "$FILE"
+     killall -SIGUSR1 tint2
+;;
+  Blue)
+     sed -i 's/^upgradecolor=.*/upgradecolor="upgrade-blue.png"/g' "$FILE"
+     killall -SIGUSR1 tint2
+;;
+  Magenta)
+     sed -i 's/^upgradecolor=.*/upgradecolor="upgrade-magenta.png"/g' "$FILE"
+     killall -SIGUSR1 tint2
+;;
+  Yellow)
+     sed -i 's/^upgradecolor=.*/upgradecolor="upgrade-yellow.png"/g' "$FILE"
+     killall -SIGUSR1 tint2
+;;
+  Orange)
+     sed -i 's/^upgradecolor=.*/upgradecolor="upgrade-orange.png"/g' "$FILE"
+     killall -SIGUSR1 tint2
+;;
+   Red)
+     sed -i 's/^upgradecolor=.*/upgradecolor="upgrade-red.png"/g' "$FILE"
+     killall -SIGUSR1 tint2 ;;
+        *) exit 1 ;;
+    esac

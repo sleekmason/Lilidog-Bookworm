@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# This script controls the apt notifier toggle for tint2.
+# Available upgrade colors = green, blue, magenta, yellow, orange, red.
+# change upgradecolors through 'apt notifier' in tint2 panel.
+# Associated script is 'tint2-apt-notifier-color' in /usr/local/bin
+# iconcolor changes come from tint2-iconcolor in /usr/local/bin.
+# change tint2 iconcolors through the tint2 options in the panel.
+# Made be sleekmason for Lilidog 4-13-2022
+ 
+upgradecolor="upgrade-green.png"
+iconpath="$HOME/.config/tint2/executors/icons/update/"
+iconcolor="coltint2base.png"
+status=$(apt list --upgradable | expr "$(wc -l)" - 1)
+
+#if [ "$status" != 0 ]; then
+	#echo "${iconpath}${upgradecolor}"
+#else
+    echo "${iconpath}${iconcolor}"
+fi

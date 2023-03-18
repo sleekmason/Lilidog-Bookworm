@@ -1,0 +1,17 @@
+#!/bin/bash
+## Script to toggle apt notifier executor action on/off in tint2
+
+FILE="$HOME/.config/tint2/executors/notifier"
+
+if grep -q '#else' "$FILE"; then
+sed -i 's/^#if/if/g' "$FILE"
+sed -i "0,/#echo/{s/#echo/echo/}" "$FILE"
+sed -i 's/^#else/else/g' "$FILE"
+notify-send --urgency low 'Apt Upgrade Notifier On'
+else
+sed -i 's/^if/#if/g' "$FILE"
+sed -i "0,/echo/{s/echo/#echo/}" "$FILE"
+sed -i 's/^else/#else/g' "$FILE"
+notify-send --urgency low 'Apt Upgrade Notifier Off'
+fi
+killall -SIGUSR1 tint2
