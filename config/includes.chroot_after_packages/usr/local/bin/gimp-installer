@@ -1,23 +1,23 @@
 #!/bin/bash
 echo ""
-echo "   [0;33mGNU Image Manipulation Program (GIMP) Installer[0m"
+echo "   [0;33mGNU Image Manipulation Program (GIMP) Full Installer[0m"
 echo ""
-read -p "   This script will install the GNU Image Manipulation Program,
-   The free and open source image editor.   [0;32mhttps://www.gimp.org/[0m
+read -p "   This script will install the GNU Image Manipulation Program
+   with a few extra options. These includes: gimp-plugin-registry 
+   gimp-texturize and gimp-lensfun. [0;32mhttps://www.gimp.org/[0m
 
-   This will also install the gimp-data-extras package for extra options
-   and place a menu entry for the Gimp in the Quickgrab menu.
+   A new menu entry will be placed in the 'Quickgrab' menu section.
 
-   [0;32m-----------------------------------------------------
+   [0;32m-----------------------------------------------------------------
    
-   Please press enter to install the GIMP.
+   Please press enter to install the GNU Image Manipulation Program.
    
-   -----------------------------------------------------[0m
+   -----------------------------------------------------------------[0m
      
    Or close this terminal window to quit the install." ;   
     if : >/dev/tcp/8.8.8.8/53; then
 echo ""   
-sudo apt update && sudo apt install --install-recommends gimp gimp-data-extras &&
+sudo apt update && sudo apt install --install-recommends gimp gimp-data-extras gimp-plugin-registry gimp-texturize gimp-lensfun &&
 sed -i '/Gimp,               gimp,                              gimp/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' ~/.config/jgmenu/mymenu.csv
 killall jgmenu
