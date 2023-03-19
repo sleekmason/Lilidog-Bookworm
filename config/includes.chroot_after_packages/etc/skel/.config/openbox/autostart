@@ -45,4 +45,3 @@ if type 'thunar' &> /dev/null; then
 thunar --daemon &
 fi
 welcome.sh &
-yad --notification --image=emblem-default --text "Install Lilidog" --command "gksudo calamares" &
