@@ -17,7 +17,7 @@ read -p "   This script will install the GNU Image Manipulation Program
    Or close this terminal window to quit the install." ;   
     if : >/dev/tcp/8.8.8.8/53; then
 echo ""   
-sudo apt update && sudo apt install --install-recommends gimp gimp-data-extras gimp-plugin-registry gimp-texturize gimp-lensfun &&
+sudo apt update && sudo apt install gimp gimp-data-extras ghostscript libgts-bin gimp-plugin-registry gimp-texturize gimp-lensfun &&
 sed -i '/Gimp,               gimp,                              gimp/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' ~/.config/jgmenu/mymenu.csv
 killall jgmenu
