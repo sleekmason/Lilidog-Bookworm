@@ -4,7 +4,7 @@
     This is the Lilidog Bookworm - Debian 12 Test
     Addition. There could still be minor bugs and
     other issues until the full debian release of  
-    Bookworm occurs later this year. For issues:
+    Bookworm occurs. To report any issues:
 
     https://www.forum.lilidog.org/
     
@@ -12,9 +12,11 @@
     located in the Tint2 panel. Font size, themes
     wallpapers, and other options are available.
 
-    Calamares live installer is a new addition in
-    Lilidog! Look in Menu - All Programs - System
-    Install Lilidog. The debian installer is also
-    still available. Reboot for the debian menu.
+    To install Lilidog, click on the green button 
+    in the system tray, or goto Menu All Programs
+    System - Install Lilidog. The 'root' password  
+    for the session is 'live'.
+    
+    The debian installer is also an option should
+    anyone prefer it. Reboot to access the menu.
 
-    Sudo password for the live session is 'live'.
