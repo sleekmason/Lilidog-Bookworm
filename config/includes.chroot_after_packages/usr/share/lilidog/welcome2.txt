@@ -18,5 +18,5 @@
     for the session is 'live'.
     
     The debian installer is also an option should
-    anyone prefer it. Reboot to access the menu.
+    you prefer it. Reboot to access the menu.
 
