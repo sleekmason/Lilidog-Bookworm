@@ -217,7 +217,7 @@ separator_padding = 1 0
 # Executor 1
 execp = new
 execp_command = ~/.config/tint2/executors/notifier
-execp_interval = 10
+execp_interval = 20
 execp_has_icon = 1
 execp_cache_icon = 1
 execp_continuous = 0
