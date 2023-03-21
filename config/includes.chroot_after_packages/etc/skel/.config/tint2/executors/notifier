@@ -11,7 +11,7 @@
 upgradecolor="upgrade-green.png"
 iconpath="$HOME/.config/tint2/executors/icons/update/"
 iconcolor="coltint2base.png"
-status=$(apt list --upgradable | expr "$(wc -l)" - 1)
+status=$(( $(apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | wc -l ) -1 ))
 
 #if [ "$status" != 0 ]; then
 	#echo "${iconpath}${upgradecolor}"
