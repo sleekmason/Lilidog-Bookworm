@@ -172,7 +172,7 @@ time1_font = Noto Sans 13
 time1_timezone = 
 time2_timezone = 
 clock_font_color = #cadbeb 100
-clock_padding = 2 0
+clock_padding = 3 0
 clock_background_id = 0
 clock_tooltip = Left Click = Calendar - Middle Click = Multi Timer - Right-Click = Timezone Changer
 clock_tooltip_timezone = 
@@ -367,7 +367,7 @@ button_mclick_command = tint2conf
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 2 0
+button_padding = 1 0
 button_background_id = 0
 button_centered = 0
 button_max_icon_size = 20
