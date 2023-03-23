@@ -89,7 +89,7 @@ _upgrade() {
       do_it() {
 		[ "$_quiet" != "yes" ] &&
 		$PkgMgr upgrade       ||
-		$PkgMgr upgrade 2>&1 > /dev/null 2>&1
+		$PkgMgr upgrade 2>&1 > /dev/null 2>&1 && killall -SIGUSR1 tint2
 }
 	see_it
 	no_see
