@@ -32,6 +32,6 @@ style:
    sidebarBackground:    "#293542"
    sidebarText:          "#8FADCC"
    sidebarTextSelect:    "#FFFFFF"
-   sidebarTextHighlight: "#36659A"
+   sidebarTextHighlight: "#1E6E4D"
 
 slideshowAPI: 2

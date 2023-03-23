@@ -96,6 +96,15 @@ _add_backports() {
         run_it
 }
 
+_osprober() {
+      _msg="Enable osprober to find other distro entries in grub?"
+      do_it() { sed -i 's/^#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' "/etc/default/grub" &&
+		        update-grub ;}
+        see_it
+        no_see
+        run_it
+}
+
 _firmware() {
       _msg="Install isenkram-cli to check for missing firmware?"
       do_it() { apt update && sudo apt install -y isenkram-cli &&
@@ -125,6 +134,7 @@ _update
 _remove_packages
 _upgrade_kernel
 _add_backports
+_osprober
 _firmware
 _autologin
 _reboot
