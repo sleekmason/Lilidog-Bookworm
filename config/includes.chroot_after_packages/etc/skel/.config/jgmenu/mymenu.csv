@@ -67,6 +67,7 @@ Mouse Finder,        toggle-mouse-pointer,                          preferences-
 Tint2 Toggle,        toggle.tint2,                                  preferences-system
 Auto Login,          lightdm-autologin,                             preferences-system
 Touchpad,            toggle-touchpad,                               preferences-system
+OSprober,            osprober-toggle,                               preferences-system
 Sounds,              notification-sounds,                           preferences-system
 Picom,               toggle.picom,                                  preferences-system
 Xkill,               xkill,                                         edit-delete
