@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Inxi Info
+Exec=x-terminal-emulator -T 'Inxi Info' -e bash -c "inxi -Fxrzm; echo $'\n\nPress any key to close'; read -srn1"
+StartupNotify=false
+Terminal=false
+Icon=document-properties
+Categories=System;

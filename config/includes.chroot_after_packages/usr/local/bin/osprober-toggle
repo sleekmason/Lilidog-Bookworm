@@ -5,6 +5,7 @@
 # and /usr/share/lilidog/osprober.txt
 
 FILE="/etc/default/grub"
+if grep -q "$fs" /proc/partitions; then
 if grep -q '#GRUB_DISABLE_OS_PROBER=false' "$FILE"; then
 notify-send  -t 10000 --urgency low "OSprober Is Currently Disabled"
 else
@@ -18,3 +19,6 @@ fi
 --button="gtk-quit:1" --buttons-layout=spread \
 --text-info --justify=left --wrap < /usr/share/lilidog/osprober.txt --fontname="JetBrains Mono Light 11" \
 --fore="#C0DDEB"; exit
+else
+notify-send  -t 10000 --urgency low "Toggle Requires An Installed System"
+fi

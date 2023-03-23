@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=OSprober toggle
+Exec=osprober-toggle
+StartupNotify=false
+Terminal=false
+Icon=applications-system
+Categories=System;

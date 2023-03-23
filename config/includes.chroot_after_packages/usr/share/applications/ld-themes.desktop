@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Lilidog Quick Themes
+Exec=ld-theme-changer
+StartupNotify=false
+Terminal=false
+Icon=applications-graphics
+Categories=System;
