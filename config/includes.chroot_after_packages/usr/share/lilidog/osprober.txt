@@ -3,9 +3,9 @@
                         
     OSprober is a utility that works in conjuntion 
     with grub to provide a list at boot of all the 
-    operating systems listed on your computor.   
+    systems enabled by grub on your computer.   
     
-    Use the Toggle button to enable osprober on or 
+    Use the Toggle button to switch osprober on or 
     off. The log is in /var/log/grub-update.log
     
     Please wait for grub to finish updating before 
