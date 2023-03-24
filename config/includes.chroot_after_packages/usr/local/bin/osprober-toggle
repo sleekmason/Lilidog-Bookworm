@@ -5,6 +5,8 @@
 # and /usr/share/lilidog/osprober.txt
 
 FILE="/etc/default/grub"
+full_fs=$(df ~ | tail -1 | awk '{print $1;}')  # find partition
+fs=$(basename "$full_fs")
 if grep -q "$fs" /proc/partitions; then
 if grep -q '#GRUB_DISABLE_OS_PROBER=false' "$FILE"; then
 notify-send  -t 10000 --urgency low "OSprober Is Currently Disabled"
