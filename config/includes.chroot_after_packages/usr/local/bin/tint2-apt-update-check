@@ -1,0 +1,6 @@
+#!/bin/bash
+## Script to toggle apt notifier executor action on/off in tint2
+
+
+num=$(( $( apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | wc -l ) -1 ))
+notify-send  -t 10000 --urgency low "$num Update(s) Currently Available"
