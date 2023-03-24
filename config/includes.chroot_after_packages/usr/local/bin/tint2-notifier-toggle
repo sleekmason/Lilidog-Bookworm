@@ -10,7 +10,7 @@ sed -i 's/^#if/if/g' "$FILE"
 sed -i "0,/#echo/{s/#echo/echo/}" "$FILE"
 sed -i 's/^#else/else/g' "$FILE"
 notify-send --urgency low -i "$iconpath"/upgrade-green.png 'Apt Upgrade Notifier On'
-sleep 1 ; notify-send -t 10000 -u low "$num Updates Currently Available" -i "$iconpath"/upgrade-green.png
+sleep 1 ; notify-send -t 10000 -u low "$num Update(s) Currently Available" -i "$iconpath"/upgrade-green.png
 else
 sed -i 's/^if/#if/g' "$FILE"
 sed -i "0,/echo/{s/echo/#echo/}" "$FILE"
