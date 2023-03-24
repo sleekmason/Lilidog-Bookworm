@@ -22,5 +22,5 @@ fi
 --text-info --justify=left --wrap < /usr/share/lilidog/osprober.txt --fontname="JetBrains Mono Light 11" \
 --fore="#C0DDEB"; exit
 else
-notify-send  -t 10000 --urgency low "Toggle Requires An Installed System"
+notify-send  -t 10000 --urgency low "OSprober Toggle Requires An Installed System"
 fi

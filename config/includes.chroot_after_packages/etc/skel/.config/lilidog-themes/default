@@ -61,7 +61,7 @@ sed -i 's/^battery_font_color.*/battery_font_color = #C1CFDB 100/g' "$HOME"/.con
 killall -SIGUSR1 tint2
 
 ## Feh Background
-feh --bg-scale '/home/wallpaper/glade.png'
+feh --bg-scale '/home/wallpaper/Glade.png'
 
 ## Sounds - Dunst
 sed -i '/summary/d' ~/.config/dunst/dunstrc
