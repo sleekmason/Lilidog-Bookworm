@@ -1,9 +1,15 @@
 Apt Notifier - Changes the color of the 'plus' icon in
 the tint2 panel when updates are available through apt. 
 
-Just clicking on the dialog should give you a message 
-with the number of updates. If you want a groovy icon
-color change to boot, read on.
+*NOTE - MANUAL METHOD
+You can check if you have updates by clicking the plus
+icon -> Check For Updates, which gives a notification
+message and places an icon in the tray as a reminder
+until exited if updates are available.
+
+AUTO METHOD
+For automatic notifications with a groovy icon color
+change to boot, read on.
 
 TO USE THE ICON COLOR CHANGER:
 Click the Color Icon button on or off to allow the icon 
