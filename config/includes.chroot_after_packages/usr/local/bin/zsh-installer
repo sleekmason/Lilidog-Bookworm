@@ -1,0 +1,79 @@
+#!/bin/bash
+echo ""
+read -p "   [0;33mzsh shell installer[0m
+
+
+   Zsh is a shell designed for interactive use, although it's also a 
+   powerful scripting language. More information can be found on the 
+   Zsh Web Pages sites.  [0;32mhttps://www.zsh.org/[0m
+   
+   This script will install zsh with custom settings and change your
+   default shell to zsh. A logout and back in is required to use zsh.
+   
+   Any existing ~/.zshrc will be backed up to ~/.zshrc.bak and the 
+   default Lilidog version will be placed in ~/.zshrc 
+   
+   [0;33m----------------------------------------------------------
+   
+   Please press enter to install and enable the zsh shell.
+   
+   ----------------------------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+if test -e "$HOME/.zshrc" ; then
+echo ""
+echo ""
+echo "[0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
+echo ""
+echo "[0;32mIn order to use your old version of ~/.zshrc
+delete ~/.zshrc and rename the backup.[0m"
+echo ""
+echo ""
+mv $HOME/.zshrc $HOME/.zshrc.bak &&
+cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &&
+echo ""
+echo ""
+sudo apt update && sudo apt install zsh &&
+sudo chsh -s /bin/zsh $USER &&
+sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' ~/.config/jgmenu/mymenu.csv
+killall jgmenu
+else
+cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &&
+sudo apt update && sudo apt install zsh &&
+echo ""
+echo ""
+echo "[0;32mAdding custom ~/.zshrc to match Lilidog defaults and
+provide for some better default options.[0m"
+echo ""
+echo ""
+sudo chsh -s /bin/zsh $USER &&
+sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' ~/.config/jgmenu/mymenu.csv
+killall jgmenu
+fi
+echo ""
+echo "[0;32m----------------------------------------------------------------------"
+echo ""
+echo "All Finished!
+
+Remember, You will need to logout and back in to use zsh.
+Test with 'exec zsh' in a terminal for a temporary switch."
+echo "" 
+echo "----------------------------------------------------------------------[0m"
+echo ""
+echo "Now that zsh is installed, you might want to look at 'Oh My zsh'."
+echo ""
+echo "[0;36mhttps://github.com/ohmyzsh/ohmyzsh[0m"
+echo ""
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi
