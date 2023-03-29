@@ -62,7 +62,7 @@ fi
 type i3lock >/dev/null 2>&1
 RETVAL=$?
 if [[ "$RETVAL" == 0 ]]; then
-i3lock
+i3lock -efn -i /home/wallpaper/*
 exit 0
 fi
 type slock >/dev/null 2>&1
