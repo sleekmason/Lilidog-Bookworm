@@ -158,7 +158,6 @@ pnmixer
 powermgmt-base
 pragha
 pulseaudio-utils
-pycodestyle
 python3-distro
 python3-pyxattr
 python3-xdg
