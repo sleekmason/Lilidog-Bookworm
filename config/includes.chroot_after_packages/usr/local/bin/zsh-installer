@@ -8,7 +8,8 @@ read -p "   [0;33mzsh shell installer[0m
    Zsh Web Pages sites.  [0;32mhttps://www.zsh.org/[0m
    
    This script will install zsh with custom settings and change your
-   default shell to zsh. A logout and back in is required to use zsh.
+   default user shell to zsh. Your root shell will remain bash.
+   A logout and back in is required to use zsh.
    
    Any existing ~/.zshrc will be backed up to ~/.zshrc.bak and the 
    default Lilidog version will be placed in ~/.zshrc 
