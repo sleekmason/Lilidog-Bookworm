@@ -136,7 +136,7 @@ _upgrade_kernel
 _add_backports
 _osprober
 _firmware
-_autologin
+#_autologin
 _reboot
 
 [ "$_interactive" = "yes" ] &&
