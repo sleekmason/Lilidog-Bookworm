@@ -19,30 +19,35 @@
 
 #add BitJam's soure cli-shell-utils
 source /usr/local/lib/cli-shell-utils/cli-shell-utils.bash
+source gettext.sh
+DEBIAN_VERSION_CODENAME=$(grep VERSION_CODENAME /etc/os-release|cut -d"=" -f2)
 
-VERSION="21.10.01"
+VERSION="23.03.01"
 ME=${0##*/}
 CLI_PROG="ddm-mx"
 LOCK_FILE="/run/lock/$CLI_PROG"
 ERR_FILE="/dev/null"
 LOG="/var/log/ddm.log"
-BP_REPO="bookworm-backports"
+BP_REPO="$DEBIAN_VERSION_CODENAME-backports"
 BP_REPO_ADDRESS="deb http://ftp.debian.org/debian"
-#MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ bullseye test"
+MX_TEST_REPO_ADDRESS="deb http://la.mxrepo.com/mx/testrepo/ $DEBIAN_VERSION_CODENAME test"
 BACKPORTS_OVERRIDE=false
 
-TEXTDOMAINDIR=/usr/share/locale 
+export TEXTDOMAINDIR=/usr/share/locale 
 export TEXTDOMAIN="ddm-mx"
 
-UNKNOWN_ERROR=$"Unknown error"
-OPTION_ERROR1=$"Option-"
-OPTION_ERROR2=$"requires an argument."
-RUN_AS_ROOT=$"Run as root"
-INSTALL_DRIVERS_FOR=$"Install drivers for: "
+UNKNOWN_ERROR=$(eval_gettext "Unknown error")
+OPTION_ERROR1=$(eval_gettext "Option-")
+OPTION_ERROR2=$(eval_gettext "requires an argument.")
+RUN_AS_ROOT=$(eval_gettext "Run as root")
+INSTALL_DRIVERS_FOR=$(eval_gettext "Install drivers for: ")
 
 NVIDIA_XCONFIG="nvidia-xconfig"
 
 ARCH=$(dpkg --print-architecture)
+
+DESKTOPFILENAME=$(gettext "Nvidia driver installer")
+DESKTOPFILECOMMENT=$(gettext "Install proprietary nvidia driver from repo")
 
 main(){
 # -------------------------------------------------------------------------
@@ -66,7 +71,7 @@ PURGE=''
 INSTALL=''
 FORCEDRIVER=''
 TEST=false
-while getopts ":f:bi:p:ht" opt; do
+while getopts ":f:bi:p:htd:c" opt; do
   case $opt in
     h)
       usage HELP
@@ -85,10 +90,19 @@ while getopts ":f:bi:p:ht" opt; do
       echo "TEST Install"
       TEST=true
       ;;
+     d)
+      # 0fd4 is 390-legacy
+      echo "PCIID $OPTARG"
+      PCIID="$OPTARG"
+      ;;
     b)
       # Testing
       BACKPORTS_OVERRIDE=true
       ;;
+    c) #force create of 20-nvidia.conf file
+    	create_20_nvidiaconf
+    	exit 0
+    	;;
     f)
       # Testing
       FORCEDRIVER="$FORCEDRIVER$OPTARG"
@@ -97,7 +111,7 @@ while getopts ":f:bi:p:ht" opt; do
     \?)
       # Invalid option: start GUI
       #launch_gui $@
-      echo $"Invalid option" | tee -a $LOG
+      echo $(eval_gettext "Invalid option") | tee -a $LOG
       exit 0
       ;;
     :)
@@ -107,7 +121,7 @@ while getopts ":f:bi:p:ht" opt; do
     *)
       # Unknown error: start GUI
       #launch_gui $@
-      echo $"Invalid option" | tee -a $LOG
+      echo $(eval_gettext "Invalid option") | tee -a $LOG
       exit 0
       ;;
   esac
@@ -125,7 +139,13 @@ if [ $UID -ne 0 ]; then
 fi
 
 ###file locking
-echo $"creating lock ..." | tee -a $LOG
+echo $(eval_gettext "creating lock ...") | tee -a $LOG
+
+# if running in a chroot, /run/lock doesn't exist. so make it
+if [ ! -d "/run/lock" ];then
+	mkdir -p /run/lock
+fi
+
 trap clean_up EXIT
 do_flock 
 
@@ -142,10 +162,14 @@ if [ -f $LOG ]; then
   fi
 fi 
 
-#log version
+#log version & parameters used to launch
 echo "===================================" | tee -a $LOG
 echo "ddm-mx: $VERSION" | tee -a $LOG
+echo "kernel release: $(uname -r)" | tee -a $LOG
+echo "kernel version: $(uname -v)" | tee -a $LOG
+echo "command parameters: $@" |tee -a $LOG
 echo "===================================" | tee -a $LOG
+
 
 # =========================================================================
 # =========================================================================
@@ -155,8 +179,8 @@ echo "===================================" | tee -a $LOG
 for DRV in $PURGE; do
   # Start the log
   echo "===================================" | tee -a $LOG
-  echo $"Purge drivers for: "$DRV | tee -a $LOG
-  echo $"Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
+  echo $(eval_gettext "Purge drivers for: ")$DRV | tee -a $LOG
+  echo $(eval_gettext "Start at (m/d/y):") $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
   echo "===================================" | tee -a $LOG
   
   case $DRV in
@@ -164,7 +188,7 @@ for DRV in $PURGE; do
       install_open
       ;;
     *)
-      echo $"ERROR: Unknown argument: $DRV" | tee -a $LOG
+      echo $(eval_gettext 'ERROR: Unknown argument: $DRV') | tee -a $LOG
       echo
       usage
       exit 2
@@ -178,7 +202,7 @@ for DRV in $INSTALL; do
   # Start the log
   echo "===================================" | tee -a $LOG
   echo $INSTALL_DRIVERS_FOR $DRV | tee -a $LOG
-  echo $"Start at (m/d/y):" $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
+  echo $(eval_gettext "Start at (m/d/y):") $(date +"%m/%d/%Y %H:%M:%S") | tee -a $LOG
   echo "===================================" | tee -a $LOG
 #  echo ""
   purge_message
@@ -197,7 +221,7 @@ for DRV in $INSTALL; do
       install_open
       ;;
     *)
-      echo $"ERROR: Unknown argument: " $DRV | tee -a $LOG
+      echo $(eval_gettext "ERROR: Unknown argument: ") $DRV | tee -a $LOG
       echo
       usage
       exit 2
@@ -209,24 +233,31 @@ exit 0
 }
 
 function usage() {
+
+
+
   echo "======================================================================"
-  echo $"Device Driver Manager Help:" "ddm-mx:  $VERSION"
+  echo $(eval_gettext "Device Driver Manager Help:") "ddm-mx:  $VERSION"
   echo "======================================================================"
-  echo $"The following options are allowed:"
+  echo $(gettext "The following options are allowed:")
   echo
-  echo "-b            Offer debian-backports alternative"
+  echo "-b            " $(gettext "Offer debian-backports alternative")
+  echo "-c            " $(gettext "Create 20-nvidia.conf")
   echo
-  echo $"-i driver    Install given driver."
-  echo $"             drivers: nvidia, open, fixbumblebee"
+  echo "-i [driver]   " $(gettext "Install given driver.")
+  echo "              " $(gettext "drivers: nvidia, open, fixbumblebee")
   echo
-  echo $"-p driver    Purge given driver."
-  echo $"             driver: nvidia"
+  echo "-p [driver]   " $(gettext "Purge given driver.")
+  echo "              " $(gettext "driver: nvidia")
   echo
-  echo $"-f           force specific nvidia driver package.  nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver, nvidia-tesla-450-driver, nvidia-tesla-460-driver"
+  echo "-f [driver]   " $(gettext "force specific nvidia driver package.")
+  echo "               nvidia-driver, nvidia-legacy-390xx-driver, nvidia-tesla-418-driver,"
+  echo "               nvidia-tesla-450-driver, nvidia-tesla-460-driver, nvidia-tesla-470-driver"
+  echo "               nvidia-tesla-510-driver nvidia-legacy-340xx-driver, bumblebee-nvidia"
   echo
-  echo $"-t           For development testing only!  simulate installs"
-  echo $"             This will install drivers for pre-defined hardware."
-  echo $"             Use with -i."
+  echo "-t            " $(gettext "For development testing only!  simulate installs")
+  echo "              " $(gettext "This will install drivers for pre-defined hardware.")
+  echo "              " $(gettext "Use with -i.")
   echo
   echo "----------------------------------------------------------------------"
    echo "sudo ddm-mx -i nvidia"
@@ -255,17 +286,22 @@ function preseed_nvidia {
 }
 
 function install_nvidia {
+  update_sources
+  install_nvidia_detect
   USER=$(logname)
   ARCHITECTURE=$(uname -m)
   if [ -z "$FORCEDRIVER" ]; then
-	DRIVER=$(nvidia-detect-mx |grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
+    nvidia-detect-mx | tee -a $LOG
+	DRIVER=$(nvidia-detect-mx $PCIID|grep INSTALL: |tr -d ' ' |cut -d ':' -f2)
   fi
   
-  UNSUPPORTED_LEGACY=$(nvidia-detect-mx | grep -e173.14 -e96.43 -e71.86 -e304)
+  UNSUPPORTED_LEGACY=$(nvidia-detect-mx $PCIID| grep -e173.14 -e96.43 -e71.86 -e304 -e340)
   
   # Testing
   if $TEST; then
-    DRIVER="nvidia-driver"
+    if [ -z "$PCIID" ]; then 
+		DRIVER="nvidia-driver"
+	fi
     TESTSWITCH="-s"
   fi
   
@@ -279,11 +315,10 @@ function install_nvidia {
   fi
   
   check_source_install
-  update_sources
   check_cand
   
 if [ "$BUMBLEBEE_NVIDIA_VERSION" = "nvidia-legacy-340xx-driver" ] ; then   
-		echo $"Unsupported configuration.  bumblebee only works with 390xx drivers and up."
+		echo $(eval_gettext "Unsupported configuration.  bumblebee only works with 390xx drivers and up.") |tee $LOG
 		my_exit
 fi
 
@@ -315,13 +350,13 @@ fi
   
   check_legacy
   
-  echo $"Need driver: "$DRIVER "$CANDIDATE" $BUMBLEBEE_NVIDIA_VERSION "$NVIDIA_VERSION" | tee -a $LOG
+  echo $(eval_gettext "Need driver: ")$DRIVER "$CANDIDATE" $BUMBLEBEE_NVIDIA_VERSION "$NVIDIA_VERSION" | tee -a $LOG
 
   set_packages 
   
-  echo $"NVIDIA packages to install are " $DRIVER | tee -a $LOG
+  echo $(eval_gettext "NVIDIA packages to install are ") $DRIVER | tee -a $LOG
 
-  YES_no $"Continue?"
+  YES_no $(eval_gettext "Continue?")
     if [ "$?" = "1" ]; then 
         exit 0
     fi
@@ -342,9 +377,12 @@ fi
   # Install the packages
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
 
-  echo $"Nvidia command " "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
+  echo $(eval_gettext "Nvidia command ") "= apt-get install --install-recommends --reinstall -y $FORCE $SWITCH $BP $DRIVER" | tee -a $LOG
   apt-get install --reinstall -y linux-headers-$(uname -r) build-essential $TESTSWITCH 2>&1 | tee -a $LOG
   apt-get install --reinstall $INSTALL_RECOMMENDS -y $SWITCH $BP $DRIVER $TESTSWITCH 2>&1 | tee -a $LOG
+  if [ "$?" = "0" ]; then
+  	POSTINSTALL=true;
+  fi
   
   #install certain 32 bit libs that don't like --install-recommends
   #if [ -n "$LIB32" ]; then
@@ -366,15 +404,15 @@ fi
       apt-get purge -y $FORCE nvidia-xconfig 2>&1 | tee -a $LOG
       #mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.ddm 2>&1 | tee -a $LOG
     else
-      echo $"ERROR: Could not configure Bumblebee for user: " $USER | tee -a $LOG
+      echo $(eval_gettext "ERROR: Could not configure Bumblebee for user: ") $USER | tee -a $LOG
     fi
   else
     if $TEST; then
-    echo $"test enabled, not creating xorg.conf file"
+    echo $(eval_gettext "test enabled, not creating xorg.conf file")
     #nvidia-xconfig | tee -a $LOG
     else
         if [ "$NVIDIA_XCONFIG" = "nvidia-xconfig" ]; then
-            echo $"creating /etc/X11/xorg.conf file"
+            echo $(eval_gettext "creating /etc/X11/xorg.conf file")
             nvidia-xconfig | tee -a $LOG
         fi
         #340 nvidia fixes
@@ -383,7 +421,28 @@ fi
         fi
     fi
   fi
-  echo $"Finished" | tee -a $LOG
+  #POSTINSTALL
+  if [ $POSTINSTALL ]; then
+    echo "POSTINSTALL" | tee -a $LOG
+  	#add possible missing symlinks
+  	echo "symlinks" | tee -a $LOG
+  	create_modprobe_symlinks
+  	#create 20_nvidia.conf file for non-optimus parts
+  	if [ $OPTIMUS = 1 ]; then
+    	echo "20_nvidia.conf" | tee -a $LOG
+  		create_20_nvidiaconf
+  	fi
+  	#backup any existing xorg.conf file
+  	if [ -e /etc/X11/xorg.conf ]; then
+  		XORGBACKUP="/etc/X11/xorg.conf.bak.$(date +%Y%m%H%M%S)"
+  		echo "mv /etc/X11/xorg.conf --> $XORGBACKUP" | tee -a $LOG
+  		mv /etc/X11/xorg.conf $XORGBACKUP
+  	fi
+  	#update initramfs one more time
+  	
+  	update-initramfs -u -k all | tee -a $LOG
+  fi
+  echo $(eval_gettext "Finished") | tee -a $LOG
   echo ""
   finish_purge_message
   
@@ -395,12 +454,14 @@ function purge_proprietary_drivers {
   rm /etc/X11/xorg.conf 2>/dev/null
   rm /etc/modprobe.d/nvidia* 2>/dev/null
   rm /etc/modprobe.d/blacklist-nouveau.conf 2>/dev/null
-  # Leave nvidia-detect and nvidia-installer-cleanup
-  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v detect | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
-# apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
-
+  remove_20_nvidiaconf
+  # Leave nvidia-installer-cleanup
+  apt-get purge $FORCE $(apt-cache pkgnames | grep nvidia | grep -v cleanup | cut -d':' -f1) bumblebee* primus* primus*:i386 *nvidia*:i386 2>&1 | tee -a $LOG
+  # apt-get purge $FORCE bumblebee* primus* primus*:i386 2>&1 | tee -a $LOG
+  # remove possible leftover symlinks
+	remove_modprobe_symlinks
   if [ "$?" = "0" ]; then 
-      echo $"Proprietary drivers removed" | tee -a $LOG
+      echo $(eval_gettext "Proprietary drivers removed") | tee -a $LOG
   fi
 }
 
@@ -413,11 +474,11 @@ function install_open {
   # Install the packages
   update_sources
   echo "Frontend: $(echo $DEBIAN_FRONTEND)" | tee -a $LOG
-  echo $"Open command " "= apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
+  echo $(eval_gettext "Open command ") "= apt-get install --reinstall -y $FORCE $DRIVER" | tee -a $LOG
   apt-get install --reinstall $FORCE $DRIVER 2>&1 | tee -a $LOG
   
   if [ "$?" = "0" ]; then 
-      echo $"Open drivers installed" | tee -a $LOG
+      echo $(eval_gettext "Open drivers installed") | tee -a $LOG
   fi
   
   # Now cleanup
@@ -431,13 +492,13 @@ echo "" | tee -a $LOG
 echo "" | tee -a $LOG 
 if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
   rm -f /etc/apt/sources.list.d/debian-backports-temp.list
-  echo $"Resetting sources"
+  echo $(eval_gettext "Resetting sources")
   apt-get update
   echo ""
 fi
 if [ -f /etc/apt/sources.list.d/mx-test-repo-temp.list ]; then
     rm -f /etc/apt/sources.list.d/mx-test-repo-temp.list
-    echo $"Resetting sources"
+    echo $(eval_gettext "Resetting sources")
     apt-get update
     echo ""
 fi
@@ -448,7 +509,7 @@ if [ -e "/etc/apt/preferences.d/nvidia-ddm-temp" ]; then
 	rm /etc/apt/preferences.d/nvidia-ddm-temp*
 fi
 
-echo -n $"Press <Enter> to exit" | tee -a $LOG 
+echo -n $(eval_gettext "Press <Enter> to exit") | tee -a $LOG 
 read x
 }
 
@@ -462,13 +523,13 @@ my_exit() {
 enable_debian_backports()
 {
 #enabling debian-backports
-  echo $"Enabling backports repo"
-  echo $"Running apt-get update..."
+  echo $(eval_gettext "Enabling backports repo")
+  echo $(eval_gettext "Running apt-get update...")
   echo "$BP_REPO_ADDRESS $BP main contrib non-free">>/etc/apt/sources.list.d/debian-backports-temp.list
   update_sources
   echo ""
   if [ "$ARCH" = "amd64" ]; then
-    echo $"Installing latest nvidia-detect package"|tee -a $LOG
+    echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
     echo ""
     apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
     echo ""
@@ -478,13 +539,13 @@ enable_debian_backports()
 enable_mx_test_repo()
 {
 #enabling mx_test_repo
-  echo $"Enabling MX Test repo"
-  echo $"Running apt-get update..."
+  echo $(eval_gettext "Enabling MX Test repo")
+  echo $(eval_gettext "Running apt-get update...")
   echo "$MX_TEST_REPO_ADDRESS">>/etc/apt/sources.list.d/mx-test-repo-temp.list
   update_sources
   echo ""
   if [ "$ARCH" = "amd64" ]; then
-    echo $"Installing latest nvidia-detect package"|tee -a $LOG
+    echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
     echo ""
     apt-get install $SWITCH "$BP" nvidia-detect |tee -a $LOG  
     echo ""
@@ -493,109 +554,121 @@ enable_mx_test_repo()
 
 debian_backports_dialog()
 {
-echo $"Would you like to check debian-backports for a later version?" | tee -a $LOG
+echo $(eval_gettext "Would you like to check debian-backports for a later version?") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Yes or No?" | tee -a $LOG
+        echo $(eval_gettext "Yes or No?") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Yes" | tee -a $LOG
-        echo 2: $"No" | tee -a $LOG
+        echo 1: $(eval_gettext "Yes") | tee -a $LOG
+        echo 2: $(eval_gettext "No") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo "Enter Number of selection" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-           1) echo $"Ok"...| tee -a $LOG 
+           1) echo $(eval_gettext "Ok")...| tee -a $LOG 
 	      SWITCH="-t"
               BP=$BP_REPO
 	      enable_debian_backports	;;
-           2) echo $"Ok"... | tee -a $LOG
+           2) echo $(eval_gettext "Ok")... | tee -a $LOG
               SWITCH=""
 	      BP=""             ;;
-           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
 }
 
 mx_test_repo_dialog()
 {
-echo $"Would you like to check MX Test Repo for a later version?" >> $LOG
-yes_NO $"Would you like to check MX Test Repo for a later version?"
+echo $(eval_gettext "Would you like to check MX Test Repo for a later version?") >> $LOG
+yes_NO "$(eval_gettext "Would you like to check MX Test Repo for a later version?")"
 
         case $? in
-           0)   echo $"Ok"...| tee -a $LOG 
+           0)   echo $(eval_gettext "Ok")...| tee -a $LOG 
                 SWITCH="-t"
                 BP="a=mx,c=test"
                 enable_mx_test_repo	;;
-           1)   echo $"Ok"... | tee -a $LOG
+           1)   echo $(eval_gettext "Ok")... | tee -a $LOG
                 SWITCH=""
                 BP=""           ;;
-           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
 }
 
 
 which_driver()
 {
-echo $"Which driver do you wish to install" | tee -a $LOG
+echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Main repos or debian-backports?" | tee -a $LOG
+        echo $(eval_gettext "Main repos or debian-backports?") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Main" $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
+        echo 1: $(eval_gettext "Main") $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
         echo "" | tee -a $LOG
         echo 2: "debian-backports" $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
         echo "" | tee -a $LOG
-	echo 3: $"Exit" | tee -a $LOG
+	echo 3: $(eval_gettext "Exit") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Enter Number of selection" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-           1) echo $"Ok"...| tee -a $LOG 
+           1) echo $(eval_gettext "Ok")...| tee -a $LOG 
 	      SWITCH=""
               BP=""
               NVIDIA_VERSION=$MAIN_NVIDIA
               rm /etc/apt/sources.list.d/debian-backports-temp.list
-              apt-get update            
+              apt-get update  
+              #replace nvidia-detect from main repo
+              #only install if nvidia-detect was present already (not present on 32 bit systems)
+              if [ "$ARCH" = "amd64" ]; then
+              	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
+              	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y                     
+              fi
 	      ;;
-           2) echo $"Ok"... | tee -a $LOG
+           2) echo $(eval_gettext "Ok")... | tee -a $LOG
                 #NVIDIA_XCONFIG=""
                      ;;
-           3) echo $"exiting" |tee -a $LOG && exit 0;;
+           3) echo $(eval_gettext "exiting") |tee -a $LOG && exit 0;;
 
-           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
 }
 
 which_driver_mx()
 {
-echo $"Which driver do you wish to install" | tee -a $LOG
+echo $(eval_gettext "Which driver do you wish to install") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Main repos or MX Test" | tee -a $LOG
+        echo $(eval_gettext "Main repos or MX Test") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Main" $DRIVER $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
+        echo 1: $(eval_gettext "Main") $DRIVER $MAIN_CAND $BUMBLEBEE_NVIDIA_VERSION $MAIN_NVIDIA| tee -a $LOG
         echo "" | tee -a $LOG
-        echo 2: "MX Test" $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+        echo 2: $(eval_gettext "MX Test") $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
         echo "" | tee -a $LOG
-	echo 3: $"Exit" | tee -a $LOG
+	echo 3: $(eval_gettext "Exit") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Enter Number of selection" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-           1) echo $"Ok"...| tee -a $LOG 
+           1) echo $(eval_gettext "Ok")...| tee -a $LOG 
                 SWITCH=""
                 BP=""
                 NVIDIA_VERSION=$MAIN_NVIDIA
                 rm /etc/apt/sources.list.d/mx-test-repo-temp.list
                 apt-get update
-                    ;;
-           2)   echo $"Ok"... | tee -a $LOG
+                #replace nvidia-detect from main repo
+                #only install if nvidia-detect was present already (not present on 32 bit systems)
+                if [ "$ARCH" = "amd64" ]; then
+                	echo $(eval_gettext "Reset nvidia-detect") | tee -a $LOG
+                	apt-get remove nvidia-detect -y && apt-get install nvidia-detect -y
+                fi
+                ;;
+           2)   echo $(eval_gettext "Ok")... | tee -a $LOG
                 SWITCH="-t"
                 BP="a=mx,c=test"
                 #NVIDIA_XCONFIG=""
                      ;;
-           3) echo $"exiting" |tee -a $LOG && exit 0;;
+           3) echo $(eval_gettext "exiting") |tee -a $LOG && exit 0;;
 
-           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
 }
 
@@ -611,8 +684,8 @@ if [ "$DRIVER" = "bumblebee-nvidia" ]; then
 fi
 
 echo ""
-  echo $"Candidate is: " $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
-  echo $"Installed is: " $DRIVER $INSTALLED $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_INSTALLED | tee -a $LOG
+  echo $(eval_gettext "Candidate is: ") $DRIVER $CANDIDATE $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_VERSION| tee -a $LOG
+  echo $(eval_gettext "Installed is: ") $DRIVER $INSTALLED $BUMBLEBEE_NVIDIA_VERSION $NVIDIA_INSTALLED | tee -a $LOG
 echo ""
   
 }
@@ -620,14 +693,14 @@ update_sources()
 {
     local ret
     echo ""
-    echo $"Refreshing Sources with apt-get update" | tee -a $LOG
-    YES_no $"Continue?"
+    echo $(eval_gettext "Refreshing Sources with apt-get update") | tee -a $LOG
+    YES_no $(eval_gettext "Continue?")
     if [ "$?" = "0" ]; then 
         apt-get update
         if [ "$?" != "0" ]; then
             echo ""
             echo ""
-            echo $"There was a problem with the apt-get update.  See $LOG for details" | tee -a $LOG
+            echo $(eval_gettext 'There was a problem with the apt-get update.  See $LOG for details') | tee -a $LOG
             echo ""
             echo ""
             my_exit
@@ -637,7 +710,7 @@ update_sources()
 
 purge_message()
 {
-local PURGE_MESSAGE=$"To restore open source drivers use:  " 
+local PURGE_MESSAGE=$(eval_gettext "To restore open source drivers use:  ")
 echo ""| tee -a $LOG
 echo "========================================"| tee -a $LOG
 echo "========================================"| tee -a $LOG
@@ -654,7 +727,7 @@ finish_purge_message()
 {
 local USER="$(logname)"
 local USER_HOME_PATH="/home/$USER/ddm-mx-nvidia_removal_command.txt"
-local PURGE_MESSAGE=$"To restore open source drivers later use:  " 
+local PURGE_MESSAGE=$(eval_gettext "To restore open source drivers later use:  ") 
 echo ""| tee "$USER_HOME_PATH"
 echo "========================================"| tee -a "$USER_HOME_PATH"
 echo "========================================"| tee -a "$USER_HOME_PATH"
@@ -666,10 +739,10 @@ echo "========================================"| tee -a "$USER_HOME_PATH"
 echo "========================================"| tee -a "$USER_HOME_PATH"
 echo ""| tee -a "$USER_HOME_PATH"
 echo ""| tee -a "$USER_HOME_PATH"
-echo $"For recovery help see " | tee -a "$USER_HOME_PATH"
+echo $(eval_gettext "For recovery help see ") | tee -a "$USER_HOME_PATH"
 echo "https://mxlinux.org/wiki/hardware/nvidia-driver-install-recovery" | tee -a "$USER_HOME_PATH"
 echo ""
-echo $"Information written to ""$USER_HOME_PATH"
+echo $(eval_gettext "Information written to ")"$USER_HOME_PATH"
 chown $USER:$USER "$USER_HOME_PATH"
 
 }
@@ -705,12 +778,12 @@ fi
 check_source_install(){
 	#check for possible source install
   if [ -e /usr/bin/nvidia-installer ]; then
-    echo $"Possible previous install from source or smxi/sgfxi detected." | tee -a $LOG
-    echo $"Version detected: " $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g') | tee -a $LOG
-    echo $"Latest possible with this script : " $CANDIDATE | tee -a $LOG
-    echo $"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed" | tee -a $LOG
+    echo $(eval_gettext "Possible previous install from source or smxi/sgfxi detected.") | tee -a $LOG
+    echo $(eval_gettext "Version detected: ") $(modinfo nvidia | grep ^version: | sed 's/[^0-9.]*//g') | tee -a $LOG
+    echo $(eval_gettext "Latest possible with this script : ") $CANDIDATE | tee -a $LOG
+    echo $(eval_gettext "Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed") | tee -a $LOG
     #if [ $GUI ]; then
-	#	echo $"Possible previous install from source or smxi/sgfxi detected." $"Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed" > /tmp/ddm-msg
+	#	echo "$(eval_gettext 'Possible previous install from source or smxi/sgfxi detected.')" "$(eval_gettext 'Please remove with  <sudo nvidia-install --uninstall> and reboot if you wish to proceed')" > /tmp/ddm-msg
 	#fi
 	exit 10
   fi
@@ -718,22 +791,26 @@ check_source_install(){
 
 # Check for Optimus
 check_optimus(){
-    local OPTIMUS MIN_XORG_VERSION MIN_NVIDIA_VERSION MAJOR_NVIDIA_VERSION
+    local MIN_XORG_VERSION MIN_NVIDIA_VERSION MAJOR_NVIDIA_VERSION
     OPTIMUS=1
     if [ -z "$FORCEDRIVER" ]; then
 		if lspci -vnn | grep Intel |grep -q 0300 ; then
 			if lspci -vnn | grep NVIDIA | grep -q 0302 ; then
-				echo $"nvidia-optimus detected" | tee -a $LOG
+				echo $(eval_gettext "nvidia-optimus detected") | tee -a $LOG
 				OPTIMUS=2
 			else
-				YES_no $"Is this a NVIDIA/INTEL Optimus system?" | tee -a $LOG
-				if [ $? = 0 ]; then
+				YES_no "$(eval_gettext "Is this a NVIDIA/INTEL Optimus system?")"
+				if [ "$?" = "0" ]; then
 					OPTIMUS=2
 				fi
             
 			fi
 		fi
     fi
+	
+	if [ -z $CANDIDATE ]; then
+		return
+	fi
 
     if [ $OPTIMUS = 2 ]; then
         # Bumblebee used to be required, but now NVIDIA drivers support Optimus out of the box.
@@ -762,20 +839,20 @@ check_optimus(){
            if [ "$MAJOR_NVIDIA_VERSION" -ge "$MIN_NVIDIA_VERSION" ]
            then
 				echo ""
-                echo $"You can use the new PRIMUS driver built in to the nvidia drivers." | tee -a $LOG
-                echo $"Use \"nvidia-run-mx\" followed by your application command to use the nvidia graphics" | tee -a $LOG
+                echo $(eval_gettext "You can use the new PRIMUS driver built in to the nvidia drivers.") | tee -a $LOG
+                echo $(eval_gettext 'Use "nvidia-run-mx" followed by your application command to use the nvidia graphics') | tee -a $LOG
                 echo ""
-                printf $"If you want to force the older bumblebee optimus drivers,\n quit and restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia" | tee -a $LOG
+                printf "$(eval_gettext "If you want to force the older bumblebee optimus drivers,\n quit and restart with sudo ddm-mx -i nvidia -f bumblebee-nvidia")" | tee -a $LOG
                 echo ""
                 DRIVER='nvidia-driver'    
             else
-                echo $"You need to use the bumblebee-nvidia driver." | tee -a $LOG
+                echo $(eval_gettext "You need to use the bumblebee-nvidia driver.") | tee -a $LOG
                 # For nvidia-driver versions below 450 we must still use Bumblebee
                 BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
                 DRIVER='bumblebee-nvidia'
             fi
         else
-            echo $"You need to use the bumblebee-nvidia driver." | tee -a $LOG
+            echo $(eval_gettext "You need to use the bumblebee-nvidia driver.") | tee -a $LOG
             # For xorg versions below 1.20.8 we must still use Bumblebee
             BUMBLEBEE_NVIDIA_VERSION="$DRIVER"
             DRIVER='bumblebee-nvidia'
@@ -788,12 +865,12 @@ check_legacy(){
       if [ "$UNSUPPORTED_LEGACY" == "" ]
          then
 			  echo ""
-              echo $"nvidia driver not available, check your repo sources" | tee -a $LOG
+              echo $(eval_gettext "nvidia driver not available, check your repo sources") | tee -a $LOG
               exit 3
  
          else 
           echo ""
-	      echo $"Uh oh. Your card is only supported by older legacy drivers which are not in any current Debian suite." | tee -a $LOG
+	      echo $(eval_gettext "Uh oh. Your card is only supported by older legacy drivers which are not in any current Debian suite.") | tee -a $LOG
               exit 7
       fi
   fi
@@ -853,6 +930,23 @@ set_packages(){
                                            DRIVER="$DRIVER nvidia-settings-tesla-460 nvidia-tesla-460-kernel-dkms"
                                        fi
                                        ;;
+        nvidia-tesla-470-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-470 nvidia-tesla-470-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-470 nvidia-tesla-470-kernel-dkms"
+                                       fi
+                                       ;;
+                                       
+        nvidia-tesla-510-driver)    if [ "$ARCHITECTURE" == "x86_64" ]; then
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-510 nvidia-tesla-510-kernel-dkms"
+                                       else
+                                           NVIDIA_XCONFIG=""
+                                           DRIVER="$DRIVER nvidia-settings-tesla-510 nvidia-tesla-510-kernel-dkms"
+                                       fi
+                                       ;;
                   bumblebee-nvidia)    if [ "$DRIVER" == "bumblebee-nvidia" ]; then
 											NVIDIA_XCONFIG=""
 											
@@ -867,7 +961,7 @@ set_packages(){
                                        fi
                                        ;;
                                  *)
-                                       echo "2" $"ERROR: Unknown argument: " $DRV | tee -a $LOG 
+                                       echo "2" $(eval_gettext "ERROR: Unknown argument: ") $DRV | tee -a $LOG 
                                        echo | tee -a $LOG 
                                        usage
                                        exit 2
@@ -877,18 +971,18 @@ set_packages(){
 
 choose_cand(){
 	if [ -f /etc/apt/sources.list.d/debian-backports-temp.list ]; then
-       echo $"Main repo candidate is:  " $MAIN_CAND |tee -a $LOG
-       echo $"Debian backports candidate is:  "  $CANDIDATE |tee -a $LOG
-       echo $"Installed is: " $INSTALLED | tee -a $LOG
+       echo $(eval_gettext "Main repo candidate is:  ") $MAIN_CAND |tee -a $LOG
+       echo $(eval_gettext "Debian backports candidate is:  ")  $CANDIDATE |tee -a $LOG
+       echo $(eval_gettext "Installed is: ") $INSTALLED | tee -a $LOG
        echo ""
        which_driver
        echo ""
   fi  
   
   if [ -f /etc/apt/sources.list.d/mx-test-repo-temp.list ]; then
-       echo $"Main repo candidate is:  " $MAIN_CAND |tee -a $LOG
-       echo $"MX Test repo candidate is:  "  $CANDIDATE |tee -a $LOG
-       echo $"Installed is: " $INSTALLED | tee -a $LOG
+       echo $(eval_gettext "Main repo candidate is:  ") $MAIN_CAND |tee -a $LOG
+       echo $(eval_gettext "MX Test repo candidate is:  ")  $CANDIDATE |tee -a $LOG
+       echo $(eval_gettext "Installed is: ") $INSTALLED | tee -a $LOG
        echo ""
        which_driver_mx
        echo ""
@@ -898,21 +992,21 @@ choose_cand(){
 confirm_reinstall(){
 	if [ "$CANDIDATE" != "" ]; then
       if [ "$INSTALLED" = "$CANDIDATE" ]; then
-        echo $"nvidia driver already installed" | tee -a $LOG
+        echo $(eval_gettext "nvidia driver already installed") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Reinstall or quit?" | tee -a $LOG
+        echo $(eval_gettext "Reinstall or quit?") | tee -a $LOG
         echo "$NVIDIA packages to install are " $DRIVER | tee -a $LOG
         echo "" | tee -a $LOG
-        echo 1: $"Reinstall" | tee -a $LOG
-        echo 2: $"quit" | tee -a $LOG
+        echo 1: $(eval_gettext "Reinstall") | tee -a $LOG
+        echo 2: $(eval_gettext "quit") | tee -a $LOG
         echo "" | tee -a $LOG
-        echo $"Enter Number of selection" | tee -a $LOG
+        echo $(eval_gettext "Enter Number of selection") | tee -a $LOG
         read -n 1 -e x
 
         case $x in
-           1) echo $"reinstalling"... | tee -a $LOG ;;
-           2) echo $"exiting"... | tee -a $LOG && exit 0 ;;
-           *) echo $"invalid option."  $"exiting"... | tee -a $LOG && exit 0;;
+           1) echo $(eval_gettext "reinstalling")... | tee -a $LOG ;;
+           2) echo $(eval_gettext "exiting")... | tee -a $LOG && exit 0 ;;
+           *) echo $(eval_gettext "invalid option.")  $(eval_gettext "exiting")... | tee -a $LOG && exit 0;;
         esac
       fi
       echo ""
@@ -933,10 +1027,65 @@ check_for_nvidia_card(){
 
     if [ -z "$FORCEDRIVER" ]; then
 		if [ "$DEVICEIDS" == "" ]; then
-			echo $"No nvidia card found - exiting" | tee -a $LOG
+			echo $(eval_gettext "No nvidia card found - exiting") | tee -a $LOG
 			exit 8
 		fi
     fi
+}
+
+install_nvidia_detect(){
+if [ "$ARCH" = "amd64" ]; then
+	if [ ! -x "/usr/bin/nvidia-detect" ]; then
+		echo $(eval_gettext "Installing latest nvidia-detect package")|tee -a $LOG
+		echo ""
+		apt-get install $SWITCH $BP nvidia-detect |tee -a $LOG  
+		echo ""
+    fi
+fi
+}
+
+create_modprobe_symlinks(){
+	#files to check for
+	#/etc/modprobe.d/nvidia-blacklists-nouveau.conf
+    #/etc/modprobe.d/nvidia-modprobe.conf
+    #/etc/modprobe.d/nvidia-options.conf
+    
+    if [ ! -e /etc/modprobe.d/nvidia-blacklists-nouveau.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-blacklists-nouveau.conf
+	fi
+	if [ ! -e /etc/modprobe.d/nvidia-modprobe.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-modprobe.conf /etc/modprobe.d/nvidia-modprobe.conf
+	fi
+	if [ ! -e /etc/modprobe.d/nvidia-options.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-options.conf /etc/modprobe.d/nvidia-options.conf
+	fi
+	if [ ! -e /etc/modules-load.d/nvidia.conf ]; then
+		ln -s /etc/nvidia/current/nvidia-load.conf /etc/modules-load.d/nvidia.conf
+	fi
+    
+}
+
+remove_modprobe_symlinks(){
+    echo "rm symlinks" | tee -a $LOG
+	rm --force /etc/modprobe.d/nvidia-blacklists-nouveau.conf /etc/modprobe.d/nvidia-modprobe.conf /etc/modprobe.d/nvidia-options.conf /etc/modules-load.d/nvidia.conf
+}
+
+create_20_nvidiaconf(){
+	sudo tee /etc/X11/xorg.conf.d/20-nvidia.conf <<!
+Section "Device"
+     Identifier "Nvidia Card"
+     Driver "nvidia"
+     VendorName "NVIDIA Corporation"
+     Option "RegistryDwords" "EnableBrightnessControl=1"
+EndSection
+!
+}
+
+remove_20_nvidiaconf(){
+    echo "rm 20-nvidia.conf" | tee -a $LOG
+	if [ -e /etc/X11/xorg.conf.d/20-nvidia.conf ]; then
+		rm --force /etc/X11/xorg.conf.d/20-nvidia.conf
+	fi
 }
 
 main "$@"
