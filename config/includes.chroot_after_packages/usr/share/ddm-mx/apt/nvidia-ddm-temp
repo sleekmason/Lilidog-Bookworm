@@ -1,3 +1,0 @@
-Package:  nvidia-persistenced*
-Pin:  release *
-Pin-Priority: -1
