@@ -16,4 +16,14 @@ compinit
 autoload -U colors && colors
 
 # Use a decent prompt
-PS1="%B%{$fg[red]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b"
+
+# updates the window title.
+function xtitle () {
+    builtin print -n -- "\e]0;$@\a"
+}
+
+function precmd () {
+    xtitle "$(print -P $USER@$HOST '[%~]')"
+}
+# end of updates the window title.

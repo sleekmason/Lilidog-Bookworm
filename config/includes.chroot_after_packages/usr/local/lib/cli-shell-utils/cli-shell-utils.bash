@@ -19,8 +19,10 @@
 #==============================================================================
 
 LIB_NAME="cli-shell-utils"
-LIB_VERSION="2.41.07"
-LIB_DATE="Thu 07 Nov 2019 07:19:04 PM MST"
+#LIB_VERSION="2.41.05"
+#LIB_DATE="Tue 05 Nov 2019 08:50:59 PM MST"
+LIB_VERSION="2.41.05-2302"
+LIB_DATE="Sat, 25 Feb 2023 12:45:10 -0500"
 
 : ${ME:=${0##*/}}
 : ${MY_DIR:=$(dirname "$(readlink -f $0)")}
@@ -32,7 +34,7 @@ LIB_DATE="Thu 07 Nov 2019 07:19:04 PM MST"
 : ${DEFAULT_USER:=1000}
 : ${K_IFS:=|}
 : ${P_IFS:=&}
-: ${MAJOR_SD_DEV_LIST:=3,8,22,179,202,254,259}
+: ${MAJOR_SD_DEV_LIST:=3,8,22,179,202,253,254,259}
 : ${MAJOR_SR_DEV_LIST:=11}
 : ${LIVE_MP:=/live/boot-dev}
 : ${TORAM_MP:=/live/to-ram}
@@ -2715,7 +2717,7 @@ this_distro_() {
     local var=${1:-PRETTY_NAME}  name  file
     [ -z "$var" ] && return
 
-    for name in antix-release initrd-release lsb-release os-release /etc/*-release; do
+    for name in antix-release initrd_release initrd-release lsb-release os-release /etc/*-release; do
         file=/etc/${name#/etc/}
         test -r $file || continue
         grep -q "^\s*$var=" $file  || continue
@@ -3025,8 +3027,8 @@ need_root() {
 #------------------------------------------------------------------------------
 run_me_as_root() {
     [ $(id -u) -eq 0 ] && return
-    sudo -nv &>/dev/null || warn $"This script must be run as root"
-    exec sudo -p $"Please enter your user password: " "$0" "$@" || need_root
+    warn $"This script must be run as root"
+    exec sudo "$0" "$@" || need_root
 }
 
 #------------------------------------------------------------------------------

@@ -17,6 +17,20 @@ main() {
 
     [ -n "$CMDLINE" ] || CMDLINE="$(cat /proc/cmdline)"
 
+    local PROC_CMDLINE=$CMDLINE
+    # kernel built-in boot parameter
+    local CONF_CMDLINE=$(grep ^CONFIG_CMDLINE= /boot/config-$(uname -r) 2>/dev/null | cut -d\" -f2 | tail -1)
+
+    CMDLINE=""
+    local conf param x
+    for param in $PROC_CMDLINE; do
+        x=x
+        for conf in $CONF_CMDLINE; do
+            [ "$conf" = "$param" ] && x="" && break
+        done
+        [ -n "$x" ] &&  CMDLINE="$CMDLINE $param"
+    done
+
     case $VERBOSE in
         [0-9]|[0-9][0-9]) ;;
                        *) VERBOSE=5 ;;
@@ -32,6 +46,11 @@ main() {
 Expected$cheat_co menus custom both$err_co or$cheat_co reset"
             return ;;
     esac
+
+    if [ -n "$CONF_CMDLINE" ]; then
+        vmsg 6 "Boot parameters built into the kernel:"
+        vmsg 6 "$cheat_co$CONF_CMDLINE"
+    fi
 
     vmsg 6 "Current bootcodes:"
     vmsg 6 "$cheat_co$CMDLINE"
