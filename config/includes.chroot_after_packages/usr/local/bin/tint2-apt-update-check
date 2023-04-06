@@ -6,7 +6,7 @@ num=$(( $( apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | 
 notify-send  -t 15000 --urgency low "$num Update(s) Currently Available"
 
 if [ "$num" != 0 ]; then
-yad --notification --image="/usr/share/icons/ld-icons/update.png" --text="Apt Notifier - Right-Click For Options" --menu="Apt Update!x-terminal-emulator -e 'sudo xupdate -i'!other-driver|Quit!quit!application-exit" --command=""
+yad --notification --image="/usr/share/icons/ld-icons/update.png" --text="Apt Notifier - Right-Click For Options" --menu="Apt Update!x-terminal-emulator -e 'sudo xupdate -i'!applications-other|Quit!quit!application-exit" --command=""
 else
 exit
 fi
