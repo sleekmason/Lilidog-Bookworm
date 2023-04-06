@@ -7,4 +7,4 @@ Use key combo Super + Space\nto toggle the locator On/Off \n" --text-align=cente
     --form \
     --field="Mouse Finder On":FBTN "bash -c mouse-pointer-on" \
     --field="Mouse Finder Off":FBTN "killall highlight-pointer" \
-    --field="Enable On Boot":FBTN "mousepad .config/openbox/autostart"\
+    --field="Enable On Boot":FBTN "geany .config/openbox/autostart"\
