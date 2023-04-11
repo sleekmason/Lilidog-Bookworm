@@ -8,8 +8,8 @@ read -p "   [0;33mzsh shell installer[0m
    Zsh Web Pages sites.  [0;32mhttps://www.zsh.org/[0m
    
    This script will install zsh with custom settings and change your
-   default user shell to zsh. Your root shell will remain bash.
-   A logout and back in is required to use zsh.
+   default user shell to zsh. A new toggle will be placed in the menu
+   to change between zsh and bash.  A logout is required to complete.
    
    Any existing ~/.zshrc will be backed up to ~/.zshrc.bak and the 
    default Lilidog version will be placed in ~/.zshrc 
@@ -42,7 +42,7 @@ sed -i '/bash\/zsh,            zsh-toggle,                                    pr
 sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' ~/.config/jgmenu/mymenu.csv
 killall jgmenu
 else
-cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &&
+cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &
 sudo apt update && sudo apt install zsh &&
 echo ""
 echo ""

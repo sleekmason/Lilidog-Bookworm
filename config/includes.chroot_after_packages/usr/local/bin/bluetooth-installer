@@ -3,8 +3,7 @@ echo ""
 read -p "   [0;33mBluetooth Installer[0m
 
 
-   This script will install the packages necessary for bluetooth use in 
-   Lilidog.
+   This script will install the packages necessary for bluetooth use.
    
    Once installed, you will need to log out and back in to initialize
    the bluetooth-manager applet which should appear in the task tray.
@@ -25,7 +24,7 @@ read -p "   [0;33mBluetooth Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 
-sudo apt update && sudo apt install bluetooth bluez-tools blueman libspa-0.2-bluetooth gstreamer1.0-plugins-bad rfkill
+sudo apt update && sudo apt install bluetooth bluez-tools blueman libspa-0.2-bluetooth gstreamer1.0-gl gstreamer1.0-x gstreamer1.0-plugins-bad rfkill
 echo "" 
 echo "" 
 echo "[0;32mAll Finished![0m"
