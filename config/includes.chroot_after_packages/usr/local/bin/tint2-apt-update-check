@@ -1,12 +1,13 @@
 #!/bin/bash
 ## Script to toggle apt notifier notification tray icon action on/off in tint2
 
-
 num=$(( $( apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | wc -l ) -1 ))
 notify-send  -t 15000 --urgency low "$num Update(s) Currently Available"
 
 if [ "$num" != 0 ]; then
-yad --notification --image="/usr/share/icons/ld-icons/update.png" --text="Apt Notifier - Right-Click For Options" --menu="Apt Update!x-terminal-emulator -e 'sudo xupdate -i'!applications-other|Quit!quit!application-exit" --command=""
-else
+yad --notification --image="/usr/share/icons/ld-icons/update.png" \
+--text="Apt Notifier - Right-Click For Options" \
+--menu="Apt Update!x-terminal-emulator -e 'sudo xupdate -i'!applications-other|Quit!quit!application-exit" \
+--command="notify-send  -t 15000 --urgency low '$num Update(s) Currently Available'"
 exit
 fi
