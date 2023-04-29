@@ -1,0 +1,14 @@
+#!/bin/bash
+
+num=$(( $( apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | wc -l ) -1 ))
+notify-send  -t 10000 --urgency low "$num Update(s) Currently Available"
+
+yad --title "Notifier" --button="gtk-cancel:1" --button=gtk-ok:0  \
+--form --center --width=240 --height=222 --borders=6 \
+--text="\n Apt Notifier Options \n" --text-align=center \
+--window-icon=applications-system \
+    --form \
+    --field="Color Icon On/Off":FBTN "bash -c '~/.config/tint2/scripts/tint2-notifier-toggle'" \
+    --field="Notifier Color":FBTN "bash -c '~/.config/tint2/scripts/tint2-notifier-color'" \
+    --field="Readme":FBTN "bash -c 'geany ~/.config/tint2/executors/readme-notifier'" \
+    --field="":LBL "" \

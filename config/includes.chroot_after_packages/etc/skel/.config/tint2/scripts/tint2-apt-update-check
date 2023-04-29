@@ -1,0 +1,46 @@
+#!/bin/bash
+# This script will place an icon in the systemtray with options
+# for number of upgrades, apt-upgrade, and a simple check.
+
+
+upgradecolor="update-green.png"
+num_upgrades=$(( $( apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | wc -l ) -1 ))
+notify-send  -t 10000 --urgency low "$num_upgrades Upgrade(s) Currently Available"
+if [[ $1 = '--show-upgrades' ]]
+then
+    PIPE="$2"
+    exec 3<> "$PIPE"
+    function on_exit() {
+        echo "quit" >&3
+        rm -f "$PIPE"
+    }
+    trap on_exit EXIT
+    if test -e "/usr/local/bin/xupdate-notifier" ; then
+    x-terminal-emulator -T 'Available Package Upgrades' -e sh -c 'printf "%s\n" \
+    "Available upgrades:"; apt list --upgradeable; printf "\n%s\n\n"  \
+    "Held packages:"; apt-mark showhold; echo "... Done"; echo ""; echo \
+    "Please enter your password to continue to upgrade your system."; echo \
+    "Or close this window to quit now.  < ctrl +c >"; echo ""; \
+    sudo xupdate-notifier; bash;'
+    else
+    x-terminal-emulator -T 'Available Package Upgrades' -e sh -c 'printf "%s\n" "Available upgrades:"; \
+    apt list --upgradeable; printf "\n%s\n"  \
+    "Held packages:"; apt-mark showhold; echo "... Done"; echo ""; echo \
+    "Please enter your password to continue to upgrade your system."; echo \
+    "Or close this window to quit now.  < ctrl +c >"; echo ""; \
+    sudo apt upgrade; bash;'
+fi
+    exit
+fi
+
+PIPE=$(mktemp -u --tmpdir "${0##*/}".XXXXXXXX)
+mkfifo "$PIPE"
+exec 3<> "$PIPE"
+
+script="$( readlink -f "$0" )"
+if (( num_upgrades > 0 )); then
+    yad --notification --listen --image="$HOME/.config/tint2/executors/icons/update/$upgradecolor" \
+    --text="Package Upgrades - Right-Click For Options" \
+    --menu="Available Package Upgrades!\"$script\" --show-upgrades \"$PIPE\"!applications-other|Change Nofification Color!$HOME/.config/tint2/scripts/tint2-apt-update-check-color!applications-graphics|Quit!quit!application-exit" \
+    --command="notify-send  -t 10000 --urgency low '$num_upgrades Upgrade(s) Currently Available'" <&3
+fi
