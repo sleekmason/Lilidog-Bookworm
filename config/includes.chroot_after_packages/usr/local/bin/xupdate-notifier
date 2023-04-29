@@ -186,7 +186,7 @@ _udcache() {
 _upgradable
 _upgrade
 #_apt_clean
-if [ "$PkgMgr" = "apt" ]; then _autoclean ; fi
+#if [ "$PkgMgr" = "apt" ]; then _autoclean ; fi
 #_autoremove
 #_clear_thumbnails
 #_clear_recents
