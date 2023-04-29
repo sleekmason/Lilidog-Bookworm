@@ -50,11 +50,11 @@ and the code gets changed on the fly in order to enable
 and disable the notifier, and change the icon color.
 
 RELATED FILES:
-~/.config/tint2/executors/notifier          - Main control dialog
-~/.config/tint2/executors/readme-notifier   - This readme
-~/.config/tint2/executors/icons/update      - Icon.png's used
-/usr/local/bin/tint2-notifier-options       - Main dialog
-/usr/local/bin/tint2-notifier-toggle        - Toggle notifier on/off
-/usr/local/bin/tint2-notifier-color-options - Update color selection
-/usr/local/bin/tint2-iconcolor              - Main icon color changer
-/etc/apt/apt.conf.d/00periodic              - Enables periodic updates
+~/.config/tint2/executors/notifier                - Main control dialog
+~/.config/tint2/executors/readme-notifier         - This readme
+~/.config/tint2/executors/icons/update            - Icon.png's used
+~/.config/tint2/scripts/tint2-notifier-options    - Main dialog
+~/.config/tint2/scripts/tint2-notifier-toggle     - Toggle notifier on/off
+~/.config/tint2/scripts/tint2-notifier-color-options - Update color selection
+/usr/local/bin/tint2-iconcolor                    - Main icon color changer
+/etc/apt/apt.conf.d/00periodic                    - Enables periodic updates

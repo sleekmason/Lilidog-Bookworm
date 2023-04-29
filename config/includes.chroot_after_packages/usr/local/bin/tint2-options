@@ -9,6 +9,7 @@ yad --title "Tint2 Options" --escape-ok \
     --field="                12H/24H!appointment-new":FBTN "tint2-12to24" \
     --field="                Autohide!dialog-information":FBTN "tint2-autohide" \
     --field="             Autoshrink!zoom-fit-best":FBTN "tint2-shrink" \
+    --field="          Auto Notifier!applications-other":FBTN "$HOME/.config/tint2/scripts/tint2-notifier-options" \
     --field="        Battery Notify!battery":FBTN "tint2-battery-notify" \
     --field="              Icon Color!org.xfce.settings.color":FBTN "tint2-iconcolor" \
     --field="                  Position!object-flip-vertical":FBTN "tint2-position" \
