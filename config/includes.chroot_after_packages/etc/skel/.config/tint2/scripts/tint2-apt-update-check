@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This script will place an icon in the system tray for upgrade 
+# notifications on button click, with an option to upgrade and 
+# an option to change the icon color throught the associated
+# ~/.config/tint2/scripts/tint2-apt-update-check-color.
+# Nala is optional.  requires yad.
+
 on_exit() {
     echo "quit" >&3
     rm -f "${PIPE}"
@@ -79,6 +85,6 @@ if (( num_upgrades > 0 )); then
     notify-send  -t 10000 --urgency low "$num_upgrades Upgrades(s) Currently Available"
     yad --notification --listen --image="$HOME/.config/tint2/executors/icons/update/$upgradecolor" \
     --text="Package Upgrades - Right-Click For Options" \
-    --menu="Show Available Upgrades!bash -c show-upgrades!applications-other|Change Nofification Color!bash -c icon-color-change!applications-graphics|Quit!quit!application-exit" \
+    --menu="Show Available Upgrades!bash -c show-upgrades!software-update-available|Change Icon Color!bash -c icon-color-change!applications-graphics|Quit!quit!application-exit" \
     --command="notify-send  -t 10000 --urgency low '$num_upgrades Upgrades(s) Currently Available'" <&3
 fi

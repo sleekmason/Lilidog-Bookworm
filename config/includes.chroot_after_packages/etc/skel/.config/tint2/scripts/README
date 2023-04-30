@@ -12,7 +12,7 @@ For the manual apt update checker, there are two scripts.
 /usr/share/lilidog/tint2/update-options - to call the script
 
 FOR CONTINUOUS USE -
-You can remove --listen from line 79 in: 
+You can remove --listen from line 86 in: 
 ~/.config/tint2/scripts/tint2-apt-update-check
 and then also place a line in ~/.config/openbox/autostart if desired:
 ~/.config/tint2/scripts/tint2-apt-update-check &
