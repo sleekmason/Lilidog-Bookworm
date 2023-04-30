@@ -5,7 +5,6 @@
 FILE="$HOME/.config/tint2/scripts/tint2-apt-update-check"
 noti=$(yad --width 330 --borders=8 --entry --title "Notifier Icon Color" --center --window-icon=applications-graphics \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
-    --text "\n Restart After Changing\n" \
     --button="gtk-cancel:1" --button="gtk-ok:0" \
     "Green" "Blue" "Magenta" "Yellow" "Orange" "Plain" "Red")
 
