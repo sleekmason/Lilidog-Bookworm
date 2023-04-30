@@ -28,14 +28,13 @@ printf '%s' "$$" > "$lockfile" # using lockfile to store pid
 
 trap on_exit EXIT
 
-pkg="nala"
-upgradecolor="update-blue.png"
+upgradecolor="update-green.png"
 
 show-upgrades(){
     trap on_exit EXIT
     [[ -p "$PIPE" ]] || { echo "${0}: there is no fifo $PIPE" >&2 ; exit 1;}
     exec 3<> "$PIPE"
-    if dpkg --get-selections | grep -q "^$pkg[[:space:]]*install$" >/dev/null; then
+    if [ -x /usr/bin/nala ]; then
     x-terminal-emulator -T 'Available Package Upgrades' -e sh -c 'printf "%s\n" "Available upgrades:"; \
     apt list --upgradeable; printf "\n%s\n"  "Held packages:"; \
     apt-mark showhold;  echo "... Done"; echo ""; echo \
