@@ -1,0 +1,7 @@
+tint2-apt-update-checker
+=========================
+
+This is a utility to check if package upgrades are available,
+and, if so, to let the user inspect them in a terminal before
+taking their preferred action.
+
