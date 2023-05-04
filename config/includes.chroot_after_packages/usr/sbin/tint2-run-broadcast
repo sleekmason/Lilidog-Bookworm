@@ -1,0 +1,69 @@
+#!/bin/bash
+
+HELP="ld-run-broadcast is a script for a root process
+to run a command for all current X users.
+
+For each user, and each DISPLAY, the command is run in a bash shell,
+forked and disowned, so the parent process should not hang,
+even if child processes continue running.
+
+Usage: ld-run-broadcast <command> [<arguments>]
+
+Optional arguments:
+    -h | --help    Show this message
+
+This script must be run as root.
+
+NOTE Any command and arguments can be passed, but this utility was intended
+for relatively short-lived notification applications like notify-send or yad.
+Because the spawned processes are disowned, there will be no way to
+check their return values on exit.
+
+EXAMPLE:
+
+ld-run-broadcast notify-send 'System Message' 'Something happened that you should know about.'
+
+"
+
+error_exit() {
+    echo "$0 error: $1" >&2
+    exit 1
+}
+
+case $1 in
+--help|-h)
+    echo "$HELP"
+    exit
+    ;;
+'')
+    echo "${0}: no command was passed" >&2
+    exit 1
+    ;;
+esac
+
+command -v "$1" >/dev/null || error_exit "cannot find command $1"
+
+[[ $( id -u ) -eq 0 ]] || error_exit "This script must be run as root."
+
+declare -A displays users
+users=()
+displays=()
+
+for i in $(users);do # "users" command o/p
+    [[ $i = root ]] && continue
+    users[$i]=1
+done # unique names
+
+for u in "${!users[@]}"; do
+    for i in $(ps e -u "$u" | sed -rn 's/.* DISPLAY=(:[0-9]*).*/\1/p');do
+        displays[$i]=$u
+    done
+done
+
+for d in "${!displays[@]}";do
+	runuser -l "${displays[$d]}" --shell /usr/bin/bash -c "set -m; DISPLAY=:0 $(printf '%q ' "$@" ) >/dev/null 2>&1 & disown; set +m;"
+#	runuser -u "${displays[$d]}" -- bash -c "set -m; DISPLAY=:0 $(printf '%q ' "$@" ) >/dev/null 2>&1 & disown; set +m;"
+#    sudo -u "${displays[$d]}" DISPLAY="$d" bash -c " $(printf '%q ' "$@" ) & "
+done
+
+exit
