@@ -3,16 +3,15 @@ For the automatic timer version used in a tint2 executable from the
 'plus' symbol in the tint2 panel, see the readme-notifier in 
 ~/.config/tint2/executors and activate from the 'T2' icon.
 
-All of the necessary files are in the ~/.config/tint2 for either
-version of the notification scripts.
-
 For the manual apt update checker, there are two scripts.
-~/.config/tint2/scripts/tint-2-apt-update-check  - main script
-~/.config/tint2/scripts/tint-2-apt-update-check-color - for icon color
-/usr/share/lilidog/tint2/update-options - to call the script
+/usr/local/bin/tint-2-apt-update-check  - main script
+/usr/local/bin/tint-2-apt-update-check-color - for icon color
+
+And one to call the main script:
+/usr/share/lilidog/tint2/update-options
 
 FOR CONTINUOUS USE -
-You can remove --listen from line 86 in: 
-~/.config/tint2/scripts/tint2-apt-update-check
+You can remove --listen from line 96 in: 
+/usr/local/bin/tint2-apt-update-check
 and then also place a line in ~/.config/openbox/autostart if desired:
-~/.config/tint2/scripts/tint2-apt-update-check &
+tint2-apt-update-check &
