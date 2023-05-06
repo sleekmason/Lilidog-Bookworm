@@ -6,7 +6,7 @@
 # ~/.config/tint2/scripts/tint2-apt-update-check-color.
 # Nala is optional.  requires yad.
 
-HELP="ld-apt-update-check is a script to check if package upgrades are available,
+HELP="tint2-apt-update-check is a script to check if package upgrades are available,
 and if so, display a notification and system tray icon to the user.
 The user can then open a terminal to view the details, and take desired action.
 This script can be triggered by an apt update action, or by a timer.

@@ -213,7 +213,7 @@ label-monitor = %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-active = "%{T5}%name%%{T-}"
+label-active = "%{T5}%index%%{T-}"
 label-active-foreground = #DCE7EB
 label-active-padding = 2
 
@@ -222,7 +222,7 @@ label-active-padding = 2
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-occupied = "%{T5}%name%%{T-}"
+label-occupied = "%{T5}%index%%{T-}"
 label-occupied-foreground = #BDC5C7
 label-occupied-background = #991B1C1F
 label-occupied-padding = 1
@@ -233,7 +233,7 @@ label-occupied-padding = 1
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-urgent = "%{T5}%name%%{T-}"
+label-urgent = "%{T5}%index%%{T-}"
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = #96dd2727
 label-urgent-padding = 1
@@ -243,7 +243,7 @@ label-urgent-padding = 1
 ;   %icon%
 ;   %index%
 ; Default: %icon%  %name%
-label-empty = "%{T5}%name%%{T-}"
+label-empty = "%{T5}%index%%{T-}"
 ; foreground ACTIVE
 label-empty-foreground = #7F8485
 label-empty-background = #961B1C1F
