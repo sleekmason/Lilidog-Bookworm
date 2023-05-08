@@ -40,8 +40,13 @@ xfsettingsd --daemon &
 pnmixer &
 conky -c ~/.config/conky/conky-shortcuts.conf &
 sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
-### Start Thunar Daemon if thunar is installed. Comment all three lines to disable.
-if type 'thunar' &> /dev/null; then
-thunar --daemon &
-fi
+
+### Start Thunar Daemon if thunar is installed. Uncomment the three lines below to enable.
+# if type 'thunar' &> /dev/null; then
+# thunar --daemon &
+# fi
+
+### Start tint2-apt-update-check to check for updates on login.
+# ~/.config/tint2/scripts/tint2-apt-update-check &
+
 welcome.sh &
