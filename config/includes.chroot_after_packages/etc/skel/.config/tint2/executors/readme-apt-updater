@@ -1,17 +1,12 @@
-There are two separate notifier options for tint2 in Lilidog.
-For the automatic timer version used in a tint2 executable from the 
-'plus' symbol in the tint2 panel, see the readme-notifier in 
-~/.config/tint2/executors and activate from the 'T2' icon.
-
-For the manual apt update checker, there are two scripts.
-/usr/local/bin/tint-2-apt-update-check  - main script
-/usr/local/bin/tint-2-apt-update-check-color - for icon color
-
-And one to call the main script:
-/usr/share/lilidog/tint2/update-options
-
-FOR CONTINUOUS USE -
+FOR CONTINUOUS USE OF THE NOTIFIER ICON-
 You can remove --listen from line 96 in: 
 /usr/local/bin/tint2-apt-update-check
 and then also place a line in ~/.config/openbox/autostart if desired:
 tint2-apt-update-check &
+
+/usr/local/bin/tint-2-apt-update-check  - main script
+/usr/local/bin/tint-2-apt-update-check-color - for icon color
+~/.config/tint2/executors/color.txt
+
+And to call the main script:
+/usr/share/lilidog/tint2/update-options
