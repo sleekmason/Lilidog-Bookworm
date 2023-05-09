@@ -1,0 +1,51 @@
+#!/bin/bash
+echo ""
+read -p "   [0;33mTint2 Default Configuration.[0m
+
+   This script will change your existing tint2 folder to the default
+   Lilidog tint2 version as seen on install by first making a backup 
+   and then installing the original copy from /etc/skel/.config/tint2
+   
+   * The backup will be made of your existing tint2 folder to:
+   ~/.config/tint-original.bak, and any further uses of this script 
+   will place new backups as ~/.config/tint2.bak so the original is 
+   preserved until manually removed.
+    
+   [0;32m-------------------------------------------------------------
+   
+   Please press enter to change to the default install version.
+   
+   -------------------------------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+if [ ! -e "$HOME/.config/tint2-original.bak" ]; then
+cp -r "$HOME/.config/tint2" "$HOME/.config/tint2-original.bak"
+else
+   if [ ! -e "$HOME/.config/tint2.bak" ]; then
+    cp -r "$HOME/.config/tint2" "$HOME/.config/tint2.bak"
+    else rm -r ~/.config/tint2.bak &&
+    cp -r "$HOME/.config/tint2" "$HOME/.config/tint2.bak"
+   fi
+fi
+rm -r ~/.config/tint2
+cp -a -f -r /etc/skel/.config/tint2 $HOME/.config/
+killall -SIGUSR1 tint2
+sed -i '/Apt Notifier,        tint2-notifier-options,                        preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
+killall -q jgmenu
+echo ""
+echo "----------------------------------------------------------------------"
+echo ""
+echo "[0;32m   All Finished![0m"
+echo "" 
+echo "----------------------------------------------------------------------"
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi
