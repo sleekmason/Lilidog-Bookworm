@@ -5,7 +5,7 @@ notify-send  -t 10000 --urgency low "$num Update(s) Currently Available"
 
 yad --title "Notifier" --button="gtk-cancel:1" --button=gtk-ok:0  \
 --form --center --width=240 --height=222 --borders=6 \
---text="\n Apt Notifier Options \n" --text-align=center \
+--text="\n Executor Options \n" --text-align=center \
 --window-icon=applications-system \
     --form \
     --field="Color Icon On/Off":FBTN "bash -c 'tint2-notifier-toggle'" \
