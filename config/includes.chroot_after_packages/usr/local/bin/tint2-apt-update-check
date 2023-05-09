@@ -6,7 +6,7 @@
 # ~/.config/tint2/scripts/tint2-apt-update-check-color.
 # Nala is optional.  requires yad.
 
-HELP="tint2-apt-update-check is a script to check if package upgrades are available,
+HELP="ld-apt-update-check is a script to check if package upgrades are available,
 and if so, display a notification and system tray icon to the user.
 The user can then open a terminal to view the details, and take desired action.
 This script can be triggered by an apt update action, or by a timer.
@@ -29,7 +29,7 @@ lockfile='/tmp/tint2-apt-update-check-lock'
 exec 4<>"$lockfile"
 tries=3 # give up if cannot get lock
 (( i=1 ))
-until flock --verbose -n 4
+until flock -n 4
 do
     (( i > tries )) && { echo "${0}: failed to kill old process" >&2 ; exit 1;}
     echo "${0}: another instance is running, now killing it" >&2
@@ -43,6 +43,23 @@ printf '%s' "$$" > "$lockfile" # using lockfile to store pid
 
 trap on_exit EXIT
 
+# check if pid belongs to an instance of this script, even if run via a symlink
+# not perfect but should cover many cases, and error out otherwise
+check_pid() {
+    local pid=$1
+    local script path cmd
+    kill -s 0 "$pid" || { echo "${0}: PID ${pid} is not running" >&2 ; exit 1;}
+    script=$( readlink -e "$0" ) || { echo "${0}: failed to find path to this script" >&2 ; exit 1;}
+    mapfile -d '' -t cmd < "/proc/${pid}/cmdline"
+    path=${cmd[-1]} # this script takes no arguments, so it is the last part of the command line
+    if [[ $path = /* ]] # absolute path
+    then
+        path=$(readlink -e "$path")
+    else
+        path=$( readlink -e /proc/"${pid}"/cwd/"$path" ) # assume path is relative to working directory
+    fi
+    [[ "$path" = "$script" ]] || { echo "${0}: PID ${pid} seems to belong to a different process: ${path}" >&2 ; exit 1;}
+}
  
 upgradecolor=$(< "$HOME/.config/tint2/executors/color.txt")
 
