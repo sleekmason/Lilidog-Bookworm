@@ -22,9 +22,9 @@ yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
     --field="              Tao Te Ching!application-x-addon":BTN "bash -c 'toggle_conky conky-tao'" \
     --field="               World Clock!emblem-web":BTN "bash -c 'toggle_conky conky-world-clock'" \
     --field="                Install Date!application-certificate":BTN "bash -c 'toggle_conky conky-build'" \
-    --field="       12H/24H Format!appointment-new":BTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
-    --field="       Bg Transparency!preferences-system":BTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
-    --field="             Bg Tint Color!org.xfce.settings.color":BTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
-    --field="":LBL "" \
+    --field="       12H/24H Format!appointment-new":FBTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
+    --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
+    --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
     --field="            Restart Conky!media-playlist-repeat":FBTN "killall -SIGUSR1 conky" \
-    --field="                  Kill Conky!process-stop":FBTN "killall conky" 
+    --field="                  Kill Conky!process-stop":FBTN "killall conky"
+    
