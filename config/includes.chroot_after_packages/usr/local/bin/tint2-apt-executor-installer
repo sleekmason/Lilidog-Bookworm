@@ -25,7 +25,7 @@ read -p "   [0;33mTint2 apt notifier executor version.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-cd /tmp
+cd /tmp || exit
 if test -e "/tmp/tint2"; then
 rm -r tint2
 fi
@@ -43,7 +43,7 @@ else
 fi
 unzip -q tint2-with-apt-executor.zip &&
 rm -r ~/.config/tint2
-cp -a -f -r tint2 $HOME/.config/
+cp -a -f -r tint2 "$HOME/.config/"
 killall -SIGUSR1 tint2
 sed -i '/Apt Notifier,        tint2-notifier-options,                        preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Tint2 Toggle.*/a Apt Notifier,        tint2-notifier-options,                        preferences-system' ~/.config/jgmenu/mymenu.csv

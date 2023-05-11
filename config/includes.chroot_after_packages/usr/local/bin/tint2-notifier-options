@@ -4,7 +4,7 @@ num=$(( $( apt list --upgradable 2>/dev/null | wc -l ) - $( apt-mark showhold | 
 notify-send  -t 10000 --urgency low "$num Update(s) Currently Available"
 
 yad --title "Notifier" --button="gtk-cancel:1" --button=gtk-ok:0  \
---form --center --geometry=240x222-75-75 --borders=6 \
+--form --center --geometry=240x222-120-120 --borders=6 \
 --text="\n Executor Options \n" --text-align=center \
 --window-icon=applications-system \
     --form \
