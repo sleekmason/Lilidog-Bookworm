@@ -130,6 +130,7 @@ _reboot() {
         run_it
 }
 
+if grep -q "#GRUB_DISABLE_OS_PROBER=false" "/etc/default/grub"; then
 _update
 _remove_packages
 _upgrade_kernel
@@ -138,7 +139,15 @@ _osprober
 _firmware
 #_autologin
 _reboot
-
+else
+_update
+_remove_packages
+_upgrade_kernel
+_add_backports
+_firmware
+#_autologin
+_reboot
+fi
 [ "$_interactive" = "yes" ] &&
 echo $'\n\nPress any key to quit ...'; read -srn1
 sed -i '/welcome.sh &/d' /home/"${SUDO_USER}"/.config/openbox/autostart
