@@ -8,6 +8,4 @@ Install Synaptic,         x-terminal-emulator -T 'Synaptic Installer' -e bash -c
 Install Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer; echo $'\n\nPress any key to close.'; read -srn1",   applications-utilities
 Install Tint2 Apt Executor,   x-terminal-emulator -T 'Tint2 With Apt Executor Installer' -e bash -c "tint2-apt-executor-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-utilities
 Install Xscreensaver,     x-terminal-emulator -T 'Xscreensaver Installer' -e bash -c "xscreensaver-installer; echo $'\n\nPress any key to close.'; read -srn1",       applications-utilities
-Install zsh shell,        x-terminal-emulator -T 'zsh Installer' -e bash -c "; echo $'\n\nPress any key to close.'; read -srn1",                                      applications-utilities
-
-
+Install zsh shell,        x-terminal-emulator -T 'zsh Installer' -e bash -c "zsh-installer; echo $'\n\nPress any key to close.'; read -srn1",                                      applications-utilities
