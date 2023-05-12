@@ -40,7 +40,7 @@ fi
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/full.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/fortunes.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/current.lua
-    sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/clock-date.lua
+    sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/vertclock.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/world.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/build.lua
 exit 0

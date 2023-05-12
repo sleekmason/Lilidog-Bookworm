@@ -15,7 +15,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/build.lua
 ;;
@@ -25,7 +25,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/build.lua
 ;;
@@ -35,7 +35,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/build.lua
 ;;
@@ -45,7 +45,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/build.lua
 ;;
@@ -55,7 +55,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/build.lua
 ;;
@@ -65,7 +65,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/build.lua
 ;;
@@ -75,7 +75,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/build.lua
 ;;
@@ -85,7 +85,7 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/fortunes.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/current.lua
-     sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/clock-date.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/vertclock.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/world.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/build.lua ;;
         *) exit 1 ;;
