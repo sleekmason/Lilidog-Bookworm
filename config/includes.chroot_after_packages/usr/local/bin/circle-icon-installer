@@ -18,10 +18,10 @@ read -r -p "   [0;32mCircle Icon Set Installer[0m
 echo ""
 echo ""
 cd /tmp || exit
-if [ ! -f "circle-icons_12.0-1_all.deb" ]; then
-wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-1_all.deb --show-progress -q
+if [ ! -f "circle-icons_12.0-2_all.deb" ]; then
+wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
 fi 
-sudo apt install ./circle-icons_12.0-1_all.deb
+sudo apt install ./circle-icons_12.0-2_all.deb
 echo ""
 echo "[0;32m-------------------------------------------------------------"
 echo ""
