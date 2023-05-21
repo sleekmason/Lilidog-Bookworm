@@ -26,10 +26,10 @@ echo ""
 if test -e "$HOME/.zshrc" ; then
 echo ""
 echo ""
-echo "[0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
+echo "   [0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
 echo ""
-echo "[0;32mIn order to use your old version of ~/.zshrc
-delete ~/.zshrc and rename the backup.[0m"
+echo "   [0;32mIn order to use your old version of ~/.zshrc
+   delete ~/.zshrc and rename the backup.[0m"
 echo ""
 echo ""
 mv $HOME/.zshrc $HOME/.zshrc.bak &&
@@ -46,8 +46,8 @@ cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &
 sudo apt update && sudo apt install zsh &&
 echo ""
 echo ""
-echo "[0;32mAdding custom ~/.zshrc to match Lilidog defaults and
-provide for some better default options.[0m"
+echo "   [0;32mAdding custom ~/.zshrc to match Lilidog defaults and
+   provide for some better default options.[0m"
 echo ""
 echo ""
 sudo chsh -s /bin/zsh $USER &&
@@ -58,16 +58,16 @@ fi
 echo ""
 echo "[0;32m----------------------------------------------------------------------"
 echo ""
-echo "All Finished!
+echo "   All Finished!
 
-Remember, You will need to logout and back in to use zsh.
-Test with 'exec zsh' in a terminal for a temporary switch."
+   Remember, You will need to logout and back in to use zsh.
+   Test with 'exec zsh' in a terminal for a temporary switch."
 echo "" 
 echo "----------------------------------------------------------------------[0m"
 echo ""
-echo "Now that zsh is installed, you might want to look at 'Oh My zsh'."
+echo "   Now that zsh is installed, you may want to look at oh-my-zsh:"
 echo ""
-echo "[0;36mhttps://github.com/ohmyzsh/ohmyzsh[0m"
+echo "   [0;36mhttps://github.com/ohmyzsh/ohmyzsh[0m"
 echo ""
 else
 echo ""
