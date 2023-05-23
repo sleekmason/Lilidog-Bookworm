@@ -9,39 +9,30 @@ Lilidog is a lightweight Linux distro using the Openbox window manager. <br/>
 Lilidog is based on Debian, with most of the hard parts done, and some cool stuff along the way. <br/>
 Everything is easily accessible, with numerous options to customize further.
 
-### There are currently Four stable versions of Lilidog available for Bullseye.
+### There are several versions of Lilidog available based on users needs and wants. 
+Click on 'Files', and then 'Releases' to see the different versions currently available.
 
-NOTE - For All live sessions, Username is "user" and root password (sudo) is "live".
+- Lilidog full version -  Has most programs already installed for everyday use, and installers for several others.
+This includes Firefox, Thunderbird, Thunar, Geany, Gpicview, Smplayer, Gparted, Synaptic and Libreofficeto name a few.
+This build comes with approx. 1300 packages installed, still making for a lightweight general setup.
 
-- Lilidog-amd64 (Bullseye amd64 full version) -  Has most programs already installed for everyday use.
-This includes Firefox, Thunderbird, Thunar, Geany, Gpicview, Smplayer, Gparted, Synaptic, and Gimp to name a few.
+- Lilidog-Minimal-amd64 - This version contains all of the goodness of Lilidog while allowing you to choose most all 
+of your own main packages.  This option includes all of the Lilidog options found in the full version while still being 
+as light as possible. Approx. 1080 packages installed.
 
-- Lilidog-Minimal-amd64 - This version contains all of the goodness of Lilidog
-while allowing you to choose most all of your OWN packages.
-Currently contains xfce4-terminal, Thunar, and Mousepad to get you started.
-Design your system with any other programs you might like.
-__sudo apt update && sudo apt install synaptic__ for a graphical interface to make installing your programs easier.
-
+- Beardog - A play on words a bit.  This is the "bare" minimal version of Lilidog with no ld theme changer.  Thunar
+geany and lxterminal are the default installed applications.  You don't need to be an advanced user to use Beardog,
+but a basic understanding of linux is probably a good idea.  Approx. 920 packages installed.
+If you are wanting to start with a bare build system, this may be the one for you!
+ 
 - Lilidog-i386 (Bullseye i386 full version) Uses the same base packages as the amd64 version, but for older hardware.
 You may need to boot with the kernel parameter 'forcepae' if you have difficulties.  This version will no longer be
 available after debian changes from Bullseye to Bookworm.
 
-- Beardog - A play on words a bit.  This is the "bare" minimal version of Lilidog with no ld theme changer.  pcmanfm
-and lxterminal are default. Upon login, you will be presented with an option to install a few of the more common
-items people like to have on their system, including a login manager, jgmenu with icon control, dunst with sound control,
-transparency, backports & kernel, and the rest of the installers if you want. If you are wanting to start with a bare
-system, this may be the one for you!
+### You may also find a testing or sid version on occasion.  
+While generally stable, these are for testing purposes and should be recognized as such if used.
 
-### You may also find a testing or sid version on occasion.
-
-At various times you may also find a bookworm addition and/or a sid addition. These builds are for testing purposes.
-Both sid (unstable) and bookworm (testing) may contain yet unknown errors. Realistically, the stable builds are the 
-way to go for most people unless you just like to tinker. If you choose one of these builds, be prepared to update 
-frequently. Some of the installers will also be unavailable until Bookworm becomes stable in the summer of 2023.  
-If you dual boot, you will want to edit /etc/default/grub as root and uncomment GRUB_DISABLE_OS_PROBER=false 
-and then 'sudo update-grub' in a terminal to see your other distributions.  Join the Lilidog forum to report 
-any issues and keep lilidog bug free!
-
+ Join the Lilidog forum to report any issues and keep lilidog bug free!  Forum Link: https://www.forum.lilidog.org/ <br/>
 See further below for features.
 
 ### NOTE - The DOWNLOAD button defaults to the Bullseye-amd64 full version! (stable).  Click below for the others.
@@ -64,25 +55,32 @@ sudo ./live-usb-maker-qt-19.11.02.x86_64.AppImage
 ```
 Use "image mode" in the live-usb maker when burning the image.
 
-The boot screen for Lilidog gives a choice of using as a Live session, or installing if you like what you see. <br/>
-Lilidog uses the Debian installer with both text and graphical installs available.
+### Installing Lilidog
 
-Lilidog opens in the Openbox window manager. Easy enough to install fluxbox or others. They will show up in your login screen
-as options. <br/>
-The username and password for the live environment is "user", and "live" respectively. 
+### Debian Installer (All builds)
+
+The grub boot screen for Lilidog gives a choice of using Lilidog in a Live session, or installing using the debian installer. <br/>
+Lilidog uses the Debian installer with both text and graphical installs available though the Calamares installer is available through
+the green icon in the system tray while in the live environment if using bookworm.
+
+### Calamares Installer (Bookworm only)
+
+The Calamares installer is a new addition to Lilidog going forward. In the live session, find the green install icon in the system tray to get started.
+For All live sessions, Username is "user" and root password (sudo) is "live"
+
+### Navigating Lilidog:
+After booting into Lilidog, you have the option to install or try out the Lilidog live environment. Once in a session, there are a few items 
+that can shape your experience. Look in the "paw" icon in the tint2 panel for theming options.  Look in the "Toggles" section of the menu for 
+some useful options, and look in the "Install Extras" portion of the menu for extra programs you may want.  Look around.  There
+is more to see as well.
+
+Again, the username and password for the live environment is "user", and "live" respectively. 
 
 Lilidog: <br/>
 
 [![Installer.png](https://i.postimg.cc/6qSpSZNR/Installer.png)](https://postimg.cc/JHN8HG04)
 
 [![Lilidog-Slate.png](https://i.postimg.cc/3J4CRPs6/Lilidog-Slate.png)](https://postimg.cc/SJ4z1tN7) <br/>
-
-### Navigating Lilidog:
-
-After boot, you have the option to install or try out Lilidog live.  Once in a session, there are a few items that can shape
-your experience. Look in the "paw" icon in the tint2 panel for theming options.  Look in the "Toggles" section of the menu for 
-some useful options, and look in the "Install Extras" portion of the menu for extra programs you may want.  Look around.  There
-is more to see as well. NOTE - For All live sessions, Username is "user" and root password (sudo) is "live".
 
 ### Features:
 
