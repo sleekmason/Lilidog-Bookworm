@@ -57,5 +57,5 @@ yad --title "Transparency" --escape-ok --borders=14 \
     --field=" Low":FBTN "bash -c low" \
     --field=" Medium":FBTN "bash -c medium" \
     --field=" High":FBTN "bash -c high" \
-    --field=" Super":FBTN "bash -c super" \
+    --field=" Very High":FBTN "bash -c super" \
     --field=" Inactive":FBTN "bash -c inactive"
