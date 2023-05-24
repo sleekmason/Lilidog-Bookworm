@@ -1,9 +1,9 @@
 
                  WELCOME TO LILIDOG!
                         
-    This is the Lilidog Bookworm - Debian 12 Full
-    Addition. This Lilidog version should provide 
-    everything necessary for fast, efficient use.
+    Welcome to the Lilidog Linux amd64 full build
+    version, providing all the programs necessary 
+    for fast, efficient, and productive use.
      
     Check out our forum for more information:
     https://www.forum.lilidog.org/
