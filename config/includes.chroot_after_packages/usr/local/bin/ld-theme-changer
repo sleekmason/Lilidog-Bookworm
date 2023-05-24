@@ -17,6 +17,7 @@ yad --title "Theming Options" --escape-ok \
     --field="                           Sounds!audio-speakers":FBTN "notification-sounds" \
     --field="             System Settings!preferences-system":FBTN "xfce4-settings-manager" \
     --field="             Terminal Colors!gnome-terminal":FBTN "ld-term-changer" \
+    --field="                 Transparency!preferences-desktop":FBTN "transparency-system" \
     --field="                     Wallpapers!org.xfce.settings.display":FBTN "feh-set-wallpaper" \
     --field="":LBL "" \
     --field="":LBL "" \
