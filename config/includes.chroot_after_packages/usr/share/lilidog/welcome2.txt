@@ -3,9 +3,9 @@
                         
     This is the Lilidog Bookworm - Debian 12 Full
     Addition. This Lilidog version should provide 
-    everything necessary for fast, efficient use. 
+    everything necessary for fast, efficient use.
+     
     Check out our forum for more information:
-
     https://www.forum.lilidog.org/
     
     For initial settings, please see the paw icon
