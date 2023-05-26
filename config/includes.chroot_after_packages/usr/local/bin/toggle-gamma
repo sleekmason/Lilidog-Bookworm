@@ -1,0 +1,46 @@
+#!/bin/bash
+
+toggleit(){
+TOGGLE=$HOME/.toggle
+
+if [ ! -e "$TOGGLE" ]; 
+then
+    touch "$TOGGLE"
+    echo "90" > ~/.toggle
+    xgamma -gamma 0.9
+    notify-send --urgency low 'Changing Gamma to 90'
+elif grep -Fxq "90" ~/.toggle; 
+then
+    echo "80" > ~/.toggle
+    xgamma -gamma 0.8
+    notify-send --urgency low 'Changing Gamma to 80'
+elif grep -Fxq "80" ~/.toggle; 
+then
+    echo "70" > ~/.toggle
+    xgamma -gamma 0.7
+    notify-send --urgency low 'Changing Gamma to 70'
+elif grep -Fxq "70" ~/.toggle; 
+then
+    echo "60" > ~/.toggle
+    xgamma -gamma 0.6
+    notify-send --urgency low 'Changing Gamma to 60'
+    elif grep -Fxq "60" ~/.toggle; 
+then
+    echo "50" > ~/.toggle
+    xgamma -gamma 0.5
+    notify-send --urgency low 'Changing Gamma to 50'
+elif grep -Fxq "50" ~/.toggle;
+then
+    rm "$TOGGLE"
+    xgamma -gamma 1.0
+    notify-send --urgency low 'Changing Gamma to Off'
+fi
+}
+
+export -f toggleit
+yad --title "Gamma" --escape-ok --borders=10 \
+--form --center --width=140 --height=40 \
+--text-align=center \
+--window-icon=dialog-information \
+--buttons-layout=spread \
+--button=" Gamma Toggle x6"!org.xfce.settings.color:"bash -c toggleit"

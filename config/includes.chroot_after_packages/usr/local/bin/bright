@@ -1,0 +1,157 @@
+#! /bin/bash
+
+# Set the icon here
+ICON="sunny"
+
+
+on_exit() {
+    echo "quit" >&3
+    rm -f "${PIPE}"
+    rm -rf "${PIPE%/*}"
+    exec 3>&-
+    exec 4>&-
+    :>"$lockfile" # lockfile only holds pid while script is running
+}
+
+# If there is a previous icon still not closed, kill and replace it if still needed
+lockfile='/tmp/light_slider'
+exec 4<>"$lockfile"
+tries=3 # give up if cannot get lock
+(( i=1 ))
+until flock -n 4
+do
+    (( i > tries )) && { echo "${0}: failed to kill old process" >&2 ; exit 1;}
+    echo "${0}: another instance is running, now killing it" >&2
+    oldpid=$(<"$lockfile")
+    kill "$oldpid"
+    tail -f /dev/null --pid="$oldpid" # https://forums.bunsenlabs.org/viewtopic.php?pid=114592#p114592
+    (( i++ )) # one repetition should be enough in fact
+done
+
+printf '%s' "$$" > "$lockfile" # using lockfile to store pid
+
+
+# fifo
+PIPE=$(mktemp -u --tmpdir light_slider.XXXXXX)
+
+mkfifo "$PIPE" 
+# trap that removes fifo
+trap 'rm -f $PIPE' EXIT 
+
+# window class for the list dialog
+export CLASS="brightness_001" 
+
+# Toggle through 5 different gamma settings
+toggleit(){
+TOGGLE=$HOME/.toggle
+
+if [ ! -e "$TOGGLE" ]; 
+then
+    touch "$TOGGLE"
+    echo "90" > ~/.toggle
+    xgamma -gamma 0.9
+    notify-send --urgency low 'Changing Gamma to 90'
+elif grep -Fxq "90" ~/.toggle; 
+then
+    echo "80" > ~/.toggle
+    xgamma -gamma 0.8
+    notify-send --urgency low 'Changing Gamma to 80'
+elif grep -Fxq "80" ~/.toggle; 
+then
+    echo "70" > ~/.toggle
+    xgamma -gamma 0.7
+    notify-send --urgency low 'Changing Gamma to 70'
+elif grep -Fxq "70" ~/.toggle; 
+then
+    echo "60" > ~/.toggle
+    xgamma -gamma 0.6
+    notify-send --urgency low 'Changing Gamma to 60'
+    elif grep -Fxq "60" ~/.toggle; 
+then
+    echo "50" > ~/.toggle
+    xgamma -gamma 0.5
+    notify-send --urgency low 'Changing Gamma to 50'
+elif grep -Fxq "50" ~/.toggle;
+then
+    rm "$TOGGLE"
+    xgamma -gamma 1.0
+    notify-send --urgency low 'Changing Gamma to Off'
+fi
+}
+
+# Yad dialog to toggle different gamma settings through 'toggleit'
+gamma(){
+export -f toggleit
+yad --title "Gamma" --escape-ok --borders=10 --skip-taskbar \
+--form --center --geometry=140x48-120-120 \
+--text-align=center \
+--window-icon=dialog-information \
+--buttons-layout=spread \
+--button=" Gamma Toggle x5"!org.xfce.settings.color:"bash -c toggleit"
+}
+
+# Don't forget to export
+export PIPE
+export -f on_exit
+export -f gamma
+export -f toggleit
+
+# Main Yad notification icon
+light_slider() {
+# Ensures only one instance of this window
+# if there is another yad window close any dialog with the matching class
+if [[ $(pgrep -c "$(basename "$0")") -ne 1 ]]; then
+   pids="$(xdotool search --class "$CLASS")"
+   wpid="$(xdotool getwindowfocus)"
+
+   for pid in $pids; do
+        # Compares window class pid with the pid of a window in focus
+        if [[ "$pid" == "$wpid" ]]; then
+           xdotool windowunmap "$pid"
+           exit 1
+        fi
+   done
+fi
+
+# detect monitor for brightness levels using xrandr
+#MON=$(xrandr -q | grep " connected" | cut -f1 -d ' ')
+
+# find current xrandr brightness value
+XR=$(xrandr --verbose | grep -i brightness | awk '{print $2}')
+BrCur=$(awk "BEGIN {print $XR*100}") # calculate, so e.g. 0.5 gets 50
+## Brightness levels
+BrMax="100"
+BrMin="5"
+
+# Yad Slider
+yad --scale  --mouse   --class="$CLASS" --skip-taskbar --min-value $BrMin --max-value $BrMax \
+    --value "$BrCur" --print-partial --undecorated --width 300 \
+    --on-top --escape-ok --no-buttons --close-on-unfocus \
+    --step=100 \
+| while read -r BrNew; do
+#Use blight in order to use xrandr for hardware control.
+blight.py set "$BrNew"%
+done
+}
+
+# Dont forget to export
+export -f light_slider
+
+# function to set the notification icon in the systemtray
+function set_notification_icon() {
+  echo "icon:$ICON"
+  echo "tooltip:brighness control"
+  echo "menu:Gamma!bash -c 'gamma'!org.xfce.settings.color||Quit!quit!gtk-quit"
+}
+
+exec 3<> "$PIPE"
+
+yad --notification --command="bash -c light_slider" --listen <&3 & notifpid=$!
+
+# waits until the notification icon is ready
+until xdotool getwindowname "$(xdotool search --pid "$notifpid" | tail -1)" &>/dev/null; do
+        # sleep until the window opens
+        sleep 0.5       
+done
+
+set_notification_icon >&3
