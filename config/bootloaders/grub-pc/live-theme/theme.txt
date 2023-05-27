@@ -1,9 +1,9 @@
 desktop-image: "../splash.png"
 title-color: "#ffffff"
-title-font: "Unifont Regular 16"
+title-font: "Unifont Regular 14"
 title-text: "Live Boot Menu with GRUB"
-message-font: "Unifont Regular 14"
-terminal-font: "Unifont Regular 14"
+message-font: "Unifont Regular 12"
+terminal-font: "Unifont Regular 12"
 
 #help bar at the bottom
 + label {
@@ -14,7 +14,7 @@ terminal-font: "Unifont Regular 14"
         text = "@KEYMAP_SHORT@"
         align = "center"
         color = "#ffffff"
-	font = "Unifont Regular 14"
+	font = "Unifont Regular 12"
 }
 
 #boot menu
@@ -24,10 +24,10 @@ terminal-font: "Unifont Regular 14"
         top = 52%
         height = 48%-80
         item_color = "#a8a8a8"
-	item_font = "Unifont Regular 14"
+	item_font = "Unifont Regular 12"
         selected_item_color= "#ffffff"
-	selected_item_font = "Unifont Regular 14"
-        item_height = 16
+	selected_item_font = "Unifont Regular 12"
+        item_height = 14
         item_padding = 0
         item_spacing = 4
 	icon_width = 0
@@ -42,7 +42,7 @@ terminal-font: "Unifont Regular 14"
         top = 100%-80
         height = 16
         width = 70%
-        font = "Unifont Regular 14"
+        font = "Unifont Regular 12"
         text_color = "#000000"
         fg_color = "#ffffff"
         bg_color = "#a8a8a8"
