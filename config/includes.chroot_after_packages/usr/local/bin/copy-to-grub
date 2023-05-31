@@ -4,5 +4,5 @@
 BGDIR1="$HOME/Pictures/grub-bg"
 
 feh -r -t -P -N --scale-down -W 960 -E 100 -y 160 -J 100 --title "Grub-wallpaper" \
---index-info "%n" \
+--index-info "" \
 --action ";sudo rm /boot/grub/*.png /boot/grub/*.jpg; sudo cp -t /boot/grub %F && sudo update-grub && notify-send 'Grub Background Changed'; pkill -f copy-to-grub" $BGDIR1
