@@ -1,4 +1,8 @@
 #! /bin/bash
+# Script to set the hardware brightness using xrandr and blight.py.
+# A separate gamma toggle is also available.
+# Made by sleekmason 23.05.31
+
 
 # Set the icon here
 ICON="sunny"
@@ -43,38 +47,38 @@ export CLASS="brightness_001"
 
 # Toggle through 5 different gamma settings
 toggleit(){
-TOGGLE=$HOME/.toggle
+TOGGLE=/tmp/toggle-gamma
 
 if [ ! -e "$TOGGLE" ]; 
 then
     touch "$TOGGLE"
-    echo "90" > ~/.toggle
+    echo "90" > /tmp/toggle-gamma
     xgamma -gamma 0.9
     notify-send --urgency low 'Changing Gamma to 90'
-elif grep -Fxq "90" ~/.toggle; 
+elif grep -Fxq "90" /tmp/toggle-gamma; 
 then
-    echo "80" > ~/.toggle
-    xgamma -gamma 0.8
+    echo "80" > /tmp/toggle-gamma
+    xgamma -gamma 0.8  >/dev/null 2>&1 &
     notify-send --urgency low 'Changing Gamma to 80'
-elif grep -Fxq "80" ~/.toggle; 
+elif grep -Fxq "80" /tmp/toggle-gamma; 
 then
-    echo "70" > ~/.toggle
-    xgamma -gamma 0.7
+    echo "70" > /tmp/toggle-gamma
+    xgamma -gamma 0.7 >/dev/null 2>&1 &
     notify-send --urgency low 'Changing Gamma to 70'
-elif grep -Fxq "70" ~/.toggle; 
+elif grep -Fxq "70" /tmp/toggle-gamma; 
 then
-    echo "60" > ~/.toggle
-    xgamma -gamma 0.6
+    echo "60" > /tmp/toggle-gamma
+    xgamma -gamma 0.6 >/dev/null 2>&1 &
     notify-send --urgency low 'Changing Gamma to 60'
-    elif grep -Fxq "60" ~/.toggle; 
+    elif grep -Fxq "60" /tmp/toggle-gamma; 
 then
-    echo "50" > ~/.toggle
-    xgamma -gamma 0.5
+    echo "50" > /tmp/toggle-gamma
+    xgamma -gamma 0.5 >/dev/null 2>&1 &
     notify-send --urgency low 'Changing Gamma to 50'
-elif grep -Fxq "50" ~/.toggle;
+elif grep -Fxq "50" /tmp/toggle-gamma;
 then
     rm "$TOGGLE"
-    xgamma -gamma 1.0
+    xgamma -gamma 1.0 >/dev/null 2>&1 &
     notify-send --urgency low 'Changing Gamma to Off'
 fi
 }
@@ -87,7 +91,7 @@ yad --title "Gamma" --escape-ok --borders=10 --skip-taskbar \
 --text-align=center \
 --window-icon=dialog-information \
 --buttons-layout=spread \
---button=" Gamma Toggle x5"!org.xfce.settings.color:"bash -c toggleit"
+--button=" Gamma Toggle x6"!org.xfce.settings.color:"bash -c toggleit"
 }
 
 # Don't forget to export
@@ -130,7 +134,7 @@ yad --scale  --mouse   --class="$CLASS" --skip-taskbar --min-value $BrMin --max-
     --step=100 \
 | while read -r BrNew; do
 #Use blight in order to use xrandr for hardware control.
-blight.py set "$BrNew"%
+blight.py set "$BrNew"% >/dev/null 2>&1 &
 done
 }
 
