@@ -14,9 +14,6 @@
 
 ### Other items not in use.
 # @xscreensaver -no-splash &
-# monster-panel &
-# fbpanel-alsa &
-
 
 ### Touchpad Settings
 ### To use tap-to-click and the syndaemon for movement during keystrokes,

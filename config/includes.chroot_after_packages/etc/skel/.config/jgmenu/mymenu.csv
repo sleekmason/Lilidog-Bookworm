@@ -60,6 +60,7 @@ Conky,               $HOME/.config/conky/scripts/conky-chooser,     preferences-
 Gammy,               toggle.gammy,                                  preferences-system
 Jgmenu,              jg-icon-changer,                               preferences-system
 Clipboard,           toggle.parcellite,                             preferences-system
+Brightness,          bright,                                        preferences-system
 Hotcorners,          toggle.ld,                                     preferences-system
 Random BG,           toggle-wallpaper-random,                       preferences-system
 Tint2 Options,       tint2-options,                                 preferences-system

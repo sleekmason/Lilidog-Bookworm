@@ -1,26 +1,48 @@
 #! /bin/bash
-# Script to set the hardware brightness using xrandr and blight.py.
-# A separate gamma toggle is also available.
+# Script to place an icon in the system tray to change brightness
+# and gamma levels on the fly.  The notification icon can also be 
+# changed to one of six colors. This will not work with oled screens.
+# Requires yad, blight.py, gir1.2-gudev-1.0
 # Made by sleekmason 23.05.31
 
+# Check if in a virtual machine and if so, exit.
+if grep hypervisor /proc/cpuinfo ; then
+notify-send --urgency low 'Brightness tray icon will not work in a VM'
+exit
+else
 
-# Set the icon here
-ICON="sunny"
+# Check if backlight control exists and if not, exit.
+if ! test -e /sys/class/backlight/*; then
+notify-send --urgency low 'Backlight support unavailable on this system'
+exit
+else
 
+# Make brightness-icon.txt for .png names if doesn't already exist.
+iconcolor=$HOME/.local/share/brightness-icon.txt
+if [ ! -e "$iconcolor" ]; 
+then
+    touch "$iconcolor"
+    echo "brightness-orange.png" > "$HOME/.local/share/brightness-icon.txt"
+fi
 
+# Set the systemtray icon here.
+#ICON="sunny"
+ICON=/usr/share/icons/ld-icons/brightness/$(< "$HOME/.local/share/brightness-icon.txt")
+
+# Set exit.
 on_exit() {
     echo "quit" >&3
     rm -f "${PIPE}"
     rm -rf "${PIPE%/*}"
     exec 3>&-
     exec 4>&-
-    :>"$lockfile" # lockfile only holds pid while script is running
+    :>"$lockfile" # lockfile only holds pid while script is running.
 }
 
-# If there is a previous icon still not closed, kill and replace it if still needed
+# If there is a previous icon still not closed, kill and replace it if still needed.
 lockfile='/tmp/light_slider'
 exec 4<>"$lockfile"
-tries=3 # give up if cannot get lock
+tries=3 # give up if cannot get lock.
 (( i=1 ))
 until flock -n 4
 do
@@ -29,23 +51,22 @@ do
     oldpid=$(<"$lockfile")
     kill "$oldpid"
     tail -f /dev/null --pid="$oldpid" # https://forums.bunsenlabs.org/viewtopic.php?pid=114592#p114592
-    (( i++ )) # one repetition should be enough in fact
+    (( i++ )) # one repetition should be enough in fact.
 done
 
-printf '%s' "$$" > "$lockfile" # using lockfile to store pid
-
+printf '%s' "$$" > "$lockfile" # using lockfile to store pid.
 
 # fifo
 PIPE=$(mktemp -u --tmpdir light_slider.XXXXXX)
 
 mkfifo "$PIPE" 
-# trap that removes fifo
+# trap that removes fifo.
 trap 'rm -f $PIPE' EXIT 
 
-# window class for the list dialog
+# window class for the list dialog.
 export CLASS="brightness_001" 
 
-# Toggle through 5 different gamma settings
+# Toggle through 5 different gamma settings on right click.
 toggleit(){
 TOGGLE=/tmp/toggle-gamma
 
@@ -79,37 +100,69 @@ elif grep -Fxq "50" /tmp/toggle-gamma;
 then
     rm "$TOGGLE"
     xgamma -gamma 1.0 >/dev/null 2>&1 &
-    notify-send --urgency low 'Changing Gamma to Off'
+    notify-send --urgency low 'Changing Gamma to Default'
 fi
 }
 
-# Yad dialog to toggle different gamma settings through 'toggleit'
+# Script to change the icon color to one of six set colors. 
+icon-color-change(){
+FILE="$HOME/.local/share/brightness-icon.txt"
+noti=$(yad --geometry=320x48-210-250 --borders=8 --entry --title "Notifier Icon Color" --center --window-icon=applications-graphics \
+    --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
+    --text "Restart After Changing" --text-align=center \
+    "Green" "Blue" "Magenta" "Orange" "Gray" "Red")
+
+case $noti in
+  Green)
+     sed -i 's/^brightness.*/brightness-green.png/g' "$FILE"
+;;
+  Blue)
+     sed -i 's/^brightness.*/brightness-blue.png/g' "$FILE"
+;;
+  Magenta)
+     sed -i 's/^brightness.*/brightness-magenta.png/g' "$FILE"
+;;
+  Orange)
+     sed -i 's/^brightness.*/brightness-orange.png/g' "$FILE"
+;;
+  Gray)
+     sed -i 's/^brightness.*/brightness-gray.png/g' "$FILE"
+;;
+   Red)
+     sed -i 's/^brightness.*/brightness-red.png/g' "$FILE"
+;;
+        *) exit 1 ;;
+    esac
+}
+
+# Yad dialog to toggle different gamma settings through 'toggleit' above.
 gamma(){
 export -f toggleit
 yad --title "Gamma" --escape-ok --borders=10 --skip-taskbar \
---form --center --geometry=140x48-120-120 \
+--form --center --geometry=140x48-120-90 \
 --text-align=center \
 --window-icon=dialog-information \
 --buttons-layout=spread \
 --button=" Gamma Toggle x6"!org.xfce.settings.color:"bash -c toggleit"
 }
 
-# Don't forget to export
+# Don't forget to export.
 export PIPE
 export -f on_exit
 export -f gamma
 export -f toggleit
+export -f icon-color-change
 
-# Main Yad notification icon
+# Main Yad notification icon.
 light_slider() {
-# Ensures only one instance of this window
-# if there is another yad window close any dialog with the matching class
+# Ensures only one instance of this window.
+# if there is another yad window close any dialog with the matching class.
 if [[ $(pgrep -c "$(basename "$0")") -ne 1 ]]; then
    pids="$(xdotool search --class "$CLASS")"
    wpid="$(xdotool getwindowfocus)"
 
    for pid in $pids; do
-        # Compares window class pid with the pid of a window in focus
+        # Compares window class pid with the pid of a window in focus.
         if [[ "$pid" == "$wpid" ]]; then
            xdotool windowunmap "$pid"
            exit 1
@@ -120,10 +173,10 @@ fi
 # detect monitor for brightness levels using xrandr
 #MON=$(xrandr -q | grep " connected" | cut -f1 -d ' ')
 
-# find current xrandr brightness value
+# find current xrandr brightness value.
 XR=$(xrandr --verbose | grep -i brightness | awk '{print $2}')
 BrCur=$(awk "BEGIN {print $XR*100}") # calculate, so e.g. 0.5 gets 50
-## Brightness levels
+## Brightness levels.
 BrMax="100"
 BrMin="5"
 
@@ -133,29 +186,32 @@ yad --scale  --mouse   --class="$CLASS" --skip-taskbar --min-value $BrMin --max-
     --on-top --escape-ok --no-buttons --close-on-unfocus \
     --step=100 \
 | while read -r BrNew; do
-#Use blight in order to use xrandr for hardware control.
+#Use blight for hardware backlight control.
 blight.py set "$BrNew"% >/dev/null 2>&1 &
 done
 }
 
-# Dont forget to export
+# Dont forget to export.
 export -f light_slider
 
-# function to set the notification icon in the systemtray
+# function to set the notification icon in the systemtray and set menu.
 function set_notification_icon() {
   echo "icon:$ICON"
-  echo "tooltip:brighness control"
-  echo "menu:Gamma!bash -c 'gamma'!org.xfce.settings.color||Quit!quit!gtk-quit"
+  echo "tooltip:Brightness And Gamma"
+  echo "menu:Quick Gamma!bash -c 'gamma'!org.xfce.settings.color|Icon Color!bash -c icon-color-change!applications-graphics|Quit!quit!gtk-quit"
 }
 
 exec 3<> "$PIPE"
 
 yad --notification --command="bash -c light_slider" --listen <&3 & notifpid=$!
 
-# waits until the notification icon is ready
+# waits until the notification icon is ready.
 until xdotool getwindowname "$(xdotool search --pid "$notifpid" | tail -1)" &>/dev/null; do
         # sleep until the window opens
         sleep 0.5       
 done
 
 set_notification_icon >&3
+
+fi
+fi
