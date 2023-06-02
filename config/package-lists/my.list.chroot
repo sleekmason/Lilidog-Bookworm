@@ -160,6 +160,7 @@ powermgmt-base
 pragha
 pulseaudio-utils
 python3-distro
+python3-gi
 python3-pyxattr
 python3-xdg
 python3-notify2
