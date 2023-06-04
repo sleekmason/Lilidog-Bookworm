@@ -58,7 +58,6 @@ galculator
 galternatives
 geany
 gettext-base
-gir1.2-gudev-1.0
 gnome-icon-theme
 gnome-themes-extra
 gnome-system-tools
@@ -160,7 +159,6 @@ powermgmt-base
 pragha
 pulseaudio-utils
 python3-distro
-python3-gi
 python3-pyxattr
 python3-xdg
 python3-notify2
