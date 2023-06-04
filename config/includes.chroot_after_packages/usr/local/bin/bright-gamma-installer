@@ -28,7 +28,7 @@ echo ""
 sudo apt install -y /tmp/./bright-gamma*
 rm /tmp/bright-gamma*
 sed -i '/Brightness,          bright-gamma,                                  preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Clipboard.*/a Brightness,          bright-gamma,                                  preferences-system' ~/.config/jgmenu/mymenu.csv
+sed -i '/Touchpad.*/a Brightness,          bright-gamma,                                  preferences-system' ~/.config/jgmenu/mymenu.csv
 killall -q jgmenu
 echo ""
 echo "[0;33m-------------------------------------------------------------------"

@@ -59,7 +59,7 @@ Install Extras,     ld-installers,                    applications-utilities
 Conky,               $HOME/.config/conky/scripts/conky-chooser,     preferences-system
 Gammy,               toggle.gammy,                                  preferences-system
 Jgmenu,              jg-icon-changer,                               preferences-system
-Clipboard,           toggle.parcellite,                             preferences-system
+Touchpad,            toggle-touchpad,                               preferences-system
 Hotcorners,          toggle.ld,                                     preferences-system
 Random BG,           toggle-wallpaper-random,                       preferences-system
 Tint2 Options,       tint2-options,                                 preferences-system
@@ -67,7 +67,7 @@ Mouse Finder,        toggle-mouse-pointer,                          preferences-
 Transparency,        transparency-system,                           preferences-system
 Tint2 Toggle,        toggle.tint2,                                  preferences-system
 Auto Login,          lightdm-autologin,                             preferences-system
-Touchpad,            toggle-touchpad,                               preferences-system
+Clipboard,           toggle.parcellite,                             preferences-system
 OSprober,            osprober-toggle,                               preferences-system
 Sounds,              notification-sounds,                           preferences-system
 Picom,               toggle.picom,                                  preferences-system
