@@ -7,7 +7,7 @@ if [ ! -e "$TOGGLE" ];
 then
     touch "$TOGGLE"
     echo "90" > /tmp/toggle-gamma
-    xgamma -gamma 0.9
+    xgamma -gamma 0.9 >/dev/null 2>&1 &
     notify-send --urgency low 'Changing Gamma to 90'
 elif grep -Fxq "90" /tmp/toggle-gamma; 
 then
@@ -33,13 +33,13 @@ elif grep -Fxq "50" /tmp/toggle-gamma;
 then
     rm "$TOGGLE"
     xgamma -gamma 1.0 >/dev/null 2>&1 &
-    notify-send --urgency low 'Changing Gamma to Off'
+    notify-send --urgency low 'Changing Gamma to Default'
 fi
 }
 
 export -f toggleit
-yad --title "Gamma" --escape-ok --borders=10 \
---form --center --width=140 --height=40 \
+yad --title "Gamma" --escape-ok --close-on-unfocus --borders=10 --undecorated --skip-taskbar \
+--form --center --geometry=140x48-120-90 \
 --text-align=center \
 --window-icon=dialog-information \
 --buttons-layout=spread \
