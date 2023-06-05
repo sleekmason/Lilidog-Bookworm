@@ -17,21 +17,33 @@ low(){
 }    
 medium(){
 	FILE="$HOME/.config/picom.conf"   
-     sed -i 's/^active-opacity =.*/active-opacity = 0.95;/g' "$FILE"
+     sed -i 's/^active-opacity =.*/active-opacity = 0.96;/g' "$FILE"
      sed -i 's/^frame-opacity =.*/frame-opacity = 0.95;/g' "$FILE"
      sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.89;/g' "$FILE"
 }
 high(){
 	FILE="$HOME/.config/picom.conf"
-     sed -i 's/^active-opacity =.*/active-opacity = 0.92;/g' "$FILE"
+     sed -i 's/^active-opacity =.*/active-opacity = 0.90;/g' "$FILE"
      sed -i 's/^frame-opacity =.*/frame-opacity = 0.93;/g' "$FILE"
      sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.82;/g' "$FILE"
 }
-super(){
+higher(){
 	FILE="$HOME/.config/picom.conf"
-     sed -i 's/^active-opacity =.*/active-opacity = 0.88;/g' "$FILE"
+     sed -i 's/^active-opacity =.*/active-opacity = 0.86;/g' "$FILE"
      sed -i 's/^frame-opacity =.*/frame-opacity = 0.9;/g' "$FILE"
      sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.76;/g' "$FILE"
+}
+veryhigh(){
+	FILE="$HOME/.config/picom.conf"
+     sed -i 's/^active-opacity =.*/active-opacity = 0.82;/g' "$FILE"
+     sed -i 's/^frame-opacity =.*/frame-opacity = 0.88;/g' "$FILE"
+     sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.68;/g' "$FILE"
+}
+highest(){
+	FILE="$HOME/.config/picom.conf"
+     sed -i 's/^active-opacity =.*/active-opacity = 0.76;/g' "$FILE"
+     sed -i 's/^frame-opacity =.*/frame-opacity = 0.82;/g' "$FILE"
+     sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.50;/g' "$FILE"
 }
 inactive(){
 	FILE="$HOME/.config/picom.conf"
@@ -44,7 +56,9 @@ export -f default
 export -f low
 export -f medium
 export -f high
-export -f super
+export -f higher
+export -f veryhigh
+export -f highest
 export -f inactive
 
 yad --title "Transparency" --escape-ok --borders=14 \
@@ -57,5 +71,7 @@ yad --title "Transparency" --escape-ok --borders=14 \
     --field=" Low":FBTN "bash -c low" \
     --field=" Medium":FBTN "bash -c medium" \
     --field=" High":FBTN "bash -c high" \
-    --field=" Very High":FBTN "bash -c super" \
+    --field=" Higher":FBTN "bash -c higher" \
+    --field=" Very High":FBTN "bash -c veryhigh" \
+    --field=" Highest":FBTN "bash -c highest" \
     --field=" Inactive":FBTN "bash -c inactive"
