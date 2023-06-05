@@ -10,11 +10,11 @@ sudo sed -i "s/background.*/background = \/\home\/\wallpaper\/Glade.png/g" /etc/
 sudo sed -i "s/position.*/position = -4%,end 4%,start/g" /etc/lightdm/lightdm-gtk-greeter.conf
 sudo sed -i "s/font-name.*/font-name = Noto Sans 11/g" /etc/lightdm/lightdm-gtk-greeter.conf
 
-# System, gtktheme, icon theme, picom transparency
+## System gtktheme, icon theme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Glade"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Gray"
 
-	FILE="$HOME/.config/picom.conf"
+## Picom transparency
 sed -i 's/^active-opacity =.*/active-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^frame-opacity =.*/frame-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.94;/g' "$HOME/.config/picom.conf"
@@ -56,6 +56,8 @@ sed -i "s/^autohide =.*/autohide = 0/" "$HOME"/.config/tint2/tint2rc
 sed -i "0,/background_color =/{s/background_color =.*/background_color = #0d0f0f 60/}" "$HOME"/.config/tint2/tint2rc
 ## Tint2 Icon colors
 sed -i 's/coltint2.*\//coltint2base\//g' "$HOME"/.config/tint2/tint2rc
+# For executor if enabled
+sed -i 's/^iconcolor=.*/iconcolor="coltint2base.png"/g' "$HOME"/.config/tint2/executors/notifier
 ## Tint2 Font colors
 sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#C1CFDB 100/' "$HOME"/.config/tint2/tint2rc
 sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#C1CFDB 100/' "$HOME"/.config/tint2/tint2rc
