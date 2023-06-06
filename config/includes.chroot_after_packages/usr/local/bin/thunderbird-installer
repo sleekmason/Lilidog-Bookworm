@@ -20,7 +20,7 @@ echo ""
 sudo apt update && sudo apt install thunderbird hunspell-en-us &&
 sed -i '/Thunderbird,        thunderbird,      thunderbird/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Thunderbird,        thunderbird,      thunderbird' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

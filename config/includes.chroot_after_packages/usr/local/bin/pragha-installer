@@ -22,7 +22,7 @@ sudo apt update && sudo apt install --install-recommends pragha \
 gstreamer1.0-libav gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio &&
 sed -i '/Pragha,             pragha,                            pragha/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pragha,             pragha,                            pragha' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

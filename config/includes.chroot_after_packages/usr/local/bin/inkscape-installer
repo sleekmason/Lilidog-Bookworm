@@ -19,7 +19,7 @@ echo ""
 sudo apt update && sudo apt install --install-recommends inkscape &&
 sed -i '/Inkscape,               inkscape,                              org.xfce.settings.color/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Inkscape,               inkscape,                              org.xfce.settings.color' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
 echo ""

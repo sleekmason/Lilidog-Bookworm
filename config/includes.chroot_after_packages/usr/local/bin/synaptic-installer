@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install synaptic apt-xapian-index software-properties-gtk libgtk3-perl xdg-utils &&
 sed -i '/Synaptic,           gksudo synaptic,                  synaptic/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Install Extras/i Synaptic,           gksudo synaptic,                  synaptic' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

@@ -37,7 +37,7 @@ sed -i '/Briquolo, briquolo, briquolo/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/tag(games)/a Briquolo, briquolo, briquolo' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Blockout2, blockout2, blockout2/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/tag(games)/a Blockout2, blockout2, blockout2' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"
 echo ""

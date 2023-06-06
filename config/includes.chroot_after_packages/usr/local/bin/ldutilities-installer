@@ -58,7 +58,7 @@ sed -i '/Gimp,               gimp,                              gimp/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' "$FILE"
 sed -i '/Filezilla,    filezilla,                  filezilla/d' "$FILE"
 sed -i '/Extras/i Filezilla,    filezilla,                  filezilla' "$FILE"
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "[0;32m----------------------------------------------------------------"
 echo ""

@@ -43,7 +43,7 @@ sudo wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_ins
 echo ""
 sed -i '/^Joplin\b/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Joplin,             ~/.joplin/Joplin.AppImage,         joplin' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo "" 
 echo "" 
 echo "[0;32mAll Finished![0m"

@@ -31,7 +31,7 @@ sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Steam,         steam,       steam/d' ~/.config/jgmenu/mymenu.csv && 
 sed -i '/tag(games)/a Steam,         steam,       steam' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "------------------------------------------------------------------"
 echo ""

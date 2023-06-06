@@ -37,7 +37,7 @@ sudo apt update
 sudo apt install --install-recommends librewolf
 sed -i '/Librewolf,          librewolf,        librewolf/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Librewolf,          librewolf,        librewolf' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
 echo ""

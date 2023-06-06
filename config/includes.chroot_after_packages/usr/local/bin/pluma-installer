@@ -20,7 +20,7 @@ echo ""
 sudo apt update && sudo apt install pluma &&
 sed -i '/Pluma,        pluma,                       accessories-text-editor/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pluma,        pluma,                       accessories-text-editor' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

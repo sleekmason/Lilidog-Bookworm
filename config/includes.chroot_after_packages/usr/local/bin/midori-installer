@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install midori &&
 sed -i '/Midori,            midori,          midori/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Midori,            midori,          midori' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""
 echo "[0;32mAll Finished![0m"

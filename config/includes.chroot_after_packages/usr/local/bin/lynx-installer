@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install lynx &&
 sed -i '/Lynx,               x-terminal-emulator -e bash -c lynx,    internet-web-browser/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Lynx,               x-terminal-emulator -e bash -c lynx,    internet-web-browser' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""
 echo "[0;32mAll Finished![0m"

@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install --install-recommends blender &&
 sed -i '/Blender,            blender,                           blender/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Blender,            blender,                           blender' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

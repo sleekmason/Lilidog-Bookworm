@@ -19,7 +19,7 @@ echo ""
 sudo apt update && sudo apt install pcmanfm &&
 sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
 echo ""

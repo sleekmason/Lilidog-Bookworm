@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install --install-recommends audacious audacious-plugins &&
 sed -i '/Audacious,          audacious,                         audacious/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Audacious,          audacious,                         audacious' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

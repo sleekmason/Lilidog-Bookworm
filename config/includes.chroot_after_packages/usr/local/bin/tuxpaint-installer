@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install tuxpaint tuxpaint-config &&
 sed -i '/Tuxpaint,               tuxpaint,                              tuxpaint/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Tuxpaint,               tuxpaint,                              tuxpaint' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
 echo ""

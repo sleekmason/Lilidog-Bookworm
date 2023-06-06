@@ -20,7 +20,7 @@ echo ""
 sudo apt update && sudo apt install gimp gimp-data-extras ghostscript libgts-bin gimp-plugin-registry gimp-texturize gimp-lensfun &&
 sed -i '/Gimp,               gimp,                              gimp/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
 echo ""

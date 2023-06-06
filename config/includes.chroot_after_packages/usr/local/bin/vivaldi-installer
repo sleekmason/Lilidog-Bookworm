@@ -23,7 +23,7 @@ sudo curl -LJO https://downloads.vivaldi.com/stable/vivaldi-stable_5.5.2805.32-1
 sudo apt update && sudo apt install -y ./vivaldi-stable_5.5.2805.32-1_amd64.deb libu2f-udev &&
 sed -i '/Vivaldi,            vivaldi,          vivaldi/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Vivaldi,            vivaldi,          vivaldi' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""
 echo "[0;32mAll Finished![0m"

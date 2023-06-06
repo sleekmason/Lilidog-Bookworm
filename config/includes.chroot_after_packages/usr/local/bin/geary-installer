@@ -22,7 +22,7 @@ echo ""
 sudo apt update && sudo apt install geary hunspell-en-us libfolks-eds25 gstreamer1.0-x gstreamer1.0-gl gstreamer1.0-libav enchant-2 &&
 sed -i '/Geary,            geary,                           org.gnome.Geary/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Geary,            geary,                           org.gnome.Geary' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

@@ -32,7 +32,7 @@ sudo sed -i '/deb/c deb [arch=amd64] https://download.virtualbox.org/virtualbox/
 sudo apt update && sudo apt install --install-recommends virtualbox-6.1 build-essential &&
 sed -i '/Virtualbox,         virtualbox,       virtualbox/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Virtualbox,         virtualbox,       virtualbox' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 sudo sed -i '/deb/c #deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bullseye contrib' /etc/apt/sources.list.d/virtualbox.list 
 echo ""
 echo "----------------------------------------------------------------"

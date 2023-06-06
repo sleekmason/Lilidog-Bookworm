@@ -30,7 +30,7 @@ sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Minecraft,         minecraft-launcher,       minecraft-launcher/d' ~/.config/jgmenu/mymenu.csv && 
 sed -i '/tag(games)/a Minecraft,         minecraft-launcher,       minecraft-launcher' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "------------------------------------------------------------------"
 echo ""

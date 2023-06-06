@@ -24,7 +24,7 @@ sudo apt update && sudo apt install --install-recommends xscreensaver xscreensav
 
 sed -i '/^Xscreensaver\b/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Tint2 Toggle/i Xscreensaver,        toggle.xscreensaver,                           preferences-system' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"
 echo ""

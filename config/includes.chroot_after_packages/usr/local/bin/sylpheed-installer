@@ -20,7 +20,7 @@ echo ""
 sudo apt update && sudo apt install sylpheed  sylpheed-i18n sylfilter sylpheed-plugins &&
 sed -i '/Sylpheed,            sylpheed,                           sylpheed/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Sylpheed,            sylpheed,                           sylpheed' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo ""
 echo ""

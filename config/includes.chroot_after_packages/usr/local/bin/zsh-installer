@@ -40,7 +40,7 @@ sudo apt update && sudo apt install zsh &&
 sudo chsh -s /bin/zsh $USER &&
 sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 else
 cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &
 sudo apt update && sudo apt install zsh &&

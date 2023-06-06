@@ -21,7 +21,7 @@ echo ""
 sudo apt update && sudo apt install firefox-esr &&
 sed -i '/Firefox,            firefox,          firefox-esr/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Firefox,            firefox,          firefox-esr' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""
 echo "[0;32mAll Finished![0m"

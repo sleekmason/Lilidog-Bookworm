@@ -26,7 +26,7 @@ sudo apt update && sudo apt install google-earth-pro-stable &&
 sudo sed -i '/deb/c # deb [arch=amd64] http://dl.google.com/linux/earth/deb/ stable main' /etc/apt/sources.list.d/google-earth-pro.list
 sed -i '/Google Earth,         google-earth-pro,       google-earth-pro/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Google Earth,         google-earth-pro,       google-earth-pro' ~/.config/jgmenu/mymenu.csv
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "---------------------------------------------------------"
 echo ""

@@ -40,7 +40,7 @@ sudo apt update && sudo apt install --install-recommends -y ./discord*
 echo ""
 sed -i '/^Discord\b/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Discord,             discord,         applications-games' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo "" 
 echo "" 
 echo "[0;32mAll Finished![0m"
