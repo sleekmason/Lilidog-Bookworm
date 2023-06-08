@@ -41,7 +41,7 @@ case $noti in
      killall -SIGUSR1 tint2
 ;;
   Indigo)
-     sed -i 's/^battery_font_color.*/battery_font_color = #96A1D9 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #A5B0E6 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Violet)
@@ -49,15 +49,15 @@ case $noti in
      killall -SIGUSR1 tint2
 ;;
   Magenta)
-     sed -i 's/^battery_font_color.*/battery_font_color = #C596D9 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #D09FE6 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Green)
-     sed -i 's/^battery_font_color.*/battery_font_color = #11B850 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #26E06A 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Black)
-     sed -i 's/^battery_font_color.*/battery_font_color = #0A0A00 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #262626 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   White)
@@ -65,7 +65,7 @@ case $noti in
      killall -SIGUSR1 tint2
 ;;
    Red)
-      sed -i 's/^battery_font_color.*/battery_font_color = #EB1313 100/g' "$HOME/.config/tint2/tint2rc"
+      sed -i 's/^battery_font_color.*/battery_font_color = #E6494A 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2 ;;
         *) exit 1 ;;
     esac
