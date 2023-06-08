@@ -2,7 +2,7 @@
 # tint2 battery color options options.
 # Made be sleekmason for Lilidog 4-13-2022
 
-noti=$(yad --width 310 --borders=12 --entry --title "Battery Font Color" --center --window-icon=applications-graphics \
+noti=$(yad --width 310 --borders=12 --entry --title "Percentage Text Color" --center --window-icon=applications-graphics \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
     --button="gtk-cancel:1" --button="gtk-ok:0" \
     "Base - Default" "Light Grey" "Grey" "Dark Grey" "Adobe" "Aqua" "Blue" "Navy" "Indigo" "Violet" "Magenta" "Green" "Black" "White" "Red")
@@ -57,7 +57,7 @@ case $noti in
      killall -SIGUSR1 tint2
 ;;
   Black)
-     sed -i 's/^battery_font_color.*/battery_font_color = #262626 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #0A0A00 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   White)
