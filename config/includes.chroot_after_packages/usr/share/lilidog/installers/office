@@ -2,6 +2,7 @@ Install Abiword Writer,          x-terminal-emulator -T 'Abiword Writer Installe
 Install Calibre Book,            x-terminal-emulator -T 'Calibre Installer' -e bash -c "calibre-installer; echo $'\n\nPress any key to close.'; read -srn1",                          applications-office
 Install Joplin Note,             x-terminal-emulator -T 'Joplin Note AppImage Installer' -e bash -c "joplin-installer; echo $'\n\nPress any key to close.'; read -srn1",              applications-office
 Install Mousepad Editor,         x-terminal-emulator -T 'Mousepad Editor Installer' -e bash -c "mousepad-installer; echo $'\n\nPress any key to close.'; read -srn1",                 applications-office
+Install Neovim Editor,           x-terminal-emulator -T 'Neovim Editor Installer' -e bash -c "neovim-installer; echo $'\n\nPress any key to close.'; read -srn1",                     applications-office
 Install Pluma Editor,            x-terminal-emulator -T 'Pluma Editor Installer' -e bash -c "pluma-installer; echo $'\n\nPress any key to close.'; read -srn1",                       applications-office
 Install VSCodium Editor,         x-terminal-emulator -T 'VSCodium Installer' -e bash -c "vscodium-installer; echo $'\n\nPress any key to close.'; read -srn1",                        applications-office
 Install Xed Editor,              x-terminal-emulator -T 'Xed Editor Installer' -e bash -c "xed-installer; echo $'\n\nPress any key to close.'; read -srn1",                           applications-office
