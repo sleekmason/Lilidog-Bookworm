@@ -174,7 +174,7 @@ time2_timezone =
 clock_font_color = #cadbeb 100
 clock_padding = 3 0
 clock_background_id = 0
-clock_tooltip = Left Click = Calendar - Middle Click = Multi Timer - Right-Click = Timezone Changer
+clock_tooltip = Left ▸ Calendar ┃ Middle ▸ Multi Timer ┃ Right ▸ Time Zone Changer
 clock_tooltip_timezone = 
 clock_lclick_command = calendar
 clock_rclick_command = time-admin
@@ -218,7 +218,7 @@ separator_padding = 1 0
 button = new
 button_icon = /usr/share/icons/ld-icons/coltint2base/m.png
 button_text = 
-button_tooltip = Left Click = Menu - Right Click = Icon Menu
+button_tooltip = Left ▸ Menu ┃ Right ▸ Icon Menu
 button_lclick_command = jgmenu_run &
 button_rclick_command = icon-menu
 button_mclick_command = 
@@ -286,7 +286,7 @@ button_max_icon_size = 16
 button = new
 button_icon = /usr/share/icons/ld-icons/coltint2base/light-dark.png
 button_text = 
-button_tooltip = Light-Dark Toggle - Middle Click = Custom-Theme
+button_tooltip = Left ▸ Light-Dark Toggle ┃ Middle ▸ Custom Theme
 button_lclick_command = light-dark-toggle &
 button_rclick_command = light-dark-toggle &
 button_mclick_command = custom-theme-toggle &
@@ -320,7 +320,7 @@ button_max_icon_size = 20
 button = new
 button_icon = /usr/share/icons/ld-icons/coltint2base/r.png
 button_text = 
-button_tooltip = Left Click = Places Menu - Right Click = Recents Menu
+button_tooltip = Left ▸ Places Menu ┃ Right ▸ Recents Menu
 button_lclick_command = popup -o places-pipemenu &
 button_rclick_command = popup -o pipe-recent-files &
 button_mclick_command = popup -o places-pipemenu &
@@ -337,7 +337,7 @@ button_max_icon_size = 20
 button = new
 button_icon = /usr/share/icons/ld-icons/coltint2base/t2.png
 button_text = 
-button_tooltip = Tint2 Options - Middle Click = Tint2 Configuration
+button_tooltip = Left ▸ Tint2 Options ┃ Middle ▸ Tint2 Configuration
 button_lclick_command = popup -f /usr/share/lilidog/tint2/options &
 button_rclick_command = popup -f /usr/share/lilidog/tint2/options &
 button_mclick_command = tint2conf
