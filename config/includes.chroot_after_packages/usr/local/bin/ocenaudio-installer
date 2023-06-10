@@ -1,0 +1,46 @@
+#!/bin/bash
+echo ""
+read -r -p "   [0;33mOcenaudio Installer[0m
+
+   Easy, fast and powerful audio editor for different platforms.
+    
+   [0;33mhttps://www.ocenaudio.com/[0m
+   
+   [0;33m----------------------------------------
+   
+   Please press enter to install Ocenaudio.
+   
+   ----------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+echo ""
+cd /tmp || exit &&
+wget https://raw.githubusercontent.com/sleekmason/packages/master/ocenaudio_debian8_64_3.12.2.deb --show-progress -q &&
+echo ""
+echo ""
+sudo apt update && sudo apt install --install-recommends ./ocenaudio*
+rm /tmp/ocenaudio*
+echo""
+sed -i '/Ocenaudio,          ocenaudio,              ocenaudio/d' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Ocenaudio,          ocenaudio,              ocenaudio' ~/.config/jgmenu/mymenu.csv
+killall -q jgmenu
+echo ""
+echo "[0;33m-------------------------------------------------------------------"
+echo ""
+echo "   All Finished!"
+echo "   You should find a new menu entry in the Quick Grab Menu."
+echo ""
+echo "-------------------------------------------------------------------[0m"
+echo ""
+echo ""
+else
+echo ""
+ echo "   -------------------------------------------------------"
+ echo ""
+ echo "   No Internet connection. Please connect and try again."
+ echo ""
+ echo "   -------------------------------------------------------"
+echo ""
+fi
