@@ -1,11 +1,10 @@
 #!/bin/bash
 echo ""
-read -p "   Buuf Icon Set Installer 57.1MB
+read -p "   Buuf Icon Set Installer 54MB
 
-   This script will download and install the Buuf icon set from
-   https://github.com/sleekmason/buuf-icons to /usr/share/icons 
-   for systemwide use. These icons are originally copied from: 
-   [0;36mhttps://store.kde.org/p/1012233/[0m
+   This script will download and install the Buuf icon set to 
+   /usr/share/icons for systemwide use. These icons are 
+   originally copied from: [0;36mhttps://store.kde.org/p/1012233/[0m
     
    To uninstall, delete the folder in /usr/share/icons.
    
@@ -18,16 +17,11 @@ read -p "   Buuf Icon Set Installer 57.1MB
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-if test -e /tmp/master.zip; then
-sudo rm /tmp/master.zip
-fi
-cd /tmp &&
-sudo wget https://github.com/sleekmason/buuf-icons/archive/master.zip &&
-sudo unzip -q master.zip &&
-sudo cp -a /tmp/buuf-icons-master/. /usr/share/icons/
-sudo gtk-update-icon-cache /usr/share/icons/buuf-nestort
-sudo rm /tmp/master.zip
-sudo rm -r /tmp/buuf-icons-master
+cd /tmp || exit
+if [ ! -f "buuf-icons_12.0-1_all.deb" ]; then
+wget https://raw.githubusercontent.com/sleekmason/packages/master/buuf-icons_12.0-1_all.deb --show-progress -q
+fi 
+sudo apt install ./buuf-icons_12.0-1_all.deb
 echo ""
 echo "----------------------------------------------------------------------"
 echo ""

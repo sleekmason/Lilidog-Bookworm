@@ -24,7 +24,7 @@ sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
 sed -i '/Nexuiz,         nexuiz,       nexuiz/d' ~/.config/jgmenu/mymenu.csv && 
 sed -i '/tag(games)/a Nexuiz,         nexuiz,       nexuiz' ~/.config/jgmenu/mymenu.csv &&
-killall jgmenu
+killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"
 echo ""
