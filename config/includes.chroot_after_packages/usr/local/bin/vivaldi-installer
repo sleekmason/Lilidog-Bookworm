@@ -18,7 +18,6 @@ read -p "   [0;33mVivaldi Installer.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-cd /tmp/ &&
 sudo apt update && sudo apt install --install-recommends vivaldi-stable &&
 sed -i '/Vivaldi,            vivaldi,          vivaldi/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Vivaldi,            vivaldi,          vivaldi' ~/.config/jgmenu/mymenu.csv &&
