@@ -9,7 +9,7 @@ read -p "   [0;33mVivaldi Installer.[0m
    For more information: 
    https://vivaldi.com/
    
-   [0;32m----------------------------------------------------------
+   [0;33m----------------------------------------------------------
    
    Please press enter to install the Vivaldi Browser.
    
@@ -19,8 +19,7 @@ read -p "   [0;33mVivaldi Installer.[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp/ &&
-sudo curl -LJO https://downloads.vivaldi.com/stable/vivaldi-stable_5.5.2805.32-1_amd64.deb &&
-sudo apt update && sudo apt install -y ./vivaldi-stable_5.5.2805.32-1_amd64.deb libu2f-udev &&
+sudo apt update && sudo apt install --install-recommends vivaldi-stable &&
 sed -i '/Vivaldi,            vivaldi,          vivaldi/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Vivaldi,            vivaldi,          vivaldi' ~/.config/jgmenu/mymenu.csv &&
 killall -q jgmenu
@@ -30,7 +29,7 @@ echo "[0;32mAll Finished![0m"
 echo ""
 echo "[0;33mIf installed, You should find a new main menu entry for vivaldi.[0m"
 echo "" 
-echo "[0;32mMenu entries will need to be removed manually if uninstalled." 
+echo "[0;33mMenu entries will need to be removed manually if uninstalled." 
 echo "See Jgmenu Conf under Configuration in the menu for directions.[0m"
 echo ""
 echo "----------------------------------------------------------------"
