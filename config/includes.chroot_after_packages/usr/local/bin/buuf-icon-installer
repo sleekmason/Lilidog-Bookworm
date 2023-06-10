@@ -1,18 +1,18 @@
 #!/bin/bash
 echo ""
-read -p "   Buuf Icon Set Installer 54MB
+read -p "   [0;33mBuuf Icon Set Installer 54MB[0m
 
    This script will download and install the Buuf icon set to 
    /usr/share/icons for systemwide use. These icons are 
-   originally copied from: [0;36mhttps://store.kde.org/p/1012233/[0m
+   originally copied from: [0;33mhttps://store.kde.org/p/1012233/[0m
     
-   To uninstall, delete the folder in /usr/share/icons.
+   To uninstall: sudo apt remove buuf-icons
    
-   ---------------------------------------------------
+   [0;33m---------------------------------------------------
    
    Please press enter to install the buuf icon set.
    
-   ---------------------------------------------------
+   ---------------------------------------------------[0m
       
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
@@ -23,17 +23,17 @@ wget https://raw.githubusercontent.com/sleekmason/packages/master/buuf-icons_12.
 fi 
 sudo apt install ./buuf-icons_12.0-1_all.deb
 echo ""
-echo "----------------------------------------------------------------------"
+echo "[0;33m----------------------------------------------------------------------"
 echo ""
-echo "[0;36mAll Finished! You should now be able to select the Buuf icon set.[0m"
+echo "All Finished! You should now be able to select the Buuf icon set."
 echo "" 
-echo "----------------------------------------------------------------------"
+echo "----------------------------------------------------------------------[0m"
 else
 echo ""
- echo "   -------------------------------------------------------"
+ echo "   [0;31m-------------------------------------------------------"
  echo ""
  echo "   No Internet connection. Please connect and try again."
  echo ""
- echo "   -------------------------------------------------------"
+ echo "   -------------------------------------------------------[0m"
 echo ""
 fi
