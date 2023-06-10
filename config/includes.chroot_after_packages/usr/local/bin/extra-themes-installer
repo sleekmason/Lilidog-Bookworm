@@ -1,17 +1,16 @@
 #!/bin/bash
 echo ""
-echo ""
 read -p "   [0;33mExtra Themes Installer.[0m
 
 
-   This script will download and install all of the themes that are
-   currently in Lilidog. 20 full themes. The themes will be directly 
+   This script will download and install all of the themes that have
+   been made for Lilidog. Approx. 32 themes total. The themes will be
    downloaded and installed to ~/.themes, creating the folder if it 
    does not exist. Please see the Readme in ~/.themes for further 
-   instructions for root use, and for placing in Auto Themes if 
-   used. For removal, simply delete any unwanted themes.
+   instructions for root use, and for placing in the Auto Theme 
+   changer.  For removal, simply delete any unwanted themes.
    
-   [0;32m----------------------------------------------------------
+   [0;33m----------------------------------------------------------
    
    Please press enter to install the extra themes.
    
@@ -20,26 +19,19 @@ read -p "   [0;33mExtra Themes Installer.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-if test -e "$HOME/.themes" ; then
-cd ~/.themes &&
-curl -LJO https://github.com/sleekmason/extra-themes/archive/master.zip &&
-unzip extra-themes-master.zip &&
-cp -a $HOME/.themes/extra-themes-master/. $HOME/.themes/
-rm extra-themes-master.zip
-rm -r extra-themes-master
-else
-mkdir ~/.themes &&
-cd ~/.themes &&
-curl -LJO https://github.com/sleekmason/extra-themes/archive/master.zip &&
-unzip extra-themes-master.zip &&
-cp -a $HOME/.themes/extra-themes-master/. $HOME/.themes/
-rm extra-themes-master.zip
-rm -r extra-themes-master
+if test ! -e "$HOME/.themes" ; then
+mkdir ~/.themes
 fi
+cd ~/.themes &&
+curl -LJO https://github.com/sleekmason/extra-themes/archive/master.zip &&
+unzip extra-themes-master.zip &&
+cp -a $HOME/.themes/extra-themes-master/. $HOME/.themes/
+rm extra-themes-master.zip
+rm -r extra-themes-master
 echo ""
 echo "----------------------------------------------------------------------"
 echo ""
-echo "[0;32mAll Finished!.
+echo "[0;33mAll Finished!.
 Look in System Settings for the new themes, and the Readme in ~/.themes.[0m"
 echo "" 
 echo "----------------------------------------------------------------------"
