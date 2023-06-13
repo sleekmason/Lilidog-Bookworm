@@ -7,7 +7,7 @@ read -p "   [0;33mVivaldi Installer.[0m
    This script will download and install the Vivaldi Web Browser. 
    
    For more information: 
-   https://vivaldi.com/
+   [0;33mhttps://vivaldi.com/[0m
    
    [0;33m----------------------------------------------------------
    
@@ -18,13 +18,15 @@ read -p "   [0;33mVivaldi Installer.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-sudo apt update && sudo apt install --install-recommends vivaldi-stable &&
+cd /tmp/ &&
+sudo curl -LJO https://downloads.vivaldi.com/stable/vivaldi-stable_6.1.3035.75-1_amd64.deb &&
+sudo apt update && sudo apt install -y ./vivaldi-stable_6.1.3035.75-1_amd64.deb libu2f-udev &&
 sed -i '/Vivaldi,            vivaldi,          vivaldi/d' ~/.config/jgmenu/mymenu.csv &&
 sed -i '5i Vivaldi,            vivaldi,          vivaldi' ~/.config/jgmenu/mymenu.csv &&
-killall -q jgmenu
+killall jgmenu
 echo "----------------------------------------------------------------"
 echo ""
-echo "[0;32mAll Finished![0m"
+echo "[0;33mAll Finished![0m"
 echo ""
 echo "[0;33mIf installed, You should find a new main menu entry for vivaldi.[0m"
 echo "" 
