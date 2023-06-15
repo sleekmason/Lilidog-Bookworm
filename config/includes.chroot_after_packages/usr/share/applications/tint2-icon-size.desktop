@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Tint2 Icon Theme
-Exec=tint2-iconcolor
+Name=Tint2 Icon Size
+Exec=tint2-iconsize
 StartupNotify=false
 Terminal=false
 Icon=applications-other

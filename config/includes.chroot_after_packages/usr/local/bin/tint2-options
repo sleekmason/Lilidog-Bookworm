@@ -10,7 +10,7 @@ yad --title "Tint2 Options" --escape-ok \
     --field="                Autohide!dialog-information":FBTN "tint2-autohide" \
     --field="             Autoshrink!zoom-fit-best":FBTN "tint2-shrink" \
     --field="        Battery Notify!battery":FBTN "tint2-battery-notify" \
-    --field="              Icon Color!org.xfce.settings.color":FBTN "tint2-iconcolor" \
+    --field="              Icon Theme!org.xfce.settings.color":FBTN "tint2-iconcolor" \
     --field="                  Position!object-flip-vertical":FBTN "tint2-position" \
     --field="              Text Color!org.xfce.settings.color":FBTN "tint2-textcolor" \
     --field="        Transparency!preferences-system":FBTN "tint2-transparency" \
