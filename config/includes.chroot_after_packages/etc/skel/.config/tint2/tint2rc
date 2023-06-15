@@ -148,7 +148,7 @@ mouse_scroll_down = iconify
 systray_padding = 2 1 7
 systray_background_id = 0
 systray_sort = ascending
-systray_icon_size = 24
+systray_icon_size = 22
 systray_icon_asb = 100 0 0
 systray_monitor = 1
 systray_name_filter = 
@@ -158,7 +158,7 @@ systray_name_filter =
 launcher_padding = 4 4 4
 launcher_background_id = 0
 launcher_icon_background_id = 0
-launcher_icon_size = 24
+launcher_icon_size = 22
 launcher_icon_asb = 100 0 0
 launcher_icon_theme_override = 0
 startup_notifications = 1
@@ -225,10 +225,10 @@ button_mclick_command =
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 4 0
+button_padding = 3 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 19
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 2
@@ -242,10 +242,10 @@ button_mclick_command =
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 5 0
+button_padding = 1 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 16
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 3
@@ -259,10 +259,10 @@ button_mclick_command =
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 5 0
+button_padding = 2 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 16
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 4
@@ -276,10 +276,10 @@ button_mclick_command =
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 1 0
+button_padding = 0 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 16
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 5
@@ -296,7 +296,7 @@ button_font_color = #000000 100
 button_padding = 0 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 21
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 6
@@ -310,10 +310,10 @@ button_mclick_command = popup -f /usr/share/lilidog/tint2/theme-options &
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 5 0
+button_padding = 3 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 19
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 7
@@ -327,10 +327,10 @@ button_mclick_command = popup -o places-pipemenu &
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 2 0
+button_padding = 1 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 19
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 8
@@ -347,7 +347,7 @@ button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 19
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 9
@@ -364,7 +364,7 @@ button_font_color = #000000 100
 button_padding = 0 0
 button_background_id = -1
 button_centered = 0
-button_max_icon_size = 23
+button_max_icon_size = 22
 
 #-------------------------------------
 # Button 10
@@ -378,10 +378,10 @@ button_mclick_command =
 button_uwheel_command = 
 button_dwheel_command = 
 button_font_color = #000000 100
-button_padding = 3 0
+button_padding = 2 0
 button_background_id = 0
 button_centered = 0
-button_max_icon_size = 17
+button_max_icon_size = 22
 
 #-------------------------------------
 # Tooltip

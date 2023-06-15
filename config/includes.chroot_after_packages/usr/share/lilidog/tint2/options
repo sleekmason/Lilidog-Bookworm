@@ -2,7 +2,7 @@ Tint2 12H/24H,              tint2-12to24,            appointment-new
 Tint2 Autohide,             tint2-autohide,          preferences-desktop
 Tint2 Autoshrink,           tint2-shrink,            zoom-fit-best
 Tint2 Battery Options,      tint2-battery-notify,    battery-full
-Tint2 Color Themes,         tint2-iconcolor,         applications-graphics
+Tint2 Icon Themes,          tint2-iconcolor,         applications-graphics
 Tint2 Position,             tint2-position,          object-flip-vertical
 Tint2 Transparency,         tint2-transparency,      preferences-system
 

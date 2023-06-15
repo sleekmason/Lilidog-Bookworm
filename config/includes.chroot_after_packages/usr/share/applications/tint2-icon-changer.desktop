@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Tint2 Icons
+Exec=tint2-icon-changer
+StartupNotify=false
+Terminal=false
+Icon=applications-other
+Categories=System;
