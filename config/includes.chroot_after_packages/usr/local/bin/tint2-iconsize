@@ -1,0 +1,192 @@
+#!/bin/bash
+# Adjust tint2 icon size
+# Author - sleekmason 06/15/2023
+
+18(){
+  FILE="$HOME/.config/tint2/tint2rc"
+  sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 18 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 18 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 18 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 18/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 18/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 20/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 9/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 9/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 10/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 8/g' "$FILE"
+     
+     killall -SIGUSR1 tint2
+}
+20(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 20 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 20 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 20 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 20/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 20/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 22/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 10/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 10/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 12/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 12/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 11/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 9/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+22(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 22 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 22 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 22 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 22/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 22/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 24/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 12/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+24(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 24 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 24 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 24 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 24/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 24/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 26/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 12/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$FILE"
+     killall -SIGUSR1 tint2
+}    
+26(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 26 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 26 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 26 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 26/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 26/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 28/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 11/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 12/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+28(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 28 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 28 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 28 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 28/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 28/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 29/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 12/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 12/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 14/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 14/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 13/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 11/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+30(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 30 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 30 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 30 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 30/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 30/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 31/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 12/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 12/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 14/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 14/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 13/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 11/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+32(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 32 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 32 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 32 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 32/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 32/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 33/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 13/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 15/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 15/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 14/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 12/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+34(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 34 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 34 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 34 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 34/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 34/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 35/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 14/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 14/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 16/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 16/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 15/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 13/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+36(){
+  FILE="$HOME/.config/tint2/tint2rc"
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 36 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 36 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 36 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 36/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 36/g' "$FILE"
+     sed -i 's/^panel_size = 100% .*/panel_size = 100% 37/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 15/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 15/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 17/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 17/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 16/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 14/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+
+export -f 18
+export -f 20
+export -f 22
+export -f 24
+export -f 26
+export -f 28
+export -f 30
+export -f 32
+export -f 34
+export -f 36
+
+yad --title "Icon Size" --escape-ok --borders=14 \
+--form --geometry=240x330-550-150 \
+--text="Default Size = 22\n" --text-align=center \
+--window-icon=dialog-information \
+    --form --columns=2 \
+    --field=" 18":FBTN "bash -c 18 >/dev/null 2>&1 &" \
+    --field=" 20":FBTN "bash -c 20 >/dev/null 2>&1 &" \
+    --field=" 22":FBTN "bash -c 22 >/dev/null 2>&1 &" \
+    --field=" 24":FBTN "bash -c 24 >/dev/null 2>&1 &" \
+    --field=" 26":FBTN "bash -c 26 >/dev/null 2>&1 &" \
+    --field=" 28":FBTN "bash -c 28 >/dev/null 2>&1 &" \
+    --field=" 30":FBTN "bash -c 30 >/dev/null 2>&1 &" \
+    --field=" 32":FBTN "bash -c 32 >/dev/null 2>&1 &" \
+    --field=" 34":FBTN "bash -c 34 >/dev/null 2>&1 &" \
+    --field=" 36":FBTN "bash -c 36 >/dev/null 2>&1 &"

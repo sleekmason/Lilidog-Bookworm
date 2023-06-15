@@ -146,8 +146,8 @@ export -f obsidian
 
 yad --title "Tint2 Icons" --escape-ok --borders=14 \
 --form --geometry=240x330-270-150 \
---text="Tint2 Icon Changer\n" --text-align=center \
---button="gtk-ok:0" \
+--text="Tint2 Icon Changer\n" --text-align=center --buttons-layout=edge \
+--button=" Icon Size!applications-other:tint2-iconsize" --button="gtk-ok:0" \
 --window-icon=dialog-information \
     --form --columns=2 \
     --field=" Default":FBTN "bash -c default >/dev/null 2>&1 &" \
