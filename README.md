@@ -35,7 +35,7 @@ While generally stable, these are for testing purposes and should be recognized 
  Join the Lilidog forum to report any issues and keep lilidog bug free!  Forum Link: https://www.forum.lilidog.org/ <br/>
 See further below for features.
 
-### NOTE - The DOWNLOAD button defaults to the Bullseye-amd64 full version! (stable).  Click below for the others.
+### NOTE - The DOWNLOAD button defaults to the Bookworm-amd64 full version! (stable).  Click below for the others.
 
 [![Download Lilidog](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/lilidog/files/latest/download)
 
