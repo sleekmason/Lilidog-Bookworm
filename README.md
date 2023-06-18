@@ -4,7 +4,7 @@ Website: https://lilidog.org/ <br/>
 Forum Link: https://www.forum.lilidog.org/ <br/>
 Download link: https://sourceforge.net/projects/lilidog/
  
-Lilidog is a lightweight Linux distro using the Openbox window manager. <br/>
+Lilidog is a lightweight Linux distro using the Openbox window manager with the tint2 panel. <br/>
 
 Lilidog is based on Debian, with most of the hard parts done, and some cool stuff along the way. <br/>
 Everything is easily accessible, with numerous options to customize further.
@@ -92,9 +92,9 @@ Lilidog: <br/>
 This leaves out any recommended or suggested packages, allowing for complete control over package installation.
 No unwanted packages will be installed by default. This can be changed after install if desired.
 
-- Tint2 is the panel by default, with an option to use FbPanel if desired. Currently available tweaks for tint2 include
-transparency, time format, autoshrink, autohide, and position (top or bottom). These can be accessed from either the menu,
-or in the tint2panel itself under the 'T2' icon.
+- Tint2 is the panel by default. Currently available options for tint2 include icon type, icon size, transparency, time format,
+autoshrink, autohide,and position (top or bottom). These can be accessed from either the toggles menu, or in the tint2panel
+under the 'T2' icon.
 
 - Jgmenu is the menu for all versions.  Huge amount of customization available.
 Go to menu -> configuration -> jgmenu.conf for how to change and add items. 
@@ -143,8 +143,8 @@ the Conkys contain relevant info. These include a Clock, Full Info, Fortunes, Sh
 Please note that "Current Conditions" takes a moment to initialize.  Mix, match, change, etc. Everything is located in the
 conky folder ~/.config/conky including the Conky Chooser script.
 
-- Picom Composite Manager with transparency enabled. Look in the configuration menu to access ~/.config/picom.conf in order to
-change transparency, shadows, and more.
+- Picom Composite Manager with transparency enabled. Look in the "paw" in tint2 for easy adjustment options, or
+Look in the configuration menu to access ~/.config/picom.conf in order to change even more settings.
 
 - Gammy screen color and lightness control located in Toggles, and from the keybind "Super + g". This will allow you to change
 and set the gamma and brightness of your screen for different times of your choice, or simply as a toggle when desired.
