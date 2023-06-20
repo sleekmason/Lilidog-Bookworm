@@ -133,8 +133,8 @@ _reboot() {
 if grep -q "#GRUB_DISABLE_OS_PROBER=false" "/etc/default/grub"; then
 _update
 _remove_packages
-_upgrade_kernel
 _add_backports
+_upgrade_kernel
 _osprober
 _firmware
 #_autologin
