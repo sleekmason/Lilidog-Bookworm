@@ -1,21 +1,21 @@
 #!/bin/bash
 echo ""
-echo ""
 read -p "   [0;33mSkype Installer.[0m
 
-
-   This script will download and install Skype. 
-   Discover why hundreds of millions people use Skype to chat 
-   and call every day. 
+   This script will download and install Skype with all recommended
+   packages included. Discover why hundreds of millions people use 
+   Skype to chat and call every day. 
    
    For more information: 
    [0;33mhttps://www.skype.com/en/get-skype/[0m
    
-   [0;33m------------------------------------------
+   A new entry for Skype will be placed in the Quick Grab menu.
+   
+   [0;33m------------------------------------
    
    Please press enter to install Skype.
    
-   ------------------------------------------[0m
+   ------------------------------------[0m
       
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then

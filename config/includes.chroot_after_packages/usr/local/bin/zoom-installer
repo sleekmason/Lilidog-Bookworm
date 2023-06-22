@@ -1,14 +1,15 @@
 #!/bin/bash
 echo ""
-echo ""
 read -p "   [0;33mZoom Installer.[0m
 
-
-   This script will download and install Zoom. 
-   Phone, Meetings, Chat, Whiteboard and more for your desktop. 
+   This script will download and install Zoom with all recommended
+   packages included.  Zoom can be used for Phone, Meetings, Chat 
+   Whiteboard, and more for your desktop. 
    
    For more information: 
    [0;33mhttps://zoom.us/download[0m
+   
+   A new entry for Zoom will be placed in the Quick Grab menu.
    
    [0;33m------------------------------------------
    
