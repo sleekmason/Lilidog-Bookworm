@@ -1,5 +1,7 @@
 Install Discord,           x-terminal-emulator -T 'Discord AppImage Installer' -e bash -c "discord-installer; echo $'\n\nPress any key to close.'; read -srn1",       applications-internet
 Install Google Earth,      x-terminal-emulator -T 'Google Earth Installer' -e bash -c "google-earth-installer; echo $'\n\nPress any key to close.'; read -srn1",      applications-internet
+Install Skype,             x-terminal-emulator -T 'Skype Installer' -e bash -c "skype-installer; echo $'\n\nPress any key to close.'; read -srn1",                    applications-internet
+Install Zoom,              x-terminal-emulator -T 'Zoom Installer' -e bash -c "zoom-installer; echo $'\n\nPress any key to close.'; read -srn1",                      applications-internet
 ^sep()
 Install Brave Browser,     x-terminal-emulator -T 'Brave Installer' -e bash -c "brave-installer; echo $'\n\nPress any key to close.'; read -srn1",                    applications-internet
 Install Chromium Browser,  x-terminal-emulator -T 'Chromium Installer' -e bash -c "chromium-installer; echo $'\n\nPress any key to close.'; read -srn1",              applications-internet
