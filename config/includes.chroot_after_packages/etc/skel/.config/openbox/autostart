@@ -46,4 +46,7 @@ sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
 ### Start tint2-apt-update-check to check for updates on login.
 # ~/.config/tint2/scripts/tint2-apt-update-check &
 
+### Start brightness tray icon on login
+# sleep 2 && bright-gamma &
+
 welcome.sh &
