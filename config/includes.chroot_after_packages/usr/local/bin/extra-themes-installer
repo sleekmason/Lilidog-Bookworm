@@ -3,12 +3,12 @@ echo ""
 read -p "   [0;33mExtra Themes Installer.[0m
 
 
-   This script will download and install all of the themes that have
-   been made for Lilidog. Approx. 32 themes total. The themes will be
-   downloaded and installed to ~/.themes, creating the folder if it 
-   does not exist. Please see the Readme in ~/.themes for further 
-   instructions for root use, and for placing in the Auto Theme 
-   changer.  For removal, simply delete any unwanted themes.
+   This script will download and install the extra Lilidog themes
+   and add entries to the Auto Themes dialog to match.
+   
+   To remove, use: 
+   [0;33msudo apt remove extra-themes[0m
+   Any themes installed will be removed, and the changer reverted.
    
    [0;33m----------------------------------------------------------
    
@@ -19,20 +19,14 @@ read -p "   [0;33mExtra Themes Installer.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-if test ! -e "$HOME/.themes" ; then
-mkdir ~/.themes
-fi
-cd ~/.themes &&
-curl -LJO https://github.com/sleekmason/extra-themes/archive/master.zip &&
-unzip extra-themes-master.zip &&
-cp -a $HOME/.themes/extra-themes-master/. $HOME/.themes/
-rm extra-themes-master.zip
-rm -r extra-themes-master
+cd /tmp || exit &&
+wget https://raw.githubusercontent.com/sleekmason/packages/master/extra-themes_12.0-1_all.deb --show-progress -q
+sudo apt install -y ./extra-themes_12.0-1_all.deb
 echo ""
 echo "----------------------------------------------------------------------"
 echo ""
 echo "[0;33mAll Finished!.
-Look in System Settings for the new themes, and the Readme in ~/.themes.[0m"
+Look in 'Auto Themes' in the tint2 paw icon to change to any of the themes.[0m"
 echo "" 
 echo "----------------------------------------------------------------------"
 else
