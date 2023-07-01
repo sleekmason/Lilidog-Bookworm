@@ -23,12 +23,12 @@ cd /tmp || exit &&
 wget https://raw.githubusercontent.com/sleekmason/packages/master/extra-themes_12.0-1_all.deb --show-progress -q
 sudo apt install -y ./extra-themes_12.0-1_all.deb
 echo ""
-echo "----------------------------------------------------------------------"
+echo "[0;33m----------------------------------------------------------------------"
 echo ""
-echo "[0;33mAll Finished!.
-Look in 'Auto Themes' in the tint2 paw icon to change to any of the themes.[0m"
+echo "All Finished!.
+Look for 'Auto Themes' in the tint2 paw icon to change themes."
 echo "" 
-echo "----------------------------------------------------------------------"
+echo "----------------------------------------------------------------------[0m"
 else
 echo ""
  echo "   [0;31m-----------------------------------------------------[0m"
