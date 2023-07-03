@@ -1,6 +1,8 @@
 *Audio Players
 Install Audacious,        x-terminal-emulator -T 'Audacious Installer' -e bash -c "audacious-installer; echo $'\n\nPress any key to close.'; read -srn1",          audio-headphones
 Install Pragha,           x-terminal-emulator -T 'Pragha Installer' -e bash -c "pragha-installer; echo $'\n\nPress any key to close.'; read -srn1",                audio-headphones
+Install Shortwave,        x-terminal-emulator -T 'Shortwave Installer' -e bash -c "shortwave-installer; echo $'\n\nPress any key to close.'; read -srn1",          audio-headphones
+
 ^sep()
 *Video Players
 Install Smplayer,         x-terminal-emulator -T 'Smplayer Installer' -e bash -c "smplayer-installer; echo $'\n\nPress any key to close.'; read -srn1",            audio-headphones
