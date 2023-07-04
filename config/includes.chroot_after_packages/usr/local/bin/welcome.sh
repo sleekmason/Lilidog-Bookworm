@@ -11,7 +11,7 @@ if grep -q "$fs" /proc/partitions; then
 --text-info --justify=left --wrap < /usr/share/lilidog/welcome.txt --fontname="JetBrains Mono Light 11" \
 --fore="#C0DDEB"; sed -i '/welcome.sh &/d' ~/.config/openbox/autostart; exit
 else
-  yad --notification --image=/usr/share/icons/ld-icons/install.png --text "Install Lilidog - User password = 'user' - Root password = 'live'" --command "gksudo calamares" &
+  yad --notification --image=/usr/share/icons/ld-icons/install.png --text "Install Lilidog ┃ User password ▸ 'user' ┃ Root password ▸ 'live'" --command "gksudo calamares" &
   yad --title "Welcome!" --window-icon=/usr/share/icons/ld-icons/paw-color.png \
 --width=488 --height=520 --center --escape-ok --undecorated --skip-taskbar \
 --button="gtk-ok:0" \
