@@ -132,6 +132,32 @@ obsidian(){
        sed -i 's/^battery_font_color.*/battery_font_color = #ffffff 100/g' "$FILE"
      killall -SIGUSR1 tint2
 }
+awesome-dark(){
+  FILE="$HOME/.config/tint2/tint2rc"
+  NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/coltint2.*\//coltint2awesome-dark\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2awesome-dark.png"/g' "$NOTIFY"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#000000 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#000000 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#000000 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#000000 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#000000 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #000000 100/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+awesome-light(){
+  FILE="$HOME/.config/tint2/tint2rc"
+  NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/coltint2.*\//coltint2awesome-light\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2awesome-light.png"/g' "$NOTIFY"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#ffffff 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#ffffff 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#ffffff 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#ffffff 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#ffffff 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #ffffff 100/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
 
 export -f default
 export -f white
@@ -143,9 +169,11 @@ export -f teladog
 export -f teladog2
 export -f buuf
 export -f obsidian
+export -f awesome-dark
+export -f awesome-light
 
 yad --title "Tint2 Icons" --escape-ok --borders=14 \
---form --geometry=240x330-270-150 \
+--form --geometry=240x370-270-150 \
 --text="Tint2 Icon Changer\n" --text-align=center --buttons-layout=edge \
 --button=" Icon Size!applications-other:tint2-iconsize" --button="gtk-ok:0" \
 --window-icon=dialog-information \
@@ -155,8 +183,10 @@ yad --title "Tint2 Icons" --escape-ok --borders=14 \
     --field=" Teladog2":FBTN "bash -c teladog2 >/dev/null 2>&1 &" \
     --field=" Buuf":FBTN "bash -c buuf >/dev/null 2>&1 &" \
     --field=" Obsidian":FBTN "bash -c obsidian >/dev/null 2>&1 &" \
+    --field=" Awesome":FBTN "bash -c awesome-light >/dev/null 2>&1 &" \
     --field=" Ld White":FBTN "bash -c white >/dev/null 2>&1 &" \
     --field=" Ld Grey":FBTN "bash -c grey >/dev/null 2>&1 &" \
     --field=" Ld Adobe":FBTN "bash -c adobe >/dev/null 2>&1 &" \
     --field=" Ld Navy":FBTN "bash -c navy >/dev/null 2>&1 &" \
-    --field=" Ld Green":FBTN "bash -c green >/dev/null 2>&1 &"
+    --field=" Ld Green":FBTN "bash -c green >/dev/null 2>&1 &" \
+    --field=" AweDark":FBTN "bash -c awesome-dark >/dev/null 2>&1 &"

@@ -176,7 +176,7 @@ export -f 34
 export -f 36
 
 yad --title "Icon Size" --escape-ok --borders=14 \
---form --geometry=240x330-550-150 \
+--form --geometry=240x330-550-150 --buttons-layout=edge \
 --text="Default Size = 22\n" --text-align=center \
 --window-icon=dialog-information \
     --form --columns=2 \

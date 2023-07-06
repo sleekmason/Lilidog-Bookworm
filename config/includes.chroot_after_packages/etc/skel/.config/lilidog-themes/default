@@ -57,7 +57,7 @@ sed -i "0,/background_color =/{s/background_color =.*/background_color = #0d0f0f
 ## Tint2 Icon colors
 sed -i 's/coltint2.*\//coltint2base\//g' "$HOME"/.config/tint2/tint2rc
 # For executor if enabled
-sed -i 's/^iconcolor=.*/iconcolor="coltint2base.png"/g' "$HOME"/.config/tint2/executors/notifier
+sed -i 's/^iconcolor=.*/iconcolor="coltint2base.png"/g' "$HOME"/.config/tint2/executors/notifier  >/dev/null 2>&1 &
 ## Tint2 Font colors
 sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#C1CFDB 100/' "$HOME"/.config/tint2/tint2rc
 sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#C1CFDB 100/' "$HOME"/.config/tint2/tint2rc
