@@ -4,4 +4,4 @@
     --sort-by-name --single-click \
     --title="Icon Menu" --no-buttons --escape-ok \
     --term='x-terminal-emulator -e %s' \
-    --window-icon=applications-other \
+    --window-icon=applications-other
