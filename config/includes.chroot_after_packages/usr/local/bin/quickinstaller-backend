@@ -68,7 +68,7 @@ menu=(
 
 yad_opts=( --form
            --title="Quick Installers"
-           --text=" Installer dialog for some commonly used applications including any extra\n packages necessary for proper use. For third party applications or to have\n automatic menu entries, please use the individual Lilidog installers.\n\n Please choose all desired applications and then click the Install button.\n This dialog will close and installation will continue in the terminal.\n"
+           --text="  Installer dialog for some commonly used applications including any extra\n  packages necessary for proper use. For third party applications or to have\n  automatic menu entries, please use the individual Lilidog installers.\n\n  Please choose all desired applications and then click the Install button.\n  This dialog will close and installation will continue in the terminal.\n"
            --image="system-software-install"
            --window-icon="system-software-install"
            --align=left
