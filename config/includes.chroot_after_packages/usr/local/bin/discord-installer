@@ -20,7 +20,7 @@ read -p "   [0;33mDiscord Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp || exit &&
-wget https://dl.discordapp.net/apps/linux/0.0.27/discord-0.0.27.deb &&
+wget https://dl.discordapp.net/apps/linux/0.0.28/discord-0.0.28.deb &&
 sudo apt update && sudo apt install --install-recommends -y ./discord*
 echo ""
 sed -i '/^Discord\b/d' ~/.config/jgmenu/mymenu.csv &&
