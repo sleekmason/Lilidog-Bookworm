@@ -10,5 +10,4 @@ Install Totem Player,     x-terminal-emulator -T 'Totem Installer' -e bash -c "t
 ^sep() 
 *Utilities
 Install Audacity,         x-terminal-emulator -T 'Audacity Installer' -e bash -c "audacity-installer; echo $'\n\nPress any key to close.'; read -srn1",            audio-headphones
-Install Ocenaudio,        x-terminal-emulator -T 'Ocenaudio Installer' -e bash -c "ocenaudio-installer; echo $'\n\nPress any key to close.'; read -srn1",          audio-headphones
 Install Openshot,         x-terminal-emulator -T 'Openshot Installer' -e bash -c "openshot-installer; echo $'\n\nPress any key to close.'; read -srn1",            audio-headphones
