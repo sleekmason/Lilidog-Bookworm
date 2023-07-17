@@ -12,5 +12,4 @@ yad --title "Tint2 Options" --escape-ok \
     --field="        Battery Notify!battery":FBTN "tint2-battery-notify" \
     --field="              Icon Theme!org.xfce.settings.color":FBTN "tint2-iconcolor" \
     --field="                  Position!object-flip-vertical":FBTN "tint2-position" \
-    --field="              Text Color!org.xfce.settings.color":FBTN "tint2-textcolor" \
-    --field="        Transparency!preferences-system":FBTN "tint2-transparency" \
+    --field="        Transparency!preferences-system":FBTN "tint2-transparency"
