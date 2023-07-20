@@ -150,14 +150,12 @@ pavucontrol
 pciutils
 pcmciautils
 picom
-pipewire-alsa
-pipewire-pulse
+pipewire-audio
 plymouth
 plymouth-themes
 pnmixer
 powermgmt-base
 pragha
-pulseaudio-utils
 python3-distro
 python3-pyxattr
 python3-xdg
@@ -215,7 +213,6 @@ w3m-img
 wamerican
 wget
 wireless-regdb
-wireplumber
 wmctrl
 wpasupplicant
 x11-apps
