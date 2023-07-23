@@ -191,52 +191,9 @@ https://sourceforge.net/p/lilidog/discussion/
 
 ### Instructions for building your own if you so choose:
 
-Open a terminal and:
-```sh
-sudo apt install live-build live-config live-boot git
-```
-Be aware that neither live-boot nor live-config are necessary for the build, <br/>
-but having the information is good (man pages and such), and won't hurt anything.
-
-Now clone Lilidog to your $HOME directory:
-```sh
-git clone https://github.com/sleekmason/Lilidog.git
-```
-
-cd to Lilidog, and then:
-
-```sh
-sudo lb clean
-
-Sudo lb build
-```
-
-If live build fails for some reason, simply try lb build again until it builds properly, <br/>
-or if obviously won't build after a few tries, use __lb clean__ and try again. <br/>
-
-This will leave you with an iso image you can either burn to dvd or usb (easier).
-
-I recommend grabbing the live-usb-maker app: https://github.com/MX-Linux/lum-qt-appimage/releases/tag/19.11.02 <br/>
-Download the AppImage.tar.gz and open a terminal:<br/>
-```sh
-tar -xaf live-usb-maker-qt-19.11.02.x86_64.AppImage.tar.gz
-Then:
-sudo ./live-usb-maker-qt-19.11.02.x86_64.AppImage
-```
-
-Root is required to write to connected devices.
-
-The boot screen gives a choice of using as a Live session, or installing Lilidog Linux if you like what you see. <br/>
-
-If you would like to work on your own distro after building, install to a separate partition ONLY to build from. <br/> 
-The whole system becomes your template. Think clone within a clone.
-
-Follow the examples here for further ideas. A whole new world just opened up if you do:) <br/>
-https://live-team.pages.debian.net/live-manual/html/live-manual/examples.en.html#tutorial-1
-
-- Please "star" this site!  This lets others know there is something worthwhile here. <br/>
-- Ask questions here, or on Sourceforge. <br/>
-- Feel free to link this page. This is how others also get to try new things. <br/>
+For all the inner workings of Lilidog, and directions to build your own if you so choose:
+https://github.com/sleekmason/Lilidog
+Forum Link: https://www.forum.lilidog.org/
 
 Contact info: sleekmason@gmail.com
 
