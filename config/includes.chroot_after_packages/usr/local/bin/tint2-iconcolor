@@ -141,7 +141,7 @@ awesome-dark(){
        sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#000000 100/' "$FILE"
        sed -i 's/task_font_color =.*/task_font_color = \#000000 100/' "$FILE"
        sed -i 's/clock_font_color =.*/clock_font_color = \#000000 100/' "$FILE"
-       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#000000 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#ffffff 100/' "$FILE"
        sed -i 's/^battery_font_color.*/battery_font_color = #000000 100/g' "$FILE"
      killall -SIGUSR1 tint2
 }
