@@ -1,0 +1,239 @@
+#!/bin/bash
+FILE="$HOME/.config/jgmenu/mymenu.csv"
+echo ""
+read -p"   [0;33mKitchensink Installer[0m 
+   
+   A non interactive installation script of particular packages
+   making for an easy initial system setup. This one is geared 
+   towards getting a full setup in one go.
+   
+   This script installs: live-build, live-config, live-boot, git
+   openssh-sftp-server, filezilla, mousepad, pcmanfm, inkscape
+   gimp, brightness slider (if backlight controls exist), Circle 
+   icons, Buuf icons, Obsidian icons, Papirus icons, qemu
+   extra Lilidog themes, firefox, Thunderbird, Pyradio,
+   and the LD apt update checker.
+   
+   Logout and back to switch to zsh shell as default.
+    
+   [0;33m-------------------------------------------
+   
+   Please press enter to install the packages.
+   
+   -------------------------------------------[0m
+   
+   
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+echo ""
+cd /tmp || exit &&
+echo "   [0;33mDownloading some initial packages...[0m" && sleep 3
+if test -e /sys/class/backlight/*; then
+wget https://raw.githubusercontent.com/sleekmason/packages/master/bright-gamma_12.0-1_all.deb --show-progress -q
+fi
+wget https://raw.githubusercontent.com/sleekmason/packages/master/ld-apt-update-checker_12.0-2_all.deb --show-progress -q
+wget https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.11-2~ld_all.deb --show-progress -q
+wget https://raw.githubusercontent.com/sleekmason/packages/master/buuf-icons_12.0-1_all.deb --show-progress -q
+wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
+wget https://raw.githubusercontent.com/sleekmason/packages/master/zshrc.zip --show-progress -q
+wget https://raw.githubusercontent.com/sleekmason/packages/master/extra-themes_12.0-1_all.deb --show-progress -q
+echo ""
+echo "   [0;33mRunning apt update and beginning installation...[0m" && sleep 2
+#pyradio
+sudo apt update && sudo apt install -y /tmp/pyradio_0.9.2.11-2~ld_all.deb
+sed -i '/Pyradio,            x-terminal-emulator -e bash -c pyradio,       audio-headphones/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Pyradio,            x-terminal-emulator -e bash -c pyradio,       audio-headphones' "$FILE"
+## Brightness slider
+if test -e /sys/class/backlight/*; then
+sudo apt update && sudo apt install -y /tmp/./bright-gamma* &&
+sed -i 's/^# sleep 2 && bright-gamma &.*/sleep 2 \&\& bright-gamma \&/g' "$HOME/.config/openbox/autostart"
+sed -i '/Brightness,          bright-gamma,                                  preferences-system/d' "$FILE"
+sed -i '/Touchpad.*/a Brightness,          bright-gamma,                                  preferences-system' "$FILE"
+echo ""
+echo "   [0;33mSystem tray brightness slider will start on login.  
+   disable in ~/.config/openbox/autostart if unwanted.[0m" && sleep 2
+fi
+echo ""
+## Extra themes
+sudo apt install -y ./extra-themes_12.0-1_all.deb
+## aptupdate checker
+sudo apt update && sudo apt install -y ./ld-apt-update-checker_12.0-2_all.deb
+echo ""
+echo "   [0;33mInstalling extra icons...[0m" && sleep 2
+sudo apt install -y ./buuf-icons_12.0-1_all.deb ./circle-icons_12.0-2_all.deb \
+obsidian-icon-theme papirus-icon-theme
+
+if ! test -e "$HOME/.local/share/icons/Papirus-Red"; then
+echo "--------------------------------------------------------------"
+echo "   [0;33mCreating Papirus theme colors.[0m"
+echo ""
+echo "   [0;32mCreating the Bluegrey icon color scheme.[0m"
+cd ~/.local/share/icons &&
+papirus-folder-color.sh bluegrey &&
+mv ~/.local/share/icons/Papirus-color Papirus-Bluegrey &&
+ sed -i "2s/color/Bluegrey/g" ~/.local/share/icons/Papirus-Bluegrey/index.theme
+ echo "   [0;33mBluegrey icon theme added.[0m"
+ 
+ echo ""
+ echo "   [0;32mCreating the Brown icon color scheme.[0m"
+papirus-folder-color.sh brown &&
+mv ~/.local/share/icons/Papirus-color Papirus-Brown &&
+ sed -i "2s/color/Brown/g" ~/.local/share/icons/Papirus-Brown/index.theme
+ echo "   [0;33mBrown icon theme added.[0m"
+ 
+ echo ""
+ echo "   [0;32mCreating the Red icon color scheme.[0m"
+papirus-folder-color.sh red &&
+mv ~/.local/share/icons/Papirus-color Papirus-Red &&
+ sed -i "2s/color/Red/g" ~/.local/share/icons/Papirus-Red/index.theme
+ echo "   [0;33mRed icon theme added.[0m"
+ 
+ echo ""
+ echo "   [0;32mCreating the Grey icon color scheme.[0m"
+papirus-folder-color.sh grey &&
+mv ~/.local/share/icons/Papirus-color Papirus-Grey &&
+ sed -i "2s/color/Grey/g" ~/.local/share/icons/Papirus-Grey/index.theme
+ echo "   [0;33mGrey icon theme added.[0m"
+ 
+ echo ""
+ echo "   [0;32mCreating the Black icon color scheme.[0m"
+papirus-folder-color.sh black &&
+mv ~/.local/share/icons/Papirus-color Papirus-Black &&
+ sed -i "2s/color/Black/g" ~/.local/share/icons/Papirus-Black/index.theme
+ echo "   [0;33mBlack icon theme added.[0m"
+ 
+echo ""
+ echo "   [0;32mCreating the Deeporange icon color scheme.[0m"
+papirus-folder-color.sh deeporange &&
+mv ~/.local/share/icons/Papirus-color Papirus-Deeporange &&
+ sed -i "2s/color/Deeporange/g" ~/.local/share/icons/Papirus-Deeporange/index.theme
+ echo "   [0;33mDeeporange icon theme added.[0m"
+ 
+ echo ""
+ echo "   [0;32mCreating the Teal icon color scheme.[0m"
+papirus-folder-color.sh teal &&
+mv ~/.local/share/icons/Papirus-color Papirus-Teal &&
+ sed -i "2s/color/Teal/g" ~/.local/share/icons/Papirus-Teal/index.theme
+echo "   [0;33mTeal icon theme added.[0m"
+
+ echo ""
+ echo "   [0;32mCreating the Green icon color scheme.[0m"
+papirus-folder-color.sh green &&
+mv ~/.local/share/icons/Papirus-color Papirus-Green &&
+ sed -i "2s/color/Green/g" ~/.local/share/icons/Papirus-Green/index.theme
+echo "   [0;33mGreen icon theme added.[0m"
+
+ echo ""
+ echo "   [0;32mCreating the Violet icon color scheme.[0m"
+papirus-folder-color.sh violet &&
+mv ~/.local/share/icons/Papirus-color Papirus-Violet &&
+ sed -i "2s/color/Violet/g" ~/.local/share/icons/Papirus-Violet/index.theme
+echo "   [0;33mViolet icon theme added.[0m"
+
+ echo ""
+ echo "   [0;32mCreating the Nordic icon color scheme.[0m"
+papirus-folder-color.sh nordic &&
+mv ~/.local/share/icons/Papirus-color Papirus-Nordic &&
+ sed -i "2s/color/Nordic/g" ~/.local/share/icons/Papirus-Nordic/index.theme
+echo "   [0;33mNordic icon theme added.[0m"
+
+ echo ""
+ echo "   [0;32mCreating the Indigo icon color scheme.[0m"
+papirus-folder-color.sh indigo &&
+mv ~/.local/share/icons/Papirus-color Papirus-Indigo &&
+ sed -i "2s/color/Indigo/g" ~/.local/share/icons/Papirus-Indigo/index.theme
+echo "   [0;33mIndigo icon theme added.[0m"
+
+echo ""
+echo "   [0;32mCreating the Yaru icon color scheme.[0m"
+papirus-folder-color.sh yaru &&
+mv ~/.local/share/icons/Papirus-color Papirus-Yaru &&
+ sed -i "2s/color/Yaru/g" ~/.local/share/icons/Papirus-Yaru/index.theme
+echo "   [0;33mYaru icon theme added.[0m"
+
+echo ""
+echo "   [0;32mCreating the Magenta icon color scheme.[0m"
+papirus-folder-color.sh magenta &&
+mv ~/.local/share/icons/Papirus-color Papirus-Magenta &&
+sed -i "2s/color/Magenta/g" ~/.local/share/icons/Papirus-Magenta/index.theme
+echo "   [0;33mMagenta icon theme added.[0m"
+fi
+sudo /usr/local/bin/update-icons /usr/share/icons/
+echo ""
+echo "   [0;33mEnjoy your new icon themes![0m"
+echo ""
+echo "   [0;33mContinuing...[0m"
+sleep 2
+## The rest of the packages
+echo ""
+sudo apt install -y live-build live-config live-boot mousepad \
+git openssh-sftp-server filezilla firefox-esr thunderbird \
+hunspell-en-us zsh gimp gimp-data-extras ghostscript libgts-bin \
+gimp-plugin-registry gimp-texturize gimp-lensfun pcmanfm
+echo ""
+echo "   [0;33mQemu and Inkscape require full --recommends...[0m"
+sudo apt install --install-recommends -y \
+qemu-system-x86 virt-manager inkscape
+echo ""
+if test -e "$HOME/.zshrc" ; then
+echo ""
+echo "   [0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
+echo ""
+echo "   [0;31mIn order to use your old version of ~/.zshrc
+   delete ~/.zshrc and rename the backup.[0m"
+mv "$HOME"/.zshrc "$HOME"/.zshrc.bak &&
+cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &&
+sudo chsh -s /bin/zsh "$USER"
+echo ""
+else
+cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &&
+sudo chsh -s /bin/zsh "$USER"
+fi
+## Place menu entries
+sed -i '/VM Manager,         virt-manager,       virt-manager/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a VM Manager,         virt-manager,       virt-manager' "$FILE"
+sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' "$FILE"
+sed -i '/Mousepad,           mousepad,                          accessories-text-editor/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Mousepad,           mousepad,                          accessories-text-editor' "$FILE"
+sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' "$FILE"
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' "$FILE"
+sed -i '/Filezilla,    filezilla,                  filezilla/d' "$FILE"
+sed -i '/Extras/i Filezilla,    filezilla,                  filezilla' "$FILE"
+sed -i '/Inkscape,               inkscape,                              org.xfce.settings.color/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Inkscape,               inkscape,                              org.xfce.settings.color' "$FILE"
+sed -i '/Gimp,               gimp,                              gimp/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' "$FILE"
+sed -i '/Thunderbird,        thunderbird,      thunderbird/d' "$FILE"
+sed -i '5i Thunderbird,        thunderbird,      thunderbird' "$FILE"
+sed -i '/Firefox,            firefox,          firefox-esr/d' "$FILE"
+sed -i '5i Firefox,            firefox,          firefox-esr' "$FILE"
+killall -q jgmenu
+## Get rid of left over packages.
+rm -f /tmp/ld-apt-update-checker*
+rm -f /tmp/buuf-icons*
+rm -f /tmp/circle-icons*
+rm -f /tmp/bright-gamma*
+rm -f /tmp/zshrc.zip
+rm -f /tmp/.zshrc
+echo ""
+echo "   [0;33m----------------------------------------------------------------"
+echo ""
+echo "   All Finished! Please log out and back in to change shell to zsh."
+echo ""
+echo "   You should find new menu entrys for most of the items installed."
+echo "" 
+echo "   Menu entries will need to be removed manually if uninstalled." 
+echo "   See Jgmenu Conf under Configuration in the menu for directions."
+echo ""
+echo "   ----------------------------------------------------------------[0m"
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi
