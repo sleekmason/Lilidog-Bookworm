@@ -1,6 +1,7 @@
 #!/bin/bash
 # Adjust tint2 icons
 # Author - sleekmason 06/14/2023
+# This dialog is implemented through the tint2-position dialog
 
 default(){
   FILE="$HOME/.config/tint2/tint2rc"
@@ -172,11 +173,10 @@ export -f obsidian
 export -f awesome-dark
 export -f awesome-light
 
-yad --title "Tint2 Icons" --escape-ok --borders=14 \
---form --geometry=240x370-270-150 \
---text="Tint2 Icon Changer\n" --text-align=center --buttons-layout=edge \
---button=" Icon Size!applications-other:tint2-iconsize" --button="gtk-ok:0" \
---window-icon=dialog-information \
+yad --title "Icon Themes" --escape-ok --borders=14 \
+--form --geometry=240x370-270-352 \
+--text="Tint2 Icon Themes\n" --text-align=center --buttons-layout=edge \
+--window-icon=org.xfce.settings.color \
     --form --columns=2 \
     --field=" Default":FBTN "bash -c default >/dev/null 2>&1 &" \
     --field=" Teladog":FBTN "bash -c teladog >/dev/null 2>&1 &" \

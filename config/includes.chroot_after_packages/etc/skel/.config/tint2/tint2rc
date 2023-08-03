@@ -76,13 +76,13 @@ border_color_pressed = #000000 100
 panel_items = PPPP:PPPLTSPPCP
 panel_size = 100% 24
 panel_margin = 0 0
-panel_padding = 4 0 2
+panel_padding = 2 0 2
 panel_background_id = 1
 wm_menu = 1
 panel_dock = 0
 panel_pivot_struts = 0
 panel_position = bottom center horizontal
-panel_layer = top
+panel_layer = bottom
 panel_monitor = all
 panel_shrink = 0
 autohide = 0
@@ -127,7 +127,7 @@ task_text = 1
 task_icon = 1
 task_centered = 1
 urgent_nb_of_blink = 100000
-task_maximum_size = 150 35
+task_maximum_size = 150 26
 task_padding = 2 2 6
 task_font = Noto Sans Display 12
 task_tooltip = 1
@@ -145,7 +145,7 @@ mouse_scroll_down = iconify
 
 #-------------------------------------
 # System tray (notification area)
-systray_padding = 2 1 7
+systray_padding = 2 1 5
 systray_background_id = 0
 systray_sort = ascending
 systray_icon_size = 22
@@ -227,7 +227,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 3 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -244,7 +244,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -261,7 +261,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 2 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -278,7 +278,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 0 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -295,7 +295,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 0 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -312,7 +312,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 3 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -329,7 +329,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -346,7 +346,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -363,7 +363,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = -1
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
@@ -380,7 +380,7 @@ button_dwheel_command =
 button_font_color = #000000 100
 button_padding = 2 0
 button_background_id = 0
-button_centered = 0
+button_centered = 1
 button_max_icon_size = 22
 
 #-------------------------------------
