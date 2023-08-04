@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Tint2 Icon Size
-Exec=tint2-iconsize
-StartupNotify=false
-Terminal=false
-Icon=applications-other
-Categories=System;
