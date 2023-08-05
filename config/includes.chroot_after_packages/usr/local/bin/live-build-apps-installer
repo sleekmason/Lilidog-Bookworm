@@ -1,33 +1,60 @@
 #!/bin/bash
 echo ""
-echo ""
-echo ""
 read -p "   [0;33mPackages Useful For Live-build, Git, And Openssh.[0m 
    
-   This will install: live-build, live-config, live-boot, 
-   git, openssh-sftp-server & filezilla
+   This will install: live-build, live-config, live-boot, git, 
+   openssh-sftp-server & filezilla. Custom configurations will
+   also be added for live-build to work correctly with Lilidog.
    
-   These allow you to work with live-build and git. 
-   https://live-team.pages.debian.net/live-manual/
+   Live build file changes for Lilidog:
+   [0;34mhttps://github.com/sleekmason/live-build-changes/[0m
    
-   Few will really want these installed.
+   Live build manual:
+   [0;34mhttps://live-team.pages.debian.net/live-manual/[0m
    
    
-   ------------------------------------------
+   -------------------------------------------
    
-   [0;32mPlease press enter to install the packages.[0m
+   [0;33mPlease press enter to install the packages.[0m
    
-   ------------------------------------------
+   -------------------------------------------
    
    
    Or close this terminal window to quit the install." ;
+   
+FILE="$HOME/.config/jgmenu/mymenu.csv"
+
+# Check for connection
    if : >/dev/tcp/8.8.8.8/53; then
-echo ""  
-sudo apt update && sudo apt install live-build live-config live-boot git openssh-sftp-server filezilla
+echo ""
+sudo apt update
+cd /tmp || exit
+
+# Remove any duplicate folders before installation
+if test -e "/tmp/master.zip"; then
+rm -r /tmp/master.zip
+fi
+if test -e "/tmp/live-build-changes-master"; then
+rm -r /tmp/live-build-changes-master
+fi
+
+# Grab the archive with the correct files
+wget https://github.com/sleekmason/live-build-changes/archive/master.zip &&
+unzip -q master.zip &&
+sudo apt install -y live-build live-config live-boot git openssh-sftp-server filezilla &&
+
+# Copy revised files to correct location
+sudo cp -a /tmp/live-build-changes-master/usr/share/live/build/functions/firmwarelists.sh /usr/share/live/build/functions/firmwarelists.sh
+sudo cp -a /tmp/live-build-changes-master/usr/lib/live/build/config /usr/lib/live/build/config
+
+# Add line in jgmenu Utilities for filezilla
+sed -i '/Filezilla,    filezilla,                  filezilla/d' "$FILE"
+sed -i '/Extras/i Filezilla,    filezilla,                  filezilla' "$FILE"
+
 echo ""
 echo "----------------------------------------"
 echo ""
-echo "[0;32mAll Finished![0m"
+echo "[0;33mAll Finished![0m"
 echo ""
 echo "----------------------------------------"
 else
