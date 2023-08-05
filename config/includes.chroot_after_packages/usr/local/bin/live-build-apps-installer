@@ -31,12 +31,8 @@ sudo apt update
 cd /tmp || exit
 
 # Remove any duplicate folders before installation
-if test -e "/tmp/master.zip"; then
-rm -r /tmp/master.zip
-fi
-if test -e "/tmp/live-build-changes-master"; then
-rm -r /tmp/live-build-changes-master
-fi
+rm -rf /tmp/master.zip
+rm -rf /tmp/live-build-changes-master
 
 # Grab the archive with the correct files
 wget https://github.com/sleekmason/live-build-changes/archive/master.zip &&
