@@ -201,7 +201,7 @@ echo ""
 sudo apt install --install-recommends -y \
 qemu-system-x86 virt-manager inkscape
 echo ""
-if test -e "$HOME/.zshrc" ; then
+if test -e "$HOME"/.zshrc ; then
 echo ""
 echo "   [0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
 echo ""
