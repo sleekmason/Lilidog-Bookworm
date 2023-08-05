@@ -62,7 +62,7 @@ leftside(){
         sed -i 's/^time1_font = .*/time1_font = Noto Sans Bold 10.5/g' "$FILE"
         sed -i 's/^task_font = .*/task_font = Noto Sans Display 12/g' "$FILE"
         sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$FILE"
-        sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 26/g' "$FILE"
+        sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 28/g' "$FILE"
         sed -i 's/^task_align =.*/task_align = center/g' "$FILE"
      killall -SIGUSR1 tint2
 }
@@ -83,7 +83,7 @@ rightside(){
        sed -i 's/^time1_font = .*/time1_font = Noto Sans Bold 10.5/g' "$FILE"
        sed -i 's/^task_font = .*/task_font = Noto Sans Display 12/g' "$FILE"
        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$FILE"
-       sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 26/g' "$FILE"
+       sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 28/g' "$FILE"
        sed -i 's/^task_align =.*/task_align = center/g' "$FILE"
      killall -SIGUSR1 tint2
 }
