@@ -216,10 +216,10 @@ cp /usr/share/lilidog/extras/zsh/.zshrc "$HOME"/.zshrc &&
 sudo chsh -s /bin/zsh "$USER"
 fi
 ## Place menu entries
-sed -i '/VM Manager,         virt-manager,       virt-manager/d' "$FILE"
-sed -i '/Root Folders,^checkout(rootfiles),folder/a VM Manager,         virt-manager,       virt-manager' "$FILE"
 sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' "$FILE"
+sed -i '/VM Manager,         virt-manager,       virt-manager/d' "$FILE"
+sed -i '/Root Folders,^checkout(rootfiles),folder/a VM Manager,         virt-manager,       virt-manager' "$FILE"
 sed -i '/Mousepad,           mousepad,                          accessories-text-editor/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Mousepad,           mousepad,                          accessories-text-editor' "$FILE"
 sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' "$FILE"
