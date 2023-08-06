@@ -189,9 +189,9 @@ echo ""
 # Copy revised live build files to correct location
 echo "   [0;33mInstalling custom live build configs for Lilidog use...[0m" && sleep 1
 echo ""
-unzip -q master.zip &&
-sudo cp -a /tmp/live-build-changes-master/usr/share/live/build/functions/firmwarelists.sh /usr/share/live/build/functions/firmwarelists.sh
-sudo cp -a /tmp/live-build-changes-master/usr/lib/live/build/config /usr/lib/live/build/config
+unzip -q/tmp/master.zip &&
+sudo cp -f /tmp/live-build-changes-master/usr/share/live/build/functions/firmwarelists.sh /usr/share/live/build/functions/firmwarelists.sh
+sudo cp -f /tmp/live-build-changes-master/usr/lib/live/build/config /usr/lib/live/build/config
 echo ""
 echo "   [0;33mDone. Continuing...[0m" && sleep 1
 echo ""
