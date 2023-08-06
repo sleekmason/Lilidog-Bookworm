@@ -52,6 +52,7 @@ wget https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.
 wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
 wget https://raw.githubusercontent.com/sleekmason/packages/master/extra-themes_12.0-1_all.deb --show-progress -q
 wget https://github.com/sleekmason/live-build-changes/archive/master.zip --show-progress -q
+unzip -q /tmp/master.zip
 echo ""
 echo "   [0;33mBeginning installation...[0m" && sleep 1
 echo ""
@@ -189,7 +190,6 @@ echo ""
 # Copy revised live build files to correct location
 echo "   [0;33mInstalling custom live build configs for Lilidog use...[0m" && sleep 1
 echo ""
-unzip -q /tmp/master.zip &&
 sudo cp -f /tmp/live-build-changes-master/usr/share/live/build/functions/firmwarelists.sh /usr/share/live/build/functions/firmwarelists.sh
 sudo cp -f /tmp/live-build-changes-master/usr/lib/live/build/config /usr/lib/live/build/config
 echo ""
