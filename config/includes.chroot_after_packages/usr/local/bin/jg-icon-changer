@@ -186,4 +186,3 @@ notify-send --urgency low 'Menu Icons Toggled Off' ;;
         *) exit 1 ;;
     esac
 killall -q jgmenu
-jg-icon-changer
