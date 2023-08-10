@@ -21,7 +21,7 @@ read -p "    [0;33mGeary Installer[0m
 echo "" 
 sudo apt update && sudo apt install --install-recommends geary hunspell-en-us enchant-2 &&
 sed -i '/Geary,            geary,                           org.gnome.Geary/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '7i Geary,            geary,                           org.gnome.Geary' ~/.config/jgmenu/prepend.csv &&
+sed -i '8i Geary,            geary,                           org.gnome.Geary' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

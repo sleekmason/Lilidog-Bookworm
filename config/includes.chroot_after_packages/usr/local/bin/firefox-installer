@@ -2,11 +2,11 @@
 read -p "                         [0;33mFirefox Installer.[0m
 
 
-   Firefox Web Browser: [0;35mhttps://www.mozilla.org/en-US/firefox/new/[0m
+   Firefox Web Browser: [0;34mhttps://www.mozilla.org/en-US/firefox/new/[0m
    
    This script will install Firefox and create a new menu entry.
    
-   [0;32mMenu entries will need to be removed manually if uninstalled.
+   [0;33mMenu entries will need to be removed manually if uninstalled.
    See Jgmenu Conf under Configuration in the menu for directions.
       
    ---------------------------------------------------------------
@@ -20,15 +20,15 @@ read -p "                         [0;33mFirefox Installer.[0m
 echo ""
 sudo apt update && sudo apt install firefox-esr &&
 sed -i '/Firefox,            firefox,          firefox-esr/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '8i Firefox,            firefox,          firefox-esr' ~/.config/jgmenu/prepend.csv &&
+sed -i '7i Firefox,            firefox,          firefox-esr' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""
-echo "[0;32mAll Finished![0m"
+echo "[0;33mAll Finished![0m"
 echo ""
 echo "[0;33mIf installed, You should find a new main menu entry.[0m"
 echo "" 
-echo "[0;32mMenu entries will need to be removed manually if uninstalled." 
+echo "[0;33mMenu entries will need to be removed manually if uninstalled." 
 echo "See Jgmenu Conf under Configuration in the menu for directions.[0m"
 echo ""
 echo "----------------------------------------------------------------"

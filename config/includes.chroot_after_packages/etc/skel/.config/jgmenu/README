@@ -24,7 +24,8 @@ DO NOT change any other settings here unless willing to experiment.
 
 
 ### TO CHANGE ICONS
-Open ~/.config/jgmenu/jgmenurc -> icon_theme (line 54)
+Look in either the "paw" in the tint2 panel or the toggles menu for 
+the jgmenu icon changer.
 
 
 'man jgmenu' in a terminal for more info!

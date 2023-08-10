@@ -231,9 +231,9 @@ sed -i '/Root Folders,^checkout(rootfiles),folder/a Inkscape,               inks
 sed -i '/Gimp,               gimp,                              gimp/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' "$FILE"
 sed -i '/Thunderbird,        thunderbird,      thunderbird/d' "$FILE"
-sed -i '5i Thunderbird,        thunderbird,      thunderbird' "$FILE"
+sed -i '7i Thunderbird,        thunderbird,      thunderbird' "$FILE"
 sed -i '/Firefox,            firefox,          firefox-esr/d' "$FILE"
-sed -i '5i Firefox,            firefox,          firefox-esr' "$FILE"
+sed -i '7i Firefox,            firefox,          firefox-esr' "$FILE"
 killall -q jgmenu
 ## Get rid of left over packages.
 echo ""

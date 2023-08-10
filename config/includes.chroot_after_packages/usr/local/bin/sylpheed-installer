@@ -19,7 +19,7 @@ read -p "    [0;33mSylpheed Installer[0m
 echo "" 
 sudo apt update && sudo apt install sylpheed  sylpheed-i18n sylfilter sylpheed-plugins &&
 sed -i '/Sylpheed,            sylpheed,                           sylpheed/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '7i Sylpheed,            sylpheed,                           sylpheed' ~/.config/jgmenu/prepend.csv &&
+sed -i '8i Sylpheed,            sylpheed,                           sylpheed' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

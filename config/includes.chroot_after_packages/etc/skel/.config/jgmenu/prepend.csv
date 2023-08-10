@@ -4,7 +4,6 @@
 ^sep()
 Terminal,           x-terminal-emulator,       utilities-terminal
 Thunar,             thunar,           /usr/share/icons/ld-icons/Thunar.png
-^sep()
 Firefox,            firefox,          firefox-esr
 ^sep()
 Quick Grab,^checkout(quickgrab),applications-other

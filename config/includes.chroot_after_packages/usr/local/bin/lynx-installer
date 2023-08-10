@@ -2,11 +2,11 @@
 read -p "                         [0;33mLynx Installer.[0m
 
 
-   Lynx Web Browser: [0;35mhttps://lynx.invisible-island.net/[0m
+   Lynx Web Browser: [0;34mhttps://lynx.invisible-island.net/[0m
    
    This script will install Lynx and create a new menu entry.
    
-   [0;32mMenu entries will need to be removed manually if uninstalled.
+   [0;33mMenu entries will need to be removed manually if uninstalled.
    See Jgmenu Conf under Configuration in the menu for directions.
       
    ---------------------------------------------------------------
@@ -19,12 +19,12 @@ read -p "                         [0;33mLynx Installer.[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 sudo apt update && sudo apt install lynx &&
-sed -i '/Lynx,               x-terminal-emulator -e bash -c lynx,    web-browser/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '8i Lynx,               x-terminal-emulator -e bash -c lynx,    web-browser' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Lynx,               x-terminal-emulator -e bash -c lynx,    org.xfce.webbrowser/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '7i Lynx,               x-terminal-emulator -e bash -c lynx,    org.xfce.webbrowser' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""
-echo "[0;32mAll Finished![0m"
+echo "[0;33mAll Finished![0m"
 echo ""
 echo "[0;33mIf installed, You should find a new main menu entry.[0m"
 echo "" 
