@@ -7,9 +7,15 @@ FILE="$HOME/.config/jgmenu/prepend.csv"
 STRING="#@icon,,"
 
 if  grep -q "$STRING" "$FILE" ; then
+if  grep -q "icon_size = 0" "$HOME/.config/jgmenu/jgmenurc" ; then
+exit
+else
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' "$FILE"
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
+fi
  else
+     sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a#@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' "$FILE"
      sed -i 's/^icon_size.*/icon_size = 0/g' ~/.config/jgmenu/jgmenurc
 fi
@@ -32,7 +38,8 @@ case $noti in
    if [[ -d "/usr/share/icons/Adwaita" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
-     sed -i 's/^icon_theme =.*/icon_theme = Adwaita/g' ~/.config/jgmenu/jgmenurc  
+     sed -i 's/^icon_theme =.*/icon_theme = Adwaita/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Adwaita'
 else
@@ -42,7 +49,8 @@ fi ;;
    if [[ -d "/usr/share/icons/gnome" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc 
-     sed -i 's/^icon_theme =.*/icon_theme = gnome/g' ~/.config/jgmenu/jgmenurc 
+     sed -i 's/^icon_theme =.*/icon_theme = gnome/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Gnome'
 else
@@ -53,6 +61,7 @@ fi  ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = buuf/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Buuf'
 else
@@ -63,6 +72,7 @@ fi  ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = breeze/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Breeze'
 else
@@ -73,6 +83,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = breeze-dark/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Breeze-Dark'
 else
@@ -82,7 +93,8 @@ fi ;;
    if [[ -d "/usr/share/icons/Circle-Dark" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
-     sed -i 's/^icon_theme =.*/icon_theme = Circle-Dark/g' ~/.config/jgmenu/jgmenurc  
+     sed -i 's/^icon_theme =.*/icon_theme = Circle-Dark/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Circle Dark'
 else
@@ -93,6 +105,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = Papirus-Dark/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Papirus Dark'
 else
@@ -103,6 +116,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = Papirus/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Papirus Light'
 else
@@ -113,6 +127,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = Numix-Circle/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Numix Circle'
 else
@@ -123,6 +138,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = Faenza-Ambiance/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Faenza-Ambiance'
 else
@@ -133,6 +149,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = Paper/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Paper'
 else
@@ -143,6 +160,7 @@ fi ;;
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
      sed -i 's/^icon_theme =.*/icon_theme = Obsidian/g' ~/.config/jgmenu/jgmenurc
+     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 notify-send --urgency low 'Menu Icons Set To Obsidian'
 else
