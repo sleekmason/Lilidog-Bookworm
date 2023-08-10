@@ -44,6 +44,7 @@ sed -i "s/font =.*/font = Noto Sans 11/g" ~/.config/jgmenu/jgmenurc
 ## jgmenu Icon Theme
 sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
 sed -i 's/^icon_theme =.*/icon_theme = gnome/g' ~/.config/jgmenu/jgmenurc
+sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
 sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 
 ## xfce4-terminal theme
