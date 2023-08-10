@@ -36,7 +36,7 @@ EOF
 sudo apt update
 sudo apt install --install-recommends librewolf
 sed -i '/Librewolf,          librewolf,        librewolf/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '7i Librewolf,          librewolf,        librewolf' ~/.config/jgmenu/prepend.csv &&
+sed -i '8i Librewolf,          librewolf,        librewolf' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
