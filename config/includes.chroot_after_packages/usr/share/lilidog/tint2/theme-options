@@ -9,4 +9,4 @@ Terminal Colors,            ld-term-changer,                          org.xfce.t
 Transparency,               transparency-system,                      applications-system
 Wallpapers,                 feh-set-wallpaper,                        org.xfce.settings.display
 ^sep()
-Reset Theme,                xfce4-terminal --geometry=68x20+100-80 -T 'Apt Update' -e 'set-default-theme',       preferences-system
+Reset Theme,                xfce4-terminal --geometry=68x20+100-80 -T 'Reset Theming' -e 'set-default-theme',       preferences-system
