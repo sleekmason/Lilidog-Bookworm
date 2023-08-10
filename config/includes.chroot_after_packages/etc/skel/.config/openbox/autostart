@@ -29,7 +29,7 @@
 
 ### Common startup programs. Comment any item no longer wanted.
 . $HOME/.fehbg &
-picom &
+picom --daemon &
 tint2 &
 nm-applet &
 lxpolkit &
