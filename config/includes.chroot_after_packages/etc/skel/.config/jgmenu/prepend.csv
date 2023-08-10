@@ -1,6 +1,6 @@
 #@text,, 	11,10,150,26,2,left,top,auto,	#000000 0,<span size="x-large">︎</span>
 @icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png
-@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type to search
+@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search
 ^sep()
 Terminal,           x-terminal-emulator,       utilities-terminal
 Thunar,             thunar,           /usr/share/icons/ld-icons/Thunar.png
