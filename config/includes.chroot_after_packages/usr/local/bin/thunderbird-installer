@@ -18,8 +18,8 @@ read -p "    [0;33mThunderbird Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install thunderbird hunspell-en-us &&
-sed -i '/Thunderbird,        thunderbird,      thunderbird/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '5i Thunderbird,        thunderbird,      thunderbird' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Thunderbird,        thunderbird,      thunderbird/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '7i Thunderbird,        thunderbird,      thunderbird' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

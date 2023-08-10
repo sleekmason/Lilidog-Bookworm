@@ -22,8 +22,8 @@ read -p "   [0;33mQemu Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install --install-recommends qemu-system-x86 virt-manager &&
-sed -i '/VM Manager,         virt-manager,       virt-manager/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a VM Manager,         virt-manager,       virt-manager' ~/.config/jgmenu/mymenu.csv
+sed -i '/VM Manager,         virt-manager,       virt-manager/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a VM Manager,         virt-manager,       virt-manager' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"

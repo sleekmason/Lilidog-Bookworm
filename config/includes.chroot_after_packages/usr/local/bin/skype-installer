@@ -25,8 +25,8 @@ wget https://go.skype.com/skypeforlinux-64.deb --show-progress -q &&
 echo ""
 sudo apt update && sudo apt install --install-recommends /tmp/./skype*
 rm /tmp/skype*
-sed -i '/Skype,            skypeforlinux,          skypeforlinux/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Skype,            skypeforlinux,          skypeforlinux' ~/.config/jgmenu/mymenu.csv
+sed -i '/Skype,            skypeforlinux,          skypeforlinux/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Skype,            skypeforlinux,          skypeforlinux' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""

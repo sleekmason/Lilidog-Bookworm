@@ -1,7 +1,7 @@
 ### TO CHANGE MENU ITEMS
 There is currently no gui menu editor for jgmenu or Openbox. So:
 
-Open the mymenu.csv file to add/remove items in the menu.  
+Open the prepend.csv file to add/remove items in the menu.  
 The format example is: Display-name, program-name, icon-name
 See the other entries for examples.
 
@@ -26,10 +26,5 @@ DO NOT change any other settings here unless willing to experiment.
 ### TO CHANGE ICONS
 Open ~/.config/jgmenu/jgmenurc -> icon_theme (line 54)
 
-
-###*NOTE 
-If you would like to use the jgmenu standard menu, comment line 5 of 
-~/.config/jgmenu/jgmenurc. Then rename prepend.csv.bak & append.csv.bak 
-to prepend.csv & append.csv.
 
 'man jgmenu' in a terminal for more info!

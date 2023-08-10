@@ -1,4 +1,6 @@
-Type To Search,o,input-keyboard
+#@text,, 	11,10,150,26,2,left,top,auto,	#000000 0,<span size="x-large">︎</span>
+@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png
+@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type to search
 ^sep()
 Terminal,           x-terminal-emulator,       utilities-terminal
 ^sep()
@@ -11,7 +13,7 @@ Toggles,^checkout(toggles),/usr/share/icons/ld-icons/toggle.png
 Utilities,^checkout(utilities),applications-utilities
 Configuration,^checkout(configuration),preferences-system
 ^sep()
-All Programs,^pipe(jgmenu_run apps),debian-logo
+All Programs,^checkout(apps),debian-logo
 ^sep()
 Restart, openbox --restart; killall -SIGUSR1 conky, /usr/share/icons/ld-icons/pixmaps/logout_reboot.png
 Exit,               ld-logout,                 /usr/share/icons/ld-icons/exit4.png
@@ -107,3 +109,5 @@ Picom,               geany ~/.config/picom.conf,                                
 Dmenu F3,            geany ~/.config/dmenu/apps,                                           document-properties
 Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        zoom-fit-best 
 Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-theme
+
+^tag(apps)

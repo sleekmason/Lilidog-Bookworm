@@ -21,8 +21,8 @@ wget https://raw.githubusercontent.com/sleekmason/packages/master/shortwave_12.0
 
 sudo apt update && sudo apt install -y ./shortwave_12.0-1_all.deb
 
-sed -i '/Shortwave,            shortwave,                           de.haeckerfelix.Shortwave/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Shortwave,            shortwave,                           de.haeckerfelix.Shortwave' ~/.config/jgmenu/mymenu.csv
+sed -i '/Shortwave,            shortwave,                           de.haeckerfelix.Shortwave/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Shortwave,            shortwave,                           de.haeckerfelix.Shortwave' ~/.config/jgmenu/prepend.csv
 echo ""
 echo "[0;33m-------------------------------------------------------------------------"
 echo ""

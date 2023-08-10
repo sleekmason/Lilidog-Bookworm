@@ -2,7 +2,7 @@
 echo ""
 read -p "   [0;33mXanmod Kernel Installer[0m
    
-   See: https://xanmod.org/ for more information.
+   See: [0;34mhttps://xanmod.org/[0m for more information.
 
    Be aware that the highest numbered kernel is automatically
    booted, and you may need to go to 'advanced options' on

@@ -18,8 +18,8 @@ read -p "   KDEconnect is a file transferring device and much more.
     if : >/dev/tcp/8.8.8.8/53; then
 echo ""   
 sudo apt update && sudo apt install kdeconnect &&
-sed -i '/KDE Connect,        kdeconnect-app,                    kdeconnect/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a KDE Connect,        kdeconnect-app,                    kdeconnect' ~/.config/jgmenu/mymenu.csv
+sed -i '/KDE Connect,        kdeconnect-app,                    kdeconnect/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a KDE Connect,        kdeconnect-app,                    kdeconnect' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"

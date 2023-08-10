@@ -20,8 +20,8 @@ read -r -p "   [0;33mCalibre Installer[0m
 echo ""
 cd /tmp || exit &&
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
-sed -i '/Calibre,          calibre,                                  calibre-gui/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Calibre,          calibre,                                  calibre-gui' ~/.config/jgmenu/mymenu.csv
+sed -i '/Calibre,          calibre,                                  calibre-gui/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Calibre,          calibre,                                  calibre-gui' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "[0;33m-------------------------------------------------------------------"

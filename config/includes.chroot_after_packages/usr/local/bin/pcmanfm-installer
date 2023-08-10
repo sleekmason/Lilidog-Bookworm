@@ -17,8 +17,8 @@ read -p "   Pcmanfm is a file manager similar to thunar in looks but
     if : >/dev/tcp/8.8.8.8/53; then
 echo ""   
 sudo apt update && sudo apt install pcmanfm &&
-sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' ~/.config/jgmenu/mymenu.csv
+sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"

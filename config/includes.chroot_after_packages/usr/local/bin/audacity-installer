@@ -19,8 +19,8 @@ read -p "    [0;33mAudacity Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install --install-recommends audacity &&
-sed -i '/Audacity,          audacity,                         audacity/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Audacity,          audacity,                         audacity' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Audacity,          audacity,                         audacity/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Audacity,          audacity,                         audacity' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

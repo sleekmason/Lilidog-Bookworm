@@ -21,8 +21,8 @@ read -p "    [0;33mSmplayer Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install smplayer &&
-sed -i '/Smplayer,           smplayer,                          smplayer/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Smplayer,           smplayer,                          smplayer' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Smplayer,           smplayer,                          smplayer/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Smplayer,           smplayer,                          smplayer' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

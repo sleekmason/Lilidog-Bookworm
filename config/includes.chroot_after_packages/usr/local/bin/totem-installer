@@ -22,8 +22,8 @@ read -p "    [0;33mTotem Installer[0m
 echo "" 
 sudo apt update && sudo apt install totem libclutter-1.0-common libcogl-common totem-plugins libgles2 \
 gstreamer1.0-libav gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio &&
-sed -i '/Totem,           totem,                          org.gnome.Totem/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Totem,           totem,                          org.gnome.Totem' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Totem,           totem,                          org.gnome.Totem/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Totem,           totem,                          org.gnome.Totem' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

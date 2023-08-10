@@ -19,9 +19,9 @@ read -p "    [0;33mPragha Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install --install-recommends pragha \
-gstreamer1.0-libav gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-pulseaudio &&
-sed -i '/Pragha,             pragha,                            pragha/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Pragha,             pragha,                            pragha' ~/.config/jgmenu/mymenu.csv &&
+gstreamer1.0-libav gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly &&
+sed -i '/Pragha,             pragha,                            pragha/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Pragha,             pragha,                            pragha' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

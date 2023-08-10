@@ -19,8 +19,8 @@ read -p "    [0;33mAudacious Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install --install-recommends audacious audacious-plugins &&
-sed -i '/Audacious,          audacious,                         audacious/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Audacious,          audacious,                         audacious' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Audacious,          audacious,                         audacious/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Audacious,          audacious,                         audacious' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

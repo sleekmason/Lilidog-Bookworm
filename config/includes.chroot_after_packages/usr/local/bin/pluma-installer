@@ -18,8 +18,8 @@ read -p "   [0;33mPluma Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install pluma &&
-sed -i '/Pluma,        pluma,                       accessories-text-editor/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Pluma,        pluma,                       accessories-text-editor' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Pluma,        pluma,                       accessories-text-editor/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Pluma,        pluma,                       accessories-text-editor' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

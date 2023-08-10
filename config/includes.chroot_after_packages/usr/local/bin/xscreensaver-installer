@@ -22,8 +22,8 @@ read -p "   [0;33mXscreensaver Installer[0m
 echo ""
 sudo apt update && sudo apt install --install-recommends xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra &&
 
-sed -i '/^Xscreensaver\b/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Tint2 Toggle/i Xscreensaver,        toggle.xscreensaver,                           preferences-system' ~/.config/jgmenu/mymenu.csv
+sed -i '/^Xscreensaver\b/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Tint2 Toggle/i Xscreensaver,        toggle.xscreensaver,                           preferences-system' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"

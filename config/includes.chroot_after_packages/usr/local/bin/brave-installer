@@ -22,8 +22,8 @@ echo ""
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg &&
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list &&
 sudo apt update && sudo apt install --install-recommends brave-browser &&
-sed -i '/Brave,              brave-browser,            brave-browser/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '5i Brave,              brave-browser,            brave-browser' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Brave,              brave-browser,            brave-browser/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '7i Brave,              brave-browser,            brave-browser' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"

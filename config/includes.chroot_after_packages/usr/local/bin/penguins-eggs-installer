@@ -21,7 +21,7 @@ cd /tmp || exit &&
 curl -fsSL https://pieroproietti.github.io/penguins-eggs-ppa/KEY.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/penguins-eggs.gpg
 echo "deb [arch=$(dpkg --print-architecture)] https://pieroproietti.github.io/penguins-eggs-ppa ./" | sudo tee /etc/apt/sources.list.d/penguins-eggs.list > /dev/null
 
-sudo apt update && sudo apt install eggs
+sudo apt update && sudo apt install eggs build-essential fakeroot libalgorithm-merge-perl libfile-fcntllock-perl libalgorithm-diff-xs-perl
 echo ""
 echo "[0;33m----------------------------------------------------------------------"
 echo ""

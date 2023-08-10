@@ -19,8 +19,8 @@ read -p "   This script will install Tuxpaint [0;32mhttps://tuxpaint.org/[0m
     if : >/dev/tcp/8.8.8.8/53; then
 echo ""   
 sudo apt update && sudo apt install tuxpaint tuxpaint-config &&
-sed -i '/Tuxpaint,               tuxpaint,                              tuxpaint/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Tuxpaint,               tuxpaint,                              tuxpaint' ~/.config/jgmenu/mymenu.csv
+sed -i '/Tuxpaint,               tuxpaint,                              tuxpaint/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Tuxpaint,               tuxpaint,                              tuxpaint' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"

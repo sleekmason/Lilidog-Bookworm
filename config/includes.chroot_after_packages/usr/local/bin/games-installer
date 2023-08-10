@@ -21,22 +21,22 @@ read -p "   [0;33mGames Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install blockout2 eboard xmahjongg briquolo gltron pinball &&
-sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Tron, gltron, gltron/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/a Tron, gltron, gltron' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Pinball, pinball, pinball/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/a Pinball, pinball, pinball' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Mahjong, xmahjongg, xmahjongg/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/a Mahjong, xmahjongg, xmahjongg' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Eboard Chess, eboard, eboard/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/a Eboard Chess, eboard, eboard' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Briquolo, briquolo, briquolo/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/a Briquolo, briquolo, briquolo' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Blockout2, blockout2, blockout2/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/a Blockout2, blockout2, blockout2' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Tron, gltron, gltron/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/a Tron, gltron, gltron' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Pinball, pinball, pinball/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/a Pinball, pinball, pinball' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Mahjong, xmahjongg, xmahjongg/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/a Mahjong, xmahjongg, xmahjongg' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Eboard Chess, eboard, eboard/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/a Eboard Chess, eboard, eboard' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Briquolo, briquolo, briquolo/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/a Briquolo, briquolo, briquolo' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Blockout2, blockout2, blockout2/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/a Blockout2, blockout2, blockout2' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"

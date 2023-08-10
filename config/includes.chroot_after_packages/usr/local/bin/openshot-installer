@@ -17,9 +17,9 @@ read -p "    [0;33mOpenshot Installer[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
-sudo apt update && sudo apt install --install-recommends openshot &&
-sed -i '/Openshot,           openshot-qt,                       openshot-qt/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Openshot,           openshot-qt,                       openshot-qt' ~/.config/jgmenu/mymenu.csv &&
+sudo apt update && sudo apt install --install-recommends openshot-qt &&
+sed -i '/Openshot,           openshot-qt,                       openshot-qt/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Openshot,           openshot-qt,                       openshot-qt' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

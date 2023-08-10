@@ -24,12 +24,12 @@ cd /tmp/ &&
 sudo curl -LJO https://raw.githubusercontent.com/sleekmason/packages/master/Minecraft.deb &&
 sudo apt update && sudo apt install --install-recommends ./Minecraft.deb &&
 sudo rm Minecraft.deb
-sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Minecraft,         minecraft-launcher,       minecraft-launcher/d' ~/.config/jgmenu/mymenu.csv && 
-sed -i '/tag(games)/a Minecraft,         minecraft-launcher,       minecraft-launcher' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Minecraft,         minecraft-launcher,       minecraft-launcher/d' ~/.config/jgmenu/prepend.csv && 
+sed -i '/tag(games)/a Minecraft,         minecraft-launcher,       minecraft-launcher' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "------------------------------------------------------------------"

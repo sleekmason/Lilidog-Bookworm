@@ -31,7 +31,7 @@ fi
 rm -r ~/.config/tint2
 cp -a -f -r /etc/skel/.config/tint2 "$HOME/.config/"
 killall -SIGUSR1 tint2
-sed -i '/Apt Notifier,        tint2-notifier-options,                        preferences-system/d' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Apt Notifier,        tint2-notifier-options,                        preferences-system/d' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------------"

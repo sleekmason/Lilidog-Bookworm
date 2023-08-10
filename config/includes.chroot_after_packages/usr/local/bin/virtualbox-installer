@@ -30,8 +30,8 @@ grep -qF "deb" /etc/apt/sources.list.d/virtualbox.list  || echo 'deb [arch=amd64
 sudo tee -a /etc/apt/sources.list.d/virtualbox.list
 sudo sed -i '/deb/c deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bookworm contrib' /etc/apt/sources.list.d/virtualbox.list
 sudo apt update && sudo apt install --install-recommends virtualbox-6.1 build-essential &&
-sed -i '/Virtualbox,         virtualbox,       virtualbox/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Virtualbox,         virtualbox,       virtualbox' ~/.config/jgmenu/mymenu.csv
+sed -i '/Virtualbox,         virtualbox,       virtualbox/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Virtualbox,         virtualbox,       virtualbox' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 sudo sed -i '/deb/c #deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bookworm contrib' /etc/apt/sources.list.d/virtualbox.list 
 echo ""

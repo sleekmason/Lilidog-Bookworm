@@ -18,8 +18,8 @@ read -p "    [0;33mGpicview Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install gpicview &&
-sed -i '/Gpicview,           gpicview,                          gpicview/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Gpicview,           gpicview,                          gpicview' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Gpicview,           gpicview,                          gpicview/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Gpicview,           gpicview,                          gpicview' ~/.config/jgmenu/prepend.csv &&
 killall jgmenu
 echo ""
 echo ""

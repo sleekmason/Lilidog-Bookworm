@@ -18,15 +18,15 @@ read -r -p "   [0;32mXed Text Editor Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 echo ""
-cd /tmp || exit &&
+cd /tmp || exit
+rm -f /tmp/xed*
 wget https://raw.githubusercontent.com/sleekmason/packages/master/xed-common_3.2.8_all.deb --show-progress -q
 wget https://raw.githubusercontent.com/sleekmason/packages/master/xed_3.2.8_amd64.deb --show-progress -q
 echo ""
 echo ""
 sudo apt install -y /tmp/./xed*
-rm /tmp/xed*
-sed -i '/Xed,           xed,                          accessories-text-editor/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Xed,           xed,                          accessories-text-editor' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Xed,           xed,                          accessories-text-editor/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Xed,           xed,                          accessories-text-editor' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "[0;32m-------------------------------------------------------------------"

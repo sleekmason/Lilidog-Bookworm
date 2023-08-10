@@ -23,8 +23,8 @@ cd /tmp || exit &&
 wget https://dl.discordapp.net/apps/linux/0.0.28/discord-0.0.28.deb &&
 sudo apt update && sudo apt install --install-recommends -y ./discord*
 echo ""
-sed -i '/^Discord\b/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Discord,            discord,                           applications-games' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/^Discord\b/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Discord,            discord,                           applications-games' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo "" 
 echo "" 

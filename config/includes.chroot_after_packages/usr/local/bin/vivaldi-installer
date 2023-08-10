@@ -19,10 +19,10 @@ read -p "   [0;33mVivaldi Installer.[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp/ &&
-sudo curl -LJO https://downloads.vivaldi.com/stable/vivaldi-stable_6.1.3035.111-1_amd64.deb &&
-sudo apt update && sudo apt install -y ./vivaldi-stable_6.1.3035.111-1_amd64.deb libu2f-udev &&
-sed -i '/Vivaldi,            vivaldi,          vivaldi/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '5i Vivaldi,            vivaldi,          vivaldi' ~/.config/jgmenu/mymenu.csv &&
+sudo curl -LJO https://downloads.vivaldi.com/stable/vivaldi-stable_6.1.3035.257-1_amd64.deb &&
+sudo apt update && sudo apt install -y ./vivaldi-stable_6.1.3035.257-1_amd64.deb libu2f-udev &&
+sed -i '/Vivaldi,            vivaldi,          vivaldi/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '7i Vivaldi,            vivaldi,          vivaldi' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo "----------------------------------------------------------------"
 echo ""

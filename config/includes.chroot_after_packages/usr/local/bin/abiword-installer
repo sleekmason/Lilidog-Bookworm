@@ -18,8 +18,8 @@ read -p "   [0;33mAbiword Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install --install-recommends abiword &&
-sed -i '/Abiword,        abiword,                       abiword/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Root Folders,^checkout(rootfiles),folder/a Abiword,        abiword,                       abiword' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Abiword,        abiword,                       abiword/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Root Folders,^checkout(rootfiles),folder/a Abiword,        abiword,                       abiword' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo ""

@@ -18,12 +18,12 @@ read -p "   [0;33mNexuiz Installer  905MB[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo "" 
 sudo apt update && sudo apt install nexuiz nexuiz-music xqf geoip-database &&
-sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/tag(games)/d' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/mymenu.csv &&
-sed -i '/Nexuiz,         nexuiz,       nexuiz/d' ~/.config/jgmenu/mymenu.csv && 
-sed -i '/tag(games)/a Nexuiz,         nexuiz,       nexuiz' ~/.config/jgmenu/mymenu.csv &&
+sed -i '/Games,^checkout(games),applications-games/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Development,^checkout(development),applications-development/i Games,^checkout(games),applications-games' ~/.config/jgmenu/prepend.csv &&
+sed -i '/tag(games)/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Development/a ^tag(games)' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Nexuiz,         nexuiz,       nexuiz/d' ~/.config/jgmenu/prepend.csv && 
+sed -i '/tag(games)/a Nexuiz,         nexuiz,       nexuiz' ~/.config/jgmenu/prepend.csv &&
 killall -q jgmenu
 echo ""
 echo "-----------------------------------------------------"

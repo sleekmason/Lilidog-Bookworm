@@ -1,5 +1,5 @@
 #!/bin/bash
-FILE="$HOME/.config/jgmenu/mymenu.csv"
+FILE="$HOME/.config/jgmenu/prepend.csv"
 echo ""
 read -p"   [0;33mKitchensink Installer[0m 
    
