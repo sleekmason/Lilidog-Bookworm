@@ -180,6 +180,7 @@ echo "   [0;33mEnjoy your new icon themes![0m"
 echo ""
 echo "   [0;33mContinuing...[0m"
 sleep 2
+sudo update-icon-caches /usr/share/icons/*
 ## The rest of the packages
 echo ""
 sudo apt install -y live-build live-config live-boot mousepad \
