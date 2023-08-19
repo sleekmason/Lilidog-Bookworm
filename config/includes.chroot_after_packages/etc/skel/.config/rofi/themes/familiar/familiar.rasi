@@ -1,0 +1,236 @@
+/** Familiar-Start-Menu -
+	//rofi theme with vertical iconbar by Kobaian.
+	//It is based on sidetab-adapta (a fork of sidetab theme by deadguy) 
+	//and MX-comfort theme by Melber & MX-Devs.
+	//This theme has been dedicated to the public domain.
+*/
+
+* {
+    // MX-familiar
+    // uses flag-for-font-awesome
+    // mxrr template-familiar.rasi
+    //font: "Noto Sans 12";
+} 
+
+* {
+	background-color: transparent;
+	
+    // Title background
+    //color01: #1D1D1D;
+    // Title text
+    //color02: #CACDD0;
+    // Searchbar background
+    //color03: #363636;
+    // Searchbar text
+    //color04: #EEEEEE;
+    // Inactive tab background
+    //color05: #282828;
+    // Inactive tab text
+    //color06: #CACDD0;
+    // Active tab background
+    //color07: #282828;
+    // Active tab text
+    //color08: #EEEEEE;
+    // Active tab highlight
+	//color09: #AFB42B;
+	// Selection background
+	//color10: #AFB42B;
+    // Selection text 
+    //color11: #282828;
+    // Placeholder text
+    //color12: #ffffff80;
+   
+   font: "Noto Sans 10";
+}
+   
+window {
+		margin: 	0px 0px 0px;
+        anchor:   	center;
+        location: 	center;
+        width:    	750px;
+        height:   	555px;
+        x-offset: 	0px;
+        y-offset: 	0px;
+        
+        background-color: 	@color01;
+        border:				1;
+		border-color:		@color03;
+		border-radius:		6;
+}
+
+mainbox {
+        children: [ inputbar, listbox  ];
+        
+		spacing:			0px;
+		margin:				0px;
+		padding:			12px;
+ }
+
+inputbar {
+		children: [ textbox, entry ];		
+		
+		orientation: 		horizontal;
+		expand: 			false;
+				
+	    background-color: 	@color01;
+	    border:				3px 3px 0px 3px;
+        border-color:		@color01;
+        padding: 			0 0 0 150px;
+        spacing: 1px;
+	}
+
+textbox {
+	expand: false;
+	border-color: @color02;
+	border: 0px;
+	border-radius:  4px 0px 0px 4px ;
+    str:  "";
+    text-color:       @color02;
+    background-color: @color03;
+    font: "FontAwesome 10";
+    padding: 6px 12px;
+    margin: 0px 0px 12px 0px;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+	
+entry {
+    border:				0px;
+    border-color: 		@color02;
+    border-radius:		0px 4px 4px 0px;
+    background-color: 	@color03;
+    font:               "Noto Sans 11";
+    text-color: 		@color04;
+    
+    padding: 		5px 10px;
+    margin: 		0px 200px 12px 0px;
+    expand: true;
+    placeholder:		" ...";
+    placeholder-color:	@color12;
+    
+}	
+
+listbox {
+	orientation: 	horizontal;
+	children: 		[ listview, rightbar ];
+	
+	border: 			0;
+	border-radius: 		0;
+    border-color:		@color05;
+    spacing: 			0;
+    background-color: 	@color01;    
+}
+
+rightbar {
+	orientation: vertical;
+	children: 	[ mode-switcher, custombox ];
+	expand: 	false;
+	spacing: 	0;
+	
+	background-color: 	@color01;
+	border:				0px;
+    border-radius:		0px 0px 0px 0px;
+    margin: 			0;
+    padding: 			0;
+}
+		
+custombox	{
+	background-color: 	@color01;
+	border-color:     	@color01;
+	expand: 			true;
+	border:        	0px 0px 0px 2px;
+	border-radius: 	0px 0px 0px 0px;
+	border-color: 	@color09;
+	spacing: 		0;
+}
+
+listview {
+    enabled:		true;
+    columns:		2;
+    layout:			vertical;
+    fixed-height:	true;
+    fixed-columns:	true; 
+    
+    cycle:			true;
+    dynamic:		true;
+	scrollbar: 		false;
+
+	padding: 			6px 0 0 6px;
+	background-color: 	@color07;
+	spacing:			3px;
+    margin:				0px;
+    padding:			14px;
+    border:			2px 0px 2px 2px;
+    border-radius:	4px 0px 0px 4px;
+    border-color: 	@color09;
+}
+
+
+element {
+    background-color: 	transparent;
+    padding: 			3;
+    text-color: 		@color06;
+}
+
+element selected {
+    background-color:	@color10;
+    text-color: 		@color11;
+        border:			0px 4px 0px 0px;
+        border-color: 	@color09;
+        border-radius:	2px;
+}
+
+element-text {
+    background-color: 	inherit;
+    text-color: 		inherit;
+	horizontal-align:	0;
+    vertical-align: 	0.5;
+    expand:				true;
+}
+
+element-icon {
+    size: 				32;
+    background-color: 	inherit;
+    padding: 			0 6px 0 0;
+    expand:				false;
+}
+
+mode-switcher {
+	padding: 		0 0 0 0;
+    spacing: 		0px;
+    expand: 		false;
+    orientation: 	vertical;
+    border: 			0px solid;
+    border-radius:		0px 0px 0px 0px;
+	background-color: 	@color01;
+}
+
+button {
+
+    font: 	"Noto Sans 10";
+    padding:			12px 20px 15px 20px;
+    border:				0px 0px 0px 2px;
+    border-radius:		0px 0px 0px 0px;
+    background-color:	transparent;
+    text-color:			@color06;
+    vertical-align:		0.5;
+    horizontal-align:	0.0;
+    cursor:				pointer;
+    expand:				false;
+    border-color:		@color09;
+}
+
+button selected {
+    background-color: 	@color07;
+    text-color:			@color08;
+    border:				3px 0px 0px 0px;
+    border-color:		@color09;
+    border-radius:		0;
+	padding: 			15px 20px 15px 20px;	
+    border:				2px 2px 2px 0px;
+    border-radius:		0px 4px 4px 0px;
+}
+
+filebrowser {
+    show-hidden: true;
+} 

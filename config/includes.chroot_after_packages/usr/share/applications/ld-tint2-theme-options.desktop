@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Tint2 Options
+Exec=tint2-options
+StartupNotify=false
+Terminal=false
+Icon=applications-other
+Categories=ld-misc-tools;

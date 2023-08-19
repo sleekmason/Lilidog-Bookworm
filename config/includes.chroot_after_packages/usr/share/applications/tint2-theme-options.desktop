@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Tint2 Theme Options
-Exec=tint2-theme-options
-StartupNotify=false
-Terminal=false
-Icon=applications-other
-Categories=System;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Upgrade System
+Exec=x-terminal-emulator -T 'Apt Update' -e 'sudo xupdate -i'
+StartupNotify=true
+Terminal=true
+Icon=system-software-update
+Categories=ld-upgrade-tools;

@@ -1,0 +1,16 @@
+/**
+ * color scheme for nakeDeb rofi theme by arpinux
+ * used for 'nakedquit' exit dialog
+ * color scheme : Gruvbox-Dark theme
+ */
+
+* {
+    background:     #1D2021;
+    border:         #6C5F54;
+    element-normal: #2E3132;    
+    element-select: #6C5F54;
+    text-normal:    #8D816C;
+    text-select:    #1D2021;
+}
+ 
+@import "nakedeb/nakedquit-common.rasi"

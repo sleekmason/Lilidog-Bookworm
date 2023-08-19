@@ -1,0 +1,66 @@
+#!/bin/bash
+
+USRNAME="$USER @ $HOSTNAME"
+FB_REFR="Openbox Refresh"
+LOCKSCR="Lock Screen"
+LOG_OUT="Logout"
+SUSPND="Suspend"
+RESTRT="Reboot"
+SHUTDWN="Shutdown"
+
+#if [ x"$@" = x"$USRNAME" ];
+#then
+#killall rofi
+#sleep 0.05
+#mugshot
+#fi
+
+if [ x"$@" = x"$LOCKSCR" ];
+then
+killall rofi
+sleep 0.05
+slock
+fi
+
+if [ x"$@" = x"$LOG_OUT" ];
+then
+killall rofi
+sleep 0.05
+pkill -KILL -u "$USER"
+fi
+
+if [ x"$@" = x"$SUSPND" ];
+then
+killall rofi
+sleep 0.05
+systemctl suspend
+fi
+
+if [ x"$@" = x"$FB_REFR" ];
+then
+killall rofi
+sleep 0.05
+openbox --restart; killall -SIGUSR1 conky
+fi
+
+if [ x"$@" = x"$RESTRT" ];
+then
+killall rofi
+sleep 0.05
+systemctl reboot
+fi
+
+if [ x"$@" = x"$SHUTDWN" ];
+then
+killall rofi
+sleep 0.05
+systemctl poweroff
+fi
+
+echo -e "user: $USRNAME\0icon\x1f/usr/share/icons/ld-icons/paw-theme.png"
+echo -e "$FB_REFR\0icon\x1femblem-desktop"
+echo -e "$LOCKSCR\0icon\x1fsystem-lock-screen"
+echo -e "$LOG_OUT\0icon\x1fsystem-log-out"
+echo -e "$SUSPND\0icon\x1fprocess-stop"
+echo -e "$RESTRT\0icon\x1fview-refresh"
+echo -e "$SHUTDWN\0icon\x1fsystem-shutdown"

@@ -13,11 +13,16 @@ mod4 + o
 alt + F1
     jgmenu_run 
 
+# Rofi
 alt + F2
+    ~/.config/rofi/scripts/rofi-familiar
+
+# Dmenu
+alt + F3
     ~/.config/dmenu/dmenu
 
 # Dmenu apps
-alt + F3
+alt + F5
     ~/.config/dmenu/apps
 
 # Conky
@@ -78,6 +83,10 @@ mod4 + b
 # Logout
 mod4 + x
     ld-logout
+
+# Logout large alternate
+shift + mod4 + x
+    ~/.config/rofi/scripts/nakedquit
 
 # screenshot and selection capture
 alt + Print

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Update Options
-Exec=update-options
-StartupNotify=false
-Terminal=false
-Icon=applications-system
-Categories=System;

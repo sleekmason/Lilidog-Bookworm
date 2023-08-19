@@ -68,6 +68,7 @@ Mouse Finder,        toggle-mouse-pointer,                          preferences-
 Transparency,        transparency-system,                           preferences-system
 Tint2 Toggle,        toggle.tint2,                                  preferences-system
 Auto Login,          lightdm-autologin,                             preferences-system
+Rofi Icons,          rofi-options,                                  preferences-system
 Clipboard,           toggle.parcellite,                             preferences-system
 OSprober,            osprober-toggle,                               preferences-system
 Sounds,              notification-sounds,                           preferences-system

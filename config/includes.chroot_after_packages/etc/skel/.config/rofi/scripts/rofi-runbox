@@ -1,0 +1,6 @@
+#!/bin/bash
+
+##starts the standalone rofi 'runbox'
+##scripts that require terminal=true --> use Shift+Enter to execute 
+
+rofi -show run -config $HOME/.config/rofi/themes/runbox/config.rasi -run-shell-command '{terminal} -e bash -ic "{cmd} && read"' && exit 0

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Check For Upgrades
-Exec=tint2-apt-update-check
-StartupNotify=false
-Terminal=false
-Icon=applications-system
-Categories=System;

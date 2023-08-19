@@ -1,0 +1,53 @@
+#!/bin/bash
+
+### simple script to set correct exit-option commands 
+### for MX-21 Fluxbox --> booting 'sysvinit' or 'systemd'
+
+### options
+# -f : reFresh fluxbox
+# -l : Logout user
+# -k : locK screen
+# -s : Suspend
+# -h : Hibernate
+# -r : Reboot
+# -p : Poweroff
+# no option selected: --> will invoke notify-send
+
+###=========================================================
+
+cmd_rfresh="openbox --restart"
+cmd_lgout="pkill -KILL -u "$USER""
+cmd_lck="slock"
+
+if [[ ! -x /run/systemd/system ]];then
+	cmd_sspend="sudo pm-suspend"
+	cmd_hibern="sudo pm-hibernate"
+	cmd_rboot="sudo reboot"
+	cmd_pdown="sudo poweroff"
+else
+	cmd_sspend="systemctl suspend"
+	cmd_hibern="systemctl hibernate"
+	cmd_rboot="systemctl reboot"
+	cmd_pdown="systemctl poweroff"
+fi
+
+case "$1" in
+    -f) $cmd_rfresh 
+		;;
+    -l) $cmd_lgout 
+		;;
+    -k) $cmd_lck 
+		;;
+    -s) $cmd_sspend 
+		;;
+    -h) $cmd_hibern 
+		;;
+    -r) $cmd_rboot 
+		;;
+    -p) $cmd_pdown 
+		;;
+    *) notify-send -t 5000 "no exit-option specified" -i "/usr/share/icons/Papirus-Dark/24x24/actions/gtk-cancel.svg"
+		;;
+
+esac
+

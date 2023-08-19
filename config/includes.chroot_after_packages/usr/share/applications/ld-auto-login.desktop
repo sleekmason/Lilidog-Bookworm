@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Auto Login
+Exec=lightdm-autologin
+StartupNotify=false
+Terminal=false
+Icon=preferences-system
+Categories=ld-misc-tools;

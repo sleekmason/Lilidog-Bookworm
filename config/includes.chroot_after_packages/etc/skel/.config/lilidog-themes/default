@@ -29,6 +29,10 @@ xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/
 xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:font/o:size' -v "12" ~/.config/openbox/rc.xml
 openbox --reconfigure
 
+## Rofi theme
+sed -i 's/^@theme "familiar.*/@theme "familiar-glade.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
+sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+rm -f ~/.cache/rofi3.druncache
 
 ## Geany theme
 sed -i "s/color_scheme=.*/color_scheme=Glade.conf/g" ~/.config/geany/geany.conf

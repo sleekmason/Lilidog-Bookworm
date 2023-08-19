@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Notification Sounds
+Exec=notification-sounds
+StartupNotify=false
+Terminal=false
+Icon=applications-system
+Categories=ld-misc-tools;

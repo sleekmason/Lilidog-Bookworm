@@ -1,0 +1,16 @@
+/**
+ * color scheme for nakeDeb rofi theme by arpinux
+ * used for 'nakedquit' exit dialog
+ * color scheme : NordTheme 
+ */
+
+* {
+    background:     #2e3440;
+    border:         #5e81ac;
+    element-normal: #434c5e;    
+    element-select: #5e81ac;
+    text-normal:    #6e91bc;
+    text-select:    #dcdfe4;
+}
+ 
+@import "nakedeb/nakedquit-common.rasi"

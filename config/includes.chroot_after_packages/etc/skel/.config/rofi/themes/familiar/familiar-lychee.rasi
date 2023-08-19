@@ -1,0 +1,34 @@
+/*******************************************************************************
+ * FAMILIAR COLORSCHEME FOR ROFI 
+ * User                 : kobaian               
+ * Theme Repo           : https://godknowswherestheinter.com
+ *******************************************************************************/
+
+* {
+    // Title background
+    color01: #1D1D1D;
+    // Title text
+    color02: #CACDD0;
+    // Searchbar background
+    color03: #363636;
+    // Searchbar text
+    color04: #EEEEEE;
+    // Inactive tab background
+    color05: #282828;
+    // Inactive tab text
+    color06: #CACDD0;
+    // Active tab background
+    color07: #282828;
+    // Active tab text
+    color08: #EEEEEE;
+    // Active tab highlight
+	color09: #EEE7BE;
+	// Selection background
+	color10: #EEE7BE;
+	// Selection text 
+    color11: #282828;
+    // Placeholder text
+    color12: #ffffff88;
+}
+
+@import "familiar.rasi"

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Rofi Clear Cache
+Exec=rm -f .cache/rofi3.druncache
+StartupNotify=false
+Terminal=false
+Icon=document-properties
+Categories=ld-misc-tools;

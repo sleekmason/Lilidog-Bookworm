@@ -1,0 +1,5 @@
+#!/bin/bash
+
+##start the standalone 'familiar' menu (centered on screen)
+
+rofi -show drun -config $HOME/.config/rofi/themes/familiar/config.rasi -run-shell-command '{terminal} -e bash -ic "{cmd} && read"' && exit 0

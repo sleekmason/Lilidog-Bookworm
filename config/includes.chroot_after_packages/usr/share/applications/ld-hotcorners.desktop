@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Hotcorners Toggle
+Exec=toggle.ld
+StartupNotify=false
+Terminal=false
+Icon=preferences-system
+Categories=ld-misc-tools;

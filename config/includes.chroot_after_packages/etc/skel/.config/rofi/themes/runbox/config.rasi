@@ -1,0 +1,22 @@
+configuration {
+	
+modi: "run";
+
+sidebar-mode: true;
+terminal: "x-terminal-emulator";
+disable-history: false;
+font: "Noto Sans 10";
+show-icons: true;
+icon-theme: "Papirus";
+	//fake-transparency: true;
+
+drun-display-format: "{icon} {name}";
+application-fallback-icon: "/usr/share/icons/Papirus/symbolic/mimetypes/application-x-executable-symbolic.svg";
+
+display-run:	"run";
+	//display-run:     "";
+
+}
+
+@theme "~/.config/rofi/themes/runbox/runbox-dark.rasi"
+//@theme "~/.config/rofi/themes/runbox/runbox-light.rasi"

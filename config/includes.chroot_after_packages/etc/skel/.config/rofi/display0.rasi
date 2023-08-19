@@ -1,0 +1,24 @@
+configuration {
+
+//modi: "drun,run";
+//modi: "drun,run,window;
+//modi: "drun,run,window,:~/.config/rofi/scripts/exit";
+//modi: "drun,run,filebrowser,window,:~/.config/rofi/scripts/exit";
+
+	//display-drun:		    "Applications";
+	//display-run:		    "Run ...";
+	//display-window:		"Workspaces";
+	//display-filebrowser:  "Filebrowser";
+    //display-exit:		    "Exit menu";
+
+display-drun:  "";
+display-filebrowser:  "";	
+display-run:   "";
+display-window:  "";
+	
+	//display-calc:   "";	
+	//display-help:   "";
+ 	//display-keys:   "";
+	//display-ssh:   ""; 	
+
+}

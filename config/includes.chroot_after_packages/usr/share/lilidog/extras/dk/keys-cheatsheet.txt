@@ -7,9 +7,10 @@ This List =        super + l
 Backgounds =       super + b
 Browser =          super + w
 Conky =            super + c
+Rofi =             alt + F2
 Dmenu =            alt + d
-                   super + F2                   
-Dmenuapps =        super + F3 
+Dmenu =            super + F3                   
+Dmenuapps =        super + F5 
 Editor =           super + e 
 File Manager =     super + f   
 Fontsize =         super + F6

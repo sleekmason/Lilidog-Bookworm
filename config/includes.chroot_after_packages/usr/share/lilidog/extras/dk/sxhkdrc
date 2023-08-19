@@ -13,11 +13,16 @@ mod4 + F1
 alt + d
 	~/.config/dmenu/dmenu
 
-mod4 + F2
+# Rofi
+alt + F2
+    ~/.config/rofi/scripts/rofi-familiar
+
+# Dmenu
+alt + F3
     ~/.config/dmenu/dmenu
 
 # Dmenu apps
-mod4 + F3
+alt + F5
     ~/.config/dmenu/apps
     
 # ld-themes

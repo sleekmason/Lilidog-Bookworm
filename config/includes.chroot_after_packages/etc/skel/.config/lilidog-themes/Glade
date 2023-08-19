@@ -22,5 +22,9 @@ xfce4-term-colors glade
 
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
+
+## Change Rofi theme
+sed -i 's/^@theme "familiar.*/@theme "familiar-glade.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
+
 rm -f ~/.cache/temp_theme
 rm -f ~/.cache/custom_theme

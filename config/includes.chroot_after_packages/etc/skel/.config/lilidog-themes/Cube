@@ -20,6 +20,9 @@ jgmenu_run init --apply-obtheme
 ## Change xfce4-terminal theme
 xfce4-term-colors cube
 
+## Change Rofi theme
+sed -i 's/^@theme "familiar.*/@theme "familiar-cube.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
+
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
 rm -f ~/.cache/temp_theme

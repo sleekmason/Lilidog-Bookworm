@@ -1,0 +1,17 @@
+/**
+ * color scheme for nakeDeb rofi theme by arpinux
+ * used for 'nakedquit' exit dialog
+ * color scheme : Mojtamigo colors
+ */
+
+* {
+    background:     #2B3A41;
+    border:         #858585;
+    element-normal: #858585;    
+    element-select: #2E5872;    
+    text-normal:    #2B3A41;
+    text-select:    #A5A5A5;
+
+}
+ 
+@import "nakedeb/nakedquit-common.rasi"

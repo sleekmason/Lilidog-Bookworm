@@ -1,0 +1,16 @@
+/**
+ * color scheme for nakeDeb rofi theme by arpinux
+ * used for 'nakedquit' exit dialog
+ * color scheme : Antix-Modern fluxbox-style 
+ */
+
+* {
+    background:     #3C3B37;
+    border:         #607D8B;
+    element-normal: #2E3132;    
+    element-select: #2196F3;
+    text-normal:    #6C6B67;
+    text-select:    #DFDFDF;
+}
+ 
+@import "nakedeb/nakedquit-common.rasi"

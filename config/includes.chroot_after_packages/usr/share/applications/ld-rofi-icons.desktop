@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Rofi Icon Options
+Exec=rofi-options
+StartupNotify=false
+Terminal=false
+Icon=applications-graphics
+Categories=ld-misc-tools;

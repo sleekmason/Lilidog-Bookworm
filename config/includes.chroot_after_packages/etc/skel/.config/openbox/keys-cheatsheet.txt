@@ -8,8 +8,9 @@ Backgounds =       super + b
 Browser =          super + w
 Conky =            super + c
 jgmenu             alt + F1
-Dmenu              super + F2                   
-Dmenuapps =        super + F3 
+Rofi               super + F2                   
+Dmenu =            super + F3
+Dmenuapps =        super + F5 
 Editor =           super + e 
 File Manager =     super + f   
 Fontsize =         super + F6
@@ -17,6 +18,7 @@ Gammy =            super + g
 Hotcorners =       super + F8
 Jgmenu =           super + j
 Logout =           super + x
+Logout-alt =       super + shift + x
 Music =            super + m
 Screenshot =       alt + Print
 Terminal	   super + t

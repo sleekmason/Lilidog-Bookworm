@@ -1,0 +1,33 @@
+/*******************************************************************************
+ * FAMILIAR COLORSCHEME FOR ROFI 
+ * Drow theme match
+ *******************************************************************************/
+
+* {
+    // Title background
+    color01: #1D2024;
+    // Title text
+    color02: #C6C9CC;
+    // Searchbar background
+    color03: #2B3036;
+    // Searchbar text
+    color04: #EEEEEE;
+    // Inactive tab background
+    color05: #282828;
+    // Inactive tab text
+    color06: #C1C4C7;
+    // Active tab background
+    color07: #202428;
+    // Active tab text
+    color08: #EEEEEE;
+    // Active tab highlight
+	color09: #4A525C;
+	// Selection background
+    color10: #4A525C;
+    // Selection text 
+    color11: #F7F7F7;
+    // Placeholder text
+    color12: #ffffff80;
+}
+
+@import "familiar.rasi"

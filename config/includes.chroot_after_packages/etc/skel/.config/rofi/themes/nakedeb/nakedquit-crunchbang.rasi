@@ -1,0 +1,16 @@
+/**
+ * color scheme for nakeDeb rofi theme by arpinux
+ * used for 'nakedquit' exit dialog
+ * color scheme : Crunchbang colors
+ */
+
+* {
+    background:     #CECECE;
+    border:         #7D7D7D;
+    element-normal: #949494;    
+    element-select: #555555;
+    text-normal:    #282828;
+    text-select:    #FCFCFC;
+}
+ 
+@import "nakedeb/nakedquit-common.rasi"

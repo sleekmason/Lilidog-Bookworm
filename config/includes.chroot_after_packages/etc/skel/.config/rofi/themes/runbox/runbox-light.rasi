@@ -1,0 +1,17 @@
+/*******************************************************************************
+ * RUNBOX LIGHT COLORSCHEME FOR ROFI 
+ * User                 : ceeslans               
+ * Theme Repo           : https://godknowswherestheinter.com
+ *******************************************************************************/
+
+* {
+    bg0:    #DEDEDEEE;
+    bg1:    #FFFFFF80;
+    bg2:    #ACACACEE;
+
+    fg0:    #5E5E5E;
+    fg1:    #000000;
+    fg2:    #6E6E6E50;
+}
+
+@import "runbox-common.rasi"

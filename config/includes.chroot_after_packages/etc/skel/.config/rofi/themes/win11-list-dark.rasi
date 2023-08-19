@@ -1,0 +1,105 @@
+/*******************************************************************************
+ * ROFI WINDOWS-11 LIST THEME (DARK)
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ *******************************************************************************/
+
+* {
+  font: "Noto Sans 10";
+
+  bg0    : #1f1f1f80;
+  bg1    : #202020bf;
+  bg2    : #2c2c2c;
+  bg3    : #393939bf;
+  fg0    : #ffffff;
+  fg1    : #cecece;
+  fg2	 : #cecece50;
+  accent : #60cdff;
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+window {
+  width    : 550px;
+  height   : 550px;
+
+  background-color : @bg1;
+  border-radius    : 8px;
+}
+
+mainbox {
+  padding : 16px;
+  spacing : 12px;
+}
+
+inputbar {
+  padding          : 6px;
+  spacing          : 4px;
+  children         : [ icon-search, entry ];
+  border           : 0 1px 1px 0 solid;
+  border-color     : @accent;
+  border-radius    : 3px;
+  background-color : @bg0;
+}
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 32px;
+}
+
+entry {
+  font              : "Noto Sans 11";
+  placeholder       : "Type here to search";
+  placeholder-color : @fg2;
+}
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @bg2;
+}
+
+listview {
+  columns       : 2;
+  spacing       : 4px;
+  fixed-height  : true;
+  fixed-columns : true;
+}
+
+element {
+  spacing       : 1em;
+  padding       : 8px;
+  border-radius : 2px;
+}
+
+element normal urgent {
+  text-color: @urgent;
+}
+
+element normal active {
+  text-color: @accent;
+}
+
+element selected {
+  background-color: @bg3;
+}
+
+element selected urgent {
+  background-color: @urgent;
+}
+
+element-icon {
+  size: 1.5em;
+}
+
+element-text {
+  text-color: inherit;
+}

@@ -1,0 +1,48 @@
+#! /bin/bash
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+THEMEFILE="$DIR/config.rasi"
+
+ACCESS="Accessories";		ACCESSi="  Accessories"
+OFFICE="Office";			OFFICEi="  Office"
+GRAPH="Graphics";			GRAPHi="  Graphics"
+GAMES="Games";				GAMESi="  Games"
+INET="Internet";			INETi="  Internet"
+MMEDIA="Multimedia";		MMEDIAi="  Multimedia"
+LDTOOLS="LD-Tools";			LDTOOLSi="  LD-tools"
+SETTGS="Settings";			SETTGSi="  Settings"
+DEVPMNT="Development";		DEVPMNTi="  Development"
+SYSTM="System";				SYSTMi="  System"
+ALLAPPS="ALL APPS";			ALLAPPSi="  ALL APPS"
+
+case "$1" in
+"$ALLAPPS")  CATS="";                     ICON="$ALLAPPSi"  ;;
+ "$ACCESS")  CATS="Utility,Accessories";  ICON="$ACCESSi"   ;;
+ "$OFFICE")  CATS="Office,TextEditor";    ICON="$OFFICEi"   ;;
+  "$GRAPH")  CATS="Graphics,Image,Photo"; ICON="$GRAPHi"    ;;
+  "$GAMES")  CATS="Game";                 ICON="$GAMESi"    ;;
+ "$SETTGS")  CATS="Settings";             ICON="$SETTGSi"   ;;
+  "$SYSTM")  CATS="System";               ICON="$SYSTMi"    ;;
+   "$INET")  CATS="Network,WebBrowser";   ICON="$INETi"     ;;
+"$DEVPMNT")  CATS="Development,TerminalEmulator" ; ICON="$DEVPMNTi" ;;
+ "$MMEDIA")  CATS="Music,Sound,Video,Audio,AudioVideo,Multimedia"; ICON="$MMEDIAi" ;;
+"$LDTOOLS")  CATS="ld-theme-tools,ld-tint2-tools,ld-jgmenu-tools,ld-misc-tools,ld-upgrade-tools"; ICON="$LDTOOLSi" ;;
+         *)  CATS="none" ;;
+esac
+ 
+if [ x"$CATS" != x"none" ]; then
+    killall -u $(id -un) rofi 2>/dev/null && sleep 0.1
+	rofi -show drun  -drun-categories "$CATS" -display-drun "$ICON" -theme "$THEMEFILE"
+fi
+
+echo -e "$ALLAPPS\0icon\x1fapplications-other"
+echo -e "$ACCESS\0icon\x1fapplications-accessories"
+echo -e "$DEVPMNT\0icon\x1fapplications-development"
+echo -e "$GAMES\0icon\x1fapplications-games"
+echo -e "$GRAPH\0icon\x1fapplications-graphics"
+echo -e "$INET\0icon\x1fweb-browser"
+echo -e "$MMEDIA\0icon\x1fapplications-multimedia"
+echo -e "$LDTOOLS\0icon\x1f/usr/share/icons/ld-icons/paw-theme.png"
+echo -e "$OFFICE\0icon\x1fapplications-office"
+echo -e "$SETTGS\0icon\x1fpreferences-desktop"
+echo -e "$SYSTM\0icon\x1fapplications-system"

@@ -1,0 +1,91 @@
+configuration {
+	
+modi: "categories:~/.config/rofi/themes/familiar/categories,drun,run,window,filebrowser,exit:~/.config/rofi/scripts/exit";
+//modi: "drun,run,window";
+
+location: 0;
+sidebar-mode: true;
+terminal: "x-terminal-emulator";
+disable-history: false;
+font: "dejavusans 10";
+icon-theme: "gnome";
+show-icons: true;
+
+////////=============================
+
+//drun-display-format: "{icon} {name}";
+
+drun-display-format:        "<b>{name}</b>\n[<span weight='light' size='small'><i>({generic})</i></span>]";
+window-format:              "<b>{t}</b>\n<span weight='light' size='small'><i>{w} : {c}</i></span>";
+
+//application-fallback-icon:  "/usr/share/icons/ePapirus/symbolic/mimetypes/application-x-executable-symbolic.svg";
+application-fallback-icon: "/usr/share/icons/gnome/48x48/emblems/emblem-system.png";
+
+me-select-entry:		"MouseSecondary";
+me-accept-entry:		"MousePrimary";
+	//hover-select:			true;
+
+    //display-drun:			"Applications";
+    //display-run:			"Run ...";
+    //display-window:		"Workspaces";
+    //display-filebrowser:	"Filebrowser";
+    //display-categories:	"Categories";
+    //display-exit:			"Exit options";
+
+display-categories:		"   Categories";
+display-drun:			"   Applications";
+display-filebrowser:	"   File browser";	
+display-run:			"   Run ....";
+display-window:			"   Workspaces";
+display-exit:			"   Exit options";
+
+	//display-ssh:			"   ssh"; 
+	//display-calc:			"   Calculator";	
+	//display-help:			"   Help";
+	//display-keys:			"   Keys";
+
+}
+
+// This line changed for Auto Themes Changer.
+@theme "familiar-glade.rasi"
+
+// These are the available themes.
+//@theme "familiar-adobe.rasi"
+//@theme "familiar-anolis.rasi"
+//@theme "familiar-adwaita.rasi"
+//@theme "familiar-adwaita-dark.rasi"
+//@theme "familiar-arcadia.rasi"
+//@theme "familiar-bright.rasi"
+//@theme "familiar-broadwater.rasi"
+//@theme "familiar-cobalt.rasi"
+//@theme "familiar-con-anolis.rasi"
+//@theme "familiar-crimson.rasi"
+//@theme "familiar-cube.rasi"
+//@theme "familiar-dark-drow.rasi"
+//@theme "familiar-dark-earth.rasi"
+//@theme "familiar-denim.rasi"
+//@theme "familiar-dracula.rasi"
+//@theme "familiar-dragon.rasi"
+//@theme "familiar-drow.rasi"
+//@theme "familiar-earth.rasi"
+//@theme "familiar-forge.rasi"
+//@theme "familiar-forge-dark.rasi"
+//@theme "familiar-glacier.rasi"
+//@theme "familiar-glade.rasi"
+//@theme "familiar-grey.rasi"
+//@theme "familiar-mulberry.rasi"
+//@theme "familiar-neon.rasi"
+//@theme "familiar-nightshade.rasi"
+//@theme "familiar-night-indigo.rasi"
+//@theme "familiar-nordic-darker.rasi"
+//@theme "familiar-oceanic.rasi"
+//@theme "familiar-ozark.rasi"
+//@theme "familiar-river.rasi"
+//@theme "familiar-slate.rasi"
+//@theme "familiar-taupe.rasi"
+//@theme "familiar-banana.rasi"
+//@theme "familiar-blueberry.rasi"
+//@theme "familiar-cherry.rasi"
+//@theme "familiar-orange.rasi"
+//@theme "familiar-lychee.rasi"
+//@theme "familiar-lime.rasi"

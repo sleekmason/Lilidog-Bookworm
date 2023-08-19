@@ -1,0 +1,54 @@
+#! /bin/bash
+#
+### a script for simple, standalone power-menu for MX-Fluxbox
+### orig 'power-menu' script by @kobaian  -  mod by @ceeslans
+#
+## calls the 'exitcmd' script for init-agnostic exit-commands
+#
+#============================================================
+
+themefile="$HOME/.config/rofi/themes/logout/logout-full.rasi"
+bye_message="Exit options for user  <b>$USER</b>"
+
+###=====================================
+
+name_fbrefresh="Restart Openbox"
+name_lock="Lock Screen"
+name_logout="Logout"
+name_susp="Suspend"
+name_hibern="Hibernate"
+name_reboot="Reboot"
+name_shutdown="Shutdown"
+
+icon_fbrefresh="view-restore"
+icon_lock="system-lock-screen"
+icon_logout="system-log-out"
+icon_suspend="process-stop"
+icon_hibernate="system-suspend-hibernate"
+icon_reboot="view-refresh"
+icon_shutdown="system-shutdown"
+
+#if add "hibernate", then edit logout-full.rasi '{listview}columns' = +1
+# $name_hibern\0icon\x1f$icon_hibernate\n
+
+###=====================================================================
+
+#if [ -f $HOME/.face ]; then
+#	chosen=$(printf "$name_fbrefresh\0icon\x1f$icon_fbrefresh\n$name_logout\0icon\x1f$icon_logout\n$name_lock\0icon\x1f$icon_lock\n$name_susp\0icon\x1f$icon_suspend\n$name_reboot\0icon\x1f$icon_reboot\n$name_shutdown\0icon\x1f$icon_shutdown" | 
+#		rofi -dmenu -show-icons -icon-theme papirus -hover-select -me-select-entry '' -me-accept-entry MousePrimary -i -mesg "$bye_message" -theme $themefile)
+#else
+	chosen=$(printf "$name_fbrefresh\0icon\x1f$icon_fbrefresh\n$name_logout\0icon\x1f$icon_logout\n$name_lock\0icon\x1f$icon_lock\n$name_susp\0icon\x1f$icon_suspend\n$name_reboot\0icon\x1f$icon_reboot\n$name_shutdown\0icon\x1f$icon_shutdown" | 
+		rofi -dmenu -show-icons -icon-theme papirus -hover-select -me-select-entry '' -me-accept-entry MousePrimary -i -mesg "$bye_message" -theme-str 'icon-user {filename: "~/.config/rofi/themes/logout/lilipaw.png" ;}' -theme $themefile)
+#fi
+
+case "$chosen" in
+	"$name_fbrefresh") openbox --restart; killall -SIGUSR1 conky ;;
+	"$name_logout") pkill -KILL -u "$USER" ;;	
+	"$name_lock") slock ;;
+	"$name_susp") systemctl suspend ;;
+	"$name_hibern") exitcmd -h ;;	
+	"$name_reboot") systemctl reboot ;;
+	"$name_shutdown") systemctl poweroff ;;
+	*) exit 1 ;;
+
+esac

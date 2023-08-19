@@ -1,0 +1,86 @@
+#!/bin/bash
+# Rofi icon chooser.
+# Made by sleekmason 19 Aug-2023
+
+gnome(){
+  if [[ -d "/usr/share/icons/gnome" ]]
+then
+notify-send --urgency low "Changing Rofi icon theme to Gnome"
+sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+else
+notify-send --urgency low "Gnome icon theme not installed"
+fi
+}
+
+breeze(){
+  if [[ -d "/usr/share/icons/breeze-dark" ]]
+then
+notify-send --urgency low "Changing Rofi icon theme to Breeze"
+sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+else
+notify-send --urgency low "Breeze icon theme not installed"
+fi
+}
+
+
+buuf(){
+  if [[ -d "/usr/share/icons/buuf" ]]
+then
+notify-send --urgency low "Changing Rofi icon theme to Buuf"
+sed -i 's/^icon-theme:.*/icon-theme: "buuf";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+else
+notify-send --urgency low "Buuf icon theme not installed"
+fi
+}
+
+
+numix(){
+  if [[ -d "/usr/share/icons/Numix-Circle" ]]
+then
+notify-send --urgency low "Changing Rofi icon theme to Numix-Circle"
+sed -i 's/^icon-theme:.*/icon-theme: "Numix-Circle";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+else
+notify-send --urgency low "Numix-Circle icon theme not installed"
+fi
+}
+
+obsidian(){
+  if [[ -d "/usr/share/icons/Obsidian" ]]
+then
+notify-send --urgency low "Changing Rofi icon theme to Obsidian"
+sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+else
+notify-send --urgency low "Obsidian icon theme not installed"
+fi
+}
+
+papirus(){
+  if [[ -d "/usr/share/icons/Papirus" ]]
+then
+notify-send --urgency low "Changing Rofi icon theme to Papirus"
+sed -i 's/^icon-theme:.*/icon-theme: "Papirus";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+else
+notify-send --urgency low "Papirus icon theme not installed"
+fi
+}
+
+export -f gnome
+export -f breeze
+export -f buuf
+export -f numix
+export -f obsidian
+export -f papirus
+
+yad --title "Rofi Icon Options" --escape-ok --borders=14 \
+--form --geometry=240x270-370-162 \
+--text="Rofi Icon Options\n" --text-align=center --buttons-layout=edge \
+--button=" Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
+--button="gtk-ok:0" \
+--window-icon=applications-graphics \
+    --form --columns=2 \
+    --field=" Gnome":FBTN "bash -c gnome >/dev/null 2>&1 &" \
+    --field=" Breeze":FBTN "bash -c breeze >/dev/null 2>&1 &" \
+    --field=" Buuf":FBTN "bash -c buuf >/dev/null 2>&1 &" \
+    --field=" Numix":FBTN "bash -c numix >/dev/null 2>&1 &" \
+    --field=" Obsidian":FBTN "bash -c obsidian >/dev/null 2>&1 &" \
+    --field=" Papirus":FBTN "bash -c papirus >/dev/null 2>&1 &"

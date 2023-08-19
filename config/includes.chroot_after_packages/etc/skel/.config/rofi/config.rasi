@@ -1,0 +1,34 @@
+configuration {
+	
+modi: "run,drun,window";
+
+show-icons: true;
+icon-theme: "Papirus";
+font: "Noto Sans 11";
+sidebar-mode: true;
+//application-fallback-icon:  "/usr/share/icons/ePapirus/symbolic/mimetypes/application-x-executable-symbolic.svg";
+application-fallback-icon: "/usr/share/icons/gnome/48x48/emblems/emblem-system.png";
+
+display-drun:  "drun";
+display-run:   "run";
+display-window:  "windows";
+display-filebrowser:  "browser";	
+
+	//display-drun:  "";
+	//display-run:   "";
+	//display-window:  "";
+	//display-filebrowser:  "";	
+
+}
+
+//@import "/display0.rasi"
+
+//@theme "~/.config/rofi/themes/win11-list-light.rasi"
+//@theme "~/.config/rofi/themes/rounded-blue-dark.rasi"
+@theme "~/.config/rofi/themes/rounded-gray-dark.rasi"
+//@theme "~/.config/rofi/themes/rounded-green-dark.rasi"
+//@theme "~/.config/rofi/themes/monokai.rasi"
+//@theme "~/.config/rofi/themes/spotlight.rasi"
+//@theme "~/.config/rofi/themes/win11-list-dark.rasi"
+//@theme "~/.config/rofi/themes/rounded-orange-dark.rasi"
+//@theme "~/.config/rofi/themes/spotlight-dark.rasi"

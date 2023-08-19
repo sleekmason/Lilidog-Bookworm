@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Sound Notifications
-Exec=notification-sounds
-StartupNotify=false
-Terminal=false
-Icon=applications-system
-Categories=System;

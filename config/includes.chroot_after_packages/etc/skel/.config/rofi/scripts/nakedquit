@@ -1,0 +1,40 @@
+#!/bin/bash
+# a simple logout dialog by arpinux (nakeDeb)
+# modified for mxflux by ceeslans feb 2023
+#============================================
+
+## Source config file, if located in SAME folder as script:
+	#DIR="$(cd "$(dirname "$0")" && pwd)"
+	#source $DIR/nakedquit.conf
+	
+## OR: set path to folder where config file is located - e.g : 
+source $HOME/.config/rofi/nakedquit.conf
+
+
+### launch this exit menu
+if [[ $mode = "std" ]];then
+	choice=$(printf "\n\n\n\n" | rofi -dmenu -theme-str 'window {width: 451px;}' -hover-select -me-select-entry '' -me-accept-entry MousePrimary -theme ~/.config/rofi/themes/nakedeb/nakedquit-$theme.rasi)
+elif [[ $mode = "reg" ]];then
+	choice=$(printf "\n\n\n\n\n" | rofi -dmenu -theme-str 'window {width: 536px;}' -hover-select -me-select-entry '' -me-accept-entry MousePrimary -theme ~/.config/rofi/themes/nakedeb/nakedquit-$theme.rasi)
+elif [[ $mode = "ext" ]];then
+	choice=$(printf "\n\n\n\n\n\n" | rofi -dmenu -theme-str 'window {width: 623px;}' -hover-select -me-select-entry '' -me-accept-entry MousePrimary -theme ~/.config/rofi/themes/nakedeb/nakedquit-$theme.rasi)
+elif [[ $mode = "max" ]];then
+	choice=$(printf "\n\n\n\n\n\n\n" | rofi -dmenu -theme-str 'window {width: 710px;}' -hover-select -me-select-entry '' -me-accept-entry MousePrimary -theme ~/.config/rofi/themes/nakedeb/nakedquit-$theme.rasi)
+fi
+
+# execute the choice in background
+# this calls 'exitcmd' script for init-agnostic exit-commands
+case "$choice" in
+  ) exitcmd -f ;;
+  ) exitcmd -l ;;  
+  ) exitcmd -k ;;
+  ) exitcmd -s ;;
+  ) exitcmd -h ;;
+  ) exitcmd -r ;;
+  ) exitcmd -p ;;
+  ) exit ;;
+esac
+
+exit 0
+
+######         #####       ######

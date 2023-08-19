@@ -1,0 +1,53 @@
+/**
+ * nakeDeb rofi theme by arpinux (based on Pop Dark rofi theme)
+ * used for 'nakedquit' exit dialog
+ * common settings; use corresponding color scheme rasi
+ */
+
+* {
+    font:         "fontawesome 24";        
+}
+
+window {
+   	//width:            600px;
+	//note: 'nakedquit' script will override 'width' value ###//
+	
+    background-color: @background;
+    border-color:     @border;    
+    border:           4px;
+	fullscreen:       false;
+    padding:          10px;
+    children:         [horibox];
+}
+horibox {
+    orientation:      horizontal;
+    children:         [listview];
+}
+listview {
+    layout:           horizontal;
+    spacing:          10px;
+    background-color: @background;
+    expand:           true;
+    cycle:            false;
+}
+element {
+    border:           0;
+    padding:          4px 24px;
+}
+element normal {
+    background-color: @element-normal;
+    text-color:       @text-normal;    
+}
+element selected {
+    background-color: @element-select;
+    text-color:       @text-select;    
+}
+element-icon {
+	size:             0;
+	background-color: inherit;
+}
+element-text {
+	padding:          3px 0px 0px 0px;
+	background-color: inherit;
+	text-color:       inherit;	
+}

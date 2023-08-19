@@ -46,6 +46,7 @@ firefox-esr
 firmware-b43legacy-installer
 firmware-b43-installer
 fonts-dejavu-core
+fonts-font-awesome
 fonts-liberation
 fonts-jetbrains-mono
 fonts-noto
@@ -166,6 +167,7 @@ qt5-gtk-platformtheme
 qt5-gtk2-platformtheme
 qt5-style-plugins
 rename
+rofi
 rsync
 rtkit
 rtmpdump
