@@ -25,13 +25,13 @@ fi
 # execute the choice in background
 # this calls 'exitcmd' script for init-agnostic exit-commands
 case "$choice" in
-  ) exitcmd -f ;;
-  ) exitcmd -l ;;  
-  ) exitcmd -k ;;
-  ) exitcmd -s ;;
-  ) exitcmd -h ;;
-  ) exitcmd -r ;;
-  ) exitcmd -p ;;
+  ) ~/.config/rofi/scripts/exitcmd -f ;;
+  ) ~/.config/rofi/scripts/exitcmd -l ;;  
+  ) ~/.config/rofi/scriptsexitcmd -k ;;
+  ) ~/.config/rofi/scriptsexitcmd -s ;;
+  ) ~/.config/rofi/scriptsexitcmd -h ;;
+  ) ~/.config/rofi/scriptsexitcmd -r ;;
+  ) ~/.config/rofi/scriptsexitcmd -p ;;
   ) exit ;;
 esac
 
