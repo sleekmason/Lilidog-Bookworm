@@ -3,7 +3,7 @@ configuration {
 modi: "run,drun,window";
 
 show-icons: true;
-icon-theme: "Papirus";
+icon-theme: "gnome";
 font: "Noto Sans 11";
 sidebar-mode: true;
 //application-fallback-icon:  "/usr/share/icons/ePapirus/symbolic/mimetypes/application-x-executable-symbolic.svg";
