@@ -7,6 +7,7 @@ gnome(){
 then
 notify-send --urgency low "Changing Rofi icon theme to Gnome"
 sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/config.rasi
 else
 notify-send --urgency low "Gnome icon theme not installed"
 fi
@@ -17,6 +18,7 @@ breeze(){
 then
 notify-send --urgency low "Changing Rofi icon theme to Breeze"
 sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/config.rasi
 else
 notify-send --urgency low "Breeze icon theme not installed"
 fi
@@ -28,6 +30,7 @@ buuf(){
 then
 notify-send --urgency low "Changing Rofi icon theme to Buuf"
 sed -i 's/^icon-theme:.*/icon-theme: "buuf";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "buuf";/g' "$HOME"/.config/rofi/config.rasi
 else
 notify-send --urgency low "Buuf icon theme not installed"
 fi
@@ -39,6 +42,7 @@ numix(){
 then
 notify-send --urgency low "Changing Rofi icon theme to Numix-Circle"
 sed -i 's/^icon-theme:.*/icon-theme: "Numix-Circle";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "Numix-Circle";/g' "$HOME"/.config/rofi/config.rasi
 else
 notify-send --urgency low "Numix-Circle icon theme not installed"
 fi
@@ -49,6 +53,7 @@ obsidian(){
 then
 notify-send --urgency low "Changing Rofi icon theme to Obsidian"
 sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/config.rasi
 else
 notify-send --urgency low "Obsidian icon theme not installed"
 fi
@@ -59,6 +64,7 @@ papirus(){
 then
 notify-send --urgency low "Changing Rofi icon theme to Papirus"
 sed -i 's/^icon-theme:.*/icon-theme: "Papirus";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "Papirus";/g' "$HOME"/.config/rofi/config.rasi
 else
 notify-send --urgency low "Papirus icon theme not installed"
 fi
