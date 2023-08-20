@@ -32,6 +32,7 @@ openbox --reconfigure
 ## Rofi theme
 sed -i 's/^@theme "familiar.*/@theme "familiar-glade.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
 sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/config.rasi
 rm -f ~/.cache/rofi3.druncache
 
 ## Geany theme
