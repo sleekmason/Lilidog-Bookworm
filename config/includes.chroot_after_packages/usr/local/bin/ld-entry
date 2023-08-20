@@ -150,7 +150,7 @@ _reboot
 fi
 [ "$_interactive" = "yes" ] &&
 echo $'\n\nPress any key to quit ...'; read -srn1
-sed -i '/welcome.sh &/d' /home/"${SUDO_USER}"/.config/openbox/autostart
+sed -i '/welcome-backend.sh &/d' /home/"${SUDO_USER}"/.config/openbox/autostart
 echo
 else
 echo ""

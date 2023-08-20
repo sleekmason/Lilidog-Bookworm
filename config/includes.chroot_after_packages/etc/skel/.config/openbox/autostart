@@ -49,4 +49,4 @@ sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
 ### Start brightness tray icon on login
 # sleep 2 && bright-gamma &
 
-welcome.sh &
+welcome-backend.sh &

@@ -27,3 +27,6 @@ function precmd () {
     xtitle "$(print -P $USER@$HOST '[%~]')"
 }
 # end of updates the window title.
+
+# Welcome alias
+alias welcome="sudo /usr/local/bin/ld-entry -i"
