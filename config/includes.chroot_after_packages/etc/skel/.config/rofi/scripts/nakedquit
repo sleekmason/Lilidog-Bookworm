@@ -27,11 +27,11 @@ fi
 case "$choice" in
   ) ~/.config/rofi/scripts/exitcmd -f ;;
   ) ~/.config/rofi/scripts/exitcmd -l ;;  
-  ) ~/.config/rofi/scriptsexitcmd -k ;;
-  ) ~/.config/rofi/scriptsexitcmd -s ;;
-  ) ~/.config/rofi/scriptsexitcmd -h ;;
-  ) ~/.config/rofi/scriptsexitcmd -r ;;
-  ) ~/.config/rofi/scriptsexitcmd -p ;;
+  ) ~/.config/rofi/scripts/exitcmd -k ;;
+  ) ~/.config/rofi/scripts/exitcmd -s ;;
+  ) ~/.config/rofi/scripts/exitcmd -h ;;
+  ) ~/.config/rofi/scripts/exitcmd -r ;;
+  ) ~/.config/rofi/scripts/exitcmd -p ;;
   ) exit ;;
 esac
 
