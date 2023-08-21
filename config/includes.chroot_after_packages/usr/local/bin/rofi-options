@@ -2,6 +2,18 @@
 # Rofi icon chooser.
 # Made by sleekmason 19 Aug-2023
 
+ON(){
+sed -i 's/^show-icons:.*/show-icons: true;/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^show-icons:.*/show-icons: true;/g' "$HOME"/.config/rofi/config.rasi
+notify-send --urgency low "Rofi icons on"
+}
+
+OFF(){
+sed -i 's/^show-icons:.*/show-icons: false;/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+sed -i 's/^show-icons:.*/show-icons: false;/g' "$HOME"/.config/rofi/config.rasi
+notify-send --urgency low "Rofi icons off"
+}
+
 gnome(){
   if [[ -d "/usr/share/icons/gnome" ]]
 then
@@ -70,6 +82,8 @@ notify-send --urgency low "Papirus icon theme not installed"
 fi
 }
 
+export -f ON
+export -f OFF
 export -f gnome
 export -f breeze
 export -f buuf
@@ -84,9 +98,11 @@ yad --title "Rofi Icon Options" --escape-ok --borders=14 \
 --button="gtk-ok:0" \
 --window-icon=applications-graphics \
     --form --columns=2 \
-    --field=" Gnome":FBTN "bash -c gnome >/dev/null 2>&1 &" \
-    --field=" Breeze":FBTN "bash -c breeze >/dev/null 2>&1 &" \
-    --field=" Buuf":FBTN "bash -c buuf >/dev/null 2>&1 &" \
-    --field=" Numix":FBTN "bash -c numix >/dev/null 2>&1 &" \
-    --field=" Obsidian":FBTN "bash -c obsidian >/dev/null 2>&1 &" \
-    --field=" Papirus":FBTN "bash -c papirus >/dev/null 2>&1 &"
+    --field=" On":FBTN "bash -c ON >/dev/null 2>&1 &" \
+    --field=" Gnome":BTN "bash -c gnome >/dev/null 2>&1 &" \
+    --field=" Breeze":BTN "bash -c breeze >/dev/null 2>&1 &" \
+    --field=" Buuf":BTN "bash -c buuf >/dev/null 2>&1 &" \
+    --field=" Off":FBTN "bash -c OFF >/dev/null 2>&1 &" \
+    --field=" Numix":BTN "bash -c numix >/dev/null 2>&1 &" \
+    --field=" Obsidian":BTN "bash -c obsidian >/dev/null 2>&1 &" \
+    --field=" Papirus":BTN "bash -c papirus >/dev/null 2>&1 &"
