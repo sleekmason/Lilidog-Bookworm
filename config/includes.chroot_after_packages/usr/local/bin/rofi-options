@@ -92,7 +92,7 @@ export -f obsidian
 export -f papirus
 
 yad --title "Rofi Icon Options" --escape-ok --borders=14 \
---form --geometry=240x270-370-162 \
+--form --geometry=220x270-370-362 \
 --text="Rofi Icon Options\n" --text-align=center --buttons-layout=edge \
 --button=" Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
 --button="gtk-ok:0" \
