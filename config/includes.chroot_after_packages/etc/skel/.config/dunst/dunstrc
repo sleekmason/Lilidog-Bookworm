@@ -18,7 +18,7 @@ height = 60
 origin = top-right
 
 ## Offset from the origin horizontalxvertical
-offset = 100x60
+offset = 245x60
 
 ### Turn on the progess bar. It appears when a progress hint is passed with
 ## for example dunstify -h int:value:12
@@ -170,15 +170,15 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 6
-background = "#182029"
+background = "#292F36"
 foreground = "#2DE376"
 frame_color = "#141517"
 ### Icon for notifications with low urgency, uncomment to enable
 # default_icon = /path/to/icon
 
 [urgency_normal]
-background = "#182029"
-foreground = "#B4CCD6"
+background = "#292F36"
+foreground = "#C9D2D6"
 frame_color = "#141517"
 ### Icon for notifications with low urgency, uncomment to enable
 # default_icon = /path/to/icon

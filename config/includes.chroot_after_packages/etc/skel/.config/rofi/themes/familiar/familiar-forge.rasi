@@ -21,9 +21,9 @@
     // Active tab text
     color08: #EEEEEE;
     // Active tab highlight
-	color09: #34567D;
+	color09: #3E5D78;
 	// Selection background
-    color10: #34567D;
+    color10: #3E5D78;
     // Selection text 
     color11: #F7F7F7;
     // Placeholder text

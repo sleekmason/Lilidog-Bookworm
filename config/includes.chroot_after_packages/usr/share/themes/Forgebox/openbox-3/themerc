@@ -8,7 +8,7 @@ menu.items.bg.colorTo: #252A30
 menu.separator.color: #3E464F
 
 !! Menu text
-menu.items.text.color: #CDD1D6
+menu.items.text.color: #D4D8DB
 menu.items.justify: left
 menu.items.disabled.text.color: #707070
 
@@ -21,14 +21,14 @@ menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #385C85
-menu.items.active.bg.colorTo: #385C85
+menu.items.active.bg.color: #3E5D78
+menu.items.active.bg.colorTo: #3E5D78
 menu.items.active.text.color: #FCFCFC
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #2A3038
-window.active.title.bg.colorTo: #2C343D
+window.active.title.bg.color: #323942
+window.active.title.bg.colorTo: #343D47
 window.inactive.title.bg: flat vertical gradient
 window.inactive.title.bg.color: #21262B
 window.inactive.title.bg.colorTo: #21262B
@@ -36,9 +36,9 @@ window.inactive.title.bg.colorTo: #21262B
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #CED1D4
+window.active.label.text.color: #D3D8DB
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #747B85
+window.inactive.label.text.color: #8C9EAD
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -46,18 +46,18 @@ window.active.button.*.hover.bg: flat vertical gradient border
 window.inactive.button.*.hover.bg: parentrelative
 window.*.button.*.pressed.bg: flat vertical gradient border
 
-window.active.button.*.hover.bg.color: #464E57
-window.active.button.*.hover.bg.colorTo: #464E57
-window.active.button.*.hover.bg.border.color: #2E2E2E
+window.active.button.*.hover.bg.color: #627385
+window.active.button.*.hover.bg.colorTo: #627385
+window.active.button.*.hover.bg.border.color: #000000
 
-window.active.button.*.pressed.bg.color: #727A85
-window.active.button.*.pressed.bg.colorTo: #727A85
+window.active.button.*.pressed.bg.color: #517B9E
+window.active.button.*.pressed.bg.colorTo: #6B94BC
 window.active.button.*.pressed.image.color: #000000
 window.active.button.*.pressed.bg.border.color: #000000
 window.inactive.button.*.pressed.bg.color: #262626
 window.inactive.button.*.pressed.bg.colorTo: #262626
 window.inactive.button.*.pressed.image.color: #404040
-window.inactive.button.*.pressed.bg.border.color: #575757
+window.inactive.button.*.pressed.bg.border.color: #23272B
 
 window.active.button.*.image.color: #C3C7CC
 window.active.button.disabled.image.color: #636363

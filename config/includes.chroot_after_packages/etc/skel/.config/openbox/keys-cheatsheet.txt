@@ -9,8 +9,8 @@ Browser =          super + w
 Conky =            super + c
 jgmenu             alt + F1
 Rofi               super + F2                   
-Dmenu =            super + F3
-Dmenuapps =        super + F5 
+Rofi Drun =        super + F3
+Dmenu =            super + F5 
 Editor =           super + e 
 File Manager =     super + f   
 Fontsize =         super + F6

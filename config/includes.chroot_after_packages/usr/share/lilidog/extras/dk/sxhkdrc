@@ -17,13 +17,13 @@ alt + d
 alt + F2
     ~/.config/rofi/scripts/rofi-familiar
 
-# Dmenu
+# Rofi Drun
 alt + F3
-    ~/.config/dmenu/dmenu
+    rofi -show drun
 
-# Dmenu apps
+# Dmenu
 alt + F5
-    ~/.config/dmenu/apps
+    ~/.config/dmenu/dmenu
     
 # ld-themes
 mod4 + F4

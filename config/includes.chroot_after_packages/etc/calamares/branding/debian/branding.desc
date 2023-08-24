@@ -9,10 +9,10 @@ windowPlacement: center
 strings:
     productName:         Debian GNU/Linux
     shortProductName:    Debian
-    version:             11 (bullseye)
+    version:             12 (bookworm)
     shortVersion:        11
-    versionedName:       Debian 11 (bullseye)
-    shortVersionedName:  Debian 11
+    versionedName:       Debian 12 (bookworm)
+    shortVersionedName:  Debian 12
     bootloaderEntryName: Debian
     productUrl:          https://debian.org
     supportUrl:          https://www.debian.org/support
