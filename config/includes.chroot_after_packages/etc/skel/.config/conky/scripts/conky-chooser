@@ -15,13 +15,13 @@ yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
 --height=600 --text="\nToggle Your Selections\n" --text-align=center \
 --window-icon=conky-logomark-violet \
     --form \
-    --field="                          Clock!appointment-new":BTN "bash -c 'toggle_conky conky-clock-date'" \
-    --field="                     Full Info!dialog-information":BTN "bash -c 'toggle_conky conky-full'" \
-    --field="                    Fortunes!emblem-package":BTN "bash -c 'toggle_conky conky-fortunes'" \
-    --field="                   Shortcuts!accessories-text-editor":BTN "bash -c 'toggle_conky conky-shortcuts'" \
-    --field="              Tao Te Ching!application-x-addon":BTN "bash -c 'toggle_conky conky-tao'" \
-    --field="               World Clock!emblem-web":BTN "bash -c 'toggle_conky conky-world-clock'" \
-    --field="                Install Date!application-certificate":BTN "bash -c 'toggle_conky conky-build'" \
+    --field="                          Clock!appointment-new":BTN "bash -c 'toggle_conky conky-clock-date' >/dev/null 2>&1 &" \
+    --field="                     Full Info!dialog-information":BTN "bash -c 'toggle_conky conky-full' >/dev/null 2>&1 &" \
+    --field="                    Fortunes!emblem-package":BTN "bash -c 'toggle_conky conky-fortunes' >/dev/null 2>&1 &" \
+    --field="                   Shortcuts!accessories-text-editor":BTN "bash -c 'toggle_conky conky-shortcuts' >/dev/null 2>&1 &" \
+    --field="              Tao Te Ching!application-x-addon":BTN "bash -c 'toggle_conky conky-tao' >/dev/null 2>&1 &" \
+    --field="               World Clock!emblem-web":BTN "bash -c 'toggle_conky conky-world-clock' >/dev/null 2>&1 &" \
+    --field="                Install Date!application-certificate":BTN "bash -c 'toggle_conky conky-build' >/dev/null 2>&1 &" \
     --field="       12H/24H Format!appointment-new":FBTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
     --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
