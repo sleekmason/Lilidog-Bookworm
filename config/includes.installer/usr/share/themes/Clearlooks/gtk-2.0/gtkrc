@@ -26,32 +26,32 @@ style "clearlooks-default"
 	ythickness = 1
 
 	fg[NORMAL]		    = "#FAFAFA" # CHANGED COULD BE SOME TEXT
-	fg[PRELIGHT]		= "#EFEFEF" # TEXT COLOR IN YES/NO BOX
-	fg[SELECTED]		= "#8F95A1" # Highlight
-	fg[ACTIVE]		    = "#EFEFEF" # TEXT COLOR IN YES AND NO BOXES
-	fg[INSENSITIVE]		= "#4A4C52" # 
+	fg[PRELIGHT]		= "#E7EDF0" # TEXT COLOR IN YES/NO BOX
+	fg[SELECTED]		= "#9EACB8" # Highlight
+	fg[ACTIVE]		    = "#E7EDF0" # TEXT COLOR IN YES AND NO BOXES
+	fg[INSENSITIVE]		= "#333A42" # 
 
-	bg[NORMAL]		    = "#1E1F21" # BACKGROUND
-	bg[PRELIGHT]		= "#62666E" # 
-	bg[SELECTED]		= "#53565C" # 
-	bg[INSENSITIVE]		= "#4A4C52" #
-	bg[ACTIVE]		    = "#53565C" #
+	bg[NORMAL]		    = "#202429" # BACKGROUND
+	bg[PRELIGHT]		= "#586370" # 
+	bg[SELECTED]		= "#48515C" # 
+	bg[INSENSITIVE]		= "#333A42" #
+	bg[ACTIVE]		    = "#48515C" #
 
-	base[NORMAL]		= "#252629" # WHOLE BACKGROUND IN INSET AREA
-	base[PRELIGHT]		= "#494C51" # 
-	base[ACTIVE]		= "#62666E" # UNSELECTED HIGHLIGHTED BAR
-	base[SELECTED]		= "#8F95A1" # Configure network hostname
-	base[INSENSITIVE]	= "#62666E" #
+	base[NORMAL]		= "#272B30" # WHOLE BACKGROUND IN INSET AREA
+	base[PRELIGHT]		= "#3C454F" # 
+	base[ACTIVE]		= "#586370" # UNSELECTED HIGHLIGHTED BAR
+	base[SELECTED]		= "#9EACB8" # Configure network hostname
+	base[INSENSITIVE]	= "#58646E" #
 
-	text[NORMAL]		= "#EBEBEB" # PRIMARY TEXT COLOR
+	text[NORMAL]		= "#E2E8EB" # PRIMARY TEXT COLOR
 	text[PRELIGHT]		= "#F7F7F7" # BRIGHTER TEXT DURING SELECTION HOPEFULLY
 	text[ACTIVE]		= "#0D1517" #
 	text[SELECTED]		= "#0D1517" #
-	text[INSENSITIVE]	= "#EBEBEB" # BUTTON TEXT
+	text[INSENSITIVE]	= "#E2E8EB" # BUTTON TEXT
 
 	engine "clearlooks"
 	{
-  # scrollbar_color	    = "#A2ABBD"  #This will disappear if uncommented 
+  # scrollbar_color	    = "#41617D"  #This will disappear if uncommented 
 	menubarstyle		= 2	# 0 = flat, 1 = sunken, 2 = flat gradient
 	#menuitemstyle		= 1	# 0 = flat, 1 = 3d-ish (gradient), 2 = 3d-ish (button)
 	#listviewitemstyle	= 1	# 0 = flat, 1 = 3d-ish (gradient)
@@ -74,9 +74,9 @@ style "clearlooks-wider" = "clearlooks-default"
 
 style "clearlooks-button" = "clearlooks-wider"
 {
-	bg[NORMAL]	    = "#494C51"  ## BUTTONS(3)
-	bg[INSENSITIVE]	= "#404247"
-	bg[PRELIGHT]	= "#70747D"  #Hover
+	bg[NORMAL]	    = "#456B8C"  ## BUTTONS(3)
+	bg[INSENSITIVE]	= "#456B8C"
+	bg[PRELIGHT]	= "#5489B8"  #Hover
 }
 
 style "clearlooks-notebook" = "clearlooks-wide"

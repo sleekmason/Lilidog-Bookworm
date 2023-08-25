@@ -24,7 +24,7 @@ images:
     productLogo:         "lilidog-logo-forge.png"
     productIcon:         "lilidog-logo-forge.png"
     productWelcome:      "welcome.png"
-    # productWallpaper:  "wallpaper.png"
+    # productWallpaper:    "Forge.png"
 
 slideshow:               "show.qml"
 
@@ -32,6 +32,6 @@ style:
    sidebarBackground:    "#22262B"
    sidebarText:          "#B6C6D6"
    sidebarTextSelect:    "#FFFFFF"
-   sidebarTextHighlight: "#3E5D78"
+   sidebarTextHighlight: "#41617D"
 
 slideshowAPI: 2
