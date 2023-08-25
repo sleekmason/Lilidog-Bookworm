@@ -15,4 +15,4 @@
     If you would like to customize your system by
     answering some questions now, press the Begin
     button below. Type 'welcome' in a terminal to
-    use the customization script at a later date.
+    use the customization script at a later time.
