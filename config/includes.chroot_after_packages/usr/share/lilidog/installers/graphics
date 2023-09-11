@@ -1,5 +1,4 @@
 Install Blender,            x-terminal-emulator -T 'Blender Installer' -e bash -c "blender-installer; echo $'\n\nPress any key to close.'; read -srn1",                 applications-graphics
-Install Extra Themes,       x-terminal-emulator -T 'Extra Themes Installer' -e bash -c "extra-themes-installer; echo $'\n\nPress any key to close.'; read -srn1",       applications-graphics
 Install GIMP,               x-terminal-emulator -T 'GIMP Installer' -e bash -c "gimp-installer; echo $'\n\nPress any key to close.'; read -srn1",                       applications-graphics
 Install Gpicview,           x-terminal-emulator -T 'Gpicview Installer' -e bash -c "gpicview-installer; echo $'\n\nPress any key to close.'; read -srn1",               applications-graphics
 Install Inkscape,           x-terminal-emulator -T 'Inkscape Installer' -e bash -c "inkscape-installer; echo $'\n\nPress any key to close.'; read -srn1",               applications-graphics
