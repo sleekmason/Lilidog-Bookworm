@@ -40,4 +40,4 @@ yad --title "Terminal Colors" --escape-ok --borders=14 \
     --field="          Mulberry!/usr/share/xfce4/terminal/icons/paw-mulberry.png!":FBTN "xfce4-term-colors mulberry" \
     --field="     Broadwater!/usr/share/xfce4/terminal/icons/paw-broadwater.png!":FBTN "xfce4-term-colors broadwater" \
     --field="      Qogir-Light!/usr/share/xfce4/terminal/icons/paw-qogir-light.png!":FBTN "xfce4-term-colors adwaita-ld" \
-    --field="           Adwaita!/usr/share/xfce4/terminal/icons/paw-adwaita.png!":FBTN "xfce4-term-colors adwaita-ld" \
+    --field="           Adwaita!/usr/share/xfce4/terminal/icons/paw-adwaita.png!":FBTN "xfce4-term-colors adwaita-ld"

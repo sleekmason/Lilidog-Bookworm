@@ -8,10 +8,9 @@ read -p"   [0;33mKitchensink Installer[0m
    towards getting a full setup in one go.
    
    This script installs: live-build, live-config, live-boot, git
-   openssh-sftp-server, filezilla, mousepad, pcmanfm, inkscape,
+   openssh-sftp-server, filezilla, mousepad, pcmanfm, pyradio
    gimp, brightness slider (if backlight controls exist), Circle 
-   icons, Obsidian icons, Papirus icons, extra Lilidog themes,
-   qemu, firefox, Thunderbird, Pyradio, LD apt update checker.
+   icons, Obsidian icons, Papirus icons, firefox, and Thunderbird.
    
    Logout and back to switch to zsh shell as default.
     
@@ -28,11 +27,9 @@ echo ""
 echo ""
 cd /tmp || exit &&
 ## Get rid of left over packages.
-rm -f /tmp/ld-apt-update-checker*
 rm -f /tmp/circle-icons*
 rm -f /tmp/bright-gamma*
 rm -f /tmp/pyradio*
-rm -f /tmp/extra-themes*
 rm -f /tmp/zshrc.zip
 rm -f /tmp/.zshrc
 rm -rf /tmp/master.zip
@@ -47,10 +44,8 @@ echo ""
 if test -e /sys/class/backlight/*; then
 wget https://raw.githubusercontent.com/sleekmason/packages/master/bright-gamma_12.0-1_all.deb --show-progress -q
 fi
-wget https://raw.githubusercontent.com/sleekmason/packages/master/ld-apt-update-checker_12.0-2_all.deb --show-progress -q
 wget https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.11-2~ld_all.deb --show-progress -q
 wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
-wget https://raw.githubusercontent.com/sleekmason/packages/master/extra-themes_12.0-1_all.deb --show-progress -q
 wget https://github.com/sleekmason/live-build-changes/archive/master.zip --show-progress -q
 unzip -q /tmp/master.zip
 echo ""
@@ -69,11 +64,6 @@ echo ""
 echo "   [0;33mSystem tray brightness slider will start on login.  
    disable in ~/.config/openbox/autostart if unwanted.[0m" && sleep 1
 fi
-echo ""
-## Extra themes
-sudo apt install -y ./extra-themes_12.0-1_all.deb
-## aptupdate checker
-sudo apt update && sudo apt install -y ./ld-apt-update-checker_12.0-2_all.deb
 echo ""
 echo "   [0;33mInstalling extra icons...[0m" && sleep 1
 echo ""
@@ -197,11 +187,6 @@ echo ""
 echo "   [0;33mDone. Continuing...[0m" && sleep 1
 echo ""
 echo ""
-echo "   [0;33mQemu and Inkscape require full --recommends...[0m" && sleep 1
-echo ""
-sudo apt install --install-recommends -y \
-qemu-system-x86 virt-manager inkscape
-echo ""
 if test -e "$HOME"/.zshrc ; then
 echo ""
 echo "   [0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
@@ -219,15 +204,12 @@ fi
 ## Place menu entries
 sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' "$FILE"
-sed -i '/VM Manager,         virt-manager,       virt-manager/d' "$FILE"
-sed -i '/Root Folders,^checkout(rootfiles),folder/a VM Manager,         virt-manager,       virt-manager' "$FILE"
 sed -i '/Mousepad,           mousepad,                          accessories-text-editor/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Mousepad,           mousepad,                          accessories-text-editor' "$FILE"
 sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' "$FILE"
 sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' "$FILE"
 sed -i '/Filezilla,    filezilla,                  filezilla/d' "$FILE"
 sed -i '/Extras/i Filezilla,    filezilla,                  filezilla' "$FILE"
-sed -i '/Inkscape,               inkscape,                              org.xfce.settings.color/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Inkscape,               inkscape,                              org.xfce.settings.color' "$FILE"
 sed -i '/Gimp,               gimp,                              gimp/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' "$FILE"
