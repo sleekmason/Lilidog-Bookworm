@@ -43,6 +43,9 @@ sed -i "s/color_scheme=.*/color_scheme=Forge.conf/g" ~/.config/geany/geany.conf
 sed -i "s/editor_font=.*/editor_font=JetBrains Mono 11/g" ~/.config/geany/geany.conf
 
 ## jgmenu theme
+if test -e ~/.config/jgmenu/backup; then
+rm -fr ~/.config/jgmenu/backup
+fi
 jgmenu_run init --apply-obtheme
 #jgmenu_run gtktheme
 

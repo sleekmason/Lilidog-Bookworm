@@ -15,6 +15,9 @@ sed -i "s/color_scheme=.*/color_scheme=Oceanic.conf/g" ~/.config/geany/geany.con
 
 ## Change jgmenu theme
 #jgmenu_run gtktheme
+if test -e ~/.config/jgmenu/backup; then
+rm -fr ~/.config/jgmenu/backup
+fi
 jgmenu_run init --apply-obtheme
 
 ## Change xfce4-terminal theme
