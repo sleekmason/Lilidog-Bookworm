@@ -17,7 +17,9 @@
 
 ### Touchpad Settings
 ### To use tap-to-click and the syndaemon for movement during keystrokes,
-### un-comment the below two lines and log out/in for settings to take affect.
+### install xserver-xorg-input-synaptics and uncomment the lines below.
+### Possible conflict with xserver-xorg-input-evdev. May need to remove.
+### You will need to Log out/in for the new settings to take affect.
 
 # synclient VertEdgeScroll=0 HorizEdgeScroll=0 TapButton1=1 2>/dev/null
 # syndaemon -i .5 -K -t -R -d &
