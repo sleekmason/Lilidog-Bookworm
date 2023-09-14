@@ -59,10 +59,10 @@ sed -i '/Root Folders,^checkout(rootfiles),folder/a Pyradio,            x-termin
 if test -e /sys/class/backlight/*; then
 sudo apt install -y /tmp/./bright-gamma* &&
 sed -i '/Brightness,          bright-gamma,                                  preferences-system/d' "$FILE"
-sed -i '/Touchpad.*/a Brightness,          bright-gamma,                                  preferences-system' "$FILE"
+sed -i '/Rofi Icons.*/a Brightness,          bright-gamma,                                  preferences-system' "$FILE"
 echo ""
-echo "   [0;33mSystem tray brightness slider will start on login.  
-   disable in ~/.config/openbox/autostart if unwanted.[0m" && sleep 1
+echo "   [0;33mSystem tray brightness slider can be enabled through  
+   the toggles menu.[0m" && sleep 1
 fi
 echo ""
 echo "   [0;33mInstalling extra icons...[0m" && sleep 1

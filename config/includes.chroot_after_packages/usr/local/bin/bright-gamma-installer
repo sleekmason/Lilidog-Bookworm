@@ -22,13 +22,13 @@ read -r -p "   [0;32mBrightness and Gamma tray icon Installer[0m
 echo ""
 echo ""
 cd /tmp || exit &&
+rm -f /tmp/bright-gamma*
 wget https://raw.githubusercontent.com/sleekmason/packages/master/bright-gamma_12.0-1_all.deb --show-progress -q
 echo ""
 echo ""
 sudo apt update && sudo apt install -y /tmp/./bright-gamma*
-rm /tmp/bright-gamma*
 sed -i '/Brightness,          bright-gamma,                                  preferences-system/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Touchpad.*/a Brightness,          bright-gamma,                                  preferences-system' ~/.config/jgmenu/prepend.csv
+sed -i '/Rofi Icons.*/a Brightness,          bright-gamma,                                  preferences-system' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "[0;33m-------------------------------------------------------------------"

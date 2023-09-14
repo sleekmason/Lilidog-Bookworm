@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Touchpad Options
-Exec=toggle-touchpad
-StartupNotify=false
-Terminal=false
-Icon=preferences-system
-Categories=ld-misc-tools;
