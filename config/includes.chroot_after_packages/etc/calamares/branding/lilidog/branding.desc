@@ -29,7 +29,7 @@ images:
 slideshow:               "show.qml"
 
 style:
-   sidebarBackground:    "#22262B"
+   sidebarBackground:    "#2D353D"
    sidebarText:          "#B6C6D6"
    sidebarTextSelect:    "#FFFFFF"
    sidebarTextHighlight: "#41617D"
