@@ -15,17 +15,17 @@
     // Inactive tab background
     color05: #282828;
     // Inactive tab text
-    color06: #CAD2D6;
+    color06: #C0CAD1;
     // Active tab background
     color07: #25292E;
     // Active tab text
-    color08: #EEEEEE;
+    color08: #E1E4E6;
     // Active tab highlight
-	color09: #3E5D78;
+	color09: #3B5973;
 	// Selection background
-    color10: #3E5D78;
+    color10: #3B5973;
     // Selection text 
-    color11: #F7F7F7;
+    color11: #DCDFE0;
     // Placeholder text
     color12: #ffffff80;
 }
