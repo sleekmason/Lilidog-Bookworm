@@ -8,7 +8,7 @@ sidebar-mode: true;
 terminal: "x-terminal-emulator";
 disable-history: false;
 font: "dejavusans 10";
-icon-theme: "gnome";
+icon-theme: "Papirus";
 show-icons: true;
 
 ////////=============================
