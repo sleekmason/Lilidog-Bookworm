@@ -1,4 +1,3 @@
-Install Discord,           x-terminal-emulator -T 'Discord AppImage Installer' -e bash -c "discord-installer; echo $'\n\nPress any key to close.'; read -srn1",       applications-internet
 Install Google Earth,      x-terminal-emulator -T 'Google Earth Installer' -e bash -c "google-earth-installer; echo $'\n\nPress any key to close.'; read -srn1",      applications-internet
 Install Skype,             x-terminal-emulator -T 'Skype Installer' -e bash -c "skype-installer; echo $'\n\nPress any key to close.'; read -srn1",                    applications-internet
 Install Zoom,              x-terminal-emulator -T 'Zoom Installer' -e bash -c "zoom-installer; echo $'\n\nPress any key to close.'; read -srn1",                      applications-internet
@@ -8,7 +7,6 @@ Install Chromium Browser,  x-terminal-emulator -T 'Chromium Installer' -e bash -
 Install Firefox Browser,   x-terminal-emulator -T 'Firefox Installer' -e bash -c "firefox-installer; echo $'\n\nPress any key to close.'; read -srn1",                applications-internet
 Install Librwolf Browser,  x-terminal-emulator -T 'Librewolf Installer' -e bash -c "librewolf-installer; echo $'\n\nPress any key to close.'; read -srn1",            applications-internet
 Install Lynx Browser,      x-terminal-emulator -T 'Lynx Installer' -e bash -c "lynx-installer; echo $'\n\nPress any key to close.'; read -srn1",                      applications-internet
-Install Vivaldi Browser,   x-terminal-emulator -T 'Vivaldi Installer' -e bash -c "vivaldi-installer; echo $'\n\nPress any key to close.'; read -srn1",                applications-internet
 ^sep()
 Install Geary Mail,        x-terminal-emulator -T 'Geary Installer' -e bash -c "geary-installer; echo $'\n\nPress any key to close.'; read -srn1",                    applications-internet
 Install Sylpheed Mail,     x-terminal-emulator -T 'Sylpheed Installer' -e bash -c "sylpheed-installer; echo $'\n\nPress any key to close.'; read -srn1",              applications-internet
