@@ -18,7 +18,8 @@ read -p "   [0;33mBuuf Icon Set Installer 54MB[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp || exit
-if [ ! -f "buuf-icons_12.0-1_all.deb" ]; then
+rm -f buuf-icons_12.0-1_all.deb
+if [ ! -e "buuf-icons_12.0-1_all.deb" ]; then
 wget https://raw.githubusercontent.com/sleekmason/packages/master/buuf-icons_12.0-1_all.deb --show-progress -q
 fi 
 sudo apt install ./buuf-icons_12.0-1_all.deb
