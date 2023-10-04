@@ -25,6 +25,9 @@ fs=$(basename "$full_fs")
 ### Find out if in Live environment and quit if so.
 if grep -q "$fs" /proc/partitions; then
 cd /tmp || exit
+### Install dependencies
+sudo apt update
+sudo apt-get install -y wget python3-gpg
 ## Get rid of any left over packages in /tmp.
 rm -f /tmp/dropbox*
 wget https://raw.githubusercontent.com/sleekmason/packages/master/dropbox.zip --show-progress -q &&
