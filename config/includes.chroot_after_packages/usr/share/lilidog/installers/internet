@@ -1,3 +1,4 @@
+Install Dropbox,           x-terminal-emulator -T 'Dropbox Installer' -e bash -c "dropbox-installer; echo $'\n\nPress any key to close.'; read -srn1",                applications-internet
 Install Google Earth,      x-terminal-emulator -T 'Google Earth Installer' -e bash -c "google-earth-installer; echo $'\n\nPress any key to close.'; read -srn1",      applications-internet
 Install Skype,             x-terminal-emulator -T 'Skype Installer' -e bash -c "skype-installer; echo $'\n\nPress any key to close.'; read -srn1",                    applications-internet
 Install Zoom,              x-terminal-emulator -T 'Zoom Installer' -e bash -c "zoom-installer; echo $'\n\nPress any key to close.'; read -srn1",                      applications-internet

@@ -1,0 +1,90 @@
+#!/bin/bash
+echo ""
+read -p "   [0;33mDropbox Installer[0m
+
+   This script will download and install Dropbox. Securely store, 
+   organize, and share all of your files.
+   
+   A web browser is recommended for dropbox initialization.
+   
+   [0;32mhttps://www.dropbox.com/[0m
+   
+  [0;33m----------------------------------------
+   
+   Please press enter to install Dropbox.
+   
+  ----------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+echo ""
+echo ""  
+full_fs=$(df ~ | tail -1 | awk '{print $1;}')  # find partition
+fs=$(basename "$full_fs")
+### Check for internet connection
+   if : >/dev/tcp/8.8.8.8/53; then  
+### Find out if in Live environment and quit if so.
+if grep -q "$fs" /proc/partitions; then
+cd /tmp || exit
+## Get rid of any left over packages in /tmp.
+rm -f /tmp/dropbox*
+wget https://raw.githubusercontent.com/sleekmason/packages/master/dropbox.zip --show-progress -q &&
+unzip -q /tmp/dropbox
+cd ~/.local/share || exit
+### Grab dropbox.py for terminl use
+sudo wget -O /usr/local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" &&
+sudo chmod +x /usr/local/bin/dropbox
+### Remove old configs
+rm -fr ~/.local/share/.dropbox-dist
+rm -fr ~/.dropbox
+### Grab dropbox
+wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - &&
+### Add .desktop file for autostart
+if [ ! -e "$HOME/.config/autostart" ]; then
+mkdir "$HOME/.config/autostart"
+fi
+if [ ! -e "$HOME/.config/autostart/dropbox.desktop" ]; then
+cp /tmp/dropbox.desktop ~/.config/autostart/dropbox.desktop
+fi
+### Initial start of dropbox
+nohup ".dropbox-dist/dropboxd" > file 2>&1 &
+### This will set thunar as the default manager
+#xdg-mime default thunar.desktop inode/directory
+echo ""
+echo ""
+sleep 2
+echo "   [0;32mInstalling All ...[0m"
+echo ""
+sleep 1
+echo "   [0;32mStarting Dropbox ...[0m"
+sleep 1
+echo ""
+echo ""
+echo "  [0;32m----------------------------------------------------------------------"
+echo ""
+echo "   A .desktop file has been placed in ~/.config/autostart in order to"
+echo "   start dropbox on login.  Remove the autostart file or adjust as"
+echo "   desired if autostart is unwanted."
+echo ""
+echo "   The timeout is currently set for 20 seconds from login."
+echo ""
+echo "   Look in the system tray for a Dropbox icon, or look for"  
+echo "   terminal options by typing 'dropbox' in a terminal."
+echo ""
+echo "  ----------------------------------------------------------------------[0m"
+else
+ echo "   [0;32m-------------------------------------------------------"
+ echo ""
+ echo "   Dropbox cannot be installed in a live environment."
+ echo "   Install and try again!"
+ echo ""
+ echo "   -------------------------------------------------------[0m"
+ fi
+else
+echo ""
+ echo "   [0;31m-------------------------------------------------------"
+ echo ""
+ echo "   No Internet connection. Please connect and try again."
+ echo ""
+ echo "   -------------------------------------------------------[0m"
+echo ""
+fi
