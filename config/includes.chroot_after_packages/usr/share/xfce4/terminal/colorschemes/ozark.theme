@@ -1,5 +1,5 @@
 [Scheme]
 Name=Ozark
-ColorBackground=#232328282e2e
-ColorForeground=#d3d3d8d8dbdb
-ColorPalette=rgb(0,0,0);rgb(196,62,47);rgb(0,166,96);rgb(190,149,45);rgb(56,152,183);rgb(150,52,128);rgb(0,142,142);rgb(158,170,176);rgb(153,163,172);rgb(255,95,95);rgb(71,207,133);rgb(226,215,115);rgb(110,195,215);rgb(239,115,219);rgb(99,208,200);rgb(224,231,233)
+ColorBackground=#28282d2c3333
+ColorForeground=#d8d8dddde0e0
+ColorPalette=rgb(29,28,33);rgb(209,75,75);rgb(39,179,128);rgb(235,177,96);rgb(52,123,158);rgb(192,97,203);rgb(79,176,189);rgb(158,170,176);rgb(153,163,172);rgb(224,85,85);rgb(46,194,140);rgb(255,190,111);rgb(88,165,204);rgb(220,138,221);rgb(97,214,230);rgb(224,231,233)
