@@ -27,8 +27,8 @@ menu.items.active.text.color: #FCFCFC
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #384047
-window.active.title.bg.colorTo: #404952
+window.active.title.bg.color: #3E474F
+window.active.title.bg.colorTo: #464F59
 window.inactive.title.bg: flat vertical gradient
 window.inactive.title.bg.color: #2C3138
 window.inactive.title.bg.colorTo: #2C3138
@@ -36,7 +36,7 @@ window.inactive.title.bg.colorTo: #2C3138
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #E6E6DF
+window.active.label.text.color: #EBEBE6
 window.inactive.label.bg: parentrelative
 window.inactive.label.text.color: #93A1A8
 
