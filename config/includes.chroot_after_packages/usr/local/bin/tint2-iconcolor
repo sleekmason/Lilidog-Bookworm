@@ -8,12 +8,38 @@ default(){
   NOTIFY="$HOME/.config/tint2/executors/notifier"
        sed -i 's/coltint2.*\//coltint2base\//g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2base.png"/g' "$NOTIFY"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#CAE0EB 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#CAE0EB 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#D1E4EB 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#CAE0EB 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#CAE0EB 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #CAE0EB 100/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+forge(){
+  FILE="$HOME/.config/tint2/tint2rc"
+  NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/coltint2.*\//coltint2basedark\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2basedark.png"/g' "$NOTIFY"
        sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#CADBEB 100/' "$FILE"
        sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#CADBEB 100/' "$FILE"
        sed -i 's/task_font_color =.*/task_font_color = \#CADBEB 100/' "$FILE"
        sed -i 's/clock_font_color =.*/clock_font_color = \#CADBEB 100/' "$FILE"
        sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#CADBEB 100/' "$FILE"
        sed -i 's/^battery_font_color.*/battery_font_color = #CADBEB 100/g' "$FILE"
+     killall -SIGUSR1 tint2
+}
+creme(){
+  FILE="$HOME/.config/tint2/tint2rc"
+  NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/coltint2.*\//coltint2baselight\//g' "$FILE"
+       sed -i 's/^iconcolor=.*/iconcolor="coltint2baselight.png"/g' "$NOTIFY"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#E1DFDB 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#E1DFDB 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#E1DFDB 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#E1DFDB 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#E1DFDB 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #E1DFDB 100/g' "$FILE"
      killall -SIGUSR1 tint2
 }
 teladog(){
@@ -161,6 +187,8 @@ awesome-light(){
 }
 
 export -f default
+export -f forge
+export -f creme
 export -f white
 export -f grey
 export -f adobe
@@ -174,7 +202,7 @@ export -f awesome-dark
 export -f awesome-light
 
 yad --title "Icon Themes" --escape-ok --borders=14 \
---form --geometry=240x370-270-352 \
+--form --geometry=240x410-270-352 \
 --text="Tint2 Icon Themes\n" --text-align=center --buttons-layout=edge \
 --window-icon=org.xfce.settings.color \
     --form --columns=2 \
@@ -184,9 +212,12 @@ yad --title "Icon Themes" --escape-ok --borders=14 \
     --field=" Buuf":FBTN "bash -c buuf >/dev/null 2>&1 &" \
     --field=" Obsidian":FBTN "bash -c obsidian >/dev/null 2>&1 &" \
     --field=" Awesome":FBTN "bash -c awesome-light >/dev/null 2>&1 &" \
-    --field=" Ld White":FBTN "bash -c white >/dev/null 2>&1 &" \
-    --field=" Ld Grey":FBTN "bash -c grey >/dev/null 2>&1 &" \
-    --field=" Ld Adobe":FBTN "bash -c adobe >/dev/null 2>&1 &" \
-    --field=" Ld Navy":FBTN "bash -c navy >/dev/null 2>&1 &" \
-    --field=" Ld Green":FBTN "bash -c green >/dev/null 2>&1 &" \
-    --field=" AweDark":FBTN "bash -c awesome-dark >/dev/null 2>&1 &"
+    --field=" AweDark":FBTN "bash -c awesome-dark >/dev/null 2>&1 &" \
+    --field=" LD Forge":FBTN "bash -c forge >/dev/null 2>&1 &" \
+    --field=" LD Grey":FBTN "bash -c grey >/dev/null 2>&1 &" \
+    --field=" LD White":FBTN "bash -c white >/dev/null 2>&1 &" \
+    --field=" LD Creme":FBTN "bash -c creme >/dev/null 2>&1 &" \
+    --field=" LD Adobe":FBTN "bash -c adobe >/dev/null 2>&1 &" \
+    --field=" LD Navy":FBTN "bash -c navy >/dev/null 2>&1 &" \
+    --field=" LD Green":FBTN "bash -c green >/dev/null 2>&1 &"
+ 

@@ -5,11 +5,19 @@
 noti=$(yad --width 310 --borders=12 --entry --title "Percentage Text Color" --center --window-icon=applications-graphics \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
     --button="gtk-cancel:1" --button="gtk-ok:0" \
-    "Base - Default" "Green" "Red" "Blue" "Orange" "Teladog" "Buuf" "White" "Grey" "Black" "Adobe" "Navy")
+    "Base - Default" "Forge" "Creme" "Green" "Red" "Blue" "Orange" "Teladog" "Buuf" "White" "Grey" "Black" "Adobe" "Navy")
 
 case $noti in
   Base*)
+     sed -i 's/^battery_font_color.*/battery_font_color = #CAE0EB 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Forge)
      sed -i 's/^battery_font_color.*/battery_font_color = #CADBEB 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Creme)
+     sed -i 's/^battery_font_color.*/battery_font_color = #E1DFDB 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Green)
