@@ -15,15 +15,15 @@
     // Inactive tab background
     color05: #282828;
     // Inactive tab text
-    color06: #CED4D6;
+    color06: #D6DDDE;
     // Active tab background (inside box)
     color07: #2F353B;
     // Active tab text
     color08: #E6E6E6;
     // Active tab highlight
-	color09: #33637A;
+	color09: #325F75;
 	// Selection background
-	color10: #33637A;
+	color10: #325F75;
 	// Selection text 
     color11: #F5F5F5;
     // Placeholder text

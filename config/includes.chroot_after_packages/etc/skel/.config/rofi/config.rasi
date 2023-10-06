@@ -23,7 +23,8 @@ display-filebrowser:  "browser";
 
 //@import "/display0.rasi"
 
-@theme "~/.config/rofi/themes/rounded-forge.rasi"
+@theme "~/.config/rofi/themes/rounded-ozark.rasi"
+//@theme "~/.config/rofi/themes/rounded-forge.rasi"
 //@theme "~/.config/rofi/themes/win11-list-light.rasi"
 //@theme "~/.config/rofi/themes/rounded-blue-dark.rasi"
 //@theme "~/.config/rofi/themes/rounded-gray-dark.rasi"
