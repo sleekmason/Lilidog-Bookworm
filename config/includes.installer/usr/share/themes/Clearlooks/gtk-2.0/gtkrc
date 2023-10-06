@@ -27,7 +27,7 @@ style "clearlooks-default"
 
 	fg[NORMAL]		    = "#FAFAFA" # CHANGED COULD BE SOME TEXT
 	fg[PRELIGHT]		= "#E7EDF0" # TEXT COLOR IN YES/NO BOX
-	fg[SELECTED]		= "#95A4AD" # Highlight
+	fg[SELECTED]		= "#839FAD" # Highlight
 	fg[ACTIVE]		    = "#ECF2F5" # TEXT COLOR IN YES AND NO BOXES
 	fg[INSENSITIVE]		= "#333A42" # 
 
@@ -40,7 +40,7 @@ style "clearlooks-default"
 	base[NORMAL]		= "#272B30" # WHOLE BACKGROUND IN INSET AREA
 	base[PRELIGHT]		= "#3C454F" # 
 	base[ACTIVE]		= "#586370" # UNSELECTED HIGHLIGHTED BAR
-	base[SELECTED]		= "#95A4AD" # Configure network hostname
+	base[SELECTED]		= "#839FAD" # Configure network hostname
 	base[INSENSITIVE]	= "#58646E" #
 
 	text[NORMAL]		= "#E9EEF0" # PRIMARY TEXT COLOR
