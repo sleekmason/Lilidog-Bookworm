@@ -21,17 +21,17 @@ strings:
     donateUrl:           https://www.forum.lilidog.org/
 
 images:
-    productLogo:         "lilidog-logo-forge.png"
-    productIcon:         "lilidog-logo-forge.png"
+    productLogo:         "lilidog-logo-ozark.png"
+    productIcon:         "lilidog-logo-ozark.png"
     productWelcome:      "welcome.png"
     # productWallpaper:    "Forge.png"
 
 slideshow:               "show.qml"
 
 style:
-   sidebarBackground:    "#272B30"
-   sidebarText:          "#B6C6D6"
+   sidebarBackground:    "#2E343B"
+   sidebarText:          "#DAE1E3"
    sidebarTextSelect:    "#FFFFFF"
-   sidebarTextHighlight: "#41617D"
+   sidebarTextHighlight: "#346178"
 
 slideshowAPI: 2

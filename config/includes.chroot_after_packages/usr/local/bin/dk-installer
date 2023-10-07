@@ -33,7 +33,7 @@ cd /tmp/ &&
 sudo apt update && sudo apt install sxhkd build-essential polybar libxcb-randr0-dev libxcb-util-dev libxcb-icccm4-dev libxcb-cursor-dev libxcb-keysyms1-dev &&
 # For the latest - possibly unstable, uncomment the below line and comment the curl line.
 #git clone https://bitbucket.org/natemaia/dk.git &&
-curl -fSL https://bitbucket.org/natemaia/dk/get/v1.7.zip -o dk.zip &&
+curl -fSL https://bitbucket.org/natemaia/dk/get/v1.9.zip -o dk.zip &&
 unzip dk.zip &&
 cd natemaia-dk-* &&
 make &&
