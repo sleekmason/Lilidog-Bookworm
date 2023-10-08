@@ -8,7 +8,7 @@ menu.items.bg.colorTo: #30363D
 menu.separator.color: #4C5761
 
 !! Menu text
-menu.items.text.color: #E8E8E6
+menu.items.text.color: #EBEBE9
 menu.items.justify: left
 menu.items.disabled.text.color: #707070
 
@@ -16,7 +16,7 @@ menu.items.disabled.text.color: #707070
 menu.title.bg: raised splitvertical gradient
 menu.title.bg.color: #30363D
 menu.title.bg.colorTo: #30363D
-menu.title.text.color: #E8E8E6
+menu.title.text.color: #E6E6E4
 menu.title.text.justify: center
 
 !! Selected menu item
