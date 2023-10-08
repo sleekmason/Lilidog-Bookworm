@@ -20,6 +20,10 @@ read -p "
    -------------------------------------------------------------------[0m
      
    Or close this terminal window to quit." ;
+### Check for live and if so, exit.
+full_fs=$(df ~ | tail -1 | awk '{print $1;}')  # find partition
+fs=$(basename "$full_fs")
+if grep -q "$fs" /proc/partitions; then
 echo "" 
 . copy-to-grub
 echo ""
@@ -30,3 +34,11 @@ echo ""
 echo "Enjoy your new Grub background." 
 echo "" 
 echo "-----------------------------------------------------------[0m"
+else
+ echo "   [0;32m-------------------------------------------------------"
+ echo ""
+ echo "   Grub background cannot be changed in a live environment."
+ echo "   Install and try again!"
+ echo ""
+ echo "   -------------------------------------------------------[0m"
+ fi
