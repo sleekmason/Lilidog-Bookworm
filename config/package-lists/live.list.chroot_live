@@ -4,3 +4,4 @@ live-config-systemd
 systemd-sysv
 calamares
 calamares-settings-debian
+keyutils
