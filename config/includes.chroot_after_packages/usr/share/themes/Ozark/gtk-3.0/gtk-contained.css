@@ -19,7 +19,7 @@
  * Base States *
  ***************/
 .background {
-  color: #E0E0DC;
+  color: #E3E3DF;
   background-color: #3A424A; }
   .background:backdrop {
     color: #8D9599;
@@ -3787,7 +3787,7 @@ filechooserbutton:drop(active) {
  ***********/
 .sidebar {
   border-style: none;
-  background-color: #363B42;
+  background-color: #363C44;
   -gtk-icon-style: regular; }
   .sidebar row,
   .sidebar treeview {
