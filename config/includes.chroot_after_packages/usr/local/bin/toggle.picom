@@ -1,3 +1,8 @@
 #!/bin/bash
-#
-bash -c 'if ! pkill -x picom; then exec picom; fi'
+if pgrep -x picom > /dev/null; then
+    pkill -x picom
+    conkyrestart >/dev/null 2>&1 &
+else
+    picom --daemon
+    conkyrestart >/dev/null 2>&1 &
+fi

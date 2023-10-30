@@ -1,30 +1,200 @@
 #!/bin/bash
 
-toggle_conky () {
-#  toggle individual conky on/off
+TIMEDATE(){
+TRANS=conky-clock-date-trans.conf
+REG=conky-clock-date.conf
 
-if pgrep -f ${1}.conf > /dev/null; then
-    pkill -f ${1}.conf
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
 else
-    conky -c $HOME/.config/conky/${1}.conf
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
 fi
 }
-export -f toggle_conky
+
+FULLCONKY(){
+TRANS=conky-full-trans.conf
+REG=conky-full.conf
+
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+fi
+}
+
+TAO(){
+TRANS=conky-tao-trans.conf
+REG=conky-tao.conf
+
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+fi
+}
+
+FORTUNES(){
+TRANS=conky-fortunes-trans.conf
+REG=conky-fortunes.conf
+
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+fi
+}
+
+SHORTCUTS(){
+TRANS=conky-shortcuts-trans.conf
+REG=conky-shortcuts.conf
+
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+fi
+}
+
+BUILDDATE(){
+REG=conky-build.conf
+
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+}
+
+CURRENT(){
+TRANS=conky-current-trans.conf
+REG=conky-current.conf
+
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+fi
+}
+
+WORLDCLOCK(){
+TRANS=conky-world-clock-trans.conf
+REG=conky-world-clock.conf
+
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
+    bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
+fi
+}
+
+export -f TIMEDATE
+export -f FULLCONKY
+export -f FORTUNES
+export -f TAO
+export -f SHORTCUTS
+export -f BUILDDATE
+export -f CURRENT
+export -f WORLDCLOCK
 
 yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
 --height=600 --text="\nToggle Your Selections\n" --text-align=center \
 --window-icon=conky-logomark-violet \
     --form \
-    --field="                          Clock!appointment-new":BTN "bash -c 'toggle_conky conky-clock-date' >/dev/null 2>&1 &" \
-    --field="                     Full Info!dialog-information":BTN "bash -c 'toggle_conky conky-full' >/dev/null 2>&1 &" \
-    --field="                    Fortunes!emblem-package":BTN "bash -c 'toggle_conky conky-fortunes' >/dev/null 2>&1 &" \
-    --field="                   Shortcuts!accessories-text-editor":BTN "bash -c 'toggle_conky conky-shortcuts' >/dev/null 2>&1 &" \
-    --field="              Tao Te Ching!application-x-addon":BTN "bash -c 'toggle_conky conky-tao' >/dev/null 2>&1 &" \
-    --field="               World Clock!emblem-web":BTN "bash -c 'toggle_conky conky-world-clock' >/dev/null 2>&1 &" \
-    --field="                Install Date!application-certificate":BTN "bash -c 'toggle_conky conky-build' >/dev/null 2>&1 &" \
+    --field="                          Clock!appointment-new":BTN "bash -c 'TIMEDATE' >/dev/null 2>&1 &" \
+    --field="                     Full Info!dialog-information":BTN "bash -c 'FULLCONKY' >/dev/null 2>&1 &" \
+    --field="                    Fortunes!emblem-package":BTN "bash -c 'FORTUNES' >/dev/null 2>&1 &" \
+    --field="                   Shortcuts!accessories-text-editor":BTN "bash -c 'SHORTCUTS' >/dev/null 2>&1 &" \
+    --field="              Tao Te Ching!application-x-addon":BTN "bash -c 'TAO' >/dev/null 2>&1 &" \
+    --field="               World Clock!emblem-web":BTN "bash -c 'WORLDCLOCK' >/dev/null 2>&1 &" \
+    --field="                Install Date!application-certificate":BTN "bash -c 'BUILDDATE' >/dev/null 2>&1 &" \
+    --field="        Area Conditions!network-wireless":BTN "bash -c 'CURRENT' >/dev/null 2>&1 &" \
+    --field="     US/Metric Format!preferences-system-sharing":FBTN "bash -c '~/.config/conky/scripts/conky-metric'" \
     --field="       12H/24H Format!appointment-new":FBTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
     --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
     --field="            Restart Conky!media-playlist-repeat":FBTN "killall -SIGUSR1 conky" \
-    --field="                  Kill Conky!process-stop":FBTN "killall conky"
-    
+    --field="                  Kill Conky!process-stop":FBTN "killall conky" 
