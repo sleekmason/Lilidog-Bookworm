@@ -191,8 +191,6 @@ yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
     --field="              Tao Te Ching!application-x-addon":BTN "bash -c 'TAO' >/dev/null 2>&1 &" \
     --field="               World Clock!emblem-web":BTN "bash -c 'WORLDCLOCK' >/dev/null 2>&1 &" \
     --field="                Install Date!application-certificate":BTN "bash -c 'BUILDDATE' >/dev/null 2>&1 &" \
-    --field="        Area Conditions!network-wireless":BTN "bash -c 'CURRENT' >/dev/null 2>&1 &" \
-    --field="     US/Metric Format!preferences-system-sharing":FBTN "bash -c '~/.config/conky/scripts/conky-metric'" \
     --field="       12H/24H Format!appointment-new":FBTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
     --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
