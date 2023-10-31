@@ -116,12 +116,25 @@ fi
 }
 
 BUILDDATE(){
+TRANS=conky-build-trans.conf
 REG=conky-build.conf
 
-if pgrep -f $REG > /dev/null; then
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+elif pgrep -f $REG > /dev/null; then
      pkill -f $REG
 else
+    bash -c "conky -c $HOME/.config/conky/$TRANS"    
+fi
+else
+if pgrep -f $REG > /dev/null; then
+     pkill -f $REG
+elif pgrep -f $TRANS > /dev/null; then
+     pkill -f $TRANS
+else
     bash -c "conky -c $HOME/.config/conky/$REG"    
+fi
 fi
 }
 
