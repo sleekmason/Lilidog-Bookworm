@@ -15,6 +15,9 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Ozark"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Gray"
 
 ## Picom transparency
+if ! pgrep -x picom > /dev/null 2>&1; then
+picom --daemon &
+fi
 sed -i 's/^active-opacity =.*/active-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^frame-opacity =.*/frame-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.94;/g' "$HOME/.config/picom.conf"
@@ -126,7 +129,6 @@ killall -q dunst
     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/world.lua
     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/build.lua
 killall -q conky
-## start conky
 if test -f "$HOME"/.config/conky/conky-shortcuts-trans.conf; then
 set -m; nohup conky -q -c "$HOME/.config/conky/conky-shortcuts-trans.conf" &> /dev/null
 fi
