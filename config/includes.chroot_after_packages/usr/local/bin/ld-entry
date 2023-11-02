@@ -160,4 +160,5 @@ echo ""
  echo ""
  echo "   [0;31m-----------------------------------------------------[0m"
 echo ""
+echo $'\n\nPress any key to quit ...'; read -srn1
 fi
