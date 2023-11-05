@@ -164,6 +164,7 @@ python3-six
 python3-pycurl 
 python3-reportbug
 python3-xlib
+qt5ct
 qt5-gtk-platformtheme
 qt5-gtk2-platformtheme
 qt5-style-plugins
