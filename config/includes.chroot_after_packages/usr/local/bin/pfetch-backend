@@ -230,7 +230,8 @@ get_os() {
             # by shipping unmodified identification files and packages
             # from their respective upstreams.
             if has lsb_release; then
-                distro=$(lsb_release -sd)
+                #distro=$(lsb_release -sd)
+                distro=$(lsb_release -sd | cut -d" " -f1,4 | sed 's/[b]/\U&/g')
 
             # Android detection works by checking for the existence of
             # the follow two directories. I don't think there's a simpler
