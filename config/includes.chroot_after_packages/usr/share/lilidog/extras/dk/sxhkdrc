@@ -200,3 +200,7 @@ alt + {equal,minus}
 # change border widths
 alt + ctrl + {_,shift + }{equal,minus}
 	dkcmd set border {width,outer_width} {+1,-1}
+
+# Splitview
+alt + s
+    xfconf-query -c thunar -p /misc-vertical-split-pane -T

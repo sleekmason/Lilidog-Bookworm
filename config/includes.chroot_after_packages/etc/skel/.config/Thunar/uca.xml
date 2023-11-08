@@ -167,4 +167,15 @@
 	<patterns>*.deb</patterns>
 	<other-files/>
 </action>
+<action>
+<icon>edit-copy</icon>
+	<name>Toggle Split</name>
+	<submenu></submenu>
+	<unique-id>1699363109853128-1</unique-id>
+	<command>xfconf-query -c thunar -p /misc-vertical-split-pane -T</command>
+	<description>Toggle Horizontal Split View</description>
+	<range>*</range>
+	<patterns>*</patterns>
+<directories/>
+</action>
 </actions>

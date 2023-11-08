@@ -91,4 +91,7 @@ shift + mod4 + x
 # screenshot and selection capture
 alt + Print
 	xfce4-screenshooter
-   
+
+# Splitview
+alt + s
+    xfconf-query -c thunar -p /misc-vertical-split-pane -T
