@@ -225,6 +225,7 @@ x11-utils
 x11-xkb-utils
 x11-xserver-utils
 xbitmaps
+xclip
 xcvt
 xdg-dbus-proxy
 xdg-desktop-portal-gtk
