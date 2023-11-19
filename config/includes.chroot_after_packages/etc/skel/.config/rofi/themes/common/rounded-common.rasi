@@ -16,7 +16,7 @@
 window {
     width    : 480px;
     lines   : 15;
-    border-radius:  16px;
+//    border-radius:  16px;
     y-offset:   -240;
     background-color:   @bg0;
 }

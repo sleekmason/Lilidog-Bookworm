@@ -8,9 +8,9 @@ Backgounds =       super + b
 Browser =          super + w
 Conky =            super + c
 jgmenu             alt + F1
-Rofi               super + F2                   
-Rofi Drun =        super + F3
-Dmenu =            super + F5 
+Rofi               alt + F2                   
+Rofi Drun =        alt + F3
+Dmenu =            alt + F5 
 Editor =           super + e 
 File Manager =     super + f   
 Fontsize =         super + F6
@@ -21,7 +21,7 @@ Logout =           super + x
 Logout-alt =       super + shift + x
 Music =            super + m
 Screenshot =       alt + Print
-Terminal	   super + t
+Terminal	       super + t
              
 Toggle polybar =   ctrl super + p
 Toggle tint2 =     ctrl super + t

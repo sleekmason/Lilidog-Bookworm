@@ -1,4 +1,4 @@
-# Cheat sheet for Lilidog keybinds.
+# Cheat sheet for Lilidog dkwm keybinds.
 # Note - "super" is the windows key.
 
 
@@ -8,8 +8,8 @@ Backgounds =       super + b
 Browser =          super + w
 Conky =            super + c
 Rofi =             alt + F2
-Rofi Drun =        super + F3
-Dmenu =            super + F5
+Rofi Drun =        alt + F3
+Dmenu =            alt + F5
 Dmenu =            alt + d                 
 Editor =           super + e 
 File Manager =     super + f   
@@ -17,10 +17,11 @@ Fontsize =         super + F6
 Gammy =            super + g    
 Hotcorners =       super + F8
 Jgmenu =           super + j 
-                   super + F1    
+                   alt + F1    
 kill window =      ctrl alt + x !! This will kill ALL open instances. Think terminal. 
 Lilidog themes =   super + F4
 Logout =           alt + x
+Logout-alt =       alt + shift + x
 Music =            super + m
 Screenshot =       alt + Print
 Terminal =         super + Return

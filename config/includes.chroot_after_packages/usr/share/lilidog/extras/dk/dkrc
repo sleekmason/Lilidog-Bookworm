@@ -13,7 +13,7 @@ xfsettingsd --daemon &
 . $HOME/.fehbg &
 lxpolkit &
 picom &
-polybar -c ~/.config/polybar/config lili-bar &
+( killall polybar; sleep 1; polybar -c ~/.config/polybar/config lili-bar ) &
 nm-applet &
 # (re)load sxhkd for keybinds
 if hash sxhkd >/dev/null 2>&1; then
