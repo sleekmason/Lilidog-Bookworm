@@ -1,5 +1,9 @@
 #!/bin/bash
 # Adapted to lilidog use by sleekmason 12-03-2022
+### Check for live and if so, exit.
+full_fs=$(df ~ | tail -1 | awk '{print $1;}')  # find partition
+fs=$(basename "$full_fs")
+if grep -q "$fs" /proc/partitions; then
 if : >/dev/tcp/8.8.8.8/53; then
 PROGNAME="ld-entry"
 [ "$USER" != "root" ] &&
@@ -88,7 +92,7 @@ _add_backports() {
 }
 
 _upgrade_kernel() {
-      _msg="Install backports kernel? (also adds repositories)"
+      _msg="Install backports kernel? (Also adds repositories)"
       do_it() { echo 'deb http://deb.debian.org/debian bookworm-backports main' | tee /etc/apt/sources.list.d/bookworm-backports.list &&
 		        apt-get update && apt-get install -y -t bookworm-backports linux-image-amd64 firmware-linux ;}
         see_it
@@ -160,5 +164,15 @@ echo ""
  echo ""
  echo "   [0;31m-----------------------------------------------------[0m"
 echo ""
+echo $'\n\nPress any key to quit ...'; read -srn1
+fi
+else
+ echo "   [0;32m-------------------------------------------------------"
+ echo ""
+ echo "   Entry script cannot be used in a live environment."
+ echo "   Install and try again!"
+ echo ""
+ echo "   -------------------------------------------------------[0m"
+ echo ""
 echo $'\n\nPress any key to quit ...'; read -srn1
 fi

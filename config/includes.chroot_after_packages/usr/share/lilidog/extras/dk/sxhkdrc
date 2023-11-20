@@ -119,6 +119,10 @@ shift + alt + x
 # screenshot and selection capture
 Print
 	xfce4-screenshooter
+
+# screenshot and selection capture 2
+alt + Print
+	scrot-options
 	 
 # dedicated volume keys
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}

@@ -1,10 +1,9 @@
 #!/bin/bash
 #
-# Change running conkys to use transparency settings on the fly if
-# there is a second rc ending in -trans.conf.
-# Made by sleekmason 23.10.30
+# Change running conkys to use transparency settings on the fly.
+# Made by sleekmason 23.11.19
 #
-# Path to newly created file
+# Path to newly created file -
 conkyfile=/tmp/conkyswitcher
 # Copy currently running conkys to file -
 ps aux | grep -i conky | awk '{ print $13 }' | tail > $conkyfile
@@ -13,17 +12,19 @@ sed -i "/^Conky\b/d" $conkyfile
 sed -i "/^conky\b/d" $conkyfile
 sed -i '/^[[:space:]]*$/d' $conkyfile
 sed -i -e 's/^/conky -c /' $conkyfile
-sed -i '1i #!/bin/bash' $conkyfile
-# Remove -trans from all to start -
-sed -i 's/-trans//g' $conkyfile
-# Add condition -
-if pgrep -x picom > /dev/null 2>&1; then
-sed -i 's/\(.*\).conf/\1-trans.conf/' $conkyfile
-fi
+sed -i '1i #!/bin/bash' $conkyfile &&
 # Restart -
-killall conky
+killall conky &&
+if pgrep -x picom > /dev/null 2>&1; then
+    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$HOME"/.config/conky/*.conf
+    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$HOME"/.config/conky/*.conf
+    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
+else
+    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$HOME"/.config/conky/*.conf
+    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$HOME"/.config/conky/*.conf
+    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
+fi
 chmod +x $conkyfile
-sleep .30
 $conkyfile
 # Remove file if desired
-# rm -f $conkyfile
+#rm -f $conkyfile

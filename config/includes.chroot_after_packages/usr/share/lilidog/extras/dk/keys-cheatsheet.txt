@@ -23,7 +23,8 @@ Lilidog themes =   super + F4
 Logout =           alt + x
 Logout-alt =       alt + shift + x
 Music =            super + m
-Screenshot =       alt + Print
+Screenshot =       PrtSctr
+Scrot      =       alt + Print
 Terminal =         super + Return
 	               super + t
 Terminal Colors =  super + F5
