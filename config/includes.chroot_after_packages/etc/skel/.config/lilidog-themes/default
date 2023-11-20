@@ -130,7 +130,7 @@ killall -q dunst
     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/build.lua
 killall -q conky
 if test -f "$HOME"/.config/conky/conky-shortcuts.conf; then
-set -m; nohup conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &> /dev/null
+set -m; conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &> /dev/null
 fi
 #(setsid conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &)
 
