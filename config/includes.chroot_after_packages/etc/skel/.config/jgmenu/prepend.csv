@@ -49,7 +49,7 @@ Wallpaper Maker,    wallpaper-maker,                  applications-graphics
 App Alternatives,   galternatives,                    preferences-system
 Update Options,     update-options,                   system-software-update
 Live USB Maker,     x-terminal-emulator -T 'Live USB Maker' -e "sudo live-usb-maker-gui-antix",     gparted
-Lucky Backup,       export QT_QPA_PLATFORMTHEME=gtk2 && luckybackup,  luckybackup
+Lucky Backup,       luckybackup,                      luckybackup
 Printer Setup,      x-terminal-emulator -T "Printer Setup" -e bash -c "printer-installer; read -srn1", printer
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
