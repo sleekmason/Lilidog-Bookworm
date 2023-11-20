@@ -37,7 +37,7 @@ nm-applet &
 lxpolkit &
 xfsettingsd --daemon &
 pnmixer &
-conky -c ~/.config/conky/conky-shortcuts-trans.conf &
+conky -c ~/.config/conky/conky-shortcuts.conf &
 sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
 
 ### Start Thunar Daemon if thunar is installed. Uncomment the three lines below to enable.
