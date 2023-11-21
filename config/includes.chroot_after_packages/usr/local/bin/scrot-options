@@ -99,7 +99,7 @@ export -f COPY
 export -f COPYSEL
 
 yad --title "Scrot" --escape-ok \
---button=gtk-cancel:0 --form --center --geometry=210x314-314-60 --borders=10 \
+--button=gtk-cancel:0 --form --center --geometry=210x304-314-60 --borders=10 \
 --text="" --text-align=center --on-top --close-on-unfocus \
 --window-icon=applications-utilities \
     --form \
