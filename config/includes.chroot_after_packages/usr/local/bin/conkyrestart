@@ -6,7 +6,7 @@
 # Path to newly created file -
 conkyfile=/tmp/conkyswitcher
 # Copy currently running conkys to file -
-ps aux | grep -i conky | awk '{ print $13 }' | tail > $conkyfile
+ps aux | grep -i conky | awk '{ print $13 }' | tail > $conkyfile &&
 # Adjust file for correct lines
 sed -i "/^Conky\b/d" $conkyfile
 sed -i "/^conky\b/d" $conkyfile
@@ -24,7 +24,9 @@ else
     sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$HOME"/.config/conky/*.conf
     sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
 fi
+sleep .50
 chmod +x $conkyfile
 $conkyfile
+exit 0
 # Remove file if desired
 #rm -f $conkyfile

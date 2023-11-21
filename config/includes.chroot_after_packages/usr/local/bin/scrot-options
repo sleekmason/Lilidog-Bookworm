@@ -1,81 +1,93 @@
 #!/bin/bash
+#
+# Use scrot with different options and have yad close on click.
+# 5 second delay is default, with the ability to copy/paste.
+# Requires yad, xclip
+#
 
 ## Add functions
 NOW(){
-# Create main directory
+# Use printf to store the current date/time as variables.	
+printf -v date "%(%F)T"
+printf -v time "%(%I-%M-%S)T"
+# Create primary and secondary directories
 DIR="$HOME/Pictures/Scrot"
 	if ! test -f "$DIR"; then
 	mkdir -p "$DIR"
-	fi
-
-# Use printf to store the current date/time as variables.
-printf -v date "%(%F)T"
-printf -v time "%(%I-%M-%S)T"
-
-# Create current date format.
+	fi	
 mkdir -p "${DIR}/${date}"
-
-# cd to folder and screenshot
-	cd "${DIR}/${date}" || exit
-	SCR="${DIR}/${date}/${date}-${time}.png"
+# cd to directory and screenshot with time attached
+cd "${DIR}/${date}" || exit
+SCR="${DIR}/${date}/${date}-${time}.png"
 scrot -m "$SCR"
 notify-send --urgency low " Saved screenshot as ${SCR/*\/}"
 }
+
 LATER(){
+# Use printf to store the current date/time as variables.	
+printf -v date "%(%F)T"
+printf -v time "%(%I-%M-%S)T"
+# Create primary and secondary directories
 DIR="$HOME/Pictures/Scrot"
 	if ! test -f "$DIR"; then
 	mkdir -p "$DIR"
-	fi
-# Use printf to store the current date/time as variables.
-printf -v date "%(%F)T"
-printf -v time "%(%I-%M-%S)T"
-
-# Create current date format.
+	fi	
 mkdir -p "${DIR}/${date}"
-
-# cd to folder and screenshot
-	cd "${DIR}/${date}" || exit
-	SCR="${DIR}/${date}/${date}-${time}.png"
-scrot -mcd 5 "$SCR"
+# cd to directory and screenshot with time attached
+cd "${DIR}/${date}" || exit
+SCR="${DIR}/${date}/${date}-${time}.png"
+scrot -md 5 "$SCR"
 notify-send --urgency low " Saved screenshot as ${SCR/*\/}"
 }
+
 CAPTURE(){
+# Use printf to store the current date/time as variables.	
+printf -v date "%(%F)T"
+printf -v time "%(%I-%M-%S)T"
+# Create primary and secondary directories
 DIR="$HOME/Pictures/Scrot"
 	if ! test -f "$DIR"; then
 	mkdir -p "$DIR"
-	fi
-# Use printf to store the current date/time as variables.
-printf -v date "%(%F)T"
-printf -v time "%(%I-%M-%S)T"
-
-# Create current date format.
+	fi	
 mkdir -p "${DIR}/${date}"
-
-# cd to folder and screenshot
-	cd "${DIR}/${date}" || exit
-	SCR="${DIR}/${date}/${date}-${time}.png"
-scrot -s -mcd 5 "$SCR"
+# cd to directory and screenshot with time attached
+cd "${DIR}/${date}" || exit
+SCR="${DIR}/${date}/${date}-${time}.png"
+scrot -s "$SCR"
 notify-send --urgency low " Saved screenshot as ${SCR/*\/}"
-}	
+}
+	
 COPY(){
-# Create main directory
+# Use printf to store the current date/time as variables.	
+printf -v date "%(%F)T"
+printf -v time "%(%I-%M-%S)T"
+# Create primary and secondary directories
 DIR="$HOME/Pictures/Scrot"
 	if ! test -f "$DIR"; then
 	mkdir -p "$DIR"
-	fi
+	fi	
+mkdir -p "${DIR}/${date}"
+# cd to directory and screenshot with time attached
+cd "${DIR}/${date}" || exit
+SCR="${DIR}/${date}/${date}-${time}.png"
+scrot -e 'xclip -selection clipboard -t image/png -i $f' "$SCR"
+notify-send --urgency low " Saved screenshot as ${SCR/*\/}"
+}
 
-# Use printf to store the current date/time as variables.
+COPYSEL(){
+# Use printf to store the current date/time as variables.	
 printf -v date "%(%F)T"
 printf -v time "%(%I-%M-%S)T"
-
-# Create current date format.
+# Create primary and secondary directories
+DIR="$HOME/Pictures/Scrot"
+	if ! test -f "$DIR"; then
+	mkdir -p "$DIR"
+	fi	
 mkdir -p "${DIR}/${date}"
-
-# cd to folder and screenshot
-	cd "${DIR}/${date}" || exit
-	SCR="${DIR}/${date}/${date}-${time}.png"
-#scrot -m "$SCR" &&
-scrot -e 'xclip -selection clipboard -t image/png -i $f'
+# cd to directory and screenshot with time attached
+cd "${DIR}/${date}" || exit
+SCR="${DIR}/${date}/${date}-${time}.png"
+scrot -e 'xclip -selection clipboard -t image/png -i $f' -scapture 5 "$SCR"
 notify-send --urgency low " Saved screenshot as ${SCR/*\/}"
 }
 
@@ -84,13 +96,15 @@ export -f NOW
 export -f LATER
 export -f CAPTURE
 export -f COPY
+export -f COPYSEL
+
 yad --title "Scrot" --escape-ok \
---button=gtk-cancel:0 --form --center --geometry=210x280-314-60 --borders=6 \
---text="\n" --text-align=center --on-top --close-on-unfocus \
+--button=gtk-cancel:0 --form --center --geometry=210x314-314-60 --borders=10 \
+--text="" --text-align=center --on-top --close-on-unfocus \
 --window-icon=applications-utilities \
     --form \
-    --field="     Zero Delay!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "NOW & kill $YAD_PID"' \
+    --field="        No Delay!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "NOW & kill $YAD_PID"' \
     --field="      5 Seconds!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "LATER & kill $YAD_PID"' \
-    --field="          Capture!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "CAPTURE & kill $YAD_PID"' \
-    --field="               Copy!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "COPY & kill $YAD_PID"'
-
+    --field="        Selection!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "CAPTURE & kill $YAD_PID"' \
+    --field="       Copy Full!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "COPY & kill $YAD_PID"' \
+    --field="    Copy Select!/usr/share/icons/hicolor/16x16/apps/org.xfce.screenshooter.png:FBTN" 'bash -c "COPYSEL & kill $YAD_PID"'
