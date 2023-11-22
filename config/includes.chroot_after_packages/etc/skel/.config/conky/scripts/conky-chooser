@@ -1,7 +1,6 @@
 #!/bin/bash
 
-TIMEDATE(){
-FILE=$HOME/.config/conky/conky-clock-date.conf
+MAIN(){
 if pgrep -x picom > /dev/null 2>&1; then
 if pgrep -f "$FILE" > /dev/null; then
     pkill -f "$FILE"
@@ -12,7 +11,6 @@ if pgrep -f "$FILE" > /dev/null; then
     bash -c "conky -c $FILE"
     fi
 else
-if ! pgrep -x picom > /dev/null 2>&1; then
 if pgrep -f "$FILE" > /dev/null; then
     pkill -f "$FILE"
     else   
@@ -22,170 +20,49 @@ if pgrep -f "$FILE" > /dev/null; then
     bash -c "conky -c $FILE"
     fi
 fi
-fi
+}
+
+TIMEDATE(){
+	FILE=$HOME/.config/conky/conky-clock-date.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 FULLCONKY(){
 FILE=$HOME/.config/conky/conky-full.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 TAO(){
 FILE=$HOME/.config/conky/conky-tao.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 FORTUNES(){
 FILE=$HOME/.config/conky/conky-fortunes.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 SHORTCUTS(){
 FILE=$HOME/.config/conky/conky-shortcuts.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 BUILDDATE(){
 FILE=$HOME/.config/conky/conky-build.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 CURRENT(){
 FILE=$HOME/.config/conky/conky-current.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
 WORLDCLOCK(){
 FILE=$HOME/.config/conky/conky-world-clock.conf
-if pgrep -x picom > /dev/null 2>&1; then
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-else
-if pgrep -f "$FILE" > /dev/null; then
-    pkill -f "$FILE"
-    else   
-    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
-    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
-    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
-    bash -c "conky -c $FILE"
-    fi
-fi
+$(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
+export -f MAIN
 export -f TIMEDATE
 export -f FULLCONKY
 export -f FORTUNES
@@ -208,5 +85,5 @@ yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
     --field="       12H/24H Format!appointment-new":FBTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
     --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
-    --field="            Restart Conky!media-playlist-repeat":FBTN "killall -SIGUSR1 conky" \
-    --field="                  Kill Conky!process-stop":FBTN "killall conky" 
+    --field="            Restart Conky!media-playlist-repeat":FBTN "conkyrestart >/dev/null 2>&1 &" \
+    --field="                  Kill Conky!process-stop":FBTN "killall conky"

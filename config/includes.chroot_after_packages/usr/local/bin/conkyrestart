@@ -24,8 +24,8 @@ else
     sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$HOME"/.config/conky/*.conf
     sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
 fi
-sleep .50
-chmod +x $conkyfile
+sleep .30
+chmod 755 $conkyfile
 $conkyfile
 exit 0
 # Remove file if desired
