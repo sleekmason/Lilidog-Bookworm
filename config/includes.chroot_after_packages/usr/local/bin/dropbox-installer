@@ -51,7 +51,7 @@ fi
 ### Initial start of dropbox
 nohup ".dropbox-dist/dropboxd" > file 2>&1 &
 ### This will set thunar as the default manager
-#xdg-mime default thunar.desktop inode/directory
+xdg-mime default thunar.desktop inode/directory
 echo ""
 echo ""
 sleep 2
