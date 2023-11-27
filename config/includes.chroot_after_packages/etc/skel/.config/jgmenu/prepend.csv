@@ -14,7 +14,7 @@ Configuration,^checkout(configuration),preferences-system
 ^sep()
 All Programs,^checkout(apps),debian-logo
 ^sep()
-Restart, openbox --restart; killall -SIGUSR1 conky, /usr/share/icons/ld-icons/pixmaps/logout_reboot.png
+Restart, openbox --restart; conkyrestart, /usr/share/icons/ld-icons/pixmaps/logout_reboot.png
 Exit,               ld-logout,                 /usr/share/icons/ld-icons/exit4.png
 
 ^tag(quickgrab)

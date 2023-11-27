@@ -215,17 +215,33 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
+    <!-- OpenBox Simple SendToDesktop (Workspace)-->
+   <keybind key="W-S-1">
+  <action name="SendToDesktop"><to>1</to></action>
     </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
+    <keybind key="W-S-2">
+  <action name="SendToDesktop"><to>2</to></action>
+    </keybind>
+    <keybind key="W-S-3">
+  <action name="SendToDesktop"><to>3</to></action>
+    </keybind>
+    <keybind key="W-S-4">
+  <action name="SendToDesktop"><to>4</to></action>
+    </keybind>
+   <keybind key="W-S-5">
+  <action name="SendToDesktop"><to>5</to></action>
+    </keybind>
+    <keybind key="W-S-6">
+  <action name="SendToDesktop"><to>6</to></action>
+    </keybind>
+    <keybind key="W-S-7">
+  <action name="SendToDesktop"><to>7</to></action>
+    </keybind>
+    <keybind key="W-S-8">
+  <action name="SendToDesktop"><to>8</to></action>
+    </keybind>
+    <keybind key="W-S-9">
+  <action name="SendToDesktop"><to>9</to></action>
     </keybind>
     <keybind key="W-F1">
       <action name="GoToDesktop">
@@ -311,6 +327,16 @@
     <keybind key="W-Down">        # HalfLowerScreen
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height></action>
+	</keybind>
+		    <!-- OpenBox 100% Window Resize --> 
+	<keybind key="W-Escape">
+	<action name="Unmaximize" />
+	<action name="MoveResizeTo">
+		<x>0</x>
+		<y>0</y>
+		<width>100%</width>
+		<height>100%</height>
+	</action>
 	</keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-S-Right">
