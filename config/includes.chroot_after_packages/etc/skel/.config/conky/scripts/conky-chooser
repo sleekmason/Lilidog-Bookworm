@@ -85,5 +85,5 @@ yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
     --field="       12H/24H Format!appointment-new":FBTN "bash -c '~/.config/conky/scripts/conky-12to24'" \
     --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
-    --field="            Restart Conky!media-playlist-repeat":FBTN "conkyrestart >/dev/null 2>&1 &" \
+    --field="            Restart Conky!media-playlist-repeat":FBTN "conkyrestart" \
     --field="                  Kill Conky!process-stop":FBTN "killall conky"
