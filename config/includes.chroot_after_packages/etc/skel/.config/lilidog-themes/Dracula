@@ -25,7 +25,7 @@ xfce4-term-colors dracula
 
 ## Change Rofi theme
 sed -i 's/^@theme "familiar.*/@theme "familiar-dracula.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
-
+sed -i 's/^@theme "rounded.*/@theme "rounded-dracula.rasi"/g' "$HOME/.config/rofi/config.rasi"
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
 rm -f ~/.cache/temp_theme

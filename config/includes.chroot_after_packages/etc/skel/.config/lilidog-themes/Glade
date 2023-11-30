@@ -28,6 +28,7 @@ xfce4-term-colors glade
 
 ## Change Rofi theme
 sed -i 's/^@theme "familiar.*/@theme "familiar-glade.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
+sed -i 's/^@theme "rounded.*/@theme "rounded-glade.rasi"/g' "$HOME/.config/rofi/config.rasi"
 
 rm -f ~/.cache/temp_theme
 rm -f ~/.cache/custom_theme

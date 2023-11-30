@@ -33,6 +33,7 @@ xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/
 openbox --reconfigure
 
 ## Rofi theme
+sed -i 's/^@theme "rounded.*/@theme "rounded-ozark.rasi"/g' "$HOME"/.config/rofi/config.rasi
 sed -i 's/^@theme "familiar.*/@theme "familiar-ozark.rasi"/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
 sed -i 's/^font: "Noto Sans.*/font: "Noto Sans 10";/g' "$HOME"/.config/rofi/themes/familiar/familiar.rasi
 sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
