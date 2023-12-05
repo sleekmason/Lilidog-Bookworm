@@ -4,5 +4,5 @@ Name=Conky Chooser
 Exec=.config/conky/scripts/conky-chooser
 StartupNotify=false
 Terminal=false
-Icon=conky-logomark-violet
+Icon=utilities-system-monitor
 Categories=ld-misc-tools;

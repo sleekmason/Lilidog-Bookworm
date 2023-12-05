@@ -4,5 +4,5 @@ Name=OSprober toggle
 Exec=osprober-toggle
 StartupNotify=false
 Terminal=false
-Icon=applications-system
+Icon=preferences-desktop-personal
 Categories=ld-misc-tools;

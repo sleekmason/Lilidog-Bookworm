@@ -8,7 +8,7 @@ csv_name_format = %n
 #csv_name_format = %n (%g)
 # csv_cmd = ob
 
-icon_theme = gnome
+icon_theme = Obsidian
 icon_theme_fallback = gnome
 icon_size = 16
 icon_text_spacing = 14

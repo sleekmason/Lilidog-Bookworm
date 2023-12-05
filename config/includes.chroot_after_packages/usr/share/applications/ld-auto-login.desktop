@@ -4,5 +4,5 @@ Name=Auto Login
 Exec=lightdm-autologin
 StartupNotify=false
 Terminal=false
-Icon=preferences-system
+Icon=user_icon
 Categories=ld-misc-tools;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=conky
+Exec=~/.config/conky/scripts/conky-chooser
+StartupNotify=false
+Terminal=false
+Icon=conky-logomark-violet
+Categories=System;Monitor;

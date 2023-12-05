@@ -4,5 +4,5 @@ Name=Notification Sounds
 Exec=notification-sounds
 StartupNotify=false
 Terminal=false
-Icon=applications-system
+Icon=audio-x-generic
 Categories=ld-misc-tools;

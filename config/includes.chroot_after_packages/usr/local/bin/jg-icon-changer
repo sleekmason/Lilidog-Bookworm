@@ -31,9 +31,9 @@ noti=$(yad --width 444 --borders=10 --entry --title "Jgmenu Icon & Font Options"
     --button="Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
     --button=" Font Size"!/usr/share/icons/gnome/22x22/apps/preferences-desktop-font.png!:"jg-font-size" \
     --button="gtk-ok:0" \
-    --text "  Adwaita, Gnome, and Breeze icons are installed. \n  Use 'Install Icons' below to install extra themes.\n" \
+    --text "  Gnome, and Obsidian icons are installed. \n  Use 'Install Icons' below for more icons.\n" \
     --entry-text \
-    "Please Select Menu Icon Theme" "Adwaita" "Gnome - Default" "Buuf" "Breeze" "Breeze-Dark" "Circle-Dark" "Dark Papirus" "Light Papirus" "Numix Circle" "Faenza" "Paper" "Obsidian" "Off")
+    "Please Select Menu Icon Theme" "Buuf" "Breeze" "Breeze-Dark" "Circle-Dark" "Dark Papirus" "Faenza" "Gnome" "Light Papirus" "Numix Circle" "Paper" "Obsidian - Default" "Off")
 
 case $noti in
   Adwaita*)
@@ -168,7 +168,7 @@ notify-send --urgency low 'Menu Icons Set To Paper'
 else
 notify-send --urgency low "Paper icons are not currently installed"
 fi ;;
-  Obsidian)
+  Obsidian*)
     if [[ -d "/usr/share/icons/Obsidian" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc

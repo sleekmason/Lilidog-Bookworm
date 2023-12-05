@@ -4,5 +4,5 @@ Name=Jgmenu Icon Options
 Exec=jg-icon-changer
 StartupNotify=false
 Terminal=false
-Icon=org.xfce.settings.color
+Icon=applications-graphics
 Categories=ld-misc-tools

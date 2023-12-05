@@ -2,20 +2,20 @@
 @icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png
 @search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search
 ^sep()
-Terminal,           x-terminal-emulator,       utilities-terminal
-Thunar,             thunar,           /usr/share/icons/ld-icons/Thunar.png
+Terminal,           x-terminal-emulator,       org.xfce.terminal
+Thunar,             thunar,           system-file-manager
 Firefox,            firefox,          firefox-esr
 ^sep()
-Quick Grab,^checkout(quickgrab),applications-other
+Quick Grab,^checkout(quickgrab), org.xfce.settings.default-applications
 ^sep()
-Toggles,^checkout(toggles),/usr/share/icons/ld-icons/toggle.png
-Utilities,^checkout(utilities),applications-utilities
-Configuration,^checkout(configuration),preferences-system
+Toggles,^checkout(toggles), preferences-desktop-personal
+Utilities,^checkout(utilities), applications-utilities
+Configuration,^checkout(configuration), preferences-other
 ^sep()
-All Programs,^checkout(apps),debian-logo
+All Programs,^checkout(apps),preferences-system-search
 ^sep()
-Restart, openbox --restart; conkyrestart, /usr/share/icons/ld-icons/pixmaps/logout_reboot.png
-Exit,               ld-logout,                 /usr/share/icons/ld-icons/exit4.png
+Restart, openbox --restart; conkyrestart, org.xfce.settings.manager
+Exit,               ld-logout,                 application-exit
 
 ^tag(quickgrab)
 Theme Folders,^checkout(themes),folder
@@ -32,21 +32,21 @@ Development,^checkout(development),applications-development
 Meld,               meld,                              document-properties
 Gpick,              gpick,                             gpick
 Geany,              geany,	                       geany
-Icon Browser,       yad-icon-browser,                  galternatives
+Icon Browser,       yad-icon-browser,              applications-science
 
 ^tag(utilities)
 Screenshot,         xfce4-screenshooter,              org.xfce.screenshooter
 Htop,               x-terminal-emulator -T 'Htop' -e htop,                    htop
 lxtask,             lxtask,                           applications-engineering
 Inxi Info,          x-terminal-emulator -T 'Inxi Info' -e bash -c "inxi -Fxrzm; echo $'\n\nPress any key to close'; read -srn1",   document-properties
-Hard Info,          hardinfo,                         /usr/share/hardinfo/pixmaps/logo.png
+Hard Info,          hardinfo,                         applications-accessories
 HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Transmission,       transmission-gtk,                     transmission
-Color Chooser,      yad --color,                      org.xfce.settings.color
-Kernel Remover,     x-terminal-emulator -T 'Kernel Remover' -e 'sudo kernel-remover -G dialog',     edit-cut
+Color Chooser,      yad --color,                      applications-graphics
+Kernel Remover,     x-terminal-emulator -T 'Kernel Remover' -e 'sudo kernel-remover -G dialog',     applications-accessories
 Check Firmware,     x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Wallpaper Maker,    wallpaper-maker,                  applications-graphics
-App Alternatives,   galternatives,                    preferences-system
+App Alternatives,   galternatives,                    org.xfce.settings.default-applications
 Update Options,     update-options,                   system-software-update
 Live USB Maker,     x-terminal-emulator -T 'Live USB Maker' -e "sudo live-usb-maker-gui-antix",     gparted
 Lucky Backup,       luckybackup,                      luckybackup
@@ -54,24 +54,24 @@ Printer Setup,      x-terminal-emulator -T "Printer Setup" -e bash -c "printer-i
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
 Synaptic,           gksudo synaptic,                  synaptic
-Install Extras,     ld-installers,                    applications-utilities
+Install Extras,     ld-installers,                    preferences-system-search
 
 ^tag(toggles)
-Conky,               $HOME/.config/conky/scripts/conky-chooser,     preferences-system
-Gammy,               toggle.gammy,                                  preferences-system
-Jgmenu,              jg-icon-changer,                               preferences-system
-Rofi Icons,          rofi-options,                                  preferences-system
-Hotcorners,          toggle.ld,                                     preferences-system
-Random BG,           toggle-wallpaper-random,                       preferences-system
-Tint2 Options,       tint2-options,                                 preferences-system
-Mouse Finder,        toggle-mouse-pointer,                          preferences-system
-Transparency,        transparency-system,                           preferences-system
-Tint2 Toggle,        toggle.tint2,                                  preferences-system
-Auto Login,          lightdm-autologin,                             preferences-system
-Clipboard,           toggle.parcellite,                             preferences-system
-OSprober,            osprober-toggle,                               preferences-system
-Sounds,              notification-sounds,                           preferences-system
-Picom,               toggle.picom,                                  preferences-system
+Conky,               $HOME/.config/conky/scripts/conky-chooser,     preferences-desktop-personal
+Gammy,               toggle.gammy,                                  preferences-desktop-personal
+Jgmenu,              jg-icon-changer,                               preferences-desktop-personal
+Rofi Icons,          rofi-options,                                  preferences-desktop-personal
+Hotcorners,          toggle.ld,                                     preferences-desktop-personal
+Random BG,           toggle-wallpaper-random,                       preferences-desktop-personal
+Tint2 Options,       tint2-options,                                 preferences-desktop-personal
+Mouse Finder,        toggle-mouse-pointer,                          preferences-desktop-personal
+Transparency,        transparency-system,                           preferences-desktop-personal
+Tint2 Toggle,        toggle.tint2,                                  preferences-desktop-personal
+Auto Login,          lightdm-autologin,                             preferences-desktop-personal
+Clipboard,           toggle.parcellite,                             preferences-desktop-personal
+OSprober,            osprober-toggle,                               preferences-desktop-personal
+Sounds,              notification-sounds,                           preferences-desktop-personal
+Picom,               toggle.picom,                                  preferences-desktop-personal
 Xkill,               xkill,                                         edit-delete
 
 ^tag(rootfiles)
@@ -94,19 +94,19 @@ Grub Backgrounds,         thunar ~/Pictures/grub-bg,                     folder-
 ^tag(configuration)
 Openbox,             obconf,                                                               obconf
 Wallpapers,          feh-set-wallpaper,                                                    preferences-desktop-display
-Quick Themes,        ld-theme-changer,                                                     preferences-desktop-theme
-System Settings,     xfce4-settings-manager,                                               preferences-system
+Quick Themes,        ld-theme-changer,                                                     applications-graphics
+System Settings,     xfce4-settings-manager,                                               org.xfce.settings.manager
 Custom Toggles,      geany ~/.config/lilidog-themes/Light-Dark ~/.config/lilidog-themes/Custom,  document-properties
-Power Manager,       xfce4-power-manager-settings,                                               applications-system
-Tint2 Settings,      tint2conf,                                                            tint2
+Power Manager,       xfce4-power-manager-settings,                                         org.xfce.powermanager
+Tint2 Settings,      tint2conf,                                                            tint2conf
 Keybinds,            geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
-Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  preferences-system
+Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  lightdm-gtk-greeter-settings
 Jgmenu,              geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Conky,               thunar ~/.config/conky,                                               document-properties
 Urxvt,               geany ~/.Xresources,                                                  utilities-terminal
 Picom,               geany ~/.config/picom.conf,                                           document-properties
 Dmenu F3,            geany ~/.config/dmenu/apps,                                           document-properties
-Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        zoom-fit-best 
-Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-theme
+Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
+Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
 
 ^tag(apps)
