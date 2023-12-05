@@ -39,7 +39,7 @@ Screenshot,         xfce4-screenshooter,              org.xfce.screenshooter
 Htop,               x-terminal-emulator -T 'Htop' -e htop,                    htop
 lxtask,             lxtask,                           applications-engineering
 Inxi Info,          x-terminal-emulator -T 'Inxi Info' -e bash -c "inxi -Fxrzm; echo $'\n\nPress any key to close'; read -srn1",   document-properties
-Hard Info,          hardinfo,                         applications-accessories
+Hard Info,          hardinfo,                         drive-multidisk
 HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Transmission,       transmission-gtk,                     transmission
 Color Chooser,      yad --color,                      applications-graphics
