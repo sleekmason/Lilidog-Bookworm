@@ -99,7 +99,7 @@ entry {
     border-color: 		@color02;
     border-radius:		0px 4px 4px 0px;
     background-color: 	@color03;
-    font:               "Noto Sans 11";
+font: "Noto Sans 10";
     text-color: 		@color04;
     
     padding: 		5px 10px;
