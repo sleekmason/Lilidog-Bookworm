@@ -15,7 +15,7 @@
     // Inactive tab background
     color05: #282828;
     // Inactive tab text
-    color06: #E0E0DE;
+    color06: #D0D8DB;
     // Active tab background (inside box)
     color07: #2F353B;
     // Active tab text

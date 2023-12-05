@@ -44,6 +44,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Adwaita";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Adwaita";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Adwaita'
 else
 notify-send --urgency low "Adwaita icons are not currently installed"
@@ -56,6 +58,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "gnome";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Gnome'
 else
 notify-send --urgency low "Gnome icons are not currently installed"
@@ -68,6 +72,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "buuf";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "buuf";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Buuf'
 else
 notify-send --urgency low "Buuf icons are not currently installed"
@@ -80,6 +86,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "breeze";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "breeze";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Breeze'
 else
 notify-send --urgency low "Breeze icons are not currently installed"
@@ -92,6 +100,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Breeze-Dark'
 else
 notify-send --urgency low "Breeze icons are not currently installed"
@@ -104,6 +114,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Circle-Dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Circle-Dark";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Circle Dark'
 else
 notify-send --urgency low "Circle icons are not currently installed"
@@ -116,6 +128,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Papirus-Dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Papirus-Dark";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Papirus Dark'
 else
 notify-send --urgency low "Full Papirus icon theme not currently installed"
@@ -128,6 +142,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Papirus";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Papirus";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Papirus Light'
 else
 notify-send --urgency low "Full Papirus icon theme not currently installed"
@@ -140,6 +156,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Numix-Circle";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Numix-Circle";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Numix Circle'
 else
 notify-send --urgency low "Numix icons are not currently installed"
@@ -152,6 +170,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Faenza-Ambiance";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Faenza-Ambiance";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Faenza-Ambiance'
 else
 notify-send --urgency low "Faenza icons are not currently installed"
@@ -164,6 +184,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Paper";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Paper";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Paper'
 else
 notify-send --urgency low "Paper icons are not currently installed"
@@ -176,6 +198,8 @@ then
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
+     sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
+     sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/config.rasi
 notify-send --urgency low 'Menu Icons Set To Obsidian'
 else
 notify-send --urgency low "Obsidian icons are not currently installed"
