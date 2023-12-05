@@ -4,5 +4,5 @@ Name=Terminal Themes
 Exec=ld-term-changer
 StartupNotify=false
 Terminal=false
-Icon=utilities-terminal
+Icon=org.xfce.terminalemulator
 Categories=ld-theme-tools;
