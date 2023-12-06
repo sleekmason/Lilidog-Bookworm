@@ -1,42 +1,59 @@
 #! /bin/bash
 # Jgmenu options for icon type, on/off, and font size.
 
-# Toggle jgmenu icons on/off
-jg-icon-toggle(){
+
+jg-font-size(){
+WIDTH=240
+HEIGHT=400
+
+trans="$(yad --title "Font Size" --width="$WIDTH" --height="$HEIGHT" --borders="8" --center --list \
+--text="Jgmenu font size changer.\nFonts default to Noto Sans.\n" --text-align=center \
+--window-icon=applications-system \
+--radiolist  --column "Choose" --column "Size" --separator=" " \
+  FALSE "8" \
+  FALSE "9" \
+  FALSE "10" \
+  TRUE "11" \
+  FALSE "12" \
+  FALSE "13" \
+  FALSE "14" \
+  FALSE "15")"
+  trans="$(echo "$trans" | cut -d' ' -f2-)"
+ 
+# check if "Cancel" button
+if ! [[ $trans ]];
+then
+  exit 1
+fi
+
+    sed -i "s/font =.*/font = Noto Sans $trans/g" ~/.config/jgmenu/jgmenurc
+    ## Conversely, only select the first instance of the line.
+    ## sed -i "0,/font = Noto Sans/{s/font = Noto Sans.*/font = Noto Sans ${trans}/}" ~/.config/jgmenu/jgmenurc
+pkill -x jgmenu
+
+exit 0
+}
+
+Off(){
 FILE="$HOME/.config/jgmenu/prepend.csv"
 STRING="#@icon,,"
 
 if  grep -q "$STRING" "$FILE" ; then
 if  grep -q "icon_size = 0" "$HOME/.config/jgmenu/jgmenurc" ; then
 exit
-else
-     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
-     sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' "$FILE"
-     sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' "$FILE"
-     sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
 fi
  else
      sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv
      sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a#@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' "$FILE"
      sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	7,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' "$FILE"
      sed -i 's/^icon_size.*/icon_size = 0/g' ~/.config/jgmenu/jgmenurc
+     notify-send --urgency low 'Menu Icons Toggled Off'
 fi
 }
 
 # The above, exported.
-export -f jg-icon-toggle
 
-noti=$(yad --width 444 --borders=10 --entry --title "Jgmenu Icon & Font Options" --center --window-icon=applications-system \
-    --image="jgmenu" \
-    --button="Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
-    --button=" Font Size"!/usr/share/icons/gnome/22x22/apps/preferences-desktop-font.png!:"jg-font-size" \
-    --button="gtk-ok:0" \
-    --text "  Gnome, and Obsidian icons are installed. \n  Use 'Install Icons' below for more icons.\n" \
-    --entry-text \
-    "Please Select Menu Icon Theme" "Buuf" "Breeze" "Breeze-Dark" "Circle-Dark" "Dark Papirus" "Faenza" "Gnome" "Light Papirus" "Numix Circle" "Paper" "Obsidian - Default" "Off")
-
-case $noti in
-  Adwaita*)
+Adwaita(){
    if [[ -d "/usr/share/icons/Adwaita" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -49,8 +66,9 @@ then
 notify-send --urgency low 'Menu Icons Set To Adwaita'
 else
 notify-send --urgency low "Adwaita icons are not currently installed"
-fi ;;
-  Gnome*) 
+fi
+}
+Gnome(){
    if [[ -d "/usr/share/icons/gnome" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc 
@@ -63,8 +81,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Gnome'
 else
 notify-send --urgency low "Gnome icons are not currently installed"
-fi  ;;
-  Buuf)
+fi
+}
+
+Buuf(){
      if [[ -d "/usr/share/icons/buuf" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -77,50 +97,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Buuf'
 else
 notify-send --urgency low "Buuf icons are not currently installed"
-fi  ;;
-  Breeze)
-   if [[ -d "/usr/share/icons/breeze" ]]
-then
-     sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
-     sed -i 's/^icon_theme =.*/icon_theme = breeze/g' ~/.config/jgmenu/jgmenurc
-     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
-     sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
-     sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
-     sed -i 's/^icon-theme:.*/icon-theme: "breeze";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
-     sed -i 's/^icon-theme:.*/icon-theme: "breeze";/g' "$HOME"/.config/rofi/config.rasi
-notify-send --urgency low 'Menu Icons Set To Breeze'
-else
-notify-send --urgency low "Breeze icons are not currently installed"
-fi ;;
-  Breeze-Dark*)
-   if [[ -d "/usr/share/icons/breeze-dark" ]]
-then
-     sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
-     sed -i 's/^icon_theme =.*/icon_theme = breeze-dark/g' ~/.config/jgmenu/jgmenurc
-     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
-     sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
-     sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
-     sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
-     sed -i 's/^icon-theme:.*/icon-theme: "breeze-dark";/g' "$HOME"/.config/rofi/config.rasi
-notify-send --urgency low 'Menu Icons Set To Breeze-Dark'
-else
-notify-send --urgency low "Breeze icons are not currently installed"
-fi ;;
-  Circle*)
-   if [[ -d "/usr/share/icons/Circle-Dark" ]]
-then
-     sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
-     sed -i 's/^icon_theme =.*/icon_theme = Circle-Dark/g' ~/.config/jgmenu/jgmenurc
-     sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
-     sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
-     sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
-     sed -i 's/^icon-theme:.*/icon-theme: "Circle-Dark";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
-     sed -i 's/^icon-theme:.*/icon-theme: "Circle-Dark";/g' "$HOME"/.config/rofi/config.rasi
-notify-send --urgency low 'Menu Icons Set To Circle Dark'
-else
-notify-send --urgency low "Circle icons are not currently installed"
-fi ;;
-   Dark*)
+fi
+}
+
+Dark(){
     if [[ -d "/usr/share/icons/Papirus-Dark" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -133,8 +113,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Papirus Dark'
 else
 notify-send --urgency low "Full Papirus icon theme not currently installed"
-fi ;;
-  Light*)
+fi
+}
+
+Light(){
     if [[ -d "/usr/share/icons/Papirus" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -147,8 +129,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Papirus Light'
 else
 notify-send --urgency low "Full Papirus icon theme not currently installed"
-fi ;;
-  Numix*)
+fi
+}
+
+Numix(){
     if [[ -d "/usr/share/icons/Numix-Circle" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -161,8 +145,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Numix Circle'
 else
 notify-send --urgency low "Numix icons are not currently installed"
-fi ;;
-  Faenza)
+fi
+}
+
+Faenza(){
     if [[ -d "/usr/share/icons/Faenza-Ambiance" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -175,8 +161,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Faenza-Ambiance'
 else
 notify-send --urgency low "Faenza icons are not currently installed"
-fi ;;
-  Paper)
+fi
+}
+
+Paper(){
     if [[ -d "/usr/share/icons/Paper" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -189,8 +177,10 @@ then
 notify-send --urgency low 'Menu Icons Set To Paper'
 else
 notify-send --urgency low "Paper icons are not currently installed"
-fi ;;
-  Obsidian*)
+fi
+}
+
+Obsidian(){
     if [[ -d "/usr/share/icons/Obsidian" ]]
 then
      sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
@@ -203,10 +193,44 @@ then
 notify-send --urgency low 'Menu Icons Set To Obsidian'
 else
 notify-send --urgency low "Obsidian icons are not currently installed"
-fi ;;
-   Off*)
+fi
+}
+
+O(){
      bash -c jg-icon-toggle
-notify-send --urgency low 'Menu Icons Toggled Off' ;;
-        *) exit 1 ;;
-    esac
+notify-send --urgency low 'Menu Icons Toggled Off'
+}
+
+## Export functions
+
+export -f jg-font-size
+export -f Gnome
+export -f Buuf
+export -f Dark
+export -f Light
+export -f Numix
+export -f Faenza
+export -f Paper
+export -f Obsidian
+export -f Off
+
+yad --title "Jgmenu Icon & Font Options" --escape-ok \
+    --button="Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
+    --button=" Font Size"!/usr/share/icons/gnome/22x22/apps/preferences-desktop-font.png!:'bash -c "jg-font-size"' \
+    --button=" Exit!application-exit:0" \
+    --buttons-layout=end \
+    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for more choices.\n" \
+    --form --center --geometry=210x270-314-60 --borders=10 \
+    --window-icon=jgmenu \
+    --form --columns=3 \
+    --field="     Buuf     :FBTN" 'bash -c "Buuf"' \
+    --field="     Faenza     :FBTN" 'bash -c "Faenza"' \
+    --field="     Gnome     :FBTN" 'bash -c "Gnome"' \
+    --field="Numix:FBTN" 'bash -c "Numix"' \
+    --field="Paper:FBTN" 'bash -c "Paper"' \
+    --field="Papirus Dark:FBTN" 'bash -c "Dark"' \
+    --field="Papirus Light:FBTN" 'bash -c "Light"' \
+    --field="Obsidian:FBTN" 'bash -c "Obsidian"' \
+    --field="Off:FBTN" 'bash -c "Off"'
+
 killall -q jgmenu
