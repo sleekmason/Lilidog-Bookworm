@@ -7,7 +7,7 @@ WIDTH=240
 HEIGHT=400
 
 trans="$(yad --title "Font Size" --width="$WIDTH" --height="$HEIGHT" --borders="8" --center --list \
---text="Jgmenu font size changer.\nFonts default to Noto Sans.\n" --text-align=center \
+--text="Menu font size changer.\nFonts default to Noto Sans.\n" --text-align=center \
 --window-icon=applications-system \
 --radiolist  --column "Choose" --column "Size" --separator=" " \
   FALSE "8" \
@@ -26,9 +26,17 @@ then
   exit 1
 fi
 
-    sed -i "s/font =.*/font = Noto Sans $trans/g" ~/.config/jgmenu/jgmenurc
-    ## Conversely, only select the first instance of the line.
-    ## sed -i "0,/font = Noto Sans/{s/font = Noto Sans.*/font = Noto Sans ${trans}/}" ~/.config/jgmenu/jgmenurc
+sed -i "s/font =.*/font = Noto Sans $trans/g" ~/.config/jgmenu/jgmenurc
+# Conversely, only select the first instance of the line.
+# sed -i "0,/font = Noto Sans/{s/font = Noto Sans.*/font = Noto Sans ${trans}/}" ~/.config/jgmenu/jgmenurc
+
+# Rofi options included - adjust as necessary
+sed -i "s/^font: \"Noto Sans.*/font: \"Noto Sans $trans\";/g" "$HOME"/.config/rofi/config.rasi
+# Setup for rofi-familiar -1 for font
+
+VAR=$((trans - 1))
+sed -i "s/^font: \"Noto Sans.*/font: \"Noto Sans $VAR\";/g" "$HOME"/.config/rofi/themes/familiar/familiar.rasi
+
 pkill -x jgmenu
 
 exit 0
@@ -214,12 +222,12 @@ export -f Paper
 export -f Obsidian
 export -f Off
 
-yad --title "Jgmenu Icon & Font Options" --escape-ok \
+yad --title "Menu Icon & Font Options" --escape-ok \
     --button="Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
     --button=" Font Size"!/usr/share/icons/gnome/22x22/apps/preferences-desktop-font.png!:'bash -c "jg-font-size"' \
     --button=" Exit!application-exit:0" \
     --buttons-layout=end \
-    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for more choices.\n" \
+    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for more options.\n" \
     --form --center --geometry=210x270-314-60 --borders=10 \
     --window-icon=jgmenu \
     --form --columns=3 \

@@ -36,7 +36,7 @@ openbox --reconfigure
 sed -i 's/^@theme "rounded.*/@theme "rounded-ozark.rasi"/g' "$HOME"/.config/rofi/config.rasi
 sed -i 's/^@theme "familiar.*/@theme "familiar-ozark.rasi"/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
 sed -i 's/^font: "Noto Sans.*/font: "Noto Sans 10";/g' "$HOME"/.config/rofi/themes/familiar/familiar.rasi
-sed -i 's/^font: "Noto Sans.*/font: "Noto Sans 10";/g' "$HOME"/.config/rofi/config.rasi
+sed -i 's/^font: "Noto Sans.*/font: "Noto Sans 11";/g' "$HOME"/.config/rofi/config.rasi
 sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
 sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/config.rasi
 sed -i 's/^show-icons:.*/show-icons: true;/g' "$HOME"/.config/rofi/themes/familiar/config.rasi

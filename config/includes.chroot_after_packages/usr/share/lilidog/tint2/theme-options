@@ -1,9 +1,9 @@
 Auto Themes,                ld-themes,                                applications-graphics
-Conky,                      ~/.config/conky/scripts/conky-chooser,    utilities-system-monitor
-Font Sizes,                 fontsize-changer,                         preferences-desktop-font                            
-Menu Icons,                 jg-icon-changer,                          jgmenu
+Conky Options,                      ~/.config/conky/scripts/conky-chooser,    utilities-system-monitor                       
+Menu Icons + Fonts,         jg-icon-changer,                          jgmenu
 Notification Sounds,        notification-sounds,                      audio-x-generic
 Openbox Settings,           obconf,                                   obconf
+System Font Sizes,          fontsize-changer,                         preferences-desktop-font    
 System Settings,            xfce4-settings-manager,                   org.xfce.settings.manager
 Terminal Colors,            ld-term-changer,                          org.xfce.terminal
 Transparency,               transparency-system,                      preferences-desktop-personal
