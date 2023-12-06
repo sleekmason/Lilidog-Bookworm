@@ -246,9 +246,9 @@ yad --title "Menu Icon & Font Options" --escape-ok \
     --button="Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
     --button=" Font Size"!/usr/share/icons/gnome/22x22/apps/preferences-desktop-font.png!:'bash -c "jg-font-size"' \
     --button=" Exit!application-exit:0" \
-    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for other options.\n" \
+    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for other options. \n This dialog will change both jgmenu and rofi.\n" \
     --text-align=center --buttons-layout=edge \
-    --form --center --geometry=210x270-314-60 --borders=10 \
+    --form --center --geometry=210x290-314-60 --borders=10 \
     --window-icon=jgmenu \
     --form --columns=3 \
     --field="     Buuf     :FBTN" 'bash -c "Buuf"' \

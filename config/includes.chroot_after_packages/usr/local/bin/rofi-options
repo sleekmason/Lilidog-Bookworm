@@ -160,17 +160,17 @@ yad --title "Rofi Icon & Font Options" --escape-ok \
     --button="Install Icons"!/usr/share/icons/gnome/22x22/categories/applications-graphics.png!:"popup -f /usr/share/lilidog/installers/icons &" \
     --button=" Font Size"!/usr/share/icons/gnome/22x22/apps/preferences-desktop-font.png!:'bash -c "FONTSIZE"' \
     --button=" Exit!application-exit:0" \
-    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for other options.\n" \
+    --text " Gnome and Obsidian icons are already installed. \n Press the 'Install Icons' button for other options. \n This dialog will change rofi options only.\n" \
     --text-align=center --buttons-layout=edge \
-    --form --center --geometry=210x270-314-440 --borders=10 \
-    --window-icon=jgmenu \
+    --form --center --geometry=210x290-314-440 --borders=10 \
+    --window-icon=preferences-other \
     --form --columns=3 \
     --field="     Buuf     :FBTN" 'bash -c "buuf"' \
     --field="     Faenza     :FBTN" 'bash -c "faenza"' \
     --field="     Gnome     :FBTN" 'bash -c "gnome"' \
     --field="Numix:FBTN" 'bash -c "numix"' \
     --field="Paper:FBTN" 'bash -c "papericon"' \
-    --field="Papirus:FBTN" 'bash -c "papirus"' \
     --field="Papirus Dark:FBTN" 'bash -c "papirus-dark"' \
+    --field="Papirus Light:FBTN" 'bash -c "papirus"' \
     --field="Obsidian:FBTN" 'bash -c "obsidian"' \
     --field="Off:FBTN" 'bash -c "OFF"'
