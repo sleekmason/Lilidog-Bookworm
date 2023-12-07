@@ -1,23 +1,26 @@
 #!/bin/bash
-read -p "             [0;33mObsidian Icon Theme Installer.[0m
+read -p "              [0;33mPapirus Icon Installer[0m
 
-
-   Just a convenience to download the Obsidian Icon theme set.
+   This script will install the Papirus Icon Theme.  For all
+   the Papirus colors, please use the papirus installer located
+   in the Graphics Installers.
     
    ---------------------------------------------------------------
    
-   [0;32mPlease press enter to install the Obsidian Icon Theme.[0m
+   [0;32mPlease press enter to install Papirus.[0m
    
    ---------------------------------------------------------------    
       
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-sudo apt update && sudo apt install -y obsidian-icon-theme &&
-sudo gtk-update-icon-cache /usr/share/icons/Obsidian*
+sudo apt update && sudo apt install -y papirus-icon-theme &&
+sudo update-icon-caches /usr/share/icons/Papirus*
+echo ""
+echo "--------------------------------------------------------------"
 echo ""
 echo ""
-echo "[0;32mAll done. Enjoy your new icon theme![0m"
+ echo "[0;33mAll done. Enjoy your new icon themes![0m"
 echo ""
 echo ""
 else

@@ -13,8 +13,8 @@ read -p "              [0;33mPaper Icon Theme Installer.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-sudo apt update && sudo apt install paper-icon-theme
-
+sudo apt update && sudo apt install -y paper-icon-theme
+sudo update-icon-caches /usr/share/icons/Paper*
 echo ""
 echo ""
 echo "[0;32mAll done. Enjoy your new icon theme![0m"

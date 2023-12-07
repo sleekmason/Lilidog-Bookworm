@@ -26,7 +26,7 @@ read -p "              [0;33mPapirus Icon Installer With Added Colors[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-sudo apt update && sudo apt install papirus-icon-theme &&
+sudo apt update && sudo apt install -y papirus-icon-theme &&
 echo ""
 echo "--------------------------------------------------------------"
 echo ""
