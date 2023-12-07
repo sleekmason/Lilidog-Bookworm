@@ -251,14 +251,14 @@ yad --title "Menu Icon & Font Options" --escape-ok \
     --form --center --geometry=210x290-314-60 --borders=10 \
     --window-icon=jgmenu \
     --form --columns=3 \
-    --field="     Buuf     :FBTN" 'bash -c "Buuf"' \
-    --field="     Faenza     :FBTN" 'bash -c "Faenza"' \
-    --field="     Gnome     :FBTN" 'bash -c "Gnome"' \
-    --field="Numix:FBTN" 'bash -c "Numix"' \
-    --field="Paper:FBTN" 'bash -c "Paper"' \
-    --field="Papirus Dark:FBTN" 'bash -c "Dark"' \
-    --field="Papirus Light:FBTN" 'bash -c "Light"' \
-    --field="Obsidian:FBTN" 'bash -c "Obsidian"' \
+    --field="     Buuf     :FBTN" 'bash -c "Buuf >/dev/null 2>&1 &"' \
+    --field="     Faenza     :FBTN" 'bash -c "Faenza >/dev/null 2>&1 &"' \
+    --field="     Gnome     :FBTN" 'bash -c "Gnome >/dev/null 2>&1 &"' \
+    --field="Numix:FBTN" 'bash -c "Numix >/dev/null 2>&1 &"' \
+    --field="Paper:FBTN" 'bash -c "Paper >/dev/null 2>&1 &"' \
+    --field="Papirus Dark:FBTN" 'bash -c "Dark >/dev/null 2>&1 &"' \
+    --field="Papirus Light:FBTN" 'bash -c "Light >/dev/null 2>&1 &"' \
+    --field="Obsidian:FBTN" 'bash -c "Obsidian >/dev/null 2>&1 &"' \
     --field="Off:FBTN" 'bash -c "Off"'
 
 killall -q jgmenu
