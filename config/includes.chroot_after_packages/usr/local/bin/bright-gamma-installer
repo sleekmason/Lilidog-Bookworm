@@ -27,8 +27,8 @@ wget https://raw.githubusercontent.com/sleekmason/packages/master/bright-gamma_1
 echo ""
 echo ""
 sudo apt update && sudo apt install -y /tmp/./bright-gamma*
-sed -i '/Brightness,          bright-gamma,                                  preferences-system/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Rofi Icons.*/a Brightness,          bright-gamma,                                  preferences-system' ~/.config/jgmenu/prepend.csv
+sed -i '/Brightness,          bright-gamma,                                  preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Rofi Icons.*/a Brightness,          bright-gamma,                                  preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "[0;33m-------------------------------------------------------------------"

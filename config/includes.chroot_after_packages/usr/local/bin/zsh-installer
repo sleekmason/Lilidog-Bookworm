@@ -38,8 +38,8 @@ echo ""
 echo ""
 sudo apt update && sudo apt install zsh &&
 sudo chsh -s /bin/zsh $USER &&
-sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' ~/.config/jgmenu/prepend.csv
+sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 else
 cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &
@@ -51,8 +51,8 @@ echo "   [0;32mAdding custom ~/.zshrc to match Lilidog defaults and
 echo ""
 echo ""
 sudo chsh -s /bin/zsh $USER &&
-sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-system/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-system' ~/.config/jgmenu/prepend.csv
+sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
 killall jgmenu
 fi
 echo ""
