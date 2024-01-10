@@ -311,6 +311,18 @@
         </finalactions>
       </action>
     </keybind>
+    <!-- Unmaximize -->
+    <keybind key="A-F7">
+     <action name="Unmaximize"/>
+    </keybind>
+    <!-- Maximize -->
+    <keybind key="A-F6">
+     <action name="Maximize"/>
+     </keybind>
+    <!-- OpenBox 100% Window Resize --> 
+	 <keybind key="A-F12">
+      <action name="ToggleFullscreen"/>
+    </keybind>
     <!-- Keybindings for window snapping -->
     <keybind key="W-Left">        # HalfLeftScreen
       <action name="UnmaximizeFull"/>
@@ -328,16 +340,6 @@
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo"><x>0</x><y>-0</y><width>100%</width><height>50%</height></action>
 	</keybind>
-	    <!-- OpenBox 100% Window Resize --> 
- <keybind key="W-Escape">
-  <action name="Unmaximize" />
-  <action name="MoveResizeTo">
-    <x>0</x>
-    <y>0</y>
-    <width>100%</width>
-    <height>100%</height>
-  </action>
-</keybind>
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-S-Right">
       <action name="DirectionalCycleWindows">

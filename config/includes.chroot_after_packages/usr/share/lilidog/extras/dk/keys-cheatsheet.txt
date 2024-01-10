@@ -3,7 +3,7 @@
 
 
 This List =        super + l
-
+Refresh sxhkd keys super + Escape
 Backgounds =       super + b
 Browser =          super + w
 Conky =            super + c
