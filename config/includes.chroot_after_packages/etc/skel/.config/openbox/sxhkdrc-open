@@ -2,50 +2,55 @@
 # These are the keybinds used in openbox.
 #########################################################
 
-# This List as a cheatsheet.txt
+# sxhkd keybind list as a cheatsheet.txt.
 mod4 + l
     geany ~/.config/openbox/keys-cheatsheet.txt
     
-# make sxhkd reload its configuration files
-mod4 + Escape
-	pkill -USR1 -x sxhkd
+# sxhkd keybind list through a rofi dialog.
+mod4 + k
+	show-keybinds
     
-# Openbox Keybinds
+# Reload sxhkd configuration.
+mod4 + Escape
+	pkill -USR1 -x sxhkd; notify-send --urgency low 'sxhkd configuration reloaded'
+		
+# Openbox Keybinds.
 mod4 + o
 	obkey
 
+# Jgmenu.
 alt + F1
     jgmenu_run 
 
-# Rofi
+# Rofi full.
 alt + F2
     ~/.config/rofi/scripts/rofi-familiar
 
-# Rofi Drun
+# Rofi Drun.
 alt + F3
     rofi -show drun
 
-# Dmenu
+# Dmenu.
 alt + F5
     ~/.config/dmenu/dmenu
 
-# Conky
+# Conky.
 mod4 + c
     ~/.config/conky/scripts/conky-chooser
-    
-# Gammy
+        
+# Gammy.
 mod4 + g
     toggle.gammy
  
-# jgmenu
+# jgmenu.
 mod4 + j
     jgmenu_run 
    
-# Toggle polybar panel on/off
+# Toggle polybar panel on/off.
 ctrl  + mod4 + p
     toggle.polybar
 
-# Toggle tint2 panel on/off
+# Toggle tint2 panel on/off.
 ctrl + mod4 + t
     toggle.tint2
 
@@ -57,49 +62,50 @@ mod4 + y
 mod4 + u
    "custom-theme-toggle"
 
-# terminal
+# terminal.
 mod4 + Return
 	x-terminal-emulator
 
+# terminal.
 mod4 + t
     x-terminal-emulator
     
-# File Manager	
+# File Manager.	
 mod4 + f
     thunar
 
-# Editor
+# Editor.
 mod4 + e
     geany  
 
-# Music
+# Music.
 mod4 + m
     pragha
 
-# Wallpaper
+# Wallpaper.
 mod4 + v
     feh-set-wallpaper
     
-# Browser
+# Web browser.
 mod4 + b
     firefox-esr
 
-# Logout
+# Logout.
 mod4 + x
     ld-logout
 
-# Logout large alternate
+# Logout alternative.
 shift + mod4 + x
     ~/.config/rofi/scripts/nakedquit
 
-# screenshot and selection capture
+# screenshot and selection capture.
 Print
 	xfce4-screenshooter
 
-# screenshot and selection capture 2
+# screenshot and selection capture scrot.
 alt + Print
 	scrot-options
 
-# Splitview
+# Thunar Splitview.
 alt + s
     xfconf-query -c thunar -p /misc-vertical-split-pane -T

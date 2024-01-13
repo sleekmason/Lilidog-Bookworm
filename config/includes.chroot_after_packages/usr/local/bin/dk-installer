@@ -54,6 +54,9 @@ echo '## Uncomment to use openbox as default: (may not be required)'
 echo '#exec openbox-session'
 } >> ~/.xsessionrc
 fi
+sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Live.*/a Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts' ~/.config/jgmenu/prepend.csv
+killall jgmenu
 echo ""
 echo "----------------------------------------------------------------------"
 echo ""
