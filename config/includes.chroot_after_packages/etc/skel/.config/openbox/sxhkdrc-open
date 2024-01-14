@@ -4,8 +4,8 @@
 
 # sxhkd keybind list as a cheatsheet.txt.
 mod4 + l
-    geany ~/.config/openbox/keys-cheatsheet.txt
-    
+	geany ~/.config/openbox/keys-cheatsheet.txt
+       
 # sxhkd keybind list through a rofi dialog.
 mod4 + k
 	show-keybinds
@@ -20,47 +20,47 @@ mod4 + o
 
 # Jgmenu.
 alt + F1
-    jgmenu_run 
+	jgmenu_run 
 
 # Rofi full.
 alt + F2
-    ~/.config/rofi/scripts/rofi-familiar
+	~/.config/rofi/scripts/rofi-familiar
 
 # Rofi Drun.
 alt + F3
-    rofi -show drun
+	rofi -show drun
 
 # Dmenu.
 alt + F5
-    ~/.config/dmenu/dmenu
+	~/.config/dmenu/dmenu
 
 # Conky.
 mod4 + c
-    ~/.config/conky/scripts/conky-chooser
+	~/.config/conky/scripts/conky-chooser
         
 # Gammy.
 mod4 + g
-    toggle.gammy
+	toggle.gammy
  
 # jgmenu.
 mod4 + j
-    jgmenu_run 
+	jgmenu_run 
    
 # Toggle polybar panel on/off.
 ctrl  + mod4 + p
-    toggle.polybar
+	toggle.polybar
 
 # Toggle tint2 panel on/off.
 ctrl + mod4 + t
-    toggle.tint2
+	toggle.tint2
 
 # Switch to light theme and back.
 mod4 + y
-   "light-dark-toggle"
+	light-dark-toggle
 
 # Switch to custom theme and back.
 mod4 + u
-   "custom-theme-toggle"
+	custom-theme-toggle
 
 # terminal.
 mod4 + Return
@@ -68,35 +68,35 @@ mod4 + Return
 
 # terminal.
 mod4 + t
-    x-terminal-emulator
+	x-terminal-emulator
     
 # File Manager.	
 mod4 + f
-    thunar
+	thunar
 
 # Editor.
 mod4 + e
-    geany  
+	geany  
 
 # Music.
 mod4 + m
-    pragha
+	pragha
 
 # Wallpaper.
 mod4 + v
-    feh-set-wallpaper
+	feh-set-wallpaper
     
 # Web browser.
 mod4 + b
-    firefox-esr
+	firefox-esr
 
 # Logout.
 mod4 + x
-    ld-logout
+	ld-logout
 
 # Logout alternative.
 shift + mod4 + x
-    ~/.config/rofi/scripts/nakedquit
+	~/.config/rofi/scripts/nakedquit
 
 # screenshot and selection capture.
 Print
@@ -108,4 +108,4 @@ alt + Print
 
 # Thunar Splitview.
 alt + s
-    xfconf-query -c thunar -p /misc-vertical-split-pane -T
+	xfconf-query -c thunar -p /misc-vertical-split-pane -T
