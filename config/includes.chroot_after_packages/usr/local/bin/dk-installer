@@ -1,6 +1,6 @@
 #!/bin/bash
 echo ""
-read -p "   [0;33mDk Installer.[0m
+read -p "   [0;32mDk Window Manager Installer[0m
 
    This is a script to install the dk window manager on your system
    with polybar and sxhkd configurations included.
@@ -10,13 +10,13 @@ read -p "   [0;33mDk Installer.[0m
    if they exist.
    
    For more information: 
-   https://bitbucket.org/natemaia/dk/src/master/
+   [0;33mhttps://bitbucket.org/natemaia/dk/src/master/[0m
    
-   [0;32m-------------------------------------------------------------
+   [0;32m----------------------------------------------------
    
    Please press enter to install the dk window manager.
    
-   -------------------------------------------------------------[0m
+   ----------------------------------------------------[0m
       
    Or close this terminal window to quit the install." ;
 ## Check for internet connection
@@ -64,7 +64,7 @@ echo ""
 echo "[0;32mAll Finished!.
 
 Logout and choose dk to change WM's if lightdm is installed.
-If lightdm is not installed, uncomment the entry in ~/.xsessionrc to use dkwm.
+If lightdm is not installed, uncomment the entry in ~/.xsessionrc to use dk.
 
 To uninstall, run: 'dk-uninstaller' in a terminal.[0m"
 echo "" 
