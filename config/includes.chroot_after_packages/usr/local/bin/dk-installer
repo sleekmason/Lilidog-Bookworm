@@ -45,7 +45,8 @@ cd /tmp/dk-conf-files
 cp -r /tmp/dk-conf-files/dk ~/.config &&
 cp -r /tmp/dk-conf-files/polybar ~/.config &&
 # For .xsessionrc use:
-if ! grep -Fq "DKWM" ~/.xsessionrc; then
+if [ -e "$HOME/.xsessionrc" ]; then
+  if ! grep -Fq "DKWM" ~/.xsessionrc; then
 {
 echo ''
 echo '## Uncomment to use DKWM as default:'
@@ -54,21 +55,26 @@ echo ''
 echo '## Uncomment to use openbox as default: (may not be required)'
 echo '#exec openbox-session'
 } >> ~/.xsessionrc
+  fi
 fi
+if [ -e "/usr/local/bin/show-keybinds-dk" ]; then
 sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts/d' ~/.config/jgmenu/prepend.csv &&
 sed -i '/Live USB Maker/a Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
+fi
 echo ""
-echo "----------------------------------------------------------------------"
+echo "[0;33m--------------------------------------------------------------"
 echo ""
-echo "[0;32mAll Finished!.
+echo "All Finished!
 
 Logout and choose dk to change WM's if lightdm is installed.
-If lightdm is not installed, uncomment the entry in ~/.xsessionrc to use dk.
+If lightdm is not installed, uncomment the entry 'exec dk'
+in ~/.xsessionrc to use dk.
 
-To uninstall, run: 'dk-uninstaller' in a terminal.[0m"
+To uninstall, run: 'dk-uninstaller' in a terminal, or to
+just remove dkwm, run 'sudo apt remove dk'."
 echo "" 
-echo "----------------------------------------------------------------------"
+echo "--------------------------------------------------------------[0m"
 else
 echo ""
  echo "   [0;31m-------------------------------------------------------"
