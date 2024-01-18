@@ -56,7 +56,7 @@ echo '#exec openbox-session'
 } >> ~/.xsessionrc
 fi
 sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Live.*/a Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts' ~/.config/jgmenu/prepend.csv
+sed -i '/Live USB Maker/a Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------------"
