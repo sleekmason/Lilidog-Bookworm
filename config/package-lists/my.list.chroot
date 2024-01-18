@@ -27,7 +27,6 @@ dbus-user-session
 dbus-x11
 desktop-base
 dialog
-dnsmasq
 dosfstools
 dunst
 e2fsprogs
