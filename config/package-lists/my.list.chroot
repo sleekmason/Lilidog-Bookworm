@@ -27,6 +27,7 @@ dbus-user-session
 dbus-x11
 desktop-base
 dialog
+dnsmasq
 dosfstools
 dunst
 e2fsprogs
@@ -249,7 +250,7 @@ xserver-xorg-legacy
 xserver-xorg-input-all
 xserver-xorg-input-evdev
 xserver-xorg-input-libinput
-# xserver-xorg-input-synaptics
+xserver-xorg-input-synaptics
 xserver-xorg-input-wacom
 xserver-xorg-video-all
 xserver-xorg-video-amdgpu
