@@ -64,6 +64,7 @@ menu=(
 	" Pcmanfm File Manager|apt-get install --install-recommends pcmanfm -y"
 	" Bluetooth Support|apt-get install bluetooth bluez-tools blueman libspa-0.2-bluetooth gstreamer1.0-gl gstreamer1.0-x gstreamer1.0-plugins-bad rfkill -y"
 	" Synaptic Package Manager|apt-get install synaptic apt-xapian-index software-properties-gtk libgtk3-perl xdg-utils -y"
+	" Gnome Boxes|apt-get install --install-recommends gnome-boxes dnsmasq -y"
 	" Qemu VM|apt-get install --install-recommends qemu-system-x86 virt-manager -y"
 	" Xscreensaver|apt-get install --install-recommends xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra -y"
 	 )

@@ -41,7 +41,7 @@ if [ -e "$HOME/.config/polybar" ]; then
      cp -r "$HOME/.config/polybar" "$HOME/.config/polybar.bak"
    fi
 fi
-cd /tmp/dk-conf-files
+cd /tmp/dk-conf-files || exit &&
 cp -r /tmp/dk-conf-files/dk ~/.config &&
 cp -r /tmp/dk-conf-files/polybar ~/.config &&
 # For .xsessionrc use:
