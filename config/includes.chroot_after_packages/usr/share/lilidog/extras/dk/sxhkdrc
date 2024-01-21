@@ -17,10 +17,6 @@ mod4 + Escape
 alt + F1
 	jgmenu_run
 
-# Dmenu.
-alt + d
-	~/.config/dmenu/dmenu
-
 # Rofi full.
 alt + F2
 	~/.config/rofi/scripts/rofi-familiar
