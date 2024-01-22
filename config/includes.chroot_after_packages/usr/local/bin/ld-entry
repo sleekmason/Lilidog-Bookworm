@@ -128,7 +128,11 @@ _autologin() {
 
 _reboot() {
       _msg="Update complete. Reboot? (Y if new kernel installed)"
-      do_it() { sed -i '/welcome.sh &/d' /home/"${SUDO_USER}"/.config/openbox/autostart && reboot ;}
+      do_it() { sed -i '/welcome-backend.sh.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
+		  if ! grep hypervisor /proc/cpuinfo ; then
+          sed -i '/vmrestore.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
+          fi
+          reboot ;}
         see_it
         no_see
         run_it
@@ -153,8 +157,13 @@ _firmware
 _reboot
 fi
 [ "$_interactive" = "yes" ] &&
+sed -i '/welcome-backend.sh.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
+if ! grep hypervisor /proc/cpuinfo ; then
+sed -i '/vmrestore.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
+fi
+echo
+echo
 echo $'\n\nPress any key to quit ...'; read -srn1
-sed -i '/welcome-backend.sh &/d' /home/"${SUDO_USER}"/.config/openbox/autostart
 echo
 else
 echo ""

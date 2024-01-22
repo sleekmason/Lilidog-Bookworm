@@ -10,7 +10,7 @@ xdg-mime default thunar.desktop inode/directory &&
 --button=" Begin"!/usr/share/icons/gnome/22x22/places/debian-swirl.png!:"x-terminal-emulator -T 'Customization' -e 'sudo ld-entry -i'" \
 --button=" Exit!application-exit:0" \
 --text-info --justify=left --wrap < /usr/share/lilidog/welcome.txt --fontname="JetBrains Mono Light 11" \
---fore="#E6E6E3"; sed -i '/welcome-backend.sh &/d' ~/.config/openbox/autostart; exit
+--fore="#E6E6E3"; sed -i '/welcome-backend.sh &/d' ~/.config/openbox/autostart; sed -i '/vmrestore.*/d' ~/.config/openbox/autostart; exit
 else
   yad --notification --image=/usr/share/icons/ld-icons/install.png --text "Install Lilidog ┃ User password ▸ 'user' ┃ Root password ▸ 'live'" --command "gksudo calamares" &
   yad --title "Welcome!" --window-icon=/usr/share/icons/ld-icons/paw-color.png \
