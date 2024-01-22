@@ -69,7 +69,7 @@ sort = no
  # idle_threshold = 60
 
 ### The transparency of the window.  Range: [0; 100].
-transparency = 28
+transparency = 8
 
 ### The format of the message.  Possible variables are:
  #   %a  appname
