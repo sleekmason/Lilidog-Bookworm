@@ -44,7 +44,8 @@ if [ -d "/usr/sbin" ] ; then
     PATH="${PATH:+${PATH}:}/usr/sbin"
 fi
 
-# autostart X on successful login to tty1
+## autostart X on successful login to tty1
+## Uncomment the following three lines
 #if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 #  exec startx
 #fi

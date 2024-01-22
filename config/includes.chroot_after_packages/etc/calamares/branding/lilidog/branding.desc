@@ -24,7 +24,7 @@ images:
     productLogo:         "lilidog-logo-ozark.png"
     productIcon:         "lilidog-logo-ozark.png"
     productWelcome:      "welcome.png"
-    # productWallpaper:    "Forge.png"
+    productWallpaper:    "Gray.png"
 
 slideshow:               "show.qml"
 
