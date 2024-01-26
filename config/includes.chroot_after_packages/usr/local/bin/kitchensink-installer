@@ -7,12 +7,12 @@ read -p"   [0;33mKitchensink Installer[0m
    making for an easy initial system setup. This one is geared 
    towards getting a full setup in one go.
    
-   This script installs: live-build, live-config, live-boot, git
+   Installs: live-build, live-config, live-boot, git, inkscape
    openssh-sftp-server, filezilla, mousepad, pcmanfm, pyradio
-   gimp, brightness slider (if backlight controls exist), Circle 
+   gimp, brightness slider (if backlight exists), zsh, Circle 
    icons, Obsidian icons, Papirus icons, firefox, and Thunderbird.
    
-   Logout and back to switch to zsh shell as default.
+   Look in the Toggles menu to change shell to zsh as default.
     
    [0;33m-------------------------------------------
    
@@ -164,15 +164,11 @@ mv ~/.local/share/icons/Papirus-color Papirus-Magenta &&
 sed -i "2s/color/Magenta/g" ~/.local/share/icons/Papirus-Magenta/index.theme
 echo "   [0;33mMagenta icon theme added.[0m"
 fi
-sudo /usr/local/bin/update-icons /usr/share/icons/
 echo ""
 echo "   [0;33mEnjoy your new icon themes![0m"
-echo ""
 echo "   [0;33mContinuing...[0m"
-sleep 2
 sudo update-icon-caches /usr/share/icons/*
 ## The rest of the packages
-echo ""
 sudo apt install -y live-build live-config live-boot mousepad \
 git openssh-sftp-server filezilla firefox-esr thunderbird \
 hunspell-en-us zsh gimp gimp-data-extras ghostscript libgts-bin \
@@ -183,10 +179,7 @@ echo "   [0;33mInstalling custom live build configs for Lilidog use...[0m" && 
 echo ""
 sudo cp -f /tmp/live-build-changes-master/usr/share/live/build/functions/firmwarelists.sh /usr/share/live/build/functions/firmwarelists.sh
 sudo cp -f /tmp/live-build-changes-master/usr/lib/live/build/config /usr/lib/live/build/config
-echo ""
 echo "   [0;33mDone. Continuing...[0m" && sleep 1
-echo ""
-echo ""
 if test -e "$HOME"/.zshrc ; then
 echo ""
 echo "   [0;33mMoving existing ~/.zshrc to ~/.zshrc.bak and installing zsh ...[0m"
@@ -194,12 +187,11 @@ echo ""
 echo "   [0;31mIn order to use your old version of ~/.zshrc
    delete ~/.zshrc and rename the backup.[0m"
 mv "$HOME"/.zshrc "$HOME"/.zshrc.bak &&
-cp /usr/share/lilidog/extras/zsh/.zshrc "$HOME"/.zshrc &&
-sudo chsh -s /bin/zsh "$USER"
-echo ""
+cp /usr/share/lilidog/extras/zsh/.zshrc "$HOME"/.zshrc
+#sudo chsh -s /bin/zsh "$USER"
 else
-cp /usr/share/lilidog/extras/zsh/.zshrc "$HOME"/.zshrc &&
-sudo chsh -s /bin/zsh "$USER"
+cp /usr/share/lilidog/extras/zsh/.zshrc "$HOME"/.zshrc
+#sudo chsh -s /bin/zsh "$USER"
 fi
 ## Place menu entries
 sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' "$FILE"
@@ -210,6 +202,7 @@ sed -i '/bash\/zsh,            zsh-toggle,                                    pr
 sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' "$FILE"
 sed -i '/Filezilla,    filezilla,                  filezilla/d' "$FILE"
 sed -i '/Extras/i Filezilla,    filezilla,                  filezilla' "$FILE"
+sed -i '/Inkscape,               inkscape,                              org.xfce.settings.color/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Inkscape,               inkscape,                              org.xfce.settings.color' "$FILE"
 sed -i '/Gimp,               gimp,                              gimp/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Gimp,               gimp,                              gimp' "$FILE"
@@ -222,7 +215,7 @@ killall -q jgmenu
 echo ""
 echo "   [0;33m----------------------------------------------------------------"
 echo ""
-echo "   All Finished! Please log out and back in to change shell to zsh."
+echo "   All Finished! Look in the Toggles menu to change shell to zsh."
 echo ""
 echo "   You should find new menu entrys for most of the items installed."
 echo "" 
