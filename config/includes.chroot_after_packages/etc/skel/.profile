@@ -47,5 +47,5 @@ fi
 ## autostart X on successful login to tty1
 ## Uncomment the following three lines
 #if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-#  exec startx
+#exec startx
 #fi
