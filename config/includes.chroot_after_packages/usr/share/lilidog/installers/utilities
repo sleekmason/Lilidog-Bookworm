@@ -1,3 +1,4 @@
+Install Batsignal,        x-terminal-emulator -T 'Batsignal Installer' -e bash -c "batsignal-installer; echo $'\n\nPress any key to close.'; read -srn1",             applications-utilities
 Install Bluetooth,        x-terminal-emulator -T 'Bluetooth Installer' -e bash -c "bluetooth-installer; echo $'\n\nPress any key to close.'; read -srn1",             applications-utilities
 Install Brightness Tray Icon,  x-terminal-emulator -T 'Brightness And Gamma Tray Icon Installer' -e bash -c "bright-gamma-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
 Install Etcher USB Maker, x-terminal-emulator -T 'Etcher Installer' -e bash -c "etcher-installer; echo $'\n\nPress any key to close.'; read -srn1",                   applications-utilities

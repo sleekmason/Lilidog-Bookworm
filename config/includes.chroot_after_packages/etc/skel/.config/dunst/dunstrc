@@ -100,13 +100,13 @@ ellipsize = middle
 ### Icons ###
 
 ### Recursive icon lookup. You can set a single theme or define all lookup paths.
-# enable_recursive_icon_lookup = true
+enable_recursive_icon_lookup = true
 
 ## Set icon theme (only used for recursive icon lookup)
 # icon_theme = Adwaita
     
 ## You can also set multiple icon themes, with the leftmost one being used first.
-# icon_theme = "breeze, gnome, Adwaita,"
+icon_theme = "Obsidian, gnome,"
 
 ## Align icons left/right/top/off
 icon_position = left
@@ -114,7 +114,7 @@ icon_position = left
 ## Scale small icons up to this size, set to 0 to disable. Helpful
  # for e.g. small files or high-dpi screens. In case of conflict,
  # max_icon_size takes precedence over this.
-min_icon_size = 24
+min_icon_size = 22
 
 ## Scale larger icons down to this size, set to 0 to disable
 max_icon_size = 32
