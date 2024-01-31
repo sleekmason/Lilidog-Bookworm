@@ -7,8 +7,9 @@ read -p "   [0;32mMaestral Installer[0m
    to exclude local files from syncing, and allows syncing multiple 
    Dropbox accounts. For more information: [0;33mhttps://maestral.app/[0m
    
-   To see all Maestral cli commands: [0;33mhttps://maestral.app/cli[0m
+   Note* Firefox-esr will be installed if not already present.
    
+   To see all Maestral cli commands: [0;33mhttps://maestral.app/cli[0m
    Note* - To use Maestral cli commands after installation,
    in a terminal first enter: [0;34msource maestral-venv/bin/activate[0m
    
@@ -26,7 +27,7 @@ read -p "   [0;32mMaestral Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 # Make sure dependencies are installed - quietly
-sudo apt update && sudo apt install -y python3.11-venv desktop-file-utils shared-mime-info &&
+sudo apt update && sudo apt install -y python3.11-venv desktop-file-utils shared-mime-info firefox-esr &&
 sudo update-desktop-database &&
 python3 -m venv maestral-venv &&
 source maestral-venv/bin/activate &&
@@ -35,13 +36,10 @@ python3 -m pip install --upgrade maestral &&
 # For Maestral gui
 python3 -m pip install --upgrade 'maestral[gui]'
 
-# Initial Maestral start
-source maestral-venv/bin/activate && maestral gui &
 echo ""
 echo "   [0;33m----------------------------------------------------------------"
 echo ""
-echo "   To set up Maestral at a later date, exit all windows now and"
-echo "   start Maestral later from Menu --> All Programs --> Internet"
+echo "   To start Maestal, goto Menu --> All Programs --> Internet"
 echo ""
 echo "   ----------------------------------------------------------------[0m"
 echo ""
@@ -70,7 +68,6 @@ echo "Terminal=false"
 echo "Icon=applications-internet"
 echo "Categories=Network;";} | sudo tee -a /usr/share/applications/maestral.desktop > /dev/null
 fi
-exit
 else
 echo ""
  echo "   [0;31m-----------------------------------------------------[0m"
@@ -80,4 +77,3 @@ echo ""
  echo "   [0;31m-----------------------------------------------------[0m"
 echo ""
 fi
-read -n1 -p " Press any key to quit this dialog ... "

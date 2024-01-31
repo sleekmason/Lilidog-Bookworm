@@ -5,7 +5,7 @@
     version, providing all the programs necessary 
     for fast, efficient, and productive use.
      
-    Check out our forum for more information:
+    Please visit our forum for more information:
     https://www.forum.lilidog.org/
     
     For initial settings, please see the paw icon
@@ -13,10 +13,10 @@
     wallpapers, and other options are available.
 
     To install Lilidog, click on the green button 
-    in the system tray, or goto Menu All Programs
-    System - Install Lilidog. The 'root' password  
-    for the session is 'live'.
+    in the tray. Or try Menu --> All Programs -->
+    System --> Install Lilidog. The passwords are  
+    'user' for username, and 'live' for root.
     
     The debian installer is also an option should
-    you prefer it. Reboot to access the menu.
-
+    you prefer. Reboot to access the menu.
+    

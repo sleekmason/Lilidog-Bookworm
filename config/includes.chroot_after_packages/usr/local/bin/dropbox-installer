@@ -5,7 +5,8 @@ read -p "   [0;32mDropbox Installer[0m
    This script will download and install Dropbox. Securely store, 
    organize, and share all of your files.
    
-   A web browser is recommended for dropbox initialization.
+   Note* A web browser is required for dropbox initialization.
+   firefox-esr will be installed if not already present.
    
    [0;33mhttps://www.dropbox.com/[0m
    
@@ -22,20 +23,8 @@ read -p "   [0;32mDropbox Installer[0m
       
    Or close this terminal window to quit the install." ;
 echo ""
-full_fs=$(df ~ | tail -1 | awk '{print $1;}')  # find partition
-fs=$(basename "$full_fs")
 ### Check for internet connection
-   if : >/dev/tcp/8.8.8.8/53; then  
-### Find out if in Live environment and quit if so.
-if ! grep -q "$fs" /proc/partitions; then
- echo "   [0;32m-------------------------------------------------------"
- echo ""
- echo "   Dropbox cannot be installed in a live environment."
- echo "   Install and try again!"
- echo ""
- echo "   -------------------------------------------------------[0m"
- echo ""
-else
+   if : >/dev/tcp/8.8.8.8/53; then
 ### Remove old configs
 rm -fr ~/.local/share/.dropbox-dist
 rm -fr ~/.dropbox
@@ -43,7 +32,7 @@ rm -fr ~/.dropbox
 xdg-mime default thunar.desktop inode/directory
 ### Install dependencies
 sudo apt update
-sudo apt-get install -y wget python3-gpg
+sudo apt-get install -y wget python3-gpg firefox-esr
 cd ~/.local/share || exit
 ### Grab dropbox.py for terminl use
 sudo wget -O /usr/local/bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" &&
@@ -78,7 +67,6 @@ echo "Icon=web-browser"
 echo "Categories=Network;";} | sudo tee -a /usr/share/applications/dropbox.desktop > /dev/null
 fi
 sleep 8
-fi
 else
 echo ""
  echo "   [0;31m-------------------------------------------------------"
