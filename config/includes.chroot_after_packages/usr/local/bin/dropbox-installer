@@ -66,6 +66,10 @@ echo "Terminal=false"
 echo "Icon=web-browser"
 echo "Categories=Network;";} | sudo tee -a /usr/share/applications/dropbox.desktop > /dev/null
 fi
+if ! grep -q Firefox "$HOME/.config/jgmenu/prepend.csv"; then
+sed -i '/Firefox,            firefox,          firefox-esr/d' "$HOME/.config/jgmenu/prepend.csv"
+sed -i '7i Firefox,            firefox,          firefox-esr' "$HOME/.config/jgmenu/prepend.csv"
+fi
 sleep 8
 else
 echo ""
