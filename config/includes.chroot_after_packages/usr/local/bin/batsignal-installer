@@ -5,7 +5,7 @@ read -p "   [0;33mBatsignal Installer[0m
    Batsignal is a lightweight battery daemon that notifies the
    user about various battery states through notifications.
    
-   Default settings are: 10% critical, 20% warning, 97% full.
+   Default settings are: 10% critical, 20% warning, 98% full.
    Adjust settings in ~/.config/systemd/user/options.conf
    
    For more information: 
@@ -40,7 +40,7 @@ echo "[0;33m--------------------------------------------------------------"
 echo ""
 echo "   All Finished!
 
-   Defaults to: 10% critical, 20% warning, 97% full. Adjust
+   Defaults to: 10% critical, 20% warning, 98% full. Adjust
    settings in ~/.config/systemd/user/options.conf
 
    To remove: From a terminal run: 'sudo dpkg -r batsignal'."
