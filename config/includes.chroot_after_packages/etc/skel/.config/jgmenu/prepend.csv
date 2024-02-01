@@ -46,8 +46,8 @@ Color Chooser,      yad --color,                      applications-graphics
 Kernel Remover,     x-terminal-emulator -T 'Kernel Remover' -e 'sudo kernel-remover -G dialog',     applications-accessories
 Check Firmware,     x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Wallpaper Maker,    wallpaper-maker,                  applications-graphics
+Upgrade Options,    update-options,                   system-software-update
 App Alternatives,   galternatives,                    org.xfce.settings.default-applications
-Update Options,     update-options,                   system-software-update
 Live USB Maker,     x-terminal-emulator -T 'Live USB Maker' -e "sudo live-usb-maker-gui-antix",     gparted
 Sxhkd Keys OB,      show-keybinds,                    preferences-desktop-keyboard-shortcuts
 Lucky Backup,       luckybackup,                      luckybackup
