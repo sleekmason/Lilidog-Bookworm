@@ -3,14 +3,15 @@
 ## by sleekmason 1-21-2024
 
 toggleit(){
-	xfce4-display-settings && 
+	notify-send -t 12000 --urgency low " Wallpaper corruption will be fixed on 'Close' ... "
+	xfce4-display-settings &&
 	~/.fehbg
+	
 }
 export -f toggleit	
 if grep hypervisor /proc/cpuinfo ; then
-sleep 4
-notify-send -t 10000 --urgency low " Adjust VM resolution for Virtualbox and Qemu   "
-notify-send -t 10000 --urgency low "through the blue icon in the tint2 panel   "
+sleep 5
+notify-send -t 8000 --urgency low " Adjust resolution through blue 'D' icon in panel ... "
     yad --notification --listen --image="/usr/share/icons/ld-icons/display.png" \
     --text="Display Settings ┃ All Options" \
     --menu="Display Settings!bash -c toggleit!display|Wallpaper Fix!bash -c ~/.fehbg!org.xfce.settings.display|Exit!quit!application-exit" \
