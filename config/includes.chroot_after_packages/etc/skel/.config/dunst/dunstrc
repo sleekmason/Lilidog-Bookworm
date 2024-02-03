@@ -43,10 +43,10 @@ progress_bar_max_width = 300
 separator_height = 1
 
 ## Padding between text and separator.
-padding = 18
+padding = 10
 
 ## Horizontal padding.
-horizontal_padding = 6
+horizontal_padding = 8
 
 ## Padding between text and icon.
 text_icon_padding = 0
