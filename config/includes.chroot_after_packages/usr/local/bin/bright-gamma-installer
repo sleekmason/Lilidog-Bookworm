@@ -20,7 +20,7 @@ read -r -p "   [0;32mBrightness and Gamma tray icon Installer[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
    if ! test -e /sys/class/backlight/*; then
-   notify-send --urgency low 'Backlight support unavailable on this system'
+   notify-send --urgency low 'Backlight support unavailable'
 exit
 else
 echo ""
