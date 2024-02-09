@@ -62,6 +62,7 @@ Conky,               $HOME/.config/conky/scripts/conky-chooser,     preferences-
 Gammy,               toggle.gammy,                                  preferences-desktop-personal
 Jgmenu,              jg-icon-changer,                               preferences-desktop-personal
 Rofi Icons,          rofi-options,                                  preferences-desktop-personal
+Font Sizes,          fontsize-changer,                              preferences-desktop-personal
 Hotcorners,          toggle.ld,                                     preferences-desktop-personal
 Random BG,           toggle-wallpaper-random,                       preferences-desktop-personal
 Tint2 Options,       tint2-options,                                 preferences-desktop-personal

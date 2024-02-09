@@ -248,7 +248,7 @@ yad --title "Menu Icon & Font Options" --escape-ok \
     --button=" Exit!application-exit:0" \
     --text " Gnome and Obsidian icons are already installed. \n Press 'Install Icons' for other icon options.\n" \
     --text-align=center --buttons-layout=edge \
-    --form --center --geometry=210x270-314-60 --borders=10 \
+    --form --center --geometry=210x270-314-80 --borders=10 \
     --window-icon=jgmenu \
     --form --columns=3 \
     --field="     Buuf     :FBTN" 'bash -c "Buuf >/dev/null 2>&1 &"' \
