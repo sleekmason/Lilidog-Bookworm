@@ -316,7 +316,7 @@
         <command>xfce4-screenshooter</command>
       </action>
     </keybind> 
--->
+    -->
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">
