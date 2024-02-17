@@ -10,7 +10,7 @@ echo ""
 sudo apt remove -y dk &&
 echo ""
 echo ""
-sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    \/usr\/share\/icons\/ld-icons\/dk.png/d' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "Finished!"

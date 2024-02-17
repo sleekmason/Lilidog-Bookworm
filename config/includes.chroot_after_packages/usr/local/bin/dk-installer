@@ -3,11 +3,11 @@ echo ""
 read -p "   [0;32mDk Window Manager Installer[0m
 
    This is a script to install the dk window manager on your system
-   with polybar and sxhkd configurations included.
+   with polybar, jgmenu, and sxhkd configurations included.
    
-   Warning - Any files in ~/.config/dk and/or ~/.config/polybar will 
-   be overwritten. A first time backup of these files will be made 
-   if they exist.
+   Warning - Any files in ~/.config/dk and ~/.config/polybar will be
+   overwritten. If existing, a backup of these files will be made.
+   ~/.config/dk.bak and ~/.config/polybar.bak. First backup only.
    
    For more information: 
    [0;33mhttps://bitbucket.org/natemaia/dk/src/master/[0m
@@ -22,15 +22,16 @@ read -p "   [0;32mDk Window Manager Installer[0m
 ## Check for internet connection
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
+sudo apt update
 cd /tmp || exit &&
-rm -f /tmp/dk_1.9-1_amd64.deb
+rm -f /tmp/dk_2.0-1~lilidog_amd64.deb
 rm -f /tmp/dk-conf-files.zip
 rm -f -r /tmp/dk-conf-files
-wget https://raw.githubusercontent.com/sleekmason/packages/master/dk_1.9-1_amd64.deb --show-progress -q &&
-wget https://raw.githubusercontent.com/sleekmason/packages/master/dk-conf-files.zip --show-progress -q &&
-unzip -q dk-conf-files.zip &&
+wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/deb-files/dk_2.0-1~lilidog_amd64.deb --show-progress -q &&
+wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.zip --show-progress -q &&
+unzip -q dk-conf-files2.zip &&
 echo ""
-sudo apt update && sudo apt install -y /tmp/./dk_1.9-1_amd64.deb polybar sxhkd &&
+sudo apt install -y /tmp/./dk_2.0-1~lilidog_amd64.deb polybar sxhkd &&
 if [ -e "$HOME/.config/dk" ]; then
    if [ ! -e "$HOME/.config/dk.bak" ]; then
      cp -r "$HOME/.config/dk" "$HOME/.config/dk.bak"
@@ -41,9 +42,10 @@ if [ -e "$HOME/.config/polybar" ]; then
      cp -r "$HOME/.config/polybar" "$HOME/.config/polybar.bak"
    fi
 fi
-cd /tmp/dk-conf-files || exit &&
-cp -r /tmp/dk-conf-files/dk ~/.config &&
-cp -r /tmp/dk-conf-files/polybar ~/.config &&
+cp -r /tmp/dk-conf-files/dk ~/.config
+cp -r /tmp/dk-conf-files/polybar ~/.config
+cp /tmp/dk-conf-files/jgmenudkwmrc ~/.config/jgmenu
+sudo cp /tmp/dk-conf-files/dk.png /usr/share/icons/ld-icons
 # For .xsessionrc use:
 if [ -e "$HOME/.xsessionrc" ]; then
   if ! grep -Fq "DKWM" ~/.xsessionrc; then
@@ -58,23 +60,24 @@ echo '#exec openbox-session'
   fi
 fi
 if [ -e "/usr/local/bin/show-keybinds-dk" ]; then
-sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Live USB Maker/a Sxhkd Keys DK,      show-keybinds-dk,                    preferences-desktop-keyboard-shortcuts' ~/.config/jgmenu/prepend.csv
+sed -i '/Sxhkd Keys DK,      show-keybinds-dk,                    \/usr\/share\/icons\/ld-icons\/dk.png/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Live.*/a Sxhkd Keys DK,      show-keybinds-dk,                    \/usr\/share\/icons\/ld-icons\/dk.png' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 fi
 echo ""
-echo "[0;33m--------------------------------------------------------------"
+echo "   [0;32m--------------------------------------------------------------"
 echo ""
-echo "All Finished!
-
-Logout and choose dk to change WM's if lightdm is installed.
-If lightdm is not installed, uncomment the entry 'exec dk'
-in ~/.xsessionrc to use dk.
-
-To uninstall, run: 'dk-uninstaller' in a terminal, or to
-just remove dkwm, run 'sudo apt remove dk'."
+echo "   All Finished![0m"
+echo ""
+echo "   [0;33mLogout and choose dk to change WM's if lightdm is installed."
+echo ""
+echo "   If lightdm is not installed, uncomment the entry 'exec dk'
+   in ~/.xsessionrc to use dk. Log out and back in to switch.[0m"
+echo ""
+echo "   [0;31mTo uninstall, run: 'dk-uninstaller' in a terminal, or to
+   just remove dkwm, run 'sudo apt remove dk'.[0m"
 echo "" 
-echo "--------------------------------------------------------------[0m"
+echo "   [0;32m--------------------------------------------------------------[0m"
 else
 echo ""
  echo "   [0;31m-------------------------------------------------------"
@@ -84,3 +87,4 @@ echo ""
  echo "   -------------------------------------------------------[0m"
 echo ""
 fi
+echo ""
