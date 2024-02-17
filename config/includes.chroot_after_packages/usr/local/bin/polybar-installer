@@ -24,8 +24,19 @@ read -p "   [0;33mPolybar Installer.[0m
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
-sudo apt update && sudo apt install polybar && 
-cp -r /usr/share/lilidog/extras/polybar ~/.config &&
+sudo apt update
+cd /tmp || exit
+rm -f /tmp/dk-conf-files2.zip
+rm -f -r /tmp/dk-conf-files
+wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.zip --show-progress -q &&
+sudo apt install polybar && 
+unzip -q dk-conf-files2.zip &&
+if [ -e "$HOME/.config/polybar" ]; then
+   if [ ! -e "$HOME/.config/polybar.bak" ]; then
+     cp -r "$HOME/.config/polybar" "$HOME/.config/polybar.bak"
+   fi
+fi
+cp -r /tmp/dk-conf-files/polybar ~/.config
 echo ""
 echo "----------------------------------------------------------------------"
 echo ""

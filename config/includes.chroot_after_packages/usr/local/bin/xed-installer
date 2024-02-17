@@ -20,6 +20,7 @@ echo ""
 echo ""
 cd /tmp || exit
 rm -f /tmp/xed*
+sudo apt update &&
 wget https://raw.githubusercontent.com/sleekmason/packages/master/xed-common_3.2.8_all.deb --show-progress -q
 wget https://raw.githubusercontent.com/sleekmason/packages/master/xed_3.2.8_amd64.deb --show-progress -q
 echo ""
