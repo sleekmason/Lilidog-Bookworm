@@ -71,6 +71,9 @@ export -f SHORTCUTS
 export -f BUILDDATE
 export -f WORLDCLOCK
 
+if ! [[ $(command -v conky) ]]; then
+notify-send --urgency low "Install 'conky-all' to use this dialog"
+else
 yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
 --height=600 --text="\nToggle Your Selections\n" --text-align=center \
 --window-icon=conky-logomark-violet \
@@ -87,3 +90,4 @@ yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
     --field="            Restart Conky!media-playlist-repeat":FBTN "conkyrestart" \
     --field="                  Kill Conky!process-stop":FBTN "killall conky"
+fi
