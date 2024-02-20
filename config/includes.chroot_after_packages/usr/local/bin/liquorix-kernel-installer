@@ -24,10 +24,10 @@ read -p "   [0;33mLiquorix Kernel Installer[0m
    
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
-sudo curl 'https://liquorix.net/add-liquorix-repo.sh' | sudo bash 
+sudo curl -s 'https://liquorix.net/install-liquorix.sh' | sudo bash
 sudo sed -i '1s/# deb/deb/g' /etc/apt/sources.list.d/liquorix.list
 sudo sed -i '2s/# deb/deb/g' /etc/apt/sources.list.d/liquorix.list
-sudo apt update && sudo apt install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
+sudo apt update && sudo apt install -y linux-image-liquorix-amd64 linux-headers-liquorix-amd64 irqbalance
 sudo sed -i '1s/deb/# deb/g' /etc/apt/sources.list.d/liquorix.list
 sudo sed -i '2s/deb/# deb/g' /etc/apt/sources.list.d/liquorix.list
 echo ""

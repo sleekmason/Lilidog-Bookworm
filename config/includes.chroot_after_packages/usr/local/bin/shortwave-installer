@@ -19,7 +19,7 @@ echo ""
 cd /tmp || exit &&
 wget https://raw.githubusercontent.com/sleekmason/packages/master/shortwave_12.0-1_all.deb --show-progress
 
-sudo apt update && sudo apt install -y ./shortwave_12.0-1_all.deb
+sudo apt update && sudo apt install -y ./shortwave_12.0-1_all.deb gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
 
 sed -i '/Shortwave,            shortwave,                           de.haeckerfelix.Shortwave/d' ~/.config/jgmenu/prepend.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Shortwave,            shortwave,                           de.haeckerfelix.Shortwave' ~/.config/jgmenu/prepend.csv
