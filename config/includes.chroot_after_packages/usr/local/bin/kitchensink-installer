@@ -7,9 +7,9 @@ read -p"   [0;33mKitchensink Installer[0m
    making for an easy initial system setup. This one is geared 
    towards getting a full setup in one go.
    
-   Installs: live-build, live-config, live-boot, git, inkscape
+   Installs: live-build, live-config, live-boot, gimp, inkscape
    openssh-sftp-server, filezilla, mousepad, pcmanfm, pyradio
-   gimp, brightness slider (if backlight exists), zsh, Circle 
+   git, brightness slider (if backlight exists), zsh, mpv, Circle 
    icons, Obsidian icons, Papirus icons, firefox, and Thunderbird.
    
    Look in the Toggles menu to change shell to zsh as default.
