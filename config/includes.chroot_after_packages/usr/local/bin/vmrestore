@@ -10,8 +10,6 @@ toggleit(){
 }
 export -f toggleit	
 if grep hypervisor /proc/cpuinfo ; then
-sleep 7
-notify-send -t 8000 --urgency low " Adjust display from the blue icon in the panel"
     yad --notification --listen --image="/usr/share/icons/ld-icons/display.png" \
     --text="Display Settings ┃ All Options" \
     --menu="Display Settings!bash -c toggleit!display|Wallpaper Fix!bash -c ~/.fehbg!org.xfce.settings.display|Exit!quit!application-exit" \
