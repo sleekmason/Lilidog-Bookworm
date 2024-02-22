@@ -15,7 +15,7 @@ lb config noauto \
      --firmware-chroot 'true' \
      --security 'true' \
      --memtest 'memtest86+' \
-     --image-name 'Lilidog-Bookworm-24.02.10' \
+     --image-name 'Lilidog-Bookworm-24.02.22' \
      --iso-application 'Lilidog-Bookworm' \
      --iso-publisher 'Lilidog-bookworm GNU/Linux' \
      --iso-volume 'Lilidog-Bookworm' \
