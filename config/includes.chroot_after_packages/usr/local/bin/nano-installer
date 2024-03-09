@@ -1,24 +1,24 @@
 #!/bin/bash
 
 read -p "   [0;32mNano Installer[0m
-   
-   This script will install nano and thunar with all dependencies 
+
+   This script will install nano and thunar with all dependencies
    and then add nano to the 'Open With' menu in thunar while also
    providing custom options and syntax coloring. A new menu entry
-   will also be added to Jgmenu, and also a new keybind of either 
+   will also be added to Jgmenu, and also a new keybind of either
    'super + n', or 'super + shift + n' depending on availability.
-   
+
    A new file will be added: /usr/share/applications/nano.desktop
    and a configuration file  ~/.config/nano/nanorc will be added.
-      
+
    [0;32m--------------------------------------------------------------
-   
+
    Press enter to install the nano editor with custom options.
-   
-   --------------------------------------------------------------[0m   
-      
+
+   --------------------------------------------------------------[0m
+
    Or close this terminal window to quit the install." ;
-## Make sure of internet connection   
+## Make sure of internet connection
 if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 ## Remove old .desktop file
@@ -29,7 +29,7 @@ sudo apt update && sudo apt install -y nano thunar thunar-archive-plugin thunar-
 ## Make nano.desktop file
 sudo touch /usr/share/applications/nano.desktop
 
-## Copy lines for nano.desktop file 
+## Copy lines for nano.desktop file
 {
 echo "[Desktop Entry]"
 echo "Encoding=UTF-8"
@@ -66,7 +66,7 @@ cp "/usr/share/doc/nano/examples/sample.nanorc" "$HOME/.config/nano/nanorc"
 
 ## Copy code for color lines user
 {
-echo ""	
+echo ""
 echo '## See above for full options plus description of options and colors.'
 echo '## Options'
 echo 'set emptyline'
@@ -86,7 +86,7 @@ echo 'set keycolor lightgreen'
 echo 'set functioncolor lightcyan'
 echo ""
 echo '## Syntax highlighting for different color schemes can be found in'
-echo '## /usr/share/nano Adjust this line. Currently selects most. l.242' 
+echo '## /usr/share/nano Adjust this line. Currently selects most. l.242'
 echo ""
 echo 'include "/usr/share/nano/*.nanorc"';} | tee -a "$HOME/.config/nano/nanorc" > /dev/null
 
@@ -121,7 +121,7 @@ if [ -e "$HOME/.config/openbox/sxhkdrc-open" ]; then
 {
    if ! grep -Fxq "mod4 + n" "$HOME/.config/dk/sxhkdrc"; then
 echo ""
-echo "# nano editor."   
+echo "# nano editor."
 echo "mod4 + n"
 sleep 2; notify-send -t 8000 --urgency low "DKWM sxhkd configuration is reloaded"
 notify-send -t 8000 --urgency low "Press 'super + n' to start nano in DKWM"
@@ -154,8 +154,8 @@ echo ""
 echo "   [0;31mYou should find a new menu entry for nano in jgmenu.  Also an[0m"
 echo "   [0;31m'Open With' menu entry in Thunar and a Nano keybind of either[0m"
 echo "   [0;31m'super + n' or 'super + shift + n' depending on availability.[0m"
-echo "" 
-echo "   [0;33mUse 'Ctrl +x' or 'F2' to exit nano.  A new configuration file" 
+echo ""
+echo "   [0;33mUse 'Ctrl +x' or 'F2' to exit nano.  A new configuration file"
 echo "   will be located in ~/.config/nano/nanorc for any adjustments.[0m"
 echo ""
 echo "   [0;32m----------------------------------------------------------------[0m"
