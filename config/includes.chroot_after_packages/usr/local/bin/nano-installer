@@ -94,9 +94,9 @@ echo 'include "/usr/share/nano/*.nanorc"';} | tee -a "$HOME/.config/nano/nanorc"
 if [ -e "$HOME/.config/openbox/sxhkdrc-open" ]; then
    if ! grep -Fxq "# nano editor." "$HOME/.config/openbox/sxhkdrc-open"; then
 {
+   if ! grep -Fxq "mod4 + n" "$HOME/.config/openbox/sxhkdrc-open"; then
 echo ""
 echo "# nano editor."
-   if ! grep -Fxq "mod4 + n" "$HOME/.config/openbox/sxhkdrc-open"; then
 echo "mod4 + n"
 notify-send --urgency low "Openbox sxhkd configuration is reloaded"
 notify-send --urgency low "Press 'super + n' to start nano in Openbox"
@@ -105,6 +105,8 @@ notify-send --urgency low "Desired keybinds for openbox already in use"
 notify-send --urgency low "Please add the keybind for openbox manually"
 exit
 else
+echo ""
+echo "# nano editor."
 echo "shift + mod4 + n"
 notify-send --urgency low "Openbox sxhkd configuration is now reloaded"
 notify-send --urgency low "Use 'shift + super + n' to start nano in Openbox"
@@ -117,9 +119,9 @@ fi
 if [ -e "$HOME/.config/openbox/sxhkdrc-open" ]; then
    if ! grep -Fxq "# nano editor." "$HOME/.config/dk/sxhkdrc"; then
 {
-echo ""
-echo "# nano editor."
    if ! grep -Fxq "mod4 + n" "$HOME/.config/dk/sxhkdrc"; then
+echo ""
+echo "# nano editor."   
 echo "mod4 + n"
 sleep 2; notify-send -t 8000 --urgency low "DKWM sxhkd configuration is reloaded"
 notify-send -t 8000 --urgency low "Press 'super + n' to start nano in DKWM"
@@ -128,6 +130,8 @@ sleep 2; notify-send -t 8000 --urgency low "Desired DKWM keybinds already in use
 notify-send -t 8000 --urgency low "Please add the DKWM keybind manually"
 exit
 else
+echo ""
+echo "# nano editor."
 echo "shift + mod4 + n"
 sleep 2; notify-send -t 8000 --urgency low "DKWM sxhkd configuration is now reloaded"
 notify-send -t 8000 --urgency low "Use 'shift + super + n' to start nano in DKWM"
