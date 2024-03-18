@@ -32,7 +32,7 @@ rm -f "/tmp/sowm-files.zip"
 rm -f -r "/tmp/sowm-files"
 rm -f -r "$HOME/.config/sowm/sowm.bak"
 ## Grab sowm-files.zip 
-wget https://raw.githubusercontent.com/sleekmason/packages/master/sowm-files.zip --show-progress -q &&
+wget https://raw.githubusercontent.com/sleekmason/packages/master/sowm-files.zip --show-progress -q
 unzip -q /tmp/sowm-files.zip
 
 ## Install conky-all if not existing
