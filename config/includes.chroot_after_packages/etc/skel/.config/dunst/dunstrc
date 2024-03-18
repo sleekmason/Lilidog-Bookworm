@@ -18,7 +18,7 @@ height = 60
 origin = top-right
 
 ## Offset from the origin horizontalxvertical
-offset = 245x60
+offset = 268x84
 
 ### Turn on the progess bar. It appears when a progress hint is passed with
 ## for example dunstify -h int:value:12
@@ -69,7 +69,7 @@ sort = no
  # idle_threshold = 60
 
 ### The transparency of the window.  Range: [0; 100].
-transparency = 8
+transparency = 16
 
 ### The format of the message.  Possible variables are:
  #   %a  appname
