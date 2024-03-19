@@ -2,6 +2,7 @@ Install Backports,        x-terminal-emulator -T 'Backports Installer' -e bash -
 Install dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer; echo $'\n\nPress any key to close.'; read -srn1",                           applications-utilities
 Uninstall dkwm,           x-terminal-emulator -T 'dk Uninstaller' -e bash -c "dk-uninstaller; echo $'\n\nPress any key to close.'; read -srn1",                       applications-utilities
 Install Kitchen Sink,     x-terminal-emulator -T 'Kitchen Sink Installer' -e bash -c "kitchensink-installer; echo $'\n\nPress any key to close.'; read -srn1",        applications-utilities
+Install Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c "lemonbar-installer; echo $'\n\nPress any key to close.'; read -srn1",               applications-utilities
 Install Live-build Apps,  x-terminal-emulator -T 'Live-build Apps Installer' -e bash -c "live-build-apps-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
 Install Polybar Panel,    x-terminal-emulator -T 'Polybar Installer' -e bash -c "polybar-installer; echo $'\n\nPress any key to close.'; read -srn1",                 applications-utilities
 Install Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-installer; echo $'\n\nPress any key to close.'; read -srn1",                       applications-utilities
