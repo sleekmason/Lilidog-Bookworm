@@ -2,10 +2,10 @@
 echo ""
 read -p "   [0;32mDk Window Manager Installer[0m
 
-   This is a script to install the dk window manager on your system
-   with polybar, jgmenu, and sxhkd configurations included.
+   This is a script to install the dk window manager Ver. 2.1 on 
+   your system with polybar, jgmenu, and sxhkd configurations. 
 
-   Warning - Any files in ~/.config/dk and ~/.config/polybar will be
+   Warning - Files in ~/.config/dk and ~/.config/polybar will be
    overwritten. If existing, a backup of these files will be made.
    ~/.config/dk.bak and ~/.config/polybar.bak. First backup only.
 
@@ -24,14 +24,14 @@ read -p "   [0;32mDk Window Manager Installer[0m
 echo ""
 sudo apt update
 cd /tmp || exit &&
-rm -f /tmp/dk_2.0-1~lilidog_amd64.deb
-rm -f /tmp/dk-conf-files.zip
+rm -f /tmp/dk_2.1-1~lilidog_amd64.deb
+rm -f /tmp/dk-conf-files2.1.zip
 rm -f -r /tmp/dk-conf-files
-wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/deb-files/dk_2.0-1~lilidog_amd64.deb --show-progress -q &&
+wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/deb-files/dk_2.1-1~lilidog_amd64.deb --show-progress -q &&
 wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.zip --show-progress -q &&
 unzip -q dk-conf-files2.zip &&
 echo ""
-sudo apt install -y /tmp/./dk_2.0-1~lilidog_amd64.deb polybar sxhkd &&
+sudo apt install -y /tmp/./dk_2.1-1~lilidog_amd64.deb polybar sxhkd &&
 if [ -e "$HOME/.config/dk" ]; then
    if [ ! -e "$HOME/.config/dk.bak" ]; then
      cp -r "$HOME/.config/dk" "$HOME/.config/dk.bak"
