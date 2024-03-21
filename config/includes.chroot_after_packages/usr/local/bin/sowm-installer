@@ -38,7 +38,7 @@ unzip -q /tmp/sowm-files.zip
 ## Install conky-all if not existing
 if [ $(dpkg-query -W -f='${Status}' conky-all 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
-  sudo apt update && sudo apt install conky-all;
+  sudo apt update && sudo apt install -y conky-all;
 fi
 
 ## MAKE USER FOLDERS AND BACKUPS IF NECESSARY
@@ -100,6 +100,15 @@ cp "/tmp/sowm-files/README-LILIDOG.md" "$HOME/.config/sowm"
 ## Copy needed files to ~/.config/lemonbar
 cp "/tmp/sowm-files/conky/conky-lemonbar" "$HOME/.config/lemonbar"
 cp "/tmp/sowm-files/scripts/lemonbar.sh" "$HOME/.config/lemonbar"
+
+## Copy lemonbar man to /usr/share/man/man1
+sudo cp "/tmp/sowm-files/lemonbar-xft/lemonbar.1" "/usr/share/man/man1"
+
+## Lemonbar licence
+if [ ! -e "/usr/share/doc/lemonbar" ]; then
+sudo mkdir "/usr/share/doc/lemonbar"
+fi
+sudo cp "/tmp/sowm-files/lemonbar-xft/LICENSE.md" "/usr/share/doc/lemonbar"
 
 ## Copy .xsessionrc info to ~/.xsessionrc
 if ! grep -Fxq 'export WM="$session"' "$HOME/.xsessionrc"; then

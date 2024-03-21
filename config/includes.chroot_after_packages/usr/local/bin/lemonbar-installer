@@ -40,13 +40,21 @@ unzip -q /tmp/lemonbar-xft.zip
 ## Install conky-all if not existing
 if [ $(dpkg-query -W -f='${Status}' conky-all 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
-  sudo apt update && sudo apt install conky-all;
+  sudo apt update && sudo apt install -y conky-all;
 fi
 
 ## Copy files to /usr/local/bin
 sudo cp "/tmp/lemonbar-xft/lemonbar" "/usr/local/bin"
 sudo cp "/tmp/lemonbar-xft/toggle.lemonbar" "/usr/local/bin"
 
+## Copy lemonbar man to /usr/share/man/man1
+sudo cp "/tmp/lemonbar-xft/lemonbar.1" "/usr/share/man/man1"
+
+## Lemonbar licence
+if [ ! -e "/usr/share/doc/lemonbar" ]; then
+sudo mkdir "/usr/share/doc/lemonbar"
+fi
+sudo cp "/tmp/lemonbar-xft/LICENSE.md" "/usr/share/doc/lemonbar"
 ## Make ~/.config/lemonbar if doesn't exist
 if [ ! -e "$HOME/.config/lemonbar" ]; then
    mkdir "$HOME/.config/lemonbar"
@@ -142,7 +150,6 @@ echo "	toggle.lemonbar";} | tee -a "$HOME/.config/sxhkd/sxhkdrc" > /dev/null
 pkill -USR1 -x sxhkd
    fi
 fi
-
 echo ""
 echo "   [0;32m-------------------------------------------------------------[0m"
 echo ""
