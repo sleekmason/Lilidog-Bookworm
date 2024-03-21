@@ -28,8 +28,8 @@ rm -f /tmp/dk_2.1-1~lilidog_amd64.deb
 rm -f /tmp/dk-conf-files2.1.zip
 rm -f -r /tmp/dk-conf-files
 wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/deb-files/dk_2.1-1~lilidog_amd64.deb --show-progress -q &&
-wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.zip --show-progress -q &&
-unzip -q dk-conf-files2.zip &&
+wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.1.zip --show-progress -q &&
+unzip -q dk-conf-files2.1.zip &&
 echo ""
 sudo apt install -y /tmp/./dk_2.1-1~lilidog_amd64.deb polybar sxhkd &&
 if [ -e "$HOME/.config/dk" ]; then
