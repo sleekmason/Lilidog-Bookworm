@@ -98,7 +98,7 @@ echo ""
 echo "   [0;33mLogout and choose dk to change WM's if lightdm is installed.[0m"
 echo ""
 echo "   [0;31mIf lightdm is not installed, edit ~/.xsessionrc and change:
-   'WMSelection=openbox' to dk, in ~/.xsessionrc. and uncomment:
+   'WMSelection=openbox' to dk, and uncomment:
    '#exec "session"' -- Second to last line. Log out and back in.[0m"
 echo ""
 echo "   [0;33mTo uninstall, run: 'dk-uninstaller' in a terminal, or to
