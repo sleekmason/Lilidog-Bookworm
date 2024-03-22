@@ -95,12 +95,13 @@ echo "   [0;32m--------------------------------------------------------------"
 echo ""
 echo "   All Finished![0m"
 echo ""
-echo "   [0;33mLogout and choose dk to change WM's if lightdm is installed."
+echo "   [0;33mLogout and choose dk to change WM's if lightdm is installed.[0m"
 echo ""
-echo "   If lightdm is not installed, uncomment the entry 'exec dk'
-   in ~/.xsessionrc to use dk. Log out and back in to switch.[0m"
+echo "   [0;31mIf lightdm is not installed, edit ~/.xsessionrc and change:
+   'WMSelection=openbox' to dk, in ~/.xsessionrc. and uncomment:
+   '#exec "session"' -- Second to last line. Log out and back in.[0m"
 echo ""
-echo "   [0;31mTo uninstall, run: 'dk-uninstaller' in a terminal, or to
+echo "   [0;33mTo uninstall, run: 'dk-uninstaller' in a terminal, or to
    just remove dkwm, run 'sudo apt remove dk'.[0m"
 echo ""
 echo "   [0;32m--------------------------------------------------------------[0m"
