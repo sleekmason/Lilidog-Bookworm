@@ -98,7 +98,7 @@ exit 0
 
 tint2-panel-battery-options(){
 FILE="$HOME/.config/tint2/tint2rc"
-STRING="battery_hide = 0"
+STRING="battery_tooltip = 0"
 if  grep -q "$STRING" "$FILE" ; then
 notify-send --urgency low 'Enabling battery percentage text' ;
          sed -i -e '/panel_items/ s/S/SB/' "$FILE"

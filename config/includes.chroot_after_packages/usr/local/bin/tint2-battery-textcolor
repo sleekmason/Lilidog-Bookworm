@@ -5,10 +5,10 @@
 noti=$(yad --width 310 --borders=12 --entry --title "Percentage Text Color" --center --window-icon=applications-graphics \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
     --button="gtk-cancel:1" --button="gtk-ok:0" \
-    "Base - Default" "Forge" "Creme" "Green" "Red" "Blue" "Orange" "Teladog" "Buuf" "White" "Grey" "Black" "Adobe" "Navy")
+    "Ozark" "Forge" "Creme" "Light" "White" "Grey" "Black" "Adobe" "Navy" "Green" "Red" "Blue" "Orange" "Teladog" "Buuf" "Obsidian" "Papirus")
 
 case $noti in
-  Base*)
+  Ozark*)
      sed -i 's/^battery_font_color.*/battery_font_color = #CAE0EB 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
@@ -18,6 +18,10 @@ case $noti in
 ;;
   Creme)
      sed -i 's/^battery_font_color.*/battery_font_color = #E1DFDB 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Light)
+     sed -i 's/^battery_font_color.*/battery_font_color = #EBEBEB 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Green)
@@ -62,6 +66,15 @@ case $noti in
 ;;
   Navy)
      sed -i 's/^battery_font_color.*/battery_font_color = #A0BED9 100/g' "$HOME/.config/tint2/tint2rc"
-     killall -SIGUSR1 tint2 ;;
+     killall -SIGUSR1 tint2 
+;;
+  Obsidian)
+     sed -i 's/^battery_font_color.*/battery_font_color = #ffffff 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
+  Papirus)
+     sed -i 's/^battery_font_color.*/battery_font_color = #ffffff 100/g' "$HOME/.config/tint2/tint2rc"
+     killall -SIGUSR1 tint2
+;;
         *) exit 1 ;;
     esac

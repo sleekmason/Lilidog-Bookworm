@@ -3,8 +3,7 @@ echo ""
 read -p "   [0;33mTint2 Default Configuration.[0m
 
    This script will change your existing tint2 folder to the default
-   Lilidog tint2 version as seen on install by first making a backup 
-   and then installing the original copy from /etc/skel/.config/tint2
+   Lilidog tint2 version.
    
    * The backup will be made of your existing tint2 folder to:
    ~/.config/tint-original.bak, and any further uses of this script 

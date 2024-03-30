@@ -4,13 +4,12 @@ Install Brightness Tray Icon,  x-terminal-emulator -T 'Brightness And Gamma Tray
 Install Etcher USB Maker, x-terminal-emulator -T 'Etcher Installer' -e bash -c "etcher-installer; echo $'\n\nPress any key to close.'; read -srn1",                   applications-utilities
 Install Gnome Boxes,      x-terminal-emulator -T 'Gnome Boxes Installer' -e bash -c "gnome-boxes-installer; echo $'\n\nPress any key to close.'; read -srn1",         applications-utilities
 Install Hblock,           x-terminal-emulator -T 'Hblock Installer' -e bash -c "hblock-installer; echo $'\n\nPress any key to close.'; read -srn1",                   applications-utilities
-Install Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e bash -c "jgmenu-default-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
 Install KDEconnect,       x-terminal-emulator -T 'KDEconnect Installer' -e bash -c "kdeconnect-installer; echo $'\n\nPress any key to close.'; read -srn1",           applications-utilities
 Install LD Update Checker, x-terminal-emulator -T 'LD apt update checker installer' -e bash -c "ld-apt-update-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
 Install Pcmanfm,          x-terminal-emulator -T 'Pcmanfm Installer' -e bash -c "pcmanfm-installer; echo $'\n\nPress any key to close.'; read -srn1",                 applications-utilities
 Install Penguins Eggs,    x-terminal-emulator -T 'Penguins Eggs Installer' -e bash -c "penguins-eggs-installer; echo $'\n\nPress any key to close.'; read -srn1",     applications-utilities
 Install Qemu VM,          x-terminal-emulator -T 'Qemu Installer' -e bash -c "qemu-installer; echo $'\n\nPress any key to close.'; read -srn1",                       applications-utilities
 Install Synaptic,         x-terminal-emulator -T 'Synaptic Installer' -e bash -c "synaptic-installer; echo $'\n\nPress any key to close.'; read -srn1",               applications-utilities
-Install Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer; echo $'\n\nPress any key to close.'; read -srn1",   applications-utilities
+Install Virtualbox,       x-terminal-emulator -T 'Virtualbox Installer' -e bash -c "virtualbox-installer; echo $'\n\nPress any key to close.'; read -srn1",           applications-utilities
 Install Xscreensaver,     x-terminal-emulator -T 'Xscreensaver Installer' -e bash -c "xscreensaver-installer; echo $'\n\nPress any key to close.'; read -srn1",       applications-utilities
 Install zsh shell,        x-terminal-emulator -T 'zsh Installer' -e bash -c "zsh-installer; echo $'\n\nPress any key to close.'; read -srn1",                         applications-utilities
