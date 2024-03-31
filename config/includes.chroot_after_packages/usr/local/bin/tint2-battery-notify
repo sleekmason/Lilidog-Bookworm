@@ -124,9 +124,9 @@ FILE="$HOME/.config/tint2/tint2rc"
 STRING="battery_low_status = 0"
 if  grep -q "$STRING" "$FILE" ; then
 
-notify-send --urgency low 'Battery notifications currently disabled'
+notify-send --urgency low 'Low battery notification inactive'
 else
-notify-send --urgency low 'Low battery notifications are enabled'
+notify-send --urgency low 'Low battery notification enabled'
 fi
 yad --title "Extra Notifications" --button=gtk-ok:0 --form --center --width=300 --borders=16 \
 --height=380 --text="\nExtra Battery Notifications\n" --text-align=center \
