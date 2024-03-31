@@ -9,12 +9,12 @@ ozark(){
        sed -i 's/coltint2.*\//coltint2ozark\//g' "$FILE"
        sed -i 's/\(coltint2ozark.*\)....*$/\1svg/g' "$FILE"      
        sed -i 's/^iconcolor=.*/iconcolor="coltint2ozark.svg"/g' "$NOTIFY"
-       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#CAE0EB 100/' "$FILE"
-       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#CAE0EB 100/' "$FILE"
-       sed -i 's/task_font_color =.*/task_font_color = \#D1E4EB 100/' "$FILE"
-       sed -i 's/clock_font_color =.*/clock_font_color = \#CAE0EB 100/' "$FILE"
-       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#CAE0EB 100/' "$FILE"
-       sed -i 's/^battery_font_color.*/battery_font_color = #CAE0EB 100/g' "$FILE"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#CCDFE8 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#CCDFE8 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#CCDFE8 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#CCDFE8 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#CCDFE8 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #CCDFE8 100/g' "$FILE"
      killall -SIGUSR1 tint2
 }
 forge(){
@@ -23,12 +23,12 @@ forge(){
        sed -i 's/coltint2.*\//coltint2forge\//g' "$FILE"
        sed -i 's/\(coltint2forge.*\)....*$/\1svg/g' "$FILE"       
        sed -i 's/^iconcolor=.*/iconcolor="coltint2forge.svg"/g' "$NOTIFY"
-       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#CADBEB 100/' "$FILE"
-       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#CADBEB 100/' "$FILE"
-       sed -i 's/task_font_color =.*/task_font_color = \#CADBEB 100/' "$FILE"
-       sed -i 's/clock_font_color =.*/clock_font_color = \#CADBEB 100/' "$FILE"
-       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#CADBEB 100/' "$FILE"
-       sed -i 's/^battery_font_color.*/battery_font_color = #CADBEB 100/g' "$FILE"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#C6D7E6 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#C6D7E6 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#C6D7E6 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#C6D7E6 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#C6D7E6 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #C6D7E6 100/g' "$FILE"
      killall -SIGUSR1 tint2
 }
 creme(){

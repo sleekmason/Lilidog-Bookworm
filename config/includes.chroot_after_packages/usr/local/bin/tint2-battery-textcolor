@@ -9,11 +9,11 @@ noti=$(yad --width 310 --borders=12 --entry --title "Percentage Text Color" --ce
 
 case $noti in
   Ozark*)
-     sed -i 's/^battery_font_color.*/battery_font_color = #CAE0EB 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #CCDFE8 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Forge)
-     sed -i 's/^battery_font_color.*/battery_font_color = #CADBEB 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #C6D7E6 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Creme)
