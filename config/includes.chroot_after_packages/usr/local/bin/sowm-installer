@@ -38,7 +38,7 @@ unzip -q /tmp/sowm-files.zip
 ## Install conky-all if not existing
 if [ $(dpkg-query -W -f='${Status}' conky-all 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
-  sudo apt update && sudo apt install conky-all;
+  sudo apt update && sudo apt install -y conky-all;
 fi
 
 ## MAKE USER FOLDERS AND BACKUPS IF NECESSARY
