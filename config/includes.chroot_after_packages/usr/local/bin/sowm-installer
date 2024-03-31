@@ -38,7 +38,7 @@ unzip -q /tmp/sowm-files.zip
 ## Install conky-all if not existing
 if [ $(dpkg-query -W -f='${Status}' conky-all 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
-  sudo apt update && sudo apt install -y conky-all;
+  sudo apt update && sudo apt install conky-all;
 fi
 
 ## MAKE USER FOLDERS AND BACKUPS IF NECESSARY
@@ -83,10 +83,10 @@ fi
 sudo cp "/tmp/sowm-files/sowm.desktop"  "/usr/share/xsessions"
 
 ## copy lemonbar-xft to /usr/local/bin
-sudo cp "/tmp/sowm-files/lemonbar-xft/lemonbar" "/usr/local/bin"
+sudo cp -f "/tmp/sowm-files/lemonbar-xft/lemonbar" "/usr/local/bin"
 
 ## Copy sowm binary to /usr/bin
-sudo cp "/tmp/sowm-files/sowm/sowm" "/usr/bin"
+sudo cp -f "/tmp/sowm-files/sowm/sowm" "/usr/bin"
 
 ## Copy needed scripts to /usr/local/bin
 sudo cp "/tmp/sowm-files/scripts/sowm-rofi" "/usr/local/bin"
