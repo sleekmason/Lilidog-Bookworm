@@ -150,7 +150,7 @@ log() {
 
     # Print the info data, color it and strip all leading whitespace
     # from the string.
-    esc_p SGR "3${PF_COL2-9}"
+    esc_p SGR "5${PF_COL2-9}"
     printf '%s' "$info"
     esc_p SGR 0
     printf '\n'
@@ -1115,7 +1115,6 @@ get_ascii() {
         # 'PF_COL3': Set the title color to some other color. ¯\_(ツ)_/¯
         PF_COL1=${PF_COL1:-${1:-7}}
         PF_COL3=${PF_COL3:-$((${1:-7}%8+1))}
-
         # POSIX sh has no 'var+=' so 'var=${var}append' is used. What's
         # interesting is that 'var+=' _is_ supported inside '$(())'
         # (arithmetic) though there's no support for 'var++/var--'.
@@ -1520,18 +1519,18 @@ get_ascii() {
         
         ([Ll]ilidog*)
             read_ascii 2 <<-EOF
-${c4}      LLDDD+ +LDDLD+ 
-${c4}     L:::::=LD:::::LDLLDD+ 
-${c4}   D=:::::=LD:::::=LD++:=+D 
-${c4}   D-::::=LDD-::::+LD-::::=D 
-${c4}   L+--==+++===++LDD+:::::-D 
-${c4}  +++==:::::::::-+D-:::::=D 
-${c4} D=::::::::::::::::+D++==+D 
-${c4} D=::::::::::::::::+LD+-:-+D 
-${c4}  DLL++-::::::::::-D:::::-+D 
-${c4}      DL+:::::::::+D=-::=+D 
-${c4}        D=:::::::-LDLDLD+
-${c4}          LDD+LD+
+${c3}      LLDDD+ +LDDLD+ 
+${c3}     L:::::=LD:::::LDLLDD+ 
+${c3}   D=:::::=LD:::::=LD++:=+D 
+${c3}   D-::::=LDD-::::+LD-::::=D 
+${c3}   L+--==+++===++LDD+:::::-D 
+${c3}  +++==:::::::::-+D-:::::=D 
+${c3} D=::::::::::::::::+D++==+D 
+${c3} D=::::::::::::::::+LD+-:-+D 
+${c3}  DLL++-::::::::::-D:::::-+D 
+${c3}      DL+:::::::::+D=-::=+D 
+${c3}        D=:::::::-LDLDLD+
+${c3}          LDD+LD+
 			EOF
         ;;
 
