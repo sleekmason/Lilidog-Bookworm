@@ -7,5 +7,6 @@ Install Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c
 Install Live-build Apps,  x-terminal-emulator -T 'Live-build Apps Installer' -e bash -c "live-build-apps-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
 Install Polybar Panel,    x-terminal-emulator -T 'Polybar Installer' -e bash -c "polybar-installer; echo $'\n\nPress any key to close.'; read -srn1",                 applications-utilities
 Install Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-installer; echo $'\n\nPress any key to close.'; read -srn1",                       applications-utilities
+Install Sowm w/ borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-utilities
 Install Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer; echo $'\n\nPress any key to close.'; read -srn1",   applications-utilities
 Install Tint2 Less Icons, x-terminal-emulator -T 'Tint2 With Less Icons Installer' -e bash -c "tint2-less-installer; echo $'\n\nPress any key to close.'; read -srn1",   applications-utilities
