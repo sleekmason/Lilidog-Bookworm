@@ -32,7 +32,7 @@
 ### Common startup programs. Comment any item no longer wanted.
 . $HOME/.fehbg &
 picom --daemon &
-tint2 &
+tint2 >/dev/null 2>&1 &
 nm-applet &
 lxpolkit &
 xfsettingsd --daemon &

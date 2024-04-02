@@ -20,8 +20,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Merge ~/.Xresources
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
 # Disable overlay scrollbars
 # export GTK_OVERLAY_SCROLLING=0

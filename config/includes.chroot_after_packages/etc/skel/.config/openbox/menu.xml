@@ -221,7 +221,7 @@
 						<execute>geany ~/.config/conky/conky.conf</execute>
 					</action>
 				</item>
-				<item icon="/usr/share/icons/ld-icons/compton.png" label="Picom Conf">
+				<item icon="/usr/share/icons/gnome/24x24/actions/document-properties.png" label="Picom Conf">
 					<action name="Execute">
 						<execute>geany ~/.config/picom.conf</execute>
 					</action>
@@ -257,7 +257,7 @@
 			<action name="Restart"/>
 		</item>
 		<separator/>
-		<item icon="/usr/share/icons/ld-icons/exit4.png" label="Exit">
+		<item icon="/usr/share/icons/gnome/24x24/actions/application-exit.png" label="Exit">
 			<action name="Execute">
 				<execute>ld-logout</execute>
 			</action>
