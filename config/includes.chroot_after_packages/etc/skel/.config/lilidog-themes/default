@@ -78,6 +78,7 @@ sed -i 's/task_text =.*/task_text = 1/' "$HOME"/.config/tint2/tint2rc
 
 ## Tint2 Icon colors
 sed -i 's/coltint2.*\//coltint2ozark\//g' "$HOME"/.config/tint2/tint2rc
+sed -i 's/\(coltint2ozark.*\)....*$/\1svg/g' "$HOME"/.config/tint2/tint2rc 
 # For executor if enabled
 sed -i 's/^iconcolor=.*/iconcolor="coltint2ozark.svg"/g' "$HOME"/.config/tint2/executors/notifier  >/dev/null 2>&1 &
 ## Tint2 Font colors
