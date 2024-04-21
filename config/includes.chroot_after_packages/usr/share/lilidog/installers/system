@@ -1,6 +1,7 @@
 Install Backports,        x-terminal-emulator -T 'Backports Installer' -e bash -c "backports-installer; echo $'\n\nPress any key to close.'; read -srn1",             applications-utilities
 Install dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer; echo $'\n\nPress any key to close.'; read -srn1",                           applications-utilities
 Uninstall dkwm,           x-terminal-emulator -T 'dk Uninstaller' -e bash -c "dk-uninstaller; echo $'\n\nPress any key to close.'; read -srn1",                       applications-utilities
+Install dwm,              x-terminal-emulator -T 'dwm Installer' -e bash -c "dwm-installer; echo $'\n\nPress any key to close.'; read -srn1",                         applications-utilities
 Install Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e bash -c "jgmenu-default-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
 Install Kitchen Sink,     x-terminal-emulator -T 'Kitchen Sink Installer' -e bash -c "kitchensink-installer; echo $'\n\nPress any key to close.'; read -srn1",        applications-utilities
 Install Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c "lemonbar-installer; echo $'\n\nPress any key to close.'; read -srn1",               applications-utilities
