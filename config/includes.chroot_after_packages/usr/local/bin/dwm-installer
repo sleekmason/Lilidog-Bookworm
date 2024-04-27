@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/sleekmason/packages/master/dwm.zip --show
 unzip -q /tmp/dwm.zip
 
 ## Install necessary programs audio and brightness keys
-sudo apt update && sudo apt install -y pamixer brightnessctl brightness-udev
+sudo apt update && sudo apt install -y pamixer brightnessctl brightness-udev fonts-jetbrains-mono
 
 ## Copy dwm from /tmp
 cp -r "/tmp/dwm" "$HOME/.config"
