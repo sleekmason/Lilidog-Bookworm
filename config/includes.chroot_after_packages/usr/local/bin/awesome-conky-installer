@@ -1,0 +1,77 @@
+#!/bin/bash
+read -p "   [0;33mAwesome Conky Installer[0m
+
+   This installer provides conky for the awesome window manager.  
+   If using Beardog, conky will also be installed for use in 
+   openbox. A backupfile ~/.config/conky.bak will be created if 
+   conky for openbox is already installed in Beardog.
+   
+   Use Super + c for the conky chooser once installed.
+
+   [0;33mhttps://awesomewm.org/[0m
+
+   [0;32m--------------------------------------------------------
+
+   Please press enter to install conky with custom options.
+
+   --------------------------------------------------------[0m
+
+   Or close this terminal window to quit the install." ;
+## Make sure of internet connection
+if : >/dev/tcp/8.8.8.8/53; then
+if [[ $(command -v awesome) ]]; then
+cd /tmp || exit
+## Install necessary programs
+sudo apt update && sudo apt install -y conky-all fortunes fortune-mod
+##If in Beardog:
+if test -e /usr/local/bin/bd-utilities-main-installers; then
+## Remove /tmp files
+rm -f -r /tmp/conky
+wget https://raw.githubusercontent.com/sleekmason/packages/master/conky-bear-bookworm2.zip --show-progress -q &&
+unzip -q /tmp/conky-bear-bookworm2.zip
+if test -e ~/.config/conky; then
+	mv ~/.config/conky ~/.config/conky.bak &&
+	cp -r /tmp/conky ~/.config
+else                
+	cp -r /tmp/conky ~/.config              
+fi
+echo ""
+	sed -i '/Conky,               ~\/.config\/conky\/scripts\/conky-chooser,         preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv
+	sed -i '/Xkill/i Conky,               ~\/.config\/conky\/scripts\/conky-chooser,         preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
+fi
+## Remove /tmp files
+rm -f "/tmp/conky-awesome.zip"
+rm -f -r "/tmp/conky-awesome"
+rm -f -r "$HOME/.config/awesome/conky-awesome"
+## Grab conky-awesome
+wget https://raw.githubusercontent.com/sleekmason/packages/master/conky-awesome.zip --show-progress -q
+unzip -q /tmp/conky-awesome.zip
+
+## Copy conky-awesome from /tmp
+cp -r "/tmp/conky-awesome" "$HOME/.config/awesome"
+if ! test -e "/usr/local/bin/conkyrestart.bak"; then
+sudo cp /usr/local/bin/conkyrestart /usr/local/bin/conkyrestart.bak
+fi
+sudo cp -f ~/.config/awesome/conky-awesome/scripts/conkyrestart /usr/local/bin
+
+## Explain items.
+echo "   [0;32m--------------------------------------------------------[0m"
+echo ""
+echo "   [0;33mAll Finished![0m"
+echo ""
+echo "   [0;32mPress Super + c to use the conky chooser.[0m"
+echo ""
+echo "   [0;32m--------------------------------------------------------[0m"
+echo ""
+else
+notify-send --urgency low "Please install awesome WM first"
+fi
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi

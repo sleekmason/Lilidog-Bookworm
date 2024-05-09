@@ -1,63 +1,71 @@
 #!/bin/bash
-read -p "   [0;33mDWM Installer[0m
+read -p "   [0;33mi3 WM Installer[0m
 
-   dwm is a 'dynamic window manager' for X. it manages windows in 
-   tiled, monocle and floating layouts.  
+   i3 is a tiling window manager, completely written from scratch. 
+   The target platforms are GNU/Linux and BSD operating systems, 
+   our code is Free and Open Source Software (FOSS) under the 
+   BSD license.
    
-   This installer will provide dwm and slstatus without any build
-   dependencies. Further changes to dwm will require a recompile. 
-   For instructions see the readme-lilidog file in ~/.config/dwm.
+   The statusbar will be handled by polybar. A new backup of the
+   polybar folder will be made if it already exists.
+   
+   [0;33mhttps://i3wm.org/docs/userguide.html[0m
 
-   [0;33mhttps://dwm.suckless.org/[0m
+   [0;32m----------------------------------------------------------
 
-   [0;32m--------------------------------------------------------
+   Please press enter to install i3WM with custom options.
 
-   Please press enter to install dwm with custom options.
-
-   --------------------------------------------------------[0m
+   ----------------------------------------------------------[0m
 
    Or close this terminal window to quit the install." ;
 ## Make sure of internet connection
 if : >/dev/tcp/8.8.8.8/53; then
 
-## Make a backup
-if [ -e "$HOME/.config/dwm" ]; then
-   if [ ! -e "$HOME/.config/dwm-original.bak" ]; then
-   cp -r "$HOME/.config/dwm" "$HOME/.config/dwm-original.bak"
+## Make an original backup
+if [ -e "$HOME/.config/i3" ]; then
+   if [ ! -e "$HOME/.config/i3-original.bak" ]; then
+   cp -r "$HOME/.config/i3" "$HOME/.config/i3-original.bak"
+   fi
+fi
+
+## Make a regular i3 backup each time
+if [ -e "$HOME/.config/i3" ]; then
+   if [ -e "$HOME/.config/i3.bak" ]; then
+   rm -f -r "$HOME/.config/i3.bak"
+   cp -r "$HOME/.config/i3" "$HOME/.config/i3.bak"
+else
+   cp -r "$HOME/.config/i3" "$HOME/.config/i3.bak"
+   fi
+fi
+
+## Make a regular polybar backup each time
+if [ -e "$HOME/.config/polybar" ]; then
+   if [ -e "$HOME/.config/polybar.bak" ]; then
+   rm -f -r "$HOME/.config/polybar.bak"
+   cp -r "$HOME/.config/polybar" "$HOME/.config/polybar.bak"
+else
+   cp -r "$HOME/.config/polybar" "$HOME/.config/polybar.bak"
    fi
 fi
 
 ## Remove /tmp files
 cd /tmp || exit
-rm -f "/tmp/dwm.zip"
-rm -f -r "/tmp/dwm"
-rm -f -r "$HOME/.config/dwm"
+rm -f "/tmp/i3.zip"
+rm -f -r "/tmp/i3-files"
+rm -f -r "$HOME/.config/i3"
+rm -f -r "$HOME/.config/polybar"
 ## Grab dwm.zip and unzip in /tmp
-wget https://raw.githubusercontent.com/sleekmason/packages/master/dwm.zip --show-progress -q
-unzip -q /tmp/dwm.zip
+wget https://raw.githubusercontent.com/sleekmason/packages/master/i3.zip --show-progress -q
+unzip -q /tmp/i3.zip
 
-## Install necessary programs audio and brightness keys
-sudo apt update && sudo apt install -y pamixer brightnessctl brightness-udev fonts-jetbrains-mono
+## Install necessary programs
+sudo apt update && sudo apt install -y i3 i3lock suckless-tools dunst python3-i3ipc polybar pamixer brightnessctl brightness-udev fonts-jetbrains-mono
 
-## Copy dwm from /tmp
-cp -r "/tmp/dwm" "$HOME/.config"
-
-## Copy dwm.desktop file to /usr/share/xsessions
-sudo cp "/tmp/dwm/dwm.desktop"  "/usr/share/xsessions"
-
-## Install dwm
-sudo mkdir -p "/usr/local/bin"
-sudo cp -f "/tmp/dwm/dwm-6.5-hover-to-focus/dwm" "/usr/local/bin"
-sudo chmod 755 "/usr/local/bin/dwm"
-sudo mkdir -p "/usr/local/share/man/man1"
-sudo cp -f "/tmp/dwm/dwm-6.5-hover-to-focus/dwm.1" "/usr/local/share/man/man1"
-#sudo sed "s/VERSION/6.5/g" < "dwm.1" > "/usr/local/share/man/man1/dwm.1"
-sudo chmod 644 "/usr/local/share/man/man1/dwm.1"
-sudo cp -f "/tmp/dwm/slstatus-1.0/slstatus" "/usr/local/bin"
-sudo chmod 755 "/usr/local/bin/slstatus"
-sudo cp -f "/tmp/dwm/slstatus-1.0/slstatus.1" "/usr/local/share/man/man1"
-sudo chmod 644 "/usr/local/share/man/man1/slstatus.1"
-
+## Copy i3, polybar, and jgmenu extra from /tmp
+cp -r "/tmp/i3-files/i3" "$HOME/.config"
+cp -r "/tmp/i3-files/polybar" "$HOME/.config"
+cp -f "/tmp/i3-files/jgmenudkwmrc" "$HOME/.config/jgmenu"
+sudo cp "/tmp/i3-files/toggle.polybar-i3" "/usr/local/bin"
 ## Copy .xsessionrc info to ~/.xsessionrc
 if ! grep -Fxq 'export WM="$session"' "$HOME/.xsessionrc"; then
 {
@@ -109,14 +117,14 @@ echo "   [0;32m--------------------------------------------------------[0m"
 echo ""
 echo "   [0;33mAll Finished![0m"
 echo ""
-echo "   [0;32mYou should find a new menu entry in lightdm for dwm use.[0m"
+echo "   [0;32mYou should find a new menu entry in lightdm for i3 use.[0m"
 echo "   [0;32mIf lightdm is not installed, edit the ~/.xsessionrc file[0m"
-echo "   [0;32mand change the 'WMSelection=' entry to dwm.[0m"
+echo "   [0;32mand change the 'WMSelection=' entry to i3.[0m"
 echo ""
-echo "   [0;31mAdd any startup items to ~/.config/dwm/dwmstart.sh.[0m"
+echo "   [0;31mAdd startup items to ~/.config/i3/i3start.sh.[0m"
 echo ""
-echo "   [0;33mSee the readme-lilidog file in ~/.config/dwm for further"
-echo "   information on changing and building dwm if desired.[0m"
+echo "   [0;33mSee the readme file in ~/.config/i3 for further"
+echo "   information.[0m"
 echo ""
 echo "   [0;32m--------------------------------------------------------[0m"
 echo ""
