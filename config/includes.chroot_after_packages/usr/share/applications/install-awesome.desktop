@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Awesome WM Installer
+Exec=/usr/local/bin/awesome-installer
+StartupNotify=false
+Terminal=true
+Icon=applications-system
+Categories=ld-misc-tools;

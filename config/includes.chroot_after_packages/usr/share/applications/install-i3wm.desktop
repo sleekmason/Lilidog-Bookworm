@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=i3WM Installer
+Exec=/usr/local/bin/i3wm-installer
+StartupNotify=false
+Terminal=true
+Icon=applications-system
+Categories=ld-misc-tools;
