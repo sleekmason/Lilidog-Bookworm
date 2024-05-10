@@ -2,17 +2,25 @@
 ## resolution change when in a VM.
 ## by sleekmason 1-21-2024
 
+# just fix the resolution on button click
 toggleit(){
+	notify-send -t 12000 --urgency low " Right-click for display settings"
+	~/.fehbg
+}
+
+#Change the resolution first
+changeitnow(){
 	notify-send -t 12000 --urgency low " Wallpaper corruption will be fixed on 'Close'"
 	xfce4-display-settings &&
-	~/.fehbg
-	
+	~/.fehbg	
 }
-export -f toggleit	
+export -f toggleit
+export -f changeitnow
+	
 if grep hypervisor /proc/cpuinfo ; then
     yad --notification --listen --image="/usr/share/icons/ld-icons/display.png" \
     --text="Display Settings ┃ All Options" \
-    --menu="Display Settings!bash -c toggleit!display|Wallpaper Fix!bash -c ~/.fehbg!org.xfce.settings.display|Exit!quit!application-exit" \
+    --menu="Display Settings!bash -c changeitnow!display|Wallpaper Fix!bash -c ~/.fehbg!org.xfce.settings.display|Exit!quit!application-exit" \
     --command="bash -c toggleit"
 else 
 	exit
