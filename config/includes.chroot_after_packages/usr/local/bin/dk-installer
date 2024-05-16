@@ -118,3 +118,4 @@ echo ""
 echo ""
 fi
 echo ""
+read -n1 -p " Press any key to quit this dialog ... "
