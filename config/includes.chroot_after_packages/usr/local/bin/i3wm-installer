@@ -48,7 +48,7 @@ wget https://raw.githubusercontent.com/sleekmason/packages/master/i3-with-i3bloc
 unzip -q /tmp/i3-with-i3blocks.zip
 
 ## Install necessary programs
-sudo apt update && sudo apt install -y i3 i3lock i3blocks lm-sensors sysstat playerctl suckless-tools dunst python3-i3ipc pamixer brightnessctl brightness-udev fonts-jetbrains-mono
+sudo apt update && sudo apt install -y i3 i3lock i3blocks libanyevent-i3-perl libjson-xs-perl lm-sensors sysstat playerctl suckless-tools dunst python3-i3ipc pamixer brightnessctl brightness-udev fonts-jetbrains-mono
 
 ## Copy i3, polybar, and jgmenu extra from /tmp
 cp -r "/tmp/i3" "$HOME/.config"
