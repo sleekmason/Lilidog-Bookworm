@@ -34,7 +34,7 @@ echo ""
    echo ""
    echo "-------------------------------------------------------------------------------"
    echo ""
-   sudo apt install -t bookworm-backports linux-image-amd64 linux-headers-amd64 firmware-linux
+   sudo apt install -t bookworm-backports linux-image-amd64/bookworm-backports linux-headers-amd64/bookworm-backports firmware-linux
    echo ""
    echo "[0;33mPlease reboot into your new kernel when able.[0m"
 echo ""
