@@ -107,6 +107,45 @@ _upgrade_kernel() {
         run_it
 }
 
+_sourcechanger() {
+      _msg="Use netselect-apt to find a faster debian mirror?"
+      do_it() { apt install -y netselect-apt
+		        rm -rf /tmp/sourcechanger
+		        mkdir /tmp/sourcechanger
+		          if [ ! -e "/etc/apt/sources.list-original.bak" ]; then
+                     cp -f "/etc/apt/sources.list" "/etc/apt/sources.list-original.bak"
+                  fi
+                  if [ -e "/etc/apt/sources.list-original.bak" ]; then
+                     cp -f "/etc/apt/sources.list-original.bak" "/etc/apt/sources.list"
+                  fi
+                netselect-apt -o /tmp/sourcechanger/sources.list
+                grep -o -m1 'http[s]\?://[^ ]\+' /tmp/sourcechanger/sources.list > /tmp/sourcechanger/sources.txt
+                sed -i 's/.$//' /tmp/sourcechanger/sources.txt
+                  if grep -q "http://deb.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
+                     sed -i -e "s/http:\/\/deb.debian.org\/debian/$(sed 's:/:\\/:g' /tmp/sourcechanger/sources.txt)/" /etc/apt/sources.list
+                  elif grep -q "https://deb.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
+                     sed -i -e "s/https:\/\/deb.debian.org\/debian/$(sed 's:/:\\/:g' /tmp/sourcechanger/sources.txt)/" /etc/apt/sources.list
+                  else
+                     echo "   [0;31mOriginal debian mirrors not found. exiting.[0m"
+                  exit 0
+                  fi
+                  if apt-get update -eany; then
+                     echo
+                     echo "   [0;32mSuccess! Enjoy your new debian mirror.[0m"
+                     echo
+                  else
+                     echo
+                     echo "   [0;31mSomething is not quite right - defaulting to original sources.list.[0m"
+                     echo
+                     sleep 2
+                     cp -f "/etc/apt/sources.list-original.bak" "/etc/apt/sources.list"
+                     apt update
+                  fi ;}
+        see_it
+        no_see
+        run_it
+}
+
 _osprober() {
       _msg="Enable osprober to find other distro entries in grub?"
       do_it() { sed -i 's/^#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLE_OS_PROBER=false/g' "/etc/default/grub" &&
@@ -150,6 +189,7 @@ _update
 _remove_packages
 _add_backports
 _upgrade_kernel
+_sourcechanger
 _osprober
 _firmware
 #_autologin
@@ -163,6 +203,7 @@ _update
 _remove_packages
 _add_backports
 _upgrade_kernel
+_sourcechanger
 _firmware
 #_autologin
 _reboot
