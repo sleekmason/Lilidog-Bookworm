@@ -97,6 +97,10 @@ mod4 + x
 # Logout alternative.
 shift + mod4 + x
 	~/.config/rofi/scripts/nakedquit
+	
+# Hotcorners
+mod4 + z
+	toggle.ld		
 
 # screenshot and selection capture.
 Print

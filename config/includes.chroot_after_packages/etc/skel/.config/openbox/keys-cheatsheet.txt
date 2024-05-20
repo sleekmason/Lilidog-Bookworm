@@ -20,6 +20,7 @@ Hotcorners =         super + F8
 Jgmenu =             super + j
 Logout =             super + x
 Logout-alt =         super + shift + x
+hotcorners =         super + z
 Music =              super + m
 Screenshot =         PrtSctr
 Scrot      =         alt + Print
