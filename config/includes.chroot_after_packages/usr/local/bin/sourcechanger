@@ -29,17 +29,17 @@ mkdir /tmp/sourcechanger
 cd /tmp/sourcechanger || exit
 
 ## make a one time backup of existing sources.list for later use.
-   if [ ! -e "/etc/apt/sources.list.bak" ]; then
-   sudo cp -f "/etc/apt/sources.list" "/etc/apt/sources.list.bak"
+   if [ ! -e "/etc/apt/sources.list-original.bak" ]; then
+   sudo cp -f "/etc/apt/sources.list" "/etc/apt/sources.list-original.bak"
    fi
 
-## Assume people are trying more than once.. copy .bak back.)
-   if [ -e "/etc/apt/sources.list.bak" ]; then
-   sudo cp -f "/etc/apt/sources.list.bak" "/etc/apt/sources.list"
+## Assume people are trying more than once.. copy original.bak back.)
+   if [ -e "/etc/apt/sources.list-original.bak" ]; then
+   sudo cp -f "/etc/apt/sources.list-original.bak" "/etc/apt/sources.list"
    fi
 
 ## Grep to make sure the original address is used before proceeding.
-   if grep -q "http://deb.debian.org/debian\|https://deb.debian.org/debian\|http://ftp.debian.org/debian\|https://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list.bak"); then
+   if grep -q "http://deb.debian.org/debian\|https://deb.debian.org/debian\|http://ftp.debian.org/debian\|https://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
   
 ## Grab the new address.
 sudo netselect-apt
@@ -52,13 +52,13 @@ grep -o -m1 'http[s]\?://[^ ]\+' /tmp/sourcechanger/sources.list > /tmp/sourcech
 sed -i 's/.$//' /tmp/sourcechanger/sources.txt
 
 ## Replace the old address with the new.
-if grep -q "http://deb.debian.org/debian" <(head -n 4 "/etc/apt/sources.list.bak"); then
+if grep -q "http://deb.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
 sudo sed -i -e "s/http:\/\/deb.debian.org\/debian/$(sed 's:/:\\/:g' /tmp/sourcechanger/sources.txt)/" /etc/apt/sources.list
-elif grep -q "https://deb.debian.org/debian" <(head -n 4 "/etc/apt/sources.list.bak"); then
+elif grep -q "https://deb.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
 sudo sed -i -e "s/https:\/\/deb.debian.org\/debian/$(sed 's:/:\\/:g' /tmp/sourcechanger/sources.txt)/" /etc/apt/sources.list
-elif grep -q "https://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list.bak"); then
+elif grep -q "https://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
 sudo sed -i -e "s/https:\/\/ftp.debian.org\/debian/$(sed 's:/:\\/:g' /tmp/sourcechanger/sources.txt)/" /etc/apt/sources.list
-elif grep -q "http://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list.bak"); then
+elif grep -q "http://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
 sudo sed -i -e "s/http:\/\/ftp.debian.org\/debian/$(sed 's:/:\\/:g' /tmp/sourcechanger/sources.txt)/" /etc/apt/sources.list
 else
 echo "   [0;31mOriginal debian mirrors not found. exiting.[0m"
@@ -74,7 +74,7 @@ echo
 echo "   [0;31mSomething is not quite right - defaulting to original sources.list.[0m"
 echo
 sleep 2
-sudo cp -f "/etc/apt/sources.list.bak" "/etc/apt/sources.list"
+sudo cp -f "/etc/apt/sources.list-original.bak" "/etc/apt/sources.list"
 sudo apt update
 fi
 ## if not original
