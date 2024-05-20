@@ -29,3 +29,4 @@ echo ""
  echo "   [0;31m-----------------------------------------------------[0m"
 echo ""
 fi
+read -n1 -p " Press any key to quit this dialog ... "

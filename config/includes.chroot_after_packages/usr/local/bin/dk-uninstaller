@@ -15,3 +15,4 @@ killall -q jgmenu
 echo ""
 echo "Finished!"
 echo ""
+read -n1 -p " Press any key to quit this dialog ... "

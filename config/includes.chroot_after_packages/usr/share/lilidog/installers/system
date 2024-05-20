@@ -1,16 +1,17 @@
-Install awesomewm,        x-terminal-emulator -T 'Awesome WM Installer' -e bash -c "awesome-installer",                                                               applications-utilities
-Install awesome conky,    x-terminal-emulator -T 'Conky For Awesome Installer' -e bash -c "awesome-conky-installer",                                                  applications-utilities
-Install Backports,        x-terminal-emulator -T 'Backports Installer' -e bash -c "backports-installer; echo $'\n\nPress any key to close.'; read -srn1",             applications-utilities
-Install dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer",                                                                            applications-utilities
-Uninstall dkwm,           x-terminal-emulator -T 'dk Uninstaller' -e bash -c "dk-uninstaller",                                                                        applications-utilities
-Install dwm,              x-terminal-emulator -T 'dwm Installer' -e bash -c "dwm-installer",                                                                          applications-utilities
-Install i3wm,             x-terminal-emulator -T 'i3 WM Installer' -e bash -c "i3wm-installer",                                                                       applications-utilities
-Install Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e bash -c "jgmenu-default-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
-Install Kitchen Sink,     x-terminal-emulator -T 'Kitchen Sink Installer' -e bash -c "kitchensink-installer; echo $'\n\nPress any key to close.'; read -srn1",        applications-utilities
-Install Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c "lemonbar-installer; echo $'\n\nPress any key to close.'; read -srn1",               applications-utilities
-Install Live-build Apps,  x-terminal-emulator -T 'Live-build Apps Installer' -e bash -c "live-build-apps-installer; echo $'\n\nPress any key to close.'; read -srn1", applications-utilities
-Install Polybar Panel,    x-terminal-emulator -T 'Polybar Installer' -e bash -c "polybar-installer; echo $'\n\nPress any key to close.'; read -srn1",                 applications-utilities
-Install Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-installer",                                                                        applications-utilities
-Install Sowm w/ borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer",                                                   applications-utilities
-Install Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-utilities
-Install Tint2 Less Icons, x-terminal-emulator -T 'Tint2 With Less Icons Installer' -e bash -c "tint2-less-installer; echo $'\n\nPress any key to close.'; read -srn1",    applications-utilities
+awesomewm,        x-terminal-emulator -T 'Awesome WM Installer' -e bash -c "awesome-installer",                   applications-utilities
+awesome conky,    x-terminal-emulator -T 'Conky For Awesome Installer' -e bash -c "awesome-conky-installer",      applications-utilities
+Backports,        x-terminal-emulator -T 'Backports Installer' -e bash -c "backports-installer",                  applications-utilities
+dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer",                                applications-utilities
+dkwm Remover,     x-terminal-emulator -T 'dk Uninstaller' -e bash -c "dk-uninstaller",                            applications-utilities
+dwm,              x-terminal-emulator -T 'dwm Installer' -e bash -c "dwm-installer",                              applications-utilities
+i3wm,             x-terminal-emulator -T 'i3 WM Installer' -e bash -c "i3wm-installer",                           applications-utilities
+Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e bash -c "jgmenu-default-installer", applications-utilities
+Kitchen Sink,     x-terminal-emulator -T 'Kitchen Sink Installer' -e bash -c "kitchensink-installer",             applications-utilities
+Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c "lemonbar-installer",                    applications-utilities
+Live-build Apps,  x-terminal-emulator -T 'Live-build Apps Installer' -e bash -c "live-build-apps-installer",      applications-utilities
+Mirror Changer,   x-terminal-emulator -T 'Debian Mirrors Changer' -e bash -c "sourcechange",                      applications-utilities
+Polybar Panel,    x-terminal-emulator -T 'Polybar Installer' -e bash -c "polybar-installer",                      applications-utilities
+Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-installer",                            applications-utilities
+Sowm w/ borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer",       applications-utilities
+Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer",   applications-utilities
+Tint2 Less Icons, x-terminal-emulator -T 'Tint2 With Less Icons Installer' -e bash -c "tint2-less-installer",     applications-utilities

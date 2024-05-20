@@ -33,3 +33,4 @@ echo ""
  echo "   -------------------------------------------------------"
 echo ""
 fi
+read -n1 -p " Press any key to quit this dialog ... "
