@@ -8,7 +8,7 @@
 
     https://www.forum.lilidog.org/
     
-    For initial settings see the 'hamburger' icon
+    For initial settings see the 'landscape' icon
     located in the Tint2 panel. Font size, themes
     wallpapers, and other options are available.
     
