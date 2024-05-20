@@ -67,7 +67,7 @@ fi
 ## update to check.
 if sudo apt-get update -eany; then
 echo
-echo "   [0;32mSuccess! Enjoy your new debian mirrors.[0m"
+echo "   [0;32mSuccess! Enjoy your new debian mirror.[0m"
 echo
 else
 echo
