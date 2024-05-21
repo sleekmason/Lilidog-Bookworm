@@ -9,7 +9,6 @@ Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e ba
 Kitchen Sink,     x-terminal-emulator -T 'Kitchen Sink Installer' -e bash -c "kitchensink-installer",             applications-utilities
 Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c "lemonbar-installer",                    applications-utilities
 Live-build Apps,  x-terminal-emulator -T 'Live-build Apps Installer' -e bash -c "live-build-apps-installer",      applications-utilities
-Mirror Changer,   x-terminal-emulator -T 'Debian Mirrors Changer' -e bash -c "sourcechanger",                     applications-utilities
 Polybar Panel,    x-terminal-emulator -T 'Polybar Installer' -e bash -c "polybar-installer",                      applications-utilities
 Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-installer",                            applications-utilities
 Sowm w/ borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer",       applications-utilities
