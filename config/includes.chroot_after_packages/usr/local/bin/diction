@@ -5,4 +5,4 @@ menu="Quit!quit!application-exit"
 yad --notification --image="preferences-desktop-font" \
 --menu="$menu" \
 --text="Dictionary" \
---command="bash -c xfce4-dict" &
+--command="bash -c xfce4-dict"
