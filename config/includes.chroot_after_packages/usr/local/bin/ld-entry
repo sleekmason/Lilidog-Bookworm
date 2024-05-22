@@ -189,7 +189,7 @@ _update
 _remove_packages
 _add_backports
 _upgrade_kernel
-#_sourcechanger
+_sourcechanger
 _osprober
 _firmware
 #_autologin
@@ -203,7 +203,7 @@ _update
 _remove_packages
 _add_backports
 _upgrade_kernel
-#_sourcechanger
+_sourcechanger
 _firmware
 #_autologin
 _reboot
