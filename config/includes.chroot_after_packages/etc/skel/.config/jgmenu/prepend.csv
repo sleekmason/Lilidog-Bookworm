@@ -110,5 +110,6 @@ Picom,               geany ~/.config/picom.conf,                                
 Dmenu F3,            geany ~/.config/dmenu/apps,                                           document-properties
 Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
 Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
+Plymouth Background, x-terminal-emulator -T 'Plymouth Background Changer' -e bash -c "plymouth-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
 
 ^tag(apps)
