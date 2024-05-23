@@ -8,10 +8,10 @@ Obkeybinds =         super + o
 Backgounds =         super + b
 Browser =            super + w
 Conky =              super + c
-jgmenu =             alt + F1
-Rofi                 alt + F2                   
-Rofi Drun =          alt + F3
-Dmenu =              alt + F5 
+jgmenu =             super + F1
+Rofi                 super + F2                   
+Rofi Drun =          super + F3
+Dmenu =              super + F5 
 Editor =             super + e 
 File Manager =       super + f   
 Fontsize =           super + F6

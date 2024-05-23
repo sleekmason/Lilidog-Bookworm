@@ -248,47 +248,47 @@
     <keybind key="W-S-9">
   <action name="SendToDesktop"><to>9</to></action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
       </action>
     </keybind>
-    <keybind key="W-F5">
+    <keybind key="W-5">
       <action name="GoToDesktop">
         <to>5</to>
       </action>
     </keybind>
-    <keybind key="W-F6">
+    <keybind key="W-6">
       <action name="GoToDesktop">
         <to>6</to>
       </action>
     </keybind>
-    <keybind key="W-F7">
+    <keybind key="W-7">
       <action name="GoToDesktop">
         <to>7</to>
       </action>
     </keybind>
-    <keybind key="W-F8">
+    <keybind key="W-8">
       <action name="GoToDesktop">
         <to>8</to>
       </action>
     </keybind>
-    <keybind key="W-F9">
+    <keybind key="W-9">
       <action name="GoToDesktop">
         <to>9</to>
       </action>
@@ -362,11 +362,11 @@
     <!-- Keybindings for window snapping -->
     <keybind key="W-Left">        # HalfLeftScreen
       <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"><x>0</x><y>0</y><height>97%</height><width>50%</width></action>
+      <action name="MoveResizeTo"><x>0</x><y>0</y><height>100%</height><width>50%</width></action>
 	</keybind>
     <keybind key="W-Right">       # HalfRightScreen
 	  <action name="UnmaximizeFull"/>
-      <action name="MoveResizeTo"><x>-0</x><y>0</y><height>97%</height><width>50%</width></action>
+      <action name="MoveResizeTo"><x>-0</x><y>0</y><height>100%</height><width>50%</width></action>
 	</keybind>
     <keybind key="W-Up">          # HalfUpperScreen
       <action name="UnmaximizeFull"/>
