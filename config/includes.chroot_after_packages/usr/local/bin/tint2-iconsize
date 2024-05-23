@@ -3,6 +3,40 @@
 # Author - sleekmason 06/15/2023
 # This dialog is implemented through the tint2-theme-options dialog
 
+14(){
+  FILE="$HOME/.config/tint2/tint2rc"
+  if grep -q horizontal "$FILE"; then
+  sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 14 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 14 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 14 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 14/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 14/g' "$FILE"
+     sed -i 's/^panel_size =.*/panel_size = 100% 18/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 9/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 9/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 10/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans 10/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 9/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 7/g' "$FILE"
+        sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 16/g' "$FILE"
+   else
+     sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 14 100/g' "$FILE"
+     sed -i 's/^systray_icon_size =.*/systray_icon_size = 20 100/g' "$FILE"
+     sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 14 100/g' "$FILE"
+     sed -i 's/^execp_icon_w =.*/execp_icon_w = 14/g' "$FILE"
+     sed -i 's/^execp_icon_h =.*/execp_icon_h = 14/g' "$FILE"
+     sed -i 's/^panel_size =.*/panel_size = 100% 38/g' "$FILE"
+        sed -i 's/^button_font = .*/button_font = Noto Sans 9/g' "$FILE"
+        sed -i 's/^execp_font = .*/execp_font = Noto Sans 9/g' "$FILE"
+        sed -i 's/^bat1_font = .*/bat1_font = Noto Sans Bold 9/g' "$FILE"
+        sed -i 's/^time1_font = .*/time1_font = Noto Sans Bold 9/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 10/g' "$FILE"
+        sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 8/g' "$FILE"
+        sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 19/g' "$FILE"
+    fi
+     killall -SIGUSR1 tint2
+}
+
 16(){
   FILE="$HOME/.config/tint2/tint2rc"
   if grep -q horizontal "$FILE"; then
@@ -49,7 +83,7 @@
         sed -i 's/^execp_font = .*/execp_font = Noto Sans 11/g' "$FILE"
         sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 12/g' "$FILE"
         sed -i 's/^time1_font = .*/time1_font = Noto Sans 12/g' "$FILE"
-        sed -i 's/^task_font = .*/task_font = Noto Sans Display 12/g' "$FILE"
+        sed -i 's/^task_font = .*/task_font = Noto Sans Display 11.5/g' "$FILE"
         sed -i 's/^taskbar_name_font = .*/taskbar_name_font = Noto Sans 10/g' "$FILE"
         sed -i 's/^task_maximum_size =.*/task_maximum_size = 150 20/g' "$FILE"
    else
@@ -334,6 +368,7 @@
      killall -SIGUSR1 tint2
 }
 
+export -f 14
 export -f 16
 export -f 18
 export -f 20
@@ -343,7 +378,6 @@ export -f 26
 export -f 28
 export -f 30
 export -f 32
-export -f 34
 
 FILE="$HOME/.config/tint2/tint2rc"
 yad --title "Icon Size" --escape-ok --borders=14 \
@@ -351,6 +385,7 @@ yad --title "Icon Size" --escape-ok --borders=14 \
 --text="Default Size = 20\n" --text-align=center \
 --window-icon=applications-other \
     --form --columns=2 \
+    --field=" 14":FBTN "bash -c 14 >/dev/null 2>&1 &" \
     --field=" 16":FBTN "bash -c 16 >/dev/null 2>&1 &" \
     --field=" 18":FBTN "bash -c 18 >/dev/null 2>&1 &" \
     --field=" 20":FBTN "bash -c 20 >/dev/null 2>&1 &" \
@@ -359,5 +394,4 @@ yad --title "Icon Size" --escape-ok --borders=14 \
     --field=" 26":FBTN "bash -c 26 >/dev/null 2>&1 &" \
     --field=" 28":FBTN "bash -c 28 >/dev/null 2>&1 &" \
     --field=" 30":FBTN "bash -c 30 >/dev/null 2>&1 &" \
-    --field=" 32":FBTN "bash -c 32 >/dev/null 2>&1 &" \
-    --field=" 34":FBTN "bash -c 34 >/dev/null 2>&1 &"
+    --field=" 32":FBTN "bash -c 32 >/dev/null 2>&1 &"
