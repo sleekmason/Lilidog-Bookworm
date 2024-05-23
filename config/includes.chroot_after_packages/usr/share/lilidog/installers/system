@@ -2,7 +2,6 @@ awesomewm,        x-terminal-emulator -T 'Awesome WM Installer' -e bash -c "awes
 awesome conky,    x-terminal-emulator -T 'Conky For Awesome Installer' -e bash -c "awesome-conky-installer",      applications-utilities
 Backports,        x-terminal-emulator -T 'Backports Installer' -e bash -c "backports-installer",                  applications-utilities
 dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer",                                applications-utilities
-dkwm Remover,     x-terminal-emulator -T 'dk Uninstaller' -e bash -c "dk-uninstaller",                            applications-utilities
 dwm,              x-terminal-emulator -T 'dwm Installer' -e bash -c "dwm-installer",                              applications-utilities
 i3wm,             x-terminal-emulator -T 'i3 WM Installer' -e bash -c "i3wm-installer",                           applications-utilities
 Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e bash -c "jgmenu-default-installer", applications-utilities
