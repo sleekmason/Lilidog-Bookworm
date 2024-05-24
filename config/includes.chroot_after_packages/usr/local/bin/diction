@@ -2,7 +2,7 @@
 
 menu="Quit!quit!application-exit"
 
-yad --notification --image="preferences-desktop-font" \
+yad --notification --image="/usr/share/icons/hicolor/16x16/apps/org.xfce.Dictionary.png" \
 --menu="$menu" \
 --text="Dictionary" \
 --command="bash -c xfce4-dict"
