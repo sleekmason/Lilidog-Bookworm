@@ -27,7 +27,7 @@ read -p "   [0;32mRtile Installer[0m
 if : >/dev/tcp/8.8.8.8/53; then
 
 ## Install dependencies.
-sudo apt install -y ruby-rubygems
+sudo apt update && sudo apt install -y ruby-rubygems
 
 ## to /etc or bust.
 cd /tmp || exit
