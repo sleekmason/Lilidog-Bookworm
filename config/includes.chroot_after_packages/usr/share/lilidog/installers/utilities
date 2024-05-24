@@ -9,6 +9,7 @@ LD Update Checker, x-terminal-emulator -T 'LD apt update checker installer' -e b
 Pcmanfm,          x-terminal-emulator -T 'Pcmanfm Installer' -e bash -c "pcmanfm-installer",                                  applications-utilities
 Penguins Eggs,    x-terminal-emulator -T 'Penguins Eggs Installer' -e bash -c "penguins-eggs-installer",                      applications-utilities
 Qemu VM,          x-terminal-emulator -T 'Qemu Installer' -e bash -c "qemu-installer",                                        applications-utilities
+Rtile For Openbox, x-terminal-emulator -T 'Rtile For Openbox Installer' -e bash -c "rtile-installer",                         applications-utilities
 Synaptic,         x-terminal-emulator -T 'Synaptic Installer' -e bash -c "synaptic-installer",                                applications-utilities
 Virtualbox,       x-terminal-emulator -T 'Virtualbox Installer' -e bash -c "virtualbox-installer",                            applications-utilities
 Xscreensaver,     x-terminal-emulator -T 'Xscreensaver Installer' -e bash -c "xscreensaver-installer",                        applications-utilities
