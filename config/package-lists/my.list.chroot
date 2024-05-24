@@ -12,6 +12,8 @@ at-spi2-core
 b43-fwcutter
 bash-completion
 bind9-dnsutils
+brightnessctl 
+brightness-udev
 btrfs-progs
 bzip2
 ca-certificates
@@ -147,6 +149,7 @@ obsidian-icon-theme
 openbox
 os-prober
 oss-compat
+pamixer
 parcellite
 parted
 pavucontrol

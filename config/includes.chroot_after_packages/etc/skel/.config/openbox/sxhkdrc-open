@@ -100,7 +100,22 @@ shift + mod4 + x
 	
 # Hotcorners
 mod4 + z
-	toggle.ld		
+	toggle.ld
+	
+#Volume Controls
+XF86AudioLowerVolume
+	 pamixer --decrease 5 && notify-send "Volume down" -u low -t 500 
+XF86AudioRaiseVolume
+	 pamixer --increase 5 && notify-send "Volume up" -u low -t 500
+XF86AudioMute
+	 pamixer --toggle-mute && notify-send "Mute/Unmute" -u low -t 2000
+
+#Brightness controls
+XF86MonBrightnessDown
+	brightnessctl s 10%-
+
+XF86MonBrightnessUp
+	brightnessctl s 10%+			
 
 # screenshot and selection capture.
 Print
