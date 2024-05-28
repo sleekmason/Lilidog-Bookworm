@@ -16,8 +16,6 @@ read -p "   [0;32mDebian Mirror Changer[0m
 
 ## Make sure of internet connection
 if : >/dev/tcp/8.8.8.8/53; then
-
-sudo apt install -y netselect-apt
    
 ## remove old copy.
 rm -rf /tmp/sourcechanger
@@ -41,6 +39,9 @@ cd /tmp/sourcechanger || exit
 ## Grep to make sure the original address is used before proceeding.
    if grep -q "http://deb.debian.org/debian\|https://deb.debian.org/debian\|http://ftp.debian.org/debian\|https://ftp.debian.org/debian" <(head -n 4 "/etc/apt/sources.list-original.bak"); then
   
+## Install netselect-apt
+sudo apt install -y netselect-apt
+
 ## Grab the new address.
 sudo netselect-apt
 #sudo netselect-apt -o /tmp/sourcechanger/sources.list &&
