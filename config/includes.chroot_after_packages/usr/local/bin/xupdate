@@ -18,7 +18,7 @@ _UPDATE_MIRROR() {
     echo "   ${green}Finding The Fastest Debian Mirror ..."${reset}
     echo
     sleep .7
-    if [ $(dpkg-query -W -f='${Status}' conky-all 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    if [ $(dpkg-query -W -f='${Status}' netselect-apt 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
   sudo apt update && sudo apt install -y netselect-apt;
 fi
