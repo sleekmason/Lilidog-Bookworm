@@ -1,5 +1,5 @@
 Auto Themes,                ld-themes,                                org.xfce.settings.color
-Conky Options,              ~/.config/conky/scripts/conky-chooser,    preferences-desktop-display
+Conky Options,              conky-toggle,                             preferences-desktop-display
 Menu Icons + Fonts,         jg-icon-changer,                          applications-graphics
 Notification Sounds,        notification-sounds,                      audio-x-generic
 Openbox Settings,           obconf,                                   obconf
