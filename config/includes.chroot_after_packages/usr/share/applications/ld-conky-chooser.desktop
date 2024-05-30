@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Conky Chooser
-Exec=.config/conky/scripts/conky-chooser
+Exec=conky-toggle
 StartupNotify=false
 Terminal=false
 Icon=utilities-system-monitor
