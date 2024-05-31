@@ -74,8 +74,8 @@ export -f WORLDCLOCK
 if ! [[ $(command -v conky) ]]; then
 notify-send --urgency low "Install 'conky-all' to use this dialog"
 else
-yad --title "Conky" --button=gtk-ok:0 --form --center --width=230 \
---height=600 --text="\nToggle Your Selections\n" --text-align=center \
+yad --title "Conky" --form --center --width=220 --height=600 \
+--borders=12 --text="Toggle Your Selections\n" --text-align=center \
 --window-icon=conky-logomark-violet \
     --form \
     --field="                          Clock!appointment-new":BTN "bash -c 'TIMEDATE' >/dev/null 2>&1 &" \
