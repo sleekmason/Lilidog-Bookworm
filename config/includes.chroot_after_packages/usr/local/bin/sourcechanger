@@ -18,7 +18,7 @@ read -p "   [0;32mDebian Mirror Changer[0m
 if : >/dev/tcp/8.8.8.8/53; then
    
 ## remove old copy.
-rm -rf /tmp/sourcechanger
+sudo rm -rf /tmp/sourcechanger
 
 ## make the new directory we want to use in /tmp
 mkdir /tmp/sourcechanger
