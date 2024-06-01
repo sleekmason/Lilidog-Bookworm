@@ -19,12 +19,12 @@ read -p "   [0;33mAwesome Conky Installer[0m
    Or close this terminal window to quit the install." ;
 ## Make sure of internet connection
 if : >/dev/tcp/8.8.8.8/53; then
-if [[ $(command -v awesome) ]]; then
+if test -e "$HOME/.config/awesome"; then
 cd /tmp || exit
 ## Install necessary programs
 sudo apt update && sudo apt install -y conky-all fortunes fortune-mod
 ##If in Beardog:
-if test -e /usr/local/bin/bd-utilities-main-installers; then
+if test -e /usr/local/bin/xentry; then
 ## Remove /tmp files
 rm -f -r /tmp/conky
 wget https://raw.githubusercontent.com/sleekmason/packages/master/conky-bear-bookworm2.zip --show-progress -q &&
@@ -52,7 +52,14 @@ cp -r "/tmp/conky-awesome" "$HOME/.config/awesome"
 if ! test -e "/usr/local/bin/conkyrestart.bak"; then
 sudo cp /usr/local/bin/conkyrestart /usr/local/bin/conkyrestart.bak
 fi
-sudo cp -f ~/.config/awesome/conky-awesome/scripts/conkyrestart /usr/local/bin
+
+## Copy items to /usr/local/bin
+sudo cp -f $HOME/.config/awesome/conky-awesome/scripts/conkyrestart /usr/local/bin
+sudo cp -f $HOME/.config/awesome/conky-awesome/scripts/conky-toggle /usr/local/bin
+
+if test -e "/usr/local/bin/conky-toggle"; then
+sed -i -e '0,/Conky/ s/Conky.*/Conky,               conky-toggle,                                  preferences-desktop-personal/g' "$HOME/.config/jgmenu/prepend.csv"
+fi
 
 ## Explain items.
 echo "   [0;32m--------------------------------------------------------[0m"
@@ -64,7 +71,9 @@ echo ""
 echo "   [0;32m--------------------------------------------------------[0m"
 echo ""
 else
-notify-send --urgency low "Please install awesome WM first"
+echo
+echo "   [0;31mPlease install awesome WM before proceeding.[0m"
+echo
 fi
 else
 echo ""
