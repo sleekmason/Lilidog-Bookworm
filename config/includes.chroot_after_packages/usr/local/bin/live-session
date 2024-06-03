@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script is for live session use and can be removed if installed.
+
+# Ensure gsettings for neofetch use.
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray"
+# Remove errant mirror line.
+sudo sed -i '/file/d' /etc/apt/sources.list

@@ -13,7 +13,8 @@ gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray" &&
 --text-info --justify=left --wrap < /usr/share/lilidog/welcome.txt --fontname="JetBrains Mono Light 11" \
 --fore="#E6E6E3"; sed -i '/welcome-backend.sh &/d' ~/.config/openbox/autostart; if ! grep hypervisor /proc/cpuinfo ; then sed -i '/vmrestore.*/d' ~/.config/openbox/autostart; fi; exit
 else
-gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray" &&
+#gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray" &&
+/usr/local/bin/live-session &&
   yad --notification --image=/usr/share/icons/ld-icons/install.png --text "Install Lilidog ┃ User password ▸ 'user' ┃ Root password ▸ 'live'" --command "gksudo calamares" &
   yad --title "Welcome!" --window-icon=/usr/share/icons/ld-icons/paw-color.png \
 --width=488 --height=520 --center --escape-ok --undecorated --skip-taskbar \
