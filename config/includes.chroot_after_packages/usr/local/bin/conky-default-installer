@@ -1,0 +1,32 @@
+#!/bin/bash
+echo ""
+read -p "   [0;33mConky Default Configuration.[0m
+
+   This script will change your existing conky folder to the default
+   Lilidog conky version as seen on install by first making a backup 
+   and then installing the original from /etc/skel/.config/conky.
+   
+   * A backup will be made of your existing conky folder to:
+   ~/.config/conky.bak.
+    
+   [0;32m-------------------------------------------------------------
+   
+   Please press enter to change to the installed default version.
+   
+   -------------------------------------------------------------[0m
+      
+   Or close this terminal window to quit." ;
+echo ""
+sudo apt update && sudo apt-get install -y conky-all fortunes fortune-mod
+    cp -r "$HOME/.config/conky" "$HOME/.config/conky.bak"
+
+rm -r ~/.config/conky
+cp -a -f -r /etc/skel/.config/conky "$HOME/.config/"
+
+echo ""
+echo "----------------------------------------------------------------------"
+echo ""
+echo "[0;32m   All Finished![0m"
+echo "" 
+echo "----------------------------------------------------------------------"
+read -n1 -p " Press any key to quit this dialog ... "
