@@ -22,6 +22,8 @@ sudo apt update && sudo apt-get install -y conky-all fortunes fortune-mod
 
 rm -r ~/.config/conky
 cp -a -f -r /etc/skel/.config/conky "$HOME/.config/"
+sleep .50
+conkyrestart >/dev/null 2>&1
 
 echo ""
 echo "----------------------------------------------------------------------"
