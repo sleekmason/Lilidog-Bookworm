@@ -1,0 +1,59 @@
+#!/bin/bash
+
+FILE=$HOME/.config/conky/scripts/conky-restart-list
+
+SHORTCUTS=$(ps aux | grep conky-shortcuts | grep -v "grep conky-shortcuts" | wc -l)     
+if [ "$SHORTCUTS" = '1' ]; then
+sed -i '/conky-shortcuts.conf/c\conky -c ~/.config/conky/conky-shortcuts.conf &' "$FILE"
+else
+sed -i '/conky-shortcuts.conf/c\# conky -c ~/.config/conky/conky-shortcuts.conf &' "$FILE"
+fi
+
+BUILD=$(ps aux | grep conky-build | grep -v "grep conky-build" | wc -l)     
+if [ "$BUILD" = '1' ]; then
+sed -i '/conky-build.conf/c\conky -c ~/.config/conky/conky-build.conf &' "$FILE"
+else
+sed -i '/conky-build.conf/c\# conky -c ~/.config/conky/conky-build.conf &' "$FILE"
+fi
+
+CLOCK=$(ps aux | grep conky-clock-date | grep -v "grep conky-clock-date" | wc -l)     
+if [ "$CLOCK" = '1' ]; then
+sed -i '/conky-clock-date.conf/c\conky -c ~/.config/conky/conky-clock-date.conf &' "$FILE"
+else
+sed -i '/conky-clock-date.conf/c\# conky -c ~/.config/conky/conky-clock-date.conf &' "$FILE"
+fi
+
+CURRENT=$(ps aux | grep conky-current | grep -v "grep conky-current" | wc -l)     
+if [ "$CURRENT" = '1' ]; then
+sed -i '/conky-current.conf/c\conky -c ~/.config/conky/conky-current.conf &' "$FILE"
+else
+sed -i '/conky-current.conf/c\# conky -c ~/.config/conky/conky-current.conf &' "$FILE"
+fi
+
+FORTUNES=$(ps aux | grep conky-fortunes | grep -v "grep conky-fortunes" | wc -l)     
+if [ "$FORTUNES" = '1' ]; then
+sed -i '/conky-fortunes.conf/c\conky -c ~/.config/conky/conky-fortunes.conf &' "$FILE"
+else
+sed -i '/conky-fortunes.conf/c\# conky -c ~/.config/conky/conky-fortunes.conf &' "$FILE"
+fi
+
+FULL=$(ps aux | grep conky-full | grep -v "grep conky-full" | wc -l)     
+if [ "$FULL" = '1' ]; then
+sed -i '/conky-full.conf/c\conky -c ~/.config/conky/conky-full.conf &' "$FILE"
+else
+sed -i '/conky-full.conf/c\# conky -c ~/.config/conky/conky-full.conf &' "$FILE"
+fi
+
+TAO=$(ps aux | grep conky-tao | grep -v "grep conky-tao" | wc -l)     
+if [ "$TAO" = '1' ]; then
+sed -i '/conky-tao.conf/c\conky -c ~/.config/conky/conky-tao.conf &' "$FILE"
+else
+sed -i '/conky-tao.conf/c\# conky -c ~/.config/conky/conky-tao.conf &' "$FILE"
+fi
+
+WORLDCLOCK=$(ps aux | grep conky-world-clock | grep -v "grep conky-world-clock" | wc -l)     
+if [ "$WORLDCLOCK" = '1' ]; then
+sed -i '/conky-world-clock.conf/c\conky -c ~/.config/conky/conky-world-clock.conf &' "$FILE" >/dev/null 2>&1
+else
+sed -i '/conky-world-clock.conf/c\# conky -c ~/.config/conky/conky-world-clock.conf &' "$FILE" >/dev/null 2>&1
+fi

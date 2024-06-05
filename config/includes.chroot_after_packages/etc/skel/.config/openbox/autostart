@@ -37,8 +37,13 @@ nm-applet &
 lxpolkit &
 xfsettingsd --daemon &
 pnmixer &
-conky -c ~/.config/conky/conky-shortcuts.conf &
 sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
+
+## Start conkys on login if present
+if test -f  "$HOME/.config/conky/scripts/conky-restart-list"; then
+	"$HOME/.config/conky/scripts/conky-restart-list" &
+	"/usr/local/bin/conkyrestart" &
+fi
 
 ### Start Thunar Daemon if thunar is installed. Uncomment the three lines below to enable.
 # if type 'thunar' &> /dev/null; then

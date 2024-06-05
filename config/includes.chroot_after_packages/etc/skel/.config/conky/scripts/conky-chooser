@@ -4,20 +4,24 @@ MAIN(){
 if pgrep -x picom > /dev/null 2>&1; then
 if pgrep -f "$FILE" > /dev/null; then
     pkill -f "$FILE"
+    "$HOME/.config/conky/scripts/conkyrestarter"
     else   
     sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
     sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
     sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
     bash -c "conky -c $FILE"
+    "$HOME/.config/conky/scripts/conkyrestarter"
     fi
 else
 if pgrep -f "$FILE" > /dev/null; then
     pkill -f "$FILE"
+    "$HOME/.config/conky/scripts/conkyrestarter"
     else   
     sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
     sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
     sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
     bash -c "conky -c $FILE"
+    "$HOME/.config/conky/scripts/conkyrestarter"
     fi
 fi
 }
@@ -62,6 +66,12 @@ FILE=$HOME/.config/conky/conky-world-clock.conf
 $(MAIN) >/dev/null 2>&1 "$FILE"
 }
 
+KILLCONKY(){
+killall "conky"
+sleep .50
+"$HOME/.config/conky/scripts/conkyrestarter"
+}
+
 export -f MAIN
 export -f TIMEDATE
 export -f FULLCONKY
@@ -70,6 +80,7 @@ export -f TAO
 export -f SHORTCUTS
 export -f BUILDDATE
 export -f WORLDCLOCK
+export -f KILLCONKY
 
 if ! [[ $(command -v conky) ]]; then
 notify-send --urgency low "Install 'conky-all' to use this dialog"
@@ -89,5 +100,5 @@ yad --title "Conky" --form --center --width=220 --height=600 \
     --field="       Bg Transparency!preferences-system":FBTN "bash -c '~/.config/conky/scripts/conky-bg-trans'" \
     --field="             Bg Tint Color!org.xfce.settings.color":FBTN "bash -c '~/.config/conky/scripts/conky-bg-color'" \
     --field="            Restart Conky!media-playlist-repeat":FBTN "conkyrestart" \
-    --field="                  Kill Conky!process-stop":FBTN "killall conky"
+    --field="                  Kill Conky!process-stop":FBTN "bash -c KILLCONKY"
 fi
