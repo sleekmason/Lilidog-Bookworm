@@ -41,9 +41,9 @@ sxhkd -c "$HOME/.config/openbox/sxhkdrc-open" &
 
 ## Start conkys on login if present
 if test -f  "$HOME/.config/conky/scripts/conky-restart-list"; then
-	"$HOME/.config/conky/scripts/conky-restart-list" >/dev/null 2>&1
-	sleep .50
 	"/usr/local/bin/conkyrestart" >/dev/null 2>&1
+	sleep 1
+	"$HOME/.config/conky/scripts/conky-restart-list" >/dev/null 2>&1
 fi
 
 ### Start Thunar Daemon if thunar is installed. Uncomment the three lines below to enable.
