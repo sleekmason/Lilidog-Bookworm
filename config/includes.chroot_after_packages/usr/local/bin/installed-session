@@ -1,0 +1,10 @@
+#!/bin/bash
+# This script is for one time installed session use and can be removed if installed.
+
+# Ensure gsettings for neofetch use.
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray"
+# set thunar as default for inode/directory
+xdg-mime default thunar.desktop inode/directory
+# Remove face icons in $HOME
+rm -f $HOME/.face
+rm -f $HOME/.face.icon
