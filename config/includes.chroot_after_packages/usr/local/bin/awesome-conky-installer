@@ -2,11 +2,9 @@
 read -p "   [0;33mAwesome Conky Installer[0m
 
    This installer provides conky for the awesome window manager.  
-   If using Beardog, conky will also be installed for use in 
-   openbox. A backupfile ~/.config/conky.bak will be created if 
-   conky for openbox is already installed in Beardog.
    
-   Use Super + c for the conky chooser once installed.
+   Use Super + c or look in the gear icon for the conky chooser 
+   once installed.
 
    [0;33mhttps://awesomewm.org/[0m
 
@@ -23,21 +21,10 @@ if test -e "$HOME/.config/awesome"; then
 cd /tmp || exit
 ## Install necessary programs
 sudo apt update && sudo apt install -y conky-all fortunes fortune-mod
-##If in Beardog:
-if test -e /usr/local/bin/xentry; then
-## Remove /tmp files
-rm -f -r /tmp/conky
-wget https://raw.githubusercontent.com/sleekmason/packages/master/conky-bear-bookworm2.zip --show-progress -q &&
-unzip -q /tmp/conky-bear-bookworm2.zip
-if test -e ~/.config/conky; then
-	mv ~/.config/conky ~/.config/conky.bak &&
-	cp -r /tmp/conky ~/.config
-else                
-	cp -r /tmp/conky ~/.config              
-fi
-echo ""
-	sed -i '/Conky,               ~\/.config\/conky\/scripts\/conky-chooser,         preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv
-	sed -i '/Xkill/i Conky,               ~\/.config\/conky\/scripts\/conky-chooser,         preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
+##If in Beardog, add entry to jgmenu:
+if ! grep -q "Beardog" "/etc/lsb-release"; then
+	sed -i '/Conky,               conky-toggle,                                  preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv
+	sed -i '/Xkill/i Conky,               conky-toggle,                                  preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
 fi
 ## Remove /tmp files
 rm -f "/tmp/conky-awesome.zip"
