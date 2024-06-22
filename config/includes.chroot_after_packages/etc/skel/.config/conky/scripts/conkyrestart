@@ -1,23 +1,22 @@
 #!/bin/bash
 # THIS SCRIPT MUST BE PLACED IN $PATH TO WORK CORRECTLY.
-# ALL CONKYS PLACED IN ~/.config/conky NEED TO END IN .CONF TO USE 
-# THIS FEATURE.
+# ALL CONKYS NEED TO END IN .CONF TO USE THIS SCRIPT AS IS.
 
 # Change running conkys to use transparency settings on the fly.
 # Made by sleekmason 23.11.19
 #
 if pgrep "awesome"; then
 # Path to newly created file -
-conkyfile=$HOME/.config/awesome/conky-awesome/scripts/conky-restart-list
+conkyfile=$HOME/.config/awesome/awesome-conky/scripts/conky-restart-list
 # Copy currently running conkys to file -
 ps aux | grep -i conky | awk '{ print $13 }' | tail > $conkyfile &&
 # Adjust file for correct lines
-sed -i "/^Conky\b/d" $conkyfile
-sed -i "/^conky\b/d" $conkyfile
-sed -i "/^KILLCONKY\b/d" $conkyfile
-sed -i '/^[[:space:]]*$/d' $conkyfile
-sed -i -e 's/^/conky -c /' $conkyfile
-sed -i '1i #!/bin/bash' $conkyfile &&
+sed -i "/^Conky\b/d" "$conkyfile"
+sed -i "/^conky\b/d" "$conkyfile"
+sed -i "/^KILLCONKY\b/d" "$conkyfile"
+sed -i '/^[[:space:]]*$/d' "$conkyfile"
+sed -i -e 's/^/conky -c /' "$conkyfile"
+sed -i '1i #!/bin/bash' "$conkyfile" &&
 # Restart -
 killall conky &&
 if pgrep -x picom > /dev/null 2>&1; then
@@ -30,8 +29,8 @@ else
     sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/awesome/conky-awesome/*.conf
 fi
 sleep .30
-chmod 755 $conkyfile
-$conkyfile
+chmod 755 "$conkyfile"
+"$conkyfile"
 exit 0
 # Remove file if desired
 #rm -f $conkyfile
@@ -42,12 +41,12 @@ conkyfile=$HOME/.config/conky/scripts/conky-restart-list
 # Copy currently running conkys to file -
 ps aux | grep -i conky | awk '{ print $13 }' | tail > $conkyfile &&
 # Adjust file for correct lines
-sed -i "/^Conky\b/d" $conkyfile
-sed -i "/^conky\b/d" $conkyfile
-sed -i "/^KILLCONKY\b/d" $conkyfile
-sed -i '/^[[:space:]]*$/d' $conkyfile
-sed -i -e 's/^/conky -c /' $conkyfile
-sed -i '1i #!/bin/bash' $conkyfile &&
+sed -i "/^Conky\b/d" "$conkyfile"
+sed -i "/^conky\b/d" "$conkyfile"
+sed -i "/^KILLCONKY\b/d" "$conkyfile"
+sed -i '/^[[:space:]]*$/d' "$conkyfile"
+sed -i -e 's/^/conky -c /' "$conkyfile"
+sed -i '1i #!/bin/bash' "$conkyfile" &&
 # Restart -
 killall conky &&
 if pgrep -x picom > /dev/null 2>&1; then
@@ -60,8 +59,8 @@ else
     sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$HOME"/.config/conky/*.conf
 fi
 sleep .30
-chmod 755 $conkyfile
-$conkyfile
+chmod 755 "$conkyfile"
+"$conkyfile"
 exit 0
 # Remove file if desired
 #rm -f $conkyfile

@@ -4,26 +4,36 @@ MAIN(){
 if pgrep -x picom > /dev/null 2>&1; then
 if pgrep -f "$FILE" > /dev/null; then
     pkill -f "$FILE"
-    "$HOME/.config/conky/scripts/conkyrestarter"
     else   
     sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
     sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
     sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
     bash -c "conky -c $FILE"
-    "$HOME/.config/conky/scripts/conkyrestarter"
     fi
 else
 if pgrep -f "$FILE" > /dev/null; then
     pkill -f "$FILE"
-    "$HOME/.config/conky/scripts/conkyrestarter"
     else   
     sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
     sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
     sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
     bash -c "conky -c $FILE"
-    "$HOME/.config/conky/scripts/conkyrestarter"
     fi
 fi
+}
+
+RESTART(){
+conkyfile=$HOME/.config/conky/scripts/conky-restart-list
+# Copy currently running conkys to file -
+ps aux | grep -i conky | awk '{ print $13 }' | tail > "$conkyfile" &&
+# Adjust file for correct lines
+sed -i "/^Conky\b/d" "$conkyfile"
+sed -i "/^conky\b/d" "$conkyfile"
+sed -i "/^KILLCONKY\b/d" "$conkyfile"
+sed -i '/^[[:space:]]*$/d' "$conkyfile"
+sed -i -e 's/^/conky -c /' "$conkyfile"
+sed -i '1i #!/bin/bash' "$conkyfile"
+chmod 755 "$conkyfile"
 }
 
 TIMEDATE(){
@@ -69,10 +79,11 @@ $(MAIN) >/dev/null 2>&1 "$FILE"
 KILLCONKY(){
 killall "conky"
 sleep .50
-"$HOME/.config/conky/scripts/conkyrestarter"
+eval "$(RESTART)" >/dev/null 2>&1
 }
 
 export -f MAIN
+export -f RESTART
 export -f TIMEDATE
 export -f FULLCONKY
 export -f FORTUNES
@@ -102,3 +113,4 @@ yad --title "Conky" --form --center --width=220 --height=600 \
     --field="            Restart Conky!media-playlist-repeat":FBTN "conkyrestart" \
     --field="                  Kill Conky!process-stop":FBTN "bash -c KILLCONKY"
 fi
+eval "$(RESTART)" >/dev/null 2>&1
