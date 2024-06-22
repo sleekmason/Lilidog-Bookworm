@@ -37,12 +37,12 @@ unzip -q /tmp/conky-awesome.zip
 ## Copy conky-awesome from /tmp
 cp -r "/tmp/conky-awesome" "$HOME/.config/awesome"
 if ! test -e "/usr/local/bin/conkyrestart.bak"; then
-sudo cp /usr/local/bin/conkyrestart /usr/local/bin/conkyrestart.bak
+sudo cp "/usr/local/bin/conkyrestart" "/usr/local/bin/conkyrestart.bak"
 fi
 
 ## Copy items to /usr/local/bin
-sudo cp -f $HOME/.config/awesome/conky-awesome/scripts/conkyrestart /usr/local/bin
-sudo cp -f $HOME/.config/awesome/conky-awesome/scripts/conky-toggle /usr/local/bin
+sudo cp -f "$HOME/.config/awesome/conky-awesome/scripts/conkyrestart" "/usr/local/bin"
+sudo cp -f "$HOME/.config/awesome/conky-awesome/scripts/conky-toggle" "/usr/local/bin"
 
 if test -e "/usr/local/bin/conky-toggle"; then
 sed -i -e '0,/Conky/ s/Conky.*/Conky,               conky-toggle,                                  preferences-desktop-personal/g' "$HOME/.config/jgmenu/prepend.csv"
