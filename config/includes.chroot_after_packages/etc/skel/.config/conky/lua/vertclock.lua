@@ -155,7 +155,7 @@ function conky_date()
 end
 
 -- Set the colour and transparency (alpha) of your background.
-corner_r=16
+corner_r=32
 bg_colour=0x000000
 bg_alpha=0.0 
 

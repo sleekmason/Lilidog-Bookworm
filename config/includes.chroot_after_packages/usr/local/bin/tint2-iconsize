@@ -78,7 +78,7 @@
      sed -i 's/^launcher_icon_size =.*/launcher_icon_size = 16 100/g' "$FILE"
      sed -i 's/^execp_icon_w =.*/execp_icon_w = 17/g' "$FILE"
      sed -i 's/^execp_icon_h =.*/execp_icon_h = 17/g' "$FILE"
-     sed -i 's/^panel_size =.*/panel_size = 100% 20/g' "$FILE"
+     sed -i 's/^panel_size =.*/panel_size = 100% 22/g' "$FILE"
         sed -i 's/^button_font = .*/button_font = Noto Sans 11/g' "$FILE"
         sed -i 's/^execp_font = .*/execp_font = Noto Sans 11/g' "$FILE"
         sed -i 's/^bat1_font = .*/bat1_font = Noto Sans 12/g' "$FILE"
