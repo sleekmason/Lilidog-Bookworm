@@ -98,7 +98,6 @@ eval "$(RESTART)" >/dev/null 2>&1
 ## Add your conky name from the section above here to be used in the dialog.
 export -f MAIN
 export -f RESTART
-export -f TRANSPARENCY
 export -f TIMEDATE
 export -f FULLCONKY
 export -f FORTUNES
