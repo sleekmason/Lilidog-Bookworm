@@ -36,6 +36,7 @@ then
   exit 1
 fi
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/shortcuts.lua
+    sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/shortcuts2.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/tao.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/full.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/fortunes.lua

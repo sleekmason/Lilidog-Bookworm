@@ -11,6 +11,7 @@ noti=$(yad --width 310 --borders=12 --entry --title "Conky BG Tint" --center --w
 case $noti in
   Default*)
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/fortunes.lua
@@ -21,6 +22,7 @@ case $noti in
 ;;
   Aqua)
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x266978/g" ~/.config/conky/lua/fortunes.lua
@@ -31,6 +33,7 @@ case $noti in
 ;;
   Blue)
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x1C314F/g" ~/.config/conky/lua/fortunes.lua
@@ -41,6 +44,7 @@ case $noti in
 ;;
   Green)
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x34631C/g" ~/.config/conky/lua/fortunes.lua
@@ -51,6 +55,7 @@ case $noti in
 ;;
   Grey)
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x292C30/g" ~/.config/conky/lua/fortunes.lua
@@ -61,6 +66,7 @@ case $noti in
 ;;
   Red)
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x260000/g" ~/.config/conky/lua/fortunes.lua
@@ -71,6 +77,7 @@ case $noti in
 ;;
   Purple)
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x735F98/g" ~/.config/conky/lua/fortunes.lua
@@ -81,6 +88,7 @@ case $noti in
 ;;
   Brown)
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/shortcuts.lua
+     sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/shortcuts2.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/tao.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/full.lua
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/fortunes.lua
