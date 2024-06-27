@@ -1,11 +1,10 @@
 #!/bin/bash
 # Lua transparency level
 
-WIDTH=240
-HEIGHT=390
-
-trans="$(yad --title "Transparency" --width="$WIDTH" --height="$HEIGHT" --borders="6" --center --list \
+trans="$(yad --title "Transparency" --geometry=240x390+350+180 --borders="6" --center --list \
 --text "\nChoose conky background transparency amount in %\n" --text-align=center \
+--button=" Change!media-playlist-repeat:0" \
+--button=" Close!process-stop:1" \
 --window-icon=applications-system \
 --radiolist  --column "Select" --column "%" --separator=" " \
   TRUE "0" \
@@ -44,4 +43,5 @@ fi
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/vertclock.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/world.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.$trans/g" ~/.config/conky/lua/build.lua
-exit 0
+exit 0 &
+"$HOME/.config/conky/scripts/conky-bg-trans" >/dev/null 2>&1

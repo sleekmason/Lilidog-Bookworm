@@ -2,10 +2,11 @@
 # tint2 battery color options options.
 # Made be sleekmason for Lilidog 4-13-2022
 
-noti=$(yad --width 310 --borders=12 --entry --title "Conky BG Tint" --center --window-icon=applications-graphics \
+noti=$(yad --borders=12 --entry --title "Conky BG Tint" --center --window-icon=applications-graphics \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
-    --button=gtk-close:1 \
-    --button="gtk-ok:0" \
+    --geometry=310x110+600+180 \
+    --button=" Change!media-playlist-repeat:0" \
+    --button=" Close!process-stop:1" \
     "Default Tint - Black" "Aqua" "Blue" "Green" "Grey" "Red" "Purple" "Brown")
 
 case $noti in
@@ -98,3 +99,4 @@ case $noti in
      sed -i "s/bg_colour=.*/bg_colour=0x2D2D2D/g" ~/.config/conky/lua/build.lua ;;
         *) exit 1 ;;
     esac
+"$HOME/.config/conky/scripts/conky-bg-color" >/dev/null 2>&1
