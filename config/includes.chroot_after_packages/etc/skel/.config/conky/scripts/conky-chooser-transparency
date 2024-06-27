@@ -1,0 +1,142 @@
+#!/bin/bash
+# Simple conky chooser for Lilidog.
+# Created by sleekmason 24 June 2024
+## Change the transparency settings based on whether picom is enabled.
+MAIN(){
+if pgrep -x picom > /dev/null 2>&1; then
+if pgrep -f "$FILE" > /dev/null; then
+    pkill -f "$FILE"
+    else   
+    sed -i '/own_window_transparent/c\-- own_window_transparent = true,' "$FILE"
+    sed -i '/own_window_argb_visual/c\own_window_argb_visual = true,' "$FILE"
+    sed -i '/own_window_argb_value/c\own_window_argb_value = 0,' "$FILE"
+    bash -c "conky -c $FILE"
+    fi
+else
+if pgrep -f "$FILE" > /dev/null; then
+    pkill -f "$FILE"
+    else   
+    sed -i '/own_window_transparent/c\own_window_transparent = true,' "$FILE"
+    sed -i '/own_window_argb_visual/c\-- own_window_argb_visual = true,' "$FILE"
+    sed -i '/own_window_argb_value/c\-- own_window_argb_value = 0,' "$FILE"
+    bash -c "conky -c $FILE"
+    fi
+fi
+}
+
+## Add the currently running conkys to file for restart use on login.
+RESTART(){
+conkyfile=$HOME/.config/conky/scripts/conky-restart-list
+# Copy currently running conkys to file -
+ps aux | grep -i conky | awk '{ print $13 }' | tail > "$conkyfile" &&
+# Adjust file for correct lines
+sed -i "/^Conky\b/d" "$conkyfile"
+sed -i "/^conky\b/d" "$conkyfile"
+sed -i "/^.*CONKY\b/d" "$conkyfile"
+sed -i '/^[[:space:]]*$/d' "$conkyfile"
+sed -i -e 's/^/conky -c /' "$conkyfile"
+sed -i '1i #!/bin/bash' "$conkyfile"
+chmod 755 "$conkyfile"
+}
+
+## CONKY SECTION
+## Conky additions start here. Add yours if you like and make sure to 
+## also add to the 'export' section and 'yad dialog' section below.
+
+TIMEDATE(){
+FILE=$HOME/.config/conky/conky-clock-date.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+FULLCONKY(){
+FILE=$HOME/.config/conky/conky-full.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+TAO(){
+FILE=$HOME/.config/conky/conky-tao.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+FORTUNES(){
+FILE=$HOME/.config/conky/conky-fortunes.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+SHORTCUTS(){
+FILE=$HOME/.config/conky/conky-shortcuts.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+SHORTCUTS2(){
+FILE=$HOME/.config/conky/conky-shortcuts2.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+BUILDDATE(){
+FILE=$HOME/.config/conky/conky-build.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+CURRENT(){
+FILE=$HOME/.config/conky/conky-current.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+WORLDCLOCK(){
+FILE=$HOME/.config/conky/conky-world-clock.conf
+$(MAIN) >/dev/null 2>&1 "$FILE"
+}
+
+TRANSPARENCY(){
+"$HOME/.config/conky/scripts/conky-bg-color" >/dev/null 2>&1 &
+"$HOME/.config/conky/scripts/conky-bg-trans" >/dev/null 2>&1
+}
+
+KILLCONKY(){
+killall "conky"
+sleep .50
+eval "$(RESTART)" >/dev/null 2>&1
+}
+
+## EXPORT SECTION
+## Add your conky name from the section above here to be used in the dialog.
+export -f MAIN
+export -f RESTART
+export -f TIMEDATE
+export -f FULLCONKY
+export -f FORTUNES
+export -f TAO
+export -f SHORTCUTS
+export -f SHORTCUTS2
+export -f BUILDDATE
+export -f WORLDCLOCK
+export -f TRANSPARENCY
+export -f KILLCONKY
+
+## YAD DIALOG SECTION
+## Add your conky name to the dialog below, copying the existing format
+## in the field section. (name - icon - command)
+if ! [[ $(command -v conky) ]]; then
+notify-send --urgency low "Install 'conky-all' to use this dialog"
+else
+yad --title "Conky" --form --center --width=220 --height=300 \
+--borders=12 --text="Toggle Selections\n" --text-align=center \
+--window-icon=conky-logomark-violet \
+--buttons-layout=center \
+--button=" 12H/24H!appointment-new:bash -c '~/.config/conky/scripts/conky-12to24'" \
+--button=" Lua!recommended-driver:bash -c TRANSPARENCY" \
+--button=" Restart!media-playlist-repeat:bash -c conkyrestart >/dev/null 2>&1 &" \
+--button=" Kill All!process-stop:bash -c KILLCONKY" \
+--button=" Ok!gtk-ok:0" \
+    --form --columns=2 \
+    --field="          Shortcuts!accessories-text-editor":FBTN "bash -c 'SHORTCUTS' >/dev/null 2>&1 &" \
+    --field="        Shortcuts2!accessories-text-editor":FBTN "bash -c 'SHORTCUTS2' >/dev/null 2>&1 &" \
+    --field="      World Clock!emblem-web":FBTN "bash -c 'WORLDCLOCK' >/dev/null 2>&1 &" \
+    --field="     Tao Te Ching!applications-other":FBTN "bash -c 'TAO' >/dev/null 2>&1 &" \
+    --field="                 Clock!appointment-soon":FBTN "bash -c 'TIMEDATE' >/dev/null 2>&1 &" \
+    --field="            Full Info!dialog-information":FBTN "bash -c 'FULLCONKY' >/dev/null 2>&1 &" \
+    --field="           Fortunes!emblem-package":FBTN "bash -c 'FORTUNES' >/dev/null 2>&1 &" \
+    --field="       Install Date!application-certificate":FBTN "bash -c 'BUILDDATE' >/dev/null 2>&1 &"
+fi
+eval "$(RESTART)" >/dev/null 2>&1
