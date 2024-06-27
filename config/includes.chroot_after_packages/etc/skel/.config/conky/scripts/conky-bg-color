@@ -5,8 +5,8 @@
 noti=$(yad --borders=12 --entry --title "Conky BG Tint" --center --window-icon=applications-graphics \
     --image="/usr/share/icons/hicolor/24x24/apps/org.xfce.settings.color.png" \
     --geometry=310x110+600+180 \
-    --button=" Change!media-playlist-repeat:0" \
     --button=" Close!process-stop:1" \
+    --button=" Change!media-playlist-repeat:0" \
     "Default Tint - Black" "Aqua" "Blue" "Green" "Grey" "Red" "Purple" "Brown")
 
 case $noti in
