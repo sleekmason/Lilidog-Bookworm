@@ -19,7 +19,7 @@ cp -f "$HOME/.config/conky/scripts/conky-chooser-notrans.bak" "$HOME/.config/con
 sed -i '/lua_load =/s/^#*/--/g' "$HOME"/.config/conky/*.conf
 sed -i '/lua_draw_hook_pre =/s/^#*/--/g' "$HOME"/.config/conky/*.conf
 else
-## If .bak file doesn't exist, copy back original from /etc/skell
+## If .bak file doesn't exist, copy back original from /etc/skel
 cp -fr "/etc/skel/.config/conky" "$HOME/.config"
 fi
 fi
