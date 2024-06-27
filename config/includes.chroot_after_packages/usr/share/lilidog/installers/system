@@ -1,5 +1,5 @@
-awesomewm,        x-terminal-emulator -T 'Awesome WM Installer' -e bash -c "awesome-installer",                   applications-utilities
-awesome conky,    x-terminal-emulator -T 'Conky For Awesome Installer' -e bash -c "awesome-conky-installer",      applications-utilities
+Awesomewm,        x-terminal-emulator -T 'Awesome WM Installer' -e bash -c "awesome-installer",                   applications-utilities
+Awesome Conky,    x-terminal-emulator -T 'Conky For Awesome Installer' -e bash -c "awesome-conky-installer",      applications-utilities
 Backports,        x-terminal-emulator -T 'Backports Installer' -e bash -c "backports-installer",                  applications-utilities
 Conky,            x-terminal-emulator -T 'Default Conky Installer' -e bash -c "conky-default-installer",          applications-utilities
 dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer",                                applications-utilities
@@ -12,6 +12,6 @@ Live-build Apps,  x-terminal-emulator -T 'Live-build Apps Installer' -e bash -c 
 Mirror Changer,   x-terminal-emulator -T 'Debian Mirrors Changer' -e bash -c "sourcechanger",                     applications-utilities
 Polybar Panel,    x-terminal-emulator -T 'Polybar Installer' -e bash -c "polybar-installer",                      applications-utilities
 Sowm,             x-terminal-emulator -T 'Sowm Installer' -e bash -c "sowm-installer",                            applications-utilities
-Sowm w/ borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer",       applications-utilities
+Sowm w/ Borders,  x-terminal-emulator -T 'Sowm With Borders Installer' -e bash -c "sowm-borders-installer",       applications-utilities
 Tint2 Default,    x-terminal-emulator -T 'Tint2 Default Config Installer' -e bash -c "tint2-default-installer",   applications-utilities
 Tint2 Less Icons, x-terminal-emulator -T 'Tint2 With Less Icons Installer' -e bash -c "tint2-less-installer",     applications-utilities
