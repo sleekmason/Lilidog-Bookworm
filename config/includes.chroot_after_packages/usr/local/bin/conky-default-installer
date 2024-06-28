@@ -17,8 +17,8 @@ read -p "   [0;33mConky Default Configuration.[0m
       
    Or close this terminal window to quit." ;
 echo ""
-killall -q conky
 sudo apt update && sudo apt-get install -y conky-all fortunes fortune-mod
+killall -q conky
 if test -e "$HOME/.config/conky"; then
     cp -fr "$HOME/.config/conky" "$HOME/.config/conky.bak"
 	rm -fr "$HOME/.config/conky"
