@@ -1,9 +1,2 @@
 #!/bin/bash
-# conky -c ~/.config/conky/conky-clock-date.conf &
-# conky -c ~/.config/conky/conky-build.conf &
-# conky -c ~/.config/conky/conky-current.conf &
-# conky -c ~/.config/conky/conky-fortunes.conf &
-# conky -c ~/.config/conky/conky-full.conf &
 conky -c ~/.config/conky/conky-shortcuts.conf &
-# conky -c ~/.config/conky/conky-tao.conf &
-# conky -c ~/.config/conky/conky-world-clock.conf &
