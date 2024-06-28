@@ -1,6 +1,8 @@
 #!/bin/bash
 # Replace conky-chooser with lua addition for the dialog.
 # Made by sleekmason 24.06.27
+killall -q conky
+: > "$HOME/.config/conky/scripts/conky-restart-list"
 ## Uncomment and use lua transparency
 if grep -q '^--\?lua_load' "$HOME/.config/conky/conky-shortcuts.conf"; then
 ## Check for conky-choser-transparency script.
