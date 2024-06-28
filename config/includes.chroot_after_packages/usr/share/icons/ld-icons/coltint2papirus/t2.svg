@@ -23,8 +23,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="17.166667"
-     inkscape:cx="24.058252"
-     inkscape:cy="24"
+     inkscape:cx="24.116504"
+     inkscape:cy="23.941747"
      inkscape:window-width="1920"
      inkscape:window-height="1032"
      inkscape:window-x="0"
@@ -41,7 +41,7 @@
      ry="3"
      id="rect117" />
   <rect
-     style="fill:#e4e4e4;stroke-width:1.056"
+     style="fill:#217844;stroke-width:1.056"
      width="42.240002"
      height="42.240002"
      x="2.8800001"
@@ -58,7 +58,7 @@
      transform="scale(1,-1)"
      id="rect121" />
   <rect
-     style="fill:#258646"
+     style="fill:#d7f4e3"
      width="3"
      height="13"
      x="17"
@@ -73,7 +73,7 @@
      y="38"
      id="rect125" />
   <rect
-     style="fill:#258646"
+     style="fill:#d7f4e3"
      width="3"
      height="28"
      x="31"
@@ -87,14 +87,14 @@
      y="31"
      id="rect129" />
   <rect
-     style="fill:#33c03b"
+     style="fill:#d7f4e3"
      width="7"
      height="14"
      x="29"
      y="17"
      id="rect131" />
   <rect
-     style="fill:#258646"
+     style="fill:#d7f4e3"
      width="3"
      height="13"
      x="17"
@@ -109,7 +109,7 @@
      transform="rotate(90)"
      id="rect135" />
   <rect
-     style="fill:#33c03b"
+     style="fill:#d7f4e3"
      width="3"
      height="13"
      x="20"
@@ -125,7 +125,7 @@
      transform="matrix(0,-1,-1,0,0,0)"
      id="rect139" />
   <rect
-     style="fill:#33c03b"
+     style="fill:#d7f4e3"
      width="3"
      height="13"
      x="-28"
