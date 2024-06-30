@@ -88,7 +88,7 @@ mod4 + v
     
 # Web browser.
 mod4 + b
-	firefox-esr
+	x-www-browser
 
 # Logout.
 mod4 + x
