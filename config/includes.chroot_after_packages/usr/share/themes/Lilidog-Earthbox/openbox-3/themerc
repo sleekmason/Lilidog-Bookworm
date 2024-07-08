@@ -8,7 +8,7 @@ menu.items.bg.colorTo: #333333
 menu.separator.color: #626262
 
 !! Menu text
-menu.items.text.color: #D9D9D9
+menu.items.text.color: #E0E0DC
 menu.items.justify: left
 menu.items.disabled.text.color: #707070
 
@@ -21,24 +21,24 @@ menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #505050
-menu.items.active.bg.colorTo: #505050
-menu.items.active.text.color: #F2F2F2
+menu.items.active.bg.color: #555555
+menu.items.active.bg.colorTo: #555555
+menu.items.active.text.color: #F5F5F5
 
 !! Titlebar
-window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #464646
-window.active.title.bg.colorTo: #464646
-window.inactive.title.bg: flat splitvertical gradient
-window.inactive.title.bg.color: #303030
-window.inactive.title.bg.colorTo: #303030
+window.active.title.bg: flat vertical gradient
+window.active.title.bg.color: #404040
+window.active.title.bg.colorTo: #474747
+window.inactive.title.bg: flat vertical gradient
+window.inactive.title.bg.color: #323232
+window.inactive.title.bg.colorTo: #343434
 
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #D9D9D9
+window.active.label.text.color: #EBEBE6
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #9E9E9E
+window.inactive.label.text.color: #ADADAD
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -72,7 +72,7 @@ border.width: 1
 padding.width: 1
 window.handle.width: 3
 window.active.client.color:  #323232
-window.inactive.client.color:  #383838
+window.inactive.client.color:  #343434
 window.client.padding.width: 1
 window.client.padding.height: 1
 menu.border.color: #383838
@@ -80,7 +80,7 @@ menu.overlap: 0
 
 !! Handles
 window.active.handle.bg: raised
-window.active.handle.bg.color: #424242
+window.active.handle.bg.color: #484848
 window.active.grip.bg: parentrelative
 window.inactive.handle.bg: raised
 window.inactive.handle.bg.color: #363636
