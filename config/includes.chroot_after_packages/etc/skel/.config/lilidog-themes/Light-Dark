@@ -12,6 +12,9 @@
 ## Change gtktheme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Broadwater"
 
+## Change icon theme
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Aqua"
+
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Broadwaterbox"/g" ~/.config/openbox/rc.xml
 xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:name' -v "Broadwaterbox" ~/.config/openbox/rc.xml

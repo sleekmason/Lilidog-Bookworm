@@ -5,6 +5,8 @@
 ## Change gtktheme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Lilidog-Taupe"
 
+## Change icon theme
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Green"
 
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Lilidog-Slatebox"/g" ~/.config/openbox/rc.xml

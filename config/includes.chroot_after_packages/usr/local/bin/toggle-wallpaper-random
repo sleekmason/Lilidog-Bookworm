@@ -82,7 +82,7 @@ yad --notification --no-markup  --text="Random Background Changer"   \
 
 
 # set notification right-click menu
-echo "menu:Folder & Icon Options! bash -c  'mousepad ~/.config/random-bg.conf'!$icondir/22x22/categories/applications-office.png|| \
+echo "menu:Folder & Icon Options! bash -c  'geany ~/.config/random-bg.conf'!$icondir/22x22/categories/applications-office.png|| \
 Off! bash -c 'on_kill'!$icondir/22x22/actions/process-stop.png|| \
 One Minute! bash -c 'wallpaper_shuffler 60'!$icondir/22x22/mimetypes/application-x-addon.png| \
 Five Minutes! bash -c 'wallpaper_shuffler 5m'!$icondir/22x22/mimetypes/application-x-addon.png| \

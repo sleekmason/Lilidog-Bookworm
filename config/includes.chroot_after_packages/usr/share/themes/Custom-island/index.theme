@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Custom-island
+Comment=Custom-island based off Greybird theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Custom-island
+MetacityTheme=Custom-island
+IconTheme=Adwaita
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close

@@ -1,0 +1,72 @@
+#!/bin/bash
+# Custom-drow highlight chooser
+# Made by sleekmason 24.07.12
+
+### Default - COLOR="#27598A"
+
+## Select your new highlight color with the color chooser".
+## Replace "Color" with your selection.
+
+## Make directory if needed and copy Custom-island to ~/.themes.
+if ! test -e "$HOME/.themes"; then
+    mkdir "$HOME/.themes"
+    cp -fr "/usr/share/themes/Custom-drow" "$HOME/.themes"
+    cp -fr "/usr/share/themes/Custom-drowbox" "$HOME/.themes"
+fi
+if ! test -e "$HOME/.themes/Custom-drow"; then
+    cp -fr "/usr/share/themes/Custom-drow" "$HOME/.themes"
+    cp -fr "/usr/share/themes/Custom-drowbox" "$HOME/.themes"
+fi
+
+## Set the theme before changing.
+"$HOME/.config/lilidog-themes/Custom-drow"  > /dev/null 2>&1
+
+## "--color" can be removed if wanting to use a separate color chooser.
+COLOR_CHOICE=( $(yad --color --init-color=#27598A --form --width=320 --center --borders=6 --on-top \
+--title="Custom Drow Theme Highlight Color " \
+--window-icon=org.xfce.settings.color \
+--text="Please enter color choice:" --separator=' '  \
+--button=Cancel:1 \
+--button=Apply:0 \
+--field="Color"))
+
+## Remove "#" if present.
+if [[ $COLOR_CHOICE == *#* ]]; then
+    NEW_COLOR=$(echo $COLOR_CHOICE | sed 's|[#,]||g')
+else
+    NEW_COLOR=$COLOR_CHOICE
+fi
+
+## Check if chosen number is not already used.
+if grep -q "#$NEW_COLOR" "$HOME/.themes/Custom-drow/gtk-3.0/gtk-contained.css"; then
+    echo
+    echo "   --------------------------------------------"
+    echo
+    echo "   Your color choice is null or already in use."
+    echo "   Please make another selection."
+    echo
+    echo "   --------------------------------------------"
+else
+
+## Grab the old color for variable use.
+OLD_COLOR=$(sed '16!d' $HOME/.themes/Custom-drow/gtk-3.0/gtk-contained.css | cut -d'#' -f2 | sed 's/...$//')
+
+## Show numbers.
+echo "#$NEW_COLOR" >> "/tmp/custom_drow_color.txt"
+    echo
+    echo "   -------------------------------"
+    echo
+    echo "   Your old number is #$OLD_COLOR"
+    echo "   Your new number is #$NEW_COLOR"
+    echo
+    echo "   -------------------------------"
+
+## Make the change for GTK-3.0, GTK-2.0, and openbox themerc.
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-drow/gtk-3.0/gtk-contained.css"
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-drow/gtk-2.0/gtkrc"
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-drowbox/openbox-3/themerc"
+
+## Refresh Theme.
+xfconf-query -c xsettings -p /Net/ThemeName -r
+"$HOME/.config/lilidog-themes/Custom-drow"  > /dev/null 2>&1
+fi
