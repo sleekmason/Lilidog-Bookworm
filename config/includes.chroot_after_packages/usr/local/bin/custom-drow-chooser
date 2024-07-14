@@ -22,12 +22,14 @@ fi
 "$HOME/.config/lilidog-themes/Custom-drow"  > /dev/null 2>&1
 
 ## "--color" can be removed if wanting to use a separate color chooser.
-COLOR_CHOICE=( $(yad --color --init-color=#27598A --form --width=320 --center --borders=6 --on-top \
+COLOR_CHOICE=( $(yad --color --init-color=#27598A \
+--gtk-palette --palette=/usr/share/X11/rgb.txt \
+--form --width=320 --center --borders=6 --on-top \
 --title="Custom Drow Theme Highlight Color " \
+--button=Cancel!gtk-delete:1 \
+--button=Apply!gtk-color-picker:0 \
 --window-icon=org.xfce.settings.color \
---text="Please enter color choice:" --separator=' '  \
---button=Cancel:1 \
---button=Apply:0 \
+--text="Please enter color choice:" --separator=' ' \
 --field="Color"))
 
 ## Remove "#" if present.

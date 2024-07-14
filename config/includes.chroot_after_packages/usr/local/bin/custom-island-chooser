@@ -1,8 +1,8 @@
 #!/bin/bash
-# Custom-forge highlight chooser
+# Custom-island highlight chooser
 # Made by sleekmason 24.07.12
 
-### Default - COLOR="#41617D"
+## Default color = "#A14345"
 
 ## Select your new highlight color with the color chooser".
 ## Replace "Color" with your selection.
@@ -10,28 +10,27 @@
 ## Make directory if needed and copy Custom-island to ~/.themes.
 if ! test -e "$HOME/.themes"; then
     mkdir "$HOME/.themes"
-    cp -fr "/usr/share/themes/Custom-forge" "$HOME/.themes"
-    cp -fr "/usr/share/themes/Custom-forgebox" "$HOME/.themes"
+    cp -fr "/usr/share/themes/Custom-island" "$HOME/.themes"
+    cp -fr "/usr/share/themes/Custom-islandbox" "$HOME/.themes"
 fi
-if ! test -e "$HOME/.themes/Custom-forge"; then
-    cp -fr "/usr/share/themes/Custom-forge" "$HOME/.themes"
-    cp -fr "/usr/share/themes/Custom-forgebox" "$HOME/.themes"
+if ! test -e "$HOME/.themes/Custom-island"; then
+    cp -fr "/usr/share/themes/Custom-island" "$HOME/.themes"
+    cp -fr "/usr/share/themes/Custom-islandbox" "$HOME/.themes"
 fi
 
 ## Set the theme before changing.
-"$HOME/.config/lilidog-themes/Custom-forge"  > /dev/null 2>&1
+"$HOME/.config/lilidog-themes/Custom-island"  > /dev/null 2>&1
 
 ## "--color" can be removed if wanting to use a separate color chooser.
-COLOR_CHOICE=( $(yad --color --init-color=#41617D \
+COLOR_CHOICE=( $(yad --color --init-color=#A14345 \
 --gtk-palette --palette=/usr/share/X11/rgb.txt \
 --form --width=320 --center --borders=6 --on-top \
---title="Custom Forge Theme Highlight Color " \
+--title="Custom Island Theme Highlight Color " \
 --button=Cancel!gtk-delete:1 \
 --button=Apply!gtk-color-picker:0 \
 --window-icon=org.xfce.settings.color \
 --text="Please enter color choice:" --separator=' ' \
 --field="Color"))
-
 ## Remove "#" if present.
 if [[ $COLOR_CHOICE == *#* ]]; then
     NEW_COLOR=$(echo $COLOR_CHOICE | sed 's|[#,]||g')
@@ -40,7 +39,7 @@ else
 fi
 
 ## Check if chosen number is not already used.
-if grep -q "#$NEW_COLOR" "$HOME/.themes/Custom-forge/gtk-3.0/gtk-contained.css"; then
+if grep -q "#$NEW_COLOR" "$HOME/.themes/Custom-island/gtk-3.0/gtk-contained.css"; then
     echo
     echo "   --------------------------------------------"
     echo
@@ -51,10 +50,10 @@ if grep -q "#$NEW_COLOR" "$HOME/.themes/Custom-forge/gtk-3.0/gtk-contained.css";
 else
 
 ## Grab the old color for variable use.
-OLD_COLOR=$(sed '16!d' $HOME/.themes/Custom-forge/gtk-3.0/gtk-contained.css | cut -d'#' -f2 | sed 's/...$//')
+OLD_COLOR=$(sed '16!d' $HOME/.themes/Custom-island/gtk-3.0/gtk-contained.css | cut -d'#' -f2 | sed 's/...$//')
 
 ## Show numbers.
-echo "#$NEW_COLOR" >> "/tmp/custom_forge_color.txt"
+echo "#$NEW_COLOR" >> "/tmp/custom_island_color.txt"
     echo
     echo "   -------------------------------"
     echo
@@ -64,11 +63,11 @@ echo "#$NEW_COLOR" >> "/tmp/custom_forge_color.txt"
     echo "   -------------------------------"
 
 ## Make the change for GTK-3.0, GTK-2.0, and openbox themerc.
-sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-forge/gtk-3.0/gtk-contained.css"
-sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-forge/gtk-2.0/gtkrc"
-sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-forgebox/openbox-3/themerc"
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-island/gtk-3.0/gtk-contained.css"
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-island/gtk-2.0/gtkrc"
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-islandbox/openbox-3/themerc"
 
 ## Refresh Theme
 xfconf-query -c xsettings -p /Net/ThemeName -r
-"$HOME/.config/lilidog-themes/Custom-forge"  > /dev/null 2>&1
+"$HOME/.config/lilidog-themes/Custom-island"  > /dev/null 2>&1
 fi
