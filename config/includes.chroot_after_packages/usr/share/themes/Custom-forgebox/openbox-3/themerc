@@ -1,11 +1,11 @@
-!! Custom-forgebox by sleekmason 09 Jan 2023
+!! Custom-forgebox by sleekmason 07 Jul 2024
 !! Based on Onyx-Citrus by Dana Jansens
 
 !! Menu background
 menu.items.bg: flat gradient vertical
 menu.items.bg.color: #252A30
 menu.items.bg.colorTo: #252A30
-menu.separator.color: #3E464F
+menu.separator.color: #3C434D
 
 !! Menu text
 menu.items.text.color: #D0D5DB
@@ -71,7 +71,7 @@ window.inactive.title.separator.color: #202326
 border.width: 1
 padding.width: 1
 window.handle.width: 3
-window.active.client.color:  #343C45
+window.active.client.color:  #303740
 window.inactive.client.color:  #22262A
 window.client.padding.width: 1
 window.client.padding.height: 1

@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#282D33\nbg_color:#363B42\ntooltip_bg_color:#282D33\nselected_bg_color:#315566\ntext_color:#DCDFE0\nfg_color:#DCDFE0\ntooltip_fg_color:#E6E6E6\nselected_fg_color:#E9EEF0\nmenubar_bg_color:#282D33\nmenubar_fg_color:#DCDFE0\ntoolbar_bg_color:#363B42\ntoolbar_fg_color:#DCDFE0\nmenu_bg_color:#282D33\nmenu_fg_color:#DCDFE0\npanel_bg_color:#363B42\npanel_fg_color:#DCDFE0\nlink_color:#315566"
+gtk_color_scheme = "base_color:#282D33\nbg_color:#363B42\ntooltip_bg_color:#282D33\nselected_bg_color:#33637A\ntext_color:#DCDFE0\nfg_color:#DCDFE0\ntooltip_fg_color:#E6E6E6\nselected_fg_color:#F3F8FA\nmenubar_bg_color:#282D33\nmenubar_fg_color:#DCDFE0\ntoolbar_bg_color:#363B42\ntoolbar_fg_color:#DCDFE0\nmenu_bg_color:#282D33\nmenu_fg_color:#DCDFE0\npanel_bg_color:#363B42\npanel_fg_color:#DCDFE0\nlink_color:#33637A"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -61,8 +61,8 @@ style "evolve-default" {
 	GtkScrollbar::has-forward-stepper = 0
 	GtkScrollbar::has-secondary-backward-stepper = 0
 	GtkScrollbar::has-secondary-forward-stepper = 0
-	GtkScrollbar::min-slider-length = 100
-	GtkScrollbar::slider-width = 9
+	GtkScrollbar::min-slider-length = 60
+	GtkScrollbar::slider-width = 10
 	GtkScrollbar::trough-border = 3
 
 	GtkScrolledWindow::scrollbar-spacing = 0
@@ -121,8 +121,8 @@ style "evolve-default" {
 		focusstyle = 3 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
 		glowstyle = 1
-		gradient_shades = { 1.2, 1.1, 1.1, 0.97 }
-		highlight_shade = 1.0
+		gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
+		highlight_shade = 1.1
 		lightborder_shade = 1.0
 		lightborderstyle = 0 # 0 = lightborder on top side, 1 = lightborder on all sides
 		listviewheaderstyle = 1 # 0 = flat, 1 = glassy, 2 = raised
@@ -176,7 +176,7 @@ style "evolve-notebook" = "evolve-notebook-bg" {
 style "evolve-button" = "evolve-wider" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.1, @bg_color)
-	bg[ACTIVE] = shade (0.82, @bg_color)
+	bg[ACTIVE] = shade (0.99, @bg_color)
 
   	engine "murrine" {
 		roundness = 2
@@ -204,7 +204,7 @@ style "evolve-scrollbar" = "evolve-button" {
 style "evolve-overlay-scrollbar" {
 	bg[ACTIVE] = shade (0.8, @bg_color)
 	bg[INSENSITIVE] = shade (0.97, @bg_color)
-	base[SELECTED]      = shade (0.6, @base_color)
+	base[SELECTED]      = shade (1.0, @base_color)
 	base[INSENSITIVE]   = shade (0.85, @base_color)
 }
 
@@ -287,7 +287,7 @@ style "evolve-radiocheck" = "evolve-default" {
 }
 
 style "evolve-entry" = "evolve-wider" {
-	bg[SELECTED] = mix (0.5, @selected_bg_color, @base_color)
+	bg[SELECTED] = shade (1.0, @selected_bg_color)
 
 	engine "murrine" {
 		border_shades = { 1.2, 1.2 }

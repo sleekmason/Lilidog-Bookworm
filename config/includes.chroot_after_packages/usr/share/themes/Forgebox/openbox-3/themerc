@@ -1,11 +1,11 @@
-!! Forgebox by sleekmason 09 Jan 2023
+!! Forgebox by sleekmason 07 Jul 2024
 !! Based on Onyx-Citrus by Dana Jansens
 
 !! Menu background
 menu.items.bg: flat gradient vertical
 menu.items.bg.color: #252A30
 menu.items.bg.colorTo: #252A30
-menu.separator.color: #3E464F
+menu.separator.color: #3C434D
 
 !! Menu text
 menu.items.text.color: #D0D5DB
@@ -21,8 +21,8 @@ menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #3E5D78
-menu.items.active.bg.colorTo: #3E5D78
+menu.items.active.bg.color: #41617d
+menu.items.active.bg.colorTo: #41617d
 menu.items.active.text.color: #FCFCFC
 
 !! Titlebar
@@ -46,8 +46,8 @@ window.active.button.*.hover.bg: flat vertical gradient border
 window.inactive.button.*.hover.bg: parentrelative
 window.*.button.*.pressed.bg: flat vertical gradient border
 
-window.active.button.*.hover.bg.color: #627385
-window.active.button.*.hover.bg.colorTo: #627385
+window.active.button.*.hover.bg.color: #41617d
+window.active.button.*.hover.bg.colorTo: #41617d
 window.active.button.*.hover.bg.border.color: #000000
 
 window.active.button.*.pressed.bg.color: #517B9E
@@ -71,7 +71,7 @@ window.inactive.title.separator.color: #202326
 border.width: 1
 padding.width: 1
 window.handle.width: 3
-window.active.client.color:  #343C45
+window.active.client.color:  #303740
 window.inactive.client.color:  #22262A
 window.client.padding.width: 1
 window.client.padding.height: 1
