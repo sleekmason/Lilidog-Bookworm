@@ -61,8 +61,8 @@ style "evolve-default" {
 	GtkScrollbar::has-forward-stepper = 0
 	GtkScrollbar::has-secondary-backward-stepper = 0
 	GtkScrollbar::has-secondary-forward-stepper = 0
-	GtkScrollbar::min-slider-length = 100
-	GtkScrollbar::slider-width = 9
+	GtkScrollbar::min-slider-length = 60
+	GtkScrollbar::slider-width = 10
 	GtkScrollbar::trough-border = 3
 
 	GtkScrolledWindow::scrollbar-spacing = 0
@@ -121,8 +121,8 @@ style "evolve-default" {
 		focusstyle = 3 # 0 = none, 1 = grey dotted, 2 = colored with fill, 3 = colored glow
 		glazestyle = 0 # 0 = flat highlight, 1 = curved highlight, 2 = concave, 3 = top curved highlight, 4 = beryl highlight
 		glowstyle = 1
-		gradient_shades = { 1.2, 1.1, 1.1, 0.97 }
-		highlight_shade = 1.0
+		gradient_shades = { 1.0, 1.0, 1.0, 1.0 }
+		highlight_shade = 1.1
 		lightborder_shade = 1.0
 		lightborderstyle = 0 # 0 = lightborder on top side, 1 = lightborder on all sides
 		listviewheaderstyle = 1 # 0 = flat, 1 = glassy, 2 = raised
@@ -176,7 +176,7 @@ style "evolve-notebook" = "evolve-notebook-bg" {
 style "evolve-button" = "evolve-wider" {
 	bg[NORMAL] = @bg_color
 	bg[PRELIGHT] = shade (1.1, @bg_color)
-	bg[ACTIVE] = shade (0.82, @bg_color)
+	bg[ACTIVE] = shade (0.99, @bg_color)
 
   	engine "murrine" {
 		roundness = 2
@@ -204,7 +204,7 @@ style "evolve-scrollbar" = "evolve-button" {
 style "evolve-overlay-scrollbar" {
 	bg[ACTIVE] = shade (0.8, @bg_color)
 	bg[INSENSITIVE] = shade (0.97, @bg_color)
-	base[SELECTED]      = shade (0.6, @base_color)
+	base[SELECTED]      = shade (1.0, @base_color)
 	base[INSENSITIVE]   = shade (0.85, @base_color)
 }
 
@@ -287,7 +287,7 @@ style "evolve-radiocheck" = "evolve-default" {
 }
 
 style "evolve-entry" = "evolve-wider" {
-	bg[SELECTED] = mix (0.5, @selected_bg_color, @base_color)
+	bg[SELECTED] = shade (1.0, @selected_bg_color)
 
 	engine "murrine" {
 		border_shades = { 1.2, 1.2 }
@@ -342,7 +342,7 @@ style "evolve-menu-item" = "evolve-wider" {
 
 	engine "murrine" {
 		textstyle = 0
-		border_shades = { 1.4, 1.4 }
+		border_shades = { 1.1, 1.1 }
 	}
 }
 
