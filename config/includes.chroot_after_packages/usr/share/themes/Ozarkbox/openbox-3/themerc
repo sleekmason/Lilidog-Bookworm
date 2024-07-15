@@ -26,19 +26,19 @@ menu.items.active.bg.colorTo: #33637A
 menu.items.active.text.color: #FCFCFC
 
 !! Titlebar
-window.active.title.bg: raised vertical gradient
+window.active.title.bg: flat vertical gradient
 window.active.title.bg.color: #3B444D
-window.active.title.bg.colorTo: #47535E
+window.active.title.bg.colorTo: #444E57
 window.inactive.title.bg: flat vertical gradient
-window.inactive.title.bg.color: #2C3138
-window.inactive.title.bg.colorTo: #2C3138
+window.inactive.title.bg.color: #2F353D
+window.inactive.title.bg.colorTo: #2F353D
 
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #E6E6E6
+window.active.label.text.color: #E8E8E8
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #93A1A8
+window.inactive.label.text.color: #A1A9AD
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -66,14 +66,14 @@ window.inactive.button.*.image.color: #89979E
 window.inactive.button.disabled.image.color: #636363
 
 !! Borders
-window.active.border.color: #1F2226
+window.active.border.color: #26292E
 window.inactive.border.color: #26292E
-window.inactive.title.separator.color: #26292E
+window.inactive.title.separator.color: #2E3238
 border.width: 1
 padding.width: 1
 window.handle.width: 3
-window.active.client.color:  #363D45
-window.inactive.client.color:  #171B1F
+window.active.client.color:  #3C444D
+window.inactive.client.color:  #2A2E33
 window.client.padding.width: 1
 window.client.padding.height: 1
 menu.border.color: #424B54
