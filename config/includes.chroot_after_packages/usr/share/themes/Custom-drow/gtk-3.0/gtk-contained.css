@@ -64,7 +64,7 @@ textview text {
   iconview text:backdrop,
   textview text:backdrop {
     color: #B9C9C6;
-    background-color: #363636; }
+    background-color: #2D2D2D; }
   .view:selected:focus, iconview:selected:focus, .view:selected, iconview:selected,
   .view text:selected:focus,
   iconview text:selected:focus,
