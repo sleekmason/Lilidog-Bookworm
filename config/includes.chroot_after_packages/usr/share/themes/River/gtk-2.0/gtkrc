@@ -63,7 +63,7 @@ style "evolve-default" {
 	GtkScrollbar::has-secondary-forward-stepper = 0
 	GtkScrollbar::min-slider-length = 100
 	GtkScrollbar::slider-width = 9
-	GtkScrollbar::trough-border = 3
+	GtkScrollbar::trough-border = 2
 
 	GtkScrolledWindow::scrollbar-spacing = 0
 	GtkScrolledWindow::scrollbars-within-bevel = 1
