@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Custom-drowbox
-Comment=Custom-drowbox based off Greybird theme
+Name=Custom-drow
+Comment=Custom-drow based off Greybird theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Custom-drowbox
-MetacityTheme=Custom-drowbox
+GtkTheme=Custom-drow
+MetacityTheme=Custom-drow
 IconTheme=Adwaita
 CursorTheme=Adwaita
 ButtonLayout=:minimize,maximize,close

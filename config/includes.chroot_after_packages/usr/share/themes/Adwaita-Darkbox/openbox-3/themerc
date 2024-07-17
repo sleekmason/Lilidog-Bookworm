@@ -5,10 +5,10 @@
 menu.items.bg: flat gradient vertical
 menu.items.bg.color: #2D2D2D
 menu.items.bg.colorTo: #2D2D2D
-menu.separator.color: #171717
+menu.separator.color: #414242
 
 !! Menu text
-menu.items.text.color: #C6D6D6
+menu.items.text.color: #DBDBDB
 menu.items.justify: left
 menu.items.disabled.text.color: #677070
 
@@ -27,18 +27,18 @@ menu.items.active.text.color: #DFF0EF
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #525252
-window.active.title.bg.colorTo: #1F1F1F
-window.inactive.title.bg: flat splitvertical gradient
-window.inactive.title.bg.color: #2B2B2B
-window.inactive.title.bg.colorTo: #2B2B2B
+window.active.title.bg.color: #2B2B2B
+window.active.title.bg.colorTo: #2B2B2B
+window.inactive.title.bg: flat vertical gradient
+window.inactive.title.bg.color: #333333
+window.inactive.title.bg.colorTo: #333333
 
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #C0D1D1
+window.active.label.text.color: #DBDBDB
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #939FA1
+window.inactive.label.text.color: #9E9E9E
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -59,19 +59,19 @@ window.inactive.button.*.pressed.bg.colorTo: #262626
 window.inactive.button.*.pressed.image.color: #404040
 window.inactive.button.*.pressed.bg.border.color: #545757
 
-window.active.button.*.image.color: #B9C9C8
+window.active.button.*.image.color: #DBDBDB
 window.active.button.disabled.image.color: #436363
-window.inactive.button.*.image.color: #7E888A
+window.inactive.button.*.image.color: #9E9E9E
 window.inactive.button.disabled.image.color: #436363
 
 !! Borders
-window.active.border.color: #454545
+window.active.border.color: #212121
 window.inactive.border.color: #333333
 window.inactive.title.separator.color: #333333
 border.width: 1
 padding.width: 1
 window.handle.width: 3
-window.active.client.color:  #262626
+window.active.client.color:  #434343
 window.inactive.client.color:  #262626
 window.client.padding.width: 1
 window.client.padding.height: 1
