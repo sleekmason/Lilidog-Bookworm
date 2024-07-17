@@ -27,9 +27,9 @@ menu.items.active.text.color: #DFF0EF
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #2A2F30
-window.active.title.bg.colorTo: #18191A
-window.inactive.title.bg: flat splitvertical gradient
+window.active.title.bg.color: #282C2E
+window.active.title.bg.colorTo: #2C3133
+window.inactive.title.bg: flat vertical gradient
 window.inactive.title.bg.color: #18191A
 window.inactive.title.bg.colorTo: #18191A
 
@@ -38,7 +38,7 @@ window.label.text.justify: center
 window.active.label.bg: parentrelative
 window.active.label.text.color: #C0D1D1
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #778082
+window.inactive.label.text.color: #80898C
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -46,12 +46,12 @@ window.active.button.*.hover.bg: flat splitvertical gradient border
 window.inactive.button.*.hover.bg: parentrelative
 window.*.button.*.pressed.bg: flat splitvertical gradient border
 
-window.active.button.*.hover.bg.color: #575757
-window.active.button.*.hover.bg.colorTo: #575757
+window.active.button.*.hover.bg.color: #525C5E
+window.active.button.*.hover.bg.colorTo: #525C5E
 window.active.button.*.hover.bg.border.color: #202D2E
 
-window.active.button.*.pressed.bg.color: #707070
-window.active.button.*.pressed.bg.colorTo: #707070
+window.active.button.*.pressed.bg.color: #626E70
+window.active.button.*.pressed.bg.colorTo: #626E70
 window.active.button.*.pressed.image.color: #000000
 window.active.button.*.pressed.bg.border.color: #000000
 window.inactive.button.*.pressed.bg.color: #262626
@@ -71,8 +71,8 @@ window.inactive.title.separator.color: #18181A
 border.width: 1
 padding.width: 1
 window.handle.width: 3
-window.active.client.color:  #262626
-window.inactive.client.color:  #262626
+window.active.client.color:  #272929
+window.inactive.client.color:  #18191A
 window.client.padding.width: 1
 window.client.padding.height: 1
 menu.border.color: #262626
@@ -80,7 +80,7 @@ menu.overlap: 0
 
 !! Handles
 window.active.handle.bg: raised
-window.active.handle.bg.color: #1F2021
+window.active.handle.bg.color: #292E30
 window.active.grip.bg: parentrelative
 window.inactive.handle.bg: raised
 window.inactive.handle.bg.color: #161617
