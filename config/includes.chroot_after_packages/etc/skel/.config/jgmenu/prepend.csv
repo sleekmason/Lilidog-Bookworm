@@ -42,7 +42,7 @@ Inxi Info,          x-terminal-emulator -T 'Inxi Info' -e bash -c "inxi -Fxrzm; 
 Hard Info,          hardinfo,                         drive-multidisk
 HW-Probe,           x-terminal-emulator -T 'Hw-Probe' -e bash -c "hw-probe-installer; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Transmission,       transmission-gtk,                     transmission
-Color Chooser,      yad --color,                      applications-graphics
+Color Chooser,      yad --color --gtk-palette --palette=/usr/share/X11/rgb.txt,                     org.xfce.settings.color
 Kernel Remover,     x-terminal-emulator -T 'Kernel Remover' -e 'sudo kernel-remover -G dialog',     applications-accessories
 Check Firmware,     x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmware-checker; echo $'\n\nPress any key to close.'; read -srn1",  applications-system
 Wallpaper Maker,    wallpaper-maker,                  applications-graphics
