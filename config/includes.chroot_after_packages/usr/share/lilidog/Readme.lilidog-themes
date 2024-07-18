@@ -1,0 +1,41 @@
+-- Simple directions for using the lilidog themes highlight changer. --
+
+1. Open the Auto themes dialog through the "landscape" icon in tint2 if
+in Lilidog or from the toggles menu if in Beardog. Or from All Programs
+--> Other --> Theme Options in either build.
+
+2. Press the button along the bottom of the dialog for the theme you 
+want to change, and use the colorchooser to pick whichever highlight 
+color you think you might like and press "Apply".  
+You can use this feature as often as you like in order to get the color 
+desired. A list of colors will be saved in /tmp/custom_<color>_color.txt.
+
+3. To use your new theme over and over again, select it like any of the 
+others from the main dialog.
+
+4. To change the icons temporarily, simply open the appearance settings
+dialog and choose your icon. This will be changed however whenever the 
+theme is chosen again.  To make permanent, change the icon used in:
+~/.config/lilidog-themes/custom<color>
+
+Questions and answers: 
+
+* How do I keep the icon I want for the theme permanently?
+By changing the icon listed in: ~/.config/lilidog-themes/custom<color>.
+These files control all the aspects of each theme.
+
+* How can I make my highlight color permanent and used for root?
+By copying your changed theme back to /usr/share/themes and adjusting
+the icon in ~/.config/lilidog-themes/custom<color>
+
+* How do I start over?
+Simply remove the theme from ~.themes.  A new version will be placed
+in ~/.themes when pressing the color you wish to change at the bottom 
+of the auto themes dialog.
+
+* Ack! I had the perfect color but I changed it! What can I do?
+Look in /tmp/custom_<color>_color.txt for a running list of the colors 
+you have tried.  Be aware that this list starts over on reboot.
+
+* Where/how do I change other aspects of the theme?  
+Just ask in the forum if needing help.  No worries:)

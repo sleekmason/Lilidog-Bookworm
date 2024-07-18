@@ -1,0 +1,97 @@
+#!/bin/bash
+echo ""
+read -p "   [0;33mTheme Chooser Installer.[0m
+
+   This script will download and install the Lilidog Theme Chooser
+   with all the Lilidog themes for GTK, openbox, xfce4-terminal
+   and geany.
+   
+   This will also allow you to customize three different themes 
+   with the highlight color of your choice.
+      
+   [0;33m----------------------------------------------------------
+   
+   Please press enter to install the Lilidog Theme Chooser.
+   
+   ----------------------------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+cd /tmp || exit &&
+
+# Remove copies from /tmp
+sudo rm -fr "/tmp/themechooser"
+sudo rm -fr "/tmp/themechooser.zip"
+
+# Grab the theme files
+wget https://raw.githubusercontent.com/sleekmason/packages/master/themechooser.zip --show-progress -q
+unzip "/tmp/themechooser.zip"
+
+# Backup and copy over /usr/share/themes
+if ! test -e "/usr/share/themes.bak"; then
+sudo cp -r "/usr/share/themes" "/usr/share/themes.bak"
+fi
+sudo cp -af /tmp/themechooser/themes/* "/usr/share/themes"
+
+# Backup and copy over /usr/share/geany
+if ! test -e "/usr/share/themes.bak"; then
+sudo cp -r "/usr/share/geany" "/usr/share/geany.bak"
+fi
+sudo cp -af /tmp/themechooser/geany/* "/usr/share/geany"
+
+# Backup and copy over /usr/share/xfce4
+if ! test -e "/usr/share/themes.bak"; then
+sudo cp -r "/usr/share/xfce4" "/usr/share/xfce4.bak"
+fi
+sudo cp -af /tmp/themechooser/xfce4/* "/usr/share/xfce4"
+
+# copy theme-changer scripts to /usr/local/bin
+sudo cp -f "/tmp/themechooser/ld-themes" "/usr/local/bin"
+sudo cp -f "/tmp/themechooser/ld-term-changer" "/usr/local/bin"
+sudo cp -f "/tmp/themechooser/xfce4-term-colors" "/usr/local/bin"
+
+# Copy theme Highlight changers to /usr/local/bin
+sudo cp -f "/tmp/themechooser/custom-drow-chooser" "/usr/local/bin"
+sudo cp -f "/tmp/themechooser/custom-forge-chooser" "/usr/local/bin"
+sudo cp -f "/tmp/themechooser/custom-island-chooser" "/usr/local/bin"
+
+# Copy .desktop file to /usr/share/applications
+sudo cp -f "/tmp/themechooser/theme-chooser.desktop" "/usr/share/applications"
+
+# copy lilidog-themes config files to ~/.config
+cp -fr "/tmp/themechooser/lilidog-themes" "$HOME/.config"
+
+# Copy Readme.lilidog-themes to /usr/share/lilidog
+if test -e "/usr/share/lilidog"; then
+cp -f "/tmp/themechooser/Readme.lilidog-themes" "/usr/share/lilidog"
+fi
+
+# St menu item in toggles
+if test -e "/usr/local/bin/ld-entry"; then
+sed -i '/Themes,              ld-themes,                                     preferences-desktop-personal/d' "$HOME/.config/jgmenu/prepend.csv"
+sed -i '/Sounds/i Themes,              ld-themes,                                     preferences-desktop-personal' "$HOME/.config/jgmenu/prepend.csv"
+fi
+
+if test -e "/usr/share/lilidog/beardog"; then
+sed -i '/Themes,              ld-themes,                                     preferences-desktop-personal/d' "$HOME/.config/jgmenu/prepend.csv"
+sed -i '/^Sounds/a Themes,              ld-themes,                                     preferences-desktop-personal' "$HOME/.config/jgmenu/prepend.csv"
+fi
+
+echo ""
+echo "[0;33m----------------------------------------------------------------------"
+echo ""
+echo "All Finished!.
+Look for the 'Themes' in the menu toggles section to change themes."
+echo "" 
+echo "----------------------------------------------------------------------[0m"
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+fi
+read -n1 -p "   Press any key to quit this dialog ... "
