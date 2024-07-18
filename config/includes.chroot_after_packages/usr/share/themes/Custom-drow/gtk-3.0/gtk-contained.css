@@ -3066,7 +3066,7 @@ treeview.view radio:backdrop {
 scale trough, scale fill, progressbar trough {
   border: 1px solid #242424;
   border-radius: 3px;
-  background-color: #919E9D;
+  background-color: #999999;
   box-shadow: inset 1px 1px rgba(0, 0, 0, 0.1); }
   scale trough:disabled, scale fill:disabled, progressbar trough:disabled {
     background-color: #313131;
