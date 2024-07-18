@@ -18,6 +18,13 @@ if ! test -e "$HOME/.themes/Custom-forge"; then
     cp -fr "/usr/share/themes/Custom-forgebox" "$HOME/.themes"
 fi
 
+## Add the readme file to ~/.themes.
+if test -e "/usr/share/lilidog"; then
+   if ! test -e "$HOME/.themes/Readme.lilidog-themes"; then
+   cp -f "/usr/share/lilidog/Readme.lilidog-themes" "$HOME/.themes"
+   fi
+fi
+
 ## Set the theme before changing.
 "$HOME/.config/lilidog-themes/Custom-forge"  > /dev/null 2>&1
 

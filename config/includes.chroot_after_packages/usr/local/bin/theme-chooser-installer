@@ -64,7 +64,7 @@ cp -fr "/tmp/themechooser/lilidog-themes" "$HOME/.config"
 
 # Copy Readme.lilidog-themes to /usr/share/lilidog
 if test -e "/usr/share/lilidog"; then
-cp -f "/tmp/themechooser/Readme.lilidog-themes" "/usr/share/lilidog"
+sudo cp -f "/tmp/themechooser/Readme.lilidog-themes" "/usr/share/lilidog"
 fi
 
 # St menu item in toggles
