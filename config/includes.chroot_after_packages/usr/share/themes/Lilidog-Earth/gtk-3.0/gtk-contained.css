@@ -57,7 +57,7 @@
 .view text,
 iconview text,
 textview text {
-  color: #E0E0DC;
+  color: #EBEBE6;
   background-color: #313131; }
   .view:backdrop, iconview:backdrop,
   .view text:backdrop,
@@ -436,8 +436,8 @@ button {
   border-right-color: shade(#383838, 0.72);
   border-left-color: shade(#383838, 0.72);
   border-bottom-color: shade(#383838, 0.7);
-  background-image: linear-gradient(to bottom, shade(shade(#383838, 1.00), 1.00), shade(shade(#404040, 1.00), 0.97));
-  box-shadow: inset 0 1px #5E5E5E; }
+  background-image: linear-gradient(to bottom, shade(shade(#404040, 0.97), 1.00), shade(shade(#404040, 1.00), 1.00));
+  box-shadow: inset 0 1px #393939; }
   notebook > header > tabs > arrow, button.sidebar-button, button.titlebutton,
   button.flat {
     border-color: transparent;
@@ -458,16 +458,16 @@ button {
   button:hover {
     color: #FFFFFF;
     outline-color: rgba(60, 60, 60, 0.3);
-    border-color: #282828;
-    background-image: linear-gradient(to bottom, shade(#343434, 1.00), shade(#363636, 1.00));
-    box-shadow: inset 0 1px #5E5E5E;
+    border-color: #202020;
+    background-image: linear-gradient(to bottom, shade(#363636, 0.98), shade(#363636, 1.00));
+    box-shadow: inset 0 1px #363636;
     -gtk-icon-effect: highlight; }
   notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
   button:active,
   button:checked {
     color: #E6E6E1;
     outline-color: rgba(60, 60, 60, 0.3);
-    border-color: #525252;
+    border-color: #202020;
     background-image: linear-gradient(to bottom, shade(shade(#424242, 0.85), 1.05), shade(shade(#424242, 0.85), 0.97));
     box-shadow: inset 0 2px 1px -2px rgba(0, 0, 0, 0.6);
     transition-duration: 50ms; }
@@ -797,7 +797,7 @@ button.suggested-action {
   border-left-color: shade(#424242, 0.72);
   border-bottom-color: shade(#424242, 0.7);
   background-image: linear-gradient(to bottom, shade(shade(#454545, 1.02), 1.05), shade(shade(#454545, 1.02), 0.97));
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4); }
+  box-shadow: inset 0 1px #454545; }
   .selection-mode button.titlebutton,
   button.suggested-action.flat {
     border-color: transparent;
@@ -811,9 +811,9 @@ button.suggested-action {
   button.suggested-action:hover {
     color: #F5F5F5;
     outline-color: rgba(255, 255, 255, 0.3);
-    border-color: #595959;
-    background-image: linear-gradient(to bottom, shade(#454545, 1.15), shade(#484848, 1.07));
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.4); }
+    border-color: #323232;
+    background-image: linear-gradient(to bottom, shade(#454545, 1.20), shade(#484848, 1.15));
+    box-shadow: inset 0 1px #454545; }
   
   button.suggested-action:active,
   button.suggested-action:checked {
@@ -1454,10 +1454,10 @@ spinbutton:not(.vertical) {
     margin: 0;
     padding-bottom: 0;
     padding-top: 0;
-    color: #636A6A;
+    color: #787878;
     background-image: none;
     border-style: none none none solid;
-    border-color: #808080;
+    border-color: #787878;
     border-radius: 0;
     box-shadow: none; }
     spinbutton:not(.vertical) button:dir(rtl) {
@@ -2867,9 +2867,9 @@ radio {
   -gtk-icon-source: none;
   color: #E6E6E1;
   outline-color: rgba(60, 60, 60, 0.3);
-  border-color: #353535;
-  background-image: linear-gradient(to bottom, #646464 20%, #454545 90%);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.8), inset 0 -2px #353535, inset 0 -1px #424242, 0 1px rgba(0, 0, 0, 0.1); }
+  border-color: #323232;
+  background-image: linear-gradient(to bottom, #545454 20%, #454545 90%);
+  box-shadow: inset 0 1px #575757, inset 0 -2px #454545, inset 0 -1px #454545, 0 1px #454545; }
   check:only-child,
   radio:only-child {
     margin: 0; }
@@ -2878,8 +2878,8 @@ radio {
     color: #E6E6E1;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #323232;
-    background-image: linear-gradient(to bottom, #4A4A4A 10%, #4A4A4A 90%);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.6), inset 0 -2px #7F7F7F, inset 0 -1px#424242, 0 1px rgba(0, 0, 0, 0.1); }
+    background-image: linear-gradient(to bottom, #424242 10%, #4F4F4F 90%);
+    box-shadow: inset 0 1px #4A4A4A, inset 0 -2px #4A4A4A, inset 0 -1px#424242, 0 1px #4A4A4A; }
   check:active,
   radio:active {
     color: #E6E6E1;
