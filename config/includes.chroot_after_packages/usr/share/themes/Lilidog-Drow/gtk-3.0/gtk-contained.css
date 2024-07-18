@@ -460,7 +460,7 @@ button {
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #202020;
     background-image: linear-gradient(to bottom, shade(#27598a, 0.98), shade(#27598a, 1.02));
-    box-shadow: inset 0 1px #242424;
+    box-shadow: inset 0 1px #27598a;
     -gtk-icon-effect: highlight; }
   notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
   button:active,
