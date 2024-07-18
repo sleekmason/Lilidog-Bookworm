@@ -23,7 +23,7 @@ menu.title.text.justify: center
 menu.items.active.bg: raised splitvertical gradient
 menu.items.active.bg.color: #27598a
 menu.items.active.bg.colorTo: #27598a
-menu.items.active.text.color: #EDECE9
+menu.items.active.text.color: #F5F4F1
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
