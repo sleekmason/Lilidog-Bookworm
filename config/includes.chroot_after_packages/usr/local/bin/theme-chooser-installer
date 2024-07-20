@@ -35,13 +35,13 @@ fi
 sudo cp -af /tmp/themechooser/themes/* "/usr/share/themes"
 
 # Backup and copy over /usr/share/geany
-if ! test -e "/usr/share/themes.bak"; then
+if ! test -e "/usr/share/geany.bak"; then
 sudo cp -r "/usr/share/geany" "/usr/share/geany.bak"
 fi
 sudo cp -af /tmp/themechooser/geany/* "/usr/share/geany"
 
 # Backup and copy over /usr/share/xfce4
-if ! test -e "/usr/share/themes.bak"; then
+if ! test -e "/usr/share/xfce4.bak"; then
 sudo cp -r "/usr/share/xfce4" "/usr/share/xfce4.bak"
 fi
 sudo cp -af /tmp/themechooser/xfce4/* "/usr/share/xfce4"
