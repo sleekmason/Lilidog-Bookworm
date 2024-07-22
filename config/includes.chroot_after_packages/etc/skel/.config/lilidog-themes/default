@@ -12,7 +12,7 @@ sudo sed -i "s/font-name.*/font-name = Noto Sans 11/g" /etc/lightdm/lightdm-gtk-
 
 ## System gtktheme, icon theme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Ozark"
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Aqua"
+# xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Aqua"
 
 ## Picom transparency
 if ! pgrep -x picom > /dev/null 2>&1; then
@@ -77,17 +77,17 @@ sed -i 's/^task_align =.*/task_align = left/g' "$HOME"/.config/tint2/tint2rc
 sed -i 's/task_text =.*/task_text = 1/' "$HOME"/.config/tint2/tint2rc
 
 ## Tint2 Icon colors
-sed -i 's/coltint2.*\//coltint2ozark\//g' "$HOME"/.config/tint2/tint2rc
-sed -i 's/\(coltint2ozark.*\)....*$/\1svg/g' "$HOME"/.config/tint2/tint2rc 
+sed -i 's/coltint2.*\//coltint2light\//g' "$HOME"/.config/tint2/tint2rc
+sed -i 's/\(coltint2light.*\)....*$/\1svg/g' "$HOME"/.config/tint2/tint2rc 
 # For executor if enabled
-sed -i 's/^iconcolor=.*/iconcolor="coltint2ozark.svg"/g' "$HOME"/.config/tint2/executors/notifier  >/dev/null 2>&1 &
+sed -i 's/^iconcolor=.*/iconcolor="coltint2light.svg"/g' "$HOME"/.config/tint2/executors/notifier  >/dev/null 2>&1 &
 ## Tint2 Font colors
-sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#CCDFE8 100/' "$HOME"/.config/tint2/tint2rc
-sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#CCDFE8 100/' "$HOME"/.config/tint2/tint2rc
-sed -i 's/task_font_color =.*/task_font_color = \#CCDFE8 100/' "$HOME"/.config/tint2/tint2rc
-sed -i 's/clock_font_color =.*/clock_font_color = \#CCDFE8 100/' "$HOME"/.config/tint2/tint2rc
-sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#CCDFE8 100/' "$HOME"/.config/tint2/tint2rc
-sed -i 's/^battery_font_color.*/battery_font_color = #CCDFE8 100/g' "$HOME"/.config/tint2/tint2rc
+sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#EBEBEB 100/' "$HOME"/.config/tint2/tint2rc
+sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#EBEBEB 100/' "$HOME"/.config/tint2/tint2rc
+sed -i 's/task_font_color =.*/task_font_color = \#EBEBEB 100/' "$HOME"/.config/tint2/tint2rc
+sed -i 's/clock_font_color =.*/clock_font_color = \#EBEBEB 100/' "$HOME"/.config/tint2/tint2rc
+sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#EBEBEB 100/' "$HOME"/.config/tint2/tint2rc
+sed -i 's/^battery_font_color.*/battery_font_color = #EBEBEB 100/g' "$HOME"/.config/tint2/tint2rc
 ## Tint2 Icon Size
      sed -i 's/^button_max_icon_size =.*/button_max_icon_size = 18 100/g' "$HOME"/.config/tint2/tint2rc
      sed -i 's/^systray_icon_size =.*/systray_icon_size = 22 100/g' "$HOME"/.config/tint2/tint2rc
