@@ -5,11 +5,11 @@ if grep -q '^# \?xfconf-query' "$HOME/.config/lilidog-themes/Ozark"; then
 
 # uncomment the icons
 find "$HOME"/.config/lilidog-themes/* -type f -exec sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^# *//g' {} ';'
-notify-send -i "gtk-color-picker" --urgency low 'Auto themes icon changer has been turned ON'
+notify-send -i "gtk-color-picker" --urgency low 'Themes auto icon changer has been turned ON'
 else
 # comment the icons
 find "$HOME"/.config/lilidog-themes/* -type f -exec sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^#*/# /g' {} ';'
-notify-send -i "gtk-color-picker" --urgency low 'Auto themes icon changer has been turned OFF'
+notify-send -i "gtk-color-picker" --urgency low 'Themes auto icon changer has been turned OFF'
 fi
 }
 
@@ -20,7 +20,7 @@ yad --title "Auto Themes" --escape-ok --borders=8 \
 --button=" Custom Drow!org.xfce.settings.color:bash -c 'custom-drow-chooser'" \
 --button=" Custom Forge!org.xfce.settings.color:bash -c 'custom-forge-chooser'" \
 --button=" Custom Island!org.xfce.settings.color:bash -c 'custom-island-chooser'" \
---button=" Icon Changer!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
+--button=" Auto Icons!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
 --button=" Exit!gtk-delete:0" \
 --form --center --width=440 --height=450 \
 --text="Please Close Geany Before Making Selection\n" --text-align=center \
