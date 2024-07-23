@@ -21,7 +21,7 @@ case $noti in
      killall -SIGUSR1 tint2
 ;;
   Light)
-     sed -i 's/^battery_font_color.*/battery_font_color = #EBEBEB 100/g' "$HOME/.config/tint2/tint2rc"
+     sed -i 's/^battery_font_color.*/battery_font_color = #E3E3E3 100/g' "$HOME/.config/tint2/tint2rc"
      killall -SIGUSR1 tint2
 ;;
   Green)

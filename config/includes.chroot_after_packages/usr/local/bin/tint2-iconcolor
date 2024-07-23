@@ -93,12 +93,12 @@ light(){
        sed -i 's/coltint2.*\//coltint2light\//g' "$FILE"
        sed -i 's/\(coltint2light.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2light.svg"/g' "$NOTIFY"
-       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#EBEBEB 100/' "$FILE"
-       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#EBEBEB 100/' "$FILE"
-       sed -i 's/task_font_color =.*/task_font_color = \#EBEBEB 100/' "$FILE"
-       sed -i 's/clock_font_color =.*/clock_font_color = \#EBEBEB 100/' "$FILE"
-       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#EBEBEB 100/' "$FILE"
-       sed -i 's/^battery_font_color.*/battery_font_color = #EBEBEB 100/g' "$FILE"
+       sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \#E3E3E3 100/' "$FILE"
+       sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \#E3E3E3 100/' "$FILE"
+       sed -i 's/task_font_color =.*/task_font_color = \#E3E3E3 100/' "$FILE"
+       sed -i 's/clock_font_color =.*/clock_font_color = \#E3E3E3 100/' "$FILE"
+       sed -i 's/tooltip_font_color =.*/tooltip_font_color = \#E3E3E3 100/' "$FILE"
+       sed -i 's/^battery_font_color.*/battery_font_color = #E3E3E3 100/g' "$FILE"
      killall -SIGUSR1 tint2
 }    
 grey(){
@@ -250,21 +250,20 @@ yad --title "Icon Themes" --escape-ok --borders=14 \
 --text="Tint2 Icon Themes\n" --text-align=center --buttons-layout=edge \
 --window-icon=org.xfce.settings.color \
     --form --columns=2 \
-    --field=" Ozark":FBTN "bash -c ozark >/dev/null 2>&1 &" \
     --field=" Light":FBTN "bash -c light >/dev/null 2>&1 &" \
+    --field=" Ozark":FBTN "bash -c ozark >/dev/null 2>&1 &" \
     --field=" Grey":FBTN "bash -c grey >/dev/null 2>&1 &" \
     --field=" Creme":FBTN "bash -c creme >/dev/null 2>&1 &" \
     --field=" Adobe":FBTN "bash -c adobe >/dev/null 2>&1 &" \
     --field=" Teladog":FBTN "bash -c teladog >/dev/null 2>&1 &" \
     --field=" Teladog2":FBTN "bash -c teladog2 >/dev/null 2>&1 &" \
     --field=" Telacircle":FBTN "bash -c telacircle >/dev/null 2>&1 &" \
-    --field=" Forge":FBTN "bash -c forge >/dev/null 2>&1 &" \
     --field=" White":FBTN "bash -c white >/dev/null 2>&1 &" \
+    --field=" Forge":FBTN "bash -c forge >/dev/null 2>&1 &" \
     --field=" Navy":FBTN "bash -c navy >/dev/null 2>&1 &" \
     --field=" Green":FBTN "bash -c green >/dev/null 2>&1 &" \
     --field=" Black":FBTN "bash -c black >/dev/null 2>&1 &" \
     --field=" Buuf":FBTN "bash -c buuf >/dev/null 2>&1 &" \
     --field=" Obsidian":FBTN "bash -c obsidian >/dev/null 2>&1 &" \
     --field=" Papirus":FBTN "bash -c papirus >/dev/null 2>&1 &"
-
- 
+    
