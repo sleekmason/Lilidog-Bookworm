@@ -3,7 +3,7 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg1175"
-   sodipodi:docname="upgrade2.svg"
+   sodipodi:docname="upgrade.svg"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,10 +22,10 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="1.6054688"
-     inkscape:cx="256.31144"
-     inkscape:cy="252.88564"
+     inkscape:cx="256.62286"
+     inkscape:cy="253.81994"
      inkscape:window-width="1423"
-     inkscape:window-height="1026"
+     inkscape:window-height="1025"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -34,5 +34,5 @@
   <path
      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
      id="path1173"
-     style="fill:#cccccc" />
+     style="fill:#d1d1d1;fill-opacity:1" />
 </svg>

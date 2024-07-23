@@ -3,7 +3,7 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg1143"
-   sodipodi:docname="light-dark2.svg"
+   sodipodi:docname="light-dark.svg"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,10 +22,10 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="1.6054688"
-     inkscape:cx="256.31144"
-     inkscape:cy="256"
+     inkscape:cx="256.62286"
+     inkscape:cy="256.9343"
      inkscape:window-width="1423"
-     inkscape:window-height="1026"
+     inkscape:window-height="1025"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -34,5 +34,5 @@
   <path
      d="M8 256c0 137 111 248 248 248s248-111 248-248S393 8 256 8 8 119 8 256zm248 184V72c101.7 0 184 82.3 184 184 0 101.7-82.3 184-184 184z"
      id="path1141"
-     style="fill:#cccccc" />
+     style="fill:#d1d1d1;fill-opacity:1" />
 </svg>
