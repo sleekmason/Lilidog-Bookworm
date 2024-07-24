@@ -46,6 +46,10 @@ mod4 + g
 mod4 + j
 	jgmenu_run 
    
+# theme-changer.
+mod4 + a
+	ld-themes
+
 # Toggle polybar panel on/off.
 ctrl  + mod4 + p
 	toggle.polybar
