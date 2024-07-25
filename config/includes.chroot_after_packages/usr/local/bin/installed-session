@@ -6,5 +6,7 @@ gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray"
 # set thunar as default for inode/directory
 xdg-mime default thunar.desktop inode/directory
 # Remove face icons in $HOME
-rm -f $HOME/.face
-rm -f $HOME/.face.icon
+rm -f "$HOME"/.face
+rm -f "$HOME"/.face.icon
+# Add ~/Pictures and ~/Pictures/wallpapers
+mkdir -p Pictures/wallpapers

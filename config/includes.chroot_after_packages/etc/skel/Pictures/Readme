@@ -1,9 +1,0 @@
-Wallpapers for the distribution are stored in /usr/share/backgrounds.
-
-The folder paths used for the wallpaper changer can be adjusted in:
-~/.config/wallpapers.conf
-
-~/Pictures/wallpapers can be used to add your own wallpapers, or you
-can change the paths as you like.
-
-This file can be removed if desired.
