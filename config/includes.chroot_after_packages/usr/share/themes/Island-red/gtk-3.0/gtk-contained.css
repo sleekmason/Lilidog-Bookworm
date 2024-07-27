@@ -4827,9 +4827,9 @@ XfdesktopIconView.view {
     box-shadow: none; }
   .lightdm-gtk-greeter #login_window #user_combobox {
     color: #E8E8E3;
-    font-size: 18px; }
+    font-size: 16px; }
     .lightdm-gtk-greeter #login_window #user_combobox menu {
-      font-weight: normal; }
+      font-weight: bold; }
   .lightdm-gtk-greeter #login_window #user_image {
     padding: 3px;
     border-radius: 3px;
