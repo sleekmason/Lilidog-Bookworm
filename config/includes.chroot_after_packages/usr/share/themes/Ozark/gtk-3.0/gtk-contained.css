@@ -4750,12 +4750,12 @@ XfdesktopIconView.view {
      * login window *
      ****************/ }
   .lightdm-gtk-greeter #panel_window menubar {
-    color: #E0E0DA;
+    color: #CCD3DB;
     font-weight: bold;
     text-shadow: 0 1px transparentize white, 0.5;
     -gtk-icon-shadow: 0 1px transparentize black, 0.5;
     box-shadow: inset 0 -1px transparentize black, 0.5;
-    background-color: #272D33;
+    background-color: #252C33;
     text-shadow: 0 1px transparentize black, 0.5;
     -gtk-icon-shadow: 0 1px transparentize black, 0.5; }
     .lightdm-gtk-greeter #panel_window menubar menu {
@@ -4770,13 +4770,13 @@ XfdesktopIconView.view {
   .lightdm-gtk-greeter #restart_dialog {
     border-style: none;
     border-radius: 5px;
-    background-color: #262B30;
+    background-color: #252C33;
     color: #E6E6E1;
     box-shadow: inset 1px 0 shade(#343B42, 0.6), inset -1px 0 shade(#343B42, 0.6), inset 0 1px shade(#343B42, 0.6), inset 0 -1px shade(#343B42, 0.6); }
     .lightdm-gtk-greeter #login_window button,
     .lightdm-gtk-greeter #shutdown_dialog button,
     .lightdm-gtk-greeter #restart_dialog button {
-      padding: 3px 15px;
+      padding: 2px 15px;
       /************************************
              * login/unlock and restart buttons *
              ************************************/
@@ -4788,9 +4788,9 @@ XfdesktopIconView.view {
       .lightdm-gtk-greeter #shutdown_dialog button#restart_button,
       .lightdm-gtk-greeter #restart_dialog button#login_button,
       .lightdm-gtk-greeter #restart_dialog button#restart_button {
-        border-color: shade(#101214, 1.0);
-        background-image: linear-gradient(to bottom, shade(#393E47, 1.02), shade(#393E47, 0.95) 90%, shade(#393E47, 0.9));
-        color: #FAFAF0; }
+        border-color: shade(#16181A, 1.0);
+        background-image: linear-gradient(to bottom, shade(#2F353D, 1.0), shade(#323840, 1.0) 90%, shade(#323840, 1.04));
+        color: #E2E6EB; }
         .lightdm-gtk-greeter #login_window button#login_button:hover, .lightdm-gtk-greeter #login_window button#login_button:active, .lightdm-gtk-greeter #login_window button#restart_button:hover, .lightdm-gtk-greeter #login_window button#restart_button:active,
         .lightdm-gtk-greeter #shutdown_dialog button#login_button:hover,
         .lightdm-gtk-greeter #shutdown_dialog button#login_button:active,
@@ -4801,7 +4801,7 @@ XfdesktopIconView.view {
         .lightdm-gtk-greeter #restart_dialog button#restart_button:hover,
         .lightdm-gtk-greeter #restart_dialog button#restart_button:active {
           border-color: shade(#101214, 0.7);
-          background-image: linear-gradient(to bottom, shade(#33637A, 1.12), shade(#33637A, 1.05) 90%, shade(#33637A, 1)); }
+          background-image: linear-gradient(to bottom, shade(#33637A, 0.9), shade(#346780, 0.96) 90%, shade(#346780, 1.0)); }
       .lightdm-gtk-greeter #login_window button#shutdown_button,
       .lightdm-gtk-greeter #shutdown_dialog button#shutdown_button,
       .lightdm-gtk-greeter #restart_dialog button#shutdown_button {
@@ -4820,7 +4820,7 @@ XfdesktopIconView.view {
   .lightdm-gtk-greeter #login_window menu {
     border-radius: 1px; }
   .lightdm-gtk-greeter #login_window combobox button.combo {
-    color: #E6E6E1;
+    color: #B6BDC4;
     padding: 0;
     background: none;
     border-style: none;
@@ -4832,11 +4832,11 @@ XfdesktopIconView.view {
       font-weight: bold; }
   .lightdm-gtk-greeter #login_window #user_image {
     padding: 3px;
-    border-radius: 3px;
+    border-radius: 8px;
     box-shadow: inset 1px 0 shade(#2A3036, 0.75), inset -1px 0 shade(#2A3036, 0.75), inset 0 1px shade(#2A3036, 0.55), inset 0 -1px shade(#2A3036, 0.85); }
   .lightdm-gtk-greeter #login_window #user_image_border {
-    border-radius: 3px;
-    background-image: linear-gradient(to bottom, shade(#343B42, 0.9), shade(#343B42, 0.98) 10%, shade(#343B42, 1) 99%, shade(#343B42, 1));
+    border-radius: 8px;
+    background-image: linear-gradient(to bottom, shade(#333A42, 1.0), shade(#333A42, 1.0) 10%, shade(#333A42, 1.0) 99%, shade(#333A42, 1.1));
     box-shadow: inset 0 1px shade(#2A3036, 0.8), inset 0 -1px shade(#2A3036, 0.55); }
   .lightdm-gtk-greeter #buttonbox_frame {
     padding-top: 20px;
@@ -4844,7 +4844,7 @@ XfdesktopIconView.view {
     border-style: none;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background-image: linear-gradient(to bottom, shade(#30363D, 0.85), shade(#30363D, 0.98) 10%, shade(#30363D, 1) 99%, shade(#30363D, 1));
+    background-image: linear-gradient(to bottom, shade(#333A42, 0.85), shade(#333A42, 0.98) 10%, shade(#333A42, 1) 99%, shade(#333A42, 1));
     box-shadow: inset 1px 0 shade(#262B30, 0.6), inset -1px 0 shade(#262B30, 0.6), inset 0 1px shade(#262B30, 0.6), inset 0 -1px shade(#262B30, 0.6); }
 
 /************************
