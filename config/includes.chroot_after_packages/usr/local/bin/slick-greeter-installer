@@ -2,13 +2,13 @@
 echo ""
 read -r -p "   [0;33mSlick Greeter Installer[0m
 
-   This script will install the lightdm slick-greeter version.
+   This script will install the lightdm 'slick-greeter' version.
    Look in Menu --> Configuration --> slickdm to change settings.
    
    
    [0;33m----------------------------------------------------------
    
-   Please press enter to install Lightdm.
+   Please press enter to install the Lightdm Slick Greeter.
    
    ----------------------------------------------------------[0m
       
