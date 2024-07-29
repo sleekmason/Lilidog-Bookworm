@@ -1,9 +1,11 @@
 #!/bin/bash
 echo ""
-read -r -p "   [0;33mLightdm Installer[0m
+read -r -p "   [0;33mLightdm Default Installer[0m
 
    This script will install the lightdm login manager with a 
-   customized greeter for Beardog.
+   customized greeter.
+   
+   Reboot after installation to enable lightdm if not installed.
    
    [0;33m----------------------------------------------------------
    
@@ -19,7 +21,7 @@ sudo cp -af /usr/share/lilidog/extras/lightdm/ /usr/share
 
 ## Toggle to lightdm-greeter
 sudo sed -i '/greeter-session=.*/d' "/etc/lightdm/lightdm.conf"
-sudo sed -i '109a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
+sudo sed -i '108a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
 # Alternate method
 # sudo sed -i '/Font Sizes/a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
 
