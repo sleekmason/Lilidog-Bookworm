@@ -1,0 +1,58 @@
+#!/bin/bash
+echo ""
+read -r -p "   [0;33mLightdm Installer[0m
+
+   This script will install the lightdm login manager with a 
+   customized greeter for Beardog.
+   
+   [0;33m----------------------------------------------------------
+   
+   Please press enter to install Lightdm.
+   
+   ----------------------------------------------------------[0m
+      
+   Or close this terminal window to quit the install." ;
+   if : >/dev/tcp/8.8.8.8/53; then
+echo ""
+sudo apt-get update && sudo apt-get install -y lightdm lightdm-gtk-greeter-settings &&
+sudo cp -af /usr/share/lilidog/extras/lightdm/ /usr/share
+
+## Toggle to lightdm-greeter
+sudo sed -i '/greeter-session=.*/d' "/etc/lightdm/lightdm.conf"
+sudo sed -i '109a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
+# Alternate method
+# sudo sed -i '/Font Sizes/a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
+
+# Add option for autologin to toggles menu
+sed -i '/Auto Login,          lightdm-autologin,                             preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Tint2 Toggle/a Auto Login,          lightdm-autologin,                             preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
+
+sed -i '/Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  lightdm-gtk-greeter-settings/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/^Keybinds/a Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  lightdm-gtk-greeter-settings' ~/.config/jgmenu/prepend.csv
+
+## Comment startx
+sed -i 's/^exec startx/#exec startx/g' "$HOME/.profile"
+
+## Comment the line for lightdm use
+if [[ $(command -v lightdm) ]]; then
+  if grep -Fxq 'exec "$session"' "$HOME/.xsessionrc"; then
+     sed -i 's/^exec "$session"/#exec "$session"/' "$HOME/.xsessionrc"
+  fi
+fi
+echo ""
+echo "[0;32m----------------------------------------------------------------------[0m"
+echo ""
+echo "   [0;32mReboot to use the Lightdm login manager.[0m"
+echo ""
+echo "[0;32m----------------------------------------------------------------------[0m"
+echo $'\n\nPress any key to quit ...'; read -srn1
+else
+echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+ echo ""
+ echo "   [0;33mNo Internet connection. Please connect and try again.[0m"
+ echo ""
+ echo "   [0;31m-----------------------------------------------------[0m"
+echo ""
+echo $'\n\nPress any key to quit ...'; read -srn1
+fi
