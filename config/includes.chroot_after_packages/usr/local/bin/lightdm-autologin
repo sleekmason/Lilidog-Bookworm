@@ -1,6 +1,6 @@
 #! /bin/bash
 # Turn on/off autologin in Lightdm.
-# Made by sleekmason 3-30-2022
+# Made by sleekmason 3-30-2022 updated 7-29-2024
 
 logi=$(yad --width 300 --borders=10 --entry --title "Auto Login" --center --window-icon=applications-system \
     --image="user-info" \
@@ -12,14 +12,10 @@ logi=$(yad --width 300 --borders=10 --entry --title "Auto Login" --center --wind
 case $logi in
   Disable*)
    pkexec sed -i '/autologin-user='"$USER"'/d' /etc/lightdm/lightdm.conf 
-notify-send --urgency low 'Auto Login Disabled' ;;
+notify-send --urgency low "Auto login for "$USER" disabled" ;;
    Enable*)
-   if grep -q autologin-user="$USER" "/etc/lightdm/lightdm.conf"; then
-   pkexec sh -c 'sed -i '/autologin-user='$USER'/d' /etc/lightdm/lightdm.conf & sed -i '125aautologin-user='$USER'' /etc/lightdm/lightdm.conf' &&
-notify-send --urgency low 'Auto Login Enabled'
-   else
    pkexec sed -i '125aautologin-user='"$USER"'' /etc/lightdm/lightdm.conf
-notify-send --urgency low 'Auto Login Enabled' 
-fi ;;
+notify-send --urgency low "Auto login for "$USER" enabled" 
+;;
         *) exit 1 ;;
-    esac
+esac

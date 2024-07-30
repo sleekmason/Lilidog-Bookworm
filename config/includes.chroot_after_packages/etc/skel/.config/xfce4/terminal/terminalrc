@@ -36,4 +36,4 @@ ScrollingBar=TERMINAL_SCROLLBAR_NONE
 TabActivityColor=#b8b813130000
 ColorBackground=#28282d2c3333
 ColorForeground=#dbdbdbdbd4d4
-ColorPalette=rgb(24,27,31);rgb(242,77,77);rgb(40,173,111);rgb(235,216,174);rgb(136,202,235);rgb(239,139,192);rgb(50,187,178);rgb(166,172,174);rgb(137,146,153);rgb(231,91,91);rgb(71,207,133);rgb(245,230,196);rgb(132,207,245);rgb(255,156,212);rgb(65,232,204);rgb(56,61,70)
+ColorPalette=rgb(24,27,31);rgb(242,77,77);rgb(40,173,111);rgb(235,216,174);rgb(136,202,235);rgb(239,139,192);rgb(50,187,178);rgb(166,172,174);rgb(137,146,153);rgb(231,91,91);rgb(71,207,133);rgb(245,230,196);rgb(132,207,245);rgb(255,156,212);rgb(65,232,204);rgb(209,212,215)
