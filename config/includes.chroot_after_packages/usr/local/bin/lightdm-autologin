@@ -1,21 +1,55 @@
-#! /bin/bash
-# Turn on/off autologin in Lightdm.
-# Made by sleekmason 3-30-2022 updated 7-29-2024
+#!/bin/bash
+#
+# yad list for autologin.
 
-logi=$(yad --width 300 --borders=10 --entry --title "Auto Login" --center --window-icon=applications-system \
-    --image="user-info" \
-    --button="gtk-ok:0" \
-    --text "Auto Login Options" \
-    --entry-text \
-    "Please Select" "Disable Auto Login" "Enable Auto login")
+# Yad function to list current autologin usernames.
+userslist() (
+grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
+yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
+    --geometry=260x145-885+200 --borders=8 \
+    --title="Enabled Users" \
+    --button=Exit!gtk-delete:1 \
+    --window-icon="user-info"
+)
 
-case $logi in
-  Disable*)
-   pkexec sed -i '/autologin-user='"$USER"'/d' /etc/lightdm/lightdm.conf 
-notify-send --urgency low "Auto login for "$USER" disabled" ;;
-   Enable*)
-   pkexec sed -i '125aautologin-user='"$USER"'' /etc/lightdm/lightdm.conf
-notify-send --urgency low "Auto login for "$USER" enabled" 
-;;
-        *) exit 1 ;;
-esac
+export -f "userslist"
+
+bash -c "userslist" &
+
+## Get the list of usernames from /etc/passwd.
+ret=($(cut -d: -f1,3 /etc/passwd | grep -E ':[0-9]{4}$' | cut -d: -f1))
+
+# Adjust list for yad use.
+LIST=""
+for ((j=0; j<${#ret[*]}; j++));do
+    p="${ret[$j]}"
+    LIST="${LIST}FALSE $p "
+done
+
+LOGIN=$(yad --list --center --borders=8 \
+    --title="Autologin Toggle" \
+    --window-icon="user-info" \
+    --text="                  Toggle Selection On/Off" \
+    --radiolist --geometry=314x230-860+400 \
+    --column="Select" --column="Username" $LIST --separator="" \
+    --button=Cancel!gtk-cancel:1 \
+    --button=Toggle!object-flip-vertical:0 \
+    )
+
+# If canceled
+if (( $? == 1 )); then
+    exit 0
+else
+# Continue Chosen Selection.
+SELECTION=${LOGIN//"TRUE"}
+fi
+
+# Toggle selection on/off.
+if grep -q "$SELECTION" /etc/lightdm/lightdm.conf; then
+pkexec sed -i '/autologin-user='"$SELECTION"'/d' /etc/lightdm/lightdm.conf
+notify-send -i "user-info" --urgency low "Autologin for $SELECTION has changed"
+else
+pkexec sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf
+notify-send -i "user-info" --urgency low "Autologin for $SELECTION has changed"
+fi
+kill -- -0
