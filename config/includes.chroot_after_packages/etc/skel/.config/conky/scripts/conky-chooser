@@ -119,8 +119,9 @@ yad --title "Conky" --form --center --width=220 --height=300 \
 --window-icon=conky-logomark-violet \
 --buttons-layout=center \
 --button=" 12H/24H!appointment-new:bash -c '~/.config/conky/scripts/conky-12to24'" \
---button=" Restart All!media-playlist-repeat:bash -c conkyrestart >/dev/null 2>&1 &" \
---button=" Kill Conky!process-stop:bash -c KILLCONKY" \
+--button=" Color!org.xfce.settings.color:bash -c ~/.config/conky/scripts/custom-conky-color" \
+--button=" Restart!media-playlist-repeat:bash -c conkyrestart >/dev/null 2>&1 &" \
+--button=" Kill All!process-stop:bash -c KILLCONKY" \
 --button=" Ok!gtk-ok:0" \
     --form --columns=2 \
     --field="          Shortcuts!accessories-text-editor":FBTN "bash -c 'SHORTCUTS' >/dev/null 2>&1 &" \

@@ -1,0 +1,44 @@
+#!/bin/bash
+# Custom conky text color
+# Made by sleekmason 07-31-2024
+set -e
+## "--color" can be removed if wanting to use a separate color chooser.
+CHOICE=( $(yad --color --init-color=#C4C4C4 \
+--gtk-palette --palette=/usr/share/X11/rgb.txt \
+--form --width=320 --center --borders=6 --on-top \
+--title="Custom Conky Text Color " \
+--button=Cancel!gtk-delete:1 \
+--button=Apply!gtk-color-picker:0 \
+--window-icon=org.xfce.settings.color \
+--text="Enter color choice:" --separator=' ' \
+--field="Color"))
+
+if (( $? == 1 )); then
+    exit 0
+else
+# Continue Chosen Selection.
+COLOR_CHOICE=${CHOICE}
+fi
+
+##Remove "#" if present.
+if [[ $COLOR_CHOICE == *#* ]]; then
+    NEW_COLOR=$(echo $COLOR_CHOICE | sed 's|[#,]||g')
+else
+    NEW_COLOR=$COLOR_CHOICE
+fi
+
+## Grab the old color for variable use.
+OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/conky-shortcuts.conf" | cut -d'#' -f2 | sed 's/..$//')
+
+## Show numbers if in terminal.
+echo "#$NEW_COLOR" >> "/tmp/custom_conky_color.txt"
+    echo
+    echo "   -------------------------------"
+    echo
+    echo "   Your old number is #$OLD_COLOR"
+    echo "   Your new number is #$NEW_COLOR"
+    echo
+    echo "   -------------------------------"
+
+## Make the change.
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME"/.config/conky/*.conf
