@@ -3,7 +3,7 @@
 # Made by sleekmason 24.07.12
 
 ## Default color = "#A14345"
-
+set -e
 ## Select your new highlight color with the color chooser".
 ## Replace "Color" with your selection.
 

@@ -3,7 +3,7 @@
 # Made by sleekmason 24.07.12
 
 ### Default - COLOR="#27598A"
-
+set -e
 ## Select your new highlight color with the color chooser".
 ## Replace "Color" with your selection.
 

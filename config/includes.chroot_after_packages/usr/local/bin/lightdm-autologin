@@ -1,14 +1,15 @@
 #!/bin/bash
 #
 # yad list for autologin.
-
+set -e
 # Yad function to list current autologin usernames.
 userslist() (
 grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
 yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
+	--fontname="JetBrains Mono Light 11" \
     --geometry=260x145-885+200 --borders=8 \
     --title="Enabled Users" \
-    --button=Exit!gtk-delete:1 \
+    --button=" Exit!gtk-delete:1" \
     --window-icon="user-info"
 )
 
@@ -32,8 +33,8 @@ LOGIN=$(yad --list --center --borders=8 \
     --text="                  Toggle Selection On/Off" \
     --radiolist --geometry=314x230-860+400 \
     --column="Select" --column="Username" $LIST --separator="" \
-    --button=Cancel!gtk-cancel:1 \
-    --button=Toggle!object-flip-vertical:0 \
+    --button=" Cancel!gtk-cancel:1" \
+    --button=" Toggle!gtk-ok:0" \
     )
 
 # If canceled
