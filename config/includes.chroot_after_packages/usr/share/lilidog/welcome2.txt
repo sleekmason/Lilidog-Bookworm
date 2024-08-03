@@ -9,7 +9,7 @@
     https://www.forum.lilidog.org/
     
     For initial settings see the Quick Theme icon
-    located in the system tray. Font size, themes
+    located in the tint2 panel. Font size, themes
     wallpapers, and other options are available.
 
     To install Lilidog, click on the green button 
