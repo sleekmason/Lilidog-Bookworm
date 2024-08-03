@@ -8,8 +8,8 @@
     Please visit our forum for more information:
     https://www.forum.lilidog.org/
     
-    For initial settings see the 'landscape' icon
-    located in the Tint2 panel. Font size, themes
+    For initial settings see the Quick Theme icon
+    located in the system tray. Font size, themes
     wallpapers, and other options are available.
 
     To install Lilidog, click on the green button 
