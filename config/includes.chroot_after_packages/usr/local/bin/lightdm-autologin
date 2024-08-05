@@ -43,20 +43,19 @@ LOGIN=$(yad --list --center --borders=8 \
     --button=" Toggle!gtk-ok:0" \
     )
 
+SELECTION=${LOGIN//"TRUE"}
+
 # If canceled
 if (( $? == 1 )); then
     exit 0
-else
-# Continue Chosen Selection.
-SELECTION=${LOGIN//"TRUE"}
 fi
 
 # Toggle selection on/off.
 if grep -q "$SELECTION" /etc/lightdm/lightdm.conf; then
 pkexec sed -i '/autologin-user='"$SELECTION"'/d' /etc/lightdm/lightdm.conf
-notify-send -i "user-info" --urgency low "Autologin for $SELECTION has changed"
+notify-send -i "user-info" --urgency low "Autologin for $SELECTION removed."
 else
 pkexec sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf
-notify-send -i "user-info" --urgency low "Autologin for $SELECTION has changed"
+notify-send -i "user-info" --urgency low "Autologin for $SELECTION enabled."
 fi
 kill -- -0
