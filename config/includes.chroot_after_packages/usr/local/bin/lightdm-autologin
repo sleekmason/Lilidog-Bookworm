@@ -2,9 +2,12 @@
 #
 # yad list for autologin.
 set -e
+
+## Get a list of current users using autologin.
+grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
+
 # Yad function to list current autologin usernames.
 userslist() (
-grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
 yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
 	--fontname="JetBrains Mono Light 11" \
     --geometry=260x145-885+200 --borders=8 \
@@ -15,7 +18,10 @@ yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
 
 export -f "userslist"
 
+## If existing, list usernames in yad dialog.
+if [[ $(wc -l </tmp/autologinlist.txt) -ge 1 ]]; then
 bash -c "userslist" &
+fi
 
 ## Get the list of usernames from /etc/passwd.
 ret=($(cut -d: -f1,3 /etc/passwd | grep -E ':[0-9]{4}$' | cut -d: -f1))
@@ -30,7 +36,7 @@ done
 LOGIN=$(yad --list --center --borders=8 \
     --title="Autologin Toggle" \
     --window-icon="user-info" \
-    --text="                  Toggle Selection On/Off" \
+    --text="           Toggle User Autologin On/Off" \
     --radiolist --geometry=314x230-860+400 \
     --column="Select" --column="Username" $LIST --separator="" \
     --button=" Cancel!gtk-cancel:1" \
