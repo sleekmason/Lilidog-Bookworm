@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 # yad list for autologin.
+# Made by sleekmason aug 01, 2024
+
 set -e
 
 ## Get a list of current users using autologin.
@@ -9,7 +11,6 @@ grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -
 # Yad function to list current autologin usernames.
 userslist() (
 yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
-	--fontname="JetBrains Mono Light 11" \
     --geometry=260x145-885+200 --borders=8 \
     --title="Enabled Users" \
     --button=" Exit!gtk-delete:1" \
@@ -53,9 +54,9 @@ fi
 # Toggle selection on/off.
 if grep -q "$SELECTION" /etc/lightdm/lightdm.conf; then
 pkexec sed -i '/autologin-user='"$SELECTION"'/d' /etc/lightdm/lightdm.conf
-notify-send -i "user-info" --urgency low "Autologin for $SELECTION removed."
+notify-send -i "user-info" --urgency low "Autologin for $SELECTION removed"
 else
 pkexec sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf
-notify-send -i "user-info" --urgency low "Autologin for $SELECTION enabled."
+notify-send -i "user-info" --urgency low "Autologin for $SELECTION enabled"
 fi
 kill -- -0
