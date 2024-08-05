@@ -11,8 +11,9 @@ grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -
 # Yad function to list current autologin usernames.
 userslist() (
 yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
-    --geometry=260x145-885+200 --borders=8 \
-    --title="Enabled Users" \
+    --geometry=260x100-885+230 --borders=8 \
+    --title="Autologin User" \
+    --fontname="JetBrains Mono Light 11" \
     --button=" Exit!gtk-delete:1" \
     --window-icon="user-info"
 )
@@ -37,11 +38,11 @@ done
 LOGIN=$(yad --list --center --borders=8 \
     --title="Autologin Toggle" \
     --window-icon="user-info" \
-    --text="           Toggle User Autologin On/Off" \
+    --text="         Toggle User For Autologin On/Off" \
     --radiolist --geometry=314x230-860+400 \
     --column="Select" --column="Username" $LIST --separator="" \
     --button=" Cancel!gtk-cancel:1" \
-    --button=" Toggle!gtk-ok:0" \
+    --button=" Okay!gtk-ok:0" \
     )
 
 SELECTION=${LOGIN//"TRUE"}
@@ -56,7 +57,7 @@ if grep -q "$SELECTION" /etc/lightdm/lightdm.conf; then
 pkexec sed -i '/autologin-user='"$SELECTION"'/d' /etc/lightdm/lightdm.conf
 notify-send -i "user-info" --urgency low "Autologin for $SELECTION removed"
 else
-pkexec sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf
-notify-send -i "user-info" --urgency low "Autologin for $SELECTION enabled"
+pkexec sh -c "sed -i '/autologin-user=.*/d' /etc/lightdm/lightdm.conf; sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf"
+notify-send -i "user-info" --urgency low "Autologin enabled for $SELECTION"
 fi
 kill -- -0
