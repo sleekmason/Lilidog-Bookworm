@@ -9,7 +9,7 @@
     https://www.forum.lilidog.org/
     
     For initial settings see the 'landscape' icon
-    located in the Tint2 panel. Font size, themes
+    located in the tint2 panel. Font size, themes
     wallpapers, and other options are available.
     
     If you would like to customize your system by
