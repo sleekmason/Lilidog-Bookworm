@@ -5,9 +5,8 @@
 
 set -e
 
-if grep -q "$fs" /proc/partitions; then
 ## Get a list of current users using autologin.
-grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
+grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "autologin-user-timeout=.*" | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
 
 # Yad function to list current autologin usernames.
 userslist() (
@@ -39,7 +38,7 @@ done
 LOGIN=$(yad --list --center --borders=8 \
     --title="Autologin Toggle" \
     --window-icon="user-info" \
-    --text="         Toggle User For Autologin On/Off" \
+    --text="         Select User For Autologin On/Off" \
     --radiolist --geometry=314x230-860+400 \
     --column="Select" --column="Username" $LIST --separator="" \
     --button=" Cancel!gtk-cancel:1" \
@@ -62,6 +61,3 @@ pkexec sh -c "sed -i '/autologin-user=.*/d' /etc/lightdm/lightdm.conf; sed -i '1
 notify-send -i "user-info" --urgency low "Autologin enabled for $SELECTION"
 fi
 kill -- -0
-else
-notify-send -i "user-info" --urgency low "No autologin changer in a live environment."
-fi
