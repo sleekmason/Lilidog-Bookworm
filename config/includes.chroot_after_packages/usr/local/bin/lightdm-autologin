@@ -5,6 +5,7 @@
 
 set -e
 
+if grep -q "$fs" /proc/partitions; then
 ## Get a list of current users using autologin.
 grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
 
@@ -61,3 +62,6 @@ pkexec sh -c "sed -i '/autologin-user=.*/d' /etc/lightdm/lightdm.conf; sed -i '1
 notify-send -i "user-info" --urgency low "Autologin enabled for $SELECTION"
 fi
 kill -- -0
+else
+notify-send -i "user-info" --urgency low "No autologin changer in a live environment."
+fi
