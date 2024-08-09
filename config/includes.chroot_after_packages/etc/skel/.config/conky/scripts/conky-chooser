@@ -142,7 +142,7 @@ yad --title "Conky" --form --center --width=220 --height=330 \
     --field="      World Clock!emblem-web":FBTN "bash -c 'WORLDCLOCK' >/dev/null 2>&1 &" \
     --field="     Tao Te Ching!applications-other":FBTN "bash -c 'TAO' >/dev/null 2>&1 &" \
     --field="                 Clock!appointment-soon":FBTN "bash -c 'TIMEDATE' >/dev/null 2>&1 &" \
-    --field="            Lite Info!dialog-information":FBTN "bash -c 'LITE' >/dev/null 2>&1 &" \
+    --field="         Basic Info!dialog-information":FBTN "bash -c 'LITE' >/dev/null 2>&1 &" \
     --field="            Full Info!dialog-information":FBTN "bash -c 'FULLCONKY' >/dev/null 2>&1 &" \
     --field="           Fortunes!emblem-package":FBTN "bash -c 'FORTUNES' >/dev/null 2>&1 &" \
     --field="       Install Date!application-certificate":FBTN "bash -c 'BUILDDATE' >/dev/null 2>&1 &"
