@@ -107,6 +107,31 @@ _upgrade_kernel() {
         run_it
 }
 
+_add_slick() {
+      _msg="Install and use lightdm slick-greeter instead of default?"
+      do_it() { apt-get update && apt-get install -y lightdm lightdm-settings slick-greeter &&
+		        cp -f /usr/share/lilidog/extras/slick-lightdm/slick-greeter.conf /etc/lightdm
+                cp -f /usr/share/lilidog/extras/slick-lightdm/50-slick-greeter.conf /usr/share/lightdm/lightdm.conf.d
+		        ## Toggle to lightdm-greeter
+                sed -i '/greeter-session=.*/d' "/etc/lightdm/lightdm.conf"
+                sed -i '108a greeter-session=slick-greeter' "/etc/lightdm/lightdm.conf"
+                ## Menu additions
+		        sed -i '/Slickdm,             gksudo lightdm-settings,                                  lightdm-settings/d' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
+                sed -i '/^Keybinds/a Slickdm,             gksudo lightdm-settings,                                  lightdm-settings' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
+		        sed -i '/Auto Login,          lightdm-autologin,                             preferences-desktop-personal/d' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
+                sed -i '/Tint2 Toggle/a Auto Login,          lightdm-autologin,                             preferences-desktop-personal' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
+                 if [[ $(command -v lightdm) ]]; then
+                   if grep -Fxq 'exec "$session"' /home/"${SUDO_USER}"/.xsessionrc; then
+                   sed -i 's/^exec "$session"/#exec "$session"/' /home/"${SUDO_USER}"/.xsessionrc
+                   fi
+                 fi
+		        sed -i 's/^exec startx/#exec startx/g' /home/"${SUDO_USER}"/.profile ;}
+      
+        see_it
+        no_see
+        run_it
+}
+
 _sourcechanger() {
       _msg="Use netselect-apt to find a faster debian mirror?"
       do_it() { apt install -y netselect-apt
@@ -173,7 +198,7 @@ _autologin() {
 }
 
 _reboot() {
-      _msg="Update complete. Reboot? (Y if new kernel installed)"
+      _msg="Reboot? - (Y if new kernel or lightdm change.)"
       do_it() { sed -i '/welcome-backend.sh.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
 		  if ! grep hypervisor /proc/cpuinfo ; then
           sed -i '/vmrestore.*/d' /home/"${SUDO_USER}"/.config/openbox/autostart
@@ -189,6 +214,7 @@ _update
 _remove_packages
 _add_backports
 _upgrade_kernel
+_add_slick
 _sourcechanger
 _osprober
 _firmware
@@ -203,6 +229,7 @@ _update
 _remove_packages
 _add_backports
 _upgrade_kernel
+_add_slick
 _sourcechanger
 _firmware
 #_autologin
