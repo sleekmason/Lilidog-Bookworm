@@ -1,11 +1,11 @@
 #!/bin/bash
 # Adjust tint2 icons
 # Author - sleekmason 06/14/2023
-# This dialog is implemented through the tint2-position dialog
 
 ozark(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2light\//g' "$FILE"
        sed -i 's/coltint2.*\//coltint2ozark\//g' "$FILE"
        sed -i 's/\(coltint2ozark.*\)....*$/\1svg/g' "$FILE"      
        sed -i 's/^iconcolor=.*/iconcolor="coltint2ozark.svg"/g' "$NOTIFY"
@@ -20,6 +20,7 @@ ozark(){
 forge(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2forge\//g' "$FILE"
        sed -i 's/coltint2.*\//coltint2forge\//g' "$FILE"
        sed -i 's/\(coltint2forge.*\)....*$/\1svg/g' "$FILE"       
        sed -i 's/^iconcolor=.*/iconcolor="coltint2forge.svg"/g' "$NOTIFY"
@@ -34,6 +35,7 @@ forge(){
 creme(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2creme\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2creme\//g' "$FILE"
        sed -i 's/\(coltint2creme.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2creme.svg"/g' "$NOTIFY"
@@ -48,6 +50,7 @@ creme(){
 teladog(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2teladog\//g' "$FILE"
        sed -i 's/coltint2.*\//coltint2teladog\//g' "$FILE"
        sed -i 's/\(coltint2teladog.*\)....*$/\1png/g' "$FILE" 
        sed -i 's/^iconcolor=.*/iconcolor="coltint2teladog.png"/g' "$NOTIFY"
@@ -62,6 +65,7 @@ teladog(){
 teladog2(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2teladog2\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2teladog2\//g' "$FILE"
        sed -i 's/\(coltint2teladog.*\)....*$/\1png/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2teladog2.png"/g' "$NOTIFY"
@@ -76,6 +80,7 @@ teladog2(){
 telacircle(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2telacircle\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2telacircle\//g' "$FILE"
        sed -i 's/\(coltint2telacircle.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2telacircle.svg"/g' "$NOTIFY"
@@ -90,6 +95,7 @@ telacircle(){
 light(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2light\//g' "$FILE"
        sed -i 's/coltint2.*\//coltint2light\//g' "$FILE"
        sed -i 's/\(coltint2light.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2light.svg"/g' "$NOTIFY"
@@ -104,6 +110,7 @@ light(){
 grey(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2grey\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2grey\//g' "$FILE"
        sed -i 's/\(coltint2grey.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2grey.svg"/g' "$NOTIFY"
@@ -118,6 +125,7 @@ grey(){
 adobe(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2adobe\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2adobe\//g' "$FILE"
        sed -i 's/\(coltint2adobe.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2adobe.svg"/g' "$NOTIFY"
@@ -132,6 +140,7 @@ adobe(){
 navy(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2navy\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2navy\//g' "$FILE"
        sed -i 's/\(coltint2navy.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2navy.svg"/g' "$NOTIFY"
@@ -146,6 +155,7 @@ navy(){
 green(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2green\//g' "$FILE"
        sed -i 's/coltint2.*\//coltint2green\//g' "$FILE"
        sed -i 's/\(coltint2green.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2green.svg"/g' "$NOTIFY"
@@ -160,6 +170,7 @@ green(){
 buuf(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2buuf\//g' "$FILE"
        sed -i 's/coltint2.*\//coltint2buuf\//g' "$FILE"
        sed -i 's/\(coltint2buuf.*\)....*$/\1png/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2buuf.svg"/g' "$NOTIFY"
@@ -174,6 +185,7 @@ buuf(){
 obsidian(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2obsidian\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2obsidian\//g' "$FILE"
        sed -i 's/\(coltint2obsidian.*\)....*$/\1png/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2obsidian.png"/g' "$NOTIFY"
@@ -188,6 +200,7 @@ obsidian(){
 papirus(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2papirus\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2papirus\//g' "$FILE"
        sed -i 's/\(coltint2papirus.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2papirus.svg"/g' "$NOTIFY"
@@ -202,6 +215,7 @@ papirus(){
 black(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2black\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2black\//g' "$FILE"
        sed -i 's/\(coltint2black.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2black.svg"/g' "$NOTIFY"
@@ -216,6 +230,7 @@ black(){
 white(){
   FILE="$HOME/.config/tint2/tint2rc"
   NOTIFY="$HOME/.config/tint2/executors/notifier"
+       sed -i 's/\~\/.config\/tint2\/tint2-custom\//\/usr\/share\/icons\/ld-icons\/coltint2white\//g' "$FILE"  
        sed -i 's/coltint2.*\//coltint2white\//g' "$FILE"
        sed -i 's/\(coltint2white.*\)....*$/\1svg/g' "$FILE"
        sed -i 's/^iconcolor=.*/iconcolor="coltint2white.svg"/g' "$NOTIFY"
@@ -249,6 +264,8 @@ yad --title "Icon Themes" --escape-ok --borders=14 \
 --form --geometry=240x450-270-352 \
 --text="Tint2 Icon Themes\n" --text-align=center --buttons-layout=edge \
 --window-icon=org.xfce.settings.color \
+--button="Custom!org.xfce.settings.color:bash -c tint2-custom-color" \
+--button="OK!gtk-ok:0" \
     --form --columns=2 \
     --field=" Light":FBTN "bash -c light >/dev/null 2>&1 &" \
     --field=" Ozark":FBTN "bash -c ozark >/dev/null 2>&1 &" \
