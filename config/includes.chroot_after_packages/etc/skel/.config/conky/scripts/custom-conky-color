@@ -18,7 +18,6 @@ if (( $? == 1 )); then
 else
 # Continue Chosen Selection.
 COLOR_CHOICE=${CHOICE}
-fi
 
 ##Remove "#" if present.
 if [[ $COLOR_CHOICE == *#* ]]; then
@@ -42,3 +41,4 @@ echo "#$NEW_COLOR" >> "/tmp/custom_conky_color.txt"
 
 ## Make the change.
 sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME"/.config/conky/*.conf
+fi
