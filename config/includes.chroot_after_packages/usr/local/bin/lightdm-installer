@@ -20,7 +20,7 @@ read -r -p "   [0;33mLightdm Default Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 sudo apt-get update && sudo apt-get install -y lightdm lightdm-gtk-greeter-settings &&
-sudo cp -rf /usr/share/lilidog/extras/lightdm/ /usr/share
+sudo cp -af /usr/share/lilidog/extras/lightdm/ /usr/share
 
 ## Toggle to lightdm-greeter
 sudo sed -i '/greeter-session=.*/d' "/etc/lightdm/lightdm.conf"
