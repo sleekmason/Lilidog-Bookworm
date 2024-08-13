@@ -69,7 +69,6 @@ Tint2 Options,       tint2-options,                                 preferences-
 Mouse Finder,        toggle-mouse-pointer,                          preferences-desktop-personal
 Transparency,        transparency-system,                           preferences-desktop-personal
 Tint2 Toggle,        toggle.tint2,                                  preferences-desktop-personal
-Auto Login,          lightdm-autologin,                             preferences-desktop-personal
 Clipboard,           toggle.parcellite,                             preferences-desktop-personal
 OSprober,            osprober-toggle,                               preferences-desktop-personal
 Sounds,              notification-sounds,                           preferences-desktop-personal
@@ -102,7 +101,7 @@ Custom Toggles,      geany ~/.config/lilidog-themes/Light-Dark ~/.config/lilidog
 Power Manager,       xfce4-power-manager-settings,                                         org.xfce.powermanager
 Tint2 Settings,      tint2conf,                                                            tint2conf
 Keybinds,            geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
-Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  lightdm-gtk-greeter-settings
+Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings
 Jgmenu,              geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,              document-properties
 Conky,               thunar ~/.config/conky,                                               document-properties
 Urxvt,               geany ~/.Xresources,                                                  utilities-terminal

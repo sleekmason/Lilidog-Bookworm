@@ -28,12 +28,9 @@ sudo sed -i '108a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
 # Alternate method
 # sudo sed -i '/Font Sizes/a greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"
 
-# Add option for autologin to toggles menu
-sed -i '/Auto Login,          lightdm-autologin,                             preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Tint2 Toggle/a Auto Login,          lightdm-autologin,                             preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
-
-sed -i '/Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  lightdm-gtk-greeter-settings/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/^Keybinds/a Lightdm,             gksudo lightdm-gtk-greeter-settings,                                  lightdm-gtk-greeter-settings' ~/.config/jgmenu/prepend.csv
+# Add lightdm options to configuration menu
+sed -i '/Lightdm,             lightdm-options,.*/d' ~/.config/jgmenu/prepend.csv
+sed -i '/^Keybinds/a Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings' ~/.config/jgmenu/prepend.csv
 
 ## Comment startx
 sed -i 's/^exec startx/#exec startx/g' "$HOME/.profile"

@@ -29,13 +29,9 @@ sudo sed -i '108a greeter-session=slick-greeter' "/etc/lightdm/lightdm.conf"
 # Alternate method
 # sudo sed -i '/Font Sizes/a greeter-session=slick-greeter' "/etc/lightdm/lightdm.conf"
 
-#greeter-session=lightdm-gtk-greeter
-# Add option for autologin to toggles menu
-sed -i '/Auto Login,          lightdm-autologin,                             preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Tint2 Toggle/a Auto Login,          lightdm-autologin,                             preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
-
-sed -i '/Slickdm,             gksudo lightdm-settings,                                  lightdm-settings/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/^Keybinds/a Slickdm,             gksudo lightdm-settings,                                  lightdm-settings' ~/.config/jgmenu/prepend.csv
+# Add lightdm options to configuration menu
+sed -i '/Lightdm,             lightdm-options,.*/d' ~/.config/jgmenu/prepend.csv
+sed -i '/^Keybinds/a Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings' ~/.config/jgmenu/prepend.csv
 
 ## Comment startx
 sed -i 's/^exec startx/#exec startx/g' "$HOME/.profile"
@@ -47,11 +43,11 @@ if [[ $(command -v lightdm) ]]; then
   fi
 fi
 echo ""
-echo "   [0;32m----------------------------------------------------------------------[0m"
+echo "   [0;32m------------------------------------------------------------[0m"
 echo ""
-echo "   [0;32mReboot after installation to enable lightdm if not installed.[0m"
+echo "   [0;32mReboot to enable the Lightdm Slick Greeter.[0m"
 echo ""
-echo "   [0;32m----------------------------------------------------------------------[0m"
+echo "   [0;32m------------------------------------------------------------[0m"
 
 else
 echo ""
