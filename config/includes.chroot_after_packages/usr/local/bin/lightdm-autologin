@@ -56,8 +56,10 @@ fi
 if grep -q "$SELECTION" /etc/lightdm/lightdm.conf; then
 pkexec sed -i '/autologin-user='"$SELECTION"'/d' /etc/lightdm/lightdm.conf
 notify-send -i "user-info" --urgency low "$SELECTION autologin entry removed"
+notify-send -i "info" --urgency low "REBOOT for changes to take effect"
 else
 pkexec sh -c "sed -i '/autologin-user=.*/d' /etc/lightdm/lightdm.conf; sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf"
 notify-send -i "user-info" --urgency low "Autologin enabled for $SELECTION"
+notify-send -i "info" --urgency low "REBOOT for changes to take effect"
 fi
 kill -- -0
