@@ -115,11 +115,6 @@ _add_slick() {
 		        ## Toggle to lightdm-greeter
                 sed -i '/greeter-session=.*/d' "/etc/lightdm/lightdm.conf"
                 sed -i '108a greeter-session=slick-greeter' "/etc/lightdm/lightdm.conf"
-                ## Menu additions
-		        sed -i '/Slickdm,             gksudo lightdm-settings,                                  lightdm-settings/d' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
-                sed -i '/^Keybinds/a Slickdm,             gksudo lightdm-settings,                                  lightdm-settings' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
-		        sed -i '/Auto Login,          lightdm-autologin,                             preferences-desktop-personal/d' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
-                sed -i '/Tint2 Toggle/a Auto Login,          lightdm-autologin,                             preferences-desktop-personal' /home/"${SUDO_USER}"/.config/jgmenu/prepend.csv
                  if [[ $(command -v lightdm) ]]; then
                    if grep -Fxq 'exec "$session"' /home/"${SUDO_USER}"/.xsessionrc; then
                    sed -i 's/^exec "$session"/#exec "$session"/' /home/"${SUDO_USER}"/.xsessionrc
