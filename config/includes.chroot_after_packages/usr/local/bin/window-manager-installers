@@ -9,6 +9,7 @@ yad --title "WM Installers" --escape-ok \
     --field="DKWM":FBTN "x-terminal-emulator -T 'Dk WM Installer' -e bash -c "dk-installer"" \
     --field="DWM":FBTN "x-terminal-emulator -T 'DWM Installer' -e bash -c "dwm-installer"" \
     --field="i3 WM":FBTN "x-terminal-emulator -T 'i3 WM Installer' -e bash -c "i3wm-installer"" \
+    --field="JWM":FBTN "x-terminal-emulator -T 'JWM Installer' -e bash -c "jwm-installer"" \
     --field="SOWM":FBTN "x-terminal-emulator -T 'SOWM Installer' -e bash -c "sowm-installer"" \
     --field="SOWM Borders":FBTN "x-terminal-emulator -T 'SOWM Borders Installer' -e bash -c "sowm-borders-installer"" \
     --field="":LBL "" \

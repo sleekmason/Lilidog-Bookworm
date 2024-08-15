@@ -5,6 +5,7 @@ Conky,            x-terminal-emulator -T 'Default Conky Installer' -e bash -c "c
 dkwm,             x-terminal-emulator -T 'dk Installer' -e bash -c "dk-installer",                                applications-utilities
 dwm,              x-terminal-emulator -T 'dwm Installer' -e bash -c "dwm-installer",                              applications-utilities
 i3wm,             x-terminal-emulator -T 'i3 WM Installer' -e bash -c "i3wm-installer",                           applications-utilities
+jwm,              x-terminal-emulator -T 'JWM Installer' -e bash -c "jwm-installer",                              applications-utilities
 Jgmenu Default,   x-terminal-emulator -T 'Jgmenu Default Config Installer' -e bash -c "jgmenu-default-installer", applications-utilities
 Kitchen Sink,     x-terminal-emulator -T 'Kitchen Sink Installer' -e bash -c "kitchensink-installer",             applications-utilities
 Lemonbar Panel,   x-terminal-emulator -T 'Lemonbar Installer' -e bash -c "lemonbar-installer",                    applications-utilities
