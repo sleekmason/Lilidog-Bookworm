@@ -1,7 +1,8 @@
 #!/bin/bash
 
 yad --title "Theming Options" --escape-ok \
---button=gtk-ok:0 --form --center --width=240 --height=450 --borders=6 \
+--button=gtk-ok:0 --form --center --borders=6 \
+--geometry=240x450+280+280 \
 --text="\n Lilidog Theming Options\n" --text-align=center \
 --window-icon=applications-utilities \
     --form \
@@ -12,7 +13,7 @@ yad --title "Theming Options" --escape-ok \
     --field="                         Grub BG!org.xfce.settings.editor":FBTN "x-terminal-emulator -T 'Grub Background Changer' -e bash -c 'grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1'" \
     --field="                               Icons!preferences-other":FBTN "xfce4-appearance-settings" \
     --field="                           Jgmenu!jgmenu":FBTN "jg-icon-changer" \
-    --field="                         LightDM!lightdm-gtk-greeter-settings":FBTN "gksudo lightdm-gtk-greeter-settings" \
+    --field="                         LightDM!lightdm-gtk-greeter-settings":FBTN "lightdm-options" \
     --field="                        Openbox!obconf":FBTN "obconf" \
     --field="                           Sounds!audio-speakers":FBTN "notification-sounds" \
     --field="             System Settings!preferences-system":FBTN "xfce4-settings-manager" \
