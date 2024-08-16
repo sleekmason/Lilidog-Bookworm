@@ -215,7 +215,7 @@ entry {
     border-radius: 0px; }
   spinbutton:focus:not(.vertical),
   entry:focus {
-    border-color: #36B556;
+    border-color: #7096C2;
     background-color: #263E59; }
   spinbutton:disabled:not(.vertical),
   entry:disabled {
@@ -466,7 +466,7 @@ button {
   notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
   button:active,
   button:checked {
-    color: #32C756;
+    color: #B6D1F0;
     outline-color: #162333;
     border-color: #141A22;
     background-image: linear-gradient(to bottom, shade(shade(#29405C, 1.0), 1.05), shade(shade(#2B4461, 1.1), 0.97));
@@ -1455,7 +1455,7 @@ spinbutton:not(.vertical) {
     margin: 0;
     padding-bottom: 0;
     padding-top: 0;
-    color: #36B556;
+    color: #7096C2;
     background-image: none;
     border-style: none none none solid;
     border-color: #182738;
