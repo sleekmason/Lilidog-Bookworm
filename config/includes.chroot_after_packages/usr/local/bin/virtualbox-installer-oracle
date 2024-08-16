@@ -1,6 +1,6 @@
 #!/bin/bash
 echo ""
-echo "                  [0;33mOracle Virtualbox Installer[0m"
+echo "   [0;33mOracle Virtualbox Installer[0m"
 echo ""
 read -p "   This script will download and install the Oracle edition
    of VirtualBox: https://www.virtualbox.org/wiki/Linux_Downloads
@@ -24,25 +24,34 @@ read -p "   This script will download and install the Oracle edition
     if : >/dev/tcp/8.8.8.8/53; then
 echo ""   
 echo ""
+vb_package="virtualbox-7.0"
+distro_release="$(cat /etc/apt/sources.list | grep -q ^deb | awk '{print $3}' | head -1)"
+
+# Install repositories and update
 sudo wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/virtualbox.gpg --import
 sudo chmod 644 /etc/apt/trusted.gpg.d/virtualbox.gpg
 grep -qF "deb" /etc/apt/sources.list.d/virtualbox.list  || echo 'deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bookworm contrib' |\
 sudo tee -a /etc/apt/sources.list.d/virtualbox.list
-sudo sed -i '/deb/c deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bookworm contrib' /etc/apt/sources.list.d/virtualbox.list
-sudo apt update && sudo apt install --install-recommends virtualbox-7.0 build-essential &&
+
+# Install packages
+echo ""
+echo -e "\e[1mInstalling packages...\e[0m"
+echo ""
+[ "$(find /var/cache/apt/pkgcache.bin -mtime 0 2>/dev/null)" ] || sudo apt-get update  
+sudo apt-get install -y build-essential linux-headers-$(uname -r) "$vb_package" || exit 1
+
 sed -i '/Virtualbox,         virtualbox,       virtualbox/d' ~/.config/jgmenu/prepend.csv &&
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Virtualbox,         virtualbox,       virtualbox' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
-sudo sed -i '/deb/c #deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bookworm contrib' /etc/apt/sources.list.d/virtualbox.list 
 echo ""
-echo "----------------------------------------------------------------"
+echo "   ----------------------------------------------------------------"
 echo ""
-echo "[0;32mAll Finished![0m"
+echo "   [0;32mAll Finished![0m"
 echo ""
-echo "[0;33mIf installed, You should find a new menu entry under 'Quick Grab'[0m"
+echo "   [0;33mIf installed, You should find a new menu entry under 'Quick Grab'[0m"
 echo "" 
-echo "[0;32mMenu entries will need to be removed manually if uninstalled." 
-echo "See Jgmenu Conf under Configuration in the menu for directions.[0m"
+echo "   [0;32mMenu entries will need to be removed manually if uninstalled." 
+echo "   See Jgmenu Conf under Configuration in the menu for directions.[0m"
 echo ""
 echo "----------------------------------------------------------------"
 else
