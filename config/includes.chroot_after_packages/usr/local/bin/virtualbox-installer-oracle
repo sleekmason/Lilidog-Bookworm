@@ -25,14 +25,13 @@ read -p "   This script will download and install the Oracle edition
 echo ""   
 echo ""
 vb_package="virtualbox-7.0"
-distro_release="$(cat /etc/apt/sources.list | grep -q ^deb | awk '{print $3}' | head -1)"
 
 # Install repositories and update
 sudo wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/virtualbox.gpg --import
 sudo chmod 644 /etc/apt/trusted.gpg.d/virtualbox.gpg
-grep -qF "deb" /etc/apt/sources.list.d/virtualbox.list  || echo 'deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian bookworm contrib' |\
+grep -qF "deb" /etc/apt/sources.list.d/virtualbox.list  || echo 'deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bookworm contrib' |\
 sudo tee -a /etc/apt/sources.list.d/virtualbox.list
-
+sudo apt update
 # Install packages
 echo ""
 echo -e "\e[1mInstalling packages...\e[0m"
