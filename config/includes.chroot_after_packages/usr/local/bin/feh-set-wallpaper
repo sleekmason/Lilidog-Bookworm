@@ -16,7 +16,7 @@ source "$HOME/.config/wallpapers.conf"
 #BGSET="--bg-max"
 #BGSET="--bg-tile"
 
-feh -g +40+40 -r -t -P -N --scale-down -W 804 -E 84 -y 134 -J 100 --title "Wallpaper" \
+feh -g +50+46 -r -t -P -N --scale-down -W 804 -E 84 -y 134 -J 100 --title "Wallpaper" \
 --fontpath /usr/share/fonts/truetype/liberation/ --font LiberationSans-Regular.ttf/10 \
 --index-info "" \
 --action ";feh $FEHBG $BGSET %F" $BGDIR1 $BGDIR2 $BGDIR3
