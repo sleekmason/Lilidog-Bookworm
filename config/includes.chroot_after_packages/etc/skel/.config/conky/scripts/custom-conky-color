@@ -3,7 +3,7 @@
 # Made by sleekmason 07-31-2024
 set -e
 ## "--color" can be removed if wanting to use a separate color chooser.
-CHOICE=( $(yad --color --init-color=#C4C4C4 \
+CHOICE=( $(yad --color --init-color=#c4c4c4 \
 --gtk-palette --palette=/usr/share/X11/rgb.txt \
 --form --width=320 --center --borders=6 --on-top \
 --title="Custom Conky Text Color " \
