@@ -1,0 +1,8 @@
+## Defaults for the custom conky color and conky-12to24 scripts.
+## Do not remove or change format!
+
+# Color
+default_color = '#C4C4C4',
+
+# Time
+time %H:%M

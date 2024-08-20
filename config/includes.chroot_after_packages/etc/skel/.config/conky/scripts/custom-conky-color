@@ -27,7 +27,8 @@ else
 fi
 
 ## Grab the old color for variable use.
-OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/conky-shortcuts.conf" | cut -d'#' -f2 | sed 's/..$//')
+# OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/conky-shortcuts.conf" | cut -d'#' -f2 | sed 's/..$//')
+OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/scripts/defaults.txt" | cut -d'#' -f2 | sed 's/..$//')
 
 ## Show numbers if in terminal.
 echo "#$NEW_COLOR" >> "/tmp/custom_conky_color.txt"
@@ -40,5 +41,6 @@ echo "#$NEW_COLOR" >> "/tmp/custom_conky_color.txt"
     echo "   -------------------------------"
 
 ## Make the change.
+sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.config/conky/scripts/defaults.txt"
 sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME"/.config/conky/*.conf
 fi
