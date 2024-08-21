@@ -50,8 +50,8 @@ window.active.button.*.hover.bg.color: #41617d
 window.active.button.*.hover.bg.colorTo: #41617d
 window.active.button.*.hover.bg.border.color: #000000
 
-window.active.button.*.pressed.bg.color: #517B9E
-window.active.button.*.pressed.bg.colorTo: #6B94BC
+window.active.button.*.pressed.bg.color: #768394
+window.active.button.*.pressed.bg.colorTo: #768394
 window.active.button.*.pressed.image.color: #000000
 window.active.button.*.pressed.bg.border.color: #000000
 window.inactive.button.*.pressed.bg.color: #262626
