@@ -9,7 +9,7 @@ if ! [[ $(command -v slick-greeter) ]]; then
 notify-send -i "user-info" --urgency low "Please install Slick Greeter to continue"
 x-terminal-emulator -T 'Lightdm Slick Greeter Installer' -e bash -c "slick-greeter-installer"
 else
-if grep -Fxq "greeter-session=slick-greeter" /etc/lightdm/lightdm.conf; then
+if grep -E "greeter-session=slick-greeter" /etc/lightdm/lightdm.conf; then
 notify-send -i "user-info" --urgency low "Lightdm currently set to Slick Greeter"
 exit
 else
@@ -27,7 +27,7 @@ if ! [[ $(command -v lightdm-gtk-greeter-settings) ]]; then
 notify-send -i "user-info" --urgency low "Please install the GTK greeter to continue"
 x-terminal-emulator -T 'Lightdm Installer' -e bash -c "lightdm-installer"
 else
-if grep -Fxq "greeter-session=lightdm-gtk-greeter" /etc/lightdm/lightdm.conf; then
+if grep -E 'greeter-session=lightdm-gtk-greeter|greeter-session=lightdm-greeter' "/etc/lightdm/lightdm.conf"; then
 notify-send -i "user-info" --urgency low "Lightdm currently set to GTK default"
 exit
 else
