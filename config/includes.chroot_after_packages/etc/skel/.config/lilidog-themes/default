@@ -116,8 +116,9 @@ killall -q dunst
 ### Conky
 ## default text color
 killall conky
-OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/conky-shortcuts.conf" | cut -d'#' -f2 | sed 's/..$//')
-sed -i -e "s/${OLD_COLOR}/C4C4C4/g" "$HOME"/.config/conky/*.conf >/dev/null 2>&1 &
+OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/scripts/defaults.txt" | cut -d'#' -f2 | sed 's/..$//')
+sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME"/.config/conky/*.conf >/dev/null 2>&1 &
+sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME/.config/conky/scripts/defaults.txt" >/dev/null 2>&1 &
 ## transparency 
     sed -i "s/bg_alpha=.*/bg_alpha=0.0/g" ~/.config/conky/lua/shortcuts.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.0/g" ~/.config/conky/lua/shortcuts2.lua
