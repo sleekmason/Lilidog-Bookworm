@@ -20,10 +20,13 @@ else
 # Continue Chosen Selection.
 COLOR_CHOICE=${CHOICE}
 
-## Add folder if not present
+## Add folder if not present.
 if ! test -f "$HOME/.config/tint2/tint2-custom"; then
 cp -rf "/usr/share/icons/ld-icons/tint2-custom" "$HOME/.config/tint2"
 fi
+
+## place COLOR_CHOICE in a text file for variable use.
+echo "$COLOR_CHOICE" > "$HOME/.config/tint2/customcolor.txt"
 
 ## Make the change in tint2rc.
 sed -i 's/coltint2.*\//coltint2light\//g' "$HOME/.config/tint2/tint2rc"

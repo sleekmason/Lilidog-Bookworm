@@ -243,6 +243,27 @@ white(){
      killall -SIGUSR1 tint2
 }
 
+custom_color(){
+if test -e "$HOME/.config/tint2/customcolor.txt"; then
+FILE="$HOME/.config/tint2/tint2rc"	
+## Make the icon change in tint2rc.
+	sed -i 's/coltint2.*\//coltint2light\//g' "$FILE"
+	sed -i 's/\(coltint2light.*\)....*$/\1svg/g' "$FILE"
+	sed -i 's/\/usr\/share\/icons\/ld-icons\/coltint2light\//\~\/.config\/tint2\/tint2-custom\//g' "$FILE"
+# text colors
+COLOR_CHOICE=$( cat "$HOME/.config/tint2/customcolor.txt" )
+         sed -i 's/taskbar_name_font_color =.*/taskbar_name_font_color = \'"$COLOR_CHOICE"' 100/' "$FILE"
+         sed -i 's/taskbar_name_active_font_color =.*/taskbar_name_active_font_color = \'"$COLOR_CHOICE"' 100/' "$FILE"
+         sed -i 's/task_font_color =.*/task_font_color = \'"$COLOR_CHOICE"' 100/' "$FILE"
+         sed -i 's/clock_font_color =.*/clock_font_color = \'"$COLOR_CHOICE"' 100/' "$FILE"
+         sed -i 's/tooltip_font_color =.*/tooltip_font_color = \'"$COLOR_CHOICE"' 100/' "$FILE"
+         sed -i 's/^battery_font_color.*/battery_font_color = '"$COLOR_CHOICE"' 100/g' "$FILE"
+     killall -SIGUSR1 tint2
+else
+exit
+fi 
+}
+
 export -f ozark
 export -f forge
 export -f creme
@@ -259,6 +280,7 @@ export -f obsidian
 export -f papirus
 export -f black
 export -f white
+export -f custom_color
 
 yad --title "Icon Themes" --escape-ok --borders=14 \
 --form --geometry=240x450-270-352 \
@@ -279,8 +301,8 @@ yad --title "Icon Themes" --escape-ok --borders=14 \
     --field=" Forge":FBTN "bash -c forge >/dev/null 2>&1 &" \
     --field=" Navy":FBTN "bash -c navy >/dev/null 2>&1 &" \
     --field=" Green":FBTN "bash -c green >/dev/null 2>&1 &" \
-    --field=" Black":FBTN "bash -c black >/dev/null 2>&1 &" \
     --field=" Buuf":FBTN "bash -c buuf >/dev/null 2>&1 &" \
     --field=" Obsidian":FBTN "bash -c obsidian >/dev/null 2>&1 &" \
-    --field=" Papirus":FBTN "bash -c papirus >/dev/null 2>&1 &"
+    --field=" Papirus":FBTN "bash -c papirus >/dev/null 2>&1 &" \
+    --field=" Custom":FBTN "bash -c custom_color >/dev/null 2>&1 &"
     
