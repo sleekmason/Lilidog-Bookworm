@@ -1,18 +1,18 @@
 ﻿-------
 ### About Lilidog:
 
-Lilidog is a lightweight linux distro based on debian.  Lilidog uses the Openbox window manager with the tint2 panel.
+Lilidog is a lightweight linux distro based on debian.  Lilidog uses the Openbox window manager with tint2, thunar, and xfce4-terminal.
 Other window managers are also made available through the Lilidog installers. These are awesome, dk, dwm, jwm, and sowm.<br/>
 
 Lilidog is based on debian stable, with some of the hard parts done, and some cool stuff along the way. 
 Everything is easily accessible, with numerous options to customize further.
 
-Website: https://lilidog.org/ <br/>
+Website: https://lilidog.org/
 Forum Link: https://www.forum.lilidog.org/ <br/>
 
 ### Available Versions:
 
-There are four general builds of full, minimal, minimal-i386, and beardog.  
+There are four general builds: full, minimal, minimal-i386, and beardog.  
 
 - Full - (Approx. 1300 packages), comes with everything necessary to get started without needing initial extra downloads. I would advise most folks to use the full version if looking for an 'out of the box' computing solution with everything you need.
 
@@ -30,17 +30,17 @@ There are four general builds of full, minimal, minimal-i386, and beardog.
 
 `cat /usr/share/lilidog/GPL/current-build` (after 2-10-24)
 
-Lilidog uses the 'stable' version of debian, which is currently Bookworm, and updates to the debian portions of the system can be had with a quick 
+Lilidog uses the 'stable' version of debian, which is currently Bookworm, and updates to most of the packages can be had with a quick 
 
 `sudo apt update && sudo apt upgrade`
 
-to bring all of the debian packages up to date. 
+to bring everything up to date. 
 
 Every Lilidog release in itself is considered fully stable and usable.  New additions to the distro are just the natural forward progression of things to make the distro experience better over time.
 
 Updates to Lilidog occur generally on the [Debian Point Release]( https://wiki.debian.org/DebianReleases/PointReleases) dates. New features, installers for various programs, and bug fixes occur at this time, though these are not required by the user to upgrade or worry about if they are happy with the Lilidog version they are using. 
 
-To follow the current development of Lilidog, see my [Github Site](https://github.com/sleekmason), and choose the version of Lilidog you are using. - These are Lilidog-Bookworm (full edition), Lilidog-Minimal, Lilidog-i386-Minimal, and Beardog.  After clicking on the version you want to check, look for the small clock symbol below the green 'Code' button and click on that to see the latest 'commits' (changes) for that particular version.
+To follow the current development of Lilidog, see my [Github Site](https://github.com/sleekmason), and choose the version of Lilidog you want. - These are Lilidog-Bookworm (full edition), Lilidog-Minimal, Lilidog-i386-Minimal, and Beardog.  After clicking on the version you want to check, look for the small clock symbol below the green 'Code' button and click on that to see the latest 'commits' (changes) for that particular version.
 
 There have been more than 2500 commits since Lilidog was created!  Lilidogs first real release was under debian 'buster'  10-30-2020.
 
@@ -64,7 +64,7 @@ Lilidog uses the Debian installer with both text and graphical installs availabl
 
 When booting into the live session, another opportunity to install can be had by clicking the green icon in the system tray.  This will open the Calamares installer, which works quite well and is preferred by some.
 
-Lilidog opens in the Openbox window manager. Easy enough to install fluxbox or others if desired. They will show up in your login screen as options. The username and password for the live environment is "user", and "live" respectively.
+Lilidog opens in the Openbox window manager. Easy enough to install others window managers if desired. They will show up in your login screen as options. The username and password for the live environment is "user", and "live" respectively.
 
 ### Navigating Lilidog:
 
@@ -76,19 +76,18 @@ After boot, you have the option to install or try out Lilidog live.  Once in a s
 
 - The popular Calamares installer is available from the live session to install Lilidog to your computer.  Click on the green icon in the system tray to get started.
 
-- Debian backports sources can be added after installation through the welcome entry screen or from the Lilidog installers 
+- Debian backports sources can be added after installation through the welcome entry screen or from the Lilidog installers. 
 
 - These are 'no --recommends' builds. This means only the required dependencies are included during package install. This leaves out any recommended or suggested packages, allowing for complete control over package installation. No unwanted packages will be installed by default. This can be changed after install if desired. 
 
-- Tint2 is the panel by default.  Look under the 'T2' symbol in the tint2 panel for some other nifty tint2 options, as well including toggles for the position (top or bottom), autohide, Tint2 time format (12/24H), and on/off, and theming options. 
+- Tint2 is the panel by default.  See the wrench and screwdriver icon in the tint2 panel for some other nifty tint2 options, including toggles for the position (top or bottom), autohide, Tint2 time format (12/24H), and on/off, and theming options. 
 
-- Jgmenu is the menu for all versions.  Huge amount of customization available.
-Go to menu -> configuration -> jgmenu.conf for how to change and add items.
+- Jgmenu is the menu for all versions.  Huge amount of customization available. Go to menu -> configuration -> jgmenu.conf for how to change and add items.
 
-- Wallpapers - Handled by Feh.  Place any image you would like to use as a wallpaper in ~/Pictures/wallpapers.
+- Wallpapers are handled by Feh.  Place any image you would like to use as a wallpaper in ~/Pictures/wallpapers.
 Go to Menu -> Configuration -> Wallpaper Chooser to change wallpapers. You can also right-click on any image you choose from the file manager to set as background wallpaper. Other right-click options for images include rotation and copying to ~/Pictures.wallpapers. A random wallpaper toggle is included.
 
-- Icons - Currently, the Obsidian Icon theme is default.   Papirus, Gnome, and other sets are available.  
+- Icons - Currently, the Obsidian Icon theme is default. Papirus, Gnome, and other icon sets are readily available.  
 
 - Grub background changer opens a window to choose your own images. Lilidog ships with six to give you an intitial choice before finding your own to add to the collection.
 
@@ -97,14 +96,17 @@ Go to Menu -> Configuration -> Wallpaper Chooser to change wallpapers. You can a
 - Rofi and Dmenu for alternate menu sources. - ALT + F5 pulls the full Dmenu up, while ALT + F3 pulls up a
 customized rofi 'drun' menu.
 
-- Thunar is the default file manager.  Custom right-click options are already added as well. These include everything from"Open as Root', to different rotations and sizing of pics, to comparisons of files using Meld. And more.
+- Thunar is the default file manager.  Custom right-click options are already added as well. These include everything from "Open as Root', to different rotations and sizing of pics, to comparisons of files using Meld. And more.
 
 - Custom Lilidog Openbox and GTK themes, and matching themes for Geany and Xfce4-terminal.
-The fonts are Liberation Sans, except for urxvt and Conky, where Dejavu is used. (see "instructions" below.)
 
-- Xfce4-terminal is default, with URXVT also installed. 
+- The fonts are Noto Sans for the windows and JetBrains mono for the xfce4-terminal. The exceptions are urxvt and Conky, where Dejavu is used.
 
-- Conky Chooser in the toggles section of the menu contains toggles for six different Conkys and the time format shown. All of the Conkys contain relevant info. These include a Clock, Full Info, Fortunes, Shortcuts, Worldclock, and Tao quotes. Everything conky is located in ~/.config/conky,including the Conky Chooser script.
+- Xfce4-terminal is default terminal, with urxvt included. 
+
+- The Conky Chooser in the toggles section of the menu contains toggles for ten different Conkys and the time format shown. All of the Conkys contain relevant info. These include a Clock, Full Info, Fortunes, Shortcuts, Worldclock, and Tao quotes. Everything conky is located in ~/.config/conky,including the Conky Chooser script.
+
+- Custom colors can be chosen for three of the GTK themes, tint2, and conky.  This allows the user to design their own desktop that much easier.
 
 - Picom Composite Manager with transparency enabled.  Look in ~/.config/picom.conf in order to change transparency, shadows, and more.
 
@@ -114,7 +116,7 @@ The fonts are Liberation Sans, except for urxvt and Conky, where Dejavu is used.
 
 - System notifications enabled with Dunst, with options for sound effects.
 
-- Menu Extras - Install menu with options for Liquorix kernel, Qemu, Virtualbox (sid), Steam, Etcher, and more.
+- Menu Extras - Install menu with options for Liquorix kernel, Qemu, Virtualbox, Steam, Etcher, and more.
 
 - Swapid script for the frequent dual installer. This grabs your swap uuid and opens the appropriate windows to edit. Try 'swapid' in a terminal after installing another distro to a different partition.
 
