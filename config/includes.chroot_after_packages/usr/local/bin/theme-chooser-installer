@@ -52,6 +52,7 @@ sudo cp -f "/tmp/themechooser/ld-term-changer" "/usr/local/bin"
 sudo cp -f "/tmp/themechooser/xfce4-term-colors" "/usr/local/bin"
 
 # Copy theme Highlight changers to /usr/local/bin
+sudo cp -f "/tmp/themechooser/custom-ink-chooser" "/usr/local/bin"
 sudo cp -f "/tmp/themechooser/custom-drow-chooser" "/usr/local/bin"
 sudo cp -f "/tmp/themechooser/custom-forge-chooser" "/usr/local/bin"
 sudo cp -f "/tmp/themechooser/custom-island-chooser" "/usr/local/bin"
