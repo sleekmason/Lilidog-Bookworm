@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#18191A\nbg_color:#151617\ntooltip_bg_color:#18191A\nselected_bg_color:#3D4345\ntext_color:#C3D4D4\nfg_color:#C3D4D1\ntooltip_fg_color:#C3D4D1\nselected_fg_color:#C3D4D4\nmenubar_bg_color:#151617\nmenubar_fg_color:#C3D4D1\ntoolbar_bg_color:#151617\ntoolbar_fg_color:#C3D4D4\nmenu_bg_color:#151617\nmenu_fg_color:#C3D4D4\npanel_bg_color:#151617\npanel_fg_color:#C3D4D4\nlink_color:#3D4345"
+gtk_color_scheme = "base_color:#131617\nbg_color:#101314\ntooltip_bg_color:#131617\nselected_bg_color:#3a454d\ntext_color:#C3D4D4\nfg_color:#C3D4D1\ntooltip_fg_color:#C3D4D1\nselected_fg_color:#DCEBEB\nmenubar_bg_color:#101314\nmenubar_fg_color:#C3D4D1\ntoolbar_bg_color:#101314\ntoolbar_fg_color:#C3D4D4\nmenu_bg_color:#101314\nmenu_fg_color:#C3D4D4\npanel_bg_color:#101314\npanel_fg_color:#C3D4D4\nlink_color:#3a454d"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
@@ -187,7 +187,7 @@ style "evolve-button" = "evolve-wider" {
 
 style "evolve-scrollbar" = "evolve-button" {
 	bg[NORMAL] = @bg_color
-	bg[PRELIGHT] = shade (0.8, @bg_color)
+	bg[PRELIGHT] = shade (0.8, @selected_bg_color)
 	bg[ACTIVE] = shade (1.4, @selected_bg_color)
 	
 	engine "murrine" {

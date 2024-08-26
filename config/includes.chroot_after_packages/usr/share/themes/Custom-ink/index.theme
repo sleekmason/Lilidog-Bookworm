@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Dragon
-Comment=Dragon based off Greybird theme
+Name=Custom-ink
+Comment=Custom-ink based off Greybird theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Dragon
-MetacityTheme=Dragon
+GtkTheme=Custom-ink
+MetacityTheme=Custom-ink
 IconTheme=Adwaita
 CursorTheme=Adwaita
 ButtonLayout=:minimize,maximize,close

@@ -1,0 +1,11 @@
+#!/bin/bash
+yad --title "Custom" --escape-ok --borders=8 \
+--button=" Exit!gtk-delete:0" \
+--form --center --width=240 --height=280 \
+--text="Custom highlight colors\n" --text-align=center \
+--window-icon=org.xfce.settings.color \
+   --form --columns=1 \
+   --field="   Custom Drow!org.xfce.settings.color":FBTN "bash -c 'custom-drow-chooser'" \
+   --field="   Custom Forge!org.xfce.settings.color":FBTN "bash -c 'custom-forge-chooser'" \
+   --field="       Custom Ink!org.xfce.settings.color":FBTN "bash -c 'custom-ink-chooser'" \
+   --field="   Custom Island!org.xfce.settings.color":FBTN "bash -c 'custom-island-chooser'"

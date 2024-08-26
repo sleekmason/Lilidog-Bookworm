@@ -15,11 +15,9 @@ fi
 
 export -f ICON_TOGGLE
 
-yad --title "Auto Themes" --escape-ok --borders=8 \
---buttons-layout=center \
---button=" Custom Drow!org.xfce.settings.color:bash -c 'custom-drow-chooser'" \
---button=" Custom Forge!org.xfce.settings.color:bash -c 'custom-forge-chooser'" \
---button=" Custom Island!org.xfce.settings.color:bash -c 'custom-island-chooser'" \
+yad --title "Auto Themes" --escape-ok --borders=10 \
+--buttons-layout=edge \
+--button=" Custom Themes!org.xfce.settings.color:bash -c 'popup -f $HOME/.config/lilidog-themes/custom-themes.txt &'" \
 --button=" Auto Icons!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
 --button=" Exit!gtk-delete:0" \
 --form --center --width=440 --height=450 \
@@ -28,13 +26,13 @@ yad --title "Auto Themes" --escape-ok --borders=8 \
     --form --columns=4 \
     --field="                  Slate!$HOME/.config/lilidog-themes/icons/paw-slate.png!":FBTN "$HOME/.config/lilidog-themes/Lilidog-Slate" \
     --field="             Oceanic!$HOME/.config/lilidog-themes/icons/paw-oceanic.png!":FBTN "$HOME/.config/lilidog-themes/Oceanic" \
-    --field="                 Glade!$HOME/.config/lilidog-themes/icons/paw-glade.png!":FBTN "$HOME/.config/lilidog-themes/Glade" \
+    --field="  Nordic-Darker!$HOME/.config/lilidog-themes/icons/paw-nordic.png!":FBTN "$HOME/.config/lilidog-themes/Nordic-Darker" \
     --field="              Arcadia!$HOME/.config/lilidog-themes/icons/paw-arcadia.png!":FBTN "$HOME/.config/lilidog-themes/Arcadia" \
     --field="       Nightshade!$HOME/.config/lilidog-themes/icons/paw-nightshade.png!":FBTN "$HOME/.config/lilidog-themes/Nightshade" \
     --field="               Denim!$HOME/.config/lilidog-themes/icons/paw-denim.png!":FBTN "$HOME/.config/lilidog-themes/Denim" \
     --field="                  River!$HOME/.config/lilidog-themes/icons/paw-river.png!":FBTN "$HOME/.config/lilidog-themes/River" \
     --field="               Cobalt!$HOME/.config/lilidog-themes/icons/paw-cobalt.png!":FBTN "$HOME/.config/lilidog-themes/Lilidog-Cobalt" \
-    --field="              Dragon!$HOME/.config/lilidog-themes/icons/paw-dragon.png!":FBTN "$HOME/.config/lilidog-themes/Dragon" \
+    --field="                     Ink!$HOME/.config/lilidog-themes/icons/paw-dragon.png!":FBTN "$HOME/.config/lilidog-themes/Ink" \
     --field="       Forge-Dark!$HOME/.config/lilidog-themes/icons/paw-forge-dark.png!":FBTN "$HOME/.config/lilidog-themes/Forge-Dark" \
     --field="                 Forge!$HOME/.config/lilidog-themes/icons/paw-forge.png!":FBTN "$HOME/.config/lilidog-themes/Forge" \
     --field="                  Cube!$HOME/.config/lilidog-themes/icons/paw-cube.png!":FBTN "$HOME/.config/lilidog-themes/Cube" \
@@ -42,11 +40,11 @@ yad --title "Auto Themes" --escape-ok --borders=8 \
     --field="        Island Blue!$HOME/.config/lilidog-themes/icons/paw-river.png!":FBTN "$HOME/.config/lilidog-themes/Island-blue" \
     --field="     Island Green!$HOME/.config/lilidog-themes/icons/paw-glade.png!":FBTN "$HOME/.config/lilidog-themes/Island-green" \
     --field="         Island Red!$HOME/.config/lilidog-themes/icons/paw-crimson.png!":FBTN "$HOME/.config/lilidog-themes/Island-red" \
-    --field="  Nordic-Darker!$HOME/.config/lilidog-themes/icons/paw-nordic.png!":FBTN "$HOME/.config/lilidog-themes/Nordic-Darker" \
     --field="                Adobe!$HOME/.config/lilidog-themes/icons/paw-adobe.png!":FBTN "$HOME/.config/lilidog-themes/Adobe" \
     --field="                 Drow!$HOME/.config/lilidog-themes/icons/paw-earth.png!":FBTN "$HOME/.config/lilidog-themes/Lilidog-Drow" \
     --field="                  Earth!$HOME/.config/lilidog-themes/icons/paw-earth.png!":FBTN "$HOME/.config/lilidog-themes/Lilidog-Earth" \
     --field="    Adwaita Dark!$HOME/.config/lilidog-themes/icons/paw-earth.png!":FBTN "$HOME/.config/lilidog-themes/Adwaita-Dark" \
+    --field="       Custom Ink!$HOME/.config/lilidog-themes/icons/paw-theme-color.png!":FBTN "$HOME/.config/lilidog-themes/Custom-ink" \
     --field="   Custom Drow!$HOME/.config/lilidog-themes/icons/paw-theme-color.png!":FBTN "$HOME/.config/lilidog-themes/Custom-drow" \
     --field="   Custom Forge!$HOME/.config/lilidog-themes/icons/paw-theme-color.png!":FBTN "$HOME/.config/lilidog-themes/Custom-forge" \
     --field="  Custom Island!$HOME/.config/lilidog-themes/icons/paw-theme-color.png!":FBTN "$HOME/.config/lilidog-themes/Custom-island" \
