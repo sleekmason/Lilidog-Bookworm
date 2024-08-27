@@ -61,13 +61,6 @@ OLD_COLOR=$(sed '16!d' $HOME/.themes/Custom-island/gtk-3.0/gtk-contained.css | c
 
 ## Show numbers.
 echo "#$NEW_COLOR" >> "/tmp/custom_island_color.txt"
-    echo
-    echo "   -------------------------------"
-    echo
-    echo "   Your old number is #$OLD_COLOR"
-    echo "   Your new number is #$NEW_COLOR"
-    echo
-    echo "   -------------------------------"
 
 ## Make the change for GTK-3.0, GTK-2.0, and openbox themerc.
 sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.themes/Custom-island/gtk-3.0/gtk-contained.css"

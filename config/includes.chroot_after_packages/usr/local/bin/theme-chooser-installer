@@ -3,11 +3,11 @@ echo ""
 read -p "   [0;33mTheme Chooser Installer.[0m
 
    This script will download and install the Lilidog Theme Chooser
-   with all the Lilidog themes for GTK, openbox, xfce4-terminal
-   and geany.
+   with all the Lilidog themes for Geany, openbox, xfce4-terminal
+   and GTK.
    
-   This will also allow you to customize four different themes 
-   with the highlight color of your choice.
+   This will also allow for customizing four different themes with
+   the highlight color of your choice.
       
    [0;33m----------------------------------------------------------
    
@@ -22,11 +22,11 @@ cd /tmp || exit &&
 
 # Remove copies from /tmp
 sudo rm -fr "/tmp/themechooser"
-sudo rm -fr "/tmp/themechooser.zip"
+sudo rm -fr "/tmp/themechooser2.zip"
 
 # Grab the theme files
-wget https://raw.githubusercontent.com/sleekmason/packages/master/themechooser.zip --show-progress -q
-unzip "/tmp/themechooser.zip"
+wget https://raw.githubusercontent.com/sleekmason/packages/master/themechooser2.zip --show-progress -q
+unzip "/tmp/themechooser2.zip"
 
 # Backup and copy over /usr/share/themes
 if ! test -e "/usr/share/themes.bak"; then
@@ -46,16 +46,8 @@ sudo cp -r "/usr/share/xfce4" "/usr/share/xfce4.bak"
 fi
 sudo cp -af /tmp/themechooser/xfce4/* "/usr/share/xfce4"
 
-# copy theme-changer scripts to /usr/local/bin
-sudo cp -f "/tmp/themechooser/ld-themes" "/usr/local/bin"
-sudo cp -f "/tmp/themechooser/ld-term-changer" "/usr/local/bin"
-sudo cp -f "/tmp/themechooser/xfce4-term-colors" "/usr/local/bin"
-
-# Copy theme Highlight changers to /usr/local/bin
-sudo cp -f "/tmp/themechooser/custom-ink-chooser" "/usr/local/bin"
-sudo cp -f "/tmp/themechooser/custom-drow-chooser" "/usr/local/bin"
-sudo cp -f "/tmp/themechooser/custom-forge-chooser" "/usr/local/bin"
-sudo cp -f "/tmp/themechooser/custom-island-chooser" "/usr/local/bin"
+# Copy theme scripts to /usr/local/bin
+sudo cp -rf "/tmp/themechooser/scripts/." "/usr/local/bin/"
 
 # Copy .desktop file to /usr/share/applications
 sudo cp -f "/tmp/themechooser/theme-chooser.desktop" "/usr/share/applications"

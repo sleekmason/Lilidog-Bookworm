@@ -13,8 +13,7 @@ if grep -E "greeter-session=slick-greeter" /etc/lightdm/lightdm.conf; then
 notify-send -i "user-info" --urgency low "Lightdm currently set to Slick Greeter"
 exit
 else
-notify-send -i "user-info" --urgency low "Enter password to change to Slick Greeter"	
-#pkexec sed -i 's/^greeter-session=.*/greeter-session=slick-greeter/g' "/etc/lightdm/lightdm.conf"
+notify-send -i "user-info" --urgency low "Enter password to change to Slick Greeter"
 pkexec sh -c "sed -i '/greeter-session=.*/d' /etc/lightdm/lightdm.conf; sed -i '108agreeter-session=slick-greeter' /etc/lightdm/lightdm.conf"
 notify-send -i "user-info" --urgency low "Lightdm greeter changed to Slick Greeter"
 notify-send -i "info" --urgency low "REBOOT for changes to take effect"
@@ -33,7 +32,6 @@ notify-send -i "user-info" --urgency low "Lightdm currently set to GTK default"
 exit
 else
 notify-send -i "user-info" --urgency low "Enter password to change to default greeter"
-#pkexec sed -i 's/^greeter-session=.*/greeter-session=lightdm-gtk-greeter/g' "/etc/lightdm/lightdm.conf"
 pkexec sh -c "sed -i '/greeter-session=.*/d' /etc/lightdm/lightdm.conf; sed -i '108agreeter-session=lightdm-gtk-greeter' /etc/lightdm/lightdm.conf"
 notify-send -i "user-info" --urgency low "Lightdm greeter changed to GTK default"
 notify-send -i "info" --urgency low "REBOOT for changes to take effect"
@@ -74,7 +72,6 @@ else
 pkexec lightdm-settings
 fi
 }
-
 
 export -f "use_slickgreeter"
 export -f "use_defaultgreeter"
