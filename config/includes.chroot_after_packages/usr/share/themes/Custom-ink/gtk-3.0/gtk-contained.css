@@ -2476,7 +2476,7 @@ notebook > header {
       color: #DFEBEB; }
       notebook > header tab:hover.reorderable-page {
         border-color: #3a454d;
-        background-color: shade(#3a454d, 1.1); }
+        background-color: shade(#3a454d, 1.16); }
     notebook > header tab:backdrop {
       color: #a2a2a2; }
       notebook > header tab:backdrop.reorderable-page {
@@ -2490,7 +2490,7 @@ notebook > header {
         background-color: #101314; }
       notebook > header tab:checked.reorderable-page {
         border-color: #0A0C0D;
-        background-image: linear-gradient(to bottom, shade(#3B454D, 0.92), shade(#3B454D, 0.98)); }
+        background-image: linear-gradient(to bottom, shade(#3a454d, 0.92), shade(#3a454d, 0.96)); }
     notebook > header tab:backdrop:checked {
       color: #A8B5B4; }
       notebook > header tab:backdrop:checked.reorderable-page {
