@@ -16,7 +16,7 @@ fi
 export -f ICON_TOGGLE
 
 yad --title "Auto Themes" --escape-ok --borders=10 \
---buttons-layout=edge \
+--buttons-layout=spread \
 --button=" Custom Themes!org.xfce.settings.color:bash -c 'popup -f $HOME/.config/lilidog-themes/custom-themes.txt &'" \
 --button=" Auto Icons!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
 --button=" Exit!gtk-delete:0" \
