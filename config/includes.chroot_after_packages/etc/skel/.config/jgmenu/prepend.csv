@@ -94,10 +94,10 @@ Grub Backgrounds,         thunar ~/Pictures/grub-bg,                     folder-
 
 ^tag(configuration)
 Openbox,             obconf,                                                               obconf
-Wallpapers,          feh-set-wallpaper,                                                    preferences-desktop-display
-Quick Themes,        ld-theme-changer,                                                     applications-graphics
+Quick Themes,        ld-theme-changer,                                                     preferences-desktop-theme
 System Settings,     xfce4-settings-manager,                                               org.xfce.settings.manager
 Power Manager,       xfce4-power-manager-settings,                                         org.xfce.powermanager
+Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
 Tint2 Settings,      tint2conf,                                                            tint2conf
 Keybinds,            geany ~/.config/openbox/sxhkdrc-open,                                 document-properties
 Lightdm,             lightdm-options,                                                      lightdm-gtk-greeter-settings
@@ -105,8 +105,7 @@ Jgmenu,              geany ~/.config/jgmenu/README & thunar ~/.config/jgmenu,   
 Conky,               thunar ~/.config/conky,                                               document-properties
 Urxvt,               geany ~/.Xresources,                                                  utilities-terminal
 Picom,               geany ~/.config/picom.conf,                                           document-properties
-Dmenu F3,            geany ~/.config/dmenu/apps,                                           document-properties
-Ld-Hotcorners,       geany ~/.config/ld-hotcorners/ld-hotcornersrc,                        applications-engineering
+Wallpapers,          feh-set-wallpaper,                                                    preferences-desktop-display
 Grub Background,     x-terminal-emulator -T 'Grub Background Changer' -e bash -c "grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
 Plymouth Background, x-terminal-emulator -T 'Plymouth Background Changer' -e bash -c "plymouth-changer; echo $'\n\nPress any key to close.'; read -srn1",  preferences-desktop-wallpaper
 
