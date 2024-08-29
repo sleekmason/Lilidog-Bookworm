@@ -27,8 +27,8 @@ jgmenu_run init --apply-obtheme
 xfce4-term-colors island
 
 ## Change Rofi theme
-sed -i 's/^@theme "familiar.*/@theme "familiar-ozark.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
-sed -i 's/^@theme "rounded.*/@theme "rounded-ozark.rasi"/g' "$HOME/.config/rofi/config.rasi"
+sed -i 's/^@theme "familiar.*/@theme "familiar-island-red.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi"
+sed -i 's/^@theme "rounded.*/@theme "rounded-island-red.rasi"/g' "$HOME/.config/rofi/config.rasi"
 
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.

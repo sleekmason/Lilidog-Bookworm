@@ -4,14 +4,14 @@
  *******************************************************************************/
 
 * {
-    bg0:    #2D2D2DF2;
-    bg1:    #2D2D2D;
-    bg2:    #2D2D2D78;
-    bg3:    #27598A;
-    fg0:    #DFE3E6;
+    bg0:    #33373DF2;
+    bg1:    #33373D;
+    bg2:    #33373D78;
+    bg3:    #33637A;
+    fg0:    #E6EAED;
     fg1:    #FFFFFF;
-    fg2:    #AFB2B3;
-    fg3:    #939596;
+    fg2:    #BDCEDB;
+    fg3:    #838F99;
 }
 
 @import "common/rounded-common.rasi"
