@@ -174,6 +174,7 @@ git openssh-sftp-server filezilla firefox-esr thunderbird \
 hunspell-en-us zsh gimp gimp-data-extras ghostscript libgts-bin \
 gimp-plugin-registry gimp-texturize gimp-lensfun pcmanfm
 echo ""
+sudo apt install --install-recommends -y inkscape
 # Copy revised live build files to correct location
 echo "   [0;33mInstalling custom live build configs for Lilidog use...[0m" && sleep 1
 echo ""
