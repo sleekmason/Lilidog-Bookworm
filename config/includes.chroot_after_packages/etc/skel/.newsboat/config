@@ -39,8 +39,8 @@ ignore-mode "display"
 
 articlelist-format "%4i %f %D  %?T?|%-17T| ?%t"
 
-highlight feedlist "^  *[0-9]+  *N  "                       red        default
-highlight articlelist "^  *[0-9]+  *N  "                    red        black
+highlight feedlist "^  *[0-9]+  *N  "                       blue        default
+highlight articlelist "^  *[0-9]+  *N  "                    blue        black
 
 highlight article     "(^Feed:.*|^Title:.*|^Author:.*)"     color74    default
 highlight article     "(^Link:.*|^Date:.*)"                 color74    default
@@ -53,10 +53,10 @@ highlight article     ":.*\\(link\\)$"                      color152   default
 highlight article     ":.*\\(image\\)$"                     color152   default
 highlight article     ":.*\\(embedded flash\\)$"            color152   default
 
-color listnormal        red black
+color listnormal        cyan black
 color listnormal_unread white black
-color listfocus         yellow red bold
-color listfocus_unread  yellow red bold
+color listfocus         yellow magenta bold
+color listfocus_unread  yellow magenta bold
 color info              black blue
 color background        white black
 color article           white black
