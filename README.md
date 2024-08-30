@@ -141,11 +141,8 @@ All of the theme file configurations are located in ~/.config/lilidog-themes. Th
 - Openbox Conf - The settings here control the window borders and other settings specific to Openbox.
 - Jgmenu - Go to menu -> configuration -> jgmenu.conf for menu items. For theme changes, got to Jgmenu Theme Changer in the menu. ("o" or "g")
 - Geany - There are themes to match.  These are changed through the Geany program under "view" - "change color scheme" 
-- Conky net speed (when uncommented) -  Use: __ls /sys/class/net/__ in a terminal to determine which wired/wireless network you have,
-and replace "wlp2s0" with yours.
 - Printer - Setup entry in the menu under utilities.
 - Lightdm - Configuration settings in the menu.
-Also look under the "Toggles" section in the menu for some instant changes to different items as well.
 
 Github: https://github.com/sleekmason/Lilidog
 
