@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Display the current theme
+current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
+notify-send -i "org.xfce.settings.color" --urgency low "Currently using the $current_theme theme"
+
 ICON_TOGGLE() {
 if grep -q '^# \?xfconf-query' "$HOME/.config/lilidog-themes/Ozark"; then
 
