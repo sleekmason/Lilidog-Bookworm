@@ -2,7 +2,7 @@
 
 # Display the current theme
 current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
-notify-send -i "org.xfce.settings.color" --urgency low "Currently using the $current_theme theme"
+notify-send -i "recommended-driver" --urgency low "Active theme - $current_theme"
 
 ICON_TOGGLE() {
 if grep -q '^# \?xfconf-query' "$HOME/.config/lilidog-themes/Ozark"; then
@@ -17,10 +17,17 @@ notify-send -i "gtk-color-picker" --urgency low 'Themes auto icon changer has be
 fi
 }
 
-export -f ICON_TOGGLE
+active_theme(){
+	current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
+    notify-send -i "recommended-driver" --urgency low "Active theme - $current_theme"
+}
+
+export -f "active_theme"
+export -f "ICON_TOGGLE"
 
 yad --title "Auto Themes" --escape-ok --borders=10 \
 --buttons-layout=spread \
+--button=" Active Theme!recommended-driver:bash -c active_theme" \
 --button=" Custom Themes!org.xfce.settings.color:bash -c 'popup -f $HOME/.config/lilidog-themes/custom-themes.txt &'" \
 --button=" Auto Icons!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
 --button=" Exit!gtk-delete:0" \
