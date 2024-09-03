@@ -2,7 +2,9 @@
 
 # Display the current theme
 current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
-notify-send -i "recommended-driver" --urgency low "Active theme - $current_theme"
+current_icon_theme=$(xfconf-query -c xsettings -p /Net/IconThemeName)
+notify-send -i "org.xfce.settings.color" --urgency low "Active theme - $current_theme"
+notify-send -i " " --urgency low "Icons - $current_icon_theme"
 
 ICON_TOGGLE() {
 if grep -q '^# \?xfconf-query' "$HOME/.config/lilidog-themes/Ozark"; then
@@ -19,7 +21,9 @@ fi
 
 active_theme(){
 	current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
-    notify-send -i "recommended-driver" --urgency low "Active theme - $current_theme"
+	current_icon_theme=$(xfconf-query -c xsettings -p /Net/IconThemeName)
+	notify-send -i "org.xfce.settings.color" --urgency low "Active theme - $current_theme"
+	notify-send -i " " --urgency low "Icons - $current_icon_theme"
 }
 
 export -f "active_theme"
