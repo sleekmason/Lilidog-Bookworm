@@ -36,4 +36,8 @@ echo "#$NEW_COLOR" >> "/tmp/custom_conky_color.txt"
 ## Make the change.
 sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME/.config/conky/scripts/defaults.txt"
 sed -i -e "s/${OLD_COLOR}/${NEW_COLOR}/g" "$HOME"/.config/conky/*.conf
+
+## Change paw color for conky build
+sed -i -E 's/fill\="[^"]+"//g; s/stroke\="[^"]+"//g' "$HOME/.config/conky/scripts/images/paw-custom.svg"
+sed -i "s/<path/<path fill=\"$COLOR_CHOICE\" stroke=\"$COLOR_CHOICE\"/g" "$HOME/.config/conky/scripts/images/paw-custom.svg"
 fi
