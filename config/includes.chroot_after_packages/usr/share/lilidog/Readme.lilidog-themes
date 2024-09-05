@@ -29,7 +29,7 @@ By copying your changed theme back to /usr/share/themes and adjusting
 the icon in ~/.config/lilidog-themes/custom<color>
 
 * How do I start over?
-Simply remove the theme from ~.themes.  A new version will be placed
+Simply remove the theme from ~/.themes.  A new version will be placed
 in ~/.themes when pressing the color you wish to change at the bottom 
 of the auto themes dialog.
 
