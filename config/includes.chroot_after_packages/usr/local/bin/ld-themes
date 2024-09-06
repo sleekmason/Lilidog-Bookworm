@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Display the current theme
-current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
-current_icon_theme=$(xfconf-query -c xsettings -p /Net/IconThemeName)
-notify-send -i "org.xfce.settings.color" --urgency low "Active theme - $current_theme"
-notify-send -i " " --urgency low "Icons - $current_icon_theme"
-
 ICON_TOGGLE() {
 if grep -q '^# \?xfconf-query' "$HOME/.config/lilidog-themes/Ozark"; then
 
@@ -63,11 +57,11 @@ yad --title "Auto Themes" --escape-ok --borders=10 \
     --field="   Custom Drow!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-drow" \
     --field="   Custom Forge!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-forge" \
     --field="  Custom Island!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-island" \
-    --field="              Glacier!$HOME/.config/lilidog-themes/icons/paw-glacier.png":FBTN "$HOME/.config/lilidog-themes/Glacier" \
+    --field="                  Cove!$HOME/.config/lilidog-themes/icons/paw-cove.png":FBTN "$HOME/.config/lilidog-themes/Cove" \
     --field="                  Grey!$HOME/.config/lilidog-themes/icons/paw-grey.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Grey" \
     --field="               Bright!$HOME/.config/lilidog-themes/icons/paw-bright.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Bright" \
     --field="                 Light!$HOME/.config/lilidog-themes/icons/paw-light.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Light" \
     --field="           Mulberry!$HOME/.config/lilidog-themes/icons/paw-mulberry.png":FBTN "$HOME/.config/lilidog-themes/Mulberry" \
     --field="      Broadwater!$HOME/.config/lilidog-themes/icons/paw-broadwater.png":FBTN "$HOME/.config/lilidog-themes/Broadwater" \
-    --field="      Qogir-Light!$HOME/.config/lilidog-themes/icons/paw-qogir-light.png":FBTN "$HOME/.config/lilidog-themes/Qogir-Light" \
-    --field="            Adwaita!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Adwaita"
+    --field="            Adwaita!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Adwaita" \
+    --field="    Custom Cove!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-cove"
