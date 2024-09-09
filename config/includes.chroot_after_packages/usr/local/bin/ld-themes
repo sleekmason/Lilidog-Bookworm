@@ -16,8 +16,8 @@ fi
 active_theme(){
 	current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
 	current_icon_theme=$(xfconf-query -c xsettings -p /Net/IconThemeName)
-	notify-send -i "org.xfce.settings.color" --urgency low "Active theme - $current_theme"
-	notify-send -i " " --urgency low "Icons - $current_icon_theme"
+	notify-send -i "org.xfce.settings.color" --urgency low "Active theme  ▸  $current_theme"
+	notify-send -i " " --urgency low "Icon set  ▸  $current_icon_theme"
 }
 
 export -f "active_theme"
@@ -58,8 +58,8 @@ yad --title "Auto Themes" --escape-ok --borders=10 \
     --field="   Custom Forge!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-forge" \
     --field="  Custom Island!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-island" \
     --field="                  Cove!$HOME/.config/lilidog-themes/icons/paw-cove.png":FBTN "$HOME/.config/lilidog-themes/Cove" \
-    --field="                Ghost!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Ghost" \
     --field="               Bright!$HOME/.config/lilidog-themes/icons/paw-bright.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Bright" \
+    --field="                Ghost!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Ghost" \
     --field="           Mulberry!$HOME/.config/lilidog-themes/icons/paw-mulberry.png":FBTN "$HOME/.config/lilidog-themes/Mulberry" \
     --field="      Broadwater!$HOME/.config/lilidog-themes/icons/paw-broadwater.png":FBTN "$HOME/.config/lilidog-themes/Broadwater" \
     --field="            Adwaita!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Adwaita" \
