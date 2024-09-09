@@ -1,33 +1,29 @@
 #!/bin/bash
-# This theme is for the Light/Dark toggle script.  No additions should
-# be made to this file other than changing the name in the existing
-# lines. Any Other additions need to be added to the named scripts.
+# This theme is for the Custom Ghost script.  
 
 # How to use:
 # Change the names in the lines below to match the names of the theme
-# style you want to use.  Carefull about capitalization.  You can also 
-# just copy and paste the relevant part of any of the named scripts in
-# ~/.config/lilidog-themes
+# style you want to use.
 
-## Change gtktheme
-xfconf-query -c xsettings -p /Net/ThemeName -s "Ghost"
+# Change gtktheme
+xfconf-query -c xsettings -p /Net/ThemeName -s "Custom-ghost"
 
 ## Change icon theme
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-SemiLight"
 
 ## Change openbox theme
-#sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Ghostbox"/g" ~/.config/openbox/rc.xml
-xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:name' -v "Ghostbox" ~/.config/openbox/rc.xml
+#sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Custom-ghostbox"/g" ~/.config/openbox/rc.xml
+xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:name' -v "Custom-ghostbox" ~/.config/openbox/rc.xml
 openbox --reconfigure
 
 ## Change Geany theme
 sed -i "s/color_scheme=.*/color_scheme=Ghost.conf/g" ~/.config/geany/geany.conf
 
 ## Change jgmenu theme
-#jgmenu_run gtktheme
 if test -e ~/.config/jgmenu/backup; then
 rm -fr ~/.config/jgmenu/backup
 fi
+#jgmenu_run gtktheme
 jgmenu_run init --apply-obtheme
 
 ## Change xfce4-terminal theme
@@ -39,5 +35,5 @@ sed -i 's/^@theme "rounded.*/@theme "rounded-ghost.rasi"/g' "$HOME/.config/rofi/
 
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
-# rm ~/.cache/temp_theme
-# rm ~/.cache/custom_theme
+rm -f ~/.cache/temp_theme
+rm -f ~/.cache/custom_theme

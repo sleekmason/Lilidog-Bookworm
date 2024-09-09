@@ -6,7 +6,7 @@
 xfconf-query -c xsettings -p /Net/ThemeName -s "Glacier"
 
 ## Change icon theme
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Mint-Light"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Green-Light"
 
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Glacierbox"/g" ~/.config/openbox/rc.xml

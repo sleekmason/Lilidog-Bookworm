@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Custom-ghost
+Comment=Custom-ghost based off Greybird theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Custom-ghost
+MetacityTheme=Custom-ghost
+IconTheme=Adwaita
+CursorTheme=Adwaita
+ButtonLayout=:minimize,maximize,close

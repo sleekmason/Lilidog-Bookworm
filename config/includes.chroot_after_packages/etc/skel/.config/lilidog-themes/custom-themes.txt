@@ -1,5 +1,6 @@
 Custom Cove,       bash -c 'custom-cove-chooser',      org.xfce.settings.color
 Custom Drow,       bash -c 'custom-drow-chooser',      org.xfce.settings.color
 Custom Forge,      bash -c 'custom-forge-chooser',     org.xfce.settings.color
+Custom Ghost,      bash -c 'custom-ghost-chooser',     org.xfce.settings.color
 Custom Ink,        bash -c 'custom-ink-chooser',       org.xfce.settings.color
 Custom Island,     bash -c 'custom-island-chooser',    org.xfce.settings.color
