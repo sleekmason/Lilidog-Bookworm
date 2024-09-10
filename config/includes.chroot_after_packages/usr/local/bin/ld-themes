@@ -63,5 +63,5 @@ yad --title "Auto Themes" --escape-ok --borders=10 \
     --field="           Mulberry!$HOME/.config/lilidog-themes/icons/paw-mulberry.png":FBTN "$HOME/.config/lilidog-themes/Mulberry" \
     --field="      Broadwater!$HOME/.config/lilidog-themes/icons/paw-broadwater.png":FBTN "$HOME/.config/lilidog-themes/Broadwater" \
     --field="            Adwaita!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Adwaita" \
-    --field="  Custom ghost!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-ghost" \
-    --field="    Custom Cove!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-cove"
+    --field="    Custom Cove!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-cove" \
+    --field="   Custom ghost!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-ghost"
