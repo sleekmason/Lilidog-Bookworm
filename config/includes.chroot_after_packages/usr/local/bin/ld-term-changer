@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yad --title "Terminal Colors" --escape-ok --borders=14 \
---form --center --width=440 --height=390 \
+--form --center --width=440 --height=378 \
 --button=" Exit!gtk-delete:0" \
 --text="Terminal Colors - Will not change GTK themes\n" --text-align=center \
 --window-icon=terminal \
