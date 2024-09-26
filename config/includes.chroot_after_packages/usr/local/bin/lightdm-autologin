@@ -1,65 +1,54 @@
 #!/bin/bash
 #
 # yad list for autologin.
-# Made by sleekmason aug 01, 2024
+# Made by sleekmason Aug 01, 2024
+# Adjusted further by kwg Sep 25. 2024
 
-set -e
-
-## Get a list of current users using autologin.
-grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "autologin-user-timeout=.*" | grep -v "#" | cut -d'=' -f2 > "/tmp/autologinlist.txt"
-
-# Yad function to list current autologin usernames.
-userslist() (
-yad --text-info < /tmp/autologinlist.txt --fore=#4BEA80 \
-    --geometry=260x100-885+230 --borders=8 \
-    --title="Autologin User" \
-    --fontname="JetBrains Mono Light 11" \
-    --button=" Exit!gtk-delete:1" \
-    --window-icon="user-info"
-)
-
-export -f "userslist"
-
-## If existing, list usernames in yad dialog.
-if [[ $(wc -l </tmp/autologinlist.txt) -ge 1 ]]; then
-bash -c "userslist" &
-fi
-
-## Get the list of usernames from /etc/passwd.
-ret=($(cut -d: -f1,3 /etc/passwd | grep -E ':[0-9]{4}$' | cut -d: -f1))
-
-# Adjust list for yad use.
-LIST=""
-for ((j=0; j<${#ret[*]}; j++));do
-    p="${ret[$j]}"
-    LIST="${LIST}FALSE $p "
-done
-
-LOGIN=$(yad --list --center --borders=8 \
-    --title="Autologin Toggle" \
-    --window-icon="user-info" \
-    --text="         Select User For Autologin On/Off" \
-    --radiolist --geometry=314x230-860+400 \
-    --column="Select" --column="Username" $LIST --separator="" \
-    --button=" Cancel!gtk-cancel:1" \
-    --button=" Okay!gtk-ok:0" \
-    )
-
-SELECTION=${LOGIN//"TRUE"}
-
-# If canceled
-if (( $? == 1 )); then
-    exit 0
-fi
-
-# Toggle selection on/off.
-if grep -q "$SELECTION" /etc/lightdm/lightdm.conf; then
-pkexec sed -i '/autologin-user='"$SELECTION"'/d' /etc/lightdm/lightdm.conf
-notify-send -i "user-info" --urgency low "$SELECTION autologin entry removed"
-notify-send -i "info" --urgency low "REBOOT for changes to take effect"
+CURRENT=$(grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "autologin-user-timeout=.*" | grep -v "#" | cut -d'=' -f2)
+if grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "autologin-user-timeout=.*" | grep -v "#"; then
+notify-send -i "user-info" --urgency low "Current Auto Login user  ▸  $CURRENT"
 else
-pkexec sh -c "sed -i '/autologin-user=.*/d' /etc/lightdm/lightdm.conf; sed -i '125aautologin-user='"$SELECTION"'' /etc/lightdm/lightdm.conf"
-notify-send -i "user-info" --urgency low "Autologin enabled for $SELECTION"
-notify-send -i "info" --urgency low "REBOOT for changes to take effect"
+notify-send -i "info" --urgency low "No current Auto Login users"
 fi
-kill -- -0
+
+USERS=$(cut -d: -f1,3 /etc/passwd | grep -E ':[0-9]{4}$' | cut -d: -f1 | paste -s -d!)
+
+LOGIN=$( \
+	yad --title="Auto Login" \
+	--window-icon="user-info" \
+	--center \
+	--borders=8 \
+	--form \
+	--geometry=360x180-840+400 \
+	--text="Select and click 'Set' to add a new Auto Login user\n" \
+	--field="New Auto Login user: :CB" $USERS \
+	--buttons-layout=edge \
+	--button="Cancel!gtk-delete:1" \
+	--button="Set!gtk-ok:2" \
+	--button="Clear All!media-record:3" \
+	)
+
+if [[ $? == 1 ]]; then
+	exit 0
+fi
+
+if [[ -n $LOGIN ]]; then
+	LOGIN=$(echo $LOGIN | sed 's/.$//')
+	pkexec sh -c "sed -i '/^\[Seat:\*\]$/,/\[/ {/^autologin-user=.*$/d}' /etc/lightdm/lightdm.conf; \
+	sed -i '125aautologin-user=$LOGIN' /etc/lightdm/lightdm.conf"
+		if [[ $? != 0 ]]; then
+		notify-send -i "info" --urgency low "Auto Login has not been modified"
+		exit 1
+		fi
+    # sed -i '/^\[Seat:\*\]$/a autologin-user=$LOGIN' /etc/lightdm/lightdm.conf"		
+	notify-send -i "user-info" --urgency low "Auto Login has been enabled for $LOGIN"
+	notify-send -i "info" --urgency low "REBOOT for changes to take effect"
+else
+	pkexec sed -i '/^\[Seat:\*\]$/,/\[/ {/^autologin-user=.*$/d}' /etc/lightdm/lightdm.conf
+		if [[ $? != 0 ]]; then
+		notify-send -i "info" --urgency low "Auto Login has not been modified"
+		exit 1
+		fi
+	notify-send -i "user-info" --urgency low "The Auto Login entry has been removed"
+	notify-send -i "info" --urgency low "REBOOT for changes to take effect"
+fi

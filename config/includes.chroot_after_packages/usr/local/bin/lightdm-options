@@ -89,7 +89,7 @@ yad --title "Lightdm Options" \
     --field="      GTK Default Greeter!org.xfce.settings.manager":FBTN "bash -c use_defaultgreeter" \
     --field="                  Slick Greeter!org.xfce.settings.manager":FBTN "bash -c use_slickgreeter" \
     --field="        Usernames On/Off!config-users":FBTN "bash -c show_users" \
-    --field="         Autologin Options!user-info":FBTN "bash -c lightdm-autologin" \
+    --field="                     Auto Login!user-info":FBTN "bash -c lightdm-autologin" \
     --field="":LBL "" \
     --field="":LBL "" \
     --field="     GTK Greeter Settings!lightdm-settings":FBTN "bash -c default_lightdm_settings" \
