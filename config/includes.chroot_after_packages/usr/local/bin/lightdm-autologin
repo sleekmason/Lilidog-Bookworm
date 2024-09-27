@@ -23,12 +23,12 @@ LOGIN=$( \
 	--text="Select and click 'Set' to add a new Auto Login user\n" \
 	--field="New Auto Login user: :CB" $USERS \
 	--buttons-layout=edge \
-	--button="Cancel!gtk-delete:1" \
+	--button="Cancel!gtk-delete:252" \
 	--button="Set!gtk-ok:2" \
 	--button="Clear All!media-record:3" \
 	)
 
-if [[ $? == 1 ]]; then
+if [[ $? == 252 ]]; then
 	exit 0
 fi
 
