@@ -1,13 +1,19 @@
 #!/bin/bash
 # Open or toggle the thunar splitview function. Use with a keybind.
 
-its_running() {
-    ps -o comm= -C "$1" 2>/dev/null | grep -x "$1" >/dev/null 2>&1
-}
-
-if its_running thunar; then
+if  pgrep -x "thunar" > /dev/null; then
     wmctrl -a thunar; sleep .2; xdotool key F3
 else
-    thunar & sleep .5; wmctrl -a thunar && xdotool key F3
+    thunar &
+    SECONDS=0
+    until wmctrl -l | grep -i thunar
+do
+if (( SECONDS > 10 ))
+  then
+     exit 1
+  fi
+    sleep .1
+done
+    wmctrl -a thunar; sleep .1 && xdotool key F3
 fi
-
+exit
