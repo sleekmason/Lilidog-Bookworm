@@ -2,11 +2,11 @@
 #
 # yad list for autologin.
 # Made by sleekmason Aug 01, 2024
-# Adjusted further by kwg Sep 25. 2024
+# Modified further by kwg Sep 25, 2024
 
 CURRENT=$(grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "autologin-user-timeout=.*" | grep -v "#" | cut -d'=' -f2)
 if grep -n 'autologin-user=*' /etc/lightdm/lightdm.conf | grep -v "autologin-user-timeout=.*" | grep -v "#"; then
-notify-send -i "user-info" --urgency low "Current Auto Login user  ▸  $CURRENT"
+notify-send -i "user-info" --urgency low "Current Auto Login user  =  $CURRENT"
 else
 notify-send -i "info" --urgency low "No current Auto Login users"
 fi
@@ -32,23 +32,58 @@ if [[ $? == 252 ]]; then
 	exit 0
 fi
 
+readonly SOURCE=/etc/lightdm/lightdm.conf
+readonly BUFFER=/tmp/lightdm.conf
+
+cp $SOURCE $BUFFER
+
+SEATS=($(grep -n '^\[Seat:\*\]$' $BUFFER | cut -f1 -d:))
+SECTIONS=($(grep -n '^\[.\+]$' $BUFFER | cut -f1 -d:))
+LSECTIONS=${#SECTIONS[@]}
+
+j=0; RANGES=()
+for SEAT in "${SEATS[@]}"; do
+	while true; do
+		((j++))
+		if [[ $j -eq LSECTIONS ]]; then
+			SECTION='$'
+			break
+		fi
+		SECTION=${SECTIONS[j]}
+		if [[ SECTION -gt SEAT ]]; then
+			((SECTION--))
+			break
+		fi
+	done
+	RANGES=($SEAT,$SECTION ${RANGES[@]})
+done
+
+LINE=0; APPEND=false
 if [[ -n $LOGIN ]]; then
 	LOGIN=$(echo $LOGIN | sed 's/.$//')
-	pkexec sh -c "sed -i '/^\[Seat:\*\]$/,/\[/ {/^autologin-user=.*$/d}' /etc/lightdm/lightdm.conf; \
-	sed -i '125aautologin-user=$LOGIN' /etc/lightdm/lightdm.conf"
-		if [[ $? != 0 ]]; then
-		notify-send -i "info" --urgency low "Auto Login has not been modified"
-		exit 1
-		fi
-    # sed -i '/^\[Seat:\*\]$/a autologin-user=$LOGIN' /etc/lightdm/lightdm.conf"		
-	notify-send -i "user-info" --urgency low "Auto Login has been enabled for $LOGIN"
-	notify-send -i "info" --urgency low "REBOOT for changes to take effect"
-else
-	pkexec sed -i '/^\[Seat:\*\]$/,/\[/ {/^autologin-user=.*$/d}' /etc/lightdm/lightdm.conf
-		if [[ $? != 0 ]]; then
-		notify-send -i "info" --urgency low "Auto Login has not been modified"
-		exit 1
-		fi
-	notify-send -i "user-info" --urgency low "The Auto Login entry has been removed"
-	notify-send -i "info" --urgency low "REBOOT for changes to take effect"
+	LINE=${SEATS[-1]}
+	APPEND=true
 fi
+
+for RANGE in "${RANGES[@]}"
+do
+	sed -i $RANGE{/^autologin-user=.*$/d} $BUFFER
+	if $APPEND; then
+		sed -i $LINE"a autologin-user="$LOGIN $BUFFER
+		APPEND=false
+	fi
+done
+
+pkexec mv $BUFFER $SOURCE
+if [[ $? != 0 ]]; then
+	notify-send -i "user-info" --urgency low "Auto Login has not been modified"
+	exit 1
+fi
+
+if [[ $LINE -eq 0 ]]; then
+	notify-send -i "user-info" --urgency low "The Auto Login entry has been removed"
+else
+	notify-send -i "user-info" --urgency low "Auto Login has been enabled for $LOGIN"
+fi
+
+notify-send -i "info" --urgency low "REBOOT for changes to take effect"
