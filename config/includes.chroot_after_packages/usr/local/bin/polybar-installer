@@ -28,7 +28,7 @@ sudo apt update
 cd /tmp || exit
 rm -f /tmp/dk-conf-files2.zip
 rm -f -r /tmp/dk-conf-files
-wget https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.zip --show-progress -q &&
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages-dk/master/zip-files/dk-conf-files2.zip --show-progress -q &&
 sudo apt install polybar && 
 unzip -q dk-conf-files2.zip &&
 if [ -e "$HOME/.config/polybar" ]; then

@@ -18,7 +18,7 @@ read -r -p "   [0;33mVSCodium Installer[0m
 echo ""
 echo ""
 cd /tmp || exit &&
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+wget --prefer-family=IPv4 -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
     | gpg --dearmor \
     | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
 echo ""

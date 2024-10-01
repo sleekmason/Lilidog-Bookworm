@@ -44,7 +44,7 @@ rm -f "/tmp/i3-with-i3blocks.zip"
 rm -f -r "/tmp/i3"
 rm -f -r "$HOME/.config/i3"
 ## Grab dwm.zip and unzip in /tmp
-wget https://raw.githubusercontent.com/sleekmason/packages/master/i3-with-i3blocks.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/i3-with-i3blocks.zip --show-progress -q
 unzip -q /tmp/i3-with-i3blocks.zip
 
 ## Install necessary programs

@@ -34,7 +34,7 @@ rm -f /tmp/lemonbar-xft.zip
 rm -f -r /tmp/lemonbar-xft
 
 ## Grab the lemonbar-xft binary
-wget https://raw.githubusercontent.com/sleekmason/packages/master/lemonbar-xft.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/lemonbar-xft.zip --show-progress -q
 unzip -q /tmp/lemonbar-xft.zip
 
 ## Install conky-all if not existing

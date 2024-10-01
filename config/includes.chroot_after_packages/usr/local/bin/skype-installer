@@ -21,7 +21,7 @@ read -p "   [0;33mSkype Installer.[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp || exit &&
-wget https://go.skype.com/skypeforlinux-64.deb --show-progress -q &&
+wget --prefer-family=IPv4 https://go.skype.com/skypeforlinux-64.deb --show-progress -q &&
 echo ""
 sudo apt update && sudo apt install --install-recommends /tmp/./skype*
 rm /tmp/skype*

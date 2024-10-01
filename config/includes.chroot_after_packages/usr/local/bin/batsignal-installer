@@ -24,7 +24,7 @@ read -p "   [0;33mBatsignal Installer[0m
 echo ""
 cd /tmp || exit &&
 rm -f /tmp/batsignal_20240124-1_amd64.deb
-wget https://raw.githubusercontent.com/sleekmason/packages/master/batsignal_20240124-1_amd64.deb --show-progress -q &&
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/batsignal_20240124-1_amd64.deb --show-progress -q &&
 sudo apt update && sudo apt install -y /tmp/./batsignal_20240124-1_amd64.deb &&
 
 mkdir -p ~/.config/systemd/user/batsignal.service.d &&

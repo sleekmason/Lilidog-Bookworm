@@ -44,7 +44,7 @@ rm -f "/tmp/awesome.zip"
 rm -f -r "/tmp/awesome"
 rm -f -r "$HOME/.config/awesome"
 ## Grab dwm.zip and unzip in /tmp
-wget https://raw.githubusercontent.com/sleekmason/packages/master/awesome.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/awesome.zip --show-progress -q
 unzip -q /tmp/awesome.zip
 
 ## Install necessary programs

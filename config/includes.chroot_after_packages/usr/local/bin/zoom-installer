@@ -21,7 +21,7 @@ read -p "   [0;33mZoom Installer.[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp || exit &&
-wget https://zoom.us/client/5.14.10.3738/zoom_amd64.deb --show-progress -q &&
+wget --prefer-family=IPv4 https://zoom.us/client/5.14.10.3738/zoom_amd64.deb --show-progress -q &&
 echo ""
 sudo apt update && sudo apt install --install-recommends /tmp/./zoom* &&
 rm /tmp/zoom*

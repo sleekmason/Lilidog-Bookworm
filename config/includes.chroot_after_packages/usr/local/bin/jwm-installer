@@ -32,7 +32,7 @@ cd /tmp || exit
 rm -f "/tmp/jwmrc.zip"
 rm -f "/tmp/.jwmrc"
 ## Grab jwmrc.zip and unzip in /tmp
-wget https://raw.githubusercontent.com/sleekmason/packages/master/jwmrc.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/jwmrc.zip --show-progress -q
 unzip -q /tmp/jwmrc.zip
 
 ## Install necessary programs

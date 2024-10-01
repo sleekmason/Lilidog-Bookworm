@@ -38,7 +38,7 @@ rm -rf /tmp/rtile-files
 rm -rf $HOME/.config/rtile
 
 ## Grab the rtile files.
-wget https://raw.githubusercontent.com/sleekmason/packages/master/rtile-files.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/rtile-files.zip --show-progress -q
 unzip -q /tmp/rtile-files.zip
 
 ## make a one time backup of existing openbox rc.xml for later use.

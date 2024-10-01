@@ -19,7 +19,7 @@ echo ""
 echo ""
 cd /tmp || exit
 if [ ! -f "circle-icons_12.0-2_all.deb" ]; then
-wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
 fi 
 sudo apt install -y ./circle-icons_12.0-2_all.deb
 sudo update-icon-caches /usr/share/icons/Circle*

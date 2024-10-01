@@ -31,7 +31,7 @@ rm -f "/tmp/conky-awesome.zip"
 rm -f -r "/tmp/conky-awesome"
 rm -f -r "$HOME/.config/awesome/conky-awesome"
 ## Grab conky-awesome
-wget https://raw.githubusercontent.com/sleekmason/packages/master/conky-awesome.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/conky-awesome.zip --show-progress -q
 unzip -q /tmp/conky-awesome.zip
 
 ## Copy conky-awesome from /tmp

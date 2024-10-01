@@ -23,7 +23,7 @@ echo ""
 distro=$(if echo "Lilidog" | grep -q " $(lsb_release -sc) "; then echo $(lsb_release -sc); else echo focal; fi)
 if test -e /usr/share/keyrings/librewolf.gpg; then
 sudo rm /usr/share/keyrings/librewolf.gpg; fi
-sudo wget -O- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/librewolf.gpg &&
+sudo wget --prefer-family=IPv4 -O- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/librewolf.gpg &&
 sudo tee /etc/apt/sources.list.d/librewolf.sources << EOF > /dev/null
 Types: deb
 URIs: https://deb.librewolf.net

@@ -33,7 +33,7 @@ rm -f "/tmp/dwm.zip"
 rm -f -r "/tmp/dwm"
 rm -f -r "$HOME/.config/dwm"
 ## Grab dwm.zip and unzip in /tmp
-wget https://raw.githubusercontent.com/sleekmason/packages/master/dwm.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/dwm.zip --show-progress -q
 unzip -q /tmp/dwm.zip
 
 ## Install necessary programs audio and brightness keys

@@ -33,7 +33,7 @@ rm -f "/tmp/sowm-files-focused-borders.zip"
 rm -f -r "/tmp/sowm-files"
 rm -f -r "$HOME/.config/sowm/sowm.bak"
 ## Grab sowm-files.zip 
-wget https://raw.githubusercontent.com/sleekmason/packages/master/sowm-files-focused-borders.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/sowm-files-focused-borders.zip --show-progress -q
 unzip -q /tmp/sowm-files-focused-borders.zip
 
 ## Install conky-all if not existing

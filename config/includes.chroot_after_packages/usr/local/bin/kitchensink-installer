@@ -42,11 +42,11 @@ echo ""
 echo "   [0;33mDownloading some initial packages...[0m"
 echo ""
 if test -e /sys/class/backlight/*; then
-wget https://raw.githubusercontent.com/sleekmason/packages/master/bright-gamma_12.0-1_all.deb --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/bright-gamma_12.0-1_all.deb --show-progress -q
 fi
-wget https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.11-2~ld_all.deb --show-progress -q
-wget https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
-wget https://github.com/sleekmason/live-build-changes/archive/master.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.11-2~ld_all.deb --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/circle-icons_12.0-2_all.deb --show-progress -q
+wget --prefer-family=IPv4 https://github.com/sleekmason/live-build-changes/archive/master.zip --show-progress -q
 unzip -q /tmp/master.zip
 echo ""
 echo "   [0;33mBeginning installation...[0m" && sleep 1

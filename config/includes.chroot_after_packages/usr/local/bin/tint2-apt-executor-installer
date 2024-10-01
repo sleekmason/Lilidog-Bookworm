@@ -30,7 +30,7 @@ if test -e "/tmp/tint2"; then
 rm -r /tmp/tint2
 fi
 if [ ! -f "tint2-with-apt-executor2.zip" ]; then
-wget https://raw.githubusercontent.com/sleekmason/packages/master/tint2-with-apt-executor2.zip --show-progress -q
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/tint2-with-apt-executor2.zip --show-progress -q
 fi 
 if [ ! -e "$HOME/.config/tint2-original.bak" ]; then
 cp -r "$HOME/.config/tint2" "$HOME/.config/tint2-original.bak"

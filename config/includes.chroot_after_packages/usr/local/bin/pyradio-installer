@@ -14,7 +14,7 @@ read -p "   [0;33mPyradio Terminal Music Player Installer[0m
    if : >/dev/tcp/8.8.8.8/53; then
 echo ""
 cd /tmp || exit &&
-wget -q https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.11-2~ld_all.deb --show-progress &&
+wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/master/pyradio_0.9.2.11-2~ld_all.deb --show-progress &&
 sudo apt update && sudo apt install -y /tmp/pyradio_0.9.2.11-2~ld_all.deb
 rm /tmp/pyradio*
 sed -i '/Pyradio,            x-terminal-emulator -e bash -c pyradio,       audio-headphones/d' ~/.config/jgmenu/prepend.csv &&
