@@ -60,16 +60,16 @@ done
 
 LINE=0; APPEND=false
 if [[ -n $LOGIN ]]; then
-	LOGIN=$(echo $LOGIN | sed 's/.$//')
+	LOGIN=$(echo "$LOGIN" | sed 's/.$//')
 	LINE=${SEATS[-1]}
 	APPEND=true
 fi
 
 for RANGE in "${RANGES[@]}"
 do
-	sed -i $RANGE{/^autologin-user=.*$/d} $BUFFER
+	sed -i "$RANGE"{/^autologin-user=.*$/d} $BUFFER
 	if $APPEND; then
-		sed -i $LINE"a autologin-user="$LOGIN $BUFFER
+		sed -i "$LINE""a autologin-user=""$LOGIN" $BUFFER
 		APPEND=false
 	fi
 done
