@@ -12,7 +12,7 @@ at-spi2-core
 b43-fwcutter
 bash-completion
 bind9-dnsutils
-brightnessctl 
+brightnessctl
 brightness-udev
 btrfs-progs
 bzip2
