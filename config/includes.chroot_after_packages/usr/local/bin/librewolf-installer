@@ -23,9 +23,13 @@ echo ""
 sudo apt update && sudo apt install extrepo -y
 sudo extrepo enable librewolf
 sudo apt update && sudo apt install librewolf -y
-
+sleep .5
+if [[ $(command -v librewolf) ]]; then
 sed -i '/Librewolf,          librewolf,        librewolf/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '7i Librewolf,          librewolf,        librewolf' ~/.config/jgmenu/prepend.csv &&
+sed -i '7i Librewolf,          librewolf,        librewolf' ~/.config/jgmenu/prepend.csv
+else
+notify-send -i "info" --urgency low "LibreWolf has not been installed."
+fi
 killall -q jgmenu
 echo ""
 echo "----------------------------------------------------------------"
