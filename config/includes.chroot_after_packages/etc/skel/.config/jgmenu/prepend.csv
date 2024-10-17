@@ -23,9 +23,9 @@ Root Folders,^checkout(rootfiles),folder
 Libreoffice,        libreoffice,                       libreoffice-writer
 Geany,              geany,	                       geany
 Pragha,             pragha,                            pragha
+Gpicview,           gpicview,                          gpicview
 Smplayer,           smplayer,                          smplayer
 Newsboat,           x-terminal-emulator -e newsboat,   accessories-text-editor
-Gpicview,           gpicview,                          gpicview
 Development,^checkout(development),applications-development
 
 ^tag(development)
