@@ -22,7 +22,7 @@ echo ""
 echo ""
 sudo apt update && sudo apt install extrepo -y
 sudo extrepo enable librewolf
-sudo apt update && sudo apt install librewolf -y
+sudo apt update && sudo apt install libgdk-pixbuf2.0-bin librewolf -y
 sleep .5
 if [[ $(command -v librewolf) ]]; then
 sed -i '/Librewolf,          librewolf,        librewolf/d' ~/.config/jgmenu/prepend.csv &&
