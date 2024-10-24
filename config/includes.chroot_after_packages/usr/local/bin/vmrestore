@@ -1,27 +1,30 @@
 #!/bin/bash
 ## resolution change when in a VM.
 ## by sleekmason 1-21-2024
+## modified by kwg 10-23-2024
 
-# just fix the resolution on button click
+# Just fix the wallpaper on icon click
 toggleit(){
-	notify-send -t 12000 --urgency low " Right-click for display settings"
 	~/.fehbg
+	notify-send -t 12000 -i "user-info" --urgency low " Wallpaper corruption has been fixed"
+	notify-send -t 12000 -i "info" --urgency low " Right-click the 'D' icon for Display Options"
 }
 
-#Change the resolution first
+# Allow the user to change the screen resolution first
 changeitnow(){
-	notify-send -t 12000 --urgency low " Wallpaper corruption will be fixed on 'Close'"
+	notify-send -t 12000 -i "info" --urgency low " Wallpaper corruption will be fixed on 'Close'"
 	xfce4-display-settings &&
 	~/.fehbg	
 }
+
 export -f toggleit
 export -f changeitnow
 	
 if grep hypervisor /proc/cpuinfo ; then
-    yad --notification --listen --image="/usr/share/icons/ld-icons/display.png" \
-    --text="Display Settings ┃ All Options" \
-    --menu="Display Settings!bash -c changeitnow!display|Wallpaper Fix!bash -c ~/.fehbg!org.xfce.settings.display|Exit!quit!application-exit" \
-    --command="bash -c toggleit"
+	yad --notification --listen --image="/usr/share/icons/ld-icons/display.png" \
+	--text="Left ▸ Instant Wallpaper Fix ┃ Right ▸ Display Options" \
+	--menu="Display Settings!bash -c changeitnow!display|Instant Wallpaper Fix!bash -c ~/.fehbg!org.xfce.settings.display|Exit!quit!application-exit" \
+	--command="bash -c toggleit"
 else 
 	exit
 fi
