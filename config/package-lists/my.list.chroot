@@ -48,10 +48,13 @@ file-roller
 firefox-esr
 firmware-b43legacy-installer
 firmware-b43-installer
+fonts-dancingscript
 fonts-dejavu-core
 fonts-font-awesome
 fonts-liberation
 fonts-jetbrains-mono
+fonts-materialdesignicons-webfont 
+fonts-material-design-icons-iconfont
 fonts-noto
 fonts-noto-mono
 fortunes
