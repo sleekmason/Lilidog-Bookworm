@@ -179,6 +179,7 @@ qt5-gtk-platformtheme
 qt5-gtk2-platformtheme
 qt5-style-plugins
 rename
+rlwrap
 rofi
 rsync
 rtkit
@@ -207,6 +208,7 @@ thunar-volman
 tlp
 tumbler
 traceroute
+translate-shell
 transmission
 transmission-gtk
 tree
