@@ -69,7 +69,7 @@
 	<icon>accessories-text-editor</icon>
 	<name>Folder Attributes</name>
 	<unique-id>1610133896270522-1</unique-id>
-	<command>urxvt --hold -e ls -AghS --color %f</command>
+	<command>xfce4-terminal --hold -e "ls -AghS --group-directories-first --color=always %f"</command>
 	<description>Detailed list in terminal.</description>
 	<patterns>*</patterns>
 	<directories/>

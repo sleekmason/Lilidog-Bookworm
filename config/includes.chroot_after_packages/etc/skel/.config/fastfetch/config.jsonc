@@ -120,12 +120,13 @@
             "key": " Disk",
             "folders": "/"
         },
-        {
+/* Uncomment for temperature values */ 
+/*      {
             "type": "cpu",
             "key": " Temperature",
             "temp": true,
             "format": "{temperature}"
-        },
+        }, */
 /* Uncomment for battery values */ 
 /*      {
             "type": "battery",
@@ -148,5 +149,6 @@
         "type": "custom",
         "format": "\u001b[0;34m└──────────────────\u001b[0;34m \u001B[1mDebian\u001B[0m \u001b[0;34m───────────────────┘\u001b[0m"
     },
+    "break",
     ]
 }
