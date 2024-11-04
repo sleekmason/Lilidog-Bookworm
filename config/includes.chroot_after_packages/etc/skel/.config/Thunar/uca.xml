@@ -22,7 +22,7 @@
 	<icon>gparted</icon>
 	<name>File Sizes</name>
 	<unique-id>1610405390468673-1</unique-id>
-	<command>x-terminal-emulator -e ncdu -r %F</command>
+	<command>x-terminal-emulator -e ncdu -r --color dark %F</command>
 	<description>Lists Folder File Sizes</description>
 	<patterns>*</patterns>
 	<directories/>
