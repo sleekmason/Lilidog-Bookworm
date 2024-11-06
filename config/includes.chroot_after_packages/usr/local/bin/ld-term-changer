@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yad --title "Terminal Colors" --escape-ok --borders=14 \
---form --center --width=440 --height=378 \
+--form --center --width=440 --height=370 \
 --button=" Exit!gtk-delete:0" \
 --text="Terminal Colors - Will not change GTK themes\n" --text-align=center \
 --window-icon=terminal \
@@ -10,9 +10,9 @@ yad --title "Terminal Colors" --escape-ok --borders=14 \
     --field="             Oceanic!/usr/share/xfce4/terminal/icons/paw-oceanic.png":FBTN "xfce4-term-colors oceanic" \
     --field="              Arcadia!/usr/share/xfce4/terminal/icons/paw-arcadia.png":FBTN "xfce4-term-colors arcadia" \
     --field="       Nightshade!/usr/share/xfce4/terminal/icons/paw-nightshade.png":FBTN "xfce4-term-colors nightshade" \
+    --field="                  Fane!/usr/share/xfce4/terminal/icons/paw-fane.png":FBTN "xfce4-term-colors fane" \
     --field="               Denim!/usr/share/xfce4/terminal/icons/paw-denim.png":FBTN "xfce4-term-colors denim" \
     --field="                  River!/usr/share/xfce4/terminal/icons/paw-river.png":FBTN "xfce4-term-colors river" \
-    --field="                Cobalt!/usr/share/xfce4/terminal/icons/paw-cobalt.png":FBTN "xfce4-term-colors lilidog-cobalt" \
     --field="                     Ink!/usr/share/xfce4/terminal/icons/paw-dragon.png":FBTN "xfce4-term-colors ink" \
     --field="       Forge-Dark!/usr/share/xfce4/terminal/icons/paw-forge-dark.png":FBTN "xfce4-term-colors forge-dark" \
     --field="                 Forge!/usr/share/xfce4/terminal/icons/paw-forge.png":FBTN "xfce4-term-colors forge" \
