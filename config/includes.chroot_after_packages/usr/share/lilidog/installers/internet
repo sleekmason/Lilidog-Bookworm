@@ -1,7 +1,6 @@
 Dropbox,           x-terminal-emulator -T 'Dropbox Installer' -e bash -c "dropbox-installer",                applications-internet
 Google Earth,      x-terminal-emulator -T 'Google Earth Installer' -e bash -c "google-earth-installer",      applications-internet
 Maestral,          x-terminal-emulator -T 'Maestral Installer' -e bash -c "maestral-installer",              applications-internet
-Skype,             x-terminal-emulator -T 'Skype Installer' -e bash -c "skype-installer",                    applications-internet
 Zoom,              x-terminal-emulator -T 'Zoom Installer' -e bash -c "zoom-installer",                      applications-internet
 ^sep()
 Brave Browser,     x-terminal-emulator -T 'Brave Installer' -e bash -c "brave-installer",                    applications-internet
