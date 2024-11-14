@@ -24,6 +24,7 @@
 
   <!-- Global Settings -->
   <style name="text"                        foreground="#EBEAE8" background="#282D33"/>
+  <style name="selection"                   foreground="#E1F1F7" background="#2F5D73"/>
   <style name="current-line"                background="#3F4952"/>
   <style name="current-line-number"         background="#2D3136"/>
   <style name="draw-spaces"                 foreground="#babdb6"/>
