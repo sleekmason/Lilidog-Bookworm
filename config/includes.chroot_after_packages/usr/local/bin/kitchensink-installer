@@ -58,8 +58,8 @@ sed -i '/Root Folders,^checkout(rootfiles),folder/a Pyradio,            x-termin
 ## Brightness slider
 if test -e /sys/class/backlight/*; then
 sudo apt install -y /tmp/./bright-gamma* &&
-sed -i '/Brightness,          bright-gamma,                                  preferences-desktop-personal/d' "$FILE"
-sed -i '/Font Sizes/a Brightness,          bright-gamma,                                  preferences-desktop-personal' "$FILE"
+sed -i '/Brightness,          bright-gamma.*/d' "$FILE"
+sed -i '/Font Sizes/a Brightness,          bright-gamma,                                  org.xfce.settings.manager' "$FILE"
 echo ""
 echo "   [0;33mSystem tray brightness slider can be enabled through  
    the toggles menu.[0m" && sleep 1
@@ -199,8 +199,8 @@ sed -i '/Pcmanfm,            pcmanfm,                           system-file-mana
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' "$FILE"
 sed -i '/Mousepad,           mousepad,                          accessories-text-editor/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Mousepad,           mousepad,                          accessories-text-editor' "$FILE"
-sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal/d' "$FILE"
-sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' "$FILE"
+sed -i '/bash\/zsh.*/d' "$FILE"
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    org.xfce.settings.manager' "$FILE"
 sed -i '/Filezilla,    filezilla,                  filezilla/d' "$FILE"
 sed -i '/Extras/i Filezilla,    filezilla,                  filezilla' "$FILE"
 sed -i '/Inkscape,               inkscape,                              org.xfce.settings.color/d' "$FILE"

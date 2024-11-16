@@ -31,8 +31,8 @@ wget --prefer-family=IPv4 https://raw.githubusercontent.com/sleekmason/packages/
 echo ""
 echo ""
 sudo apt update && sudo apt install -y /tmp/./bright-gamma*
-sed -i '/Brightness,          bright-gamma,                                  preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/Font Sizes/a Brightness,          bright-gamma,                                  preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
+sed -i '/Brightness,          bright-gamma.*/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/Font Sizes/a Brightness,          bright-gamma,                                  org.xfce.settings.manager' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 echo ""
 echo "[0;33m-------------------------------------------------------------------"

@@ -14,7 +14,7 @@ Configuration,^checkout(configuration), preferences-other
 ^sep()
 All Programs,^checkout(apps),preferences-system-search
 ^sep()
-Restart, openbox --restart; conkyrestart, org.xfce.settings.manager
+Restart, openbox --restart; conkyrestart, emblem-synchronizing
 Exit,               ld-logout,                 application-exit
 
 ^tag(quickgrab)
@@ -60,21 +60,21 @@ Synaptic,           gksudo synaptic,                  synaptic
 Install Extras,     ld-installers,                    preferences-system-search
 
 ^tag(toggles)
-Conky,               conky-toggle,                                  preferences-desktop-personal
-Gammy,               toggle.gammy,                                  preferences-desktop-personal
-Jgmenu,              jg-icon-changer,                               preferences-desktop-personal
-Rofi Icons,          rofi-options,                                  preferences-desktop-personal
-Font Sizes,          fontsize-changer,                              preferences-desktop-personal
-Hotcorners,          toggle.ld,                                     preferences-desktop-personal
-Random BG,           toggle-wallpaper-random,                       preferences-desktop-personal
-Tint2 Options,       tint2-options,                                 preferences-desktop-personal
-Mouse Finder,        toggle-mouse-pointer,                          preferences-desktop-personal
-Transparency,        transparency-system,                           preferences-desktop-personal
-Tint2 Toggle,        toggle.tint2,                                  preferences-desktop-personal
-Clipboard,           toggle.parcellite,                             preferences-desktop-personal
-OSprober,            osprober-toggle,                               preferences-desktop-personal
-Sounds,              notification-sounds,                           preferences-desktop-personal
-Picom,               toggle.picom,                                  preferences-desktop-personal
+Conky,               conky-toggle,                                  org.xfce.settings.manager
+Gammy,               toggle.gammy,                                  org.xfce.settings.manager
+Jgmenu,              jg-icon-changer,                               org.xfce.settings.manager
+Rofi Icons,          rofi-options,                                  org.xfce.settings.manager
+Font Sizes,          fontsize-changer,                              org.xfce.settings.manager
+Hotcorners,          toggle.ld,                                     org.xfce.settings.manager
+Random BG,           toggle-wallpaper-random,                       org.xfce.settings.manager
+Tint2 Options,       tint2-options,                                 org.xfce.settings.manager
+Mouse Finder,        toggle-mouse-pointer,                          org.xfce.settings.manager
+Transparency,        transparency-system,                           org.xfce.settings.manager
+Tint2 Toggle,        toggle.tint2,                                  org.xfce.settings.manager
+Clipboard,           toggle.parcellite,                             org.xfce.settings.manager
+OSprober,            osprober-toggle,                               org.xfce.settings.manager
+Sounds,              notification-sounds,                           org.xfce.settings.manager
+Picom,               toggle.picom,                                  org.xfce.settings.manager
 Xkill,               xkill,                                         edit-delete
 
 ^tag(rootfiles)
