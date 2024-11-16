@@ -8,7 +8,7 @@ Firefox,            firefox,          firefox-esr
 ^sep()
 Quick Grab,^checkout(quickgrab), org.xfce.settings.default-applications
 ^sep()
-Toggles,^checkout(toggles), preferences-desktop-personal
+Toggles,^checkout(toggles), org.xfce.settings.manager
 Utilities,^checkout(utilities), applications-utilities
 Configuration,^checkout(configuration), preferences-other
 ^sep()
