@@ -215,7 +215,7 @@ entry {
     border-radius: 0px; }
   spinbutton:focus:not(.vertical),
   entry:focus {
-    border-color: #697B85;
+    border-color: shade(#33637A, 1.14);
     background-color: #2B3138; }
   spinbutton:disabled:not(.vertical),
   entry:disabled {
@@ -432,7 +432,7 @@ button {
   border-radius: 7px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #F5F5EE;
-  outline-color: #485159;
+  outline-color: #4C565E;
   border-top-color: shade(#121417, 0.8);
   border-right-color: shade(#121417, 0.72);
   border-left-color: shade(#121417, 0.72);
@@ -460,7 +460,7 @@ button {
     color: #FCFCFC;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #17181C;
-    background-image: linear-gradient(to bottom, shade(#315F75, 1), shade(#33637A, 1));
+    background-image: linear-gradient(to bottom, shade(#33637A, 0.98), shade(#33637A, 1.03));
     box-shadow: inset 0 1px #424A54;
     -gtk-icon-effect: highlight; }
   notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
@@ -792,12 +792,12 @@ button {
 
 button.suggested-action {
   color: #E6EDF0;
-  outline-color: rgba(235, 235, 235, 0.3);
-  border-top-color: shade(#333A42, 0.8);
-  border-right-color: shade(#333A42, 0.72);
-  border-left-color: shade(#333A42, 0.72);
-  border-bottom-color: shade(#333A42, 0.7);
-  background-image: linear-gradient(to bottom, shade(shade(#305D73, 0.98), 1), shade(shade(#33637A, 1), 0.97));
+  outline-color: #4C565E;
+  border-top-color: shade(#23282E, 0.8);
+  border-right-color: shade(#23282E, 0.72);
+  border-left-color: shade(#23282E, 0.72);
+  border-bottom-color: shade(#23282E, 0.7);
+  background-image: linear-gradient(to bottom, shade(shade(#33637A, 0.98), 1), shade(shade(#33637A, 1.03), 0.97));
   box-shadow: inset 0 1px #424A54; }
   .selection-mode button.titlebutton,
   button.suggested-action.flat {
@@ -813,7 +813,7 @@ button.suggested-action {
     color: #E1E6EB;
     outline-color: rgba(255, 255, 255, 0.3);
     border-color: #1E2226;
-    background-image: linear-gradient(to bottom, shade(#356780, 1.15), shade(#376B85, 1.07));
+    background-image: linear-gradient(to bottom, shade(#33637A, 1.07), shade(#33637A, 1.15));
     box-shadow: inset 0 1px #4C5561; }
   
   button.suggested-action:active,
@@ -2246,7 +2246,7 @@ menu,
     .menu menuitem:hover,
     .context-menu menuitem:hover {
       color: #FAFAF5;
-      background-image: linear-gradient(to bottom, shade(#31627A, 0.99), shade(#33637A, 1.0));
+      background-image: linear-gradient(to bottom, shade(#33637A, 0.99), shade(#33637A, 1.0));
       box-shadow: inset 1px 1px shade(#181B1F, 0.9), inset -1px -1px shade(#17181C, 0.9); }
     menu menuitem:disabled,
     .menu menuitem:disabled,
@@ -2476,7 +2476,7 @@ notebook > header {
       color: #FCFCF7; }
       notebook > header tab:hover.reorderable-page {
         border-color: #14161A;
-        background-color: #315D73; }
+        background-color: #33637A; }
     notebook > header tab:backdrop {
       color: #a2a2a2; }
       notebook > header tab:backdrop.reorderable-page {
@@ -2590,7 +2590,7 @@ scrollbar {
     background-clip: padding-box;
     background-image: linear-gradient(to right, #525D6B, #606D7D); }
     scrollbar slider:hover {
-      background-image: linear-gradient(to right, #356A85, #3F7E9E); }
+      background-image: linear-gradient(to right, shade(#33637A, 1.1), shade(#33637A, 1.18)); }
     scrollbar slider:hover:active {
       background-color: #3B454F; }
     scrollbar slider:backdrop {
@@ -2726,7 +2726,7 @@ switch {
   switch:checked {
     box-shadow: inset 0 1px rgba(0, 0, 0, 0.1), 0 1px transparent;
     border-color: shade(#696969, 1.1);
-    background-image: linear-gradient(to bottom, shade(#48525E, 1), #525D6B);
+    background-image: linear-gradient(to bottom, shade(#33637A, 1), #33637A);
     text-shadow: 0 1px rgba(15, 66, 120, 0.5), 0 0 2px rgba(255, 255, 255, 0.6); }
   switch:disabled {
     border-color: #17181C;
@@ -2879,7 +2879,7 @@ radio {
     color: #E6E6E1;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #17181C;
-    background-image: linear-gradient(to bottom, #386B85 10%, #386B85 90%);
+    background-image: linear-gradient(to bottom, shade(#33637A, 1.1) 10%, shade(#33637A, 1.14) 90%);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.6), inset 0 -2px #6B7582, inset 0 -1px#333A42, 0 1px rgba(0, 0, 0, 0.1); }
   check:active,
   radio:active {
@@ -3507,7 +3507,7 @@ scrolledwindow viewport.frame {
   border-style: none; }
 
 scrolledwindow overshoot.top {
-  background-image: -gtk-gradient(radial, center top, 0, center top, 0.5, to(#355E73), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
+  background-image: -gtk-gradient(radial, center top, 0, center top, 0.5, to(#33637A), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
   background-size: 100% 5%, 100% 100%;
   background-repeat: no-repeat;
   background-position: center top;
@@ -3524,7 +3524,7 @@ scrolledwindow overshoot.top {
     box-shadow: none; }
 
 scrolledwindow overshoot.bottom {
-  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.5, to(#355E73), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
+  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.5, to(#33637A), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
   background-size: 100% 5%, 100% 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -3541,7 +3541,7 @@ scrolledwindow overshoot.bottom {
     box-shadow: none; }
 
 scrolledwindow overshoot.left {
-  background-image: -gtk-gradient(radial, left center, 0, left center, 0.5, to(#355E73), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, left center, 0, left center, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
+  background-image: -gtk-gradient(radial, left center, 0, left center, 0.5, to(#33637A), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, left center, 0, left center, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
   background-size: 5% 100%, 100% 100%;
   background-repeat: no-repeat;
   background-position: left center;
@@ -3558,7 +3558,7 @@ scrolledwindow overshoot.left {
     box-shadow: none; }
 
 scrolledwindow overshoot.right {
-  background-image: -gtk-gradient(radial, right center, 0, right center, 0.5, to(#355E73), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, right center, 0, right center, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
+  background-image: -gtk-gradient(radial, right center, 0, right center, 0.5, to(#33637A), to(rgba(104, 104, 104, 0))), -gtk-gradient(radial, right center, 0, right center, 0.6, from(rgba(60, 60, 60, 0.07)), to(rgba(60, 60, 60, 0)));
   background-size: 5% 100%, 100% 100%;
   background-repeat: no-repeat;
   background-position: right center;
@@ -3796,9 +3796,9 @@ filechooserbutton:drop(active) {
     .sidebar row:selected, .sidebar row:selected:focus,
     .sidebar treeview:selected,
     .sidebar treeview:selected:focus {
-      background-image: linear-gradient(to bottom, shade(#31627A, 0.98) 12%, shade(#31627A, 0.98), shade(#33637A, 1.0) 92%, shade(#33637A, 1.0));
-      border-top: 1px solid shade(#202429, 1.0);
-      border-bottom: 1px solid shade(#202429, 1.0); }
+      background-image: linear-gradient(to bottom, shade(#33637A, 0.98) 12%, shade(#33637A, 0.98), shade(#33637A, 1.0) 92%, shade(#33637A, 1.0));
+      border-top: 1px solid shade(#24292E, 0.97);
+      border-bottom: 1px solid shade(#24292E, 0.92); }
       .sidebar row:selected label, .sidebar row:selected:focus label,
       .sidebar treeview:selected label,
       .sidebar treeview:selected:focus label {
