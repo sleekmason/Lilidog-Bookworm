@@ -3,42 +3,42 @@
 
 !! Menu background
 menu.items.bg: flat gradient vertical
-menu.items.bg.color: #263340
-menu.items.bg.colorTo: #263340
+menu.items.bg.color: #24303C
+menu.items.bg.colorTo: #24303C
 menu.separator.color: #3D5266
 
 !! Menu text
-menu.items.text.color: #CEE8F5
+menu.items.text.color: #D3DFE6
 menu.items.justify: left
 menu.items.disabled.text.color: #4C6E70
 
 !! Menu title
 menu.title.bg: raised splitvertical gradient
-menu.title.bg.color: #263340
-menu.title.bg.colorTo: #263340
+menu.title.bg.color: #24303C
+menu.title.bg.colorTo: #24303C
 menu.title.text.color: #BCDBEB
 menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #31547D
-menu.items.active.bg.colorTo: #31547D
-menu.items.active.text.color: #E6F7FF
+menu.items.active.bg.color: #2C5B8A
+menu.items.active.bg.colorTo: #2C5B8A
+menu.items.active.text.color: #E3F0F7
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #2A4A6B
-window.active.title.bg.colorTo: #36557F
+window.active.title.bg.color: #2E3E4F
+window.active.title.bg.colorTo: #324557
 window.inactive.title.bg: flat vertical gradient
-window.inactive.title.bg.color: #202B36
-window.inactive.title.bg.colorTo: #202B36
+window.inactive.title.bg.color: #202C38
+window.inactive.title.bg.colorTo: #202C38
 
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #C0DDEB
+window.active.label.text.color: #D7E4EB
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #62849E
+window.inactive.label.text.color: #87A1AD
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -46,8 +46,8 @@ window.active.button.*.hover.bg: flat splitvertical gradient border
 window.inactive.button.*.hover.bg: parentrelative
 window.*.button.*.pressed.bg: flat splitvertical gradient border
 
-window.active.button.*.hover.bg.color: #426387
-window.active.button.*.hover.bg.colorTo: #426387
+window.active.button.*.hover.bg.color: #2C5B8A
+window.active.button.*.hover.bg.colorTo: #2C5B8A
 window.active.button.*.hover.bg.border.color: #6987BD
 
 window.active.button.*.pressed.bg.color: #6992BD
@@ -60,20 +60,20 @@ window.inactive.button.*.pressed.bg.colorTo: #2F4678
 window.inactive.button.*.pressed.image.color: #698BB3
 window.inactive.button.*.pressed.bg.border.color: #698BB3
 
-window.active.button.*.image.color: #B3D9E6
+window.active.button.*.image.color: #D2DFE6
 window.active.button.disabled.image.color: #2C4060
-window.inactive.button.*.image.color: #62849E
+window.inactive.button.*.image.color: #839DA8
 window.inactive.button.disabled.image.color: #2B3640
 
 !! Borders
 window.active.border.color: #252F38
-window.inactive.border.color: #2B3540
+window.inactive.border.color: #202C38
 window.inactive.title.separator.color: #2B3640
 border.width: 1
 padding.width: 1
 window.handle.width: 3
 window.active.client.color:  #2F3D4D
-window.inactive.client.color:  #2B3540
+window.inactive.client.color:  #202C38
 window.client.padding.width: 1
 window.client.padding.height: 1
 menu.border.color: #222B33
@@ -81,7 +81,7 @@ menu.overlap: 0
 
 !! Handles
 window.active.handle.bg: raised
-window.active.handle.bg.color: #263C57
+window.active.handle.bg.color: #324557
 window.active.grip.bg: parentrelative
 window.inactive.handle.bg: raised
 window.inactive.handle.bg.color: #202B36
@@ -92,5 +92,5 @@ window.inactive.grip.bg: parentrelative
 
 !! On-screen displays
 osd.bg: gradient vertical flat
-osd.bg.color: #2B3640
-osd.bg.colorTo: #202B36
+osd.bg.color: #2B3A4A
+osd.bg.colorTo: #25313D
