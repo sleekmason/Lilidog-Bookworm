@@ -8,7 +8,7 @@ menu.items.bg.colorTo: #222933
 menu.separator.color: #344459
 
 !! Menu text
-menu.items.text.color: #C5E0EB
+menu.items.text.color: #CAE2EB
 menu.items.justify: left
 menu.items.disabled.text.color: #4C6E70
 
@@ -23,22 +23,22 @@ menu.title.text.justify: center
 menu.items.active.bg: raised splitvertical gradient
 menu.items.active.bg.color: #3B4D66
 menu.items.active.bg.colorTo: #3B4D66
-menu.items.active.text.color: #D7F2FC
+menu.items.active.text.color: #DEF4FC
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #2C384D
-window.active.title.bg.colorTo: #33425A
-window.inactive.title.bg: flat splitvertical gradient
-window.inactive.title.bg.color: #1B222B
-window.inactive.title.bg.colorTo: #1E2630
+window.active.title.bg.color: #2D384D
+window.active.title.bg.colorTo: #37445C
+window.inactive.title.bg: flat vertical gradient
+window.inactive.title.bg.color: #222933
+window.inactive.title.bg.colorTo: #222933
 
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #B9DCED
+window.active.label.text.color: #CAE2EB
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #62849E
+window.inactive.label.text.color: #849DAD
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
@@ -60,19 +60,19 @@ window.inactive.button.*.pressed.bg.colorTo: #212833
 window.inactive.button.*.pressed.image.color: #607BA3
 window.inactive.button.*.pressed.bg.border.color: #607BA3
 
-window.active.button.*.image.color: #B3D9E6
+window.active.button.*.image.color: #C5DDE6
 window.active.button.disabled.image.color: #2C4060
-window.inactive.button.*.image.color: #62849E
+window.inactive.button.*.image.color: #8099A8
 window.inactive.button.disabled.image.color: #2B3640
 
 !! Borders
-window.active.border.color: #2B384A
+window.active.border.color: #202630
 window.inactive.border.color: #2B3640
 window.inactive.title.separator.color: #2B3640
 border.width: 1
 padding.width: 1
 window.handle.width: 3
-window.active.client.color:  #2B384A
+window.active.client.color:  #2F3C52
 window.inactive.client.color:  #212833
 window.client.padding.width: 1
 window.client.padding.height: 1
