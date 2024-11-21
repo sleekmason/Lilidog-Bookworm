@@ -1,32 +1,28 @@
 #!/bin/bash
 
 yad --title "Terminal Colors" --escape-ok --borders=14 \
---form --center --width=440 --height=370 \
+--form --center --width=440 --height=330 \
 --button=" Exit!gtk-delete:0" \
 --text="Terminal Colors - Will not change GTK themes\n" --text-align=center \
 --window-icon=terminal \
     --form --columns=4 \
-    --field="                  Slate!/usr/share/xfce4/terminal/icons/paw-slate.png":FBTN "xfce4-term-colors lilidog-slate" \
-    --field="             Oceanic!/usr/share/xfce4/terminal/icons/paw-oceanic.png":FBTN "xfce4-term-colors oceanic" \
-    --field="              Arcadia!/usr/share/xfce4/terminal/icons/paw-arcadia.png":FBTN "xfce4-term-colors arcadia" \
-    --field="       Nightshade!/usr/share/xfce4/terminal/icons/paw-nightshade.png":FBTN "xfce4-term-colors nightshade" \
-    --field="                  Fane!/usr/share/xfce4/terminal/icons/paw-fane.png":FBTN "xfce4-term-colors fane" \
-    --field="               Denim!/usr/share/xfce4/terminal/icons/paw-denim.png":FBTN "xfce4-term-colors denim" \
-    --field="                  River!/usr/share/xfce4/terminal/icons/paw-river.png":FBTN "xfce4-term-colors river" \
-    --field="                     Ink!/usr/share/xfce4/terminal/icons/paw-dragon.png":FBTN "xfce4-term-colors ink" \
-    --field="       Forge-Dark!/usr/share/xfce4/terminal/icons/paw-forge-dark.png":FBTN "xfce4-term-colors forge-dark" \
-    --field="                 Forge!/usr/share/xfce4/terminal/icons/paw-forge.png":FBTN "xfce4-term-colors forge" \
-    --field="                  Cube!/usr/share/xfce4/terminal/icons/paw-cube.png":FBTN "xfce4-term-colors cube" \
-    --field="                 Ozark!/usr/share/xfce4/terminal/icons/paw-ozark.png":FBTN "xfce4-term-colors ozark" \
-    --field="               Island!/usr/share/xfce4/terminal/icons/paw-island-red.png":FBTN "xfce4-term-colors island" \
-    --field="  Nordic-Darker!/usr/share/xfce4/terminal/icons/paw-nordic.png":FBTN "xfce4-term-colors nordic" \
     --field="                Adobe!/usr/share/xfce4/terminal/icons/paw-adobe.png":FBTN "xfce4-term-colors adobe" \
+    --field="    Adwaita Dark!/usr/share/xfce4/terminal/icons/paw-earth.png":FBTN "xfce4-term-colors lilidog-drow" \
+    --field="              Arcadia!/usr/share/xfce4/terminal/icons/paw-arcadia.png":FBTN "xfce4-term-colors arcadia" \
+    --field="                  Cube!/usr/share/xfce4/terminal/icons/paw-cube.png":FBTN "xfce4-term-colors cube" \
+    --field="               Denim!/usr/share/xfce4/terminal/icons/paw-denim.png":FBTN "xfce4-term-colors denim" \
     --field="                 Drow!/usr/share/xfce4/terminal/icons/paw-earth.png":FBTN "xfce4-term-colors lilidog-drow" \
     --field="                  Earth!/usr/share/xfce4/terminal/icons/paw-earth.png":FBTN "xfce4-term-colors lilidog-earth" \
-    --field="    Adwaita Dark!/usr/share/xfce4/terminal/icons/paw-earth.png":FBTN "xfce4-term-colors lilidog-drow" \
+    --field="                  Fane!/usr/share/xfce4/terminal/icons/paw-fane.png":FBTN "xfce4-term-colors fane" \
+    --field="                 Forge!/usr/share/xfce4/terminal/icons/paw-forge.png":FBTN "xfce4-term-colors forge" \
+    --field="       Forge Dark!/usr/share/xfce4/terminal/icons/paw-forge-dark.png":FBTN "xfce4-term-colors forge-dark" \
+    --field="                     Ink!/usr/share/xfce4/terminal/icons/paw-dragon.png":FBTN "xfce4-term-colors ink" \
+    --field="               Island!/usr/share/xfce4/terminal/icons/paw-island-red.png":FBTN "xfce4-term-colors island" \
+    --field="       Nightshade!/usr/share/xfce4/terminal/icons/paw-nightshade.png":FBTN "xfce4-term-colors nightshade" \
+    --field="                 Ozark!/usr/share/xfce4/terminal/icons/paw-ozark.png":FBTN "xfce4-term-colors ozark" \
+    --field="                  Slate!/usr/share/xfce4/terminal/icons/paw-slate.png":FBTN "xfce4-term-colors lilidog-slate" \
+    --field="           Adwaita!/usr/share/xfce4/terminal/icons/paw-adwaita.png":FBTN "xfce4-term-colors adwaita-ld" \
+    --field="     Broadwater!/usr/share/xfce4/terminal/icons/paw-broadwater.png":FBTN "xfce4-term-colors broadwater" \
     --field="                Cove!/usr/share/xfce4/terminal/icons/paw-cove.png":FBTN "xfce4-term-colors cove" \
     --field="              Ghost!/usr/share/xfce4/terminal/icons/paw-adwaita.png":FBTN "xfce4-term-colors ghost" \
-    --field="              Bright!/usr/share/xfce4/terminal/icons/paw-bright.png":FBTN "xfce4-term-colors lilidog-bright" \
-    --field="          Mulberry!/usr/share/xfce4/terminal/icons/paw-mulberry.png":FBTN "xfce4-term-colors mulberry" \
-    --field="     Broadwater!/usr/share/xfce4/terminal/icons/paw-broadwater.png":FBTN "xfce4-term-colors broadwater" \
-    --field="           Adwaita!/usr/share/xfce4/terminal/icons/paw-adwaita.png":FBTN "xfce4-term-colors adwaita-ld"
+    --field="          Mulberry!/usr/share/xfce4/terminal/icons/paw-mulberry.png":FBTN "xfce4-term-colors mulberry"

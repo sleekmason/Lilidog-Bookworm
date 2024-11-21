@@ -5,7 +5,7 @@
 
 * {
     // Background color
-    color01: #1E2730;
+    color01: #25313D;
     // Title text
     color02: #CBDBE0;
     // Searchbar background
@@ -17,13 +17,13 @@
     // Inactive tab text
     color06: #B8C7CC;
     // Active tab background (inside box)
-    color07: #212B36;
+    color07: #2B3A4A;
     // Active tab text
-    color08: #CBDBE0;
+    color08: #D8E4EB;
     // Active tab highlight
-	color09: #385F8F;
+	color09: #2C5B8A;
 	// Selection background
-	color10: #385F8F;
+	color10: #2C5B8A;
 	// Selection text 
     color11: #EDEDED;
     // Placeholder text
