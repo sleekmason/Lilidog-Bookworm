@@ -22,11 +22,10 @@
 
   <!-- Global Settings -->
   <style name="text"                        foreground="#D5DFE3" background="#1D2B33"/>
-  <style name="selection"                   foreground="#E1F1F7" background="#20585E"/>
-  <style name="current-line"                background="#374F5E"/>
-  <style name="current-line-number"         background="#374F5E"/>
+  <style name="selection"                   foreground="#E1F1F7" background="#993F51"/>
+  <style name="current-line"                background="#2A656D"/>
+  <style name="current-line-number"         background="#2A656D"/>
   <style name="draw-spaces"                 foreground="#babdb6"/>
-  <style name="background-pattern"          background="#f3f3f3"/>
   <style name="line-numbers"                foreground="#A5B1B8" background="#203038"/>
   <style name="background-pattern"          background="#7D4A82"/>
   <!-- Bracket Matching -->
@@ -37,7 +36,7 @@
   <style name="right-margin"                foreground="#000000" background="#000000"/>
 
   <!-- Search Matching -->
-  <style name="search-match"                background="yellow"/>
+  <style name="search-match"                foreground="black" background="yellow"/>
 
   <!-- Comments -->
   <style name="def:comment"                 foreground="#8CA9B8"/>
@@ -74,7 +73,7 @@
   <!-- Others -->
   <style name="def:preprocessor"            foreground="purple"/>
   <style name="def:error"                   background="red" bold="true"/>
-  <style name="def:warning"                 background="yellow"/>
+  <style name="def:warning"                 foreground="#D3E0E6" background="#1D2B33"/>
   <style name="def:note"                    foreground="blue" background="yellow" bold="true"/>
   <style name="def:net-address"             italic="true" underline="single"/>
 

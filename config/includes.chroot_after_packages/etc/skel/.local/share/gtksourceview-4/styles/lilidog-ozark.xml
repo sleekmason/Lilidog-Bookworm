@@ -39,7 +39,7 @@
   <style name="right-margin"                foreground="#000000" background="#000000"/>
 
   <!-- Search Matching -->
-  <style name="search-match"                background="yellow"/>
+  <style name="search-match"                foreground="black" background="yellow"/>
 
   <!-- Comments -->
   <style name="def:comment"                 foreground="#8CA9B8"/>
@@ -76,7 +76,7 @@
   <!-- Others -->
   <style name="def:preprocessor"            foreground="purple"/>
   <style name="def:error"                   background="red" bold="true"/>
-  <style name="def:warning"                 background="yellow"/>
+  <style name="def:warning"                 foreground="#D3E0E6" background="#1D2B33"/>
   <style name="def:note"                    foreground="blue" background="yellow" bold="true"/>
   <style name="def:net-address"             italic="true" underline="single"/>
 

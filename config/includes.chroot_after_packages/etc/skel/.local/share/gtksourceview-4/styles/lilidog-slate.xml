@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Lilidog-drow
+ Lilidog-slate
  by sleekmason <sleekmason@gmail.com> 
 -->
-<style-scheme id="lilidog-drow" _name="lilidog-drow" version="1.0">
+<style-scheme id="lilidog-slate" _name="lilidog-slate" version="1.0">
   <author>GtkSourceView team</author>
   <_description>Lilidog color scheme based off of classic</_description>
 
@@ -21,13 +21,12 @@
   <color name="purple"     value="#994AF0"/>
 
   <!-- Global Settings -->
-  <style name="text"                        foreground="#E3E3E3" background="#2D2D2D"/>
-  <style name="selection"                   foreground="#F0F0F0" background="#27598A"/>
-  <style name="current-line"                background="#3D3D3D"/>
-  <style name="current-line-number"         background="#3D3D3D"/>
+  <style name="text"                        foreground="#D5DFE3" background="#222F30"/>
+  <style name="selection"                   foreground="#E1F1F7" background="#993F51"/>
+  <style name="current-line"                background="#385052"/>
+  <style name="current-line-number"         background="#385052"/>
   <style name="draw-spaces"                 foreground="#babdb6"/>
-  <style name="background-pattern"          background="#f3f3f3"/>
-  <style name="line-numbers"                foreground="#B8B8B8" background="#262626"/>
+  <style name="line-numbers"                foreground="#A5B1B8" background="#222F30"/>
   <style name="background-pattern"          background="#7D4A82"/>
   <!-- Bracket Matching -->
   <style name="bracket-match"               foreground="white" background="gray"/>

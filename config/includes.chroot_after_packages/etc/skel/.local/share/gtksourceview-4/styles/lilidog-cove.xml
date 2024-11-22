@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Lilidog-drow
+ Lilidog-cove
  by sleekmason <sleekmason@gmail.com> 
 -->
-<style-scheme id="lilidog-drow" _name="lilidog-drow" version="1.0">
+<style-scheme id="lilidog-cove" _name="lilidog-cove" version="1.0">
   <author>GtkSourceView team</author>
   <_description>Lilidog color scheme based off of classic</_description>
 
   <!-- Palette -->
   <color name="white"      value="#FFFFFF"/>
-  <color name="blue"       value="#407BE3"/>
-  <color name="magenta"    value="#FA6EAF"/>
-  <color name="violet"     value="#8C7FEB"/>
-  <color name="cyan"       value="#53C8CC"/>
-  <color name="gray"       value="#ABB8BE"/>
-  <color name="green"      value="#35A16B"/>
-  <color name="bordeaux"   value="#A53D3D"/>
-  <color name="red"        value="#D15252"/>
-  <color name="yellow"     value="#E6E67A"/>
-  <color name="purple"     value="#994AF0"/>
+  <color name="blue"       value="#0000FF"/>
+  <color name="magenta"    value="#FF00FF"/>
+  <color name="violet"     value="#5342BD"/>
+  <color name="cyan"       value="#005C57"/>
+  <color name="gray"       value="#BEBEBE"/>
+  <color name="green"      value="#2E8B57"/>
+  <color name="bordeaux"   value="#A52A2A"/>
+  <color name="red"        value="#FF0000"/>
+  <color name="yellow"     value="#FFFF00"/>
+  <color name="purple"     value="#A020F0"/>
 
   <!-- Global Settings -->
-  <style name="text"                        foreground="#E3E3E3" background="#2D2D2D"/>
-  <style name="selection"                   foreground="#F0F0F0" background="#27598A"/>
-  <style name="current-line"                background="#3D3D3D"/>
-  <style name="current-line-number"         background="#3D3D3D"/>
+  <style name="text"                        foreground="#171512" background="#95BABF"/>
+  <style name="selection"                   foreground="#FFFFFF" background="#C45154"/>
+  <style name="current-line"                background="#A7CCD1"/>
+  <style name="current-line-number"         background="#A7CCD1"/>
   <style name="draw-spaces"                 foreground="#babdb6"/>
-  <style name="background-pattern"          background="#f3f3f3"/>
-  <style name="line-numbers"                foreground="#B8B8B8" background="#262626"/>
+  <style name="line-numbers"                foreground="#171512" background="#89ABB0"/>
   <style name="background-pattern"          background="#7D4A82"/>
   <!-- Bracket Matching -->
   <style name="bracket-match"               foreground="white" background="gray"/>
@@ -40,7 +39,7 @@
   <style name="search-match"                foreground="black" background="yellow"/>
 
   <!-- Comments -->
-  <style name="def:comment"                 foreground="#8CA9B8"/>
+  <style name="def:comment"                 foreground="#455154"/>
   <style name="def:shebang"                 foreground="blue" bold="true"/>
   <style name="def:doc-comment-element"     italic="true"/>
 
@@ -74,7 +73,7 @@
   <!-- Others -->
   <style name="def:preprocessor"            foreground="purple"/>
   <style name="def:error"                   background="red" bold="true"/>
-  <style name="def:warning"                 foreground="#D3E0E6" background="#1D2B33"/>
+  <style name="def:warning"                 foreground="#171512" background="#A7CCD1"/>
   <style name="def:note"                    foreground="blue" background="yellow" bold="true"/>
   <style name="def:net-address"             italic="true" underline="single"/>
 
