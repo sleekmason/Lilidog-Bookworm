@@ -30,7 +30,7 @@ yad --title "Auto Themes" --escape-ok --borders=10 \
 --button=" Auto Icons!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
 --button=" Exit!gtk-delete:0" \
 --center --width=440 --height=424 \
---text="Please close Geany before making selection\nCustomize the highlight color of certain themes through the 'Custom Themes' button\n" \
+--text="Please close Geany before making selection\nCustomize the highlight color of select themes through the 'Custom Themes' button\n" \
 --text-align=center \
 --window-icon=org.xfce.settings.color \
     --form --columns=4 \
