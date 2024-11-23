@@ -5,11 +5,11 @@ if grep -q '^# \?xfconf-query' "$HOME/.config/lilidog-themes/Ozark"; then
 
 # uncomment the icons
 find "$HOME"/.config/lilidog-themes/* -type f -exec sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^# *//g' {} ';'
-notify-send -i "gtk-color-picker" --urgency low 'Themes auto icon changer has been turned ON'
+notify-send -i "applications-graphics" --urgency low 'Auto Themes icon changer has been turned ON'
 else
 # comment the icons
 find "$HOME"/.config/lilidog-themes/* -type f -exec sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^#*/# /g' {} ';'
-notify-send -i "gtk-color-picker" --urgency low 'Themes auto icon changer has been turned OFF'
+notify-send -i "applications-graphics" --urgency low 'Auto Themes icon changer has been turned OFF'
 fi
 }
 
@@ -17,47 +17,48 @@ active_theme(){
 	current_theme=$(xfconf-query -c xsettings -p /Net/ThemeName)
 	current_icon_theme=$(xfconf-query -c xsettings -p /Net/IconThemeName)
 	notify-send -i "org.xfce.settings.color" --urgency low "Active theme  ▸  $current_theme"
-	notify-send -i " " --urgency low "Icon set  ▸  $current_icon_theme"
+	notify-send --urgency low "Icon set  ▸  $current_icon_theme"
 }
 
 export -f "active_theme"
 export -f "ICON_TOGGLE"
 
 yad --title "Auto Themes" --escape-ok --borders=10 \
---buttons-layout=spread \
+--buttons-layout=edge \
 --button=" Active Theme!dialog-information:bash -c active_theme" \
 --button=" Custom Themes!org.xfce.settings.color:bash -c 'popup -f $HOME/.config/lilidog-themes/custom-themes.txt &'" \
 --button=" Auto Icons!gtk-color-picker:bash -c 'ICON_TOGGLE'" \
 --button=" Exit!gtk-delete:0" \
---form --center --width=440 --height=400 \
---text="Please Close Geany Before Making Selection\n" --text-align=center \
+--center --width=440 --height=424 \
+--text="Please close Geany before making selection\nCustomize the highlight color of certain themes through the 'Custom Themes' button\n" \
+--text-align=center \
 --window-icon=org.xfce.settings.color \
     --form --columns=4 \
-    --field="                Adobe!$HOME/.config/lilidog-themes/icons/paw-adobe.png":FBTN "$HOME/.config/lilidog-themes/Adobe" \
-    --field="    Adwaita Dark!$HOME/.config/lilidog-themes/icons/paw-earth.png":FBTN "$HOME/.config/lilidog-themes/Adwaita-Dark" \
-    --field="              Arcadia!$HOME/.config/lilidog-themes/icons/paw-arcadia.png":FBTN "$HOME/.config/lilidog-themes/Arcadia" \
-    --field="               Denim!$HOME/.config/lilidog-themes/icons/paw-denim.png":FBTN "$HOME/.config/lilidog-themes/Denim" \
-    --field="                 Drow!$HOME/.config/lilidog-themes/icons/paw-earth.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Drow" \
-    --field="                  Earth!$HOME/.config/lilidog-themes/icons/paw-earth.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Earth" \
-    --field="                  Fane!$HOME/.config/lilidog-themes/icons/paw-fane.png":FBTN "$HOME/.config/lilidog-themes/Fane" \
-    --field="                 Forge!$HOME/.config/lilidog-themes/icons/paw-forge.png":FBTN "$HOME/.config/lilidog-themes/Forge" \
-    --field="       Forge Dark!$HOME/.config/lilidog-themes/icons/paw-forge-dark.png":FBTN "$HOME/.config/lilidog-themes/Forge-Dark" \
-    --field="                     Ink!$HOME/.config/lilidog-themes/icons/paw-dragon.png":FBTN "$HOME/.config/lilidog-themes/Ink" \
-    --field="        Island Blue!$HOME/.config/lilidog-themes/icons/paw-island-blue.png":FBTN "$HOME/.config/lilidog-themes/Island-blue" \
-    --field="       Nightshade!$HOME/.config/lilidog-themes/icons/paw-nightshade.png":FBTN "$HOME/.config/lilidog-themes/Nightshade" \
-    --field="                 Ozark!$HOME/.config/lilidog-themes/icons/paw-ozark.png":FBTN "$HOME/.config/lilidog-themes/Ozark" \
-    --field="                  Slate!$HOME/.config/lilidog-themes/icons/paw-slate.png":FBTN "$HOME/.config/lilidog-themes/Lilidog-Slate" \
-    --field=" Custom Arcadia!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-arcadia" \
-    --field="     Custom Drow!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-drow" \
-    --field="      Custom Fane!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-fane" \
-    --field="    Custom Forge!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-forge" \
-    --field="         Custom Ink!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-ink" \
-    --field="    Custom Island!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-island" \
-    --field="    Custom Ozark!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-ozark" \
-    --field="            Adwaita!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Adwaita" \
-    --field="      Broadwater!$HOME/.config/lilidog-themes/icons/paw-broadwater.png":FBTN "$HOME/.config/lilidog-themes/Broadwater" \
-    --field="                  Cove!$HOME/.config/lilidog-themes/icons/paw-cove.png":FBTN "$HOME/.config/lilidog-themes/Cove" \
-    --field="                Ghost!$HOME/.config/lilidog-themes/icons/paw-adwaita.png":FBTN "$HOME/.config/lilidog-themes/Ghost" \
-    --field="           Mulberry!$HOME/.config/lilidog-themes/icons/paw-mulberry.png":FBTN "$HOME/.config/lilidog-themes/Mulberry" \
-    --field="    Custom Cove!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-cove" \
-    --field="   Custom ghost!$HOME/.config/lilidog-themes/icons/paw-theme-color.png":FBTN "$HOME/.config/lilidog-themes/Custom-ghost"
+    --field="Adobe":FBTN "$HOME/.config/lilidog-themes/Adobe" \
+    --field="Adwaita Dark":FBTN "$HOME/.config/lilidog-themes/Adwaita-Dark" \
+    --field="Arcadia":FBTN "$HOME/.config/lilidog-themes/Arcadia" \
+    --field="Denim":FBTN "$HOME/.config/lilidog-themes/Denim" \
+    --field="Drow":FBTN "$HOME/.config/lilidog-themes/Lilidog-Drow" \
+    --field="Earth":FBTN "$HOME/.config/lilidog-themes/Lilidog-Earth" \
+    --field="Fane":FBTN "$HOME/.config/lilidog-themes/Fane" \
+    --field="Forge":FBTN "$HOME/.config/lilidog-themes/Forge" \
+    --field="   Forge Dark   ":FBTN "$HOME/.config/lilidog-themes/Forge-Dark" \
+    --field="Ink":FBTN "$HOME/.config/lilidog-themes/Ink" \
+    --field="Island":FBTN "$HOME/.config/lilidog-themes/Island-blue" \
+    --field="Nightshade":FBTN "$HOME/.config/lilidog-themes/Nightshade" \
+    --field="Ozark":FBTN "$HOME/.config/lilidog-themes/Ozark" \
+    --field="Slate":FBTN "$HOME/.config/lilidog-themes/Lilidog-Slate" \
+    --field="Custom Arcadia":FBTN "$HOME/.config/lilidog-themes/Custom-arcadia" \
+    --field="Custom Drow":FBTN "$HOME/.config/lilidog-themes/Custom-drow" \
+    --field="Custom Fane":FBTN "$HOME/.config/lilidog-themes/Custom-fane" \
+    --field="Custom Forge":FBTN "$HOME/.config/lilidog-themes/Custom-forge" \
+    --field="Custom Ink":FBTN "$HOME/.config/lilidog-themes/Custom-ink" \
+    --field="Custom Island":FBTN "$HOME/.config/lilidog-themes/Custom-island" \
+    --field="Custom Ozark":FBTN "$HOME/.config/lilidog-themes/Custom-ozark" \
+    --field="Adwaita":FBTN "$HOME/.config/lilidog-themes/Adwaita" \
+    --field="Broadwater":FBTN "$HOME/.config/lilidog-themes/Broadwater" \
+    --field="Cove":FBTN "$HOME/.config/lilidog-themes/Cove" \
+    --field="Ghost":FBTN "$HOME/.config/lilidog-themes/Ghost" \
+    --field="Mulberry":FBTN "$HOME/.config/lilidog-themes/Mulberry" \
+    --field="Custom Cove":FBTN "$HOME/.config/lilidog-themes/Custom-cove" \
+    --field="Custom ghost":FBTN "$HOME/.config/lilidog-themes/Custom-ghost"
