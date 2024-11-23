@@ -37,7 +37,7 @@
   <style name="right-margin"                foreground="#000000" background="#000000"/>
 
   <!-- Search Matching -->
-  <style name="search-match"                foreground="black" background="yellow"/>
+  <style name="search-match"                foreground="#000000" background="yellow"/>
 
   <!-- Comments -->
   <style name="def:comment"                 foreground="#8CA9B8"/>
