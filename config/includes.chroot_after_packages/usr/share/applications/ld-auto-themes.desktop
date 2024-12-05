@@ -4,5 +4,5 @@ Name=Auto Themes
 Exec=ld-themes
 StartupNotify=false
 Terminal=false
-Icon=org.xfce.settings.color
+Icon=applications-graphics
 Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;

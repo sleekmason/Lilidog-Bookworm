@@ -4,5 +4,5 @@ Name=Wallpaper Maker
 Exec=wallpaper-maker
 StartupNotify=false
 Terminal=false
-Icon=applications-other
+Icon=applications-graphics
 Categories=ld-misc-tools;

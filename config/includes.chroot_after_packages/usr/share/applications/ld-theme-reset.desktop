@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Reset Theming
+Name=Theming Reset
 Exec=x-terminal-emulator -T 'Reset theming to system defaults' -e bash -c "set-default-theme; bash"
 StartupNotify=false
 Terminal=false
