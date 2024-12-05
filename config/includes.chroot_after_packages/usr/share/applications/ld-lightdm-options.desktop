@@ -5,4 +5,4 @@ Exec=lightdm-options
 StartupNotify=false
 Terminal=false
 Icon=user_icon
-Categories=ld-misc-tools;
+Categories=GNOME;GTK;Settings;System;Utility;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;

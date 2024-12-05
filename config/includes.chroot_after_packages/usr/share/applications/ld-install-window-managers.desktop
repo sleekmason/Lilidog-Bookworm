@@ -5,4 +5,4 @@ Exec=/usr/local/bin/window-manager-installers
 StartupNotify=false
 Terminal=false
 Icon=applications-other
-Categories=System;
+Categories=ld-misc-tools;

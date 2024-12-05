@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Theming Options
-Exec=ld-theme-changer
+Name=Plymouth Themes
+Exec=x-terminal-emulator -T 'Plymouth Theme Changer' -e bash -c "plymouth-changer; bash"
 StartupNotify=false
 Terminal=false
 Icon=applications-graphics

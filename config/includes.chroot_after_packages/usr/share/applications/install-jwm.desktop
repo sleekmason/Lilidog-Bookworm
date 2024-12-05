@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=JWM Installer
-Exec=/usr/local/bin/jwm-installer
-StartupNotify=false
-Terminal=true
-Icon=applications-system
-Categories=ld-misc-tools;

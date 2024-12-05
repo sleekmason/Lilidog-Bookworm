@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Transparency
-Exec=transparency-system
+Name=Wallpaper Maker
+Exec=wallpaper-maker
 StartupNotify=false
 Terminal=false
-Icon=dialog-information
+Icon=applications-other
 Categories=ld-misc-tools;

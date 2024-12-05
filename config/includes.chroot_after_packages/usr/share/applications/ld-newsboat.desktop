@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Newsboat RSS Reader
+Exec=x-terminal-emulator -e newsboat
+StartupNotify=false
+Terminal=false
+Icon=accessories-text-editor
+Categories=Network;WebBrowser;Utility;

@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=SOWM With Borders Installer
-Exec=/usr/local/bin/sowm-borders-installer
-StartupNotify=false
-Terminal=true
-Icon=applications-system
-Categories=ld-misc-tools;

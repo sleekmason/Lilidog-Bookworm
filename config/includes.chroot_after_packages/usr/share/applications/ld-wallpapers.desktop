@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Wallpapers
-Exec=feh-set-wallpaper
-StartupNotify=false
-Terminal=false
-Icon=preferences-desktop-wallpaper
-Categories=ld-misc-tools;

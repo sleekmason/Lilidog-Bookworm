@@ -5,4 +5,4 @@ Exec=update-options
 StartupNotify=false
 Terminal=false
 Icon=applications-system
-Categories=System;
+Categories=GNOME;GTK;Settings;System;Utility;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Live USB Maker
+Exec=x-terminal-emulator -T 'Fastfetch' -e bash -c "sudo live-usb-maker-gui-antix; bash"
+StartupNotify=false
+Terminal=false
+Icon=gparted
+Categories=System;

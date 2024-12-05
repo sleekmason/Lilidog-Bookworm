@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Theme Chooser
+Name=Auto Themes
 Exec=ld-themes
 StartupNotify=false
 Terminal=false
 Icon=applications-graphics
-Categories=ld-misc-tools;
+Categories=ld-theme-tools;
