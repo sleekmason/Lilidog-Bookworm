@@ -351,7 +351,7 @@ entry {
 .linked.vertical > spinbutton:not(:disabled):not(.vertical) + spinbutton:not(:disabled):not(.vertical), .linked.vertical >
 entry:not(:disabled) + entry:not(:disabled),
 .linked.vertical > entry:not(:disabled) + spinbutton:not(:disabled):not(.vertical) {
-  border-top-color: #A2C1D3;
+  border-top-color: #1B2A30;
   background-color: #121C1F; }
   .linked.vertical > spinbutton:not(:disabled):not(.vertical) + entry:not(:disabled):backdrop,
   .linked.vertical > spinbutton:not(:disabled):not(.vertical) + spinbutton:not(:disabled):backdrop:not(.vertical), .linked.vertical >
@@ -364,7 +364,7 @@ entry:not(:disabled) + entry:not(:disabled),
 .linked.vertical > spinbutton:disabled:not(.vertical) + entry:disabled, .linked.vertical > entry:disabled + spinbutton:disabled:not(.vertical),
 .linked.vertical >
 entry:disabled + entry:disabled {
-  border-top-color: #A2C1D3; }
+  border-top-color: #1B2A30; }
 
 .linked.vertical > spinbutton:not(.vertical) + spinbutton:focus:not(:only-child):not(.vertical),
 .linked.vertical > spinbutton:not(.vertical) + entry:focus:not(:only-child), .linked.vertical > entry + spinbutton:focus:not(:only-child):not(.vertical),
@@ -558,7 +558,7 @@ button {
     button:disabled:active,
     button:disabled:checked {
       border-color: #253C45;
-      background-image: linear-gradient(to bottom, #A2C1D3, #1A4154);
+      background-image: linear-gradient(to bottom, #1B2A30, #1A4154);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
       notebook > header > tabs > arrow:disabled:active label, button.titlebutton:disabled:active label, notebook > header > tabs > arrow:disabled:active, button.titlebutton:disabled:active, notebook > header > tabs > arrow:disabled:checked label, button.titlebutton:disabled:checked label, notebook > header > tabs > arrow:disabled:checked, button.titlebutton:disabled:checked,
       button:disabled:active label,
@@ -1236,7 +1236,7 @@ button {
       color: #69A6AD; }
     .inline-toolbar toolbutton > button:disabled:active, .inline-toolbar toolbutton > button:disabled:checked {
       border-color: #253C45;
-      background-image: linear-gradient(to bottom, #A2C1D3, #1A4154);
+      background-image: linear-gradient(to bottom, #1B2A30, #1A4154);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0); }
       .inline-toolbar toolbutton > button:disabled:active label, .inline-toolbar toolbutton > button:disabled:active, .inline-toolbar toolbutton > button:disabled:checked label, .inline-toolbar toolbutton > button:disabled:checked {
         color: #69A6AD; }
@@ -1472,7 +1472,7 @@ spinbutton:not(.vertical) {
       background-color: rgba(0, 0, 0, 0.1);
       box-shadow: inset 0 2px 3px -1px rgba(0, 0, 0, 0.2); }
     spinbutton:not(.vertical) button:backdrop {
-      color: #919191;
+      color: #708B99;
       background-color: transparent;
       border-color: rgba(137, 137, 137, 0.3);
       transition: 200ms ease-out; }
@@ -2114,7 +2114,7 @@ treeview.view {
     treeview.view.expander:backdrop {
       color: #17434D; }
   treeview.view.progressbar {
-    color: #121C1F;
+    color: #ABD5DB;
     border: 1px solid #2E5467;
     border-radius: 4px;
     background-color: #134954;
@@ -2166,7 +2166,7 @@ treeview.view {
     transition: none;
     background-image: none;
     background-color: #134954;
-    color: #121C1F;
+    color: #ABD5DB;
     border-radius: 0;
     border-style: none;
     box-shadow: inset 0 0 0 1px #121C1F;
@@ -4448,7 +4448,7 @@ button.circular {
   border: 1px solid;
   border-color: #1B2A30;
   border-radius: 5px;
-  box-shadow: inset 0 -3px #A2C1D3;
+  box-shadow: inset 0 -3px #1B2A30;
   font-size: smaller; }
   .keycap:backdrop {
     background-color: #0E171A;
@@ -4556,7 +4556,7 @@ read if you used those and something break with a version upgrade you're on your
 
 .xfce4-panel.background {
   background-color: #10191C;
-  color: #121C1F;
+  color: #ABD5DB;
   font-weight: normal; }
   .xfce4-panel.background button {
     background-image: none;
@@ -4565,18 +4565,18 @@ read if you used those and something break with a version upgrade you're on your
     border-color: transparent;
     box-shadow: none;
     padding: 0 1px;
-    color: #121C1F;
+    color: #ABD5DB;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.1); }
     .xfce4-panel.background button:active, .xfce4-panel.background button:checked {
       background-image: none;
       background-color: shade(#365361, 0.7);
       border-color: shade(#365361, 0.6);
-      color: #121C1F;
+      color: #ABD5DB;
       transition: none; }
     .xfce4-panel.background button:hover, .xfce4-panel.background button:active:hover, .xfce4-panel.background button:checked:hover {
       border-color: shade(#134954, 0.6);
       background-image: linear-gradient(to bottom, shade(#134954, 0.88), shade(#134954, 0.85));
-      color: #121C1F;
+      color: #ABD5DB;
       box-shadow: inset 0 -1px alpha(#AAE3DF,0), inset 1px 0 alpha(#AAE3DF,0.15), inset -1px 0 alpha(#AAE3DF,0.15), inset 0 1px alpha(#AAE3DF,0.15);
       transition: none; }
   .xfce4-panel.background entry {
@@ -4585,7 +4585,7 @@ read if you used those and something break with a version upgrade you're on your
     -gtk-icon-effect: none;
     text-shadow: none; }
     .xfce4-panel.background menu .linked button {
-      color: #9FDAE0;
+      color: #CCF4FA;
       outline-color: rgba(33, 33, 33, 0.3);
       border-top-color: shade(#18252B, 0.8);
       border-right-color: shade(#18252B, 0.72);
@@ -4622,8 +4622,8 @@ read if you used those and something break with a version upgrade you're on your
       border-color: shade(#365361, 0.4); }
   .xfce4-panel.background .tasklist button {
     border-radius: 3px;
-    text-shadow: 0 1px #9FD8E0;
-    color: shade(#121C1F, 0.7);
+    text-shadow: 0 1px #131E21;
+    color: shade(#ABD5DB, 0.88);
     background-image: linear-gradient(to bottom, shade(#365361, 0.65), shade(#365361, 0.6), shade(#365361, 0.5), shade(#365361, 0.45));
     border: none; }
     .xfce4-panel.background .tasklist button.flat {
@@ -4631,12 +4631,12 @@ read if you used those and something break with a version upgrade you're on your
       border: none;
       box-shadow: none; }
     .xfce4-panel.background .tasklist button:active, .xfce4-panel.background .tasklist button:checked {
-      background-image: linear-gradient(to bottom, shade(#134954, 0.65), shade(#134954, 0.6), shade(#134954, 0.5), shade(#134954, 0.45));
-      color: shade(#121C1F, 1);
+      background-image: linear-gradient(to bottom, shade(#134954, 0.98), shade(#134954, 1.0), shade(#134954, 0.96), shade(#134954, 0.85));
+      color: shade(#C0E5EB, 1);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.2); }
     .xfce4-panel.background .tasklist button:hover, .xfce4-panel.background .tasklist button:active:hover, .xfce4-panel.background .tasklist button:checked:hover {
-      background-image: linear-gradient(to bottom, shade(#134954, 0.85), shade(#134954, 0.8), shade(#134954, 0.7), shade(#134954, 0.65));
-      color: shade(#121C1F, 1);
+      background-image: linear-gradient(to bottom, shade(#134954, 1.1), shade(#134954, 1.06), shade(#134954, 1.0), shade(#134954, 0.96));
+      color: shade(#CCF4FA, 1);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.2); }
     .xfce4-panel.background .tasklist button image {
       padding: 3px; }
@@ -4670,7 +4670,7 @@ wnck-pager:hover {
 
 XfdesktopIconView.view {
   background: transparent;
-  color: #121C1F;
+  color: #ABD5DB;
   border-radius: 3px; }
   XfdesktopIconView.view:active {
     background: rgba(23, 104, 189, 0.5);
@@ -4681,9 +4681,9 @@ XfdesktopIconView.view {
     border-radius: 0; }
 
 #XfceNotifyWindow {
-  background-color: shade(#365361, 0.3);
-  color: #93AEBA;
-  border-color: shade(#365361, 0.6); }
+  background-color: shade(#152126, 1.0);
+  color: #AFDBE0;
+  border-color: shade(#152126, 0.6); }
   #XfceNotifyWindow buttonbox {
     padding: 0; }
   #XfceNotifyWindow button {
@@ -4698,11 +4698,11 @@ XfdesktopIconView.view {
     border-radius: 3px; }
     #XfceNotifyWindow progressbar progress {
       background-image: none;
-      background-color: #121C1F;
+      background-color: #365361;
       border: none;
       box-shadow: none; }
     #XfceNotifyWindow progressbar trough {
-      background-image: linear-gradient(to bottom, shade(#365361, 0.65), shade(#365361, 1.25));
+      background-image: linear-gradient(to bottom, shade(#121C1F, 1.25), shade(#121C1F, 0.85));
       border: 1px solid shade(#365361, 0.2);
       border-radius: 3px;
       padding: 1px 0; }
@@ -4936,7 +4936,7 @@ UnityPanelWidget,
   .unity-panel.menuitem,
   .unity-panel .menuitem {
     border-width: 0 1px;
-    color: #121C1F; }
+    color: #ABD5DB; }
     UnityPanelWidget.menuitem:hover, UnityPanelWidget.menuitem *:hover, UnityPanelWidget .menuitem:hover, UnityPanelWidget .menuitem *:hover,
     .unity-panel.menuitem:hover,
     .unity-panel.menuitem *:hover,
@@ -4944,7 +4944,7 @@ UnityPanelWidget,
     .unity-panel .menuitem *:hover {
       border-color: shade(#365361, 0.8);
       background-color: shade(#365361, 0.75);
-      color: #121C1F; }
+      color: #ABD5DB; }
 
 @keyframes playbackmenuitem_spinner {
   to {

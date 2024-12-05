@@ -4555,7 +4555,7 @@ read if you used those and something break with a version upgrade you're on your
   text-shadow: 0px 1px rgba(0, 0, 0, 0.1); }
 
 .xfce4-panel.background {
-  background-color: rgba(36, 36, 36, 0.8);
+  background-color: #333D4D;
   color: #FEF9FC;
   font-weight: normal; }
   .xfce4-panel.background button {
@@ -4623,20 +4623,20 @@ read if you used those and something break with a version upgrade you're on your
   .xfce4-panel.background .tasklist button {
     border-radius: 3px;
     text-shadow: 0 1px #0D0D0C;
-    color: shade(#FEF9FC, 0.7);
-    background-image: linear-gradient(to bottom, shade(#686868, 0.65), shade(#686868, 0.6), shade(#686868, 0.5), shade(#686868, 0.45));
+    color: shade(#FEF9FC, 0.8);
+    background-image: linear-gradient(to bottom, shade(#3A485E, 0.65), shade(#3A485E, 0.6), shade(#3A485E, 0.5), shade(#3A485E, 0.45));
     border: none; }
     .xfce4-panel.background .tasklist button.flat {
       background-image: none;
       border: none;
       box-shadow: none; }
     .xfce4-panel.background .tasklist button:active, .xfce4-panel.background .tasklist button:checked {
-      background-image: linear-gradient(to bottom, shade(#F0B6DC, 0.65), shade(#F0B6DC, 0.6), shade(#F0B6DC, 0.5), shade(#F0B6DC, 0.45));
+      background-image: linear-gradient(to bottom, shade(#F0B6DC, 0.75), shade(#F0B6DC, 0.7), shade(#F0B6DC, 0.68), shade(#F0B6DC, 0.65));
       color: shade(#FEF9FC, 1);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.2); }
     .xfce4-panel.background .tasklist button:hover, .xfce4-panel.background .tasklist button:active:hover, .xfce4-panel.background .tasklist button:checked:hover {
       background-image: linear-gradient(to bottom, shade(#F0B6DC, 0.85), shade(#F0B6DC, 0.8), shade(#F0B6DC, 0.7), shade(#F0B6DC, 0.65));
-      color: shade(#FEF9FC, 1);
+      color: shade(#FEFEFE, 1);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.2); }
     .xfce4-panel.background .tasklist button image {
       padding: 3px; }
@@ -4681,9 +4681,9 @@ XfdesktopIconView.view {
     border-radius: 0; }
 
 #XfceNotifyWindow {
-  background-color: shade(#686868, 0.3);
-  color: #FEF9FC;
-  border-color: shade(#686868, 0.6); }
+  background-color: shade(#FEFBFD, 1.0);
+  color: #1C1E1F;
+  border-color: shade(#FEFBFD, 0.6); }
   #XfceNotifyWindow buttonbox {
     padding: 0; }
   #XfceNotifyWindow button {
