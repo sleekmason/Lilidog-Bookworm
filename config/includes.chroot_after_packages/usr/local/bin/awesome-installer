@@ -53,13 +53,6 @@ sudo apt update && sudo apt install --install-recommends -y awesome awesome-extr
 ## Copy awesome from /tmp
 cp -r "/tmp/awesome" "$HOME/.config"
 
-## Copy .picom file from ~/.config/awesome and copy to ~.config
-if test -e "/usr/share/xfwm/default"; then
-mv -ubf "$HOME/.config/awesome/picom.conf" "$HOME/.config"
-else
-rm "$HOME/.config/awesome/picom.conf"
-fi
-
 ## Copy .xsessionrc info to ~/.xsessionrc
 if ! grep -Fxq 'export WM="$session"' "$HOME/.xsessionrc"; then
 {
