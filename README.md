@@ -12,7 +12,9 @@ Forum Link: https://www.forum.lilidog.org/ <br/>
 
 #### Available Versions:
 
-There are four general builds: full, minimal, minimal-i386, and beardog.  
+### Available Versions:
+
+There are currently 5 general builds: full, minimal, minimal-i386, Beardog, and xfce4.  
 
 - Full - (Approx. 1300 packages), comes with everything necessary to get started without needing initial extra downloads. I would advise most folks to use the full version if looking for an 'out of the box' computing solution with everything you need.
 
@@ -22,7 +24,9 @@ There are four general builds: full, minimal, minimal-i386, and beardog.
 
 - Beardog - (Approx. 920 packages), is the 'bare' version of lilidog, allowing users to choose most of what they want. A general knowledge of linux is recommended.
 
-#### NOTE - The DOWNLOAD button defaults to the full version. Click on FILES, and then RELEASES to access the other builds.
+- xfce4 - A new default xfce4 build with all the goodness of Lilidog.  A fine choice for those new to Lilidog.
+
+#### NOTE - The DOWNLOAD button defaults to the full Openbox version. Click on FILES, and then RELEASES to access the other builds.
 
 <a href="https://sourceforge.net/projects/lilidog/files/latest/download"><img alt="Download Lilidog" src="https://a.fsdn.com/con/app/sf-download-button" width=276 height=48 srcset="https://a.fsdn.com/con/app/sf-download-button?button_size=2x 2x"></a>
 
