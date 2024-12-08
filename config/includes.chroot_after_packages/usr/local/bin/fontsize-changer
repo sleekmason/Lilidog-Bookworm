@@ -120,7 +120,7 @@ export -f SIZE-15
 yad --title "System Font Sizes" --escape-ok \
     --window-icon=applications-system \
     --text "Font types reset to system defaults.\nPlease close Geany before selection.\n" \
-    --text-align=center --fixed --buttons-layout=spread \
+    --text-align=center --buttons-layout=spread \
     --form --center --geometry=370x180+314-80 --borders=8 \
     --form --columns=3 \
     --field="Size 8:FBTN" 'bash -c "SIZE-8 >/dev/null 2>&1 &"' \
