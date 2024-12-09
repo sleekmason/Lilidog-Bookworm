@@ -39,6 +39,8 @@ window.active.label.bg: parentrelative
 window.active.label.text.color: #CFDEE0
 window.inactive.label.bg: parentrelative
 window.inactive.label.text.color: #8AA6A6
+window.active.label.text.font: shadow=y:shadowtint=30:shadowoffset=1
+window.inactive.label.text.font: shadow=y:shadowtint=10:shadowoffset=1
 
 !! Window buttons
 window.*.button.*.bg: parentrelative
