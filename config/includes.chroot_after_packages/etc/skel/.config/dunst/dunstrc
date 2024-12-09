@@ -168,15 +168,15 @@ context = ctrl+shift+period
 
 [urgency_low]
 timeout = 6
-background = "#292F36"
+background = "#1E2B33"
 foreground = "#17EB85"
 frame_color = "#141517"
 ### Icon for notifications with low urgency, uncomment to enable
 # default_icon = /path/to/icon
 
 [urgency_normal]
-background = "#292F36"
-foreground = "#EBEBE6"
+background = "#1E2B33"
+foreground = "#DFE7EB"
 frame_color = "#141517"
 ### Icon for notifications with low urgency, uncomment to enable
 # default_icon = /path/to/icon
