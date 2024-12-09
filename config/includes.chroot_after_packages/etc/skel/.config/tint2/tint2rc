@@ -81,7 +81,7 @@ panel_background_id = 1
 wm_menu = 1
 panel_dock = 0
 panel_pivot_struts = 0
-panel_position = bottom center horizontal
+panel_position = top center horizontal
 panel_layer = bottom
 panel_monitor = all
 panel_shrink = 0
@@ -127,9 +127,9 @@ task_text = 1
 task_icon = 1
 task_centered = 1
 urgent_nb_of_blink = 100000
-task_maximum_size = 150 22
+task_maximum_size = 150 20
 task_padding = 2 2 6
-task_font = Noto Sans Display 12
+task_font = Noto Sans Display 11.5
 task_tooltip = 1
 task_thumbnail = 0
 task_thumbnail_size = 210
@@ -148,7 +148,7 @@ mouse_scroll_down = iconify
 systray_padding = 0 0 2
 systray_background_id = 0
 systray_sort = ascending
-systray_icon_size = 22
+systray_icon_size = 22 100
 systray_icon_asb = 100 0 0
 systray_monitor = 1
 systray_name_filter = 
@@ -158,7 +158,7 @@ systray_name_filter =
 launcher_padding = 4 4 4
 launcher_background_id = 0
 launcher_icon_background_id = 0
-launcher_icon_size = 21
+launcher_icon_size = 16 100
 launcher_icon_asb = 100 0 0
 launcher_icon_theme_override = 0
 startup_notifications = 1
@@ -168,7 +168,7 @@ launcher_tooltip = 1
 # Clock
 time1_format = %d %b %H:%M
 time2_format = 
-time1_font = Noto Sans 13
+time1_font = Noto Sans 12
 time1_timezone = 
 time2_timezone = 
 clock_font_color = #E3E3E3 100
@@ -188,7 +188,7 @@ battery_tooltip = 0
 battery_low_status = 0
 battery_low_cmd = 
 battery_full_cmd = 
-bat1_font = Noto Sans 13
+bat1_font = Noto Sans 12
 bat2_font = Sans 8
 battery_font_color = #E3E3E3 100
 bat1_format = %p
@@ -219,7 +219,7 @@ button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 2
@@ -236,7 +236,7 @@ button_font_color = #000000 100
 button_padding = 2 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 3
@@ -253,7 +253,7 @@ button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 4
@@ -270,7 +270,7 @@ button_font_color = #000000 100
 button_padding = 2 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 5
@@ -287,7 +287,7 @@ button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 6
@@ -304,7 +304,7 @@ button_font_color = #000000 100
 button_padding = 3 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 7
@@ -321,7 +321,7 @@ button_font_color = #000000 100
 button_padding = 2 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 8
@@ -338,7 +338,7 @@ button_font_color = #000000 100
 button_padding = 1 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Button 9
@@ -355,7 +355,7 @@ button_font_color = #000000 100
 button_padding = 2 0
 button_background_id = 0
 button_centered = 1
-button_max_icon_size = 18
+button_max_icon_size = 17 100
 
 #-------------------------------------
 # Tooltip

@@ -382,7 +382,7 @@ export -f 32
 FILE="$HOME/.config/tint2/tint2rc"
 yad --title "Icon Size" --escape-ok --borders=14 \
 --form --geometry=240x330-532-353 --buttons-layout=edge \
---text="Default Size = 20\n" --text-align=center \
+--text="Default Size = 18\n" --text-align=center \
 --window-icon=applications-other \
     --form --columns=2 \
     --field=" 14":FBTN "bash -c 14 >/dev/null 2>&1 &" \
