@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Clipboard On/Off
+Exec=toggle.parcellite
+StartupNotify=false
+Terminal=false
+Icon=parcellite
+Categories=XFCE;monitor;Settings;DesktopSettings;Utility;
