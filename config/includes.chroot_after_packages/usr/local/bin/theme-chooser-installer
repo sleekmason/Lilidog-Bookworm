@@ -1,8 +1,8 @@
 #!/bin/bash
 echo ""
-read -p "   [0;33mTheme Chooser Installer.[0m
+read -p "   [0;33mAuto Themes Installer.[0m
 
-   This script will download and install the Lilidog Theme Chooser
+   This script will download and install the Lilidog theme chooser
    with all the Lilidog themes for Geany, openbox, xfce4-terminal
    and GTK.
    
@@ -78,7 +78,7 @@ echo ""
 echo "   [0;33m----------------------------------------------------------------------"
 echo ""
 echo "   All Finished!
-   Look for the 'Themes' in the menu toggles section to change themes."
+   Look for 'Themes' in the Toggles menu, or under 'Other' in the debian menu."
 echo "" 
 echo "   ----------------------------------------------------------------------[0m"
 else
