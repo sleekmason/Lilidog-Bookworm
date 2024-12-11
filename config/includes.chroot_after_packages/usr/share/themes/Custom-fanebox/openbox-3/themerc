@@ -28,7 +28,7 @@ menu.items.active.text.color: #EBF5FA
 !! Titlebar
 window.active.title.bg: raised vertical gradient
 window.active.title.bg.color: #2A434F
-window.active.title.bg.colorTo: #2E4754
+window.active.title.bg.colorTo: #2D4552
 window.inactive.title.bg: flat vertical gradient
 window.inactive.title.bg.color: #1D2A33
 window.inactive.title.bg.colorTo: #1D2A33
@@ -36,9 +36,9 @@ window.inactive.title.bg.colorTo: #1D2A33
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
-window.active.label.text.color: #D0DBE0
+window.active.label.text.color: #D3DEE3
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #95A5AD
+window.inactive.label.text.color: #94A6B0
 window.active.label.text.font: shadow=y:shadowtint=30:shadowoffset=1
 window.inactive.label.text.font: shadow=y:shadowtint=10:shadowoffset=1
 
@@ -62,9 +62,9 @@ window.inactive.button.*.pressed.bg.colorTo: #ffaa64
 window.inactive.button.*.pressed.image.color: #fdceb7
 window.inactive.button.*.pressed.bg.border.color: #545757
 
-window.active.button.*.image.color: #D0DBE0
+window.active.button.*.image.color: #CBD6DB
 window.active.button.disabled.image.color: #445761
-window.inactive.button.*.image.color: #95A5AD
+window.inactive.button.*.image.color: #90A1AB
 window.inactive.button.disabled.image.color: #445761
 
 !! Borders
@@ -83,7 +83,7 @@ menu.overlap: 0
 
 !! Handles
 window.active.handle.bg: raised
-window.active.handle.bg.color: #334E5C
+window.active.handle.bg.color: #364F5C
 window.active.grip.bg: parentrelative
 window.inactive.handle.bg: raised
 window.inactive.handle.bg.color: #1A262E
