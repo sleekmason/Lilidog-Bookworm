@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Auto Themes
-Exec=ld-themes
+Name=Lilidog Theme Options
+Exec=ld-theme-changer
 StartupNotify=false
 Terminal=false
 Icon=applications-graphics
