@@ -55,6 +55,8 @@ sed -i '/bash\/zsh.*/d' ~/.config/jgmenu/prepend.csv &&
 sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
 killall jgmenu
 fi
+# Copy zsh-toggle .desktop file to /usr/share/applications
+sudo cp -f "/usr/share/lilidog/extras/zsh/ld-zsh-toggle.desktop" "/usr/share/applications"
 echo ""
 echo "[0;32m----------------------------------------------------------------------"
 echo ""

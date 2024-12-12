@@ -194,6 +194,8 @@ else
 cp /usr/share/lilidog/extras/zsh/.zshrc "$HOME"/.zshrc
 #sudo chsh -s /bin/zsh "$USER"
 fi
+# Copy zsh-toggle .desktop file to /usr/share/applications
+sudo cp -f "/usr/share/lilidog/extras/zsh/ld-zsh-toggle.desktop" "/usr/share/applications"
 ## Place menu entries
 sed -i '/Pcmanfm,            pcmanfm,                           system-file-manager/d' "$FILE"
 sed -i '/Root Folders,^checkout(rootfiles),folder/a Pcmanfm,            pcmanfm,                           system-file-manager' "$FILE"
