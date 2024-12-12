@@ -8,9 +8,9 @@
     bg1:    #1D2B33;
     bg2:    #1D2B3378;
     bg3:    #005E66;
-    fg0:    #BDE0E6;
+    fg0:    #D2DCE0;
     fg1:    #FFFFFF;
-    fg2:    #BDDEE6;
+    fg2:    #D5DBDE;
     fg3:    #7A9499;
 }
 
