@@ -4712,8 +4712,8 @@ XfdesktopIconView.view {
 #xfwm-tabwin {
   padding: 12px;
   background-image: none;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: shade(#FAFAF0, 0.65);
+  background-color: #3E434A;
+  color: shade(#D4D4D4, 1.0);
   text-shadow: 0px 1px rgba(0, 0, 0, 0.8);
   border-radius: 12px;
   /* Set the application icon- and preview-size to 64px */
@@ -4728,9 +4728,9 @@ XfdesktopIconView.view {
     border-radius: 6px;
     box-shadow: none; }
     #xfwm-tabwin button:active, #xfwm-tabwin button:checked, #xfwm-tabwin button:active:hover, #xfwm-tabwin button:checked:hover {
-      background: rgba(206, 206, 206, 0.3); }
+      background: #33637A; }
     #xfwm-tabwin button:hover {
-      background: #22558b;
+      background: shade(#33637A, 1.15);
       transition-duration: 50ms; }
   #xfwm-tabwin .tabwin-app-grid button {
     min-width: 96px;

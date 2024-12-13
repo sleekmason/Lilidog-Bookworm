@@ -4712,7 +4712,7 @@ XfdesktopIconView.view {
 #xfwm-tabwin {
   padding: 12px;
   background-image: none;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #89ABB0;
   color: shade(#0D0D09, 0.65);
   text-shadow: 0px 1px rgba(0, 0, 0, 0.8);
   border-radius: 12px;
@@ -4728,9 +4728,9 @@ XfdesktopIconView.view {
     border-radius: 6px;
     box-shadow: none; }
     #xfwm-tabwin button:active, #xfwm-tabwin button:checked, #xfwm-tabwin button:active:hover, #xfwm-tabwin button:checked:hover {
-      background: rgba(206, 206, 206, 0.3); }
+      background: #d16f72; }
     #xfwm-tabwin button:hover {
-      background: #22558b;
+      background: shade(#d16f72, 1.15);
       transition-duration: 50ms; }
   #xfwm-tabwin .tabwin-app-grid button {
     min-width: 96px;
