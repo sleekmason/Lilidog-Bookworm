@@ -38,8 +38,8 @@ echo ""
 echo ""
 sudo apt update && sudo apt install zsh &&
 sudo chsh -s /bin/zsh $USER &&
-sed -i '/bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
+sed -i '/bash\/zsh,            zsh-toggle,                                    org.xfce.settings.manager/d' ~/.config/jgmenu/prepend.csv &&
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    org.xfce.settings.manager' ~/.config/jgmenu/prepend.csv
 killall -q jgmenu
 else
 cp /usr/share/lilidog/extras/zsh/.zshrc $HOME/.zshrc &
@@ -52,7 +52,7 @@ echo ""
 echo ""
 sudo chsh -s /bin/zsh $USER &&
 sed -i '/bash\/zsh.*/d' ~/.config/jgmenu/prepend.csv &&
-sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    preferences-desktop-personal' ~/.config/jgmenu/prepend.csv
+sed -i '/OSprober.*/a bash\/zsh,            zsh-toggle,                                    org.xfce.settings.manager' ~/.config/jgmenu/prepend.csv
 killall jgmenu
 fi
 # Copy zsh-toggle .desktop file to /usr/share/applications
