@@ -14,6 +14,10 @@ sudo sed -i "s/font-name.*/font-name = Noto Sans 11/g" /etc/lightdm/lightdm-gtk-
 xfconf-query -c xsettings -p /Net/ThemeName -s "Fane"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Cyan"
 
+## gsettings "gtk-theme" and "icons" for use is scripts like neofetch which won't use xfconf-query.
+gsettings set org.gnome.desktop.interface gtk-theme "Fane"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Cyan"
+
 ## Picom transparency
 if ! pgrep -x picom > /dev/null 2>&1; then
 picom --daemon &

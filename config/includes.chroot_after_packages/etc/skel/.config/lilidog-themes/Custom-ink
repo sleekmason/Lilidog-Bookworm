@@ -11,6 +11,10 @@ xfconf-query -c xsettings -p /Net/ThemeName -s "Custom-ink"
 ## Change icon theme
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Gray"
 
+## gsettings "gtk-theme" and "icons" for use is scripts like neofetch which won't use xfconf-query.
+gsettings set org.gnome.desktop.interface gtk-theme "Custom-ink"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray"
+
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Custom-inkbox"/g" ~/.config/openbox/rc.xml
 xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:name' -v "Custom-inkbox" ~/.config/openbox/rc.xml

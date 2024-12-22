@@ -2,7 +2,8 @@
 # This script is for live session use and can be removed if installed.
 
 # Ensure gsettings for neofetch use.
-gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray"
+gsettings set org.gnome.desktop.interface gtk-theme "Fane"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Cyan"
 # Remove errant mirror line.
 sudo sed -i '/file/d' /etc/apt/sources.list
 # Remove face icons in $HOME
