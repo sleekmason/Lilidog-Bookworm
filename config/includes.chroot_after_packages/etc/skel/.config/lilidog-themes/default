@@ -18,6 +18,9 @@ xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Cyan"
 gsettings set org.gnome.desktop.interface gtk-theme "Fane"
 gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Cyan"
 
+## Reset Auto Themes icon toggle back to "on"
+find "$HOME"/.config/lilidog-themes/* -not -path "$HOME/.config/lilidog-themes/default" -type f -exec sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^# *//g' {} ';'
+
 ## Picom transparency
 if ! pgrep -x picom > /dev/null 2>&1; then
 picom --daemon &
