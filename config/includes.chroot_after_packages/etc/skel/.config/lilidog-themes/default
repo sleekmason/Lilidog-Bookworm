@@ -58,7 +58,7 @@ sed -i "s/editor_font=.*/editor_font=JetBrains Mono 11/g" ~/.config/geany/geany.
 if test -e ~/.config/jgmenu/backup; then
 rm -fr ~/.config/jgmenu/backup
 fi
-jgmenu_run init --apply-obtheme
+jgmenu_run init --apply-obtheme > /dev/null 2>&1
 #jgmenu_run gtktheme
 
 ## jgmenu font
