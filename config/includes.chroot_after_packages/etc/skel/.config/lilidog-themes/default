@@ -5,10 +5,12 @@
 # You can also add anything that can be refreshed, wallpaper, conky, etc . . .
 
 ## Lightdm Greeter settings for theme, wallpaper, position, icons, and font. (Requires Sudo)
+if [[ $(command -v lightdm) ]]; then
 sudo sed -i "s/theme-name.*/theme-name = Fane/g" /etc/lightdm/lightdm-gtk-greeter.conf
 sudo sed -i "s/background.*/background = \/usr\/\share\/\backgrounds\/\wallpapers\/Fane.jpg/g" /etc/lightdm/lightdm-gtk-greeter.conf
 sudo sed -i "s/position.*/position = -4%,end 10%,start/g" /etc/lightdm/lightdm-gtk-greeter.conf
 sudo sed -i "s/font-name.*/font-name = Noto Sans 11/g" /etc/lightdm/lightdm-gtk-greeter.conf
+fi
 
 ## System gtktheme, icon theme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Fane"
@@ -21,17 +23,19 @@ gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Cyan"
 ## Reset Auto Themes icon toggle back to "on"
 find "$HOME"/.config/lilidog-themes/* -not -path "$HOME/.config/lilidog-themes/default" -type f -exec sed -i '/xfconf-query -c xsettings -p \/Net\/IconThemeName/s/^# *//g' {} ';'
 
+## System Fonts
+xfconf-query -c xsettings -p /Gtk/FontName -s "Noto Sans 11"
+xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "Monospace 10"
+
 ## Picom transparency
+if [[ $(command -v picom) ]]; then
 if ! pgrep -x picom > /dev/null 2>&1; then
 picom --daemon &
 fi
 sed -i 's/^active-opacity =.*/active-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^frame-opacity =.*/frame-opacity = 1.0;/g' "$HOME/.config/picom.conf"
 sed -i 's/^inactive-opacity =.*/inactive-opacity = 0.94;/g' "$HOME/.config/picom.conf"
-
-## System Fonts
-xfconf-query -c xsettings -p /Gtk/FontName -s "Noto Sans 11"
-xfconf-query -c xsettings -p /Gtk/MonospaceFontName -s "Monospace 10"
+fi
 
 ## Openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Fanebox"/g" ~/.config/openbox/rc.xml
@@ -40,6 +44,7 @@ xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/
 openbox --reconfigure
 
 ## Rofi theme
+if [[ $(command -v rofi) ]]; then
 sed -i 's/^@theme "rounded.*/@theme "rounded-fane.rasi"/g' "$HOME"/.config/rofi/config.rasi
 sed -i 's/^@theme "familiar.*/@theme "familiar-fane.rasi"/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
 sed -i 's/^font: "Noto Sans.*/font: "Noto Sans 10";/g' "$HOME"/.config/rofi/themes/familiar/familiar.rasi
@@ -49,12 +54,16 @@ sed -i 's/^icon-theme:.*/icon-theme: "Obsidian";/g' "$HOME"/.config/rofi/config.
 sed -i 's/^show-icons:.*/show-icons: true;/g' "$HOME"/.config/rofi/themes/familiar/config.rasi
 sed -i 's/^show-icons:.*/show-icons: true;/g' "$HOME"/.config/rofi/config.rasi
 rm -f ~/.cache/rofi3.druncache
+fi
 
 ## Geany theme
+if [[ $(command -v geany) ]]; then
 sed -i "s/color_scheme=.*/color_scheme=Fane.conf/g" ~/.config/geany/geany.conf
 sed -i "s/editor_font=.*/editor_font=JetBrains Mono 11/g" ~/.config/geany/geany.conf
+fi
 
 ## jgmenu theme
+if [[ $(command -v jgmenu) ]]; then
 if test -e ~/.config/jgmenu/backup; then
 rm -fr ~/.config/jgmenu/backup
 fi
@@ -67,10 +76,13 @@ sed -i "s/font =.*/font = Noto Sans 11/g" ~/.config/jgmenu/jgmenurc
 ## jgmenu Icon Theme
 sed -i 's/^icon_size.*/icon_size = 16/g' ~/.config/jgmenu/jgmenurc
 sed -i 's/^icon_theme =.*/icon_theme = Obsidian/g' ~/.config/jgmenu/jgmenurc
+if test -e ~/.config/jgmenu/prepend.csv; then
 sed -i '/@icon.*/d' ~/.config/jgmenu/prepend.csv
 sed -i '/#@icon.*/d' ~/.config/jgmenu/prepend.csv && sed -i '1a@icon,, 	11,11,16,16,2,,,,,/usr/share/icons/gnome/16x16/actions/system-search.png' ~/.config/jgmenu/prepend.csv
 sed -i '/@search.*/d' ~/.config/jgmenu/prepend.csv && sed -i '2a@search,,	35,6,125,26,2,left,top,auto,	#eeeeee 80,Type To Search' ~/.config/jgmenu/prepend.csv
-     
+fi
+fi
+
 ## xfce4-terminal theme
 xfce4-term-colors fane
 sed -i "s/FontName=.*/FontName=JetBrains Mono 11/g" ~/.config/xfce4/terminal/terminalrc
@@ -116,17 +128,21 @@ killall -SIGUSR1 tint2
 feh --bg-scale '/usr/share/backgrounds/wallpapers/Fane.jpg'
 
 ## Sounds - Dunst
+if [[ $(command -v dunst) ]]; then
 sed -i '/summary/d' ~/.config/dunst/dunstrc
 sed -i '/sounds/d' ~/.config/dunst/dunstrc
 killall -q dunst
+fi
 
 ### Conky
 ## default text color
-killall conky
+if [[ $(command -v conky) ]]; then
+killall -q conky
 OLD_COLOR=$(sed '/default_color/!d' "$HOME/.config/conky/scripts/defaults.txt" | cut -d'#' -f2 | sed 's/..$//')
 sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME"/.config/conky/*.conf >/dev/null 2>&1 &
 sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME/.config/conky/scripts/defaults.txt" >/dev/null 2>&1 &
-## transparency 
+## transparency
+if test -f "$HOME/.config/conky/lua"; then
     sed -i "s/bg_alpha=.*/bg_alpha=0.0/g" ~/.config/conky/lua/shortcuts.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.0/g" ~/.config/conky/lua/shortcuts2.lua
     sed -i "s/bg_alpha=.*/bg_alpha=0.0/g" ~/.config/conky/lua/tao.lua
@@ -150,12 +166,12 @@ sed -i -e "s/${OLD_COLOR}/c4c4c4/g" "$HOME/.config/conky/scripts/defaults.txt" >
     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/vertclock.lua
     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/world.lua
     sed -i "s/bg_colour=.*/bg_colour=0x000000/g" ~/.config/conky/lua/build.lua
+    fi
 killall -q conky
 if test -f "$HOME"/.config/conky/conky-shortcuts.conf; then
 set -m; conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &> /dev/null
 fi
-
-#(setsid conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &)
+fi
 
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.

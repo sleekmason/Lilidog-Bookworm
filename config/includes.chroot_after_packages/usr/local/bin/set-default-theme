@@ -1,6 +1,6 @@
 #!/bin/bash
 echo ""
-read -p "   Full Theme Reset
+read -p "   Theme Reset
 
    Resets most theming elements to installation default.
 
@@ -15,13 +15,10 @@ read -p "   Full Theme Reset
    Press enter to reset the theme to installation default.
    
    -------------------------------------------------------[0m
-
-      
+     
    Or close this terminal window to quit." ;
 echo ""
 ~/.config/lilidog-themes/default
-echo ""
-echo ""
 echo ""
 echo "[0;36m   -------------------------------------------------------
 

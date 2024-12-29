@@ -1,19 +1,23 @@
 #!/bin/bash
-echo ""
 read -p "   [0;33mAuto Themes Installer.[0m
 
-   This script will download and install the Lilidog theme chooser
-   with all the Lilidog themes for Geany, openbox, xfce4-terminal
-   and GTK.
+   This script will download and install all files necessary to
+   use the Lilidog Auto Themes dialog, providing all the themes 
+   currently used in Lilidog. This includes matching themes for 
+   Openbox, Geany, and xfce4-terminal. \
    
-   This will also allow for customizing nine different themes with
-   the highlight color of your choice.
+   There are currently 28 themes total. Nine of the themes have
+   additional option to change the highlight color as you like.
+   
+   A 'Reset Theme' option will also be available under Menu -->
+   All Programs --> Other.
+   
       
-   [0;33m----------------------------------------------------------
+   [0;33m--------------------------------------------------------------
    
-   Please press enter to install the Lilidog Theme Chooser.
+   Please press enter to install the Lilidog Auto Themes chooser.
    
-   ----------------------------------------------------------[0m
+   --------------------------------------------------------------[0m
       
    Or close this terminal window to quit the install." ;
    if : >/dev/tcp/8.8.8.8/53; then
@@ -51,6 +55,7 @@ sudo cp -rf "/tmp/themechooser/scripts/." "/usr/local/bin/"
 
 # Copy .desktop file to /usr/share/applications
 sudo cp -f "/tmp/themechooser/ld-auto-themes-other.desktop" "/usr/share/applications"
+sudo cp -f "/tmp/themechooser/ld-theme-reset.desktop" "/usr/share/applications"
 
 # copy lilidog-themes config files to ~/.config
 cp -fr "/tmp/themechooser/lilidog-themes" "$HOME/.config"
