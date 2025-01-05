@@ -55,7 +55,7 @@ Live USB Maker,     x-terminal-emulator -T 'Live USB Maker' -e "sudo live-usb-ma
 Sxhkd Keys OB,      show-keybinds,                    preferences-desktop-keyboard-shortcuts
 Lucky Backup,       luckybackup,                      luckybackup
 Printer Setup,      x-terminal-emulator -T "Printer Setup" -e bash -c "printer-installer; read -srn1", printer
-USBImager,          gksudo usbimager,                 usbimager
+USBImager,          gksudo /usr/local/bin/usbimager,  usbimager
 Galculator,         galculator,                       galculator
 Gparted,            gksudo gparted,                   gparted
 Synaptic,           gksudo synaptic,                  synaptic
