@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yad --title "Logout Options" --center --buttons-layout=center --fixed --width=500 --height=52 --borders=5 \
-    --window-icon=/usr/share/icons/ld-icons/pixmaps/exit.png \
+    --window-icon=/usr/share/icons/ld-icons/pixmaps/exit4.png \
     --button=" Lockscreen!/usr/share/icons/ld-icons/pixmaps/password.png":"slock" \
     --button=" Logout!/usr/share/icons/ld-icons/pixmaps/logout_exit.png":"pkill -KILL -u "$USER"" \
     --button=" Suspend!/usr/share/icons/ld-icons/pixmaps/logout_suspend.png":"systemctl --no-ask-password --ignore-inhibitors suspend" \
