@@ -2,9 +2,9 @@
 
 yad --title "Logout Options" --center --buttons-layout=center --fixed --width=500 --height=52 --borders=5 \
     --window-icon=/usr/share/icons/ld-icons/pixmaps/exit.png \
-    --button=" Lockscreen!/usr/share/icons/ld-icons/pixmaps/password.png!":"slock" \
-    --button=" Logout!/usr/share/icons/ld-icons/pixmaps/logout_exit.png!":"pkill -KILL -u "$USER"" \
-    --button=" Suspend!/usr/share/icons/ld-icons/pixmaps/logout_suspend.png!":"systemctl --no-ask-password --ignore-inhibitors suspend" \
-    --button=" Reboot!/usr/share/icons/ld-icons/pixmaps/logout_reboot.png!":"systemctl --no-ask-password --ignore-inhibitors reboot" \
-    --button=" Shutdown!/usr/share/icons/ld-icons/pixmaps/logout_shutdown.png!":"systemctl --no-ask-password --ignore-inhibitors poweroff"
+    --button=" Lockscreen!/usr/share/icons/ld-icons/pixmaps/password.png":"slock" \
+    --button=" Logout!/usr/share/icons/ld-icons/pixmaps/logout_exit.png":"pkill -KILL -u "$USER"" \
+    --button=" Suspend!/usr/share/icons/ld-icons/pixmaps/logout_suspend.png":"systemctl --no-ask-password --ignore-inhibitors suspend" \
+    --button=" Reboot!/usr/share/icons/ld-icons/pixmaps/logout_reboot.png":"systemctl --no-ask-password --ignore-inhibitors reboot" \
+    --button=" Shutdown!/usr/share/icons/ld-icons/pixmaps/logout_shutdown.png":"systemctl --no-ask-password --ignore-inhibitors poweroff"
     
