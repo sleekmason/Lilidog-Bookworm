@@ -51,7 +51,6 @@ Check Firmware,     x-terminal-emulator -T 'Firmware Checker' -e bash -c "firmwa
 Wallpaper Maker,    wallpaper-maker,                  applications-graphics
 Upgrade Options,    update-options,                   system-software-update
 App Alternatives,   galternatives,                    org.xfce.settings.default-applications
-Live USB Maker,     x-terminal-emulator -T 'Live USB Maker' -e "sudo live-usb-maker-gui-antix",     gparted
 Sxhkd Keys OB,      show-keybinds,                    preferences-desktop-keyboard-shortcuts
 Lucky Backup,       luckybackup,                      luckybackup
 Printer Setup,      x-terminal-emulator -T "Printer Setup" -e bash -c "printer-installer; read -srn1", printer
