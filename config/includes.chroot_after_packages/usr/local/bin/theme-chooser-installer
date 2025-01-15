@@ -56,6 +56,7 @@ sudo cp -rf "/tmp/themechooser/scripts/." "/usr/local/bin/"
 # Copy .desktop file to /usr/share/applications
 sudo cp -f "/tmp/themechooser/ld-auto-themes-other.desktop" "/usr/share/applications"
 sudo cp -f "/tmp/themechooser/ld-theme-reset.desktop" "/usr/share/applications"
+sudo cp -f "/tmp/themechooser/ld-themes.desktop" "/usr/share/applications"
 
 # copy lilidog-themes config files to ~/.config
 cp -fr "/tmp/themechooser/lilidog-themes" "$HOME/.config"

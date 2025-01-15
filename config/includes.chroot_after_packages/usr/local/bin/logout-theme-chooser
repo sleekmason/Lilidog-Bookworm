@@ -1,0 +1,197 @@
+#!/bin/bash
+# Created by sleekmason for Lilidog Jan 12 2025 
+
+# Function to check and copy ld-logout from /usr/local/bin to ~/.local/bin
+_check-exist(){
+if ! test -f ~/.local/bin/ld-logout; then
+if ! test -e ~/.local/bin; then
+mkdir -p ~/.local/bin
+cp -f "/usr/local/bin/ld-logout" "$HOME/.local/bin"
+else
+cp -f "/usr/local/bin/ld-logout" "$HOME/.local/bin"
+fi
+fi
+}
+
+# Logout style and icons on/off.
+_horzicons(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=horizontal-icons/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_horznoicons(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=horizontal-no-icons/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_verticons(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=vertical-icons/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_vertnoicons(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=vertical-no-icons/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_horzicons-plain(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=horizontal-icons-plain/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_horznoicons-plain(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=horizontal-no-icons-plain/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_verticons-plain(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=vertical-icons-plain/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+_vertnoicons-plain(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+sed -i 's/^varstyle.*/varstyle=vertical-no-icons-plain/g' '.local/bin/ld-logout'
+"$HOME/.local/bin/ld-logout" &
+}
+
+export -f _horzicons
+export -f _horznoicons
+export -f _verticons
+export -f _vertnoicons
+export -f _horzicons-plain
+export -f _horznoicons-plain
+export -f _verticons-plain
+export -f _vertnoicons-plain
+
+
+_dialog-style(){
+yad --title "Logout Style" --escape-ok --borders=14 \
+--form --geometry=240x400-180-110 --buttons-layout=edge \
+--text="Choose Layout Style\n" --text-align=center \
+--window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
+    --form --columns=1 \
+    --field=" Horizontal With Icons":FBTN "bash -c _horzicons" \
+    --field=" horizontal No Icons":FBTN "bash -c _horznoicons" \
+    --field=" Hori Plain With Icons":FBTN "bash -c _horzicons-plain" \
+    --field=" Hori Plain No Icons":FBTN "bash -c _horznoicons-plain" \
+    --field="":LBL "" \
+    --field=" Vertical With Icons":FBTN "bash -c _verticons" \
+    --field=" Vertical No Icons":FBTN "bash -c _vertnoicons" \
+    --field=" Vert Plain With Icons":FBTN "bash -c _verticons-plain" \
+    --field=" Vert Plain No Icons":FBTN "bash -c _vertnoicons-plain" \
+    --field="":LBL ""
+}
+
+# Icon sets
+_original(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=original/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_gnome(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=gnome/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_papirus(){
+bash -c "_check-exist"	
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=papirus/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_buuf(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=buuf/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_paper(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=paper/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_circle-ash(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=circle-ash/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_circle(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=circle/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_obsidian(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=obsidian/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_obsidian-plain(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)	>/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=obsidian-plain/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_faenza-small(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+ sed -i 's/^var1.*/var1=faenza-small/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+
+export -f _buuf
+export -f _circle
+export -f _circle-ash
+export -f _gnome
+export -f _obsidian
+export -f _obsidian-plain
+export -f _original
+export -f _paper
+export -f _papirus
+export -f _faenza-small
+export -f _dialog-style
+export -f _check-exist
+
+yad --title "Logout Icons" --escape-ok --borders=14 \
+--form --geometry=240x280-432-110 --buttons-layout=edge \
+--text="Choose Logout Icons\n" --text-align=center \
+--button=" Style!applications-other:bash -c _dialog-style" \
+--button="OK!gtk-ok:0" \
+--window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
+    --form --columns=2 \
+    --field=" Default":FBTN "bash -c _original" \
+    --field=" Buuf":FBTN "bash -c _buuf" \
+    --field=" Obsidian":FBTN "bash -c _obsidian" \
+    --field=" Paper":FBTN "bash -c _paper" \
+    --field=" Circle-Ash":FBTN "bash -c _circle-ash" \
+    --field="":LBL "" \
+    --field=" Gnome":FBTN "bash -c _gnome" \
+    --field=" Papirus":FBTN "bash -c _papirus" \
+    --field=" Obsidian2":FBTN "bash -c _obsidian-plain" \
+    --field=" Faenza":FBTN "bash -c _faenza-small" \
+    --field=" Circle":FBTN "bash -c _circle" \
+    --field="":LBL ""

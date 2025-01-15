@@ -1,25 +1,24 @@
 #!/bin/bash
 
-yad --title "Theming Options" --escape-ok \
---button=gtk-ok:0 --form --center --borders=6 \
---geometry=240x450+280+280 \
---text="\n Lilidog Theming Options\n" --text-align=center \
---window-icon=applications-utilities \
-    --form \
-    --field="                  Auto Themes!$HOME/.config/lilidog-themes/icons/paw-theme-18.png!":FBTN "ld-themes" \
-    --field="":LBL "" \
+yad --title "Theming Options" --form --center --borders=14 --buttons-layout=edge \
+--window-icon=applications-utilities --geometry=440x400+280+280 \
+--text="Lilidog Theming Options\n" --text-align=center \
+--button=" Reset To Default!$HOME/.config/lilidog-themes/icons/paw-theme-18.png:x-terminal-emulator -e bash -c /usr/local/bin/set-default-theme; echo $'\n\nPress any key to close'; read -srn1" \
+--button="OK!gtk-ok:0" \
+    --form --columns=2 \
+    --field="                  Auto Themes!$HOME/.config/lilidog-themes/icons/paw-theme-18.png":FBTN "ld-themes" \
     --field="                              Conky!conky-logomark-violet":FBTN "conky-toggle" \
     --field="                         Font Size!font-x-generic":FBTN "fontsize-changer" \
     --field="                         Grub BG!org.xfce.settings.editor":FBTN "x-terminal-emulator -T 'Grub Background Changer' -e bash -c 'grub-bg-changer; echo $'\n\nPress any key to close.'; read -srn1'" \
     --field="                               Icons!preferences-other":FBTN "xfce4-appearance-settings" \
     --field="                           Jgmenu!jgmenu":FBTN "jg-icon-changer" \
     --field="                         LightDM!lightdm-gtk-greeter-settings":FBTN "lightdm-options" \
+    --field="":LBL "" \
+    --field="             Logout Themes!org.xfce.settings.default-applications":FBTN "logout-theme-chooser" \
     --field="                        Openbox!obconf":FBTN "obconf" \
     --field="                           Sounds!audio-speakers":FBTN "notification-sounds" \
     --field="             System Settings!preferences-system":FBTN "xfce4-settings-manager" \
     --field="             Terminal Colors!gnome-terminal":FBTN "ld-term-changer" \
     --field="                 Transparency!preferences-desktop":FBTN "transparency-system" \
     --field="                     Wallpapers!org.xfce.settings.display":FBTN "feh-set-wallpaper" \
-    --field="":LBL "" \
-    --field="":LBL "" \
-    --field="            Reset To Default!$HOME/.config/lilidog-themes/icons/paw-theme-18.png!":FBTN "x-terminal-emulator -T 'Reset All Themes' -e bash -c 'set-default-theme; echo $Press Press any key to close. ; read -srn1'" \
+    --field="":LBL ""

@@ -253,7 +253,7 @@
 				</item>
 			</menu>
 		<separator/>
-		<item icon="/usr/share/icons/ld-icons/pixmaps/logout_reboot.png" label="Restart">
+		<item icon="/usr/share/icons/gnome/24x24/emblems/emblem-synchronizing.png" label="Restart">
 			<action name="Restart"/>
 		</item>
 		<separator/>
