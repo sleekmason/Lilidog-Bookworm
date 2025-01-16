@@ -109,70 +109,70 @@ yad --title "Logout Style" --escape-ok --borders=14 \
 # Icon sets
 _original(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=original/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _gnome(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=gnome/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _papirus(){
 bash -c "_check-exist"	
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=papirus/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _buuf(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=buuf/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _paper(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=paper/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _circle-ash(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=circle-ash/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _circle(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=circle/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _obsidian(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=obsidian/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _obsidian-plain(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout)	>/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=obsidian-plain/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _faenza-small(){
 bash -c "_check-exist"
-pkill -P $(pgrep ld-logout) >/dev/null 2>&1 &
+pkill -P $(pgrep ld-logout)
  sed -i 's/^var1.*/var1=faenza-small/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
