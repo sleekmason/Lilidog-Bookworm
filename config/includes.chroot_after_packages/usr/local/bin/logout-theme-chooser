@@ -88,7 +88,7 @@ export -f _verticons-only
 
 _dialog-style(){
 yad --title "Logout Style" --escape-ok --borders=14 \
---form --geometry=240x400-180-110 --buttons-layout=edge \
+--form --geometry=240x400-100-100 --buttons-layout=edge \
 --text="Choose Layout Style\n" --text-align=center \
 --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
     --form --columns=1 \
@@ -177,6 +177,48 @@ pkill -P $(pgrep ld-logout)
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
+_awesome(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+ sed -i 's/^var1.*/var1=awesome/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_awesome-dark(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+ sed -i 's/^var1.*/var1=awesome-dark/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_material(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+ sed -i 's/^var1.*/var1=material/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_material-dark(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+ sed -i 's/^var1.*/var1=material-dark/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_candy(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+ sed -i 's/^var1.*/var1=candy/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
+_tela(){
+bash -c "_check-exist"
+pkill -P $(pgrep ld-logout)
+ sed -i 's/^var1.*/var1=tela/g' "$HOME/.local/bin/ld-logout"
+ sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
+"$HOME/.local/bin/ld-logout" &
+}
 
 export -f _buuf
 export -f _circle
@@ -188,11 +230,17 @@ export -f _original
 export -f _paper
 export -f _papirus
 export -f _faenza-small
+export -f _candy
+export -f _tela
+export -f _awesome
+export -f _awesome-dark
+export -f _material
+export -f _material-dark
 export -f _dialog-style
 export -f _check-exist
 
 yad --title "Logout Icons" --escape-ok --borders=14 \
---form --geometry=240x280-432-110 --buttons-layout=edge \
+--form --geometry=240x280-352-100 --buttons-layout=edge \
 --text="Choose Logout Icons\n" --text-align=center \
 --button=" Style!applications-other:bash -c _dialog-style" \
 --button="OK!gtk-ok:0" \
@@ -203,10 +251,16 @@ yad --title "Logout Icons" --escape-ok --borders=14 \
     --field=" Obsidian":FBTN "bash -c _obsidian" \
     --field=" Paper":FBTN "bash -c _paper" \
     --field=" Circle-Ash":FBTN "bash -c _circle-ash" \
+    --field=" Candy":FBTN "bash -c _candy" \
+    --field=" Awesome":FBTN "bash -c _awesome" \
+    --field=" Material":FBTN "bash -c _material" \
     --field="":LBL "" \
     --field=" Gnome":FBTN "bash -c _gnome" \
     --field=" Papirus":FBTN "bash -c _papirus" \
     --field=" Obsidian2":FBTN "bash -c _obsidian-plain" \
     --field=" Faenza":FBTN "bash -c _faenza-small" \
     --field=" Circle":FBTN "bash -c _circle" \
+    --field=" Tela":FBTN "bash -c _tela" \
+    --field=" Awe-Dark":FBTN "bash -c _awesome-dark" \
+    --field=" Mat-Dark":FBTN "bash -c _material-dark" \
     --field="":LBL ""
