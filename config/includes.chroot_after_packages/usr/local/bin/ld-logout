@@ -30,7 +30,7 @@ yad --title "Logout" --center --fixed --width=500 --height=50 --borders=5 \
     --button="Shutdown":"systemctl --no-ask-password --ignore-inhibitors poweroff"
     
 elif grep -Fxq "varstyle=vertical-icons" "$HOME/.local/bin/ld-logout"; then
-yad --title "Logout" --center --fixed --width=200 --height=140 --borders=12 --no-buttons \
+yad --title "Logout" --center --fixed --width=180 --height=140 --borders=12 --no-buttons \
 --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
     --field="      Lockscreen!/usr/share/icons/ld-icons/pixmaps/$var1/logout_password.$var2":FBTN "slock" \
@@ -40,7 +40,7 @@ yad --title "Logout" --center --fixed --width=200 --height=140 --borders=12 --no
     --field="        Shutdown!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":FBTN "systemctl --no-ask-password --ignore-inhibitors poweroff"
 
 elif grep -Fxq "varstyle=vertical-no-icons" "$HOME/.local/bin/ld-logout"; then
-yad --title "Logout" --center --fixed --width=200 --height=140 --borders=12 --no-buttons \
+yad --title "Logout" --center --fixed --width=160 --height=140 --borders=12 --no-buttons \
 --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
     --field="Lockscreen":FBTN "slock" \
@@ -68,7 +68,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=5
     --button="Shutdown":"systemctl --no-ask-password --ignore-inhibitors poweroff"
     
 elif grep -Fxq "varstyle=vertical-icons-plain" "$HOME/.local/bin/ld-logout"; then
-yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=200 --height=140 --borders=14 --no-buttons \
+yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=180 --height=140 --borders=14 --no-buttons \
 --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
     --field="      Lockscreen!/usr/share/icons/ld-icons/pixmaps/$var1/logout_password.$var2":FBTN "slock" \
@@ -78,7 +78,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=2
     --field="        Shutdown!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":FBTN "systemctl --no-ask-password --ignore-inhibitors poweroff"
 
 elif grep -Fxq "varstyle=vertical-no-icons-plain" "$HOME/.local/bin/ld-logout"; then
-yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=200 --height=140 --borders=14 --no-buttons \
+yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=160 --height=140 --borders=14 --no-buttons \
 --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
     --field="Lockscreen":FBTN "slock" \
