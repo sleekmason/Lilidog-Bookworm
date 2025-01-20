@@ -173,6 +173,40 @@ set -m; conky -q -c "$HOME/.config/conky/conky-shortcuts.conf" &> /dev/null
 fi
 fi
 
+# Remove ~/.local/bin/ld-logout if existing, after making a sequential backup.
+if test -e "$HOME/.local/bin/ld-logout"; then
+# Variables
+KEEP_OLD="2"
+# Numerical backup function
+function shift_backups {
+for num in $(seq $KEEP_OLD -1 1) ; do
+old_backup="$file.bak$num"
+	if [[ -e $old_backup && $num == "$KEEP_OLD" ]] ; then
+		rm -f "$old_backup"
+	elif [[ -e $old_backup ]] ; then
+		new_name="$file.bak$(("$num" + 1))"
+		cp "$old_backup" "$new_name"
+	fi
+done
+}
+# Backup
+for file in $HOME/.local/bin/ld-logout ; do
+while [[ 1 -le $KEEP_OLD ]] ; do
+backup_file="$file.bak1"
+	if [[ -e $backup_file ]] ; then
+		shift_backups
+		cp "$file" "$backup_file"
+			break
+	else
+		cp "$file" "$backup_file"
+			break
+	fi
+done
+done
+# Remove existing ~/.local/bin/ld-logout to default to /usr/bin/ld-logout after copy to .bak
+rm -f "$HOME/.local/bin/ld-logout"
+fi
+
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
 rm -f ~/.cache/temp_theme
