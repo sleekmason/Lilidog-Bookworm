@@ -16,61 +16,81 @@ fi
 # Logout style and icons on/off.
 _horzicons(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=horizontal-icons/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _horznoicons(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=horizontal-no-icons/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _verticons(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=vertical-icons/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _vertnoicons(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=vertical-no-icons/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _horzicons-plain(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=horizontal-icons-plain/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _horznoicons-plain(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=horizontal-no-icons-plain/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _verticons-plain(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=vertical-icons-plain/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _vertnoicons-plain(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=vertical-no-icons-plain/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _horzicons-only(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=horizontal-icons-only/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
 _verticons-only(){
 bash -c "_check-exist"
+if pgrep "ld-logout" >/dev/null 2>&1; then
 pkill -P $(pgrep ld-logout)
+fi
 sed -i 's/^varstyle.*/varstyle=vertical-icons-only/g' '.local/bin/ld-logout'
 "$HOME/.local/bin/ld-logout" &
 }
@@ -109,112 +129,144 @@ yad --title "Logout Style" --escape-ok --borders=14 \
 # Icon sets
 _original(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=original/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _gnome(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=gnome/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _papirus(){
 bash -c "_check-exist"	
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=papirus/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _buuf(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=buuf/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _paper(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=paper/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _circle-ash(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=circle-ash/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _circle(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=circle/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _obsidian(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=obsidian/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _obsidian-plain(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=obsidian-plain/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _faenza-small(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=faenza-small/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=png/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _awesome(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=awesome/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _awesome-dark(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=awesome-dark/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _material(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=material/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _material-dark(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=material-dark/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _candy(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=candy/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &
 }
 _tela(){
 bash -c "_check-exist"
+if pgrep "ld-logout"; then
 pkill -P $(pgrep ld-logout)
+fi
  sed -i 's/^var1.*/var1=tela/g' "$HOME/.local/bin/ld-logout"
  sed -i 's/^var2.*/var2=svg/g' "$HOME/.local/bin/ld-logout"
 "$HOME/.local/bin/ld-logout" &

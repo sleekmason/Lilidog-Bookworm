@@ -11,7 +11,7 @@ var1=original
 var2=png
 
 # Main styles
-if grep -Fxq "varstyle=horizontal-icons" "$HOME/.local/bin/ld-logout"; then
+if grep -Fxq "varstyle=horizontal-icons" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --width=500 --height=50 --borders=5 \
     --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
     --button=" Lockscreen!/usr/share/icons/ld-icons/pixmaps/$var1/logout_password.$var2":"slock" \
@@ -20,7 +20,7 @@ yad --title "Logout" --center --fixed --width=500 --height=50 --borders=5 \
     --button=" Reboot!/usr/share/icons/ld-icons/pixmaps/$var1/logout_reboot.$var2":"systemctl --no-ask-password --ignore-inhibitors reboot" \
     --button=" Shutdown!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":"systemctl --no-ask-password --ignore-inhibitors poweroff"
 
-elif grep -Fxq "varstyle=horizontal-no-icons" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=horizontal-no-icons" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --width=500 --height=50 --borders=5 \
     --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
     --button="Lockscreen":"slock" \
@@ -29,7 +29,7 @@ yad --title "Logout" --center --fixed --width=500 --height=50 --borders=5 \
     --button="Reboot":"systemctl --no-ask-password --ignore-inhibitors reboot" \
     --button="Shutdown":"systemctl --no-ask-password --ignore-inhibitors poweroff"
     
-elif grep -Fxq "varstyle=vertical-icons" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=vertical-icons" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --width=180 --height=140 --borders=12 --no-buttons \
 --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
@@ -39,7 +39,7 @@ yad --title "Logout" --center --fixed --width=180 --height=140 --borders=12 --no
     --field="             Reboot!/usr/share/icons/ld-icons/pixmaps/$var1/logout_reboot.$var2":FBTN "systemctl --no-ask-password --ignore-inhibitors reboot" \
     --field="        Shutdown!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":FBTN "systemctl --no-ask-password --ignore-inhibitors poweroff"
 
-elif grep -Fxq "varstyle=vertical-no-icons" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=vertical-no-icons" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --width=160 --height=140 --borders=12 --no-buttons \
 --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
@@ -49,7 +49,7 @@ yad --title "Logout" --center --fixed --width=160 --height=140 --borders=12 --no
     --field="Reboot":FBTN "systemctl --no-ask-password --ignore-inhibitors reboot" \
     --field="Shutdown":FBTN "systemctl --no-ask-password --ignore-inhibitors poweroff"
 
-elif grep -Fxq "varstyle=horizontal-icons-plain" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=horizontal-icons-plain" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=500 --height=50 --borders=5 \
     --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
     --button=" Lockscreen!/usr/share/icons/ld-icons/pixmaps/$var1/logout_password.$var2":"slock" \
@@ -58,7 +58,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=5
     --button=" Reboot!/usr/share/icons/ld-icons/pixmaps/$var1/logout_reboot.$var2":"systemctl --no-ask-password --ignore-inhibitors reboot" \
     --button=" Shutdown!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":"systemctl --no-ask-password --ignore-inhibitors poweroff"
 
-elif grep -Fxq "varstyle=horizontal-no-icons-plain" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=horizontal-no-icons-plain" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=500 --height=50 --borders=5 \
     --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
     --button="Lockscreen":"slock" \
@@ -67,7 +67,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=5
     --button="Reboot":"systemctl --no-ask-password --ignore-inhibitors reboot" \
     --button="Shutdown":"systemctl --no-ask-password --ignore-inhibitors poweroff"
     
-elif grep -Fxq "varstyle=vertical-icons-plain" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=vertical-icons-plain" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=180 --height=140 --borders=14 --no-buttons \
 --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
@@ -77,7 +77,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=1
     --field="             Reboot!/usr/share/icons/ld-icons/pixmaps/$var1/logout_reboot.$var2":FBTN "systemctl --no-ask-password --ignore-inhibitors reboot" \
     --field="        Shutdown!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":FBTN "systemctl --no-ask-password --ignore-inhibitors poweroff"
 
-elif grep -Fxq "varstyle=vertical-no-icons-plain" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=vertical-no-icons-plain" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=160 --height=140 --borders=14 --no-buttons \
 --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
@@ -87,7 +87,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=1
     --field="Reboot":FBTN "systemctl --no-ask-password --ignore-inhibitors reboot" \
     --field="Shutdown":FBTN "systemctl --no-ask-password --ignore-inhibitors poweroff"
     
-elif grep -Fxq "varstyle=horizontal-icons-only" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=horizontal-icons-only" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=400 --height=48 --borders=5 \
     --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
     --button="!/usr/share/icons/ld-icons/pixmaps/$var1/logout_password.$var2":"slock" \
@@ -96,7 +96,7 @@ yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=4
     --button="!/usr/share/icons/ld-icons/pixmaps/$var1/logout_reboot.$var2":"systemctl --no-ask-password --ignore-inhibitors reboot" \
     --button="!/usr/share/icons/ld-icons/pixmaps/$var1/logout_shutdown.$var2":"systemctl --no-ask-password --ignore-inhibitors poweroff"
 
-elif grep -Fxq "varstyle=vertical-icons-only" "$HOME/.local/bin/ld-logout"; then
+elif grep -Fxq "varstyle=vertical-icons-only" "$HOME/.local/bin/ld-logout" >/dev/null 2>&1; then
 yad --title "Logout" --center --fixed --undecorated --close-on-unfocus --width=100 --height=140 --borders=14 --no-buttons \
 --buttons-layout=center --window-icon="/usr/share/icons/ld-icons/pixmaps/exit4.png" \
   --form --columns=1 \
