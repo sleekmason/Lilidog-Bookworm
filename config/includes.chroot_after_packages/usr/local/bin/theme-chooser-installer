@@ -61,8 +61,10 @@ sudo cp -f "/tmp/themechooser/ld-themes.desktop" "/usr/share/applications"
 # copy lilidog-themes config files to ~/.config
 cp -fr "/tmp/themechooser/lilidog-themes" "$HOME/.config"
 
-# copy Rofi config files to ~/.config
+# copy Rofi config files to ~/.config except for Beardog
+if ! test -e "/usr/share/lilidog/beardog"; then
 cp -ar "/tmp/themechooser/rofi" "$HOME/.config"
+fi
 
 # Copy Readme.lilidog-themes to /usr/share/lilidog
 if test -e "/usr/share/lilidog"; then
