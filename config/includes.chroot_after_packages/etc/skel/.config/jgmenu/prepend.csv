@@ -25,7 +25,6 @@ Libreoffice,        libreoffice,                       libreoffice-writer
 Geany,              geany,	                       geany
 Pragha,             pragha,                            pragha
 Gpicview,           gpicview,                          gpicview
-Smplayer,           smplayer,                          smplayer
 Newsboat,           x-terminal-emulator -e newsboat,   accessories-text-editor
 Development,^checkout(development),applications-development
 
