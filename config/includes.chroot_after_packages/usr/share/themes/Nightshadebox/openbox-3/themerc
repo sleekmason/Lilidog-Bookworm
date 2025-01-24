@@ -3,8 +3,8 @@
 
 !! Menu background
 menu.items.bg: flat gradient vertical
-menu.items.bg.color: #222933
-menu.items.bg.colorTo: #222933
+menu.items.bg.color: #28303D
+menu.items.bg.colorTo: #28303D
 menu.separator.color: #344459
 
 !! Menu text
@@ -14,8 +14,8 @@ menu.items.disabled.text.color: #4C6E70
 
 !! Menu title
 menu.title.bg: raised splitvertical gradient
-menu.title.bg.color: #222933
-menu.title.bg.colorTo: #222933
+menu.title.bg.color: #28303D
+menu.title.bg.colorTo: #28303D
 menu.title.text.color: #BCDBEB
 menu.title.text.justify: center
 
@@ -27,7 +27,7 @@ menu.items.active.text.color: #DEF4FC
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #2D384D
+window.active.title.bg.color: #344054
 window.active.title.bg.colorTo: #37445C
 window.inactive.title.bg: flat vertical gradient
 window.inactive.title.bg.color: #222933

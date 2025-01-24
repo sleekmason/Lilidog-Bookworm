@@ -19,7 +19,7 @@
  * Base States *
  ***************/
 .background {
-  color: #E6E6E1;
+  color: #EBE8E4;
   background-color: #424242; }
   .background:backdrop {
     color: #BFBFBF;
@@ -37,14 +37,14 @@
   -gtk-icon-effect: dim; }
 
 .gtkstyle-fallback {
-  color: #E6E6E1;
+  color: #EBE8E4;
   background-color: #424242;
   text-shadow: none; }
   .gtkstyle-fallback:hover {
-    color: #E6E6E1;
+    color: #EBE8E4;
     background-color: #393939; }
   .gtkstyle-fallback:active {
-    color: #E6E6E1;
+    color: #EBE8E4;
     background-color:#424242; }
   .gtkstyle-fallback:disabled {
     color: #B3B3B3;
@@ -57,7 +57,7 @@
 .view text,
 iconview text,
 textview text {
-  color: #EBEBE6;
+  color: #E8E5E1;
   background-color: #313131; }
   .view:backdrop, iconview:backdrop,
   .view text:backdrop,
@@ -93,7 +93,7 @@ flowbox flowboxchild {
     outline-offset: -2px; }
 
 label.separator {
-  color: #E6E6E1; }
+  color: #EBE8E4; }
   label.separator:backdrop {
     color: #BFBFBF; }
 
@@ -262,7 +262,7 @@ entry {
     color: #7D7D7D; }
     spinbutton:not(.vertical) image:hover,
     entry image:hover {
-      color: #E6E6E1; }
+      color: #EBE8E4; }
     spinbutton:not(.vertical) image:active,
     entry image:active {
       color: #454545; }
@@ -430,7 +430,7 @@ button {
   border: 1px solid;
   border-radius: 7px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: #EBEBE5;
+  color: #E8E5E1;
   outline-color: #5C5C5C;
   border-top-color: shade(#363636, 0.8);
   border-right-color: shade(#383838, 0.72);
@@ -465,7 +465,7 @@ button {
   notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
   button:active,
   button:checked {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #202020;
     background-image: linear-gradient(to bottom, shade(shade(#424242, 0.85), 1.05), shade(shade(#424242, 0.85), 0.97));
@@ -1206,7 +1206,7 @@ button {
     background-position: left 3px, left 4px; }
 
 .inline-toolbar toolbutton > button {
-  color: #E6E6E1;
+  color: #EBE8E4;
   outline-color: rgba(60, 60, 60, 0.3);
   border-top-color: shade(#424242, 0.8);
   border-right-color: shade(#424242, 0.72);
@@ -1215,13 +1215,13 @@ button {
   background-image: linear-gradient(to bottom, shade(shade(#424242, 1.02), 1.05), shade(shade(#424242, 1.02), 0.97));
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.6); }
   .inline-toolbar toolbutton > button:hover {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #323232;
     background-image: linear-gradient(to bottom, shade(#424242, 1.15), shade(#424242, 1.07));
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.6); }
   .inline-toolbar toolbutton > button:active, .inline-toolbar toolbutton > button:checked {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #525252;
     background-image: linear-gradient(to bottom, shade(shade(#424242, 0.85), 1.05), shade(shade(#424242, 0.85), 0.97));
@@ -1463,7 +1463,7 @@ spinbutton:not(.vertical) {
     spinbutton:not(.vertical) button:dir(rtl) {
       border-style: none solid none none; }
     spinbutton:not(.vertical) button:hover {
-      color: #E6E6E1;
+      color: #EBE8E4;
       background-color: rgba(60, 60, 60, 0.05); }
     spinbutton:not(.vertical) button:disabled {
       color: rgba(133, 133, 133, 0.3);
@@ -1862,7 +1862,7 @@ headerbar {
             color: #CCCCCC; }
       .selection-mode.titlebar:not(headerbar) button.suggested-action,
       headerbar.selection-mode button.suggested-action {
-        color: #E6E6E1;
+        color: #EBE8E4;
         outline-color: rgba(60, 60, 60, 0.3);
         border-top-color: shade(#424242, 0.8);
         border-right-color: shade(#424242, 0.72);
@@ -1874,7 +1874,7 @@ headerbar {
         border-color: #696969; }
         .selection-mode.titlebar:not(headerbar) button.suggested-action:hover,
         headerbar.selection-mode button.suggested-action:hover {
-          color: #E6E6E1;
+          color: #EBE8E4;
           outline-color: rgba(60, 60, 60, 0.3);
           border-color: #323232;
           background-image: linear-gradient(to bottom, shade(#424242, 1.15), shade(#424242, 1.07));
@@ -1882,7 +1882,7 @@ headerbar {
           border-color: #696969; }
         .selection-mode.titlebar:not(headerbar) button.suggested-action:active,
         headerbar.selection-mode button.suggested-action:active {
-          color: #E6E6E1;
+          color: #EBE8E4;
           outline-color: rgba(60, 60, 60, 0.3);
           border-color: #323232;
           background-image: linear-gradient(to bottom, shade(shade(#424242, 0.85), 1.05), shade(shade(#424242, 0.85), 0.97));
@@ -2102,7 +2102,7 @@ treeview.view {
     treeview.view.expander:dir(rtl) {
       -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl"); }
     treeview.view.expander:hover {
-      color: #E6E6E1; }
+      color: #EBE8E4; }
     treeview.view.expander:selected {
       color: #c4ddf8; }
       treeview.view.expander:selected:hover {
@@ -2153,7 +2153,7 @@ treeview.view {
       box-shadow: none;
       transition: none; }
     treeview.view header button:active {
-      color: #E6E6E1;
+      color: #EBE8E4;
       transition: none; }
   treeview.view header button:last-child:backdrop, treeview.view header button:last-child {
     border-right-style: none; }
@@ -2617,7 +2617,7 @@ scrollbar {
     scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
       min-width: 5px;
       min-height: 5px;
-      background-color: shade(#E6E6E1, 0.9);
+      background-color: shade(#EBE8E4, 0.9);
       background-image: none;
       background-clip: padding-box;
       border-radius: 100%;
@@ -2755,13 +2755,13 @@ switch {
     min-width: 20px;
     min-height: 20px;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #323232;
     background-image: linear-gradient(to bottom, #7F7F7F 20%, #424242 90%);
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.6), inset 0 -2px #353535, inset 0 -1px #4E4E4E, 0 1px rgba(0, 0, 0, 0.1); }
   switch:hover slider {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #323232;
     background-image: linear-gradient(to bottom, #525252 10%, #D1D1D1 90%);
@@ -2865,7 +2865,7 @@ radio {
   min-width: 14px;
   border: 1px solid;
   -gtk-icon-source: none;
-  color: #E6E6E1;
+  color: #EBE8E4;
   outline-color: rgba(60, 60, 60, 0.3);
   border-color: #323232;
   background-image: linear-gradient(to bottom, #545454 20%, #454545 90%);
@@ -2875,14 +2875,14 @@ radio {
     margin: 0; }
   check:hover,
   radio:hover {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #323232;
     background-image: linear-gradient(to bottom, #424242 10%, #4F4F4F 90%);
     box-shadow: inset 0 1px #4A4A4A, inset 0 -2px #4A4A4A, inset 0 -1px#424242, 0 1px #4A4A4A; }
   check:active,
   radio:active {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #525252;
     background-image: linear-gradient(to bottom, shade(shade(#424242, 0.85), 1.05), shade(shade(#424242, 0.85), 0.97));
@@ -3045,7 +3045,7 @@ menu menuitem radio:indeterminate:checked {
 treeview.view check:selected:focus, treeview.view check:selected,
 treeview.view radio:selected:focus,
 treeview.view radio:selected {
-  color: #E6E6E1;
+  color: #EBE8E4;
   border-color: #696969; }
 
 treeview.view check:selected:disabled,
@@ -3153,7 +3153,7 @@ scale {
       border-color: transparent;
       background-color: transparent; }
   scale slider {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-top-color: shade(#424242, 0.8);
     border-right-color: shade(#424242, 0.72);
@@ -3167,7 +3167,7 @@ scale {
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition-property: background, border, box-shadow; }
     scale slider:hover {
-      color: #E6E6E1;
+      color: #EBE8E4;
       outline-color: rgba(60, 60, 60, 0.3);
       border-color: #323232;
       background-image: linear-gradient(to bottom, #353535 10%, #D1D1D1 90%);
@@ -3465,7 +3465,7 @@ levelbar block {
  * Print dialog *
 *****************/
 printdialog paper {
-  color: #E6E6E1;
+  color: #EBE8E4;
   border: 1px solid #525252;
   background: #F5F5F5;
   padding: 0; }
@@ -3721,7 +3721,7 @@ calendar {
   calendar.button {
     color: rgba(60, 60, 60, 0.45); }
     calendar.button:hover {
-      color: #E6E6E1; }
+      color: #EBE8E4; }
     calendar.button:backdrop {
       color: rgba(133, 133, 133, 0.45); }
     calendar.button:disabled {
@@ -3801,7 +3801,7 @@ filechooserbutton:drop(active) {
       .sidebar row:selected label, .sidebar row:selected:focus label,
       .sidebar treeview:selected label,
       .sidebar treeview:selected:focus label {
-        color: #E6E6E1; }
+        color: #EBE8E4; }
         .sidebar row:selected label:backdrop, .sidebar row:selected:focus label:backdrop,
         .sidebar treeview:selected label:backdrop,
         .sidebar treeview:selected:focus label:backdrop {
@@ -3811,7 +3811,7 @@ filechooserbutton:drop(active) {
       .sidebar treeview:selected:focus:backdrop {
         background-image: none;
         background-color: #3B3B3B;
-        color: #E6E6E1;
+        color: #EBE8E4;
         border-top: 1px solid shade(#383838, 0.9);
         border-bottom: 1px solid shade(#383838, 0.9); }
     .sidebar row .view:selected, .sidebar row iconview:selected, .sidebar row .view:selected:focus, .sidebar row iconview:selected:focus,
@@ -3864,7 +3864,7 @@ placessidebar row {
   placessidebar row > revealer {
     padding: 0 14px; }
   placessidebar row:selected {
-    color: #E6E6E1; }
+    color: #EBE8E4; }
   placessidebar row:disabled {
     color: #939393; }
   placessidebar row:backdrop {
@@ -4210,7 +4210,7 @@ colorswatch#add-color-button {
   colorswatch#add-color-button:only-child {
     border-radius: 5px; }
   colorswatch#add-color-button overlay {
-    color: #E6E6E1;
+    color: #EBE8E4;
     outline-color: rgba(60, 60, 60, 0.3);
     border-top-color: shade(#424242, 0.8);
     border-right-color: shade(#424242, 0.72);
@@ -4219,7 +4219,7 @@ colorswatch#add-color-button {
     background-image: linear-gradient(to bottom, shade(shade(#424242, 1.02), 1.05), shade(shade(#424242, 1.02), 0.97));
     box-shadow: inset 0 1px rgba(255, 255, 255, 0.6); }
     colorswatch#add-color-button overlay:hover {
-      color: #E6E6E1;
+      color: #EBE8E4;
       outline-color: rgba(60, 60, 60, 0.3);
       border-color: #323232;
       background-image: linear-gradient(to bottom, shade(#424242, 1.15), shade(#424242, 1.07));
@@ -4443,7 +4443,7 @@ button.circular {
   padding-bottom: 3px;
   padding-left: 6px;
   padding-right: 6px;
-  color: #E6E6E1;
+  color: #EBE8E4;
   background-color: #393939;
   border: 1px solid;
   border-color: #353535;
@@ -4474,10 +4474,10 @@ stackswitcher button.text-button.circular {
    use responsibly! */
 /*
 widget text/foreground color */
-@define-color theme_fg_color #E6E6E1;
+@define-color theme_fg_color #EBE8E4;
 /*
 text color for entries, views and content in general */
-@define-color theme_text_color #E8E8E3;
+@define-color theme_text_color #E8E5E1;
 /*
 widget base background color */
 @define-color theme_bg_color #424242;
@@ -4531,7 +4531,7 @@ these are pretty self explicative */
 /*
 these colors are exported for the window manager and shouldn't be used in applications,
 read if you used those and something break with a version upgrade you're on your own... */
-@define-color wm_title shade(#E6E6E1, 1.8);
+@define-color wm_title shade(#EBE8E4, 1.8);
 @define-color wm_unfocused_title #939393;
 @define-color wm_highlight rgba(255, 255, 255, 0.8);
 @define-color wm_borders_edge rgba(255, 255, 255, 0.8);
@@ -4770,7 +4770,7 @@ XfdesktopIconView.view {
     border-style: none;
     border-radius: 5px;
     background-color: #393939;
-    color: #E6E6E1;
+    color: #EBE8E4;
     box-shadow: inset 1px 0 shade(#393939, 0.6), inset -1px 0 shade(#393939, 0.6), inset 0 1px shade(#393939, 0.6), inset 0 -1px shade(#393939, 0.6); }
     .lightdm-gtk-greeter #login_window button,
     .lightdm-gtk-greeter #shutdown_dialog button,
@@ -4819,13 +4819,13 @@ XfdesktopIconView.view {
   .lightdm-gtk-greeter #login_window menu {
     border-radius: 1px; }
   .lightdm-gtk-greeter #login_window combobox button.combo {
-    color: #E6E6E1;
+    color: #EBE8E4;
     padding: 0;
     background: none;
     border-style: none;
     box-shadow: none; }
   .lightdm-gtk-greeter #login_window #user_combobox {
-    color: #E6E6E1;
+    color: #EBE8E4;
     font-size: 16px; }
     .lightdm-gtk-greeter #login_window #user_combobox menu {
       font-weight: bold; }
@@ -4913,13 +4913,13 @@ UnityDecoration {
     border-radius: 4px 4px 0 0;
     padding: 1px 8px 0 8px;
     background-image: linear-gradient(to bottom, shade(#424242, 1.07), #424242);
-    color: #E6E6E1;
+    color: #EBE8E4;
     text-shadow: 0 1px shade(#424242, 1.2); }
     UnityDecoration .top:backdrop {
       border: 1px solid shade(#424242, 0.8);
       border-bottom-width: 0;
       background-image: linear-gradient(to bottom, shade(#424242, 1.02), #424242);
-      color: #E6E6E1;
+      color: #EBE8E4;
       text-shadow: 0 1px shade(#424242, 1.1); }
   UnityDecoration .left, UnityDecoration .right, UnityDecoration .bottom {
     background-color: shade(#424242, 0.7); }
@@ -4953,7 +4953,7 @@ UnityPanelWidget,
 .menu IdoPlaybackMenuItem.menuitem:active {
   -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
   animation: playbackmenuitem_spinner 1s infinite linear;
-  color: #E6E6E1; }
+  color: #EBE8E4; }
 
 window.background.chromium {
   background-color: #424242; }
