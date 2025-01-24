@@ -174,8 +174,8 @@ entry {
   border-radius: 3px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   color: #D1E2E8;
-  border-color: #1B2029;
-  background-color: #232B38;
+  border-color: #191E26;
+  background-color: #262E3B;
   box-shadow: inset 0 0 0 1px rgba(57, 142, 231, 0); }
   spinbutton:not(.vertical) image.left,
   entry image.left {
@@ -216,7 +216,7 @@ entry {
   spinbutton:focus:not(.vertical),
   entry:focus {
     border-color: shade(#4D6585, 1.0);
-    background-color: #222933; }
+    background-color: #222A36; }
   spinbutton:disabled:not(.vertical),
   entry:disabled {
     color: #8EA2AD;
@@ -431,13 +431,13 @@ button {
   border: 1px solid;
   border-radius: 5px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: #D8E9F0;
-  outline-color: #4B646B;
+  color: #DCEAF0;
+  outline-color: #4B576B;
   border-top-color: shade(#1D222B, 0.8);
   border-right-color: shade(#1D222B, 0.72);
   border-left-color: shade(#1D222B, 0.72);
   border-bottom-color: shade(#1D222B, 0.7);
-  background-image: linear-gradient(to bottom, shade(shade(#2F3847, 1.0), 1.0), shade(shade(#2F3847, 1.0), 1.0));
+  background-image: linear-gradient(to bottom, shade(shade(#2F3847, 1.0), 1.0), shade(shade(#323C4D, 1.0), 1.0));
   box-shadow: inset 0 1px #2D3645; }
   notebook > header > tabs > arrow, button.sidebar-button, button.titlebutton,
   button.flat {
@@ -457,7 +457,7 @@ button {
         transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   notebook > header > tabs > arrow:hover, button.titlebutton:hover,
   button:hover {
-    color: #D9F3FC;
+    color: #E8F7FC;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #1D232B;
     background-image: linear-gradient(to bottom, shade(#3E4F66, 0.98), shade(#41536B, 1.02));
@@ -2245,7 +2245,7 @@ menu,
     menu menuitem:hover,
     .menu menuitem:hover,
     .context-menu menuitem:hover {
-      color: #D6F5FF;
+      color: #E6F5FA;
       background-image: linear-gradient(to bottom, shade(#384961, 0.96), shade(#384961, 1));
       box-shadow: inset 1px 1px shade(#222933, 0.8), inset -1px -1px shade(#222933, 0.8); }
     menu menuitem:disabled,
@@ -2261,7 +2261,7 @@ menu,
     .menu menuitem:backdrop:hover,
     .context-menu menuitem:backdrop,
     .context-menu menuitem:backdrop:hover {
-      color: #C5E0F0;
+      color: #DFEDF2;
       background-color: transparent; }
     menu menuitem arrow,
     .menu menuitem arrow,
@@ -2476,7 +2476,7 @@ notebook > header {
       color: #D4F2FC; }
       notebook > header tab:hover.reorderable-page {
         border-color: #1D232B;
-        background-image: linear-gradient(to bottom, shade(#2C3A4F, 1.08), shade(#3B4D66, 1.02)); }
+        background-image: linear-gradient(to bottom, shade(#42546E, 1.0), shade(#42546E, 1.04)); }
     notebook > header tab:backdrop {
       color: #a2a2a2; }
       notebook > header tab:backdrop.reorderable-page {
@@ -2490,7 +2490,7 @@ notebook > header {
         background-color: #28303D; }
       notebook > header tab:checked.reorderable-page {
         border-color: #1B222B;
-        background-color: #314059; }
+        background-color: #384961; }
     notebook > header tab:backdrop:checked {
       color: #9FB5C2; }
       notebook > header tab:backdrop:checked.reorderable-page {
@@ -2564,22 +2564,22 @@ notebook > stack:not(:only-child) {
  * Scrollbars *
  **************/
 scrollbar {
-  background-image: linear-gradient(to right, #222933, #222933);
+  background-image: linear-gradient(to right, #2B3442, #2B3442);
   transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
   * {
     -GtkScrollbar-has-backward-stepper: false;
     -GtkScrollbar-has-forward-stepper: false; }
   scrollbar.top {
-    border-bottom: 1px solid #222933; }
+    border-bottom: 1px solid #2B3442; }
   scrollbar.bottom {
-    border-top: 1px solid #222933; }
+    border-top: 1px solid #2B3442; }
   scrollbar.left {
-    border-right: 1px solid #222933; }
+    border-right: 1px solid #2B3442; }
   scrollbar.right {
-    border-left: 1px solid #222933; }
+    border-left: 1px solid #2B3442; }
   scrollbar:backdrop {
     background-color: #7090C8;
-    border-color: #222933;
+    border-color: #2B3442;
     transition: 200ms ease-out; }
   scrollbar slider {
     min-width: 9px;
@@ -2588,9 +2588,9 @@ scrollbar {
     border: 1px solid #1D232B;
     border-radius: 10px;
     background-clip: padding-box;
-    background-image: linear-gradient(to right, #324259, #415570); }
+    background-image: linear-gradient(to right, #455B78, #536C8F); }
     scrollbar slider:hover {
-      background-image: linear-gradient(to right, #596F8F, #596F8F); }
+      background-image: linear-gradient(to right, #627B9E, #708DB5); }
     scrollbar slider:hover:active {
       background-color: #304761; }
     scrollbar slider:backdrop {
@@ -3820,7 +3820,7 @@ filechooserbutton:drop(active) {
     .sidebar treeview iconview:selected,
     .sidebar treeview .view:selected:focus,
     .sidebar treeview iconview:selected:focus {
-      color: #DCF2FA; }
+      color: #E6F5FA; }
     .sidebar row:backdrop,
     .sidebar treeview:backdrop {
       background-color: transparent; }
@@ -4366,7 +4366,7 @@ popover.background radiobutton:selected,
   entry selection, modelbutton.flat:selected, popover.background checkbutton:selected,
   popover.background radiobutton:selected,
   .menuitem.button.flat:selected, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
-    color: #D6F4FF;
+    color: #EBFAFF;
     outline-color: rgba(255, 255, 255, 0.3); }
     row:selected label:disabled, label:disabled:selected, .selection-mode button.titlebutton:disabled, iconview:disabled:selected:focus, .view:disabled:selected, iconview:disabled:selected, iconview text:disabled:selected:focus,
     textview text:disabled:selected:focus, .view text:disabled:selected, iconview text:disabled:selected,
