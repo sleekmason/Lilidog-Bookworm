@@ -83,11 +83,6 @@
 					<execute>urxvt -g 120x40+120+100 -e newsboat</execute>
 				</action>
 			</item>
-			<item icon="/usr/share/pixmaps/smplayer.xpm" label="SmPlayer">
-				<action name="Execute">
-					<execute>smplayer</execute>
-				</action>
-			</item>
 			<item icon="/usr/share/icons/gnome/24x24/categories/applications-graphics.png" label="Gpicview">
 				<action name="Execute">
 					<execute>gpicview</execute>
