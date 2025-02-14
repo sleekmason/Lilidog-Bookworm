@@ -1,4 +1,4 @@
-!! Nightshadebox by sleekmason 14 Feb 2025
+!! Custom-nightshadebox by sleekmason 14 Feb 2025
 !! Based on Onyx-Citrus by Dana Jansens
 
 !! Menu background
@@ -21,8 +21,8 @@ menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #44647d
-menu.items.active.bg.colorTo: #44647d
+menu.items.active.bg.color: #7d4472
+menu.items.active.bg.colorTo: #7d4472
 menu.items.active.text.color: #DEF4FC
 
 !! Titlebar

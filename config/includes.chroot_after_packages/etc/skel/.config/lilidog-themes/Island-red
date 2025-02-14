@@ -3,18 +3,18 @@
 ### Simply change the "Lilidog" entries below with your own selections.
 
 ## Change gtktheme
-xfconf-query -c xsettings -p /Net/ThemeName -s "Island-blue"
+xfconf-query -c xsettings -p /Net/ThemeName -s "Island-red"
 
 ## Change icon theme
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Aqua"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Red"
 
 ## gsettings "gtk-theme" and "icons" for use is scripts like neofetch which won't use xfconf-query.
-gsettings set org.gnome.desktop.interface gtk-theme "Island-blue"
-gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Aqua"
+gsettings set org.gnome.desktop.interface gtk-theme "Island-red"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Red"
 
 ## Change openbox theme
-#sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Island-bluebox"/g" ~/.config/openbox/rc.xml
-xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:name' -v "Island-bluebox" ~/.config/openbox/rc.xml
+#sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Island-redbox"/g" ~/.config/openbox/rc.xml
+xmlstarlet ed -L -N o="http://openbox.org/3.4/rc" -u '/o:openbox_config/o:theme/o:name' -v "Island-redbox" ~/.config/openbox/rc.xml
 openbox --reconfigure
 
 ## Change Geany theme
@@ -31,8 +31,8 @@ jgmenu_run init --apply-obtheme >/dev/null 2>&1
 xfce4-term-colors island
 
 ## Change Rofi theme
-sed -i 's/^@theme "familiar.*/@theme "familiar-island-blue.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi" >/dev/null 2>&1
-sed -i 's/^@theme "rounded.*/@theme "rounded-island-blue.rasi"/g' "$HOME/.config/rofi/config.rasi" >/dev/null 2>&1
+sed -i 's/^@theme "familiar.*/@theme "familiar-island-red.rasi"/g' "$HOME/.config/rofi/themes/familiar/config.rasi" >/dev/null 2>&1
+sed -i 's/^@theme "rounded.*/@theme "rounded-island-red.rasi"/g' "$HOME/.config/rofi/config.rasi" >/dev/null 2>&1
 
 # These lines are for the light/dark toggle and the custom toggle. Do not remove.
 # Comment these lines in Custom-Theme or Light-Dark-Theme if copying a named theme.
