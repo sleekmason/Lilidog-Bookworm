@@ -21,8 +21,8 @@
   <color name="purple"     value="#A020F0"/>
 
   <!-- Global Settings -->
-  <style name="text"                        foreground="#171512" background="#95BABF"/>
-  <style name="selection"                   foreground="#FFFFFF" background="#C45154"/>
+  <style name="text"                        foreground="#171512" background="#A3C7CC"/>
+  <style name="selection"                   foreground="#FFFFFF" background="#CC666B"/>
   <style name="current-line"                background="#A7CCD1"/>
   <style name="current-line-number"         background="#A7CCD1"/>
   <style name="draw-spaces"                 foreground="#babdb6"/>
