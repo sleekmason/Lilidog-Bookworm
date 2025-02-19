@@ -9,11 +9,11 @@
 xfconf-query -c xsettings -p /Net/ThemeName -s "Custom-cove"
 
 ## Change icon theme
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Red"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Cyan"
 
 ## gsettings "gtk-theme" and "icons" for use is scripts like neofetch which won't use xfconf-query.
 gsettings set org.gnome.desktop.interface gtk-theme "Custom-cove"
-gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Red"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Cyan"
 
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Custom-covebox"/g" ~/.config/openbox/rc.xml

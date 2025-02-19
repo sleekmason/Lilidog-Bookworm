@@ -2,7 +2,7 @@
 # Custom-nightshade highlight chooser
 # Made by sleekmason 24.09.06
 
-### Default - COLOR="#44647d"
+### Default - COLOR="#624d94"
 set -e
 ## Select your new highlight color with the color chooser".
 ## Replace "Color" with your selection.
@@ -29,7 +29,7 @@ fi
 "$HOME/.config/lilidog-themes/Custom-nightshade"  > /dev/null 2>&1
 
 ## "--color" can be removed if wanting to use a separate color chooser.
-COLOR_CHOICE=( $(yad --color --init-color=#44647d \
+COLOR_CHOICE=( $(yad --color --init-color=#624d94 \
 --gtk-palette --palette=/usr/share/X11/rgb.txt \
 --form --width=320 --center --borders=6 --on-top \
 --title="Custom Nightshade Theme Highlight Color " \

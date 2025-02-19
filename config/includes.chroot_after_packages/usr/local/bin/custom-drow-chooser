@@ -2,7 +2,7 @@
 # Custom-drow highlight chooser
 # Made by sleekmason 24.07.12
 
-### Default - COLOR="#27598A"
+### Default - COLOR="#7a6645"
 set -e
 ## Select your new highlight color with the color chooser".
 ## Replace "Color" with your selection.
@@ -29,7 +29,7 @@ fi
 "$HOME/.config/lilidog-themes/Custom-drow"  > /dev/null 2>&1
 
 ## "--color" can be removed if wanting to use a separate color chooser.
-COLOR_CHOICE=( $(yad --color --init-color=#27598A \
+COLOR_CHOICE=( $(yad --color --init-color=#7a6645 \
 --gtk-palette --palette=/usr/share/X11/rgb.txt \
 --form --width=320 --center --borders=6 --on-top \
 --title="Custom Drow Theme Highlight Color " \

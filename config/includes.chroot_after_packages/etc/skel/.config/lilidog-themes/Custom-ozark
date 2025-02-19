@@ -9,11 +9,11 @@
 xfconf-query -c xsettings -p /Net/ThemeName -s "Custom-ozark"
 
 ## Change icon theme
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Aqua"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Gray"
 
 ## gsettings "gtk-theme" and "icons" for use is scripts like neofetch which won't use xfconf-query.
 gsettings set org.gnome.desktop.interface gtk-theme "Custom-ozark"
-gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Aqua"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Gray"
 
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Custom-ozarkbox"/g" ~/.config/openbox/rc.xml

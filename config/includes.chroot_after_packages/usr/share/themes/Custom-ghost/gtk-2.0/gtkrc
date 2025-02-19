@@ -1,6 +1,6 @@
 # Evolve GTK Theme
 
-gtk_color_scheme = "base_color:#F4F6F6\nbg_color:#E9EBEB\ntooltip_bg_color:#C4C9C9\nselected_bg_color:#6caeeb\ntext_color:#1F1C1C\nfg_color:#101010\ntooltip_fg_color:#101010\nselected_fg_color:#1F1C1C\nmenubar_bg_color:#E9EBEB\nmenubar_fg_color:#101010\ntoolbar_bg_color:#E9EBEB\ntoolbar_fg_color:#1F1C1C\nmenu_bg_color:#E9EBEB\nmenu_fg_color:#1F1C1C\npanel_bg_color:#E9EBEB\npanel_fg_color:#1F1C1C\nlink_color:#6caeeb"
+gtk_color_scheme = "base_color:#F4F6F6\nbg_color:#E9EBEB\ntooltip_bg_color:#C4C9C9\nselected_bg_color:#dac196\ntext_color:#1F1C1C\nfg_color:#101010\ntooltip_fg_color:#101010\nselected_fg_color:#1F1C1C\nmenubar_bg_color:#E9EBEB\nmenubar_fg_color:#101010\ntoolbar_bg_color:#E9EBEB\ntoolbar_fg_color:#1F1C1C\nmenu_bg_color:#E9EBEB\nmenu_fg_color:#1F1C1C\npanel_bg_color:#E9EBEB\npanel_fg_color:#1F1C1C\nlink_color:#dac196"
 
 gtk-icon-sizes = "panel=16,16:gtk-button=16,16" # Icon sizes
 gtk-button-images = 0 # Disables icons in buttons
