@@ -21,8 +21,8 @@ menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #77457a
-menu.items.active.bg.colorTo: #77457a
+menu.items.active.bg.color: #7a6645
+menu.items.active.bg.colorTo: #7a6645
 menu.items.active.text.color: #F5F4F1
 
 !! Titlebar
@@ -48,8 +48,8 @@ window.active.button.*.hover.bg: flat splitvertical gradient border
 window.inactive.button.*.hover.bg: parentrelative
 window.*.button.*.pressed.bg: flat splitvertical gradient border
 
-window.active.button.*.hover.bg.color: #77457a
-window.active.button.*.hover.bg.colorTo: #77457a
+window.active.button.*.hover.bg.color: #7a6645
+window.active.button.*.hover.bg.colorTo: #7a6645
 window.active.button.*.hover.bg.border.color: #202D2E
 
 window.active.button.*.pressed.bg.color: #707070
