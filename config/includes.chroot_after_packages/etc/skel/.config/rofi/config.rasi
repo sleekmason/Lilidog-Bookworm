@@ -24,7 +24,7 @@ display-filebrowser:  "browser";
 //@import "/display0.rasi"
 
 // This line changed for Auto Themes Changer.
-@theme "rounded-ozark.rasi"
+@theme "rounded-fane.rasi"
 
 // These are the available themes.
 //@theme "rounded-adobe.rasi"
