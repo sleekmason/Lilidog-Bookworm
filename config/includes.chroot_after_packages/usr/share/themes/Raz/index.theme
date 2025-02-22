@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Forge-Dark
-Comment=Forge-Dark based off Greybird theme
+Name=Raz
+Comment=Raz based off Greybird theme
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Forge-Dark
-MetacityTheme=Forge-Dark
+GtkTheme=Raz
+MetacityTheme=Raz
 IconTheme=Adwaita
 CursorTheme=Adwaita
 ButtonLayout=:minimize,maximize,close

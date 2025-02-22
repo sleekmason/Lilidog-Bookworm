@@ -1,0 +1,33 @@
+/*******************************************************************************
+ * FAMILIAR COLORSCHEME FOR ROFI 
+ * Nightshade theme match
+ *******************************************************************************/
+
+* {
+    // Background color
+    color01: #303447;
+    // Title text
+    color02: #BCD1DB;
+    // Searchbar background
+    color03: #242B36;
+    // Searchbar text
+    color04: #EDEDED;
+    // Inactive tab background
+    color05: #282828;
+    // Inactive tab text
+    color06: #B4C8D1;
+    // Active tab background (inside box)
+    color07: #373C52;
+    // Active tab text
+    color08: #BCD1DB;
+    // Active tab highlight
+	color09: #475982;
+	// Selection background
+	color10: #475982;
+	// Selection text 
+    color11: #EDEDED;
+    // Placeholder text
+    color12: #ffffff88;
+}
+
+@import "familiar.rasi"
