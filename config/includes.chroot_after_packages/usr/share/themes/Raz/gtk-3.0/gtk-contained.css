@@ -227,7 +227,7 @@ entry {
   entry:backdrop {
     color: #BDCED6;
     border-color: #252D38;
-    background-color: #242D38;
+    background-color: #2E364A;
     box-shadow: none;
     transition: 200ms ease-out; }
   spinbutton:backdrop:disabled:not(.vertical),
@@ -3811,7 +3811,7 @@ filechooserbutton:drop(active) {
       .sidebar treeview:selected:backdrop,
       .sidebar treeview:selected:focus:backdrop {
         background-image: none;
-        background-color: #344152;
+        background-color: #3F4C69;
         color: #9FB9C7;
         border-top: 1px solid shade(#34384D, 0.9);
         border-bottom: 1px solid shade(#34384D, 0.9); }
@@ -3835,7 +3835,7 @@ filechooserbutton:drop(active) {
     border-top-style: none;
     border-bottom-style: none; }
   .sidebar:backdrop {
-    background-color: #232A36;
+    background-color: #34384D;
     border-color: #252D38;
     transition: 200ms ease-out; }
   .sidebar list, .sidebar treeview {

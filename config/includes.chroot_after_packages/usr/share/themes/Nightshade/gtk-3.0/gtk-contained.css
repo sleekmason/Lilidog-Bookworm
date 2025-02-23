@@ -2225,7 +2225,7 @@ menu,
 .context-menu {
   margin: 4px;
   padding: 2px 0px;
-  background-color: #232A36;
+  background-color: #262E3B;
   border: 1px solid #191F24; }
   .csd menu, .csd
   .menu, .csd
@@ -2234,7 +2234,7 @@ menu,
   menu:backdrop,
   .menu:backdrop,
   .context-menu:backdrop {
-    background-color: #1C242B; }
+    background-color: #262E3B; }
   menu menuitem,
   .menu menuitem,
   .context-menu menuitem {
@@ -3835,7 +3835,7 @@ filechooserbutton:drop(active) {
     border-top-style: none;
     border-bottom-style: none; }
   .sidebar:backdrop {
-    background-color: #232A36;
+    background-color: #2B3442;
     border-color: #252D38;
     transition: 200ms ease-out; }
   .sidebar list, .sidebar treeview {

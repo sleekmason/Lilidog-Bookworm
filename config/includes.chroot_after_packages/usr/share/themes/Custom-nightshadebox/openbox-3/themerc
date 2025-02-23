@@ -30,15 +30,15 @@ window.active.title.bg: raised vertical gradient
 window.active.title.bg.color: #354052
 window.active.title.bg.colorTo: #3A4659
 window.inactive.title.bg: flat vertical gradient
-window.inactive.title.bg.color: #212833
-window.inactive.title.bg.colorTo: #212833
+window.inactive.title.bg.color: #28303D
+window.inactive.title.bg.colorTo: #28303D
 
 !! Titlebar text
 window.label.text.justify: center
 window.active.label.bg: parentrelative
 window.active.label.text.color: #CAE2EB
 window.inactive.label.bg: parentrelative
-window.inactive.label.text.color: #849DAD
+window.inactive.label.text.color: #97ABB8
 window.active.label.text.font: shadow=y:shadowtint=30:shadowoffset=1
 window.inactive.label.text.font: shadow=y:shadowtint=10:shadowoffset=1
 
