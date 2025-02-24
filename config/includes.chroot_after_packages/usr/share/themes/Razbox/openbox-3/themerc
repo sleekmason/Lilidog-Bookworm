@@ -27,7 +27,7 @@ menu.items.active.text.color: #E6F5FA
 
 !! Titlebar
 window.active.title.bg: raised vertical gradient
-window.active.title.bg.color: #3D435E
+window.active.title.bg.color: #404661
 window.active.title.bg.colorTo: #474C69
 window.inactive.title.bg: flat vertical gradient
 window.inactive.title.bg.color: #293145
@@ -68,7 +68,7 @@ window.inactive.button.*.image.color: #8896B3
 window.inactive.button.disabled.image.color: #2B3640
 
 !! Borders
-window.active.border.color: #202630
+window.active.border.color: #252A38
 window.inactive.border.color: #2B3640
 window.inactive.title.separator.color: #2B3640
 border.width: 1
