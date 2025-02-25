@@ -9,11 +9,11 @@
 xfconf-query -c xsettings -p /Net/ThemeName -s "Custom-drow"
 
 ## Change icon theme
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Sand"
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Obsidian-Green"
 
 ## gsettings "gtk-theme" and "icons" for use is scripts like neofetch which won't use xfconf-query.
 gsettings set org.gnome.desktop.interface gtk-theme "Custom-drow"
-gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Sand"
+gsettings set org.gnome.desktop.interface icon-theme "Obsidian-Green"
 
 ## Change openbox theme
 #sed -i "s/$(grep "<theme>" ~/.config/openbox/rc.xml -A 5 | grep "<name>"| awk -F"[><]" '{print $3}')/"Custom-drowbox"/g" ~/.config/openbox/rc.xml
