@@ -459,8 +459,8 @@ button {
     color: #0D0D0C;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #828282;
-    background-image: linear-gradient(to bottom, shade(#F0CEE5, 1.10), shade(#F0BBDF, 1.03));
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.6);
+    background-image: linear-gradient(to bottom, shade(#F2C2E3, 1.0), shade(#F0BBDF, 1.03));
+    box-shadow: inset 0 1px #FFD9F2;
     -gtk-icon-effect: highlight; }
   notebook > header > tabs > arrow:active, button.titlebutton:active, notebook > header > tabs > arrow:checked, button.titlebutton:checked,
   button:active,
@@ -468,7 +468,7 @@ button {
     color: #0D0D0C;
     outline-color: rgba(60, 60, 60, 0.3);
     border-color: #828282;
-    background-image: linear-gradient(to bottom, shade(shade(#FEFBFD, 0.85), 1.05), shade(shade(#FEFBFD, 0.85), 0.97));
+    background-image: linear-gradient(to bottom, shade(shade(#F5C1E4, 1.0), 1.05), shade(shade(#F5C1E4, 1.0), 0.97));
     box-shadow: inset 0 2px 1px -2px rgba(0, 0, 0, 0.6);
     transition-duration: 50ms; }
   notebook > header > tabs > arrow:backdrop, button.sidebar-button:backdrop, button.titlebutton:backdrop, notebook > header > tabs > arrow:backdrop, button.titlebutton:backdrop,
@@ -2211,9 +2211,9 @@ menubar,
     border: 1px solid transparent; }
     menubar > menuitem:hover,
     .menubar > menuitem:hover {
-      background-image: linear-gradient(to bottom, shade(#F0B6DC, 1.2), shade(#F0B6DC, 1));
+      background-image: linear-gradient(to bottom, shade(#F2C6E3, 1.02), shade(#F2C6E3, 1));
       color: #131414;
-      border-color: shade(#F0B6DC, 1.1); }
+      border-color: shade(#F2C6E3, 1.1); }
     menubar > menuitem:disabled,
     .menubar > menuitem:disabled {
       color: #595858;
@@ -2245,8 +2245,8 @@ menu,
     .menu menuitem:hover,
     .context-menu menuitem:hover {
       color: #131414;
-      background-image: linear-gradient(to bottom, shade(#F0B6DC, 1.2), shade(#F0B6DC, 1));
-      box-shadow: inset 1px 1px shade(#F0B6DC, 0.8), inset -1px -1px shade(#F0B6DC, 0.8); }
+      background-image: linear-gradient(to bottom, shade(#F2C6E3, 1.02), shade(#F2C6E3, 1));
+      box-shadow: inset 1px 1px shade(#F2C6E3, 1.0), inset -1px -1px shade(#F2C6E3, 1.0); }
     menu menuitem:disabled,
     .menu menuitem:disabled,
     .context-menu menuitem:disabled {
@@ -2475,7 +2475,7 @@ notebook > header {
       color: #2A2929; }
       notebook > header tab:hover.reorderable-page {
         border-color: rgba(130, 130, 130, 0.3);
-        background-image: linear-gradient(to bottom, shade(#F0C5E2, 1.10), shade(#F0ADDA, 1.07)); }
+        background-image: linear-gradient(to bottom, shade(#FFD4F1, 1.0), shade(#FFD4F1, 1.0)); }
     notebook > header tab:backdrop {
       color: #a2a2a2; }
       notebook > header tab:backdrop.reorderable-page {
@@ -2489,7 +2489,7 @@ notebook > header {
         background-color: #FEFBFD; }
       notebook > header tab:checked.reorderable-page {
         border-color: rgba(130, 130, 130, 0.5);
-        background-image: linear-gradient(to bottom, shade(shade(#F0CEE5, 1.06), 1.05), shade(shade(#F0BBDF, 1.03), 0.97)); }
+        background-image: linear-gradient(to bottom, shade(shade(#F0BBDF, 1.0), 1.05), shade(shade(#F0BBDF, 1.03), 0.97)); }
     notebook > header tab:backdrop:checked {
       color: #595858; }
       notebook > header tab:backdrop:checked.reorderable-page {
@@ -2587,9 +2587,9 @@ scrollbar {
     border: 1px solid #828282;
     border-radius: 10px;
     background-clip: padding-box;
-    background-image: linear-gradient(to right, #FCDEF3, #F0C0E0); }
+    background-image: linear-gradient(to right, #F0BEDF, #F0C0E0); }
     scrollbar slider:hover {
-      background-image: linear-gradient(to right, #F0A3D6, #FAA0DC); }
+      background-image: linear-gradient(to right, #FFD1EF, #FFD4F1); }
     scrollbar slider:hover:active {
       background-color: #AAB3B2; }
     scrollbar slider:backdrop {
@@ -3795,9 +3795,9 @@ filechooserbutton:drop(active) {
     .sidebar row:selected, .sidebar row:selected:focus,
     .sidebar treeview:selected,
     .sidebar treeview:selected:focus {
-      background-image: linear-gradient(to bottom, shade(#F0DFEA, 0.87), shade(#F0D3E6, 1.05) 1%, shade(#F0BEDF, 0.99) 92%, shade(#F0C0E0, 0.92));
-      border-top: 1px solid shade(#FEFBFD, 0.85);
-      border-bottom: 1px solid shade(#FEFBFD, 1.12); }
+      background-image: linear-gradient(to bottom, shade(#F0D3E6, 0.96), shade(#F0D3E6, 0.98) 1%, shade(#F0BEDF, 1.0) 92%, shade(#F0C0E0, 1.0));
+      border-top: 1px solid shade(#FEFBFD, 1.02);
+      border-bottom: 1px solid shade(#FEFBFD, 1.0); }
       .sidebar row:selected label, .sidebar row:selected:focus label,
       .sidebar treeview:selected label,
       .sidebar treeview:selected:focus label {
@@ -4356,7 +4356,7 @@ entry selection:focus,
 entry selection, modelbutton.flat:selected, popover.background checkbutton:selected,
 popover.background radiobutton:selected,
 .menuitem.button.flat:selected, treeview.view:selected:focus, treeview.view:selected, row:selected, calendar:selected {
-  background-color: #F2CBE5; }
+  background-color: #F5C1E4; }
   row:selected label, label:selected, .selection-mode button.titlebutton, .view:selected:focus, .view:selected, iconview:selected, .view text:selected, iconview text:selected,
   textview text:selected, .view text selection:focus, iconview text selection:focus, .view text selection, iconview text selection,
   textview text selection:focus,
