@@ -3,8 +3,8 @@
 
 !! Menu background
 menu.items.bg: flat gradient vertical
-menu.items.bg.color: #252A30
-menu.items.bg.colorTo: #252A30
+menu.items.bg.color: #25292E
+menu.items.bg.colorTo: #25292E
 menu.separator.color: #3C434D
 
 !! Menu text
@@ -14,15 +14,15 @@ menu.items.disabled.text.color: #707070
 
 !! Menu title
 menu.title.bg: raised splitvertical gradient
-menu.title.bg.color: #252A30
-menu.title.bg.colorTo: #252A30
+menu.title.bg.color: #25292E
+menu.title.bg.colorTo: #25292E
 menu.title.text.color: #D0D5DB
 menu.title.text.justify: center
 
 !! Selected menu item
 menu.items.active.bg: raised splitvertical gradient
-menu.items.active.bg.color: #41617d
-menu.items.active.bg.colorTo: #41617d
+menu.items.active.bg.color: #3e647a
+menu.items.active.bg.colorTo: #3e647a
 menu.items.active.text.color: #FCFCFC
 
 !! Titlebar
@@ -30,8 +30,8 @@ window.active.title.bg: raised vertical gradient
 window.active.title.bg.color: #323942
 window.active.title.bg.colorTo: #343D47
 window.inactive.title.bg: flat vertical gradient
-window.inactive.title.bg.color: #1E2329
-window.inactive.title.bg.colorTo: #1E2329
+window.inactive.title.bg.color: #23282E
+window.inactive.title.bg.colorTo: #23282E
 
 !! Titlebar text
 window.label.text.justify: center
@@ -48,12 +48,12 @@ window.active.button.*.hover.bg: flat vertical gradient border
 window.inactive.button.*.hover.bg: parentrelative
 window.*.button.*.pressed.bg: flat vertical gradient border
 
-window.active.button.*.hover.bg.color: #41617d
-window.active.button.*.hover.bg.colorTo: #41617d
+window.active.button.*.hover.bg.color: #3e647a
+window.active.button.*.hover.bg.colorTo: #3e647a
 window.active.button.*.hover.bg.border.color: #000000
 
-window.active.button.*.pressed.bg.color: #517B9E
-window.active.button.*.pressed.bg.colorTo: #6B94BC
+window.active.button.*.pressed.bg.color: #768394
+window.active.button.*.pressed.bg.colorTo: #768394
 window.active.button.*.pressed.image.color: #000000
 window.active.button.*.pressed.bg.border.color: #000000
 window.inactive.button.*.pressed.bg.color: #262626
