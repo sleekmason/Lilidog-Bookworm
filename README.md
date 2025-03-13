@@ -7,8 +7,7 @@ Other window managers are also made available through the Lilidog installers. Th
 Lilidog is based on debian stable, with some of the hard parts done, and some cool stuff along the way. 
 Everything is easily accessible, with numerous options to customize further.
 
-Website: https://lilidog.org/ <br/>
-Forum Link: https://www.forum.lilidog.org/ <br/>
+Website: https://sourceforge.net/projects/lilidog/ 
 
 #### Available Versions:
 
